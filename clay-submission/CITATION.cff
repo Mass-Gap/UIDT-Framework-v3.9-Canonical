@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+title: "A Constructive Proof of the Yang-Mills Mass Gap via Banach Contraction (UIDT v3.7.0)"
+message: "If you use this proof or verification code, please cite it using the metadata from this file."
+type: software
+authors:
+  - family-names: Rietz
+    given-names: Philipp
+    orcid: "https://orcid.org/0009-0007-4307-1609"
+    affiliation: Independent Researcher
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.18003018"
+    description: "Zenodo archive"
+repository-code: "https://github.com/badbugsarts-hue/UIDT-Framework-V3.2-Canonical"
+url: "https://doi.org/10.5281/zenodo.18003018"
+abstract: >-
+  A rigorous mathematical proof of the Yang-Mills mass gap for SU(3) gauge 
+  theory. The mass gap Δ* = 1.710 ± 0.015 GeV is established via Banach 
+  fixed-point iteration with Lipschitz constant L = 3.749×10⁻⁵ < 1. Full 
+  BRST gauge consistency, Slavnov-Taylor identities, and RG fixed-point 
+  stability are demonstrated. Cross-validated against lattice QCD with 
+  z-score 0.37σ.
+keywords:
+  - Yang-Mills Mass Gap
+  - Millennium Prize Problem
+  - Banach Fixed-Point Theorem
+  - BRST Cohomology
+  - Lattice QCD
+  - Gauge Theory
+  - Quantum Field Theory
+license: CC-BY-4.0
+version: "3.7.2"
+date-released: "2025-12-24"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Rietz
+      given-names: Philipp
+      orcid: "https://orcid.org/0009-0007-4307-1609"
+  title: "A Constructive Proof of the Yang-Mills Mass Gap via Banach Contraction"
+  year: 2025
+  doi: "10.5281/zenodo.18003018"
+  journal: "Zenodo"
+  notes: "Clay Mathematics Institute Submission"

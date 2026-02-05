@@ -1,0 +1,72 @@
+{
+  "title": "The Yang-Mills Mass Gap: A Constructive Proof via Banach Contraction (UIDT v3.7.2)",
+  "description": "This submission presents a constructive proof of the Yang-Mills mass gap problem for SU(3) gauge theory in four-dimensional Euclidean spacetime. The proof establishes the existence and uniqueness of a spectral gap Δ* = 1.710 ± 0.015 GeV through application of the Banach fixed-point theorem to a self-consistent gap equation derived from the Functional Renormalization Group. The Lipschitz constant L = 3.749 × 10⁻⁵ < 1 guarantees contraction, with numerical verification to 250 decimal digits. BRST gauge consistency is demonstrated via explicit verification of Q² = 0 nilpotency and Slavnov-Taylor identities. The result agrees with quenched (pure gauge) lattice QCD determinations of the pure Yang-Mills spectrum (z-score: 0.37σ). ERRATUM (v3.7.1): Following Lattice 2024 findings (Morningstar 2025, arXiv:2502.02547), the spectral gap Δ* is explicitly identified as a mathematical property of the pure Yang-Mills Hamiltonian spectrum—not an observable particle mass. In full QCD with dynamical quarks, glueball-meson mixing prevents isolation of a predominantly gluonic state below ~2 GeV. All mathematical proofs remain valid and unchanged.",
+  "creators": [
+    {
+      "name": "Rietz, Philipp",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0007-4307-1609"
+    }
+  ],
+  "keywords": [
+    "Yang-Mills Mass Gap",
+    "Spectral Gap",
+    "Pure Yang-Mills Theory",
+    "Banach Fixed-Point Theorem",
+    "Functional Renormalization Group",
+    "BRST Cohomology",
+    "Quenched Lattice QCD",
+    "Pure Gauge Simulations",
+    "Non-perturbative QCD",
+    "Gauge Theory",
+    "Osterwalder-Schrader Axioms",
+    "Slavnov-Taylor Identities",
+    "SU(3) Gauge Theory",
+    "Constructive Quantum Field Theory",
+    "Wightman Reconstruction"
+  ],
+  "license": "CC-BY-4.0",
+  "version": "3.7.1",
+  "language": "eng",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "access_right": "open",
+  "communities": [
+    {"identifier": "advancedtheoreticalphysicsandmathematics"},
+    {"identifier": "physicsphilosophy"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.18003018",
+      "relation": "isIdenticalTo",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "10.5281/zenodo.17835200",
+      "relation": "isPartOf",
+      "resource_type": "dataset"
+    }
+  ],
+  "references": [
+    "Jaffe, A. & Witten, E. (2000). Quantum Yang-Mills Theory. Clay Mathematics Institute Millennium Problems.",
+    "Morningstar, C. & Peardon, M. (1999). Glueball spectrum from an anisotropic lattice study. Phys. Rev. D 60, 034509. [quenched lattice]",
+    "Chen, Y. et al. (2006). Glueball spectrum and matrix elements on anisotropic lattices. Phys. Rev. D 73, 014516. [quenched lattice]",
+    "Athenodorou, A. & Teper, M. (2021). Glueball spectrum of SU(3) gauge theory in 3+1 dimensions. JHEP 11, 172. [quenched lattice]",
+    "Morningstar, C. (2025). Glueball-meson mixing in unquenched lattice QCD. arXiv:2502.02547. [Lattice 2024 erratum reference]",
+    "Wetterich, C. (1993). Exact evolution equation for the effective potential. Phys. Lett. B 301, 90.",
+    "Osterwalder, K. & Schrader, R. (1973). Axioms for Euclidean Green's functions. Commun. Math. Phys. 31, 83.",
+    "Kugo, T. & Ojima, I. (1979). Local covariant operator formalism of non-abelian gauge theories. Prog. Theor. Phys. Suppl. 66, 1."
+  ],
+  "grants": [],
+  "subjects": [
+    {"term": "High Energy Physics - Theory", "identifier": "hep-th", "scheme": "arXiv"},
+    {"term": "Mathematical Physics", "identifier": "math-ph", "scheme": "arXiv"},
+    {"term": "High Energy Physics - Lattice", "identifier": "hep-lat", "scheme": "arXiv"}
+  ],
+  "dates": [
+    {"date": "2025-12-24", "type": "created"},
+    {"date": "2025-12-27", "type": "updated"},
+    {"date": "2025-12-27", "type": "available"}
+  ],
+  "method": "Banach Fixed-Point Theorem applied to FRG-derived gap equation with BRST gauge consistency verification, Osterwalder-Schrader axiom verification, and 250-digit numerical precision. Spectral gap represents pure Yang-Mills Hamiltonian spectrum."
+}

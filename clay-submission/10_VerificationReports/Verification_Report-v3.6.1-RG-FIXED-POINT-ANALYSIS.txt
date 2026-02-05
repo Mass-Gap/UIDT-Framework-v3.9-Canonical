@@ -1,0 +1,36 @@
+======================================================================
+UIDT v3.6.1 RG FIXED POINT ANALYSIS
+======================================================================
+
+1. Non-trivial UV Fixed Point (One-Loop):
+   κ* = 0.500
+   λ_S* = 0.417
+   Condition: 5κ*² = 1.250
+              3λ_S* = 1.250
+   Difference = 0.00e+00
+   Status: ✓ FIXED POINT VERIFIED
+
+2. Canonical Solution (v3.6.1):
+   κ_canonical = 0.500
+   λ_S_canonical = 0.417
+   Check: 5κ² = 1.250
+          3λ_S = 1.251
+   Residual = 0.0010
+   Status: ✓ SATISFIES FP
+
+3. Gamma Invariant Analysis:
+   γ_kinetic (canonical) = 16.339
+   γ_RG (one-loop)       ≈ 55.8
+   Discrepancy factor    ≈ 3.4
+   Status: ⚠️ OPEN QUESTION
+
+   Interpretation: Non-perturbative effects dominate the
+   information sector. Kinetic VEV (Pathway A) provides
+   physical value; RG (Pathway B) requires higher-order
+   corrections or non-perturbative resummation.
+
+   Reference: Manuscript Section 4.2, Appendix F.9
+
+======================================================================
+
+[OUTPUT] RG flow plot saved as: rg_flow_v3.6.1.pdf

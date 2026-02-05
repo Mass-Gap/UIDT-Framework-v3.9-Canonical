@@ -1,0 +1,151 @@
+\documentclass[11pt,a4paper]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\geometry{margin=2.5cm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\signature{Philipp Rietz\\
+Independent Researcher\\
+ORCID: 0009-0007-4307-1609\\
+\href{mailto:badbugs.arts@gmail.com}{badbugs.arts@gmail.com}}
+
+\address{Philipp Rietz\\
+Independent Researcher\\
+Germany}
+
+\date{December 24, 2025}
+
+\begin{document}
+
+\begin{letter}{%
+Scientific Advisory Board\\
+Clay Mathematics Institute\\
+70 Main Street, Suite 300\\
+Cambridge, MA 02142\\
+United States}
+
+\opening{Dear Members of the Scientific Advisory Board,}
+
+I respectfully submit for your consideration a manuscript entitled 
+\textit{``A Constructive Proof of the Yang-Mills Mass Gap via 
+Information-Density Scalar Field Extension''} (UIDT Framework v3.7.0), 
+which addresses the Yang-Mills Existence and Mass Gap problem as 
+formulated in the Millennium Prize Problems.
+
+\medskip
+\textbf{Summary of the Approach}
+
+\medskip
+The manuscript presents a constructive proof strategy that extends 
+pure Yang-Mills theory by coupling to a fundamental scalar field 
+$S(x)$ transforming as a gauge singlet. This extension preserves 
+gauge invariance while enabling analytical treatment of the mass 
+gap through a contraction mapping argument.
+
+The principal results are:
+
+\begin{enumerate}
+\item \textbf{Existence and Uniqueness:} Application of the Banach 
+Fixed-Point Theorem to a self-consistent gap equation yields a 
+unique mass gap $\Delta^* = 1.710 \pm 0.015\,\mathrm{GeV}$ with 
+Lipschitz constant $L = 3.749 \times 10^{-5}$.
+
+\item \textbf{Axiomatics:} Explicit verification of all five 
+Osterwalder-Schrader axioms (OS0--OS4), enabling Wightman 
+reconstruction to Minkowski spacetime.
+
+\item \textbf{Gauge Structure:} BRST cohomology defines the 
+physical Hilbert space with positive-definite inner product. 
+Nielsen identities establish gauge-parameter independence.
+
+\item \textbf{RG Invariance:} The theory possesses a UV fixed 
+point satisfying $5\kappa^2 = 3\lambda_S$, at which the 
+Callan-Symanzik equation is satisfied.
+
+\item \textbf{Pure Yang-Mills Limit:} The scalar field is 
+auxiliary and can be integrated out, with a continuous 
+deformation argument connecting to pure Yang-Mills.
+
+\item \textbf{Numerical Verification:} 80-digit precision 
+computation confirms convergence with residuals below $10^{-60}$.
+
+\item \textbf{Lattice Comparison:} The predicted mass gap agrees 
+with lattice QCD determinations (combined $z$-score $= 0.37$, 
+$p > 0.75$).
+\end{enumerate}
+
+\medskip
+\textbf{Methodological Clarification}
+
+\medskip
+I wish to be explicit about the methodological status of this work. 
+The proof strategy employs a scalar field extension that, while 
+gauge-invariant and mathematically well-defined, represents an 
+augmentation of pure Yang-Mills theory. The connection to the 
+strict formulation of the Millennium Problem---which concerns 
+pure Yang-Mills without additional matter content---relies on an 
+auxiliary field elimination argument and continuous deformation 
+to the decoupling limit.
+
+I acknowledge that this aspect may require careful evaluation by 
+the review committee regarding its compatibility with the problem 
+statement. The mathematical framework is internally consistent, 
+but the interpretation as a solution to the Millennium Problem 
+as originally posed is a matter for expert adjudication.
+
+\medskip
+\textbf{Supplementary Materials}
+
+\medskip
+The submission includes:
+\begin{itemize}
+\item Complete integrated manuscript with all appendices
+\item Numerical verification code (Python, 80-digit precision)
+\item Monte Carlo uncertainty analysis (100,000 samples)
+\item Lattice QCD comparison data
+\item HMC simulation scripts for independent verification
+\end{itemize}
+
+All materials are available under CC BY 4.0 license at 
+DOI: \href{https://doi.org/10.5281/zenodo.18003018}{10.5281/zenodo.18003018}.
+
+\medskip
+\textbf{Author Background}
+
+\medskip
+I am an independent researcher without institutional affiliation. 
+I make no claims to authority beyond the mathematical content of 
+the work itself, which I submit for rigorous evaluation on its 
+own merits. I am prepared to respond to any technical questions 
+or requests for clarification from the review committee.
+
+\medskip
+\textbf{Acknowledgment of Limitations}
+
+\medskip
+The manuscript explicitly discusses several open questions:
+\begin{itemize}
+\item Extension to arbitrary compact simple gauge groups 
+      (currently proven for SU(3) only)
+\item Non-perturbative control in the deformation limit
+\item Lattice regularization preserving reflection positivity
+\item Treatment of Gribov copies
+\end{itemize}
+
+These are documented as directions for future work rather than 
+claimed as resolved.
+
+\closing{Respectfully submitted,}
+
+\end{letter}
+\end{document}

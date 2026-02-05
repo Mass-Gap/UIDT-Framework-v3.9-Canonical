@@ -1,0 +1,9 @@
+UIDT v3.7.0 Domain Analysis Results
+====================================
+Fixed Point: Delta* = 1.710000000000000 GeV
+Lipschitz Constant: L = 4.2743586448e-05
+Domain: [1.5, 2.0] GeV
+Self-mapping: T([1.5,2.0]) in [1.710025, 1.710043]
+Gribov Suppression: 1.034019e-11
+
+All checks passed: True

@@ -1,0 +1,67 @@
+{
+    "metadata": {
+        "title": "Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.2) - Canonical Framework (Clean State)",
+        "upload_type": "publication",
+        "publication_type": "preprint",
+        "prereserved_doi": {
+            "doi": "10.5281/zenodo.17835200",
+            "recid": 17835200
+        },
+        "description": "Canonical Reference (v3.7.2 - Clean State). Complete Manuscript establishing the Three-Pillar Architecture (QFT, Cosmology, Lab). Features analytical derivation of the Yang-Mills Mass Gap (1.710 GeV), CSF-UIDT Synthesis, SMDS model, and 99-step RG vacuum suppression. Scientifically Closed Framework. CORRECTIONS IN v3.7.2: Vacuum Expectation Value (VEV) rectified to 47.7 MeV; Casimir effect reclassified to 'predicted, unverified' (Category D); H₀ unified to 70.4 km/s/Mpc; holographic normalization (π⁻²) explicitly documented.",
+        "creators": [
+            {
+                "name": "Rietz, Philipp",
+                "affiliation": "Independent Researcher",
+                "orcid": "0009-0007-4307-1609"
+            }
+        ],
+        "access_right": "open",
+        "license": "cc-by-4.0",
+        "keywords": [
+            "Yang-Mills Theory",
+            "Mass Gap Solution",
+            "Quantum Gravity",
+            "Clay Mathematics Institute",
+            "Gamma Scaling",
+            "DESI DR2",
+            "Hubble Tension",
+            "CSF Synthesis",
+            "Three-Pillar Architecture",
+            "Barrow Entropy",
+            "Holographic Vacuum",
+            "Lattice QCD",
+            "Dark Energy",
+            "Casimir Effect",
+            "Scientific Integrity",
+            "Evidence Classification",
+            "Reproducibility",
+            "CERN Standards"
+        ],
+        "version": "3.7.2",
+        "language": "eng",
+        "notes": "Integrity Note: This version (v3.7.2) formally supersedes all previous releases (v3.6, v3.5.x, v3.3). Clean State established after v3.3 withdrawal due to external formatting errors. All corrections documented in CHANGELOG.md.",
+        "related_identifiers": [
+            {
+                "scheme": "doi",
+                "identifier": "10.5281/zenodo.17835200",
+                "relation": "isVersionOf"
+            },
+            {
+                "scheme": "doi",
+                "identifier": "10.5281/zenodo.18003018",
+                "relation": "isSupplementedBy",
+                "resource_type": "publication-preprint"
+            },
+            {
+                "scheme": "url",
+                "identifier": "https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical",
+                "relation": "isDocumentedBy"
+            },
+            {
+                "scheme": "doi",
+                "identifier": "10.17605/OSF.IO/Q8R74",
+                "relation": "isIdenticalTo"
+            }
+        ]
+    }
+}

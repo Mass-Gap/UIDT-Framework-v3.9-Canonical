@@ -1,0 +1,16 @@
+🧪 Running Scalar Mass Test (v3.6.1 Clean State)...
+🔬 Starting Scalar Mass Measurement
+⚡ Initialization: v3.6.1 Hot Start (v=0.0477 GeV)
+🔥 Thermalization...
+Therm: 100%|██████████| 50/50 [00:03<00:00, 15.90it/s]
+📊 Measurement Phase - Collecting Scalar Correlators...
+Meas: 100%|██████████| 100/100 [00:12<00:00,  8.14it/s]
+🖼️ Plot saved: scalar_mass_kappa_0.5.png
+
+🔬 PHYSICAL INTERPRETATION OF SCALAR MASS
+============================================================
+📊 Results:
+   • Scalar Mass m_S = 2.691 ± inf GeV
+   • Scalar VEV ⟨S⟩ = 0.0476 GeV
+   • Ratio m_S/m_G = 4.41
+✅ STRONG DECOUPLING SIGNAL (m_S >> m_G)

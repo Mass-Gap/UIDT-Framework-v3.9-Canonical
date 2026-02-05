@@ -1,0 +1,63 @@
+{
+  "title": "UIDT v3.7.2: Constructive Proof of Yang-Mills Mass Gap",
+  "description": "Complete submission package for the Yang-Mills Existence and Mass Gap Problem. Contains manuscript, verification code, Monte Carlo data, and reproducibility infrastructure. v3.7.1 ERRATUM: Following Lattice 2024 findings (Morningstar 2025, arXiv:2502.02547), the spectral gap Δ* = 1.710 GeV is explicitly identified as the spectral gap of pure Yang-Mills theory, not an observable particle mass. All lattice comparisons reference quenched (pure gauge) simulations. Mathematical proofs remain unchanged.",
+  "category": "physics",
+  "tags": [
+    "Yang-Mills",
+    "Mass Gap",
+    "Spectral Gap",
+    "Banach Theorem",
+    "QCD",
+    "Quenched Lattice QCD",
+    "BRST",
+    "Gauge Theory",
+    "Pure Yang-Mills",
+    "Osterwalder-Schrader"
+  ],
+  "public": true,
+  "license": {
+    "name": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "contributors": [
+    {
+      "name": "Philipp Rietz",
+      "orcid": "0009-0007-4307-1609",
+      "role": "author"
+    }
+  ],
+  "node_links": [],
+  "affiliated_institutions": [],
+  "subjects": [
+    "Mathematical Physics",
+    "High Energy Physics",
+    "Quantum Field Theory"
+  ],
+  "data_description": {
+    "manuscript": "01_Manuscript/main-complete.tex",
+    "verification_code": "02_VerificationCode/",
+    "audit_data": "03_AuditData/",
+    "certificates": "04_Certificates/",
+    "monte_carlo": "07_MonteCarlo/"
+  },
+  "methodology": {
+    "proof_technique": "Banach Fixed-Point Theorem",
+    "precision": "250 decimal digits",
+    "samples": 100000,
+    "lipschitz_constant": 3.749e-5
+  },
+  "results": {
+    "spectral_gap_GeV": 1.710,
+    "uncertainty_GeV": 0.015,
+    "quenched_lattice_zscore": 0.37,
+    "brst_verified": true,
+    "interpretation": "Spectral gap of pure Yang-Mills Hamiltonian"
+  },
+  "erratum": {
+    "version": "3.7.1",
+    "date": "2025-12-27",
+    "reference": "arXiv:2502.02547",
+    "summary": "Physical interpretation clarified following Lattice 2024 findings"
+  },
+  "doi": "10.5281/zenodo.18003018"
+}

@@ -1,0 +1,49 @@
+# UIDT v3.7.0 — Clay Mathematics Institute Verification Suite
+# Python Package Requirements
+#
+# Author: Philipp Rietz (ORCID: 0009-0007-4307-1609)
+# DOI: 10.5281/zenodo.18003018
+#
+# Installation:
+#   pip install -r requirements.txt
+#
+# ============================================================================
+
+# High-precision arithmetic (ESSENTIAL)
+mpmath>=1.3.0
+
+# Numerical computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Data handling
+pandas>=2.0.0
+
+# Symbolic mathematics
+sympy>=1.12
+
+# Optional: Excel file support
+openpyxl>=3.1.0
+
+# Optional: Progress bars
+tqdm>=4.65.0
+
+# Optional: Testing
+pytest>=7.3.0
+
+# ============================================================================
+# VERIFICATION NOTES
+# ============================================================================
+#
+# Minimum Python version: 3.10
+#
+# For 80-digit precision, mpmath is REQUIRED.
+# Standard float64 only provides ~15-16 significant digits.
+#
+# To verify installation:
+#   python -c "from mpmath import mp; mp.dps=80; print('Ready')"
+#
+# ============================================================================

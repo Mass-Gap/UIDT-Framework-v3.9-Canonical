@@ -1,0 +1,36 @@
+========================================================================
+UIDT v3.6.1 ERROR PROPAGATION ANALYSIS - STABLE CLEAN STATE AUDIT
+========================================================================
+
+1. Gluon Condensate Uncertainty (δC = ±0.014 GeV^4):
+   δm_S(C)   = ±0.0000 GeV
+   δκ(C)     = ±0.0100
+   δλ_S(C)   = ±0.0078
+
+2. Lattice Mass Gap Uncertainty (δΔ = ±0.080 GeV):
+   δm_S(Δ)   = ±0.0798 GeV
+   δκ(Δ)     = ±0.0140
+   δλ_S(Δ)   = ±0.0098
+
+3. Total Systematic Uncertainties (Quadrature Sum):
+   δm_S(total)  = ±0.0798 GeV
+   δκ(total)    = ±0.0172
+   δλ_S(total)  = ±0.0125
+
+4. Derived Quantity Uncertainties:
+   v = 47.6 ± 5.3 MeV  [Audit: 47.7 MeV target]
+   γ = 16.339 ± 0.475
+
+========================================================================
+FINAL CANONICAL PARAMETER SET (v3.6.1 - CLEAN STATE):
+========================================================================
+m_S (Scalar)  = 1.705 ± 0.080 GeV
+κ (Coupling)  = 0.500 ± 0.017
+λ_S (Self)    = 0.417 ± 0.013
+v (VEV)       = 47.6 ± 5.3 MeV  [RECTIFIED]
+γ (Gamma)     = 16.339 ± 0.475 [CANONICAL]
+========================================================================
+
+STATUS: Numerical closure achieved. Convergence warnings resolved.
+        The 99-step cascade is stable within σ-bounds.
+========================================================================

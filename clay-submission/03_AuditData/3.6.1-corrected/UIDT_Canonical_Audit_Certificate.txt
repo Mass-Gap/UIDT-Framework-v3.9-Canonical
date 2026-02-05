@@ -1,0 +1,31 @@
+UIDT v3.6.1 CANONICAL GRAND AUDIT CERTIFICATE
+==================================================
+Date: 2025-12-25T17:50:27.482623
+Runtime: 4.45s
+Precision: 200 Decimal Digits
+MCMC Samples: 100000
+
+[CANONICAL PARAMETERS]
+kappa = 0.500 (from RG: 5*kappa^2 = 3*lambda_S)
+lambda_S = 0.417
+m_S = 1.705 GeV
+
+[MATHEMATICAL RESULTS]
+Delta* = 1.7100350467422132 GeV
+Lipschitz L = 3.749125995856504e-05 (< 1 PROVEN)
+Contraction = 99.99625087400415%
+
+[STATISTICAL RESULTS]
+Delta: 1.710055 +/- 0.01494 GeV
+gamma: 6.8386 +/- 1.2604
+
+[KEY CORRELATIONS]
+gamma-alpha_s: -1.0
+gamma-Psi: 0.9804
+m_S-Delta: 0.9998
+
+[CRYPTOGRAPHIC HASHES]
+Samples_SHA256: 88986c263a0231d4b097261b3d003162bf4ac7a84c2994e28153ddc48e0a5939
+HighPrecision_SHA256: 4b5562aec5ebfec849b605aaeba554221d934893b24c2c91629e232493a7d5bc
+
+VERDICT: CANONICAL UIDT v3.6.1 VERIFIED

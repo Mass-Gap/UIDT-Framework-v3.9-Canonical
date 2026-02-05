@@ -1,0 +1,12 @@
+⚠️ GPU Acceleration: DISABLED (Running on CPU)
+
+🔍 Validating Optimized Exponential (Order 8) vs Scipy (N=1000)
+============================================================
+✅ Maximum Error: 6.25e-14
+✅ Average Error: 1.52e-14
+------------------------------------------------------------
+⏱️  Time Custom Solver: 88.58 ms
+⏱️  Time Standard expm: 42.18 ms
+🚀 Speedup Factor:     0.48x (CPU/GPU dependent)
+------------------------------------------------------------
+✅ PRECISION: EXCELLENT (< 1e-10).

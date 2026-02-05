@@ -1,0 +1,17 @@
+
+🔬 UIDT v3.6.1 BALANCED RUN (String Tension)
+============================================================
+ℹ️  Hinweis: Dies dauert einige Minuten. Bitte warten...
+🏹 Starte Stringspannungs-Messung (κ=0.5, N_smear=10)
+⚡ Initialisierung: HOT START (Random SU(3))
+🔥 Thermalisierung (Vectorized)...
+Therm: 100%|██████████| 50/50 [00:07<00:00,  6.97it/s]
+📊 Messung...
+Meas: 100%|██████████| 200/200 [1:25:42<00:00, 25.71s/it]
+
+============================================================
+ERGEBNIS (Balanced):
+✅ Stringspannung: σ = 0.9002 +/- 0.0105
+   Qualität:      99.22
+   Plot gespeichert: balanced_string_tension.png
+===========================================================

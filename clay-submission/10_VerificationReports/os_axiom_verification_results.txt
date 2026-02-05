@@ -1,0 +1,36 @@
+UIDT v3.6.1 OS Axiom Verification Results
+==================================================
+Date: 2025-12-24 10:09:59
+Mass Gap: 1.71 GeV
+
+OS0: PASS
+  max_polynomial_ratio: 0.0017562365078117018
+  decay_rate: 1.9540881401110621
+  expected_decay: 1.71
+
+OS1: PASS
+  translation_error: 4.269554459678607e-16
+  rotation_error: 1.471549071379151e-17
+
+OS2: PASS
+  positivity_rate: 1.0
+  avg_inner_product: 51.56700386107511
+  spectral_check: True
+
+OS3: PASS
+  2pt_symmetry_error: 0.0
+  4pt_symmetry_error: 0.0
+
+OS4: FAIL
+  decay_rate: 2.060433558882485
+  expected_rate: 1.71
+  rate_deviation: 0.20493190577923098
+  cluster_ratio: 1.9999999973525822
+
+BRST: PASS
+  brst_nilpotent: True
+  kugo_ojima: True
+  ghost_decoupling: True
+
+
+Overall: REVIEW REQUIRED

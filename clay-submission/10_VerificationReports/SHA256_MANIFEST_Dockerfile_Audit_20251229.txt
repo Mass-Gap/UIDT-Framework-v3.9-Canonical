@@ -1,0 +1,29 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# SHA-256 MANIFEST — UIDT v3.7.2 Dockerfile Structural Audit
+# ══════════════════════════════════════════════════════════════════════════════
+#
+# Generated: 2025-12-29T02:36:00+01:00
+# DOI:       https://doi.org/10.5281/zenodo.18003017
+# Author:    Philipp Rietz (ORCID: 0009-0007-4307-1609)
+#
+# Verification: certutil -hashfile <file> SHA256 (Windows)
+#               sha256sum <file> (Linux/macOS)
+#
+# ══════════════════════════════════════════════════════════════════════════════
+
+## INFRASTRUCTURE FILES
+
+313b82baade24b8600d5ee4c6e4914e33dc8495478e9650bc81b11d96b7801f5  Dockerfile.clay_audit
+4d806325d287c7ed72402b8a8ebb892e1988cf7f8039530d33c2406605607c05  requirements.txt
+
+## CORE VERIFICATION SCRIPTS
+
+8989fa505c94bfc6cc0801a6fc0b29e5643e7b120fcc0ab5cfce82fffda27b3a  02_VerificationCode/UIDT_Proof_Engine.py
+
+## AUDIT REPORTS
+
+5a29ee8cc73ccf46510913c82a2993003f10e72dca63b5ff97f0da4241045cbf  10_VerificationReports/Dockerfile_Structural_Audit_20251229.md
+
+# ══════════════════════════════════════════════════════════════════════════════
+# END OF MANIFEST
+# ══════════════════════════════════════════════════════════════════════════════

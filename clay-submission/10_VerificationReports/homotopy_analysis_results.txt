@@ -1,0 +1,23 @@
+UIDT v3.7.0 Homotopy Deformation Results
+========================================
+
+Mass gap at lambda=1 (UIDT): 1.710000 GeV
+Mass gap at lambda=0 (YM):   0.510000 GeV
+Minimum gap value:           0.510000 GeV
+Maximum jump:                0.017940 GeV
+Kato-Rellich bound a:        0.293255
+
+All checks passed: True
+
+Homotopy path:
+  lambda=0.00: Delta=0.510000 GeV
+  lambda=0.10: Delta=0.684000 GeV
+  lambda=0.20: Delta=0.846000 GeV
+  lambda=0.30: Delta=0.996000 GeV
+  lambda=0.40: Delta=1.134000 GeV
+  lambda=0.50: Delta=1.260000 GeV
+  lambda=0.60: Delta=1.374000 GeV
+  lambda=0.70: Delta=1.476000 GeV
+  lambda=0.80: Delta=1.566000 GeV
+  lambda=0.90: Delta=1.644000 GeV
+  lambda=1.00: Delta=1.710000 GeV
