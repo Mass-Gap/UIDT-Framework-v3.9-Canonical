@@ -1,12 +1,20 @@
 # ============================================================================
 # CRITICAL: PROPRIETARY OPERATIONAL SYSTEM (427 FILES)
 # ============================================================================
-# MUST NEVER be uploaded to GitHub - contains research strategy, local database
+# ⚠️ ABSOLUTE BLOCKER - DO NOT REMOVE THIS SECTION ⚠️
+# MUST NEVER be uploaded to GitHub - contains:
+# - Research strategy and workflows
+# - Local databases and evidence registry
+# - Proprietary operational systems
+# - Private research methodology
+
 UIDT-OS/
 UIDT-OS.zip
+UIDT-OS*
 
 # Verify exclusion with: git ls-files | grep -i "uidt-os"
 # Expected result: (empty)
+# If ANY files appear, immediately: git rm -r --cached UIDT-OS*
 
 # ============================================================================
 # LARGE ARCHIVES (Redundant - use GitHub Releases instead)

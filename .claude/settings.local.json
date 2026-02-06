@@ -6,7 +6,26 @@
       "Bash(git add:*)",
       "Bash(ls:*)",
       "Bash(grep:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(gh --version:*)",
+      "Bash(powershell:*)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" --version)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth login)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo edit Mass-Gap/UIDT-Framework-v3.7.2-Canonical --description \"Unified Information-Density Theory v3.7.2 - Clay Mathematics Institute Yang-Mills Mass Gap submission with complete verification suite\" --homepage \"https://doi.org/10.5281/zenodo.17835200\" --enable-issues --enable-wiki=false)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo edit:*)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo view Mass-Gap/UIDT-Framework-v3.7.2-Canonical)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo view badbugsarts-hue/UIDT-Framework-V3.2-Canonical --json name,description,isArchived)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo edit badbugsarts-hue/UIDT-Framework-V3.2-Canonical --description \"⚠️ DEPRECATED - This repository has been superseded by v3.7.2. New location: https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical | DOI: 10.5281/zenodo.17835200\")",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo archive badbugsarts-hue/UIDT-Framework-V3.2-Canonical --yes)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo view badbugsarts-hue/UIDT-Framework-V3.2-Canonical --json isArchived,description,url)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo unarchive badbugsarts-hue/UIDT-Framework-V3.2-Canonical --yes)",
+      "Bash(git clone:*)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo view badbugsarts-hue/UIDT-Framework-V3.2-Canonical)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" api repos/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/contents --jq '.[].name')"
     ]
   }
 }
