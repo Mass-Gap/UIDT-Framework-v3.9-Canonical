@@ -2409,72 +2409,130 @@ presented in this manuscript are publicly available under open-source licenses.
 
 \subsection{Primary Code Repository}
 
-\textbf{GitHub Repository:} \url{https://github.com/badbugsarts-hue/UIDT-Framework-V3.2-Canonical}
+\textbf{GitHub Repository:} \url{https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical}
 
 \noindent
 \textbf{License:} MIT License (code) / CC-BY-4.0 (data and documentation)
 
 \noindent
-The repository contains:
+The repository is organized into three principal directories. All file names
+correspond to the canonical v3.7.3 release archived on Zenodo.
 
+\medskip
+\noindent\textbf{Canonical verification suite} (\texttt{verification/scripts/}):
 \begin{itemize}
-    \item \texttt{UIDT-3.5-Verification.py}: Main Newton--Raphson solver for coupled field equations, computing $\Delta$, $\gamma$, $\kappa$, $\lambda_S$, $m_S$ with residuals $< 10^{-14}$
-    
-    \item \texttt{UIDT-3.3-Verification-visual.py}: Visualization engine generating Figures 12.1--12.4 (stability landscape, Monte Carlo posteriors, $\gamma$-$\Psi$ correlation, unification map)
-    
-    \item \texttt{gamma\_z\_evolution.py}: Redshift-dependent $\gamma(z)$ calculator with DESI DR2 CPL calibration
-    
-    \item \texttt{UIDTv3.2\_HMC-MASTER-SIMULATION.py}: Full Hybrid Monte Carlo lattice QCD pipeline for glueball spectrum verification
-    
-    \item \texttt{UIDTv3.2\_HMC\_Optimized.py}: Performance-optimized HMC variant for GPU/cluster environments
-    
-    \item \texttt{UIDTv3.2\_Hmc-Simulaton-Diagnostik.py}: Extended diagnostics (step-size stability, acceptance rates, autocorrelation times)
-    
-    \item \texttt{UIDTv3.2\_Lattice\_Validation.py}: Cross-checks against lattice QCD continuum limits
-    
-    \item \texttt{UIDTv3.2CosmologySimulator.py}: Cosmological observable synthesis ($H_0$, $S_8$, $w(z)$, dark energy scaling)
-    
-    \item \texttt{UIDTv3.2Z-scor3-glueball.py}: Z-score analysis of glueball spectrum vs lattice benchmarks
-    
-    \item \texttt{rg\_flow\_analysis.py}: Renormalization-group flow analysis confirming fixed-point relation $5\kappa^2 = 3\lambda_S$
-    
-    \item \texttt{error\_propagation.py}: Full uncertainty budget and Monte Carlo error propagation
-    
-    \item \texttt{verification\_code.py}: Compact canonical solver for quick-verification runs
-    
-    \item \texttt{requirements.txt}: Complete Python package dependencies
+    \item \texttt{UIDT-3.6.1-Verification.py}: Newton--Raphson solver for the coupled
+          field equations, computing $\Delta$, $\gamma$, $\kappa$, $\lambda_S$, $m_S$
+          with residuals $< 10^{-14}$
+    \item \texttt{UIDT-3.6.1-Verification-visual.py}: Visualization engine generating
+          Figures~12.1--12.4 (stability landscape, Monte Carlo posteriors,
+          $\gamma$--$\Psi$ correlation, unification map)
+    \item \texttt{rg\_flow\_analysis.py}: Renormalization-group flow analysis confirming
+          the fixed-point relation $5\kappa^2 = 3\lambda_S$
+    \item \texttt{error\_propagation.py}: Full uncertainty budget and Monte Carlo error
+          propagation
+    \item \texttt{uidt\_proof\_core.py}: Core proof engine for mass-gap derivation chain
 \end{itemize}
+
+\noindent\textbf{Lattice QCD simulation pipeline} (\texttt{simulation/}):
+\begin{itemize}
+    \item \texttt{UIDTv3.6.1\_HMC\_Optimized.py}: Hybrid Monte Carlo lattice QCD
+          pipeline, optimized for GPU/cluster environments
+    \item \texttt{UIDTv3\_6\_1\_HMC\_Real.py}: Full real-valued HMC implementation with
+          SU(3) gauge group
+    \item \texttt{UIDTv3.6.1\_Omelyna-Integrator2o.py}: Omelyan second-order symplectic
+          integrator for molecular dynamics trajectories
+    \item \texttt{UIDTv3.6.1\_Ape-smearing.py}: APE smearing for noise reduction in
+          glueball correlator measurements
+    \item \texttt{UIDTv3.6.1\_su3\_expm\_cayley\_hamiltonian-Modul.py}: SU(3) Lie-algebra
+          module (matrix exponential via Cayley--Hamilton decomposition)
+    \item \texttt{UIDTv3.6.1\_Scalar-Analyse.py}: Scalar correlator extraction and
+          effective-mass analysis
+    \item \texttt{UIDTv3.6.1\_Monitor-Auto-tune.py}: Step-size auto-tuning, acceptance
+          rate monitoring, and autocorrelation diagnostics
+    \item \texttt{UIDTv3.6.1\_Update-Vector.py}: Gauge-link update vectors for
+          Metropolis--Hastings accept/reject
+    \item \texttt{UIDTv3.6.1\_CosmologySimulator.py}: Cosmological observable synthesis
+          ($H_0$, $S_8$, $w(z)$, dark energy scaling)
+    \item \texttt{UIDTv3.6.1\_Evidence\_Analyzer.py}: Evidence classification engine
+          (Categories A--E)
+    \item \texttt{UIDT-3.6.1-visual.py}: Lattice visualization and diagnostic plots
+    \item \texttt{uidt-cosmic-simulation.py}: Cosmic evolution simulator with
+          $\gamma(z)$ scaling
+\end{itemize}
+
+\noindent\textbf{Clay Mathematics Institute submission audit}
+(\texttt{clay-submission/02\_VerificationCode/}):
+\begin{itemize}
+    \item 17 specialized verification scripts covering BRST cohomology
+          (\texttt{brst\_cohomology\_verification.py}), Gribov copy analysis
+          (\texttt{gribov\_analysis\_verification.py},
+          \texttt{gribov\_suppression\_verification.py}), homotopy deformation
+          (\texttt{homotopy\_deformation\_verification.py}), Slavnov--Taylor identities
+          (\texttt{slavnov\_taylor\_ccr\_verification.py}), domain analysis
+          (\texttt{domain\_analysis\_verification.py}), Osterwalder--Schrader axioms
+          (\texttt{os\_axiom\_verification.py}), SHA-256 integrity checksums
+          (\texttt{checksums\_sha256\_gen.py}), and composite Clay audit pipelines
+          (\texttt{UIDT\_Clay\_Verifier.py}, \texttt{UIDT\_Proof\_Engine.py},
+          \texttt{uidt\_complete\_clay\_audit.py})
+\end{itemize}
+
+\noindent
+A containerized reproduction environment is provided via
+\texttt{clay-submission/Dockerfile.clay\_audit}.
 
 \subsection{Datasets}
 
-All datasets are included in the repository under \texttt{Supplementary\_MonteCarlo\_HighPrecision/}:
+All numerical datasets are version-controlled within the repository. The audit
+data directory \texttt{clay-submission/03\_AuditData/} maintains a versioned
+record across three development stages:
 
 \begin{itemize}
-    \item \texttt{UIDT\_MonteCarlo\_samples\_100k.csv}: 100,000 Monte Carlo samples with 10 parameters ($m_S$, $\kappa$, $\lambda_S$, $C$, $\alpha_s$, $\Pi_S$, $\Delta$, kinetic\_VEV, $\gamma$, $\Psi$)
-    
-    \item \texttt{UIDT\_MonteCarlo\_summary.csv}: Statistical summary (mean, std, 2.5\%, 97.5\% percentiles) for $\Delta$, $\gamma$, $\Psi$
-    
-    \item \texttt{UIDT\_MonteCarlo\_correlation\_matrix.csv}: Full 8×8 correlation matrix for all parameters
-    
-    \item \texttt{UIDT\_HighPrecision\_mean\_values.csv}: High-precision mean values from canonical solver
-    
-    \item \texttt{lattice\_comparison.xlsx}: Compilation of lattice QCD glueball mass determinations from literature
-    
-    \item \texttt{uidt\_solutions.csv}: Two-branch solution table with perturbativity flags
-    
-    \item \texttt{kappa\_scan\_results.csv}: $\kappa$-scan results for stability landscape analysis
+    \item \texttt{3.2/}: Original v3.2 Monte Carlo data---100,000 samples with 10
+          parameters ($m_S$, $\kappa$, $\lambda_S$, $C$, $\alpha_s$, $\Pi_S$,
+          $\Delta$, kinetic VEV, $\gamma$, $\Psi$), full $8\times 8$ correlation
+          matrix, statistical summary, and high-precision mean values
+    \item \texttt{3.6.1-corrected/}: Corrected v3.6.1 audit data with updated
+          high-precision constants and recomputed Monte Carlo ensembles
+    \item \texttt{3.7.0-(gamma-alpha\_s-correlation\_weak)/}: v3.7.0 data isolating the
+          $\gamma$--$\alpha_s$ correlation structure with updated constants
+    \item \texttt{AUDIT\_REPORT.md}: Comprehensive audit report documenting all
+          corrections and version transitions
+\end{itemize}
+
+\noindent
+Additional datasets are distributed across the following directories:
+
+\begin{itemize}
+    \item \texttt{verification/data/}: Canonical solution table
+          (\texttt{uidt\_solutions.csv}), $\kappa$-scan results
+          (\texttt{Verification\_Report-kappa\_scan\_results.csv}), lattice QCD
+          compilation (\texttt{lattice\_comparison.xlsx}), and verification reports
+          for all major subsystems (RG flow, error propagation, scalar mass,
+          string tension, lattice validation)
+    \item \texttt{clay-submission/07\_MonteCarlo/}: Monte Carlo statistics summary
+          (\texttt{UIDT\_MC\_samples\_summary.csv},
+          \texttt{MC\_Statistics\_Summary.txt})
 \end{itemize}
 
 \subsection{Archival Records}
 
 \begin{itemize}
-    \item \textbf{Zenodo Archive (Canonical):} \href{https://doi.org/10.5281/zenodo.17835200}{DOI: 10.5281/zenodo.17835200}
-    
-    Contains: Complete UIDT framework, mathematical appendix, HMC simulation code, Monte Carlo datasets, and figure generation scripts. Permanent archival record with version control. Note: v3.3 record permanently withdrawn due to data corruption (see Version History notice).
-    
-    \item \textbf{OSF Extended Derivations:} \href{https://doi.org/10.17605/OSF.IO/Q8R74}{DOI: 10.17605/OSF.IO/Q8R74}
-    
-    Contains: Supplementary mathematical derivations, extended RG analysis, and cosmological model details.
+    \item \textbf{Zenodo Archive (Canonical):}
+          \href{https://doi.org/10.5281/zenodo.17835200}{DOI: 10.5281/zenodo.17835200}
+
+          Contains the complete UIDT framework v3.7.3, mathematical appendix, HMC
+          simulation code, Monte Carlo datasets, Clay submission package, and figure
+          generation scripts. Permanent archival record with immutable version
+          history maintained by CERN Data Centre infrastructure. Note: the v3.3
+          record has been permanently withdrawn due to data corruption (see Version
+          History notice).
+
+    \item \textbf{OSF Extended Derivations:}
+          \href{https://doi.org/10.17605/OSF.IO/Q8R74}{DOI: 10.17605/OSF.IO/Q8R74}
+
+          Contains supplementary mathematical derivations, extended
+          renormalization-group analysis, and cosmological model details.
 \end{itemize}
 
 \subsection{Reproduction Protocol}
@@ -2483,52 +2541,70 @@ To reproduce all results from scratch:
 
 \begin{verbatim}
 # Clone repository
-git clone https://github.com/badbugsarts-hue/UIDT-Framework-V3.2-Canonical
-cd UIDT-Framework-V3.2-Canonical
+git clone https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical
+cd UIDT-Framework-v3.7.2-Canonical
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r verification/requirements.txt
 
 # Core verification (reproduces Tables 1-3, canonical solution)
-python UIDT-3.5-Verification.py
+python verification/scripts/UIDT-3.6.1-Verification.py
 
-# Monte Carlo validation (reproduces Figures 12.2-12.3, uncertainty budget)
-python monte_carlo_validation.py --samples 100000
+# Uncertainty budget and error propagation
+python verification/scripts/error_propagation.py
+
+# RG flow fixed-point analysis
+python verification/scripts/rg_flow_analysis.py
 
 # Cosmological predictions (reproduces H0, S8 values)
-python UIDTv3.2CosmologySimulator.py --desi-dr2
-
-# Lattice QCD comparison (reproduces Figure 12.1, z-scores)
-python UIDTv3.2_Lattice_Validation.py
+python simulation/UIDTv3.6.1_CosmologySimulator.py
 
 # Generate all figures (reproduces Figures 12.1-12.4)
-python UIDT-3.5-Verification-visual.py
+python verification/scripts/UIDT-3.6.1-Verification-visual.py
 
+# Full Clay audit (optional; runs all 17 verification scripts)
+cd clay-submission && docker build -f Dockerfile.clay_audit -t uidt-audit .
+docker run uidt-audit
 \end{verbatim}
 \vspace{0.2em}
 \textbf{Computational Requirements:}
 \begin{itemize}
-    \item Standard desktop (Intel i5 or equivalent, 16GB RAM)
-    \item Python $\geq$ 3.10
-    \item Total runtime: $\sim$10 minutes (excluding HMC full lattice run)
-    \item HMC full lattice: requires GPU (NVIDIA CUDA), runtime $\sim$24 hours for $32^4$ lattice
+    \item Standard desktop (Intel i5 or equivalent, 16\,GB RAM)
+    \item Python $\geq$ 3.10 with \texttt{numpy}$\,\geq\,$1.24,
+          \texttt{scipy}$\,\geq\,$1.10, \texttt{matplotlib}$\,\geq\,$3.7,
+          \texttt{pandas}$\,\geq\,$2.0
+    \item Total runtime: ${\sim}\,10$\,min (excluding HMC full lattice run)
+    \item HMC full lattice: requires GPU (NVIDIA CUDA), runtime
+          ${\sim}\,24$\,h for $32^4$ lattice
 \end{itemize}
+
+\noindent
+Data integrity can be verified independently via
+\texttt{clay-submission/02\_VerificationCode/checksums\_sha256\_gen.py}, which
+computes SHA-256 hashes for all archival files.
 
 \subsection{External Data Sources}
 
 \begin{itemize}
-    \item \textbf{DESI DR2 Cosmology:} Public data release from arXiv:2503.14738 (DESI Collaboration, 2025). Accessed via official DESI data portal.
-    
-    \item \textbf{Lattice QCD Benchmarks:} Compiled from peer-reviewed publications listed in References. Individual lattice results are cited in Table~\ref{tab:lattice_comparison}.
-    
-    \item \textbf{Planck 2018:} CMB constraints from Planck Collaboration (2020), arXiv:1807.06209.
-    
-    \item \textbf{JWST Early Galaxies:} Data from JWST CCHP team via STScI MAST archive.
+    \item \textbf{DESI DR2 Cosmology:} Public data release from
+          arXiv:2503.14738 (DESI Collaboration, 2025). Accessed via the official
+          DESI data portal.
+
+    \item \textbf{Lattice QCD Benchmarks:} Compiled from peer-reviewed publications
+          listed in the References. Individual lattice results are cited in
+          Table~\ref{tab:lattice_comparison}.
+
+    \item \textbf{Planck 2018:} CMB constraints from the Planck Collaboration
+          (2020), arXiv:1807.06209.
+
+    \item \textbf{JWST Early Galaxies:} Data from the JWST CCHP team via the
+          STScI MAST archive.
 \end{itemize}
 
 \subsection{Figure Regeneration}
 
-All figures in this manuscript can be regenerated from the provided scripts:
+All figures in this manuscript can be regenerated deterministically from the
+provided scripts and data:
 
 \begin{table}[H]
 \centering
@@ -2537,10 +2613,10 @@ All figures in this manuscript can be regenerated from the provided scripts:
 \toprule
 \textbf{Figure} & \textbf{Script} & \textbf{Data Dependency} \\
 \midrule
-Fig. 12.1 & \texttt{UIDT-3.5-Verification-visual.py} & \texttt{kappa\_scan\_results.csv} \\
-Fig. 12.2 & \texttt{UIDT-3.5-Verification-visual.py} & \texttt{UIDT\_MonteCarlo\_samples\_100k.csv} \\
-Fig. 12.3 & \texttt{UIDT-3.5-Verification-visual.py} & \texttt{UIDT\_MonteCarlo\_samples\_100k.csv} \\
-Fig. 12.4 & \texttt{UIDT-3.5-Verification-visual.py} & \texttt{UIDT\_HighPrecision\_mean\_values.csv} \\
+Fig.~12.1 & \texttt{UIDT-3.6.1-Verification-visual.py} & \texttt{kappa\_scan\_results.csv} \\
+Fig.~12.2 & \texttt{UIDT-3.6.1-Verification-visual.py} & \texttt{UIDT\_MonteCarlo\_samples\_100k.csv} \\
+Fig.~12.3 & \texttt{UIDT-3.6.1-Verification-visual.py} & \texttt{UIDT\_MonteCarlo\_samples\_100k.csv} \\
+Fig.~12.4 & \texttt{UIDT-3.6.1-Verification-visual.py} & \texttt{UIDT\_HighPrecision\_mean\_values.csv} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2548,15 +2624,21 @@ Fig. 12.4 & \texttt{UIDT-3.5-Verification-visual.py} & \texttt{UIDT\_HighPrecisi
 \subsection{Version Control and Long-Term Preservation}
 
 \begin{itemize}
-    \item \textbf{GitHub:} Active development and issue tracking. Latest updates and bug fixes.
-    \item \textbf{Zenodo:} Permanent DOI-based archival. Guaranteed 20+ year preservation through CERN infrastructure.
-    \item \textbf{OSF:} Preregistration and supplementary materials with permanent DOI.
+    \item \textbf{GitHub:} Active development repository under the \texttt{Mass-Gap}
+          organization. Issue tracking and continuous integration enabled.
+    \item \textbf{Zenodo:} Permanent DOI-based archival with guaranteed
+          $20{+}$\,year preservation through CERN Data Centre infrastructure.
+    \item \textbf{OSF:} Preregistration and supplementary materials with permanent
+          DOI.
 \end{itemize}
 
-\textbf{Contact for Data Access Issues:} philipp.rietz@protonmail.com
+\noindent
+\textbf{Contact for Data Access Issues:} pr88@gmx.de
 
-All code and data are released under permissive open-source licenses to maximize 
-scientific reproducibility and enable independent verification by the research community.
+\noindent
+All code and data are released under permissive open-source licenses to maximize
+scientific reproducibility and enable independent verification by the research
+community.
 
 %=============================================================================
 % SECTION 11: CONCLUSIONS
