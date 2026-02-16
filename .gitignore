@@ -136,6 +136,9 @@ temp/
 .traycer/
 CLAUDE.md
 
+# UIDT-OS path resolver (contains local paths, internal only)
+verification/uidt_os_path.py
+
 # UIDT-OS cache artifacts in manuscript
 manuscript/.uidt_os_cache/
 
