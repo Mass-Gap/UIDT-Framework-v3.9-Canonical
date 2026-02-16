@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "A Constructive Proof of the Yang-Mills Mass Gap via Banach Contraction (UIDT v3.7.0)"
+title: "A Constructive Proof of the Yang-Mills Mass Gap via Banach Contraction (UIDT v3.7.3)"
 message: "If you use this proof or verification code, please cite it using the metadata from this file."
 type: software
 authors:
@@ -29,8 +29,8 @@ keywords:
   - Gauge Theory
   - Quantum Field Theory
 license: CC-BY-4.0
-version: "3.7.2"
-date-released: "2025-12-24"
+version: "3.7.3"
+date-released: "2026-02-14"
 preferred-citation:
   type: article
   authors:
@@ -38,7 +38,7 @@ preferred-citation:
       given-names: Philipp
       orcid: "https://orcid.org/0009-0007-4307-1609"
   title: "A Constructive Proof of the Yang-Mills Mass Gap via Banach Contraction"
-  year: 2025
+  year: 2026
   doi: "10.5281/zenodo.18003018"
   journal: "Zenodo"
   notes: "Clay Mathematics Institute Submission"

@@ -1,6 +1,6 @@
 # Evidence Classification System
 
-**UIDT v3.7.2**
+**UIDT v3.7.3** | Last Updated: 2026-02-14
 
 > **Purpose:** Transparent classification of all claims by evidence strength
 > **Principle:** Every quantitative claim MUST be tagged with Category A-E
@@ -255,10 +255,10 @@ Every category change MUST be logged with:
 ```bibtex
 @misc{Rietz2025_EvidenceClassification,
   author = {Rietz, Philipp},
-  title  = {UIDT Evidence Classification System v3.7.2},
+  title  = {UIDT Evidence Classification System v3.7.3},
   year   = {2025},
   doi    = {10.5281/zenodo.17835200},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical}
+  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical}
 }
 ```
 

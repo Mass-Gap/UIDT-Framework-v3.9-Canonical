@@ -1,6 +1,6 @@
 # Citation Guide
 
-**UIDT v3.7.2**
+**UIDT v3.7.3** | Last Updated: 2026-02-14
 
 > **Purpose:** Provide proper citation formats for UIDT framework
 > **Principle:** Academic integrity requires accurate attribution
@@ -14,7 +14,7 @@
 ```bibtex
 @article{Rietz2025_UIDT_v372,
   author    = {Rietz, Philipp},
-  title     = {Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.2)},
+  title     = {Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.3)},
   year      = {2025},
   month     = {December},
   doi       = {10.5281/zenodo.17835200},
@@ -27,15 +27,15 @@
 
 ### APA 7th Edition
 
-Rietz, P. (2025). *Universal gamma scaling: Unified Information-Density Theory (UIDT v3.7.2)* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.17835200
+Rietz, P. (2025). *Universal gamma scaling: Unified Information-Density Theory (UIDT v3.7.3)* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.17835200
 
 ### MLA 9th Edition
 
-Rietz, Philipp. "Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.2)." *Zenodo*, 2025, https://doi.org/10.5281/zenodo.17835200.
+Rietz, Philipp. "Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.3)." *Zenodo*, 2025, https://doi.org/10.5281/zenodo.17835200.
 
 ### Chicago 17th Edition
 
-Rietz, Philipp. 2025. "Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.2)." Zenodo. https://doi.org/10.5281/zenodo.17835200.
+Rietz, Philipp. 2025. "Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.3)." Zenodo. https://doi.org/10.5281/zenodo.17835200.
 
 ---
 
@@ -65,16 +65,16 @@ Rietz, P. (2025). *Constructive existence and uniqueness of the Yang-Mills spect
 ```bibtex
 @software{Rietz2025_Verification,
   author    = {Rietz, Philipp},
-  title     = {UIDT v3.7.2 Verification Suite},
+  title     = {UIDT v3.7.3 Verification Suite},
   year      = {2025},
-  url       = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical},
+  url       = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical},
   doi       = {10.5281/zenodo.17835200},
   version   = {3.7.2}
 }
 ```
 
 **APA:**
-Rietz, P. (2025). *UIDT v3.7.2 verification suite* (Version 3.7.2) [Computer software]. GitHub. https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical
+Rietz, P. (2025). *UIDT v3.7.3 verification suite* (Version 3.7.3) [Computer software]. GitHub. https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical
 
 ---
 
@@ -87,7 +87,7 @@ Rietz, P. (2025). *UIDT v3.7.2 verification suite* (Version 3.7.2) [Computer sof
   title   = {Analytical Derivation of Yang-Mills Mass Gap via Information Geometry},
   journal = {arXiv preprint},
   year    = {2025},
-  note    = {UIDT v3.7.2 - Category A: $\Delta = 1.710 \pm 0.015$ GeV},
+  note    = {UIDT v3.7.3 - Category A: $\Delta = 1.710 \pm 0.015$ GeV},
   doi     = {10.5281/zenodo.17835200}
 }
 ```
@@ -99,7 +99,7 @@ Rietz, P. (2025). *UIDT v3.7.2 verification suite* (Version 3.7.2) [Computer sof
   title  = {Casimir Force Anomaly Prediction from UIDT Framework},
   year   = {2025},
   note   = {Category D: Predicted +0.59\% anomaly at 0.66 nm (unverified)},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/falsification-criteria.md}
+  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/falsification-criteria.md}
 }
 ```
 
@@ -147,7 +147,7 @@ Under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/), you **m
 
 1. **Give Credit:**
    - Author name: Philipp Rietz
-   - Title: UIDT v3.7.2
+   - Title: UIDT v3.7.3
    - DOI: 10.5281/zenodo.17835200
 
 2. **Link to License:**
@@ -174,7 +174,7 @@ Under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/), you **m
 ### For Research Papers
 
 **Using UIDT Framework:**
-> "This work builds upon the Unified Information-Density Theory (UIDT v3.7.2) framework by Rietz (2025, DOI: 10.5281/zenodo.17835200), licensed under CC BY 4.0. We extended the verification suite to include [description of changes]."
+> "This work builds upon the Unified Information-Density Theory (UIDT v3.7.3) framework by Rietz (2025, DOI: 10.5281/zenodo.17835200), licensed under CC BY 4.0. We extended the verification suite to include [description of changes]."
 
 **Citing Specific Results:**
 > "The Yang-Mills mass gap Δ = 1.710 ± 0.015 GeV (Category A: Proven) was derived by Rietz (2025) using information-geometric coupling. This value agrees with quenched lattice QCD (z = 0.37σ)."
@@ -188,7 +188,7 @@ Under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/), you **m
 
 **Using Verification Scripts:**
 ```python
-# UIDT v3.7.2 Verification Suite
+# UIDT v3.7.3 Verification Suite
 # Author: Philipp Rietz
 # DOI: 10.5281/zenodo.17835200
 # License: CC BY 4.0
@@ -199,7 +199,7 @@ import verification_script  # Original UIDT code
 ```
 
 **In README:**
-> **Attribution:** This project uses the UIDT v3.7.2 verification suite by Philipp Rietz (https://doi.org/10.5281/zenodo.17835200), licensed under CC BY 4.0. Modifications: [list changes].
+> **Attribution:** This project uses the UIDT v3.7.3 verification suite by Philipp Rietz (https://doi.org/10.5281/zenodo.17835200), licensed under CC BY 4.0. Modifications: [list changes].
 
 ---
 
@@ -207,11 +207,11 @@ import verification_script  # Original UIDT code
 
 **Slide Footer:**
 ```
-UIDT v3.7.2 | Rietz (2025) | DOI: 10.5281/zenodo.17835200 | CC BY 4.0
+UIDT v3.7.3 | Rietz (2025) | DOI: 10.5281/zenodo.17835200 | CC BY 4.0
 ```
 
 **Acknowledgments Slide:**
-> "This work utilizes the Unified Information-Density Theory framework (UIDT v3.7.2) developed by Philipp Rietz. Framework available at https://doi.org/10.5281/zenodo.17835200 under CC BY 4.0 license."
+> "This work utilizes the Unified Information-Density Theory framework (UIDT v3.7.3) developed by Philipp Rietz. Framework available at https://doi.org/10.5281/zenodo.17835200 under CC BY 4.0 license."
 
 ---
 
@@ -223,7 +223,7 @@ UIDT v3.7.2 | Rietz (2025) | DOI: 10.5281/zenodo.17835200 | CC BY 4.0
   author = {Rietz, Philipp},
   title  = {UIDT Evidence Classification System (Category A-E)},
   year   = {2025},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/evidence-classification.md}
+  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/evidence-classification.md}
 }
 ```
 
@@ -233,7 +233,7 @@ UIDT v3.7.2 | Rietz (2025) | DOI: 10.5281/zenodo.17835200 | CC BY 4.0
   author = {Rietz, Philipp},
   title  = {UIDT Known Limitations (L1-L6)},
   year   = {2025},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/limitations.md}
+  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/limitations.md}
 }
 ```
 
@@ -243,7 +243,7 @@ UIDT v3.7.2 | Rietz (2025) | DOI: 10.5281/zenodo.17835200 | CC BY 4.0
   author = {Rietz, Philipp},
   title  = {UIDT Falsification Matrix},
   year   = {2025},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/falsification-criteria.md}
+  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/falsification-criteria.md}
 }
 ```
 
@@ -273,7 +273,7 @@ If citing UIDT alongside other work, use:
 ```bibtex
 @article{Rietz2025_UIDT,
   author = {Rietz, Philipp},
-  title  = {UIDT v3.7.2},
+  title  = {UIDT v3.7.3},
   ...
 }
 
@@ -298,7 +298,7 @@ If citing UIDT alongside other work, use:
 **Allowed:** ✅ Yes (with attribution)
 
 **Example Commercial Attribution:**
-> "This product incorporates analytical methods from UIDT v3.7.2 (Rietz, 2025, https://doi.org/10.5281/zenodo.17835200), licensed under CC BY 4.0."
+> "This product incorporates analytical methods from UIDT v3.7.3 (Rietz, 2025, https://doi.org/10.5281/zenodo.17835200), licensed under CC BY 4.0."
 
 ---
 

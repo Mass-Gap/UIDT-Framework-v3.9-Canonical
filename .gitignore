@@ -10,11 +10,7 @@
 
 UIDT-OS/
 UIDT-OS.zip
-UIDT-OS*
-
-# Verify exclusion with: git ls-files | grep -i "uidt-os"
-# Expected result: (empty)
-# If ANY files appear, immediately: git rm -r --cached UIDT-OS*
+UIDT-OS*.zip
 
 # ============================================================================
 # LARGE ARCHIVES (Redundant - use GitHub Releases instead)
@@ -129,3 +125,32 @@ temp/
 *_SUPERSEDED.*
 *_WITHDRAWN.*
 *_DEPRECATED.*
+
+# Auxly - AI Task Management (internal data)
+.auxly/
+
+# ============================================================================
+# AI / IDE TOOL CONFIGS (internal, not for GitHub)
+# ============================================================================
+.trae/
+.traycer/
+CLAUDE.md
+
+# UIDT-OS cache artifacts in manuscript
+manuscript/.uidt_os_cache/
+
+# Windows null device artifact
+nul
+.kilocode/skills/changelog-generator/SKILL.md
+.kilocode/mcp.json
+.kilocode/skills/content-research-writer/SKILL.md
+.kilocode/skills/internal-comms/LICENSE.txt
+.kilocode/skills/internal-comms/SKILL.md
+.kilocode/skills/internal-comms/examples/3p-updates.md
+.kilocode/skills/internal-comms/examples/company-newsletter.md
+.kilocode/skills/internal-comms/examples/faq-answers.md
+.kilocode/skills/internal-comms/examples/general-comms.md
+.kilocode/skills/lead-research-assistant/SKILL.md
+.kilocodemodes
+clay-submission/CITATION.cff
+.cursor/rules/uidt-os-system.mdc

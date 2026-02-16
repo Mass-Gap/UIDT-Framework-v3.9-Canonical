@@ -10,29 +10,59 @@
 # ============================================================================
 
 # High-precision arithmetic (ESSENTIAL)
-mpmath>=1.3.0
+mpmath==1.3.0
 
 # Numerical computing
-numpy>=1.24.0
-scipy>=1.10.0
+numpy==2.4.2
+scipy==1.17.0
 
 # Visualization
-matplotlib>=3.7.0
+matplotlib==3.10.8
 
 # Data handling
-pandas>=2.0.0
+pandas==2.3.3
 
 # Symbolic mathematics
-sympy>=1.12
+sympy==1.14.0
 
 # Optional: Excel file support
-openpyxl>=3.1.0
+openpyxl==3.1.5
 
 # Optional: Progress bars
-tqdm>=4.65.0
+tqdm==4.66.4
 
 # Optional: Testing
-pytest>=7.3.0
+pytest==8.2.2
+
+langgraph==0.2.50
+langgraph-checkpoint-sqlite==1.0.3
+crewai==0.11.2; python_version < "3.14"
+crewai-tools==0.11.0; python_version < "3.14"
+pyautogen==0.10.0; python_version < "3.12"
+llama-index==0.14.14
+llama-index-vector-stores-chroma==0.5.5
+sentence-transformers==3.0.1; python_version < "3.14"
+neo4j-graphrag==1.13.0
+chromadb==1.5.0
+prefect==3.6.17
+dvc==3.66.1
+dvc-s3==3.2.0
+mlflow==3.9.0
+great-expectations==0.18.24; python_version < "3.14"
+pandera==0.29.0
+plotly==6.5.2
+kaleido==0.2.1
+altair==6.0.0
+vega_datasets==0.9.0
+unstructured[all-docs]==0.15.9; python_version < "3.14"
+llama-parse==0.5.8; python_version < "3.14"
+marker-pdf==0.2.16; python_version < "3.14"
+pylatex==1.4.2
+stable-baselines3==2.3.2; python_version < "3.14"
+fastapi==0.129.0
+uvicorn==0.40.0
+sqlmodel==0.0.33
+pydantic==2.12.5
 
 # ============================================================================
 # VERIFICATION NOTES

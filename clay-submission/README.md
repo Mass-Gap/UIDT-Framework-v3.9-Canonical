@@ -1,13 +1,13 @@
 ```
 # Constructive Yang-Mills Mass Gap  
-# UIDT v3.7.2: Existence and Uniqueness 
+# UIDT v3.7.3: Existence and Uniqueness 
 # via Osterwalder-Schrader Axioms, BRST Analysis, and Extended Functional Renormalization Group
 
 ## Mathematical Proof Package (Pure SU(3) Yang–Mills on ℝ⁴)
 
 **Author:** Philipp Rietz (ORCID: 0009-0007-4307-1609)  
 **Affiliation:** Independent Researcher  
-**Version:** 3.7.1 (December 2025)  
+**Version:** 3.7.3 (February 2026)  
 **DOI:** 10.5281/zenodo.18003018  
 **License:** CC BY 4.0
 

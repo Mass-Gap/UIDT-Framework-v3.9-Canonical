@@ -1,6 +1,6 @@
 # Falsification Matrix
 
-**UIDT v3.7.2**
+**UIDT v3.7.3** | Last Updated: 2026-02-14
 
 > **Purpose:** Define experimental tests that would refute the theory
 > **Principle:** A theory that cannot be falsified is not scientific
@@ -17,7 +17,7 @@ The UIDT framework makes **testable predictions** across quantum field theory, l
 
 ## CRITICAL TESTS (Theory-Killing)
 
-### Test 1: Lattice QCD Continuum Limit 🔴 HIGHEST PRIORITY
+### F1: Lattice QCD Continuum Limit 🔴 HIGHEST PRIORITY
 
 **Prediction:**
 Yang-Mills spectral gap Δ = 1.710 ± 0.015 GeV [Category A]
@@ -50,7 +50,7 @@ If lattice continuum limit yields:
 
 ---
 
-### Test 2: Casimir Precision Experiments ⚠️ TECHNOLOGY-LIMITED
+### F2: Casimir Precision Experiments ⚠️ TECHNOLOGY-LIMITED
 
 **Prediction:**
 Casimir force anomaly +0.59% at λ = 0.66 nm [Category D: Unverified]
@@ -92,7 +92,7 @@ If experimental measurement yields:
 
 ## STRONG TESTS (Pillar-Specific)
 
-### Test 3: DESI Year 5 Dark Energy Evolution 🔬 ONGOING
+### F3: DESI Year 5 Dark Energy Evolution 🔬 ONGOING
 
 **Prediction:**
 Dynamic dark energy w(z) ≠ -1 at high redshift (DESI DR2 calibrated) [Category C]
@@ -120,7 +120,7 @@ Monitor DESI publications for equation-of-state w(z) constraints
 
 ---
 
-### Test 4: LHC Scalar Resonance Search (Run 4) 📊 LONG-TERM
+### F4: LHC Scalar Resonance Search (Run 4) 📊 LONG-TERM
 
 **Prediction:**
 Scalar particle m_S = 1.705 ± 0.015 GeV [Category D: Unverified]
@@ -152,7 +152,7 @@ Monitor ATLAS/CMS publications for light scalar searches
 
 ## MODERATE TESTS (Calibration-Dependent)
 
-### Test 5: Hubble Tension Resolution (JWST Cycle 3-4) 🌌 SHORT-TERM
+### F5: Hubble Tension Resolution (JWST Cycle 3-4) 🌌 SHORT-TERM
 
 **Prediction:**
 H₀ = 70.4 ± 0.16 km/s/Mpc (DESI-calibrated) [Category C]
@@ -199,8 +199,8 @@ Set arXiv alerts for keywords:
 **Independent Verification:**
 1. Clone repository:
    ```bash
-   git clone https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical
-   cd UIDT-Framework-v3.7.2-Canonical
+   git clone https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical
+   cd UIDT-Framework-v3.7.3-Canonical
    ```
 
 2. Run verification:
@@ -235,11 +235,11 @@ Set arXiv alerts for keywords:
 
 | Test ID | Prediction | Category | Falsification Threshold | Timeline | Status |
 |---------|------------|----------|------------------------|----------|--------|
-| **T1** | Δ = 1.710 GeV | A | Lattice >3σ exclusion | 2026-2028 | ✅ Currently passes (z=0.37σ) |
-| **T2** | Casimir +0.59% | D | \|ΔF/F\| < 0.1% @ 0.66 nm | 2028+ | ❌ No data exists |
-| **T3** | w(z) dynamic | C | w = -1.00 ± 0.01 (static) | 2027 | ✅ DESI Y1 supports |
-| **T4** | m_S = 1.705 GeV | D | LHC >5σ exclusion 1.5-1.9 GeV | 2029+ | ⚠️ No search yet |
-| **T5** | H₀ = 70.4 km/s/Mpc | C | >3σ from 70.4 (independent) | 2025-2026 | ⚠️ JWST ongoing |
+| **F1** | Δ = 1.710 GeV | A | Lattice >3σ exclusion | 2026-2028 | ✅ Currently passes (z=0.37σ) |
+| **F2** | Casimir +0.59% | D | \|ΔF/F\| < 0.1% @ 0.66 nm | 2028+ | ❌ No data exists |
+| **F3** | w(z) dynamic | C | w = -1.00 ± 0.01 (static) | 2027 | ✅ DESI Y1 supports |
+| **F4** | m_S = 1.705 GeV | D | LHC >5σ exclusion 1.5-1.9 GeV | 2029+ | ⚠️ No search yet |
+| **F5** | H₀ = 70.4 km/s/Mpc | C | >3σ from 70.4 (independent) | 2025-2026 | ⚠️ JWST ongoing |
 
 ---
 
@@ -278,10 +278,10 @@ Set arXiv alerts for keywords:
 ```bibtex
 @misc{Rietz2025_Falsification,
   author = {Rietz, Philipp},
-  title  = {UIDT v3.7.2 Falsification Matrix},
+  title  = {UIDT v3.7.3 Falsification Matrix},
   year   = {2025},
   doi    = {10.5281/zenodo.17835200},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/falsification-criteria.md}
+  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/falsification-criteria.md}
 }
 ```
 

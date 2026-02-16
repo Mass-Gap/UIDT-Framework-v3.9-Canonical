@@ -1,6 +1,6 @@
 # Known Limitations
 
-**UIDT v3.7.2**
+**UIDT v3.7.3** | Last Updated: 2026-02-14
 
 > **Purpose:** Transparent documentation of unresolved theoretical issues
 > **Principle:** Scientific honesty requires acknowledging what we don't know
@@ -134,7 +134,7 @@ Physical or mathematical derivation of N=99 from:
 **Issue:**
 UIDT formula for electron mass shows **23% residual** when applying universal γ-scaling.
 
-**Current Status (v3.7.2):**
+**Current Status (v3.7.3):**
 - Predicted: m_e^UIDT ≈ 0.392 MeV
 - Observed: m_e^obs = 0.511 MeV
 - **Residual:** 23% discrepancy
@@ -256,7 +256,7 @@ v = 0.854 MeV in Framework v3.2 was **erroneous** due to algebraic error.
 
 ## Falsification Triggers
 
-If any of the following experimental results occur, UIDT v3.7.2 requires **major revision**:
+If any of the following experimental results occur, UIDT v3.7.3 requires **major revision**:
 
 1. **Lattice QCD Continuum Limit:**
    Δ excluded from 1.5-1.9 GeV range at >3σ confidence
@@ -303,10 +303,10 @@ See [falsification-criteria.md](falsification-criteria.md) for complete experime
 ```bibtex
 @misc{Rietz2025_UIDT_Limitations,
   author = {Rietz, Philipp},
-  title  = {UIDT v3.7.2 Known Limitations (L1-L6)},
+  title  = {UIDT v3.7.3 Known Limitations (L1-L6)},
   year   = {2025},
   doi    = {10.5281/zenodo.17835200},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/limitations.md}
+  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/limitations.md}
 }
 ```
 
@@ -319,4 +319,4 @@ See [falsification-criteria.md](falsification-criteria.md) for complete experime
 
 **Last Updated:** 2026-02-05
 **DOI:** 10.5281/zenodo.17835200
-**Framework Version:** UIDT v3.7.2 Canonical
+**Framework Version:** UIDT v3.7.3 Canonical

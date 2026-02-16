@@ -5,7 +5,7 @@
     
     <identifier identifierType="DOI">10.5281/zenodo.17835200</identifier>
     <titles>
-        <title>Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.2)</title>
+        <title>Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.3)</title>
         <subtitle>Canonical Reference Implementation ("Clean State")</subtitle>
     </titles>
     <creators>
@@ -15,7 +15,7 @@
             <affiliation>Independent Researcher</affiliation>
         </creator>
     </creators>
-    <publicationYear>2025</publicationYear>
+    <publicationYear>2026</publicationYear>
     <subjects>
         <subject>Yang-Mills Mass Gap</subject>
         <subject>Information Geometry</subject>
@@ -24,7 +24,7 @@
         <subject>Vacuum Energy Catastrophe</subject>
     </subjects>
     <resourceType resourceTypeGeneral="Software">Computational Framework</resourceType>
-    <version>3.6.1</version>
+    <version>3.7.3</version>
     <rightsList>
         <rights rightsURI="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</rights>
     </rightsList>
@@ -72,7 +72,7 @@
         <section id="4" title="Pillar I: QFT Foundation (Strong Interaction)">
             <prediction type="Mass Gap">
                 <value>1.710 ± 0.015 GeV</value>
-                <status>Category A+ (Proven Theorem)</status>
+                <status>Category A (Proven)</status>
             </prediction>
             <experimentalStrategy>Lattice QCD Continuum Limit Extrapolation (z-score ≈ 0.25σ).</experimentalStrategy>
         </section>
@@ -131,7 +131,7 @@
 
         <section id="11" title="Conclusion">
             <statement>
-                UIDT v3.7.2 provides a mathematically closed unification of QFT and General Relativity via information density.
+                UIDT v3.7.3 provides a mathematically closed unification of QFT and General Relativity via information density.
             </statement>
         </section>
     </scientificSummary>

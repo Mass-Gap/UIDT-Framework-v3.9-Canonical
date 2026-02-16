@@ -4,6 +4,33 @@ This log follows the guidelines of [Keep a Changelog](https://keepachangelog.com
 
 ---
 
+## [v3.7.3] — 2026-02-14
+
+### Manuscript Corrections and Framework Consistency Update
+
+**Overview**
+This release corrects structural issues in the v3.7-fin-max manuscript and
+ensures version consistency across all framework metadata files.
+
+**Manuscript Corrections (UIDT_v3.7.3.tex):**
+- Osterwalder-Schrader axiom verification relocated to compile as proper appendix
+  (previously orphaned after \end{document})
+- Falsification matrix: F1-F6 explicit identifiers added
+- Removed ethically problematic vectorboost block (hidden SEO text with withdrawn DOI)
+- Cleaned corrupt \end{document} line with stray numerical data
+- Removed 430 lines of orphaned duplicate content
+- Added Osterwalder-Schrader bibliography references
+- Version references unified to v3.7.3 throughout
+
+**Framework Metadata:**
+- All metadata files (CITATION.cff, zenodo.json, codemeta.json, metadata.xml)
+  synchronized to v3.7.3
+- README.md: Removed hidden JSON-LD AI manipulation block
+- README.md: Corrected non-standard "A+" category to "A"
+- Zenodo archive entries consolidated (removed duplicate v3.2/v3.3 entries)
+
+---
+
 ## [v3.7.2] — 2025-12-29
 
 ### Repository Consolidation and Simulation Infrastructure Update
