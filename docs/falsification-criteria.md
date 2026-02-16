@@ -199,7 +199,7 @@ Set arXiv alerts for keywords:
 **Independent Verification:**
 1. Clone repository:
    ```bash
-   git clone https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical
+   git clone https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical
    cd UIDT-Framework-v3.7.3-Canonical
    ```
 
@@ -281,7 +281,7 @@ Set arXiv alerts for keywords:
   title  = {UIDT v3.7.3 Falsification Matrix},
   year   = {2025},
   doi    = {10.5281/zenodo.17835200},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/falsification-criteria.md}
+  url    = {https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/falsification-criteria.md}
 }
 ```
 

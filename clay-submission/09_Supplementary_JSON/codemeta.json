@@ -9,8 +9,8 @@
   "dateModified": "2025-12-27",
   "datePublished": "2025-12-27",
   "license": "https://spdx.org/licenses/CC-BY-4.0",
-  "codeRepository": "https://github.com/badbugsarts-hue/UIDT-Framework-V3.2-Canonical",
-  "issueTracker": "https://github.com/badbugsarts-hue/UIDT-Framework-V3.2-Canonical/issues",
+  "codeRepository": "https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical",
+  "issueTracker": "https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/issues",
   "author": [
     {
       "@type": "Person",
@@ -73,7 +73,7 @@
   "developmentStatus": "active",
   "funding": [],
   "isAccessibleForFree": true,
-  "readme": "https://github.com/badbugsarts-hue/UIDT-Framework-V3.2-Canonical/blob/main/README.md",
+  "readme": "https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/blob/main/README.md",
   "releaseNotes": "CHANGELOG.md",
   "contIntegration": [],
   "buildInstructions": "requirements.txt",

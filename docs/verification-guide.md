@@ -344,7 +344,7 @@ python --version  # Should be >= 3.10
 pip install --upgrade -r verification/requirements.txt
 
 # Re-clone repository (if modified)
-git clone https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical
+git clone https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical
 ```
 
 ---
@@ -417,7 +417,7 @@ If verification fails:
    - System configuration (OS, Python version)
 
 2. **Open GitHub Issue:**
-   - Go to: https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/issues
+   - Go to: https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/issues
    - Title: `[VERIFICATION FAILURE] Brief description`
    - Include: System info, error log, steps to reproduce
 

@@ -199,7 +199,7 @@ UIDT_OMEGA_SUPPLEMENTARY:
     FORMAT: "YAML block compatible with UIDT_Omega_Final_Synthesis.yaml"
     STATUS: "Validated and reproducible"
     LICENSE: "CC BY 4.0"
-    DOI: "10.5281/zenodo.17835201"
+    DOI: "10.5281/zenodo.17835200"
 
 UIDT_OMEGA_SUPPLEMENTARY:
   SECTION: "Supplementary_MonteCarlo_HighPrecision"
@@ -221,7 +221,7 @@ UIDT_OMEGA_SUPPLEMENTARY:
     UIDT_Omega_Final_Synthesis.yaml:
       EMBED_BLOCK: "Canonical Monte Carlo Verification"
     Zenodo DOI:
-      LINK: "https://doi.org/10.5281/zenodo.17835201"
+      LINK: "https://doi.org/10.5281/zenodo.17835200"
       STATUS: "Published (v3.6.1)"
 
   CLOSING STATEMENT:

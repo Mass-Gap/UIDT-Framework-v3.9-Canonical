@@ -306,7 +306,7 @@ See [falsification-criteria.md](falsification-criteria.md) for complete experime
   title  = {UIDT v3.7.3 Known Limitations (L1-L6)},
   year   = {2025},
   doi    = {10.5281/zenodo.17835200},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/limitations.md}
+  url    = {https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/limitations.md}
 }
 ```
 

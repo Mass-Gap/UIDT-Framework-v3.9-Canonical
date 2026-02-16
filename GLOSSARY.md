@@ -26,7 +26,7 @@ A reference guide to the terminology used in the Unified Information-Density The
 
 **🎉 Scientific Legacy: UIDT  v3.7.3 Glossary is technically CLOSED.**
 
-*Maintainer: Philipp Rietz (@badbugsarts-hue)*
+*Maintainer: Philipp Rietz (@Mass-Gap)*
 
 ---
 

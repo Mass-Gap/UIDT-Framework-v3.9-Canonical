@@ -11,7 +11,7 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.18003018"
     description: "Zenodo archive"
-repository-code: "https://github.com/badbugsarts-hue/UIDT-Framework-V3.2-Canonical"
+repository-code: "https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical"
 url: "https://doi.org/10.5281/zenodo.18003018"
 abstract: >-
   A rigorous mathematical proof of the Yang-Mills mass gap for SU(3) gauge 

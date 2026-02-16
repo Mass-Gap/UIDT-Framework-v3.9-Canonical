@@ -11,7 +11,7 @@ LABEL org.opencontainers.image.description="Official verification container for 
 LABEL org.opencontainers.image.version="3.6.1"
 LABEL org.opencontainers.image.licenses="CC-BY-4.0"
 LABEL org.opencontainers.image.url="https://doi.org/10.5281/zenodo.17835200"
-LABEL org.opencontainers.image.source="https://github.com/badbugsarts-hue/UIDT-Framework-V3.2-Canonical"
+LABEL org.opencontainers.image.source="https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical"
 
 # ==============================================================================
 # ENVIRONMENT CONFIGURATION

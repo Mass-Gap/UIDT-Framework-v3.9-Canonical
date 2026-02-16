@@ -4,6 +4,42 @@ This log follows the guidelines of [Keep a Changelog](https://keepachangelog.com
 
 ---
 
+## [v3.7.3] — 2026-02-16
+
+### Repository Migration and Data Availability Update
+
+**Overview**
+All repository references migrated from `badbugsarts-hue/UIDT-Framework-V3.2-Canonical`
+to `Mass-Gap/UIDT-Framework-v3.7.2-Canonical`. Data Availability section rewritten
+to CERN/Clay Mathematics Institute publication standards.
+
+**Repository URL Migration (24 files):**
+- Global replacement of GitHub organization from `badbugsarts-hue` to `Mass-Gap`
+- Affected: README.md, CITATION.cff, SECURITY.md, GLOSSARY.md, all docs/*.md,
+  metadata/codemeta.json, clay-submission/ (README, CITATION.cff, codemeta.json),
+  manuscript/UIDT_v3.7.3-neu.tex, verification/docker/Dockerfile
+
+**Data Availability (UIDT_v3.7.3-neu.tex + docs/data-availability.md):**
+- Complete rewrite of Data Availability section to v3.7.3 standards
+- Organized code listing into verification, simulation, and Clay audit categories
+- Updated dataset paths to versioned audit trail (v3.2, v3.6.1, v3.7.0)
+- Added Docker reproduction option and SHA-256 integrity verification
+- Reproduction protocol updated with correct directory paths
+
+**Manuscript Header (UIDT_v3.7.3-neu.tex):**
+- Version references in preamble, headers, PDF metadata, Schema.org updated to v3.7.3
+- DOI corrected from zenodo.17835201 to zenodo.17835200 throughout
+- Appendix script inventory updated from v3.2/v3.5 to actual v3.6.1 filenames
+
+**Metadata DOI Corrections:**
+- metadata/UIDT-Omega_Final-Synthesis.yaml: DOI corrected to zenodo.17835200
+- metadata/UIDT-Supplementary_MonteCarlo_HighPrecision.yaml: DOI corrected (2 occurrences)
+
+**Security:**
+- verification/uidt_os_path.py excluded from repository (contains local paths, UIDT-OS internal)
+
+---
+
 ## [v3.7.3] — 2026-02-14
 
 ### Manuscript Corrections and Framework Consistency Update

@@ -152,7 +152,7 @@ Notable update:
 ## Contact
 
 - **ORCID:** 0009-0007-4307-1609  
-- **Repository:** https://github.com/badbugsarts-hue/UIDT-Framework-V3.2-Canonical
+- **Repository:** https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical
 
 ---
 

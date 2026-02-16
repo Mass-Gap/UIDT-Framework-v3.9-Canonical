@@ -67,14 +67,14 @@ Rietz, P. (2025). *Constructive existence and uniqueness of the Yang-Mills spect
   author    = {Rietz, Philipp},
   title     = {UIDT v3.7.3 Verification Suite},
   year      = {2025},
-  url       = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical},
+  url       = {https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical},
   doi       = {10.5281/zenodo.17835200},
   version   = {3.7.2}
 }
 ```
 
 **APA:**
-Rietz, P. (2025). *UIDT v3.7.3 verification suite* (Version 3.7.3) [Computer software]. GitHub. https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical
+Rietz, P. (2025). *UIDT v3.7.3 verification suite* (Version 3.7.3) [Computer software]. GitHub. https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical
 
 ---
 
@@ -99,7 +99,7 @@ Rietz, P. (2025). *UIDT v3.7.3 verification suite* (Version 3.7.3) [Computer sof
   title  = {Casimir Force Anomaly Prediction from UIDT Framework},
   year   = {2025},
   note   = {Category D: Predicted +0.59\% anomaly at 0.66 nm (unverified)},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/falsification-criteria.md}
+  url    = {https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/falsification-criteria.md}
 }
 ```
 
@@ -223,7 +223,7 @@ UIDT v3.7.3 | Rietz (2025) | DOI: 10.5281/zenodo.17835200 | CC BY 4.0
   author = {Rietz, Philipp},
   title  = {UIDT Evidence Classification System (Category A-E)},
   year   = {2025},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/evidence-classification.md}
+  url    = {https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/evidence-classification.md}
 }
 ```
 
@@ -233,7 +233,7 @@ UIDT v3.7.3 | Rietz (2025) | DOI: 10.5281/zenodo.17835200 | CC BY 4.0
   author = {Rietz, Philipp},
   title  = {UIDT Known Limitations (L1-L6)},
   year   = {2025},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/limitations.md}
+  url    = {https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/limitations.md}
 }
 ```
 
@@ -243,7 +243,7 @@ UIDT v3.7.3 | Rietz (2025) | DOI: 10.5281/zenodo.17835200 | CC BY 4.0
   author = {Rietz, Philipp},
   title  = {UIDT Falsification Matrix},
   year   = {2025},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical/blob/main/docs/falsification-criteria.md}
+  url    = {https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/falsification-criteria.md}
 }
 ```
 

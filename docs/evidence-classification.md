@@ -258,7 +258,7 @@ Every category change MUST be logged with:
   title  = {UIDT Evidence Classification System v3.7.3},
   year   = {2025},
   doi    = {10.5281/zenodo.17835200},
-  url    = {https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.3-Canonical}
+  url    = {https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical}
 }
 ```
 
