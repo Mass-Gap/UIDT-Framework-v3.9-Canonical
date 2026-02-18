@@ -1,0 +1,8 @@
+UIDT v3.7.0 Gribov Analysis Results
+====================================
+Mass gap suppression: 1.034019e-11
+Scalar suppression: 1.198608e-11
+Combined suppression: 1.239384e-22
+WKB tunneling: 1.196753e-01
+
+All checks passed: False

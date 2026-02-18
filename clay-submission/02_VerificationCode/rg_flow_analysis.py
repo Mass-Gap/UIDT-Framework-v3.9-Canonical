@@ -28,7 +28,7 @@ import hashlib
 CANONICAL = {
     'kappa': 0.500,              # Non-minimal coupling (canonical)
     'lambda_S': 0.417,           # Scalar self-coupling
-    'gamma_kinetic': 16.339,     # From kinetic VEV (Category A)
+    'gamma_kinetic': 16.339,     # From kinetic VEV (Category A-)
     'gamma_RG': 55.8,            # From RG flow (one-loop)
     'N_c': 3,                    # Number of colors
     'N_f': 0,                    # Pure Yang-Mills (no quarks)
@@ -164,7 +164,7 @@ def analyze_gamma_discrepancy():
     """
     Analyze the discrepancy between γ_kinetic and γ_RG.
     
-    γ_kinetic = 16.339 (from kinetic VEV, Category A)
+    γ_kinetic = 16.339 (from kinetic VEV, Category A-)
     γ_RG ≈ 55.8 (from one-loop RG, perturbative)
     
     Factor: γ_RG / γ_kinetic ≈ 3.4

@@ -123,7 +123,7 @@ class UIDTRenormalizationGroup:
         OPEN QUESTION (v3.6.1):
         -----------------------
         Perturbative RG predicts γ* ≈ 55.8 from one-loop fixed point,
-        but kinetic VEV yields γ = 16.339. This factor-3.4 discrepancy
+        but kinetic VEV yields γ = 16.339 [A-]. This factor-3.4 discrepancy
         indicates non-perturbative physics beyond one-loop approximation.
         
         See manuscript Section 4.2 and Appendix F.9 for details.

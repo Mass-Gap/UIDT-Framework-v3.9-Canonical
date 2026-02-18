@@ -1,282 +1,177 @@
-================================================================================
-UIDT v3.6.1 SHA-256 CRYPTOGRAPHIC MANIFEST
-================================================================================
-Clay Mathematics Institute - Yang-Mills Mass Gap Submission
-Cryptographic Integrity Verification
+==============================================================================
+UIDT v3.6.1 � SHA-256 CRYPTOGRAPHIC MANIFEST
+==============================================================================
+Generated: 2026-02-18T00:37:59.403808
+Files: 105
+Algorithm: SHA-256
+==============================================================================
 
-Date: 2025-12-21T09:45:00Z
-Author: Philipp Rietz (ORCID: 0009-0007-4307-1609)
-DOI: 10.5281/zenodo.17835200
-License: CC BY 4.0
 
-================================================================================
-VERIFICATION SCRIPTS (02_VerificationCode/)
-================================================================================
+[00_CoverLetter]
+----------------------------------------------------------------------
+4f1ff3c12e8d33fd2b19d22639a8cc04daa02eea58a6d0241a4d57b128ecdc85  00_CoverLetter\CoverLetter_Clay.pdf
+acac239b3d0690240357cc68e3281fdc099c1d482c379b1dbfd2055c2a827554  00_CoverLetter\CoverLetter_Clay.tex
 
-brst_cohomology_verification.py
-  SHA-256: 83206ce8f86337983b59bff5129dd4e5c74653d1a1d1611b9964db8efa6a9033
-  Size: 18,369 bytes
-  Purpose: BRST nilpotency (Q²=0), Slavnov-Taylor, unitarity verification
-  Evidence: Category A+ (Mathematical proof)
+[01_Manuscript]
+----------------------------------------------------------------------
+45104ef2ac72a98c25f7062e216d2d76b080f6216bf27129ba28fa03291c5590  01_Manuscript\GAP_ANALYSIS_CLAY_v37.md
+28a912ed5289732f768b5c26cc066fac53c58ed69a84cafdfcc480e56bc1f011  01_Manuscript\UIDT-v3.7.1-Complete.pdf
+f928654404ab5bd3cdb4f4b319c1aa9ad2786f514626b6fed6091e0008b16bd0  01_Manuscript\UIDT-v3.7.1_Erratum_MassGap_Interpretation.pdf
+801ed69ba8a7a41122d45c2ce0dad854e3d1a054ff6b880239a8815332b4408a  01_Manuscript\UIDT_Appendix_A_OS_Axioms.tex
+be3efb4a7542e799a71eaf738fee8a80b910ffd176959a244e8fe6d711ed94a1  01_Manuscript\UIDT_Appendix_B_BRST.tex
+157d467ba79ecd875327a2402bac37ae67aaf956f6165d2599bc332152af6b81  01_Manuscript\UIDT_Appendix_C_Numerical.tex
+b5aad465ca2cbd60b4436fa9dccda0b62e9cf413c846b6edc9a5f8f1d65f46df  01_Manuscript\UIDT_Appendix_D_Auxiliary.tex
+f7f7cfe21e658addfb82bcc72a07cd77a423e29a79c3c4f7177cff69031bf30f  01_Manuscript\UIDT_Appendix_G_Extended.tex
+82930d69faf0b1d793d26d8e97e7356387545b0adea42e5f5cc96dea37ebc457  01_Manuscript\UIDT_Appendix_H_GapAnalysis.tex
+c47c908a8d1a40153db7d500a06baa78944a6cddfffcc41d0e0fb09c5c9518b5  01_Manuscript\main-complete.tex
+dcb6fb922eb46b865960baef19bccf54c4c4e8d4742dfb7fec2f1407f43584ac  01_Manuscript\main.tex
 
-slavnov_taylor_ccr_verification.py
-  SHA-256: e2ced33aa0956b30493e1ab49e703b9db81e0198a45ba44dabebc7e0756113c7
-  Size: 8,456 bytes
-  Purpose: Slavnov-Taylor identities, CCR, RG invariance
-  Evidence: Category A+ (Mathematical proof)
+[02_VerificationCode]
+----------------------------------------------------------------------
+fc6b82136e05d9e59e657844b02c6c6d5c467cdeb1f3853af687dec9a9786787  02_VerificationCode\UIDT-3.6.1-Verification.py
+73e84ad0e5810332596b1d9655ea4a33f99bc61291925a771e5a4efbe73827f3  02_VerificationCode\UIDT_Clay_Verifier.py
+8989fa505c94bfc6cc0801a6fc0b29e5643e7b120fcc0ab5cfce82fffda27b3a  02_VerificationCode\UIDT_Proof_Engine.py
+4e867d1918bd404b0c4f977d372c712ef3fb82c88012cb7be79401a6c7849ca7  02_VerificationCode\brst_cohomology_verification.py
+9ab30603822c2543634de21fc8e4e3366540da6444ee1d561e128c5b94110b45  02_VerificationCode\checksums_sha256_gen.py
+fbd0463af581349b930634e81c1acf956a15d3005fd6b37956898ae382078197  02_VerificationCode\domain_analysis_verification.py
+e3941a168248d52249c8d624932b4d0e473da52e1c8f2c135e0a6bc110417e2b  02_VerificationCode\error_propagation.py
+a1cf03c932eb6b6acbe8e13590769e27c5c28980329351a6e126318e096d761a  02_VerificationCode\final_audit_comparison.py
+bf9eba0307351d91a0636fa112480e1156b8d9944463dbb23102e3a94bc1d778  02_VerificationCode\gribov_analysis_verification.py
+6ac0003dafa425239b26c55eca3a84c99e74b87e1dffe1c2e92a21f01f254e34  02_VerificationCode\gribov_suppression_verification.py
+3ebe39469994aa3d3c6786bd54a6c03fa7fc3b0d4ebabfd46d94aa6d24580d23  02_VerificationCode\homotopy_deformation_verification.py
+7fd8fc272ab2bd3d406c6cb4587288319c2c2dbbdc1e82d595910c44c828f8f4  02_VerificationCode\os_axiom_verification.py
+5e3f81966ba85944b635a3424f952736118c5540c13bff03e1442b864787cc24  02_VerificationCode\rg_flow_analysis.py
+95b565573ee36c669716ce1754ddd5c355cd3ce8f5f4f768c1929465c89f67a4  02_VerificationCode\slavnov_taylor_ccr_verification.py
+ab69b2c5443ca55c839dbe15a92b5d5a3d52fb08e02a8711ec6879c4f0209a75  02_VerificationCode\uidt_canonical_audit_v2.py
+7394649265072d43c10670d8cf44e3e34972709a8caa896a40bbb8b9c1c9f7c8  02_VerificationCode\uidt_complete_clay_audit.py
+5af6465b70280b2fad6d9b3f58523ef1b0bab749900fb545bda0689dfb3c73b2  02_VerificationCode\uidt_proof_core.py
 
-uidt_proof_core.py
-  SHA-256: ea4ea6fd9f9c708901e65c940493adecdbfdf5c665c871b08b4d9c909bb48f8b
-  Size: 10,842 bytes
-  Purpose: Banach fixed-point mass gap existence proof (80-digit)
-  Evidence: Category A+ (Theorem 3.4)
+[03_AuditData\3.2]
+----------------------------------------------------------------------
+73f99870fd4e0087e4f42784154b36b595186311967b00b8916c5ac2100e13aa  03_AuditData\3.2\README-Monte-Carlo.md
+2965cb0610bee08011e850f5d6b4512ffa37a384691abcd011321a7f5c1ddee3  03_AuditData\3.2\UIDT_HighPrecision_mean_values.csv
+2dbf3b110f84e18d8a8d331ff9c676d0d44bbade512627a9d858918fa8833de2  03_AuditData\3.2\UIDT_MonteCarlo_correlation_matrix.csv
+a62323f8e39ad35cb6ea9dbb287e3a067641cc2a5ba0d26f47dc5e3e21f5cb71  03_AuditData\3.2\UIDT_MonteCarlo_samples_100k.csv
+c1b44c9e07d27387ece421fb77c081be364f568e7ce8a785aff2cd22dd77902f  03_AuditData\3.2\UIDT_MonteCarlo_summary.csv
+b5a8c634cd42d0ca6b46fd6d981e79a5bd0f9a24a457c6339efde1672598ed49  03_AuditData\3.2\UIDT_MonteCarlo_summary_table.tex
+c1b44c9e07d27387ece421fb77c081be364f568e7ce8a785aff2cd22dd77902f  03_AuditData\3.2\UIDT_MonteCarlo_summary_table_short.csv
+aa2d21f6e78b0b37ac7370b4506bfc6b979f1ee15f1f95a9d14382f5613ef4c1  03_AuditData\3.2\UIDT_gamma_vs_Psi_scatter.png
+b97f55f73ee10ce8aa06d18d684efeb9223a258146ebd40908de3db6db141d97  03_AuditData\3.2\UIDT_histograms_Delta_gamma_Psi.png
+a5d8f92eea63929f26daef5eec913b2366bf6de2e1d1876442b1d4c706f5007c  03_AuditData\3.2\UIDT_joint_Delta_gamma_hexbin.png
 
-uidt_clay_grand_audit.py
-  SHA-256: b26054950f6e2980dc0ba6387aac2386e79289a2b6d7ad58a73664ac746c19c5
-  Size: 9,823 bytes
-  Purpose: 200-digit Grand Audit, 5M MCMC, triple-hash verification
-  Evidence: Category A+ (Full audit protocol)
+[03_AuditData\3.6.1-corrected]
+----------------------------------------------------------------------
+1b10189e14b721fa46a8fdb11b10f183ba9ae6ee3bbe12aef169e03111ca6f0c  03_AuditData\3.6.1-corrected\UIDT_Canonical_Audit_Certificate.txt
+4b5562aec5ebfec849b605aaeba554221d934893b24c2c91629e232493a7d5bc  03_AuditData\3.6.1-corrected\UIDT_HighPrecision_Constants.csv
+8d4be4b8f4643df12b06bccd378019e9ca54f70e43c3186f119b75196094befa  03_AuditData\3.6.1-corrected\UIDT_MonteCarlo_correlation_matrix.csv
+88986c263a0231d4b097261b3d003162bf4ac7a84c2994e28153ddc48e0a5939  03_AuditData\3.6.1-corrected\UIDT_MonteCarlo_samples_100k.csv
+ea4ff58d591c63f2579b28be214b003b03f8d95cba7afcbc09294cc6e0550d22  03_AuditData\3.6.1-corrected\UIDT_MonteCarlo_summary.csv
 
-uidt_canonical_audit.py
-  SHA-256: 32d21b8ba92a08e54cd9dfae7f248f18e7bb2e655827b740ac9ea4e40792a525
-  Size: 8,249 bytes
-  Purpose: 80-digit Banach iteration, MCMC uncertainty propagation
-  Evidence: Category A (Numerical verification)
+[03_AuditData\3.7.0-(gamma-alpha_s-correlation_weak)]
+----------------------------------------------------------------------
+52ce4c71cee4318fcca514346df2f9dbfc7ea55aca5a2fd47db53ad4b2d8e3e6  03_AuditData\3.7.0-(gamma-alpha_s-correlation_weak)\UIDT_Clay_Audit_Certificate.txt
+79d637fc690b270a4ef88267634ec0a034edf4a2f1b7516bfa59e08bd4d380ea  03_AuditData\3.7.0-(gamma-alpha_s-correlation_weak)\UIDT_HighPrecision_Constants.csv
+22e0407ea2a93034ac2bbcb29fdad4da1e58aff05c94670a093a7aecc7a3c690  03_AuditData\3.7.0-(gamma-alpha_s-correlation_weak)\UIDT_MonteCarlo_correlation_matrix.csv
+04b78765426b37954a6eb96be21c8c2e0751124aae8bcb969957d077362c76fa  03_AuditData\3.7.0-(gamma-alpha_s-correlation_weak)\UIDT_MonteCarlo_samples_100k.csv
+ea2ff36072c80bd6402e0a54215142921f036e532b0cb6cd9e2651b201b68232  03_AuditData\3.7.0-(gamma-alpha_s-correlation_weak)\UIDT_MonteCarlo_summary.csv
 
-error_propagation.py
-  SHA-256: 033230ce5d1eab0cf1627d65c3aecd93433117c528ec06e942108c12e76ec0d5
-  Size: 7,234 bytes
-  Purpose: Systematic uncertainty quantification, error budget
-  Evidence: Category A (Statistical analysis)
+[03_AuditData]
+----------------------------------------------------------------------
+29ec45644dea82050c2072fd1dcdae867fe846d950a86e664988b93d77fd58a9  03_AuditData\AUDIT_REPORT.md
 
-rg_flow_analysis.py
-  SHA-256: d8f15364a0a5ed7a006c1d52a0fbaa17f83d6f6c327b5eb22320b5974ffad038
-  Size: 8,557 bytes
-  Purpose: RG fixed-point verification, beta functions, γ analysis
-  Evidence: Category A (RG theory)
+[04_Certificates]
+----------------------------------------------------------------------
+61580660d1e8a4cb8c32a38741379692765d16d6b6bccd2b9c710f717c534c32  04_Certificates\BRST_Verification_Certificate.txt
+a164ef1ca9578f7854daa928f1493b3348c3d6c7909d633237563173dc79ab1e  04_Certificates\Canonical_Audit_v3.6.1_Certificate.txt
+a2463ad52e0ea32f7810adeb9ff2c24c6b5447b6d6fb6714cab983f9608b5492  04_Certificates\MASTER_VERIFICATION_CERTIFICATE.txt
 
-================================================================================
-AUDIT DATA (03_AuditData/)
-================================================================================
+[05_LatticeSimulation]
+----------------------------------------------------------------------
+ba1e87712ce2ae1fdb34798c0a66508f0461841fdeb511e2d0886fb31449afe5  05_LatticeSimulation\UIDTv3.6.1_Ape-smearing.py
+cf9f6613e7a423bbe57c212907f3403200c6ade45892fc20ee4a39990c4ed410  05_LatticeSimulation\UIDTv3.6.1_CosmologySimulator.py
+7ce1831e459fa6977a7abdfc23dba36e479df41442be8953f44cd46397ae1501  05_LatticeSimulation\UIDTv3.6.1_Evidence_Analyzer.py
+1703558c49dfebe4ec4c761e712428a70cf36947e16f9651274c105d8586ffd5  05_LatticeSimulation\UIDTv3.6.1_HMC_Optimized.py
+da95307052f228c3fdc64387db5cdbc1cef1c2527995939025252655d5209212  05_LatticeSimulation\UIDTv3.6.1_Lattice_Validation.py
+9c337a4204693be234e18e9c5c9c17caf096ec25ba1bad9bbdfd5ae35232e1bb  05_LatticeSimulation\UIDTv3.6.1_Monitor-Auto-tune.py
+80c79114b856e4c531af576d329d4fa3dc41e0b32d536171915f46dc09b1e974  05_LatticeSimulation\UIDTv3.6.1_Omelyna-Integrator2o.py
+080926a191f47f7d1c37a4a1f8fc946f0c6e16d3e08ca580afeba52e526a8a07  05_LatticeSimulation\UIDTv3.6.1_Scalar-Analyse.py
+7a6c6d86cceb5eea3f323ac08ed59d84e5a5851251e333d688c310b753ce01c4  05_LatticeSimulation\UIDTv3.6.1_UIDT-test.py
+0a43abc043f0f2d8dd7ded04d30a6020b7d63e1e77696a826efe3f7d95e60dec  05_LatticeSimulation\UIDTv3.6.1_Update-Vector.py
+2a495b599f5ff781d184d77804b8354aca0e4f869a8655a4743552ffc7bab750  05_LatticeSimulation\UIDTv3.6.1_su3_expm_cayley_hamiltonian-Modul.py
+186247bb10b86f10263e7e74b2d10917da7f6083f6a23f8e3ee4719e8fa33254  05_LatticeSimulation\UIDTv3_7_2_HMC_Real.py
 
-UIDT_v3_6_1_Audit_20251221_013215_HighPrecision_Constants.csv
-  SHA-256: 10102171aad746b0095772839e074d1d4a905877baa4827f6de821672e6d03bd
-  Size: 1,247 bytes
-  Purpose: 200-digit precision canonical constants (κ, Δ, γ, L)
-  Evidence: Category A+ (High-precision computation)
+[06_Figures]
+----------------------------------------------------------------------
+c72985639e1af903b9c9e9fdae621a9941bdd335b4b199b66d3097e02230e1a7  06_Figures\UIDT_Fig_01_Static_Potential_Balanced.png
+ebd48d42aa53edddbc9956ec77626b697de6cb52e6e2d027c3e8c60c55abce16  06_Figures\UIDT_Fig_02_Vacuum_Energy_Resolution.png
+0f3b12308fef72af3be90af8689e16f2d0bedd3bf64449cab92171bcc89923bb  06_Figures\UIDT_Fig_04_Lattice_Continuum_Limit.png
+82f7e01f55598e20024bb4c2a995125a9c8bd67b8f1e024194ee0a15dbc18d23  06_Figures\UIDT_Fig_06_Hubble_Tension_Analysis.png
+631d6694a0e2fb80b039e8d8e54cf1716eab7a0ba05e34fc54acef4f71e0c674  06_Figures\UIDT_Fig_07_Kappa_Stability.png
+6eb4a02cd94697c696ffa958398924c48a48767b3667c3e6cd8f3e059d7b6ecd  06_Figures\UIDT_Fig_07_Universal_Gamma_Scaling.png
+65517c58d6b4ac90c0efdec0f3d8f906a0014a3ec513f085029ba0769cc254fc  06_Figures\UIDT_Fig_12_1_Stability_Landscape.png
+8caf959b55f8ae06f9224eaff21ff5c718c37fd152e47013e75cafa16d71d3c9  06_Figures\UIDT_Fig_12_2_MC_Posterior_Analysis.png
+e8164f9e8c296e25fe0c7d900491b821357272f79ba0a7806b75fbd47e28eea4  06_Figures\UIDT_Fig_12_3_Info_Flux_Correlation.png
+c0602871e4b8a5cda349a7c2d211c4142c2bbdfaf6028cf04c3fb29c63b4016f  06_Figures\UIDT_Fig_12_4_Gamma_Unification_Map.png
+8b823024c43fa4b45c99cdff419d2cc929d0dba2cbed956c99892a91a9dda886  06_Figures\UIDT_Fig_Suppl_S2_Consistency_Z_Scores.png
+4477a8d55d26f8d5a909e9a29be949f117c0f6e86c22454427cbc526b4f7fd17  06_Figures\UIDT_Fig__Suppl_S1_Detailed_Parameter_Dist.png
 
-UIDT_HighPrecision_mean_values.csv
-  SHA-256: 32ab0afb7f7306431304d455ea21544d48950a394a7cbe2afc5febc087cda915
-  Size: 456 bytes
-  Purpose: Multi-pathway mean values (Banach, SDE, FRG)
-  Evidence: Category A (Cross-validation)
+[07_MonteCarlo]
+----------------------------------------------------------------------
+d5a458542f5194f5aa1b62f27a380306bfd6a997742c4c7551e695dfb5a42aa9  07_MonteCarlo\MC_Statistics_Summary.txt
+cac478d023bfd04c2874538e9af2e24edb56d737aa4b99ddd368279f40c2c3a5  07_MonteCarlo\UIDT_MC_samples_summary.csv
 
-UIDT_MonteCarlo_summary.csv
-  SHA-256: eaa69717e5d005d55759627cd29cd8743937fc84f67247b3cb54979cd417ed01
-  Size: 892 bytes
-  Purpose: Monte Carlo statistical summary (Δ, σ, CI)
-  Evidence: Category A (5M samples)
+[08_Documentation]
+----------------------------------------------------------------------
+64dd358290e25cf02c46c1b1d0941a58b8e08b20e3ac67f91f69df94b6486d79  08_Documentation\DATA_AVAILABILITY.md
+5fc1cdb646ef70ff3a8d1656b9085b0f10e813b468f4e2a1a5e4f0ae8ee3ef0f  08_Documentation\Mathematical_Step_by_Step.md
+8af954c49746f55d6d0c7cf6e1bb9d686490a67cb1fdea35ef4e63f715e5b6d2  08_Documentation\Reviewer_Guide_Step_by_Step.md
+9e83e8750ea4a3246ed0f976463c3b1c39458934d3d6278e232c59d1343cfdb5  08_Documentation\Visual_Proof_Atlas.md
 
-UIDT_MonteCarlo_correlation_matrix.csv
-  SHA-256: 22d5a1e66fe8e54b273aad8728994cb4bf0426471940516c2074e1cbd4d29192
-  Size: 2,156 bytes
-  Purpose: Parameter correlation analysis (γ-α_s, γ-Ψ)
-  Evidence: Category A (Statistical structure)
+[09_Supplementary_JSON]
+----------------------------------------------------------------------
+f6f2a3b527e27fd328db7fcb5a1c44e828bf778b702ee6e1f6fc87b7c087e5d0  09_Supplementary_JSON\.osf.json
+cfa994a35af6f4cf95bca77fa6fb4297d5451a03c074df9606eceec87f52a1dc  09_Supplementary_JSON\.zenodo.json
+7a072c9e4a17aee232b89f9867d6e5ca451b18489297032e9a6e4b92688c9c49  09_Supplementary_JSON\codemeta.json
 
-================================================================================
-CERTIFICATES (04_Certificates/)
-================================================================================
+[10_VerificationReports]
+----------------------------------------------------------------------
+ca91271f92a54dc1ed9fad23ae3c22008caf963e2e101de7243de8c45abac00f  10_VerificationReports\COTA_CRITICISM_VERIFICATION_2025-01-04.md
+5a29ee8cc73ccf46510913c82a2993003f10e72dca63b5ff97f0da4241045cbf  10_VerificationReports\Dockerfile_Structural_Audit_20251229.md
+a118903f4e0b1803582df496f2a4565571556b0672d5feee7168696505a82bec  10_VerificationReports\Verification_Report-3.6.txt
+bdaaaa1c9ef50b7d8738cd81eaace084a787415c665ef7dba06e96945968e986  10_VerificationReports\Verification_Report-v3.6.1-ERROR-PROPAGATION-ANALYSIS.txt
+0163502639bd4d1101868249507217a793ae431b1dad3281b6fa7151b07aad13  10_VerificationReports\Verification_Report-v3.6.1-Lattice-Validating.txt
+d2442c3e00c38147fa8bb8c59fc4bcfa276f55dbbe2a834b7fab6f678cb30cab  10_VerificationReports\Verification_Report-v3.6.1-RG-FIXED-POINT-ANALYSIS.txt
+a1f4283f39bfd4d2ee801eb7b5c3aea92afcb097d5e037055a3a65d07ffc91b0  10_VerificationReports\Verification_Report-v3.6.1-Scalar-Mass-Test.txt
+544acef05ef37e9719f1b1125da9a85d9e51a8e76671f99db20967b3319a1bb2  10_VerificationReports\Verification_Report-v3.6.1-String-Tension.txt
+7983515b9d424b4fc2e76c247a5df28f249b57624a071a67e9cb8bd312fba898  10_VerificationReports\Verification_Report_v3.5.6.txt
+a20f5f94d10d85b3c62605b252135530ee111748efca098c225a9757dda50415  10_VerificationReports\Verification_Report_v3.6.1.md
+3f26c98d3989025350bbe0428a9bcc9fd2a7a748e51a604a0640916a89bec8e2  10_VerificationReports\core_proof_log_3.6.1.txt
+05fc7978a9295389f3ac3a3548c524bf22817adc57b9f17573d4f500789de66b  10_VerificationReports\domain_analysis_results.txt
+02b7ec6ed412ca44f46d1eacf06b6806ad98bd0173a181be314101b06d25adbd  10_VerificationReports\homotopy_analysis_results.txt
+e927f4822782fdc4aa078d06de6b17267ccc68eebfdb4fbcb7c50a6345d3ff1d  10_VerificationReports\kappa_scan_results.csv
+242faa790af0c2a547b763eb883a9d5e72480fb33c482d1801db67fad9d70b6c  10_VerificationReports\os_axiom_verification_results.txt
 
-MASTER_VERIFICATION_CERTIFICATE.txt
-  SHA-256: 418330fb1e7b49ed4e18b6830543b289eab2cc0f31c84d74cdc59b640db53ac9
-  Purpose: Complete submission certification
-  Status: MATHEMATICALLY UNASSAILABLE
+[.]
+----------------------------------------------------------------------
+313b82baade24b8600d5ee4c6e4914e33dc8495478e9650bc81b11d96b7801f5  Dockerfile.clay_audit
+adede6b002f285fad49cd42be491c72f78254e5274e64aea714751c52328849e  README.md
+de8525a43143b858c36b877cb212f4e6f4f82e7ebaea494d013c2481dac55f65  requirements.txt
 
-Grand_Audit_Certificate.txt
-  SHA-256: [To be computed after final generation]
-  Purpose: 200-digit Grand Audit certification
-  Status: PASSED
+==============================================================================
+VERIFICATION INSTRUCTIONS
+==============================================================================
 
-BRST_Verification_Certificate.txt
-  SHA-256: a85f1653dbf4f4189a4cc131d32211230b30b5d9022ca47d5e3fb95d028fd886
-  Purpose: BRST cohomology verification
-  Status: GAUGE CONSISTENCY PROVEN
+To verify integrity on Linux/Mac:
+    sha256sum -c SHA256_MANIFEST.txt
 
-UIDT_v3_6_1_Audit_20251221_013215_Audit_Certificate.txt
-  SHA-256: b042d10ce26084bee58bbc6eff0380bd749f0fe23b5832c85d8f96108c8ebd99
-  Purpose: Grand Audit timestamp certificate
-  Status: VERIFIED
+To verify on Windows (PowerShell):
+    Get-FileHash -Algorithm SHA256 <filepath>
 
-================================================================================
-LATTICE SIMULATION (05_LatticeSimulation/)
-================================================================================
+Any modification to any file will produce a different hash.
+This manifest guarantees the immutability of the submission.
 
-UIDTv3_6_1_HMC_MASTER_SIMULATION.py
-  SHA-256: [To be computed from source]
-  Purpose: Hybrid Monte Carlo lattice QCD simulation
-  Evidence: Category B (Lattice validation)
-
-================================================================================
-VERIFICATION PROTOCOL
-================================================================================
-
-To independently verify file integrity:
-
-1. Windows (PowerShell):
-   Get-FileHash -Algorithm SHA256 <filename>
-
-2. Linux/Mac:
-   sha256sum <filename>
-
-3. Python:
-   import hashlib
-   with open('<filename>', 'rb') as f:
-       print(hashlib.sha256(f.read()).hexdigest())
-
-================================================================================
-CANONICAL CONSTANTS VERIFICATION
-================================================================================
-
-The following values are cryptographically secured and immutable:
-
-MASS GAP (Theorem 3.4):
-  Δ* = 1.7100350467422131820207710966116223632940442422911... GeV
-  Precision: 80-200 decimal digits
-  Method: Banach Fixed-Point Theorem
-  Status: EXISTENCE AND UNIQUENESS PROVEN
-
-LIPSCHITZ CONSTANT:
-  L = 3.749125995856500 × 10⁻⁵ < 1
-  Condition: Contraction mapping verified
-  Status: BANACH THEOREM APPLICABLE
-
-UNIVERSAL INVARIANT:
-  γ = 16.339 ± 0.002
-  QCD Connection: γ ≈ (2N_c + 1)²/N_c = 49/3
-  Deviation: 0.035%
-
-NON-MINIMAL COUPLING:
-  κ_canonical = 0.500 ± 0.017
-  κ_calibrated = 0.12612209798436700651...
-  Fixed-Point: 5κ² = 3λ_S
-
-SCALAR SELF-COUPLING:
-  λ_S = 0.417 ± 0.013
-  Perturbativity: λ_S/(4π) = 0.033 < 1 ✓
-
-SCALAR MASS:
-  m_S = 1.705 ± 0.080 GeV
-  Near-degeneracy: m_S ≈ Δ* (within uncertainty)
-
-================================================================================
-LATTICE QCD CROSS-VALIDATION
-================================================================================
-
-Published 0⁺⁺ Glueball Results vs UIDT Prediction:
-
-Reference                    Result (GeV)     z-score
-----------------------------------------------------------------
-Morningstar & Peardon 1999   1.730 ± 0.050    0.39σ
-Chen et al. 2006             1.710 ± 0.050    0.00σ
-Athenodorou et al. 2021      1.756 ± 0.039    1.10σ
-Meyer 2005                   1.710 ± 0.040    0.00σ
-----------------------------------------------------------------
-UIDT Prediction              1.710 ± 0.015    ---
-
-Combined z-score: 0.68σ
-Probability of consistency: 99.5%
-STATUS: LATTICE AGREEMENT VERIFIED ✓
-
-================================================================================
-CLAY MATHEMATICS INSTITUTE REQUIREMENTS
-================================================================================
-
-1. CONSTRUCTIVE EXISTENCE
-   Method: Banach Fixed-Point Theorem
-   Evidence: L = 3.75×10⁻⁵ < 1 (contraction proven)
-   Status: ✓ SATISFIED
-
-2. 4-DIMENSIONAL SPACETIME
-   Formulation: Euclidean R⁴
-   Reconstruction: Osterwalder-Schrader axioms
-   Status: ✓ SATISFIED
-
-3. SPECTRAL GAP
-   Value: Δ* = 1.710 GeV > 0
-   Precision: 10⁻⁸⁰ residual
-   Status: ✓ SATISFIED
-
-4. GAUGE INVARIANCE
-   Symmetry: SU(3) local gauge
-   Verification: BRST cohomology (Q² = 0)
-   Status: ✓ SATISFIED
-
-5. AXIOM COMPATIBILITY
-   Framework: Wightman axioms
-   Method: OS reconstruction theorem
-   Status: ✓ SATISFIED
-
-CLAY COMPLIANCE: ALL REQUIREMENTS MET ✓
-
-================================================================================
-IMMUTABILITY GUARANTEE
-================================================================================
-
-This manifest provides cryptographic proof that:
-
-1. All verification scripts are unmodified since generation
-2. All audit data represents genuine computation results
-3. All certificates accurately reflect verification outcomes
-4. The complete submission package maintains integrity
-
-Any modification to any file will result in hash mismatch,
-invalidating the cryptographic chain of custody.
-
-CHAIN OF CUSTODY:
-  Generation: 2025-12-21T01:32:15Z (Grand Audit)
-  Verification: 2025-12-21T09:45:00Z (Manifest)
-  Status: CRYPTOGRAPHIC INTEGRITY MAINTAINED
-
-================================================================================
-EVIDENCE CLASSIFICATION
-================================================================================
-
-Category A+ (PROVEN):
-  - Mass gap existence (Banach theorem, 200-digit)
-  - BRST consistency (Q² = 0, ST identities)
-  - Unitarity (optical theorem)
-
-Category A (VERIFIED):
-  - Multi-pathway consistency (Banach, SDE, FRG)
-  - Monte Carlo statistics (5M samples)
-  - Error propagation
-
-Category B (VALIDATED):
-  - Lattice QCD cross-validation (z ≈ 0)
-  - Glueball spectrum agreement
-
-Category C (CALIBRATED):
-  - Cosmological parameters (DESI DR2)
-  - H₀, S₈ fits
-
-Category D (PREDICTED):
-  - Casimir anomaly (awaiting verification)
-  - LHC scalar resonance
-
-================================================================================
-MANIFEST CERTIFICATION
-================================================================================
-
-Manifest ID: SHA256_MANIFEST_v3.6.1_20251221
-Generated by: UIDT Verification Engine v3.6.1
-Timestamp: 2025-12-21T09:45:00Z
-Author: Philipp Rietz (ORCID: 0009-0007-4307-1609)
-
-This manifest is self-referential: its hash should be computed
-excluding the final certification line for independent verification.
-
-VERDICT: CRYPTOGRAPHIC CHAIN OF CUSTODY ESTABLISHED
-
-================================================================================
-END OF MANIFEST
-================================================================================
+==============================================================================
+MANIFEST INTEGRITY
+==============================================================================
+Manifest SHA-256: bbcbc06a00c81a77c9a9c09ec0099fd37b005aa7b0ab39cec6d6a6620068d7d3
+==============================================================================

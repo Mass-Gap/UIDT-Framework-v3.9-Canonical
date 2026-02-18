@@ -386,6 +386,6 @@ VERDICT: GAUGE CONSISTENCY MATHEMATICALLY UNASSAILABLE.
 if __name__ == "__main__":
     passed, cert = run_full_brst_verification()
     
-    with open("BRST_Verification_Certificate.txt", "w") as f:
+    with open("BRST_Verification_Certificate.txt", "w", encoding="utf-8") as f:
         f.write(cert)
     print("\n[OUTPUT] Certificate saved to: BRST_Verification_Certificate.txt")

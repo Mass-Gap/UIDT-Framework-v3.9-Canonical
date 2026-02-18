@@ -18,6 +18,7 @@ import os
 import sys
 import hashlib
 import argparse
+import re
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Tuple
@@ -28,15 +29,17 @@ from typing import Dict, List, Tuple
 
 # Directories to hash
 HASH_DIRECTORIES = [
+    '00_CoverLetter',
     '01_Manuscript',
     '02_VerificationCode',
     '03_AuditData',
     '04_Certificates',
     '05_LatticeSimulation',
+    '06_Figures',
     '07_MonteCarlo',
     '08_Documentation',
-    '09_Supplementary_Figures',
-    '10_Supplementary_JSON'
+    '09_Supplementary_JSON',
+    '10_VerificationReports'
 ]
 
 # Files in root to hash
@@ -225,8 +228,7 @@ def write_manifest(manifest: Dict[str, str],
                 f.write(f"\n[{current_dir}]\n")
                 f.write("-" * 70 + "\n")
             
-            filename = Path(filepath).name
-            f.write(f"{hash_value}  {filename}\n")
+            f.write(f"{hash_value}  {filepath}\n")
         
         f.write("\n" + "=" * 78 + "\n")
         f.write("VERIFICATION INSTRUCTIONS\n")
@@ -277,59 +279,32 @@ def verify_manifest(manifest_path: Path, base_path: Path) -> Tuple[int, int, Lis
     
     print("Verifying file integrity...")
     
+    hash_line_re = re.compile(r'^(?P<hash>[0-9a-f]{64})\s{2}(?P<path>.+)$')
+
     with open(manifest_path, 'r') as f:
         for line in f:
             line = line.strip()
-            
-            # Skip headers and empty lines
-            if not line or line.startswith('=') or line.startswith('-'):
+
+            m = hash_line_re.match(line)
+            if not m:
                 continue
-            if line.startswith('[') or line.startswith('Generated'):
-                continue
-            if line.startswith('Files:') or line.startswith('Algorithm'):
-                continue
-            if 'VERIFICATION' in line or 'MANIFEST' in line:
-                continue
-            if line.startswith('sha256sum') or line.startswith('Get-FileHash'):
-                continue
-            if line.startswith('To verify') or line.startswith('Any modification'):
-                continue
-            if line.startswith('This manifest'):
-                continue
-            
-            # Parse hash line
-            parts = line.split('  ', 1)
-            if len(parts) != 2:
-                continue
-            
-            expected_hash, filename = parts
-            
-            # Find the file
-            found = False
-            for dirpath in HASH_DIRECTORIES:
-                filepath = base_path / dirpath / filename
-                if filepath.exists():
-                    actual_hash = compute_sha256(filepath)
-                    if actual_hash == expected_hash:
-                        passed += 1
-                        print(f"  ✓ {filename}")
-                    else:
-                        failed += 1
-                        errors.append(f"{filename}: HASH MISMATCH")
-                        print(f"  ✗ {filename} - HASH MISMATCH")
-                    found = True
-                    break
-            
-            if not found:
-                # Check root files
-                filepath = base_path / filename
-                if filepath.exists():
-                    actual_hash = compute_sha256(filepath)
-                    if actual_hash == expected_hash:
-                        passed += 1
-                    else:
-                        failed += 1
-                        errors.append(f"{filename}: HASH MISMATCH")
+
+            expected_hash = m.group('hash')
+            rel_path = Path(m.group('path'))
+            filepath = base_path / rel_path
+            if filepath.exists():
+                actual_hash = compute_sha256(filepath)
+                if actual_hash == expected_hash:
+                    passed += 1
+                    print(f"  ✓ {rel_path}")
+                else:
+                    failed += 1
+                    errors.append(f"{rel_path}: HASH MISMATCH")
+                    print(f"  ✗ {rel_path} - HASH MISMATCH")
+            else:
+                failed += 1
+                errors.append(f"{rel_path}: FILE NOT FOUND")
+                print(f"  ✗ {rel_path} - FILE NOT FOUND")
     
     return passed, failed, errors
 

@@ -234,6 +234,6 @@ VERDICT: CANONICAL GOLD STANDARD ACHIEVED.
 
 if __name__ == "__main__":
     passed, cert = run_full_canonical_verification()
-    with open("Canonical_Audit_v3.6.1_Certificate.txt", "w") as f:
+    with open("Canonical_Audit_v3.6.1_Certificate.txt", "w", encoding="utf-8") as f:
         f.write(cert)
     print("\n[OUTPUT] Certificate saved to: Canonical_Audit_v3.6.1_Certificate.txt")
