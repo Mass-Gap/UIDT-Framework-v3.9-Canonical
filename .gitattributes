@@ -1,0 +1,95 @@
+# ============================================================================
+# GIT ATTRIBUTES - Line Ending Normalization
+# ============================================================================
+# Alle Textdateien werden automatisch zu LF normalisiert (GitHub Standard)
+# Verhindert: Windows CRLF → Git-Index-Desynchronisation
+
+# Auto-normalisierung: Git erkennt Dateitypen und normalisiert automatisch
+* text=auto eol=lf
+
+# ============================================================================
+# EXPLIZIT TEXTDATEIEN
+# ============================================================================
+
+# Dokumentation
+*.md       text eol=lf
+*.txt      text eol=lf
+*.rst      text eol=lf
+*.asciidoc text eol=lf
+
+# Quellcode
+*.py       text eol=lf
+*.sh       text eol=lf
+*.bash     text eol=lf
+*.zsh      text eol=lf
+
+# Konfiguration
+*.json     text eol=lf
+*.yaml     text eol=lf
+*.yml      text eol=lf
+*.xml      text eol=lf
+*.toml     text eol=lf
+*.ini      text eol=lf
+*.cfg      text eol=lf
+*.conf     text eol=lf
+
+# Wissenschaftliche Dateien
+*.bib      text eol=lf
+*.tex      text eol=lf
+*.latexmk  text eol=lf
+*.cff      text eol=lf
+
+# Docker
+Dockerfile* text eol=lf
+.dockerignore text eol=lf
+
+# Git
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.editorconfig text eol=lf
+
+# ============================================================================
+# BINÄRDATEIEN - niemals konvertieren
+# ============================================================================
+
+# Dokumentation & Archiv
+*.pdf      binary
+*.zip      binary
+*.tar.gz   binary
+*.7z       binary
+*.rar      binary
+
+# Bilder
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.svg      binary
+*.ico      binary
+*.tiff     binary
+
+# Datenbanken & Archive
+*.db       binary
+*.sqlite   binary
+*.sqlite3  binary
+*.dbf      binary
+
+# Mathematische/Wissenschaftliche Binärdateien
+*.npy      binary
+*.npz      binary
+*.h5       binary
+*.hdf5     binary
+*.nc       binary
+
+# Executables
+*.exe      binary
+*.dll      binary
+*.so       binary
+*.dylib    binary
+
+# ============================================================================
+# SPEZIALBEHANDLUNG
+# ============================================================================
+
+# Jupyter: JSON mit Code-Zellen, aber Text-Format
+*.ipynb    text eol=lf merge=union
