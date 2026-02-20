@@ -293,4 +293,4 @@ clay/
 
 ---
 
-*License: CC BY 4.0 | Maintainer: Philipp Rietz | Author: Stephen Hawking Style*
+*License: CC BY 4.0 | Maintainer: Philipp Rietz*

@@ -48,7 +48,7 @@ def calculate_evidence_strength(z_scores):
     print(f"   ❌ Weak/Falsified (Z ≥ 3.0σ):       {weak_evidence}/{total_simulations} ({pct_weak:.1f}%)")
     print("-" * 60)
     
-    # 3. Scientific Conclusion (Hawking-Style Assessment)
+    # 3. Scientific Conclusion 
     ratio_strong = strong_evidence / total_simulations
     
     if ratio_strong >= 0.8:
