@@ -76,7 +76,33 @@ class UIDT_Prover:
         self.pi_sq_inv = 1 / (mp.pi**2)   # π⁻² ≈ 0.1013
 
         # Pre-calculate Torsion Self-Energy
+        # ------------------------------------------------------------------
+        # Effective Torsion Self-Energy (Phenomenological IR Term)
+        #
+        # Σ_T = γ * v * E_T
+        #
+        # γ  : dimensionless calibration parameter
+        # v  : vacuum expectation value
+        # E_T: phenomenological torsion energy scale
+        #
+        # IMPORTANT:
+        # This term is NOT derived from a Dyson loop integral.
+        # It is an effective infrared extension only.
+        # ------------------------------------------------------------------
         self.sigma_T = self.Gamma * self.v_VEV * self.E_T
+
+    def torsion_self_energy_kernel(self, p2, k2):
+        """
+        Placeholder for future Dyson-type torsion kernel.
+
+        Formal structure (not yet implemented):
+
+            Σ_T(p^2) = ∫ d^4k / (2π)^4  D_T(k) Γ_SST(p,k)
+
+        Currently returns effective IR model:
+            γ * v * E_T
+        """
+        return self.Gamma * self.v_VEV * self.E_T
 
     def verify_rg_constraint(self):
         """
