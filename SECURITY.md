@@ -25,7 +25,7 @@ The following are intentionally excluded via [.gitignore](.gitignore):
 - ❌ UIDT-OS/ (427 files) - Proprietary operational system
 - ❌ Local databases and configuration files
 - ❌ Research strategy and workflow management
-- ❌ Large archive files (available via [GitHub Releases](https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical/releases))
+- ❌ Large archive files (available via [GitHub Releases](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/releases))
 
 ---
 
@@ -43,7 +43,7 @@ Security concerns related to:
 
 **Email:** badbugs.arts@gmail.com
 
-**Subject Line:** `[SECURITY] UIDT v3.7.2 - [Brief Description]`
+**Subject Line:** `[SECURITY] UIDT v3.9 - [Brief Description]`
 
 **Include:**
 - Description of the vulnerability
@@ -62,12 +62,12 @@ Security concerns related to:
 
 | Version | Supported | Status |
 |---------|-----------|--------|
-| v3.7.2 | ✅ Yes | Current (Clean State) |
-| v3.6.1 | ⚠️ Limited | Superseded by v3.7.2 |
+| v3.9 | ✅ Yes | Current (Clean State) |
+| v3.6.1 | ⚠️ Limited | Superseded by v3.9 |
 | v3.3 | ❌ No | Withdrawn (formatting errors) |
 | < v3.3 | ❌ No | Archived |
 
-**Recommendation:** Always use the latest version (v3.7.2) for security and accuracy.
+**Recommendation:** Always use the latest version (v3.9) for security and accuracy.
 
 ---
 
@@ -158,9 +158,9 @@ This work is licensed under [Creative Commons Attribution 4.0 International (CC 
 **ORCID:** [0009-0007-4307-1609](https://orcid.org/0009-0007-4307-1609)
 **DOI:** [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200)
 
-For general questions (not security-related), please open a [GitHub Issue](https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical/issues).
+For general questions (not security-related), please open a [GitHub Issue](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/issues).
 
 ---
 
 **Last Updated:** 2026-02-05
-**Version:** UIDT v3.7.2 Canonical
+**Version:** UIDT v3.9 Canonical

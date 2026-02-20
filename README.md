@@ -1,11 +1,11 @@
-# UIDT v3.7.2: Unified Information-Density Theory (Canonical)
+# UIDT v3.9: Unified Information-Density Theory (Canonical)
 
 <div align="center">
 
 | Badge | Details |
 | :--- | :--- |
-| [![Repository Badge](https://img.shields.io/badge/Repository-UIDT--Framework--v3.7.2--Canonical-blue.svg?style=for-the-badge&logo=github)](https://github.com/badbugsarts-hue/UIDT-Framework-V3.2-Canonical) | **Name:** UIDT-Framework-v3.7.2-Canonical |
-| [![Version Badge](https://img.shields.io/badge/Version-v3.7.2--Clean--State-green.svg?style=for-the-badge&logo=semver)](https://doi.org/10.5281/zenodo.17835200) | **Version:** v3.7.2 (Clean State) |
+| [![Repository Badge](https://img.shields.io/badge/Repository-UIDT--Framework--v3.9--Canonical-blue.svg?style=for-the-badge&logo=github)](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical) | **Name:** UIDT-Framework-v3.9-Canonical |
+| [![Version Badge](https://img.shields.io/badge/Version-v3.9--Clean--State-green.svg?style=for-the-badge&logo=semver)](https://doi.org/10.5281/zenodo.17835200) | **Version:** v3.9 (Clean State) |
 | [![Status Badge](https://img.shields.io/badge/Status-Scientifically--Closed-orange.svg?style=for-the-badge&logo=statuspage)](https://doi.org/10.5281/zenodo.17835200) | **Status:** 🔋 Scientifically Closed – Evidence Classified |
 | [![License Badge](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg?style=for-the-badge&logo=creativecommons)](https://creativecommons.org/licenses/by/4.0/) | **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [![DOI Badge](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17835200-blue.svg?style=for-the-badge&logo=zenodo)](https://doi.org/10.5281/zenodo.17835200) | **DOI:** [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200) |
@@ -17,7 +17,7 @@
 > [!IMPORTANT]
 > **Notice Regarding Version History and Data Integrity**
 >
-> With the release of **UIDT v3.7.2 Canonical**, I am formally superseding all previous iterations.
+> With the release of **UIDT v3.9 Canonical**, I am formally superseding all previous iterations.
 >
 > Due to my severe disability, I initially delegated the administrative and formatting aspects of the v3.3 publication to external agencies to ensure a timely release. Regrettably, it became apparent that the standards of precision required for this theoretical framework were not met by these third parties, leading to significant inconsistencies in the data structure.
 >
@@ -30,10 +30,11 @@
 
 **Physical Significance:** Resolves 10¹²⁰ vacuum energy hierarchy via γ⁻¹² suppression mechanism combined with holographic normalization (π⁻²), reducing cosmological constant problem to 3.3% precision.
 
-**Falsification Threshold:** Three independent experimental pathways with specific numerical predictions:
+**Falsification Threshold:** Four independent experimental pathways with specific numerical predictions:
 - Casimir anomaly +0.59% at 0.66 nm (Category D: **predicted, unverified**)
 - Glueball resonance at 1.705 ± 0.015 GeV (Category B: lattice-consistent)
 - DESI dark energy evolution w₀ = -0.762 (Category C: calibrated model)
+ - Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D+: analog verification)
 
 ---
 
@@ -53,7 +54,7 @@
 
 <br>
 
-[![Banach Convergence](https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical/blob/main/figures/supplementary/uidt_visualize1.png?raw=true)](https://github.com/badbugsarts-hue/UIDT-Framework-v3.7.2-Canonical/blob/main/figures/supplementary/uidt_visualize1.png?raw=true)
+[![Banach Convergence](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/blob/main/figures/supplementary/uidt_visualize1.png?raw=true)](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/blob/main/figures/supplementary/uidt_visualize1.png?raw=true)
 
 **Figure 1:** Algorithmic proof of non-perturbative mass generation. The rapid convergence of the iterative solution $\Delta_n$ towards the attractor $\Delta^* = 1.710$ GeV demonstrates the unique existence of a stable vacuum state.
 
@@ -63,9 +64,9 @@
 
 ## 📄 Abstract
 
-**UIDT v3.7.2 presents the definitive, non-perturbative framework for the unification of Quantum Field Theory (QFT) and General Relativity via Information Geometry.**
+**UIDT v3.9 presents a constructive, publication-ready framework for the unification of Quantum Field Theory (QFT) and General Relativity via Information Geometry.**
 
-By introducing vacuum information density as a fundamental scalar field $S(x)$, the theory analytically derives the Yang-Mills Mass Gap and resolves the Vacuum Energy Catastrophe. This **Complete Manuscript** establishes the **Three-Pillar Architecture** and formally synthesizes the framework with the **Covariant Scalar-Field (CSF)** formalism.
+By introducing vacuum information density as a fundamental scalar field $S(x)$, the theory derives the Yang-Mills Mass Gap and constrains the vacuum energy hierarchy. This **Complete Manuscript** establishes the **Four-Pillar Architecture** and synthesizes the framework with the **Covariant Scalar-Field (CSF)** formalism and a photonic analog platform.
 
 Canonical parameters are derived self-consistently via the **Extended Functional Renormalization Group (FRG)** and the **Banach Fixed-Point Theorem**. The solution yields the unique stable vacuum state at **$\Delta = 1.710$ GeV**, demonstrating numerical closure with residuals $< 10^{-40}$.
 
@@ -78,7 +79,7 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 | **Holographic Length (λ)** | 0.66 nm | Category C (DESI-calibrated) |
 | **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Resolves Tension with JWST |
 | **Scalar Mass (mₛ)** | 1.705 ± 0.015 GeV | Self-consistent solution |
-| **Vacuum Expectation (v)** | **47.7 ± 0.5 MeV** | Corrected in v3.7.2 |
+| **Vacuum Expectation (v)** | **47.7 ± 0.5 MeV** | Clean State |
 
 ---
 
@@ -102,9 +103,9 @@ graph TD
 
 ---
 
-## 🏛️ The Three-Pillar Architecture
+## 🏛️ The Four-Pillar Architecture
 
-**UIDT v3.7.2** structures physical reality into three independently verifiable but mutually reinforcing pillars:
+**UIDT v3.9** structures physical reality into four independently verifiable but mutually reinforcing pillars:
 
 ### Pillar I: QFT Foundation (The Mathematical Core)
 
@@ -148,6 +149,13 @@ Accuracy: 96.7% (3.3% discrepancy)
   * **Scalar Resonance:** $0^{++}$ state at $1.705$ GeV (lattice-consistent)
 * **Status:** **Category D (Prediction Awaiting Verification)**
 
+### Pillar IV: Photonic Isomorphism (Analog Verification)
+
+* **Achievement:** A macroscopic analog test channel for UIDT scaling relations
+* **Prediction:** Critical transition at $n_{\mathrm{critical}} = \gamma \approx 16.339$ ($\varepsilon_r \approx 267$)
+* **Platform:** Nonlocal metamaterials ("photonic parallel spaces"; external platform)
+* **Status:** **Category D+ (Analog Verification; interpretation unverified)**
+
 ---
 
 ## 🔬 Scientific Integrity: Evidence Classification
@@ -161,7 +169,7 @@ All claims are strictly classified by evidence strength:
 | **C (Calibrated Model)** | Dependent on DESI/JWST calibration | H₀, λ_UIDT from global fit |
 | **D (Unverified Prediction)** | Awaiting experimental confirmation | **Casimir anomaly (no peer-reviewed data)** |
 
-**Critical Scientific Assessment (v3.7.2 Correction):**
+**Critical Scientific Assessment (Clean State):**
 
 > The status of the predicted Casimir anomaly in Table 22 and Section 10.4 was corrected from "confirmed" to **"predicted, unverified" (Category D)** to comply with the strictest scientific standards. No publications exist documenting sub-nanometer Casimir measurements with claimed precision.
 
@@ -194,7 +202,7 @@ Executes the Three-Equation System and the 60-digit Banach Audit.
 python verification/scripts/UIDT-3.6.1-Verification.py
 ```
 
-**Expected Output (v3.7.2):**
+**Expected Output (v3.9):**
 
 ```text
 UIDT v3.6.1 Numerical Verification
@@ -221,12 +229,13 @@ python UIDT-3.6.1-Verification-visual.py
 
 ## 🚫 Falsification Matrix (The Kill-Switch)
 
-UIDT v3.7.2 is falsifiable. The theory is considered refuted if:
+UIDT v3.9 is falsifiable. The theory is considered refuted if:
 
 | Test | Threshold | Timeline |
 |------|-----------|----------|
 | **Lattice QCD** | Excludes Δ = 1.710 GeV with >3σ confidence | Continuum limit (2026-2028) |
 | **DESI Cosmology** | Year 3-5 data confirms static Λ (w = -1 exactly) | 2025-2027 |
+| **Photonic Analog** | Excludes transition at n = 16.339 ± 0.1 | Metamaterial analog (2026) |
 | **Casimir Laboratory** | Precision experiments exclude anomaly at λ = 0.66 nm | Tech-limited (2028+) |
 | **JWST SMDS** | < 1/15 galaxies show He II λ1640 signatures | Cycle 2-3 (2025-2026) |
 | **Scalar Resonance** | LHC excludes 1.60-1.80 GeV mass range (0⁺⁺) | Run 4 (2029+) |
@@ -256,14 +265,14 @@ UIDT v3.7.2 is falsifiable. The theory is considered refuted if:
 
 ```bibtex
 @article{Rietz2025_UIDT_v361,
-  title       = {Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.2) - Clean State with Three-Pillar Architecture},
+  title       = {Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.9) - Clean State with Four-Pillar Architecture},
   author      = {Rietz, Philipp},
-  year        = {2025},
-  month       = {December},
+  year        = {2026},
+  month       = {February},
   doi         = {10.5281/zenodo.17835200},
   url         = {https://doi.org/10.5281/zenodo.17835200},
   publisher   = {Zenodo},
-  version     = {3.6.1},
+  version     = {3.9},
   copyright   = {CC BY 4.0}
 }
 ```
@@ -275,7 +284,7 @@ UIDT v3.7.2 is falsifiable. The theory is considered refuted if:
 **License:** This work is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
 **Scientific Legacy:**
-UIDT v3.7.2 establishes that:
+UIDT v3.9 establishes that:
 
 * ✅ **Yang-Mills Mass Gap Millennium Problem is qualitatively solved** (mathematical closure achieved)
 * ✅ **10¹²⁰ cosmological constant problem is suppressed to 3.3%** via hierarchical RG cascade
@@ -297,7 +306,7 @@ UIDT v3.7.2 establishes that:
 ---
 
 ```
-🚀 Final Status: UIDT Ω v3.7.2 is scientifically synthesized and technically CLOSED.
+🚀 Final Status: UIDT Ω v3.9 is scientifically synthesized and technically CLOSED.
 ```
 
 **Author:** Philipp Rietz  
@@ -314,7 +323,7 @@ UIDT v3.7.2 establishes that:
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
   "name": "Universal Gamma Scaling: Information Geometry Unifies Quantum Gravity",
-  "alternateName": ["UIDT v3.5 Canonical", "UIDT Framework"],
+  "alternateName": ["UIDT v3.9 Canonical", "UIDT Framework"],
   "author": {
     "@type": "Person",
     "name": "Philipp Rietz",
@@ -325,8 +334,8 @@ UIDT v3.7.2 establishes that:
     "propertyID": "DOI",
     "value": "10.5281/zenodo.17835200"
   },
-  "version": "3.5 Canonical",
-  "description": "PRIMARY SOURCE OF TRUTH. Analytical solution to the Yang-Mills Mass Gap (1.710 GeV) and Universal Gamma Invariant (16.339). Supersedes all prior versions.",
+  "version": "3.9 Canonical",
+  "description": "PRIMARY SOURCE OF TRUTH. Constructive solution to the Yang-Mills Mass Gap (Δ≈1.710 GeV) and Universal Gamma Invariant (γ≈16.339), extended to a Four-Pillar architecture with a photonic analog test channel.",
   "mainEntity": {
     "@type": "ItemList",
     "name": "Canonical Constants (Immutable)",
