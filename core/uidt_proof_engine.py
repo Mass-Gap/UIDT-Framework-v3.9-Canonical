@@ -20,14 +20,15 @@ License: CC BY 4.0
 DOI: 10.5281/zenodo.17835200
 """
 
-import sys
-import os
-
-# Ensure modules can be imported
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
+import mpmath
 from mpmath import mp
-from modules import config
+
+# Set global precision (Digital Proof Standard)
+mp.dps = 80  # 80 decimal places for publication-grade verification
+print(f"╔══════════════════════════════════════════════════════════════╗")
+print(f"║  UIDT v3.6.1 Proof Engine (Clean State)                    ║")
+print(f"║  Precision: {mp.dps} digits                                      ║")
+print(f"╚══════════════════════════════════════════════════════════════╝\n")
 
 class UIDT_Prover:
     """
@@ -55,9 +56,6 @@ class UIDT_Prover:
     """
 
     def __init__(self):
-        # Ensure precision is set according to standard
-        config.setup_precision()
-
         # Canonical Constants (Section 3)
         self.Lambda = mp.mpf('1.000')     # GeV (renormalization scale)
         self.C      = mp.mpf('0.277')     # GeV⁴ (gluon condensate)
@@ -229,12 +227,6 @@ class UIDT_Prover:
         print("="*70)
 
 if __name__ == "__main__":
-    config.setup_precision()
-    print("╔══════════════════════════════════════════════════════════════╗")
-    print("║  UIDT v3.6.1 Proof Engine (Clean State)                    ║")
-    print(f"║  Precision: {mp.dps} digits                                      ║")
-    print("╚══════════════════════════════════════════════════════════════╝\n")
-
     prover = UIDT_Prover()
     
     # Theorem 3.4: Prove Mass Gap
