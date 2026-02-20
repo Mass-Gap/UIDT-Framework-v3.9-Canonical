@@ -114,44 +114,47 @@ class UIDTLatticeWithSmearing(UIDTLatticeOptimized):
         return xp.roll(U, shift, axis=mu)
 
     def ape_smear(self, U_in, alpha=0.5, N_iter=10):
-        """Vollständig vektorisiertes APE Smearing."""
-        U = U_in.copy()
+        """Vollständig vektorisiertes APE Smearing (Optimized Layout)."""
+        # Transpose to (mu, Nx, Ny, Nz, Nt, 3, 3) for contiguous access
+        U = xp.ascontiguousarray(xp.moveaxis(U_in, -3, 0))
         
         for _ in range(N_iter):
-            U_next = xp.zeros_like(U)
+            staple_sum = xp.zeros_like(U)
             
-            # Über alle 4 Richtungen (mu)
-            for mu in range(4):
-                staple_sum = xp.zeros_like(U[..., 0, :, :])
+            for nu in range(4):
+                # Precompute shifts for this nu (on all mu components simultaneously)
+                # roll axis is nu+1 because mu is at index 0
+                shift_ax = nu + 1
+                U_fwd_nu = xp.roll(U, -1, axis=shift_ax)
+                U_bwd_nu = xp.roll(U, 1, axis=shift_ax)
                 
-                # Über alle orthogonalen Richtungen (nu)
-                for nu in range(4):
+                U_nu = U[nu] # Shape (..., 3, 3)
+                U_nu_bwd_slice = U_bwd_nu[nu]
+
+                for mu in range(4):
                     if mu == nu: continue
                     
-                    # Links holen
-                    U_mu = U[..., mu, :, :]
-                    U_nu = U[..., nu, :, :]
-                    
-                    # Positive Staple: U_nu(x) * U_mu(x+nu) * U_nu^dag(x+mu)
-                    U_mu_shift_nu = self._shift(U_mu, nu, -1) # x -> x+nu
-                    U_nu_shift_mu = self._shift(U_nu, mu, -1) # x -> x+mu
+                    # Term Pos: U_nu(x) * U_mu(x+nu) * U_nu(x+mu)^dag
+                    U_mu_shift_nu = U_fwd_nu[mu]
+                    # U_nu is slice. Axis corresponds to mu (0..3)
+                    U_nu_shift_mu = xp.roll(U_nu, -1, axis=mu)
                     
                     term_pos = U_nu @ U_mu_shift_nu @ U_nu_shift_mu.conj().swapaxes(-1, -2)
                     
-                    # Negative Staple: U_nu^dag(x-nu) * U_mu(x-nu) * U_nu(x-nu+mu)
-                    U_nu_back = self._shift(U_nu, nu, 1) # x -> x-nu
-                    U_mu_back = self._shift(U_mu, nu, 1)
-                    U_nu_back_shift_mu = self._shift(U_nu_back, mu, -1) 
+                    # Term Neg: U_nu(x-nu)^dag * U_mu(x-nu) * U_nu(x-nu+mu)
+                    U_mu_back = U_bwd_nu[mu]
+                    # U_nu_shift_mu is slice. Axis corresponds to nu (0..3)
+                    U_nu_back_shift_mu = xp.roll(U_nu_shift_mu, 1, axis=nu)
                     
-                    term_neg = U_nu_back.conj().swapaxes(-1,-2) @ U_mu_back @ U_nu_back_shift_mu
+                    term_neg = U_nu_bwd_slice.conj().swapaxes(-1, -2) @ U_mu_back @ U_nu_back_shift_mu
                     
-                    staple_sum += term_pos + term_neg
-                
-                # Mischen und Projizieren
-                Unweighted = (1.0 - alpha) * U[..., mu, :, :] + (alpha / 6.0) * staple_sum
-                U_next[..., mu, :, :] = project_to_SU3(Unweighted)
-                
-            U = U_next
+                    staple_sum[mu] += term_pos + term_neg
+
+            Unweighted = (1.0 - alpha) * U + (alpha / 6.0) * staple_sum
+            U = project_to_SU3(Unweighted)
+
+        # Transpose back to original layout
+        U = xp.moveaxis(U, 0, -3)
         return U
 
     def smeared_wilson_loop(self, R, T, N_APE=5, alpha_APE=0.5):
