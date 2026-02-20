@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
 ═══════════════════════════════════════════════════════════════════════════════
-UIDT v3.6.1 — COMPLETE CLAY VERIFICATION ENGINE
+UIDT v3.7.3 — COMPLETE CLAY VERIFICATION ENGINE
 Yang-Mills Mass Gap: Existence and Uniqueness Proof
 ═══════════════════════════════════════════════════════════════════════════════
 Author: Philipp Rietz (ORCID: 0009-0007-4307-1609)
 DOI: 10.5281/zenodo.17835200
 License: CC BY 4.0
-Version: 3.6.1 (December 2025)
+Version: 3.7.3 (Canonical Release)
 ═══════════════════════════════════════════════════════════════════════════════
 """
 
@@ -33,13 +33,14 @@ except ImportError:
 
 @dataclass(frozen=True)
 class CanonicalConstants:
-    """Immutable canonical constants of UIDT v3.6.1"""
+    """Immutable canonical constants of UIDT v3.7.3"""
     # Primary parameters
     DELTA_TARGET: float = 1.710       # GeV (Mass Gap)
     KAPPA: float = 0.500              # Non-minimal coupling
     LAMBDA_S: float = 0.417           # Scalar self-coupling
-    M_S: float = 1.705                # GeV (Scalar mass)
+    M_GEO: float = 1.705              # GeV (Geometric Scalar mass)
     VEV: float = 0.0477               # GeV (Vacuum expectation value)
+    E_T: float = 0.00244              # GeV (Torsion Energy)
     
     # Physical inputs
     GLUON_CONDENSATE: float = 0.277   # GeV^4 (SVZ sum rules)
@@ -67,9 +68,10 @@ class BanachProofEngine:
     Implements the Banach Fixed-Point Theorem proof for the mass gap.
     
     The gap operator T: [1.5, 2.0] → ℝ⁺ is defined by:
-        T(Δ) = √[m_S² + Π_S(Δ²)]
+        T(Δ) = √[m_geo² + Σ_T + Π_S(Δ²)]
     
-    where the self-energy is:
+    where:
+        Σ_T = γ · v · E_T (Torsion Self-Energy)
         Π_S(0) = (κ²C)/(4Λ²) [1 + ln(Λ²/Δ²)/(16π²)]
     """
     
@@ -78,32 +80,38 @@ class BanachProofEngine:
             mp.dps = precision
         
         # Convert constants to high precision
-        self.m_S = mpf(str(CONSTANTS.M_S))
+        self.m_geo = mpf(str(CONSTANTS.M_GEO))
         self.kappa = mpf(str(CONSTANTS.KAPPA))
         self.C = mpf(str(CONSTANTS.GLUON_CONDENSATE))
         self.Lambda = mpf(str(CONSTANTS.LAMBDA_SCALE))
+        self.gamma = mpf(str(CONSTANTS.GAMMA))
+        self.vev = mpf(str(CONSTANTS.VEV))
+        self.e_t = mpf(str(CONSTANTS.E_T))
         
         # Derived coefficients
         self.alpha = self.kappa**2 * self.C / (4 * self.Lambda**2)
         self.beta = mpf('1') / (16 * pi**2) if HIGH_PRECISION else 1 / (16 * pi**2)
+
+        # Torsion Self-Energy
+        self.sigma_T = self.gamma * self.vev * self.e_t
     
     def gap_operator(self, Delta: float) -> float:
         """
-        Compute T(Δ) = √[m_S² + Σ(0)]
+        Compute T(Δ) = √[m_geo² + Σ_T + RadiativeTerm]
         """
         Delta = mpf(str(Delta)) if HIGH_PRECISION else Delta
         
-        # Self-energy
+        # Self-energy (Radiative)
         if HIGH_PRECISION:
             log_term = log(self.Lambda**2 / Delta**2)
         else:
             log_term = log((self.Lambda**2) / (Delta**2))
         
-        Sigma = self.alpha * (1 + self.beta * log_term)
+        radiative = self.alpha * (1 + self.beta * log_term)
         
-        # Gap operator
-        m_S_sq = self.m_S**2
-        T_Delta = sqrt(m_S_sq + Sigma)
+        # Gap operator with Torsion
+        m_geo_sq = self.m_geo**2
+        T_Delta = sqrt(m_geo_sq + self.sigma_T + radiative)
         
         return float(T_Delta)
     
@@ -410,7 +418,7 @@ class ClayChecklist:
 def main():
     """Run complete verification suite."""
     print("=" * 75)
-    print("UIDT v3.6.1 — CLAY MATHEMATICS INSTITUTE VERIFICATION ENGINE")
+    print("UIDT v3.7.3 — CLAY MATHEMATICS INSTITUTE VERIFICATION ENGINE")
     print("=" * 75)
     print()
     
@@ -466,7 +474,7 @@ def main():
     
     # Save results to JSON
     with open("clay_verification_results.json", "w") as f:
-        json.dump(results, f, indent=2)
+        json.dump(results, f, indent=2, default=str)
     print("\nResults saved to clay_verification_results.json")
     
     return results

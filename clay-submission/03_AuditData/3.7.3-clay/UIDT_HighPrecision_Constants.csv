@@ -1,0 +1,6 @@
+Parameter,Value,Uncertainty,Method
+Delta_canonical,1.710590966113385,0.08,Banach_kappa=0.500
+kappa_canonical,0.5,0.008,RG_fixpoint
+kappa_inverse,0.469689829232476,calibrated,inverse_solve
+Lipschitz_canonical,3.7466895594e-05,0,finite_diff
+Lipschitz_inverse,3.3084923962e-05,0,finite_diff

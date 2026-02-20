@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-UIDT v3.6.1 COMPLETE CLAY AUDIT
+UIDT v3.7.3 COMPLETE CLAY AUDIT
 ================================
 Combines CANONICAL and INVERSE verification approaches
 for complete mathematical rigor.
@@ -15,7 +15,7 @@ INVERSE APPROACH (Secondary):
 - Find kappa such that gap equation is satisfied
 - Proves mathematical existence
 
-Author: Philipp Rietz (ORCID: 0009-0007-4307-1609)
+Author: P. Rietz (ORCID: 0009-0007-4307-1609)
 DOI: 10.5281/zenodo.17835200
 License: CC BY 4.0
 Date: December 2025
@@ -38,7 +38,7 @@ if sys.platform == 'win32':
 mp.dps = 200
 
 # =============================================================================
-# CANONICAL UIDT v3.6.1 CONSTANTS
+# CANONICAL UIDT v3.7.3 CONSTANTS
 # =============================================================================
 
 CANONICAL = {
@@ -49,16 +49,18 @@ CANONICAL = {
     'kappa_err': mpf('0.008'),
     'lambda_S': mpf('0.417'),
     'lambda_S_err': mpf('0.007'),
-    'm_S': mpf('1.705'),
-    'm_S_err': mpf('0.015'),
+    'm_geo': mpf('1.705'),     # Geometric Mass (formerly m_S)
+    'm_geo_err': mpf('0.015'),
     'Delta_lattice': mpf('1.710'),
     'Delta_lattice_err': mpf('0.080'),
     'gamma': mpf('16.339'),
     'gamma_err': mpf('1.0'),
+    'vev': mpf('0.0477'),      # GeV
+    'e_t': mpf('0.00244'),     # GeV (Torsion)
 }
 
 print("=" * 70)
-print("UIDT v3.6.1 COMPLETE CLAY AUDIT")
+print("UIDT v3.7.3 COMPLETE CLAY AUDIT (Canonical)")
 print("=" * 70)
 print(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 print(f"Precision: {mp.dps} decimal digits")
@@ -68,19 +70,28 @@ print()
 # GAP EQUATION
 # =============================================================================
 
-def gap_equation_T(Delta, kappa, m_S, C, Lambda):
-    """Contraction mapping T(Delta) for mass gap."""
+def gap_equation_T(Delta, kappa, m_geo, C, Lambda, gamma, vev, e_t):
+    """Contraction mapping T(Delta) for mass gap with Torsion."""
     if Delta <= 0:
         Delta = mpf('0.1')
+
+    # Radiative term
     log_term = ln(Lambda**2 / Delta**2) / (16 * pi**2)
     radiative = (kappa**2 * C / (4 * Lambda**2)) * (1 + log_term)
-    return sqrt(m_S**2 + radiative)
 
-def compute_lipschitz(Delta, kappa, m_S, C, Lambda):
+    # Torsion Self-Energy
+    sigma_T = gamma * vev * e_t
+
+    # Effective Mass Squared
+    effective_mass_sq = m_geo**2 + sigma_T
+
+    return sqrt(effective_mass_sq + radiative)
+
+def compute_lipschitz(Delta, kappa, m_geo, C, Lambda, gamma, vev, e_t):
     """Compute Lipschitz constant via finite difference."""
     h = mpf('1e-100')
-    T_plus = gap_equation_T(Delta + h, kappa, m_S, C, Lambda)
-    T_minus = gap_equation_T(Delta - h, kappa, m_S, C, Lambda)
+    T_plus = gap_equation_T(Delta + h, kappa, m_geo, C, Lambda, gamma, vev, e_t)
+    T_minus = gap_equation_T(Delta - h, kappa, m_geo, C, Lambda, gamma, vev, e_t)
     return abs(T_plus - T_minus) / (2 * h)
 
 # =============================================================================
@@ -97,15 +108,18 @@ def canonical_banach_iteration():
     print("=" * 70)
     
     kappa = CANONICAL['kappa']
-    m_S = CANONICAL['m_S']
+    m_geo = CANONICAL['m_geo']
     C = CANONICAL['C_gluon']
     Lambda = CANONICAL['Lambda']
+    gamma = CANONICAL['gamma']
+    vev = CANONICAL['vev']
+    e_t = CANONICAL['e_t']
     
     Delta = mpf('1.0')
     history = []
     
     for i in range(100):
-        Delta_new = gap_equation_T(Delta, kappa, m_S, C, Lambda)
+        Delta_new = gap_equation_T(Delta, kappa, m_geo, C, Lambda, gamma, vev, e_t)
         residual = abs(Delta_new - Delta)
         history.append({'iter': i+1, 'Delta': float(Delta_new), 'residual': float(residual)})
         
@@ -114,7 +128,7 @@ def canonical_banach_iteration():
         Delta = Delta_new
     
     Delta_star = Delta_new
-    L = compute_lipschitz(Delta_star, kappa, m_S, C, Lambda)
+    L = compute_lipschitz(Delta_star, kappa, m_geo, C, Lambda, gamma, vev, e_t)
     
     print(f"\n  Iterations: {len(history)}")
     print(f"  Delta* = {float(Delta_star):.15f} GeV")
@@ -150,33 +164,38 @@ def inverse_calibration():
     print("=" * 70)
     
     target_delta = CANONICAL['Delta_lattice']
-    m_S = CANONICAL['m_S']
+    m_geo = CANONICAL['m_geo']
     C = CANONICAL['C_gluon']
     Lambda = CANONICAL['Lambda']
+    gamma = CANONICAL['gamma']
+    vev = CANONICAL['vev']
+    e_t = CANONICAL['e_t']
     
     # Newton-Raphson to find kappa
     kappa = mpf('0.5')  # Initial guess
     
+    # Precompute constant terms for inversion
+    sigma_T = gamma * vev * e_t
+
     for i in range(100):
-        # Current Delta for this kappa
-        Delta_current = gap_equation_T(target_delta, kappa, m_S, C, Lambda)
+        # Current Delta for this kappa (just to check)
+        Delta_current = gap_equation_T(target_delta, kappa, m_geo, C, Lambda, gamma, vev, e_t)
         
-        # Actually solve: find kappa such that T(Delta_target) = Delta_target
-        # This means the gap equation gives Delta_target
-        
-        # Gap equation: Delta^2 = m_S^2 + kappa^2 * C / (4*Lambda^2) * [1 + log_term]
-        # Solve for kappa: kappa^2 = (Delta^2 - m_S^2) * 4 * Lambda^2 / (C * [1 + log_term])
+        # Inversion Logic:
+        # Delta^2 = m_geo^2 + sigma_T + kappa^2 * factor
+        # kappa^2 = (Delta^2 - m_geo^2 - sigma_T) / factor
         
         log_term = ln(Lambda**2 / target_delta**2) / (16 * pi**2)
         factor = C * (1 + log_term) / (4 * Lambda**2)
         
-        delta_sq_diff = target_delta**2 - m_S**2
-        if delta_sq_diff > 0 and factor > 0:
-            kappa_sq = delta_sq_diff / factor
+        numerator = target_delta**2 - m_geo**2 - sigma_T
+
+        if numerator > 0 and factor > 0:
+            kappa_sq = numerator / factor
             kappa = sqrt(kappa_sq)
         
         # Check convergence
-        Delta_check = gap_equation_T(target_delta, kappa, m_S, C, Lambda)
+        Delta_check = gap_equation_T(target_delta, kappa, m_geo, C, Lambda, gamma, vev, e_t)
         residual = abs(Delta_check - target_delta)
         
         if residual < mpf('1e-180'):
@@ -187,7 +206,7 @@ def inverse_calibration():
     print(f"  Residual: {float(residual):.2e}")
     
     # Verify Lipschitz
-    L = compute_lipschitz(target_delta, kappa, m_S, C, Lambda)
+    L = compute_lipschitz(target_delta, kappa, m_geo, C, Lambda, gamma, vev, e_t)
     print(f"  Lipschitz L = {float(L):.6e}")
     print(f"  Banach contraction: L < 1 is {L < 1}")
     
@@ -209,14 +228,17 @@ def monte_carlo_canonical(n_samples=100000):
     np.random.seed(42)
     
     # Central values
-    m_S_c = float(CANONICAL['m_S'])
+    m_geo_c = float(CANONICAL['m_geo'])
     kappa_c = float(CANONICAL['kappa'])
     lambda_S_c = float(CANONICAL['lambda_S'])
     C_c = float(CANONICAL['C_gluon'])
     gamma_c = float(CANONICAL['gamma'])
     
+    vev_c = float(CANONICAL['vev'])
+    e_t_c = float(CANONICAL['e_t'])
+
     # Uncertainties
-    m_S_sig = float(CANONICAL['m_S_err'])
+    m_geo_sig = float(CANONICAL['m_geo_err'])
     kappa_sig = float(CANONICAL['kappa_err'])
     lambda_S_sig = float(CANONICAL['lambda_S_err'])
     C_sig = float(CANONICAL['C_gluon_err'])
@@ -225,11 +247,10 @@ def monte_carlo_canonical(n_samples=100000):
     # Generate base random variates
     z_base = np.random.standard_normal((n_samples, 5))
     
-    # m_S samples
-    m_S_samples = m_S_c + m_S_sig * z_base[:, 0]
+    # m_geo samples
+    m_geo_samples = m_geo_c + m_geo_sig * z_base[:, 0]
     
     # kappa and lambda_S with correlation ~0.78 (from 5*kappa^2 = 3*lambda_S)
-    # lambda_S = 5/3 * kappa^2, so they're correlated
     kappa_samples = kappa_c + kappa_sig * z_base[:, 1]
     lambda_S_samples = (5/3) * kappa_samples**2 + 0.01 * z_base[:, 2]  # Small noise
     
@@ -239,21 +260,36 @@ def monte_carlo_canonical(n_samples=100000):
     # gamma samples
     gamma_samples = gamma_c + gamma_sig * z_base[:, 4]
     
-    # Compute Delta for each sample (maintaining m_S-Delta correlation)
+    # Compute Delta for each sample (maintaining m_geo-Delta correlation)
     Delta_samples = []
     alpha_s_samples = []
     Psi_samples = []
     
     valid_indices = []
     
-    for i, (m_S, kappa, lam, C, gamma) in enumerate(zip(
-            m_S_samples, kappa_samples, lambda_S_samples, C_samples, gamma_samples)):
+    for i, (m_geo, kappa, lam, C, gamma) in enumerate(zip(
+            m_geo_samples, kappa_samples, lambda_S_samples, C_samples, gamma_samples)):
         
-        if kappa > 0 and C > 0 and m_S > 0:
+        if kappa > 0 and C > 0 and m_geo > 0:
             # Gap equation
-            log_term = np.log(1.0 / m_S**2) / (16 * np.pi**2)
+            # Torsion Self-Energy
+            sigma_T = gamma * vev_c * e_t_c  # Assuming vev, e_t constant or negligible error for now
+
+            effective_mass_sq = m_geo**2 + sigma_T
+
+            log_term = np.log(1.0 / effective_mass_sq) / (16 * np.pi**2) # Approximate using mass scale
+            # Note: The recursive gap equation uses Delta, here we approximate or solve it.
+            # In MC, usually we just plug in values.
+            # Let's use the explicit gap equation form T(Delta) ~ Delta
+            # Actually, the original MC logic was:
+            # log_term = np.log(1.0 / m_S**2) / (16 * np.pi**2)
+            # radiative = (kappa**2 * C / 4.0) * (1 + log_term)
+            # delta_sq = m_S**2 + radiative
+
+            # Updated Logic:
+            log_term = np.log(1.0 / effective_mass_sq) / (16 * np.pi**2)
             radiative = (kappa**2 * C / 4.0) * (1 + log_term)
-            delta_sq = m_S**2 + radiative
+            delta_sq = effective_mass_sq + radiative
             
             if delta_sq > 0:
                 Delta = np.sqrt(delta_sq)
@@ -261,7 +297,6 @@ def monte_carlo_canonical(n_samples=100000):
                 valid_indices.append(i)
                 
                 # alpha_s from gamma (anti-correlated)
-                # At scale mu ~ Delta, alpha_s ~ 0.3 with inverse gamma dependence
                 alpha_s = 0.118 * (16.339 / gamma)**0.1 + 0.005 * np.random.randn()
                 alpha_s_samples.append(alpha_s)
                 
@@ -270,7 +305,7 @@ def monte_carlo_canonical(n_samples=100000):
                 Psi_samples.append(Psi)
     
     # Filter to valid samples
-    m_S_samples = m_S_samples[valid_indices]
+    m_geo_samples = m_geo_samples[valid_indices]
     kappa_samples = kappa_samples[valid_indices]
     lambda_S_samples = lambda_S_samples[valid_indices]
     C_samples = C_samples[valid_indices]
@@ -281,7 +316,7 @@ def monte_carlo_canonical(n_samples=100000):
     
     # Create DataFrame
     df = pd.DataFrame({
-        'm_S': m_S_samples,
+        'm_geo': m_geo_samples,
         'kappa': kappa_samples,
         'lambda_S': lambda_S_samples,
         'C': C_samples,
@@ -301,7 +336,7 @@ def monte_carlo_canonical(n_samples=100000):
     print(f"    kappa: {df['kappa'].mean():.6f} +/- {df['kappa'].std():.6f}")
     
     print(f"\n  KEY CORRELATIONS:")
-    print(f"    m_S-Delta:     {corr.loc['m_S', 'Delta']:+.4f} (expected: +0.999)")
+    print(f"    m_geo-Delta:   {corr.loc['m_geo', 'Delta']:+.4f} (expected: +0.999)")
     print(f"    kappa-lambda_S:{corr.loc['kappa', 'lambda_S']:+.4f} (expected: +0.78)")
     print(f"    gamma-Psi:     {corr.loc['gamma', 'Psi']:+.4f} (expected: +0.9995)")
     print(f"    gamma-alpha_s: {corr.loc['gamma', 'alpha_s']:+.4f} (expected: -0.95)")
@@ -320,7 +355,7 @@ def save_results(Delta_canonical, L_canonical, kappa_inverse, L_inverse, df, cor
     
     # Output directory
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    output_dir = os.path.join(os.path.dirname(script_dir), "03_AuditData", "3.7.0-clay")
+    output_dir = os.path.join(os.path.dirname(script_dir), "03_AuditData", "3.7.3-clay")
     os.makedirs(output_dir, exist_ok=True)
     
     # 1. Samples CSV
@@ -368,7 +403,7 @@ def save_results(Delta_canonical, L_canonical, kappa_inverse, L_inverse, df, cor
     # 6. Certificate
     cert_file = os.path.join(output_dir, "UIDT_Clay_Audit_Certificate.txt")
     with open(cert_file, 'w', encoding='utf-8') as f:
-        f.write("UIDT v3.6.1 COMPLETE CLAY AUDIT CERTIFICATE\n")
+        f.write("UIDT v3.7.3 COMPLETE CLAY AUDIT CERTIFICATE\n")
         f.write("=" * 50 + "\n")
         f.write(f"Date: {datetime.now().isoformat()}\n")
         f.write(f"Precision: 200 decimal digits\n")
@@ -391,7 +426,7 @@ def save_results(Delta_canonical, L_canonical, kappa_inverse, L_inverse, df, cor
         f.write(f"gamma: {df['gamma'].mean():.4f} +/- {df['gamma'].std():.4f}\n\n")
         
         f.write("[KEY CORRELATIONS]\n")
-        f.write(f"m_S-Delta: {corr.loc['m_S', 'Delta']:+.4f}\n")
+        f.write(f"m_geo-Delta: {corr.loc['m_geo', 'Delta']:+.4f}\n")
         f.write(f"kappa-lambda_S: {corr.loc['kappa', 'lambda_S']:+.4f}\n")
         f.write(f"gamma-Psi: {corr.loc['gamma', 'Psi']:+.4f}\n\n")
         
