@@ -1,6 +1,6 @@
 # Verification Guide
 
-**UIDT v3.7.3** | Last Updated: 2026-02-14
+**UIDT v3.9** | Last Updated: 2026-02-19
 
 > **Purpose:** Enable independent verification of all UIDT claims
 > **Principle:** Reproducibility is the foundation of scientific integrity
@@ -9,7 +9,7 @@
 
 ## Overview
 
-This guide provides step-by-step instructions for independently verifying all claims in the UIDT v3.7.3 framework. All verification scripts are included in this repository under [verification/](../verification/).
+This guide provides step-by-step instructions for independently verifying all claims in the UIDT v3.9 framework. All verification scripts are included in this repository under [verification/](../verification/).
 
 **Verification Levels:**
 - **Quick (5 min):** Docker container verification
@@ -96,7 +96,7 @@ Overall Consistency: ✅ PASS
 
 ```bash
 # Navigate to repository root
-cd UIDT-Framework-v3.7.3-Canonical
+cd UIDT-Framework-v3.9-Canonical
 
 # Install dependencies
 pip install -r verification/requirements.txt
@@ -344,7 +344,7 @@ python --version  # Should be >= 3.10
 pip install --upgrade -r verification/requirements.txt
 
 # Re-clone repository (if modified)
-git clone https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical
+git clone https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical
 ```
 
 ---
@@ -401,7 +401,7 @@ If all checks pass, you can cite:
 ```bibtex
 @misc{Rietz2025_Verified,
   author = {Rietz, Philipp},
-  title  = {UIDT v3.7.3 - Independently Verified},
+  title  = {UIDT v3.9 - Independently Verified},
   note   = {Verified on [DATE] using verification suite},
   year   = {2025}
 }
@@ -417,7 +417,7 @@ If verification fails:
    - System configuration (OS, Python version)
 
 2. **Open GitHub Issue:**
-   - Go to: https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/issues
+   - Go to: https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/issues
    - Title: `[VERIFICATION FAILURE] Brief description`
    - Include: System info, error log, steps to reproduce
 

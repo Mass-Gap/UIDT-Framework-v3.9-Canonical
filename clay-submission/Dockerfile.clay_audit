@@ -1,5 +1,5 @@
 # ============================================================================
-# UIDT v3.7.2 — CLAY MATHEMATICS INSTITUTE AUDIT ENVIRONMENT
+# UIDT v3.9 — CLAY MATHEMATICS INSTITUTE AUDIT ENVIRONMENT
 # ============================================================================
 #
 # Reproducible Docker environment for verification of the Yang-Mills mass gap
@@ -30,8 +30,8 @@ FROM python:3.11-slim
 
 # Metadata
 LABEL maintainer="Philipp Rietz <ORCID:0009-0007-4307-1609>"
-LABEL description="UIDT v3.7.2 Yang-Mills Mass Gap Verification Environment"
-LABEL version="3.7.2"
+LABEL description="UIDT v3.9 Yang-Mills Mass Gap Verification Environment"
+LABEL version="3.9"
 LABEL doi="10.5281/zenodo.18003017"
 LABEL license="CC-BY-4.0"
 
@@ -136,7 +136,7 @@ LOGFILE="${REPORT_DIR}/audit_${TIMESTAMP}.log"
 exec > >(tee -a "$LOGFILE") 2>&1
 
 echo "══════════════════════════════════════════════════════════════════════════════"
-echo "  UIDT v3.7.2 — CLAY MATHEMATICS INSTITUTE VERIFICATION SUITE"
+echo "  UIDT v3.9 — CLAY MATHEMATICS INSTITUTE VERIFICATION SUITE"
 echo "══════════════════════════════════════════════════════════════════════════════"
 echo ""
 echo "  DOI:       https://doi.org/10.5281/zenodo.18003017"

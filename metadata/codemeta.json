@@ -1,12 +1,12 @@
 {
     "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
     "@type": "SoftwareSourceCode",
-    "name": "UIDT v3.7.3: Unified Information-Density Theory - Complete Manuscript (Clean State)",
-    "description": "The UIDT v3.7.3 software suite provides the canonical implementation and verification environment for the Unified Information-Density Theory. It includes the Python solver for the parameter-free derivation of the Yang-Mills Mass Gap (1.710 GeV) and the Universal Gamma Invariant (16.339). This Complete Manuscript establishes the 'Three-Pillar Architecture' and formalizes the 'CSF-UIDT Synthesis' (Covariant Scalar-Field Unification). The suite simulates the 99-step Renormalization Group (RG) cascade for vacuum energy suppression with holographic normalization (π⁻²), calibrates cosmological observables (H₀, S₈, w(z)) against 2025 DESI DR2 data, and models Supermassive Dark Seeds (SMDS). Version 3.6.1 implements critical corrections: VEV rectified to 47.7 MeV, Casimir effect reclassified to 'predicted, unverified' (Category D), and H₀ unified to 70.4 km/s/Mpc. Clean State established after v3.3 withdrawal.",
+    "name": "UIDT v3.9: Unified Information-Density Theory - Complete Manuscript (Clean State)",
+    "description": "The UIDT v3.9 software suite provides the canonical implementation and verification environment for the Unified Information-Density Theory. It includes the Python solver for the parameter-free derivation of the Yang-Mills Mass Gap (Δ≈1.710 GeV) and the Universal Gamma Invariant (γ≈16.339). This Complete Manuscript establishes the Four-Pillar Architecture and formalizes the CSF-UIDT synthesis (Covariant Scalar-Field unification), adding Photonic Isomorphism (Pillar IV) as an analog verification channel with n_critical = γ and ε_r ≈ γ^2. The suite simulates the 99-step Renormalization Group (RG) cascade for vacuum energy suppression with holographic normalization (π⁻²), calibrates cosmological observables (H₀, S₈, w(z)) against DESI DR2, and models Supermassive Dark Seeds (SMDS). Scientific integrity is maintained via strict evidence classification (A–D, plus D+ for analog verification). Clean State established after v3.3 withdrawal.",
     "identifier": "https://doi.org/10.5281/zenodo.17835200",
-    "version": "3.7.3",
-    "datePublished": "2026-02-14",
-    "dateModified": "2026-02-14",
+    "version": "3.9",
+    "datePublished": "2026-02-19",
+    "dateModified": "2026-02-19",
     "author": [
         {
             "@type": "Person",
@@ -21,7 +21,7 @@
         }
     ],
     "license": "https://creativecommons.org/licenses/by/4.0/",
-    "codeRepository": "https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical",
+    "codeRepository": "https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical",
     "programmingLanguage": [
         "Python",
         "LaTeX"
@@ -44,14 +44,17 @@
         "Information Geometry",
         "Vacuum Energy",
         "CSF Synthesis",
-        "Three-Pillar Architecture",
+        "Four-Pillar Architecture",
         "Supermassive Dark Seeds",
         "Holographic Normalization",
         "Evidence Classification",
         "Scientific Integrity",
-        "v3.7.3",
+        "Photonic Isomorphism",
+        "Torsion Binding Energy",
+        "Four-Pillar Architecture",
+        "v3.9",
         "Clean State"
     ],
-    "citation": "Rietz, P. (2026). Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.3) - Complete Manuscript with Three-Pillar Architecture (Clean State). Zenodo. DOI: 10.5281/zenodo.17835200",
-    "releaseNotes": "Version 3.7.3 - Manuscript Corrections: (1) OS-Axiome relocated to compilable appendix; (2) vectorboost SEO block removed; (3) Falsification matrix F1-F6 IDs added; (4) 430 lines orphaned content removed; (5) Osterwalder-Schrader references added; (6) Version references unified to v3.7.3. Supersedes v3.7.2 (Clean State)."
+    "citation": "Rietz, P. (2026). Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.9) - Complete Manuscript with Four-Pillar Architecture (Clean State). Zenodo. DOI: 10.5281/zenodo.17835200",
+    "releaseNotes": "Version 3.9 - Publication-ready synthesis: Four-Pillar Architecture with Photonic Isomorphism (Pillar IV), torsion binding energy E_T as a missing-link term in the vacuum resonance, updated falsification criteria, and metadata/version unification. Supersedes earlier clean-state releases."
 }

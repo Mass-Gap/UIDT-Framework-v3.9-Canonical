@@ -1,13 +1,13 @@
 {
     "metadata": {
-        "title": "Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.7.3) - Canonical Framework (Clean State)",
+        "title": "Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.9) - Canonical Framework (Clean State)",
         "upload_type": "publication",
         "publication_type": "preprint",
         "prereserved_doi": {
             "doi": "10.5281/zenodo.17835200",
             "recid": 17835200
         },
-        "description": "Canonical Reference (v3.7.3 - Clean State). Complete Manuscript establishing the Three-Pillar Architecture (QFT, Cosmology, Lab). Features analytical derivation of the Yang-Mills Mass Gap (1.710 GeV), CSF-UIDT Synthesis, SMDS model, and 99-step RG vacuum suppression. Scientifically Closed Framework. CORRECTIONS IN v3.7.3: Vacuum Expectation Value (VEV) rectified to 47.7 MeV; Casimir effect reclassified to 'predicted, unverified' (Category D); H₀ unified to 70.4 km/s/Mpc; holographic normalization (π⁻²) explicitly documented.",
+        "description": "Canonical Reference (v3.9 - Clean State). Complete Manuscript establishing a Four-Pillar Architecture (QFT, Cosmology, Lab, Photonic). Features constructive derivation of the Yang-Mills Mass Gap (Δ≈1.710 GeV), CSF-UIDT synthesis, SMDS model, and 99-step RG vacuum suppression. Adds Photonic Isomorphism (Pillar IV) with a near-term analog falsification channel and introduces the torsion binding energy E_T as the missing-link term between the geometric vacuum scale and the empirically anchored vacuum resonance. Scientific integrity maintained via strict evidence classification (A–D, plus D+ for analog verification).",
         "creators": [
             {
                 "name": "Rietz, Philipp",
@@ -26,7 +26,9 @@
             "DESI DR2",
             "Hubble Tension",
             "CSF Synthesis",
-            "Three-Pillar Architecture",
+            "Four-Pillar Architecture",
+            "Photonic Isomorphism",
+            "Torsion Binding Energy",
             "Barrow Entropy",
             "Holographic Vacuum",
             "Lattice QCD",
@@ -37,9 +39,9 @@
             "Reproducibility",
             "CERN Standards"
         ],
-        "version": "3.7.3",
+        "version": "3.9",
         "language": "eng",
-        "notes": "Integrity Note: This version (v3.7.3) formally supersedes all previous releases (v3.6, v3.5.x, v3.3). Clean State established after v3.3 withdrawal due to external formatting errors. All corrections documented in CHANGELOG.md.",
+        "notes": "Integrity Note: This version (v3.9) formally supersedes all previous releases (v3.6, v3.5.x, v3.3). Clean State established after v3.3 withdrawal due to external formatting errors. All corrections documented in CHANGELOG.md.",
         "related_identifiers": [
             {
                 "scheme": "doi",
@@ -54,7 +56,7 @@
             },
             {
                 "scheme": "url",
-                "identifier": "https://github.com/Mass-Gap/UIDT-Framework-v3.7.3-Canonical",
+                "identifier": "https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical",
                 "relation": "isDocumentedBy"
             },
             {

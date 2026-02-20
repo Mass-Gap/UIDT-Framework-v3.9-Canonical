@@ -1,4 +1,4 @@
-# Data Availability Statement - UIDT v3.7.2 
+# Data Availability Statement - UIDT v3.9
  
 ## Structural Integrity Audit: 24.12.2025 
 **Project:** A Constructive Proof of the Yang-Mills Mass Gap 

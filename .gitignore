@@ -86,7 +86,7 @@ env/
 *~
 .DS_Store
 Thumbs.db
-
+.kilocode/
 # ============================================================================
 # SENSITIVE / LOCAL CONFIGURATION
 # ============================================================================
@@ -101,7 +101,7 @@ config.local.yaml
 .claude/
 .mcp.json
 settings.local.json
-
+SECURITY.md
 # ============================================================================
 # TEMPORARY / CACHE
 # ============================================================================
@@ -159,3 +159,4 @@ clay-submission/CITATION.cff
 .cursor/rules/uidt-os-system.mdc
 .kilocode/skills/file-organizer/SKILL.md
 verification/scripts/uidt_os_integration_check.py
+.kilocode/skills/uidt-data-curator/SKILL.md

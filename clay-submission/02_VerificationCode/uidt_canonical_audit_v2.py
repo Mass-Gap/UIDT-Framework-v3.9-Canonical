@@ -210,7 +210,8 @@ if __name__ == "__main__":
     print("  Lattice Delta: ", lattice_Delta, "+/-", lattice_err, "GeV")
     print("  Z-score:       ", round(z_score, 2), "sigma")
     
-    output_dir = r"C:\Users\badbu\Documents\UIDT-Framework-V3.2-Canonical-main\clay\03_AuditData\3.6.1-canonical-corrected"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.abspath(os.path.join(script_dir, "..", "03_AuditData", "3.6.1-corrected"))
     os.makedirs(output_dir, exist_ok=True)
     
     samples_file = os.path.join(output_dir, "UIDT_MonteCarlo_samples_100k.csv")

@@ -1,13 +1,13 @@
 ```
 # Constructive Yang-Mills Mass Gap  
-# UIDT v3.7.3: Existence and Uniqueness 
+# UIDT v3.9: Existence and Uniqueness 
 # via Osterwalder-Schrader Axioms, BRST Analysis, and Extended Functional Renormalization Group
 
 ## Mathematical Proof Package (Pure SU(3) Yang–Mills on ℝ⁴)
 
 **Author:** Philipp Rietz (ORCID: 0009-0007-4307-1609)  
 **Affiliation:** Independent Researcher  
-**Version:** 3.7.3 (February 2026)  
+**Version:** 3.9 (February 2026)  
 **DOI:** 10.5281/zenodo.18003018  
 **License:** CC BY 4.0
 
@@ -26,7 +26,7 @@ framework and is based on:
 - BRST cohomology,
 - Functional Renormalization Group analysis.
 
-**Important clarification (v3.7.2):**  
+**Important clarification:**  
 The quantity Δ\* denotes the **spectral gap of the pure Yang–Mills Hamiltonian**.
 It is **not** identified with a physical particle mass in full QCD.
 
@@ -43,7 +43,7 @@ Numerical Stability: 80-digit precision
 
 **Lattice comparison:**  
 Consistent with **quenched lattice Yang–Mills simulations**  
-(z = 0.37σ; Morningstar & Peardon; clarified in v3.7.2).
+(z = 0.37σ; Morningstar & Peardon).
 
 ---
 
@@ -117,7 +117,7 @@ python homotopy_deformation_verification.py
 - All lattice references are **explicitly quenched** (pure gauge).
 - Full QCD glueball identification is **not claimed**.
 - Glueball–meson mixing below ~2 GeV prevents direct comparison in unquenched QCD.
-- See **Section 10** of the manuscript and **CHANGELOG.md (v3.7.2)**.
+- See **Section 10** of the manuscript and **CHANGELOG.md**.
 
 ---
 
@@ -130,7 +130,7 @@ CHANGELOG.md
 ```
 
 Notable update:
-- **v3.7.2:** Physical interpretation clarified following Morningstar (2025).
+- **v3.9:** Physical interpretation clarified following Morningstar (2025).
 
 ---
 
@@ -152,9 +152,9 @@ Notable update:
 ## Contact
 
 - **ORCID:** 0009-0007-4307-1609  
-- **Repository:** https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical
+- **Repository:** https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical
 
 ---
 
-*Last Updated: December 27, 2025*
+*Last Updated: February 19, 2026*
 ```

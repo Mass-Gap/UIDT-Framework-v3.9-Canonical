@@ -1,6 +1,6 @@
 # Falsification Matrix
 
-**UIDT v3.7.3** | Last Updated: 2026-02-14
+**UIDT v3.9** | Last Updated: 2026-02-19
 
 > **Purpose:** Define experimental tests that would refute the theory
 > **Principle:** A theory that cannot be falsified is not scientific
@@ -9,7 +9,7 @@
 
 ## Overview
 
-The UIDT framework makes **testable predictions** across quantum field theory, lattice QCD, precision laboratory experiments, and cosmological observations. This document specifies the exact experimental thresholds that would **refute the theory** and require major revision.
+The UIDT framework makes **testable predictions** across quantum field theory, lattice QCD, precision laboratory experiments, cosmological observations, and (v3.9) photonic analog platforms. This document specifies the exact experimental thresholds that would **refute the theory** and require major revision.
 
 **Status:** Theory is considered **REFUTED** if any critical test fails at the specified confidence level.
 
@@ -20,7 +20,7 @@ The UIDT framework makes **testable predictions** across quantum field theory, l
 ### F1: Lattice QCD Continuum Limit 🔴 HIGHEST PRIORITY
 
 **Prediction:**
-Yang-Mills spectral gap Δ = 1.710 ± 0.015 GeV [Category A]
+Yang–Mills spectral gap Δ = 1.710 ± 0.015 GeV (Category A)
 
 **Experimental Test:**
 Next-generation quenched lattice QCD continuum extrapolation
@@ -50,43 +50,35 @@ If lattice continuum limit yields:
 
 ---
 
-### F2: Casimir Precision Experiments ⚠️ TECHNOLOGY-LIMITED
+### F2: Torsion Binding Energy (Missing Link) 🔴 HIGH PRIORITY
 
 **Prediction:**
-Casimir force anomaly +0.59% at λ = 0.66 nm [Category D: Unverified]
+$E_T \approx 2.44\,\mathrm{MeV}$ (Missing Link)
 
 **Experimental Test:**
-Sub-nanometer parallel-plate Casimir force measurements
+Precision hadron spectroscopy / vacuum-scalar resonance calibration
 
 **Falsification Threshold:**
-Measurement at λ = 0.66 nm with <0.3% uncertainty excludes anomaly:
-**|ΔF/F|_measured < 0.1%** → **PREDICTION REFUTED**
+If the observed vacuum resonance can be shown to satisfy
+$f_{vac} = \Delta/\gamma$ with no residual term (pure geometry), i.e.
+**$E_T \approx 0$ within experimental uncertainty** → **PILLAR II MISSING LINK REFUTED**
 
 **Current Status:**
-❌ **NO PEER-REVIEWED DATA EXISTS** (Category D: awaiting experimental test)
-
-**Technical Challenges:**
-- Sub-nanometer plate separation control (< 1 Å precision)
-- Surface roughness < 0.1 nm RMS
-- Electrostatic potential cancellation < 1 mV
-- Temperature stability < 10 mK
+⚠️ **PENDING** — requires a dedicated precision determination of $f_{vac}$ and a consistent mapping to the mass-gap sector
 
 **Timeline:**
-- **2026-2027:** Technology development (AFM-based Casimir apparatus)
-- **2028+:** Precision measurements (if funding secured)
+- **2025-2026:** Precision hadron spectroscopy targets for $f_{vac}$ cross-checks
 
 **Falsification Example:**
 If experimental measurement yields:
-- |ΔF/F| = 0.03 ± 0.08% → **NO ANOMALY DETECTED** (within 1σ) → **CATEGORY D CLAIM REFUTED**
-- |ΔF/F| = 0.61 ± 0.12% → **ANOMALY CONFIRMED** (5σ) → **CATEGORY D UPGRADED TO C**
+- $E_T = 0.00 \pm 0.05\,\text{MeV}$ → **NO TORSION TERM** → **F2 FAIL (refutes missing-link claim)**
+- $E_T = 2.44 \pm 0.10\,\text{MeV}$ → **TORSION TERM CONFIRMED** → **Category D strengthened**
 
 **Verification Protocol:**
-1. Contact precision Casimir groups (van Blokland Lab, Lambrecht/Reynaud)
-2. Request measurements at d = 0.66 nm ± 0.05 nm
-3. Compare F_measured vs. F_Lifshitz(standard)
-4. Statistical significance: >5σ for confirmation, <3σ for exclusion
-
-**Open Data:** Researchers can request raw Casimir data at badbugs.arts@gmail.com
+1. Determine $f_{vac}$ (vacuum scalar resonance proxy) from a reproducible experimental pipeline
+2. Compute $E_{\mathrm{geo}} = \Delta/\gamma$ using canonical $\Delta$ and $\gamma$
+3. Compute $E_T = f_{vac} - E_{\mathrm{geo}}$
+4. If $E_T$ is consistent with 0 → falsification trigger activated
 
 ---
 
@@ -120,7 +112,26 @@ Monitor DESI publications for equation-of-state w(z) constraints
 
 ---
 
-### F4: LHC Scalar Resonance Search (Run 4) 📊 LONG-TERM
+### F4: Photonic Isomorphism (Metamaterial Analog) 🔬 NEAR-TERM
+
+**Prediction:**
+Critical refractive index $n_{\mathrm{critical}} = \gamma \approx 16.339$ (equivalently $\varepsilon_r \approx \gamma^2 \approx 267$) [Category D+: analog verification]
+
+**Experimental Test:**
+Nonlocal metamaterial analog platform (Song et al., Nature Communications 2025 as the external platform)
+
+**Falsification Threshold:**
+Measured transition does not occur at **$n_{\mathrm{critical}} = 16.339 \pm 0.1$** → **PILLAR IV REFUTED**
+
+**Current Status:**
+⚠️ **PENDING** — platform exists; UIDT mapping requires a dedicated measurement protocol
+
+**Timeline:**
+- **2026:** Analog test campaign (materials + optical characterization)
+
+---
+
+### F5: LHC Scalar Resonance Search (Run 4) 📊 LONG-TERM
 
 **Prediction:**
 Scalar particle m_S = 1.705 ± 0.015 GeV [Category D: Unverified]
@@ -150,9 +161,48 @@ Monitor ATLAS/CMS publications for light scalar searches
 
 ---
 
+### F6: Proton Anchor Ratio (Hadron Harmonic Consistency) ⚖️ ONGOING
+
+**Prediction:**
+$m_p/f_{vac} \approx 8.75$ [Category D: Unverified]
+
+**Experimental Test:**
+Precision determination of $f_{vac}$ (vacuum-scalar resonance proxy) combined with the proton mass anchor
+
+**Falsification Threshold:**
+If $m_p/f_{vac}$ deviates from 8.75 at **>3σ** after uncertainty propagation → **PILLAR III ANCHOR REFUTED**
+
+**Current Status:**
+⚠️ **PENDING** — depends on a reproducible, externally measurable $f_{vac}$ pipeline
+
+**Verification Protocol:**
+1. Measure/estimate $f_{vac}$ from an explicitly documented experimental proxy
+2. Compute $m_p/f_{vac}$ with propagated uncertainties
+3. If deviation exceeds 3σ → falsification trigger activated
+
+---
+
+### F7: Casimir Force Anomaly (Sub-nanometer) 🧪 LONG-TERM
+
+**Prediction:**
+Casimir force anomaly +0.59% at λ = 0.66 nm [Category D: Unverified]
+
+**Experimental Test:**
+Next-generation sub-nanometer Casimir force measurements with validated surface systematics
+
+**Falsification Threshold:**
+If \|ΔF/F\| < 0.1% @ 0.66 nm with controlled systematics → **CASIMIR PREDICTION REFUTED**
+
+**Current Status:**
+❌ **NO DATA** — no public sub-nanometer dataset at the required systematics level
+
+**Open Data:** Researchers can request raw Casimir data at badbugs.arts@gmail.com
+
+---
+
 ## MODERATE TESTS (Calibration-Dependent)
 
-### F5: Hubble Tension Resolution (JWST Cycle 3-4) 🌌 SHORT-TERM
+### F8: Hubble Tension Resolution (JWST Cycle 3-4) 🌌 SHORT-TERM
 
 **Prediction:**
 H₀ = 70.4 ± 0.16 km/s/Mpc (DESI-calibrated) [Category C]
@@ -199,8 +249,8 @@ Set arXiv alerts for keywords:
 **Independent Verification:**
 1. Clone repository:
    ```bash
-   git clone https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical
-   cd UIDT-Framework-v3.7.3-Canonical
+   git clone https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical
+   cd UIDT-Framework-v3.9-Canonical
    ```
 
 2. Run verification:
@@ -235,11 +285,14 @@ Set arXiv alerts for keywords:
 
 | Test ID | Prediction | Category | Falsification Threshold | Timeline | Status |
 |---------|------------|----------|------------------------|----------|--------|
-| **F1** | Δ = 1.710 GeV | A | Lattice >3σ exclusion | 2026-2028 | ✅ Currently passes (z=0.37σ) |
-| **F2** | Casimir +0.59% | D | \|ΔF/F\| < 0.1% @ 0.66 nm | 2028+ | ❌ No data exists |
+| **F1** | Δ = 1.710 ± 0.015 GeV | A | Lattice >3σ exclusion | 2026-2028 | ✅ Currently passes (z=0.37σ) |
+| **F2** | $E_T \approx 2.44$ MeV | D | $E_T \approx 0$ (pure geometry) | 2025-2026 | ⚠️ Pending |
 | **F3** | w(z) dynamic | C | w = -1.00 ± 0.01 (static) | 2027 | ✅ DESI Y1 supports |
-| **F4** | m_S = 1.705 GeV | D | LHC >5σ exclusion 1.5-1.9 GeV | 2029+ | ⚠️ No search yet |
-| **F5** | H₀ = 70.4 km/s/Mpc | C | >3σ from 70.4 (independent) | 2025-2026 | ⚠️ JWST ongoing |
+| **F4** | $n_{\mathrm{critical}} = 16.339$ | D+ | $n_{crit} \neq 16.339 \pm 0.1$ | 2026 | ⚠️ Pending |
+| **F5** | Scalar $m_S = 1.705 \pm 0.015$ GeV | D | >5σ exclusion (1.5–1.9 GeV) | 2029+ | ⚠️ Pending |
+| **F6** | $m_p/f_{vac} \approx 8.75$ | D | >3σ deviation | Ongoing | ⚠️ Pending |
+| **F7** | Casimir +0.59% | D | \|ΔF/F\| < 0.1% @ 0.66 nm | 2028+ | ❌ No data exists |
+| **F8** | H₀ = 70.4 ± 0.16 km/s/Mpc | C | H₀ ≠ 70.4 at >3σ | 2025-2027 | ⚠️ Uncertain |
 
 ---
 
@@ -252,12 +305,11 @@ Set arXiv alerts for keywords:
 - **Entire UIDT framework** requires major revision
 - **Severity:** 🔴 **THEORY-KILLING**
 
-### If Test 2 (Casimir) FAILS:
-- **Category D claims** (Casimir, holographic scale) invalidated
-- **Limitation L1** (10¹⁰ factor) unresolved
-- **Cosmological predictions** downgraded to pure phenomenology
+### If Test 2 (Torsion Binding Energy) FAILS:
+- **Missing-link claim** (E_T) invalidated
+- **Cosmological folding narrative** requires revision/replacement
 - **Core QFT claims** (Category A) **UNAFFECTED**
-- **Severity:** 🟡 **PILLAR III REFUTED** (but QFT core survives)
+- **Severity:** 🟡 **PILLAR II MECHANISM REFUTED** (but QFT core survives)
 
 ### If Test 3 (DESI) FAILS:
 - **Category C calibrations** (H₀, λ_UIDT) invalidated
@@ -265,11 +317,11 @@ Set arXiv alerts for keywords:
 - **Core QFT claims** (Category A) **UNAFFECTED**
 - **Severity:** 🟢 **CALIBRATION UPDATE NEEDED** (not theory-killing)
 
-### If Test 4 (LHC) FAILS:
-- **Category D prediction** (m_S) refuted
-- **Scalar sector** interpretation incorrect
-- **Core QFT claims** (Δ, κ, λ_S) **UNAFFECTED**
-- **Severity:** 🟡 **PREDICTION FAILED** (theory survives)
+### If Test 4 (Photonic Isomorphism) FAILS:
+- **Analog isomorphism claim** (S(x) ↔ n_eff channel) refuted
+- **Photonic pillar** removed from the architecture
+- **Core QFT/cosmology/lab pillars** **UNAFFECTED**
+- **Severity:** 🟡 **PILLAR IV REFUTED** (but QFT core survives)
 
 ---
 
@@ -278,10 +330,10 @@ Set arXiv alerts for keywords:
 ```bibtex
 @misc{Rietz2025_Falsification,
   author = {Rietz, Philipp},
-  title  = {UIDT v3.7.3 Falsification Matrix},
-  year   = {2025},
+  title  = {UIDT v3.9 Falsification Matrix},
+  year   = {2026},
   doi    = {10.5281/zenodo.17835200},
-  url    = {https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical/blob/main/docs/falsification-criteria.md}
+  url    = {https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/blob/main/docs/falsification-criteria.md}
 }
 ```
 
@@ -292,6 +344,6 @@ Set arXiv alerts for keywords:
 
 ---
 
-**Last Updated:** 2026-02-05
+**Last Updated:** 2026-02-19
 **DOI:** 10.5281/zenodo.17835200
-**Next Review:** After DESI Year 3 (2025) and Lattice 2026 Conference
+**Next Review:** After DESI Year 3 (2025), Metamaterial analog tests (2026), and Lattice 2026 Conference

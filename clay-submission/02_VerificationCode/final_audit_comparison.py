@@ -4,7 +4,10 @@ import pandas as pd
 import numpy as np
 import os
 
-base_path = r'C:\Users\badbu\Documents\UIDT-Framework-V3.2-Canonical-main\clay\03_AuditData'
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+base_path = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "03_AuditData"))
+if not os.path.isdir(base_path):
+    raise FileNotFoundError(f"Audit data directory not found: {base_path}")
 
 # Expected canonical values
 CANONICAL = {
@@ -25,7 +28,11 @@ print("=" * 80)
 print("FINAL COMPREHENSIVE AUDIT - 03_AuditData")
 print("=" * 80)
 
-datasets = ['3.2', '3.6.1-canonical-corrected', '3.7.0-clay']
+datasets = sorted(
+    d
+    for d in os.listdir(base_path)
+    if os.path.isdir(os.path.join(base_path, d)) and d[:1].isdigit()
+)
 
 results = {}
 

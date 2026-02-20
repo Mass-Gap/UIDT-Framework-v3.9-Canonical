@@ -1,4 +1,4 @@
-# Glossary of Terms — UIDT v3.7.3
+# Glossary of Terms — UIDT v3.9
 
 ## Mathematical Definitions
 

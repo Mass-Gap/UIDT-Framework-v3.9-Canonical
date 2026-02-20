@@ -1,4 +1,4 @@
-# --- UIDT v3.6.1 Master Container (Clean State) ---
+# --- UIDT v3.9 Master Container (Clean State) ---
 # Base Image: Python 3.10 Slim (Scientific Standard for Reproducibility)
 FROM python:3.10-slim
 
@@ -7,11 +7,11 @@ FROM python:3.10-slim
 # ==============================================================================
 LABEL maintainer="Philipp Rietz <badbugs.arts@gmail.com>"
 LABEL org.opencontainers.image.title="UIDT Verification Suite"
-LABEL org.opencontainers.image.description="Official verification container for UIDT v3.6.1 (Canonical Clean State)"
-LABEL org.opencontainers.image.version="3.6.1"
+LABEL org.opencontainers.image.description="Official verification container for UIDT v3.9 (Canonical Clean State)"
+LABEL org.opencontainers.image.version="3.9"
 LABEL org.opencontainers.image.licenses="CC-BY-4.0"
 LABEL org.opencontainers.image.url="https://doi.org/10.5281/zenodo.17835200"
-LABEL org.opencontainers.image.source="https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical"
+LABEL org.opencontainers.image.source="https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical"
 
 # ==============================================================================
 # ENVIRONMENT CONFIGURATION

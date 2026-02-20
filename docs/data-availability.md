@@ -1,6 +1,6 @@
-# Data Availability Statement — UIDT v3.7.3
+# Data Availability Statement — UIDT v3.9
 
-**Version:** 3.7.3 (Canonical Release)
+**Version:** 3.9 (Canonical Release)
 **DOI:** [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200)
 **License:** MIT (code) / CC-BY-4.0 (data and documentation)
 
@@ -16,8 +16,8 @@ licenses.
 
 | Field | Value |
 | :--- | :--- |
-| **Repository** | [Mass-Gap/UIDT-Framework-v3.7.2-Canonical](https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical) |
-| **Version** | v3.7.3 (Canonical Release) |
+| **Repository** | [Mass-Gap/UIDT-Framework-v3.9-Canonical](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical) |
+| **Version** | v3.9 (Canonical Release) |
 | **Status** | Scientifically closed — all claims version-tagged and verified |
 | **License** | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (data) / MIT (code) |
 | **DOI** | [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200) |
@@ -29,7 +29,7 @@ licenses.
 
 | Platform | Resource | Link |
 | :--- | :--- | :--- |
-| **GitHub** | Source code and documentation | [Mass-Gap/UIDT-Framework-v3.7.2-Canonical](https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical) |
+| **GitHub** | Source code and documentation | [Mass-Gap/UIDT-Framework-v3.9-Canonical](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical) |
 | **OSF** | Project registration and supplementary materials | [10.17605/OSF.IO/Q8R74](https://doi.org/10.17605/OSF.IO/Q8R74) |
 | **Zenodo** | Permanent archival record (CERN infrastructure) | [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200) |
 
@@ -45,7 +45,7 @@ licenses.
 | `UIDT-3.6.1-Verification-visual.py` | Visualization engine generating Figures 12.1–12.4 |
 | `rg_flow_analysis.py` | RG flow analysis confirming the fixed-point relation 5κ² = 3λ_S |
 | `error_propagation.py` | Full uncertainty budget and Monte Carlo error propagation |
-| `uidt_proof_core.py` | Core proof engine for mass-gap derivation chain |
+| `modules/geometric_operator.py` | Core geometric operator engine (mass-gap derivation chain) |
 
 ### 3.2 Lattice QCD Simulation Pipeline (`simulation/`)
 
@@ -138,8 +138,8 @@ All figures can be regenerated deterministically:
 
 ```bash
 # Clone repository
-git clone https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical
-cd UIDT-Framework-v3.7.2-Canonical
+git clone https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical
+cd UIDT-Framework-v3.9-Canonical
 
 # Install dependencies
 pip install -r verification/requirements.txt
