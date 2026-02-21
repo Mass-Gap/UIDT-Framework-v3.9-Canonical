@@ -196,26 +196,35 @@ pip install -r verification/requirements.txt
 ### Verification Run
 
 **1. Primary Solver**
-Executes the Three-Equation System and the 60-digit Banach Audit.
+Executes the Four-Pillar Verification Suite (v3.9).
 
 ```bash
-python verification/scripts/UIDT-3.6.1-Verification.py
+python verification/scripts/UIDT_Master_Verification.py
 ```
 
 **Expected Output (v3.9):**
 
 ```text
-UIDT v3.6.1 Numerical Verification
-==================================
-Canonical Solution:
-  - Scalar Mass (m_S): 1.705 GeV
-  - Coupling (κ): 0.500
-  - VEV (v): 47.7 MeV  ← CORRECTED in v3.6.1
-  
-Max Residual: < 1.2e-40
-Gamma Invariant: 16.339
-CSF Anomalous Dimension: 0.504 (Match!)
-Overall Consistency: ✅ PASS
+╔══════════════════════════════════════════════════════════════╗
+║  UIDT v3.9 MASTER VERIFICATION SUITE (Hybrid Engine)         ║
+║  Strategies: Scipy Solver + Mpmath High-Precision Prover     ║
+╚══════════════════════════════════════════════════════════════╝
+
+[1] RUNNING NUMERICAL SOLVER (System Consistency)...
+   > Solution Found: m_S=1.7050, kappa=0.5001
+   > System Status: ✅ CLOSED
+
+[2] EXECUTING HIGH-PRECISION PROOF (80 Digits)...
+   > Banach Fixed Point: 1.710035046742213182... GeV
+   > Vacuum Energy:      2.447165543834107377... GeV^4
+   > THEOREM 3.4: ✅ PROVEN (Existence & Uniqueness)
+
+[3] PILLAR II: DERIVING MISSING LINK (Lattice Topology)...
+   > Vacuum Frequency: 107.10 MeV
+
+[4] PILLAR III: SPECTRAL EXPANSION & PREDICTIONS...
+   > X17 Noise Floor: 17.10 MeV
+   > X2370 Resonance: 2.3701 GeV
 ```
 
 **2. Visualization Suite**
