@@ -50,6 +50,6 @@ COPY . .
 # ==============================================================================
 # RUNTIME EXECUTION
 # ==============================================================================
-# Default Command: Executes the v3.6.1 Verification Suite
-# Ensures that every container start performs a fresh audit of the 3-Equation System.
-CMD ["python", "UIDT-3.6.1-Verification.py"]
+# Default Command: Executes the v3.9 Master Verification Suite
+# Ensures that every container start performs a fresh audit of the Four-Pillar Architecture.
+CMD ["python", "verification/scripts/UIDT_Master_Verification.py"]

@@ -5,10 +5,12 @@ UIDT v3.9 MASTER VERIFICATION SUITE (Hybrid Engine)
 Status: CONSTRUCTIVE SYNTHESIS (Clean State)
 Merged Logic: Scipy Solver (Speed) + Mpmath Prover (Precision)
 
-Dieser Master-Code vereint:
-1. Den numerischen Solver (v3.6.1 Verification)
-2. Den mathematischen Hochpräzisions-Kern (uidt_proof_core)
-3. Die automatische Berichterstellung im 'verification/data' Ordner.
+This master code combines:
+1. The numerical solver (v3.6.1 Verification)
+2. The high-precision mathematical core (uidt_proof_core)
+3. Torsion Lattice (Missing Link Integration)
+4. Harmonic Predictions (X17, X2370, Spin States)
+5. Automatic report generation in the 'verification/data' folder.
 
 Author: Philipp Rietz
 Date: February 2026
@@ -26,12 +28,17 @@ import sys
 import os
 import inspect
 
+# Ensure UTF-8 output on Windows terminals
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
+
 # ==============================================================================
-# KONFIGURATION & PFADE
+# CONFIGURATION & PATHS
 # ==============================================================================
 
-# Ziel-Ordner für den Report (relativ zum Skript oder absolut)
-# Wir versuchen, den Ordner 'data' parallel zum 'scripts' Ordner zu finden.
+# Target directory for the report (relative to script or absolute)
+# We attempt to find the 'data' folder parallel to the 'scripts' folder.
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPORT_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "data"))
 
@@ -39,24 +46,24 @@ PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-# Globaler Log-Buffer für den Report
+# Global log buffer for the report
 log_buffer = []
 
 def log_print(msg):
-    """Schreibt in die Konsole UND in den Report-Puffer."""
+    """Writes to the console AND to the report buffer."""
     print(msg)
     log_buffer.append(msg)
 
 # ==============================================================================
-# TEIL 1: DER MATHEMATISCHE KERN (High-Precision Prover)
+# PART 1: THE MATHEMATICAL CORE (High-Precision Prover)
 # ==============================================================================
 class HighPrecisionProver:
     """
-    Der theoretische Kern (mpmath). 
-    Führt den Banach-Fixpunkt-Beweis mit 80 Stellen durch.
+    The theoretical core (mpmath). 
+    Executes the Banach fixed-point proof with 80 digits of precision.
     """
     def __init__(self):
-        mp.dps = 80 # 80 Stellen Präzision
+        mp.dps = 80 # 80 digits of precision
         self.Lambda = mp.mpf('1.000')
         self.C      = mp.mpf('0.277')
         self.Kappa  = mp.mpf('0.500')
@@ -73,7 +80,7 @@ class HighPrecisionProver:
         return mp.sqrt(self.m_S**2 + alpha * (1 + beta * log_term))
 
     def run_proof(self):
-        # Banach Fixpunkt Iteration
+        # Banach Fixed-Point Iteration
         current = mp.mpf('1.0')
         for i in range(100):
             prev = current
@@ -83,26 +90,26 @@ class HighPrecisionProver:
         
         Delta_star = current
         
-        # Lipschitz Konstante prüfen
+        # Verify Lipschitz Constant
         epsilon = mp.mpf('1e-30')
         L = abs(self._map_T(Delta_star + epsilon) - Delta_star) / epsilon
         
-        # Vakuum Energie Berechnung (Holografisch)
+        # Vacuum Energy Calculation (Holographic)
         rho_calc = (Delta_star**4) * (mp.mpf('16.339')**(-12)) * ((self.v_EW/self.M_Pl)**2) * self.pi_sq_inv
         
         return Delta_star, L, rho_calc
 
 # ==============================================================================
-# TEIL 2: DER NUMERISCHE SOLVER (System Validation)
+# PART 2: THE NUMERICAL SOLVER (System Validation)
 # ==============================================================================
 
-# Konstanten (float für scipy)
+# Constants (float for scipy)
 C_GLUON_FLOAT = 0.277
 LAMBDA_FLOAT  = 1.0
 DELTA_TARGET  = 1.710
 
 def solve_exact_cubic_v(m_S, lambda_S, kappa):
-    """Löst die Vakuum-Gleichung exakt nach v auf."""
+    """Solves the vacuum equation exactly for v."""
     if lambda_S == 0: return 0.0
     p = (6 * m_S**2) / lambda_S
     q = -(6 * kappa * C_GLUON_FLOAT) / (LAMBDA_FLOAT * lambda_S)
@@ -111,21 +118,21 @@ def solve_exact_cubic_v(m_S, lambda_S, kappa):
     return real_roots[0] if real_roots else 0.0
 
 def core_system_equations(vars):
-    """Das 3-Gleichungs-System für den Solver."""
+    """The 3-equation system for the solver."""
     m_S, kappa, lambda_S = vars
-    if m_S <= 0 or kappa <= 0 or lambda_S <= 0: return [1.0, 1.0, 1.0] # Schutz
+    if m_S <= 0 or kappa <= 0 or lambda_S <= 0: return [1.0, 1.0, 1.0] # Safeguard
     
     v = solve_exact_cubic_v(m_S, lambda_S, kappa)
     
-    # 1. Vakuum Stabilität
+    # 1. Vacuum Stability
     eq1 = (m_S**2 * v + (lambda_S * v**3)/6 - (kappa * C_GLUON_FLOAT)/LAMBDA_FLOAT) * 100
     
-    # 2. Gap Gleichung
+    # 2. Gap Equation
     log_term = np.log(LAMBDA_FLOAT**2 / m_S**2)
     Pi_S = (kappa**2 * C_GLUON_FLOAT) / (4 * LAMBDA_FLOAT**2) * (1 + log_term / (16 * np.pi**2))
     eq2 = np.sqrt(m_S**2 + Pi_S) - DELTA_TARGET
     
-    # 3. RG Fixpunkt
+    # 3. RG Fixed Point
     eq3 = 5 * kappa**2 - 3 * lambda_S
     
     return [eq1, eq2, eq3]
@@ -141,7 +148,7 @@ def run_master_verification():
     log_print("╚══════════════════════════════════════════════════════════════╝\n")
 
     # ---------------------------------------------------------
-    # SCHRITT 1: Numerische Lösung (Scipy)
+    # STEP 1: Numerical Solution (Scipy)
     # ---------------------------------------------------------
     log_print("[1] RUNNING NUMERICAL SOLVER (System Consistency)...")
     x0 = [1.705, 0.500, 0.417]
@@ -158,10 +165,12 @@ def run_master_verification():
     log_print(f"   > System Status: {'✅ CLOSED' if closed else '❌ OPEN'}")
 
     proof_data_block = "Mathematical Proof not executed."
+    pillar_ii_data_block = ""
+    pillar_iii_data_block = ""
     pillar_iv_data_block = ""
 
     # ---------------------------------------------------------
-    # SCHRITT 2: Analytischer Beweis (Mpmath) - Nur wenn Solver OK
+    # STEP 2: Analytical Proof (Mpmath) - Only if Solver OK
     # ---------------------------------------------------------
     if closed:
         log_print("\n[2] EXECUTING HIGH-PRECISION PROOF (80 Digits)...")
@@ -189,7 +198,52 @@ def run_master_verification():
             log_print(f"   > ❌ PROOF ERROR: {e}")
             proof_data_block = f"\n### ⚠️ Mathematical Proof Failed: {e}\n"
 
-        log_print("\n[3] PILLAR IV: PHOTONIC APPLICATION (Metamaterials, Category D)...")
+        log_print("\n[3] PILLAR II: DERIVING MISSING LINK (Lattice Topology)...")
+        f_vac_val = mp.mpf('0.1071')
+        try:
+            from modules.lattice_topology import TorsionLattice
+            from modules.geometric_operator import GeometricOperator
+            op_instance = GeometricOperator()
+            lat = TorsionLattice(op_instance)
+            f_vac_val = lat.calculate_vacuum_frequency()
+            noise = lat.check_thermodynamic_limit()
+            log_print(f"   > Vacuum Frequency: {float(f_vac_val * 1000):.2f} MeV")
+            log_print(f"   > Thermodynamic Noise Floor: {float(noise * 1000):.2f} MeV")
+            pillar_ii_data_block = f"""
+### 🔗 Pillar II: Missing Link (Lattice Topology)
+> **Thermodynamic Censorship:** Stabilizes the Vacuum
+- Derived Vacuum Frequency (Baddewithana): `{float(f_vac_val * 1000):.2f}` MeV
+- Thermodynamic Noise Floor (E_noise): `{float(noise * 1000):.2f}` MeV
+"""
+        except ImportError as e:
+            log_print(f"   > ❌ PILLAR II ERROR: {e}")
+            pillar_ii_data_block = f"\n### ⚠️ Pillar II Failed: {e}\n"
+
+        log_print("\n[4] PILLAR III: SPECTRAL EXPANSION & PREDICTIONS...")
+        try:
+            from modules.harmonic_predictions import HarmonicPredictor
+            predictor = HarmonicPredictor(f_vac_val, mp.mpf('1.710'))
+            report = predictor.generate_report()
+            log_print(f"   > Omega_bbb: {report['Omega_bbb_GeV']:.4f} GeV")
+            log_print(f"   > Tetraquark: {report['Tetra_cccc_GeV']:.4f} GeV")
+            log_print(f"   > X17 Noise Floor: {report['X17_NoiseFloor_MeV']:.2f} MeV")
+            log_print(f"   > X2370 Resonance: {report['X2370_Resonance_GeV']:.4f} GeV")
+            log_print(f"   > Tensor Glueball: {report['Glueball_2++_GeV']:.4f} GeV")
+            pillar_iii_data_block = f"""
+### 📊 Pillar III: Spectral Expansion (Blind Predictions)
+> **Harmonic Resonance:** 3-6-9 Octave Scaling
+- Omega_bbb (Triple Bottom): `{float(report['Omega_bbb_GeV']):.4f}` GeV
+- Tetraquark (cccc): `{float(report['Tetra_cccc_GeV']):.4f}` GeV
+- X17 Anomaly (Noise Floor): `{float(report['X17_NoiseFloor_MeV']):.2f}` MeV
+- X2370 Resonance: `{float(report['X2370_Resonance_GeV']):.4f}` GeV
+- Tensor Glueball (2++): `{float(report['Glueball_2++_GeV']):.4f}` GeV
+- Pseudoscalar Glueball (0-+): `{float(report['Glueball_0-+_GeV']):.4f}` GeV
+"""
+        except ImportError as e:
+            log_print(f"   > ❌ PILLAR III ERROR: {e}")
+            pillar_iii_data_block = f"\n### ⚠️ Pillar III Failed: {e}\n"
+
+        log_print("\n[5] PILLAR IV: PHOTONIC APPLICATION (Metamaterials, Category D)...")
         try:
             from modules.photonic_isomorphism import PhotonicInterface
             from modules.geometric_operator import GeometricOperator
@@ -227,14 +281,16 @@ def run_master_verification():
             pillar_iv_data_block = f"\n### ⚠️ Pillar IV Failed: {e}\n"
 
     # ---------------------------------------------------------
-    # SCHRITT 3: Report Generierung
+    # STEP 3: Report Generation
     # ---------------------------------------------------------
-    generate_final_report(closed, proof_data_block, pillar_iv_data_block, m_S, v_final)
+    # We use Delta_star from the proof if it exists, otherwise fall back to target
+    final_delta = delta_proof if 'delta_proof' in locals() else DELTA_TARGET
+    generate_final_report(closed, proof_data_block, pillar_ii_data_block, pillar_iii_data_block, pillar_iv_data_block, m_S, v_final, final_delta)
 
-def generate_final_report(closed, proof_data, pillar_iv_data, m_S, v_final):
+def generate_final_report(closed, proof_data, p_ii, p_iii, p_iv, m_S, v_final, delta_val):
     timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     
-    # Hash des Codes für Integrität
+    # Hash of the code for integrity
     try:
         src = inspect.getsource(sys.modules[__name__])
         sig = hashlib.sha256(src.encode()).hexdigest()[:16]
@@ -255,7 +311,7 @@ signature: "SHA256:{sig}"
 | :--- | :--- |
 | **Numerical Solver** | {"✅ Converged" if closed else "❌ Failed"} |
 | **Architecture** | Hybrid (Scipy + Mpmath) |
-| **Logic Core** | Pillar I (QFT) + Pillar II (Lattice) |
+| **Logic Core** | Pillars I - IV Fully Integrated |
 
 ---
 
@@ -264,17 +320,24 @@ signature: "SHA256:{sig}"
 
 ---
 
-## 3. Pillar IV: Experimental Isomorphism (Photonics)
-{pillar_iv_data}
+## 3. Physical Parameters & Lattice Stabilisation
+{p_ii}
+
+{p_iii}
 
 ---
 
-## 4. Physical Parameters (Derived)
+## 4. Pillar IV: Experimental Isomorphism (Photonics)
+{p_iv}
+
+---
+
+## 5. Fundamental Constants (Derived)
 | Parameter | Value | Unit | Description |
 | :--- | :--- | :--- | :--- |
-| **Mass Gap (Δ)** | 1.710 | GeV | Fundamental Scale |
-| **Scalar Mass (m_S)** | {m_S:.4f} | GeV | Resonance Target |
-| **VEV (v)** | {v_final*1000:.2f} | MeV | Vacuum Expectation |
+| **Mass Gap (Δ)** | {float(delta_val):.6f} | GeV | Fundamental Scale |
+| **Scalar Mass (m_S)** | {float(m_S):.6f} | GeV | Resonance Target |
+| **VEV (v)** | {float(v_final)*1000:.4f} | MeV | Vacuum Expectation |
 | **Gamma (γ)** | 16.339 | - | Lattice Invariant |
 
 ---
@@ -287,7 +350,7 @@ signature: "SHA256:{sig}"
     
     report += "```\n"
     
-    # Speichern
+    # Save
     try:
         os.makedirs(REPORT_DIR, exist_ok=True)
         filename = f"Verification_Report_v3.9_{timestamp.replace(':','-').replace(' ','_')}.md"

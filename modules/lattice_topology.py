@@ -1,8 +1,8 @@
 """
 UIDT MODULE: LATTICE TOPOLOGY (Pillar II)
 =========================================
-Version: 3.9 (Constructive Synthesis)
-Context: Torsion Lattice & Holographic Folding
+Version: 3.9 (Constructive Synthesis - MISSING LINK INTEGRATION)
+Context: Torsion Lattice & Holographic Folding, Thermodynamic Censorship
 
 Dieses Modul löst die Skalierungsprobleme (10^10 Faktor, Vakuum-Energie),
 indem es die diskrete Topologie des Torsionsgitters auf die Feldwerte anwendet.
@@ -44,18 +44,24 @@ class TorsionLattice:
         # Konstanten
         self.HBAR_C_NM = mpf('0.1973269804') * 1e-6 # GeV*nm
 
-    def get_corrected_vacuum_frequency(self):
+    def calculate_vacuum_frequency(self):
         """
         Leitet die 'Baddewithana Frequenz' (107.1 MeV) her.
         Formel: f_vac = (Delta / gamma) + E_torsion
         """
         # 1. Reine Geometrie (Myon Resonanz n=1)
-        base_freq = self.op.apply(1) # ~0.1047 GeV
+        base_freq = self.op.DELTA_GAP / self.op.GAMMA
         
         # 2. Addiere Gitter-Spannung (Torsion Binding)
         corrected_freq = base_freq + self.TORSION_ENERGY_GEV
         
         return corrected_freq
+
+    def check_thermodynamic_limit(self):
+        """
+        Berechnet den Noise Floor (Thermodynamic Censorship).
+        """
+        return self.op.DELTA_GAP * mpf('0.01')
 
     def calculate_vacuum_energy(self, v_ew, m_planck):
         """
@@ -95,6 +101,8 @@ if __name__ == "__main__":
     op = GeometricOperator()
     lat = TorsionLattice(op)
     
-    freq = lat.get_corrected_vacuum_frequency()
+    freq = lat.calculate_vacuum_frequency()
+    noise = lat.check_thermodynamic_limit()
     print(f"Lattice Topology v3.9 online.")
     print(f"Hergeleitete Vakuum-Frequenz: {freq * 1000} MeV (Soll: ~107.1)")
+    print(f"Thermodynamic Noise Floor: {noise * 1000} MeV (Soll: ~17.1)")

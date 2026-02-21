@@ -67,27 +67,28 @@ docker run uidt-verify
 
 **Expected Output:**
 ```
-================================
-UIDT v3.6.1 Numerical Verification
-================================
-Canonical Solution:
-  - Scalar Mass (m_S): 1.705 GeV
-  - Coupling (κ): 0.500
-  - VEV (v): 47.7 MeV
+╔══════════════════════════════════════════════════════════════╗
+║  UIDT v3.9 MASTER VERIFICATION SUITE (Hybrid Engine)         ║
+║  Strategies: Scipy Solver + Mpmath High-Precision Prover     ║
+╚══════════════════════════════════════════════════════════════╝
 
-Three-Equation System:
-  - Equation 1 Residual: 3.2e-40
-  - Equation 2 Residual: 1.8e-41
-  - Equation 3 Residual: 5.7e-42
+[1] RUNNING NUMERICAL SOLVER (System Consistency)...
+   > Solution Found: m_S=1.7050, kappa=0.5001
+   > Residuals: ['0.0e+00', '0.0e+00', '0.0e+00']
+   > System Status: ✅ CLOSED
 
-Max Residual: < 1.2e-40
-Gamma Invariant: 16.339
-Overall Consistency: ✅ PASS
+[2] EXECUTING HIGH-PRECISION PROOF (80 Digits)...
+   > Banach Fixed Point: 1.710035046742213182... GeV
+   > Lipschitz Constant: 0.00003749 (Strict Contraction < 1)
+   > THEOREM 3.4: ✅ PROVEN (Existence & Uniqueness)
+
+...
+[OUTPUT] 📄 Report successfully saved to: Verification_Report_v3.9_...
 ```
 
 **Interpretation:**
 - ✅ **Residuals < 10⁻⁴⁰:** Mathematical closure verified
-- ✅ **γ = 16.339:** Universal invariant confirmed
+- ✅ **THEOREM 3.4 PROVEN:** Banach fixed point contraction holds
 - ✅ **Overall PASS:** Category A claims validated
 
 ---
@@ -102,7 +103,7 @@ cd UIDT-Framework-v3.9-Canonical
 pip install -r verification/requirements.txt
 
 # Run core verification
-python verification/scripts/UIDT-3.6.1-Verification.py
+python verification/scripts/UIDT_Master_Verification.py
 ```
 
 **Expected Result:** Same as Docker output above
@@ -113,10 +114,10 @@ python verification/scripts/UIDT-3.6.1-Verification.py
 
 ### 1. Core Mathematical Closure
 
-Verifies Category A claims (Δ, κ, λ_S, v):
+Verifies Category A claims, Mathematical Convergence, and Spectral Expansions:
 
 ```bash
-python verification/scripts/UIDT-3.6.1-Verification.py
+python verification/scripts/UIDT_Master_Verification.py
 ```
 
 **What This Tests:**
