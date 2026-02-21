@@ -255,7 +255,7 @@ Set arXiv alerts for keywords:
 
 2. Run verification:
    ```bash
-   python verification/scripts/UIDT-3.6.1-Verification.py
+   python verification/scripts/UIDT_Master_Verification.py
    # Expected: PASS with residuals < 10⁻⁴⁰
    ```
 

@@ -20,7 +20,7 @@ The values for $\Delta$ (1.710 GeV) and $\gamma$ (16.339) are analytically deriv
 ## 🛠 How to Submit
 1.  **Fork** the repository.
 2.  Create a branch: `git checkout -b feature/optimization-name`.
-3.  **Verify** your changes: Run `python UIDT-3.6.1-Verification.py` to ensure residuals are still $< 10^{-14}$.
+3.  **Verify** your changes: Run `python UIDT_Master_Verification.py` to ensure residuals are still $< 10^{-14}$.
 4.  Submit a **Pull Request** with a description of your changes.
 
 ---

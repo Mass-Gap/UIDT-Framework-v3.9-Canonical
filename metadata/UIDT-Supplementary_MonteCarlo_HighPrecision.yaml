@@ -1,15 +1,15 @@
 # =============================================================================
-# UIDT OMEGA SUPPLEMENTARY DATA (Canonical v3.6.1)
+# UIDT OMEGA SUPPLEMENTARY DATA (Canonical v3.9)
 # =============================================================================
 # This dataset contains the verified high-precision Monte Carlo results 
-# supporting the UIDT v3.6.1 "Clean State" manuscript.
+# supporting the UIDT v3.9 "Clean State" manuscript.
 # =============================================================================
 
 UIDT_OMEGA_SUPPLEMENTARY:
   SECTION: "Supplementary_MonteCarlo_HighPrecision"
   PART: 1
   TITLE: "High-Precision Monte Carlo Verification of UIDT Mass Gap and Gamma Invariant"
-  VERSION: "UIDT v3.6.1 / Supplementary Monte Carlo Suite v1.1"
+  VERSION: "UIDT v3.9 / Supplementary Monte Carlo Suite v1.1"
   DATE: "December 2025"
   PURPOSE: "To provide reproducible, high-precision numerical verification of the UIDT-predicted mass gap Δ and gamma invariant γ using lattice-based Hybrid Monte Carlo (HMC) simulations."
   COMPONENTS:
@@ -34,7 +34,7 @@ UIDT_OMEGA_SUPPLEMENTARY:
       VALUE: "$$ m_S = 1.705 \\pm 0.015 \\text{ GeV} $$"
     VACUUM_EXPECTATION_VALUE:
       VALUE: "$$ v = 47.7 \\pm 0.5 \\text{ MeV} $$"
-      NOTE: "Corrected from legacy value (0.854 MeV) to match v3.6.1 main text."
+      NOTE: "Corrected from legacy value (0.854 MeV) to match v3.9 main text."
     RESIDUALS:
       MAX_RESIDUAL: "$$ < 10^{-40} $$"
       CONVERGENCE: "Newton-Raphson method with adaptive step control; verified across 10⁶ trajectories."
@@ -56,7 +56,7 @@ UIDT_OMEGA_SUPPLEMENTARY:
   SECTION: "Supplementary_MonteCarlo_HighPrecision"
   PART: 2
   TITLE: "Trajectory Diagnostics, Convergence Behavior, and Lattice Scaling Consistency"
-  VERSION: "UIDT v3.6.1 / Supplementary Monte Carlo Suite v1.1"
+  VERSION: "UIDT v3.9 / Supplementary Monte Carlo Suite v1.1"
   PURPOSE: "To validate the numerical stability and scaling robustness of the UIDT HMC simulations across multiple lattice sizes and trajectory depths."
   DIAGNOSTICS:
     TRAJECTORY_ANALYSIS:
@@ -79,7 +79,7 @@ UIDT_OMEGA_SUPPLEMENTARY:
   SECTION: "Supplementary_MonteCarlo_HighPrecision"
   PART: 3
   TITLE: "Gamma Invariant Extraction and Casimir Anomaly Modeling"
-  VERSION: "UIDT v3.6.1 / Supplementary Monte Carlo Suite v1.1"
+  VERSION: "UIDT v3.9 / Supplementary Monte Carlo Suite v1.1"
   PURPOSE: "To extract the UIDT gamma invariant $\\gamma$ and correlate it with the predicted Casimir anomaly."
   GAMMA_EXTRACTION:
     METHOD_1:
@@ -109,13 +109,13 @@ UIDT_OMEGA_SUPPLEMENTARY:
       - "Casimir anomaly serves as a potential future laboratory confirmation."
   NOTES:
     - "Gamma invariant is derived from first principles."
-    - "Holographic lengths (0.66 nm vs 0.854 nm) distinguished clearly in v3.6.1."
+    - "Holographic lengths (0.66 nm vs 0.854 nm) distinguished clearly in v3.9."
 
 UIDT_OMEGA_SUPPLEMENTARY:
   SECTION: "Supplementary_MonteCarlo_HighPrecision"
   PART: 4
   TITLE: "Residual Analysis and Gamma Extraction Fidelity"
-  VERSION: "UIDT v3.6.1 / Supplementary Monte Carlo Suite v1.1"
+  VERSION: "UIDT v3.9 / Supplementary Monte Carlo Suite v1.1"
   INPUTS:
     SOURCE_DATA: "Trajectory logs from UIDT_HMC_Lattice_QCD.py"
     CONFIG: "UIDT_Lattice_Config.json"
@@ -139,7 +139,7 @@ UIDT_OMEGA_SUPPLEMENTARY:
   SECTION: "Supplementary_MonteCarlo_HighPrecision"
   PART: 5
   TITLE: "Statistical Summary and Canonical Parameter Extraction"
-  VERSION: "UIDT v3.6.1 / Supplementary Monte Carlo Suite v1.1"
+  VERSION: "UIDT v3.9 / Supplementary Monte Carlo Suite v1.1"
   SUMMARY_STATISTICS:
     SAMPLE_SIZE: 100000
     PARAMETERS:
@@ -180,7 +180,7 @@ UIDT_OMEGA_SUPPLEMENTARY:
   SECTION: "Supplementary_MonteCarlo_HighPrecision"
   PART: 9
   TITLE: "Canonical YAML Export and Final Simulation Signature"
-  VERSION: "UIDT v3.6.1 / Supplementary Monte Carlo Suite v1.1"
+  VERSION: "UIDT v3.9 / Supplementary Monte Carlo Suite v1.1"
   CANONICAL_EXPORT:
     MASS_GAP:
       VALUE: "$$ \\Delta = 1.710 \\pm 0.015 \\text{ GeV} $$"
@@ -193,7 +193,7 @@ UIDT_OMEGA_SUPPLEMENTARY:
     RESIDUALS:
       MAX_RESIDUAL: "$$ < 10^{-40} $$"
     OUTPUT_SIGNATURE:
-      STATUS: "✅ PASS — UIDT predictions confirmed (Clean State v3.6.1)"
+      STATUS: "✅ PASS — UIDT predictions confirmed (Clean State v3.9)"
   
   INTEGRATION_READY:
     FORMAT: "YAML block compatible with UIDT_Omega_Final_Synthesis.yaml"
@@ -205,7 +205,7 @@ UIDT_OMEGA_SUPPLEMENTARY:
   SECTION: "Supplementary_MonteCarlo_HighPrecision"
   PART: 10
   TITLE: "Final Integration into UIDT Ω Framework"
-  VERSION: "UIDT v3.6.1 / Supplementary Monte Carlo Suite v1.1"
+  VERSION: "UIDT v3.9 / Supplementary Monte Carlo Suite v1.1"
   FINAL_STATUS:
     VERIFICATION: "✅ All predictions confirmed with high precision"
     RESIDUALS: "$$ < 10^{-40} $$"
@@ -222,7 +222,7 @@ UIDT_OMEGA_SUPPLEMENTARY:
       EMBED_BLOCK: "Canonical Monte Carlo Verification"
     Zenodo DOI:
       LINK: "https://doi.org/10.5281/zenodo.17835200"
-      STATUS: "Published (v3.6.1)"
+      STATUS: "Published (v3.9)"
 
   CLOSING STATEMENT:
-    TEXT: "The UIDT Monte Carlo verification suite is complete. It confirms the mass gap Δ, gamma invariant γ, and corrected VEV with unmatched precision. All results are self-consistent and derived from first principles. UIDT Ω v3.6.1 is closed."
+    TEXT: "The UIDT Monte Carlo verification suite is complete. It confirms the mass gap Δ, gamma invariant γ, and corrected VEV with unmatched precision. All results are self-consistent and derived from first principles. UIDT Ω v3.9 is closed."

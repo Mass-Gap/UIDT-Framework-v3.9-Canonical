@@ -39,7 +39,7 @@ The UIDT framework employs a strict evidence classification system to distinguis
 
 **Verification:**
 ```bash
-python verification/scripts/UIDT-3.6.1-Verification.py
+python verification/scripts/UIDT_Master_Verification.py
 # Expected: PASS with residuals < 10⁻⁴⁰
 ```
 

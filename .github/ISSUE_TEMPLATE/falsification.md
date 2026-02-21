@@ -19,8 +19,9 @@ Thank you for reporting experimental results relevant to UIDT predictions. Pleas
 - [ ] **F4: Photonic Isomorphism** (n_critical ≈ 16.339)
 - [ ] **F5: LHC Scalar Resonance** (m_S = 1.705 ± 0.015 GeV)
 - [ ] **F6: Proton Anchor Ratio** (m_p/f_vac ≈ 8.75)
-- [ ] **F7: Casimir Force Anomaly** (+0.59% at 0.66 nm)
-- [ ] **F8: Hubble Tension** (H₀ = 70.4 ± 0.16 km/s/Mpc)
+- [ ] **F7: Spectral Anomalies** (X17 Noise Floor = 17.10 MeV / X2370 Resonance = 2.370 GeV)
+- [ ] **F8: Casimir Force Anomaly** (+0.59% at 0.66 nm)
+- [ ] **F9: Hubble Tension** (H₀ = 70.4 ± 0.16 km/s/Mpc)
 - [ ] **Other** (please describe)
 
 ---

@@ -113,7 +113,7 @@ All verification scripts produce deterministic results. To verify integrity:
 
 ```bash
 # Run verification
-python verification/scripts/UIDT-3.6.1-Verification.py
+python verification/scripts/UIDT_Master_Verification.py
 
 # Expected output:
 # Max Residual: < 1.2e-40

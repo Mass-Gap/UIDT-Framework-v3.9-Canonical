@@ -16,7 +16,7 @@ A reference guide to the terminology used in the Unified Information-Density The
 ## N-Z
 
 * **Pillar I (QFT):** The microscopic foundation of UIDT, focusing on the analytical derivation of the Yang-Mills Mass Gap and non-perturbative gauge-field coupling.
-* **Pillar II (Cosmology):** The macroscopic application, providing a unified solution to the Hubble Tension () and the Vacuum Energy Catastrophe.
+* **Pillar II (Lattice Topology & Missing Link):** The discrete lattice structure underlying the vacuum, characterized by the Torsion Binding Energy E_T ≈ 2.44 MeV. This "Missing Link" resolves the geometric-field coupling and stabilizes the vacuum against classical collapse.
 * **Pillar III (Laboratory):** The experimental verification layer. It includes specific, falsifiable predictions such as the **Category D** Casimir anomaly and glueball-like resonances at .
 * **Pillar IV (Photonic):** The analog verification layer using photonic metamaterials with critical-index relations anchored to the Gamma invariant.
 * **SMDS (Supermassive Dark Seeds):** Primordial concentrations of information density () that explain the rapid formation of early galaxies as observed by JWST.

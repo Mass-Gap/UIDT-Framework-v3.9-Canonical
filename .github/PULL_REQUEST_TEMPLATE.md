@@ -32,7 +32,7 @@
 ### Verification
 - [ ] Local verification passed:
   ```bash
-  python verification/scripts/UIDT-3.6.1-Verification.py
+  python verification/scripts/UIDT_Master_Verification.py
   pytest verification/ -v --tb=short
   ```
 - [ ] Residuals remain < 10⁻¹⁴ for Category A claims

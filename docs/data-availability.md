@@ -202,7 +202,7 @@ Data integrity can be verified independently via
 ## 9. Supersession Notice
 
 All data and derivations from previous iterations (v1.6.1, v3.3, etc.) are
-formally superseded. Version 3.7.3 represents the canonical release of the UIDT
+formally superseded. Version 3.9 represents the canonical release of the UIDT
 framework. The v3.3 Zenodo record has been permanently withdrawn due to data
 corruption (see Version History notice in the manuscript).
 

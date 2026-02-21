@@ -1,4 +1,4 @@
-# UIDT-OS Agent Directives v3.7.3
+# UIDT-OS Agent Directives v3.9
 # Vacuum Information Density as the Fundamental Geometric Scalar
 # DOI: 10.5281/zenodo.17835200
 # Maintainer: P. Rietz (ORCID: 0009-0007-4307-1609)
