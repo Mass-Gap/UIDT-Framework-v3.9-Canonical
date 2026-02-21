@@ -91,7 +91,11 @@ class TorsionLattice:
 
 # Selbsttest
 if __name__ == "__main__":
-    from geometric_operator import GeometricOperator
+    try:
+        from modules.geometric_operator import GeometricOperator
+    except ImportError:
+        from geometric_operator import GeometricOperator
+
     op = GeometricOperator()
     lat = TorsionLattice(op)
     
