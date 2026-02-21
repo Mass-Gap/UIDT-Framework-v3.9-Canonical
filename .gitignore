@@ -134,6 +134,7 @@ temp/
 # ============================================================================
 .trae/
 .traycer/
+.antigravity/
 CLAUDE.md
 
 # UIDT-OS path resolver (contains local paths, internal only)
@@ -160,3 +161,10 @@ clay-submission/CITATION.cff
 .kilocode/skills/file-organizer/SKILL.md
 verification/scripts/uidt_os_integration_check.py
 .kilocode/skills/uidt-data-curator/SKILL.md
+.frolic-session.json
+.frolic-backup-2026-02-21T02-07-20-952Z.json
+.gitignore
+.frolic-backup-2026-02-21T01-00-07-122Z.json
+.gitignore
+.frolic-backup-2026-02-21T01-39-04-890Z.json
+.frolic-backup-2026-02-21T01-21-23-172Z.json
