@@ -48,14 +48,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
+# Add non-root user for security
+RUN groupadd -r uidtuser && useradd -r -g uidtuser -m uidtuser
+
 # ============================================================================
 # PYTHON ENVIRONMENT
 # ============================================================================
 
 WORKDIR /app
+RUN chown uidtuser:uidtuser /app
 
 # Copy requirements first for Docker layer caching
-COPY requirements.txt .
+COPY --chown=uidtuser:uidtuser requirements.txt .
 
 # Install Python packages with pinned versions for reproducibility
 RUN pip install --no-cache-dir --upgrade pip && \
@@ -74,51 +78,52 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # ============================================================================
 
 # Cover Letter
-COPY 00_CoverLetter/ /app/00_CoverLetter/
+COPY --chown=uidtuser:uidtuser 00_CoverLetter/ /app/00_CoverLetter/
 
 # Manuscript (LaTeX source)
-COPY 01_Manuscript/ /app/01_Manuscript/
+COPY --chown=uidtuser:uidtuser 01_Manuscript/ /app/01_Manuscript/
 
 # Verification Code (Core Scripts)
-COPY 02_VerificationCode/ /app/02_VerificationCode/
+COPY --chown=uidtuser:uidtuser 02_VerificationCode/ /app/02_VerificationCode/
 
 # Audit Data (Monte Carlo samples, correlations)
-COPY 03_AuditData/ /app/03_AuditData/
+COPY --chown=uidtuser:uidtuser 03_AuditData/ /app/03_AuditData/
 
 # Certificates (Signed verification results)
-COPY 04_Certificates/ /app/04_Certificates/
+COPY --chown=uidtuser:uidtuser 04_Certificates/ /app/04_Certificates/
 
 # Lattice Simulation (HMC Master Simulation)
-COPY 05_LatticeSimulation/ /app/05_LatticeSimulation/
+COPY --chown=uidtuser:uidtuser 05_LatticeSimulation/ /app/05_LatticeSimulation/
 
 # Figures
-COPY 06_Figures/ /app/06_Figures/
+COPY --chown=uidtuser:uidtuser 06_Figures/ /app/06_Figures/
 
 # Monte Carlo Data
-COPY 07_MonteCarlo/ /app/07_MonteCarlo/
+COPY --chown=uidtuser:uidtuser 07_MonteCarlo/ /app/07_MonteCarlo/
 
 # Documentation
-COPY 08_Documentation/ /app/08_Documentation/
+COPY --chown=uidtuser:uidtuser 08_Documentation/ /app/08_Documentation/
 
 # Supplementary JSON
-COPY 09_Supplementary_JSON/ /app/09_Supplementary_JSON/
+COPY --chown=uidtuser:uidtuser 09_Supplementary_JSON/ /app/09_Supplementary_JSON/
 
 # Verification Reports (Output directory)
-COPY 10_VerificationReports/ /app/10_VerificationReports/
+COPY --chown=uidtuser:uidtuser 10_VerificationReports/ /app/10_VerificationReports/
 
 # Root documentation
-COPY README.md CHANGELOG.md CITATION.cff GLOSSARY.md LICENSE.md /app/
+COPY --chown=uidtuser:uidtuser README.md CHANGELOG.md CITATION.cff GLOSSARY.md LICENSE.md /app/
 
 # ============================================================================
 # SETUP VERIFICATION ENVIRONMENT
 # ============================================================================
 
+# Create results directory and ensure proper ownership
+RUN mkdir -p /app/results /app/10_VerificationReports && \
+    chown -R uidtuser:uidtuser /app
+
 # Make scripts executable
 RUN chmod +x /app/02_VerificationCode/*.py 2>/dev/null || true
 RUN chmod +x /app/05_LatticeSimulation/*.py 2>/dev/null || true
-
-# Create results directory
-RUN mkdir -p /app/results /app/10_VerificationReports
 
 # ============================================================================
 # AUTOMATED AUDIT SEQUENCE (8 PHASES)
@@ -241,7 +246,11 @@ echo "  Audit Log SHA-256: ${SHA_LOG}"
 echo ""
 AUDIT_SCRIPT
 
-RUN chmod +x /app/run_audit.sh
+RUN chmod +x /app/run_audit.sh && \
+    chown uidtuser:uidtuser /app/run_audit.sh
+
+# Switch to non-root user for security
+USER uidtuser
 
 # ============================================================================
 # ENVIRONMENT VARIABLES
