@@ -2,7 +2,10 @@ name: UIDT PR Review
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
   uidt-review:
@@ -19,7 +22,7 @@ jobs:
         id: commit_check
         continue-on-error: true
         run: |
-          COMMIT_MSG=$(git log -1 --pretty=%B)
+          COMMIT_MSG="$(git log -1 --pretty=%B)"
           echo "Commit message:"
           echo "$COMMIT_MSG"
 
@@ -27,7 +30,7 @@ jobs:
 
 \[UIDT\]
 
-\ (fix|docs|test|check|classify|placeholder):\ .*\(Evidence:\ 
+\ (fix|docs|test|check|classify|placeholder):\ .*\ \(Evidence:\ 
 
 \[[A-E]-?\]
 
@@ -44,7 +47,7 @@ jobs:
         with:
           script: |
             const checkResult = "${{ steps.commit_check.outcome }}" === "success" ? "✅ PASS" : "❌ FAIL";
-            github.rest.issues.createComment({
+            await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -75,7 +78,7 @@ Commit message format must follow \`[UIDT] <type>: <summary> (Evidence: [X])\`
         uses: actions/github-script@v6
         with:
           script: |
-            github.rest.issues.createComment({
+            await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
