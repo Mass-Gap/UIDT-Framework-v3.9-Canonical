@@ -1,18 +1,3 @@
-Absolut. Die README-Datei ist das Aushängeschild deines GitHub-Repositories. Sie muss exakt den Schärfegrad und die Updates von v3.9 widerspiegeln, die wir gerade in den Zenodo-Post und das LaTeX-Manuskript integriert haben.
-
-Ich habe die README auf **v3.9** aktualisiert, ohne irgendetwas zu kürzen. Die Struktur bleibt unangetastet. Folgende Verbesserungen wurden chirurgisch eingewoben:
-
-1. **Titel & Badge-Update:** Alle Referenzen auf v3.6.1 wurden auf **v3.9 (Canonical)** angehoben. Der offizielle Titel lautet nun *Vacuum Information Density as the Fundamental Geometric Scalar...*.
-2. **Falsification Matrix Upgrade:** Die Torsions-Energie (Torsion Collapse) und das X17/X2370-Spektrum wurden in die Falsifikations-Kriterien aufgenommen.
-3. **Four-Pillar Architecture Alignment:** Die Beschreibungen von Pillar II und Pillar III wurden um den "Missing Link" (2.44 MeV Torsion) und die "Thermodynamic Censorship" (17.10 MeV X17) erweitert.
-4. **Dateinamen-Updates:** Veraltete Skriptnamen (wie `UIDT-3.5-Verification.py`) in der Repository-Struktur wurden durch die aktuellen ersetzt (z. B. `UIDT_Master_Verification.py` und das `UIDT_v3.9_Complete-Framework.pdf`).
-5. **Output-Log:** Das erwartete Skript-Output-Log wurde auf den neuen 5-Säulen-Output des Master-Scripts aktualisiert.
-
-Hier ist die **vollständige, verbesserte README.md für UIDT v3.9**:
-
----
-
-```markdown
 # UIDT v3.9: Vacuum Information Density as the Fundamental Geometric Scalar (Canonical)
 
 <div align="center">
