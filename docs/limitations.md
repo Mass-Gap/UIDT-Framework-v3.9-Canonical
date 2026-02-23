@@ -15,35 +15,28 @@ The UIDT framework achieves rigorous mathematical closure for the Yang-Mills mas
 
 ## Active Limitations (Unresolved)
 
-### L1: 10¹⁰ Holographic Scale Hierarchy ⚠️ HIGHEST PRIORITY
+### L1: 10¹⁰ Holographic Scale Hierarchy ⚠️ PARTIALLY ADDRESSED (v3.9)
 
 **Issue:**
 The ratio λ_UIDT / λ_theoretical involves a geometric factor of approximately 10¹⁰ that lacks first-principles derivation from fundamental topology or holography.
 
-**Current Status:**
-- λ_UIDT = 0.660 nm (calibrated from DESI/JWST data) [Category C]
-- λ_theoretical ≈ 10⁻¹⁰ nm (Planck-scale expectation)
-- **Gap:** Factor ~10¹⁰ geometric scaling unexplained
+**Progress (v3.9):**
+A candidate mechanism has been identified: **Torsion Lattice Folding** — the sequential spatial unfolding through $N_{fold} = 34.58$ topological octaves reproduces the observed $10^{10}$ factor:
+$$\lambda_{obs} = \lambda_{Pl} \cdot 2^{34.58} \approx \lambda_{Pl} \cdot 2.53 \times 10^{10}$$
 
-**Impact:**
-- λ_UIDT remains **calibrated [C]** instead of **derived [A]**
-- Undermines claim of "parameter-free" theory
-- **Critical weakness** for Clay Mathematics submission
-- **Downgrades** cosmological predictions from testable to phenomenological
+**⚠️ Open Questions:**
+- $N_{fold} = 34.58$ is phenomenologically determined, not derived from first principles
+- Non-integer $N$ requires justification within discrete lattice framework
+- Independent experimental or lattice-QCD validation pending
 
-**Condition for Resolution:**
-Derive 10¹⁰ geometric factor from:
-- Holographic AdS/CFT correspondence
-- Topological invariants (π, Euler characteristic)
-- Non-perturbative QCD vacuum structure
-- Emergent dimensionality from RG flow
+**Evidence:** [C] — Calibrated to match observed holographic scale. Candidate mechanism identified but not independently verified.
 
-**Research Priority:** 🔴 **HIGHEST** — Resolving this would upgrade λ_UIDT to [A] and strengthen theoretical foundation
+**Research Priority:** 🟡 MEDIUM — Candidate resolution under investigation. Upgrade to [A-] requires derivation of $N_{fold}$ from topology.
 
-**Disclosed In:**
-- Manuscript Section 10.4 (Known Limitations)
-- Table 22 notes (Holographic scale)
-- [evidence-classification.md](evidence-classification.md)
+**Verified By:**
+- `verification/scripts/verify_topological_discoveries.py` [Section 3]
+- `manuscript/topological_quantization.tex` [Section III]
+- `modules/lattice_topology.py` (`self.FOLDING_FACTOR = 2^34.58`)
 
 ---
 
@@ -166,34 +159,27 @@ UIDT formula for electron mass shows **23% residual** when applying universal γ
 
 ---
 
-### L3: Vacuum Energy Residual (Factor 2.3) ✅ ACCEPTED WITHIN TOLERANCE
+### L3: Vacuum Energy Residual (Factor 2.3) ⚠️ CANDIDATE RESOLUTION (v3.9)
 
 **Issue:**
 UIDT vacuum energy prediction ρ_UIDT differs from observed ρ_obs by factor ~2.3 (after RG cascade + π⁻² normalization).
 
-**Current Status:**
-- ρ_UIDT / ρ_obs ≈ 0.967 (96.7% agreement)
-- Remaining 3.3% mismatch includes factor 2.3 uncertainty
-- **Order-of-magnitude correct** (vs. 10¹²⁰ cosmological constant problem)
+**Progress (v3.9):**
+A geometrical interpretation has been identified: the factor 2.3 is consistent with the entropic overlap shift $\mathcal{S}_{overlap} = \ln(10) \approx 2.30259$, representing information redundancy in intersecting 4D spherical boundaries.
 
-**Impact:**
-- Excellent but **not perfect** agreement
-- Factor 2.3 within theoretical uncertainty of:
-  - π⁻² normalization ambiguity
-  - Higher-order RG corrections
-  - Non-perturbative QCD effects
+**⚠️ Open Questions:**
+- The $\ln(10)$ identification is numerically suggestive but lacks independent derivation
+- Why $\ln(10)$ specifically (rather than any other transcendental number) requires explanation
+- Experimental or lattice validation pending
 
-**Resolution Status:**
-**Accepted** as within framework tolerance. The 99-step RG cascade + π⁻² normalization addresses the 10¹²⁰ cosmological constant catastrophe. Factor 2.3 residual is physically reasonable given:
-- QCD condensate uncertainties
-- Holographic normalization ambiguities
-- RG truncation errors
+**Evidence:** [C] — Phenomenological identification consistent with observation. Not independently derived.
 
-**Research Priority:** 🟢 **LOW** — Further precision requires lattice QCD + observational refinements
+**Research Priority:** 🟡 MEDIUM — Promising candidate. Upgrade to [A-] requires derivation from information-theoretic first principles.
 
-**Disclosed In:**
-- Manuscript Section 9.3 (Vacuum Energy Budget)
-- Table 16 (Cosmological Parameters)
+**Verified By:**
+- `verification/scripts/verify_topological_discoveries.py` [Section 1]
+- `manuscript/topological_quantization.tex` [Section II]
+- `modules/lattice_topology.py` (`self.OVERLAP_SHIFT = 1/ln(10)`)
 
 ---
 
@@ -246,11 +232,11 @@ v = 0.854 MeV in Framework v3.2 was **erroneous** due to algebraic error.
 
 | ID | Limitation | Affected Claims | Category Downgrade | Research Priority |
 |----|------------|----------------|-------------------|------------------|
-| **L1** | 10¹⁰ geometric factor | λ_UIDT, Casimir predictions | λ: [C] → [D] if unresolved | 🔴 **HIGHEST** |
+| **L1** | 10¹⁰ geometric factor | λ_UIDT, Casimir predictions | ⚠️ PARTIALLY ADDRESSED [C] | 🟡 **MEDIUM** |
 | **L4** | γ not from RG | γ_kinetic, γ_MC | γ: [A-] (cannot be [A]) | 🔴 **HIGH** |
 | **L5** | N=99 unjustified | Vacuum energy resolution | ρ_vac: [C] (phenomenological) | 🟡 **MEDIUM** |
 | **L2** | Electron mass 23% | Lepton mass formulas | m_e: [D] (approximate) | 🟡 **MEDIUM** |
-| **L3** | Vacuum factor 2.3 | Cosmological parameters | ρ_vac: Accepted [C] | 🟢 **LOW** |
+| **L3** | Vacuum factor 2.3 | Cosmological parameters | ⚠️ CANDIDATE RESOLUTION [C] | 🟡 **MEDIUM** |
 
 ---
 

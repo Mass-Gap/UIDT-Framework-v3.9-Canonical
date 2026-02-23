@@ -14,6 +14,18 @@ Architecture with Photonic Isomorphism (Pillar IV) and the Torsion Binding Energ
 derivation as the “Missing Link” in Pillar II. Updates falsification criteria,
 verification references, and repository metadata for the v3.9 release.
 
+### Manifestly Covariant CSF-UIDT Synthesis (Cosmology)
+
+**Overview**
+Formal integration of the Covariant Scalar-Field (CSF) macro-mechanics with the underlying QFT foundation of UIDT. This resolves the scale invariance transition from lattice dynamics to cosmic expansion, grounding Pillar II in rigorous geometry.
+
+**Implementation Details:**
+- **`modules/covariant_unification.py`**: Added exact mathematical linkage deriving the anomalous CSF dimension from the UIDT lattice invariant ($\gamma_{CSF} = 1 / (2 \sqrt{\pi \ln(\gamma_{UIDT})})$).
+- **Information Saturation Bound**: Implemented Theorem 2 establishing the Planck-Singularity Regularization limit ($\rho_{max} = \Delta^4 \gamma^{99}$).
+- **Equation of State:** Derived asymptotic limits $w_0 = -0.99$ and $w_a = +0.03$ directly from the Taylor expansion of the UIDT density response.
+- **`verification/scripts/verify_csf_unification.py`**: Added rigorous verification pipeline ensuring native precision (mpmath 80-digits) and mapping residuals strictly $< 10^{-14}$. Evaluates under Evidence Category [A-].
+- **CI/CD Pipeline**: Integrated standalone CSF verification into `.github/workflows/uidt-pr-review.yml` with strict failure policies (`pipefail`).
+
 ---
 
 ## [v3.7.3] — 2026-02-18

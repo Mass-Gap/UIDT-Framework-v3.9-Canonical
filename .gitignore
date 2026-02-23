@@ -169,3 +169,7 @@ jules_api_provisioning.py
 # Frolic session backups (internal IDE state)
 .frolic-session.json
 .frolic-backup-*.json
+TODO
+
+# Local utility scripts (hardcoded paths)
+auto_update_repo.bat

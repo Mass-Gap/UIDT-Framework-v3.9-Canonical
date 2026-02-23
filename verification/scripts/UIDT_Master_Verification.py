@@ -168,6 +168,7 @@ def run_master_verification():
     pillar_ii_data_block = ""
     pillar_iii_data_block = ""
     pillar_iv_data_block = ""
+    pillar_csf_data_block = ""
 
     # ---------------------------------------------------------
     # STEP 2: Analytical Proof (Mpmath) - Only if Solver OK
@@ -280,14 +281,37 @@ def run_master_verification():
             log_print(f"   > ❌ PILLAR IV ERROR: {e}")
             pillar_iv_data_block = f"\n### ⚠️ Pillar IV Failed: {e}\n"
 
+        log_print("\n[6] PILLAR II-CSF: COVARIANT SCALAR-FIELD SYNTHESIS [Category C]...")
+        try:
+            from modules.covariant_unification import CovariantUnification
+            cu = CovariantUnification(gamma_uidt=mp.mpf('16.339'))
+            gamma_csf = cu.derive_csf_anomalous_dimension()
+            rho_max = cu.check_information_saturation_bound()
+            eos = cu.get_equation_of_state_asymptotic()
+            log_print(f"   > gamma_CSF (anomalous dim): {gamma_csf}")
+            log_print(f"   > rho_max (saturation):      {str(rho_max)[:20]}... GeV^4")
+            log_print(f"   > EoS w_0={eos['w_0']}, w_a={eos['w_a']} [C placeholder]")
+            pillar_csf_data_block = f"""
+### Pillar II-CSF: Covariant Scalar-Field Synthesis [Category C]
+> **CSF-UIDT Mapping:** Phenomenological (from calibrated [A-] gamma)
+- gamma_CSF (anomalous dimension): `{gamma_csf}`
+- rho_max (information saturation): `{str(rho_max)[:40]}...` GeV^4
+- EoS w_0: `{eos['w_0']}` [C placeholder]
+- EoS w_a: `{eos['w_a']}` [C placeholder]
+- Limitations: L4 (gamma not RG-derived), L5 (N=99 empirical)
+"""
+        except Exception as e:
+            log_print(f"   > PILLAR II-CSF ERROR: {e}")
+            pillar_csf_data_block = f"\n### Pillar II-CSF Failed: {e}\n"
+
     # ---------------------------------------------------------
     # STEP 3: Report Generation
     # ---------------------------------------------------------
     # We use Delta_star from the proof if it exists, otherwise fall back to target
     final_delta = delta_proof if 'delta_proof' in locals() else DELTA_TARGET
-    generate_final_report(closed, proof_data_block, pillar_ii_data_block, pillar_iii_data_block, pillar_iv_data_block, m_S, v_final, final_delta)
+    generate_final_report(closed, proof_data_block, pillar_ii_data_block, pillar_iii_data_block, pillar_iv_data_block, pillar_csf_data_block, m_S, v_final, final_delta)
 
-def generate_final_report(closed, proof_data, p_ii, p_iii, p_iv, m_S, v_final, delta_val):
+def generate_final_report(closed, proof_data, p_ii, p_iii, p_iv, p_csf, m_S, v_final, delta_val):
     timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     
     # Hash of the code for integrity
@@ -329,6 +353,9 @@ signature: "SHA256:{sig}"
 
 ## 4. Pillar IV: Experimental Isomorphism (Photonics)
 {p_iv}
+
+## 4b. Pillar II-CSF: Covariant Scalar-Field Synthesis
+{p_csf}
 
 ---
 

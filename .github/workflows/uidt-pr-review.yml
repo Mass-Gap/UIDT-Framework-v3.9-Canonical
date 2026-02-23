@@ -180,21 +180,30 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
           echo "exit_code=$?" >> $GITHUB_OUTPUT
         continue-on-error: true
 
+      - name: Run CSF-UIDT Unification Verification
+        id: verify_csf
+        run: |
+          python verification/scripts/verify_csf_unification.py 2>&1 | tee verification_csf.log
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
       - name: Parse verification results
         id: parse_results
         run: |
           # Extract residual information from logs
           residuals_36=$(grep -i "residual" verification_36.log | head -1 || echo "N/A")
           residuals_master=$(grep -i "residual" verification_master.log | head -1 || echo "N/A")
+          residuals_csf=$(grep -i "residual" verification_csf.log | head -1 || echo "N/A")
 
           echo "residuals_36=$residuals_36" >> $GITHUB_OUTPUT
           echo "residuals_master=$residuals_master" >> $GITHUB_OUTPUT
+          echo "residuals_csf=$residuals_csf" >> $GITHUB_OUTPUT
 
           # Determine pass/fail
-          if [ "${{ steps.verify_36.outputs.exit_code }}" -eq 0 ] && [ "${{ steps.verify_master.outputs.exit_code }}" -eq 0 ]; then
-            echo "verification_status=✅ PASS" >> $GITHUB_OUTPUT
+          if [ "${{ steps.verify_36.outputs.exit_code }}" -eq 0 ] && [ "${{ steps.verify_master.outputs.exit_code }}" -eq 0 ] && [ "${{ steps.verify_csf.outputs.exit_code }}" -eq 0 ]; then
+            echo "verification_status=PASS" >> $GITHUB_OUTPUT
           else
-            echo "verification_status=❌ FAIL" >> $GITHUB_OUTPUT
+            echo "verification_status=FAIL" >> $GITHUB_OUTPUT
           fi
 
       - name: Comment PR - Verification Results
@@ -204,12 +213,13 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
             const verificationStatus = "${{ steps.parse_results.outputs.verification_status }}";
             const residuals36 = "${{ steps.parse_results.outputs.residuals_36 }}";
             const residualsMaster = "${{ steps.parse_results.outputs.residuals_master }}";
+            const residualsCSF = "${{ steps.parse_results.outputs.residuals_csf }}";
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## 🧪 Verification Suite: ${verificationStatus}
+              body: `## Verification Suite: ${verificationStatus}
 
 **UIDT-3.6.1 Verification:**
 \`\`\`
@@ -221,7 +231,12 @@ ${residuals36}
 ${residualsMaster}
 \`\`\`
 
-**Requirement:** All residuals < 10⁻¹⁴ for Category A claims
+**CSF-UIDT Unification (Category C):**
+\`\`\`
+${residualsCSF}
+\`\`\`
+
+**Requirement:** All residuals < 10^-14 for Category A claims
 
 ---
 `
