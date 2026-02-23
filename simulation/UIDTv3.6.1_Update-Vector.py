@@ -126,9 +126,12 @@ class UIDTLatticeOptimized:
         # Initialize Force Tensor
         F = xp.zeros_like(U, dtype=complex)
         
+        # Pre-allocate staple_sum (Optimization: moved out of loop)
+        staple_sum = xp.zeros_like(U[..., 0, :, :])
+
         # Calculate Staples for each direction mu
         for mu in range(4):
-            staple_sum = xp.zeros_like(U[..., 0, :, :])
+            staple_sum.fill(0)
             
             for nu in range(4):
                 if nu == mu:
