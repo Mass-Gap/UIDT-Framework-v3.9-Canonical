@@ -56,7 +56,7 @@ class PhotonicInterface:
 if __name__ == "__main__":
     try:
         from modules.geometric_operator import GeometricOperator
-    except Exception:
+    except ImportError:
         from geometric_operator import GeometricOperator
 
     op = GeometricOperator()

@@ -13,7 +13,7 @@ Quellen:
 - Drive Data: 'PROBLEM4_INITIAL_FINDINGS.json' (N=99 Cascade / Folding)
 """
 
-from mpmath import mp, mpf, pi
+from mpmath import mp, mpf
 
 # Präzision muss mit geometric_operator übereinstimmen
 mp.dps = 80
@@ -76,7 +76,7 @@ class TorsionLattice:
         
         # v3.8 Logic: Overlap Shift & Holografische Normalisierung (1/pi^2)
         # Die Normalisierung 1/pi^2 kommt aus der Geometrie der Kugelschale (Holografie)
-        rho_corrected = rho_raw * self.OVERLAP_SHIFT * (1/(pi**2))
+        rho_corrected = rho_raw * self.OVERLAP_SHIFT * (1/(mp.pi**2))
         
         return rho_corrected
 
@@ -97,7 +97,11 @@ class TorsionLattice:
 
 # Selbsttest
 if __name__ == "__main__":
-    from geometric_operator import GeometricOperator
+    try:
+        from modules.geometric_operator import GeometricOperator
+    except ImportError:
+        from geometric_operator import GeometricOperator
+
     op = GeometricOperator()
     lat = TorsionLattice(op)
     
