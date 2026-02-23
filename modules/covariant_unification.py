@@ -18,10 +18,13 @@ class CovariantUnification:
     def __init__(self, gamma_uidt=mpf('16.339')):
         """
         Initialisiert das Unifikations-Modul.
-        Nimmt den phaenomenologisch kalibrierten Universal Scaling Factor [Category C].
+        Nimmt den phaenomenologisch kalibrierten Universal Scaling Factor [Category A-].
+
+        gamma = 16.339: v3.9 canonical (updated from v3.7.2: 16.374)
+        SU(3) algebraic candidate: 49/3 = 16.333... (0.037% deviation, see UIDT-C-047)
         """
-        self.GAMMA_UIDT = mpf(gamma_uidt)
-        self.RG_STEPS = mpf('99') # N=99 Cascade...
+        self.GAMMA_UIDT = mpf(gamma_uidt)  # v3.9 canonical [A-]
+        self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5)
 
     def derive_csf_anomalous_dimension(self):
         """
