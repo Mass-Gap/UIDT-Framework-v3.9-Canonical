@@ -9,7 +9,7 @@ This log follows the guidelines of [Keep a Changelog](https://keepachangelog.com
 ### The Holographic Application — Four-Pillar Synthesis
 
 **Overview**
-transformation of UIDT v3.7.3 to publication-ready v3.9. Introduces a Four-Pillar
+Transformation of UIDT v3.7.3 to publication-ready v3.9. Introduces a Four-Pillar
 Architecture with Photonic Isomorphism (Pillar IV) and the Torsion Binding Energy
 derivation as the “Missing Link” in Pillar II. Updates falsification criteria,
 verification references, and repository metadata for the v3.9 release.

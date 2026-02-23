@@ -170,3 +170,6 @@ jules_api_provisioning.py
 .frolic-session.json
 .frolic-backup-*.json
 TODO
+
+# Local utility scripts (hardcoded paths)
+auto_update_repo.bat
