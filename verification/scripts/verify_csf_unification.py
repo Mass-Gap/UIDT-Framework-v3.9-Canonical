@@ -40,7 +40,7 @@ def run_csf_verification():
     print(f"    > Value: {str(rho_max)[:20]}... GeV^4")
 
     print("\n[3] Verifying Equation of State (Lemma 2)...")
-    eos = unifier.derive_equation_of_state()
+    eos = unifier.get_equation_of_state_asymptotic()
     target_w0 = mpf('-0.99')
     residual_w0 = abs(eos['w_0'] - target_w0)
     print(f"    > w_0 = {nstr(eos['w_0'], 5)}")

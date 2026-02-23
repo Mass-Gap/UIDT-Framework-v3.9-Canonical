@@ -11,6 +11,13 @@ Version: 3.6.1 (December 2025)
 ═══════════════════════════════════════════════════════════════════════════════
 """
 
+# ═══════════════════════════════════════════════════════════════
+# POST-SUBMISSION ENHANCEMENT (v3.7.3 → v3.9)
+# Original Clay submission preserved at DOI: 10.5281/zenodo.18003018
+# Changes: Integration of lattice torsion binding energy E_T
+# Date: 2026-02-20
+# ═══════════════════════════════════════════════════════════════
+
 from dataclasses import dataclass
 from typing import Tuple, List, Dict
 import json

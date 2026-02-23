@@ -15,17 +15,23 @@ The UIDT framework achieves rigorous mathematical closure for the Yang-Mills mas
 
 ## Active Limitations (Unresolved)
 
-### L1: 10¹⁰ Holographic Scale Hierarchy ✅ RESOLVED (v3.9)
+### L1: 10¹⁰ Holographic Scale Hierarchy ⚠️ PARTIALLY ADDRESSED (v3.9)
 
 **Issue:**
 The ratio λ_UIDT / λ_theoretical involves a geometric factor of approximately 10¹⁰ that lacks first-principles derivation from fundamental topology or holography.
 
-**Resolution (v3.9):**
-The 10¹⁰ hierarchy is proven to arise from **Torsion Lattice Folding** — the sequential spatial unfolding of the 4D torsion lattice through exactly $N = 34.58$ topological octaves:
+**Progress (v3.9):**
+A candidate mechanism has been identified: **Torsion Lattice Folding** — the sequential spatial unfolding through $N_{fold} = 34.58$ topological octaves reproduces the observed $10^{10}$ factor:
 $$\lambda_{obs} = \lambda_{Pl} \cdot 2^{34.58} \approx \lambda_{Pl} \cdot 2.53 \times 10^{10}$$
-This derivation eliminates the arbitrary 10¹⁰ fit parameter, anchoring the holographic scale directly to the lattice topology.
 
-**Evidence:** [A-] — Analytically derived from discrete lattice geometry.
+**⚠️ Open Questions:**
+- $N_{fold} = 34.58$ is phenomenologically determined, not derived from first principles
+- Non-integer $N$ requires justification within discrete lattice framework
+- Independent experimental or lattice-QCD validation pending
+
+**Evidence:** [C] — Calibrated to match observed holographic scale. Candidate mechanism identified but not independently verified.
+
+**Research Priority:** 🟡 MEDIUM — Candidate resolution under investigation. Upgrade to [A-] requires derivation of $N_{fold}$ from topology.
 
 **Verified By:**
 - `verification/scripts/verify_topological_discoveries.py` [Section 3]
@@ -153,17 +159,22 @@ UIDT formula for electron mass shows **23% residual** when applying universal γ
 
 ---
 
-### L3: Vacuum Energy Residual (Factor 2.3) ✅ RESOLVED (v3.9)
+### L3: Vacuum Energy Residual (Factor 2.3) ⚠️ CANDIDATE RESOLUTION (v3.9)
 
 **Issue:**
 UIDT vacuum energy prediction ρ_UIDT differs from observed ρ_obs by factor ~2.3 (after RG cascade + π⁻² normalization).
 
-**Resolution (v3.9):**
-The factor 2.3 is proven to be **exactly** the natural logarithm of 10: the **Entropic Overlap Shift** arising from the intersection of information spheres in the 4D torsion lattice:
-$$\mathcal{S}_{overlap} = \ln(10) \approx 2.302585$$
-Applying $\mathcal{S}_{overlap}^{-1}$ to the raw quantum vacuum density aligns the theoretical prediction with Planck 2018 observations, formally resolving the $10^{120}$ catastrophe without arbitrary parameters.
+**Progress (v3.9):**
+A geometrical interpretation has been identified: the factor 2.3 is consistent with the entropic overlap shift $\mathcal{S}_{overlap} = \ln(10) \approx 2.30259$, representing information redundancy in intersecting 4D spherical boundaries.
 
-**Evidence:** [A] — Exact mathematical identity, residual < 10⁻¹⁴.
+**⚠️ Open Questions:**
+- The $\ln(10)$ identification is numerically suggestive but lacks independent derivation
+- Why $\ln(10)$ specifically (rather than any other transcendental number) requires explanation
+- Experimental or lattice validation pending
+
+**Evidence:** [C] — Phenomenological identification consistent with observation. Not independently derived.
+
+**Research Priority:** 🟡 MEDIUM — Promising candidate. Upgrade to [A-] requires derivation from information-theoretic first principles.
 
 **Verified By:**
 - `verification/scripts/verify_topological_discoveries.py` [Section 1]
@@ -221,11 +232,11 @@ v = 0.854 MeV in Framework v3.2 was **erroneous** due to algebraic error.
 
 | ID | Limitation | Affected Claims | Category Downgrade | Research Priority |
 |----|------------|----------------|-------------------|------------------|
-| **L1** | 10¹⁰ geometric factor | λ_UIDT, Casimir predictions | ✅ RESOLVED (Torsion Lattice Folding) | ✅ Resolved |
+| **L1** | 10¹⁰ geometric factor | λ_UIDT, Casimir predictions | ⚠️ PARTIALLY ADDRESSED [C] | 🟡 **MEDIUM** |
 | **L4** | γ not from RG | γ_kinetic, γ_MC | γ: [A-] (cannot be [A]) | 🔴 **HIGH** |
 | **L5** | N=99 unjustified | Vacuum energy resolution | ρ_vac: [C] (phenomenological) | 🟡 **MEDIUM** |
 | **L2** | Electron mass 23% | Lepton mass formulas | m_e: [D] (approximate) | 🟡 **MEDIUM** |
-| **L3** | Vacuum factor 2.3 | Cosmological parameters | ✅ RESOLVED (Entropic Overlap ln(10)) | ✅ Resolved |
+| **L3** | Vacuum factor 2.3 | Cosmological parameters | ⚠️ CANDIDATE RESOLUTION [C] | 🟡 **MEDIUM** |
 
 ---
 

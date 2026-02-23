@@ -40,7 +40,7 @@ class TorsionLattice:
         
         # 3. TORSION BINDING ENERGY (Lösung für Myon-Frequenz)
         # Differenz zwischen reiner Geometrie (104.7) und Gitter-Resonanz (107.1)
-        self.TORSION_ENERGY_GEV = mpf('0.00244') # 2.44 MeV
+        self.TORSION_ENERGY_GEV = mpf('0.00244') # 2.44 MeV, torsion binding energy [Category C]
         
         # Konstanten
         self.HBAR_C_NM = mpf('0.1973269804') * 1e-6 # GeV*nm
