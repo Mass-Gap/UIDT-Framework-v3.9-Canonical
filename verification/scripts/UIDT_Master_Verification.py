@@ -287,7 +287,7 @@ def run_master_verification():
             cu = CovariantUnification(gamma_uidt=mp.mpf('16.339'))
             gamma_csf = cu.derive_csf_anomalous_dimension()
             rho_max = cu.check_information_saturation_bound()
-            eos = cu.get_equation_of_state_asymptotic()
+            eos = cu.derive_equation_of_state()
             log_print(f"   > gamma_CSF (anomalous dim): {gamma_csf}")
             log_print(f"   > rho_max (saturation):      {str(rho_max)[:20]}... GeV^4")
             log_print(f"   > EoS w_0={eos['w_0']}, w_a={eos['w_a']} [C placeholder]")
