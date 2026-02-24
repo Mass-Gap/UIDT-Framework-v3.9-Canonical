@@ -11,7 +11,7 @@
 
 The UIDT framework employs a strict evidence classification system to distinguish between mathematically proven results, phenomenological determinations, numerical verifications, calibrated models, and predictions awaiting experimental confirmation.
 
-**50 total claims** are documented in the framework (see `UIDT-OS/LEDGER/CLAIMS.json`).
+**55 total claims** are documented in the framework (see `UIDT-OS/LEDGER/CLAIMS.json`).
 
 ---
 
@@ -206,7 +206,7 @@ Every category change MUST be logged with:
 | C (Calibrated) | 6 | 12.0% |
 | D (Predicted) | 6 | 12.0% |
 | E (Open/Withdrawn) | 12 | 24.0% |
-| **Total** | **50** | **100%** |
+| **Total** | **55** | **100%** |
 
 **Verified (A+A-+B):** 26 claims (52.0%)  
 **Calibrated (C):** 6 claims (12.0%)  

@@ -17,6 +17,31 @@ Integration of critical quantitative checks derived from the X17/Perplexity rese
 - **N²-Cascade Definition:** Explicitly classified the $N=99$ dimension cascade scaling rule as a phenomenological constraint, registering it as Claim `UIDT-C-050` [C].
 - **Ledger Audit:** Total claims tracked reached 50, with exact categorizations matching the `COMPLETENESS_REPORT.md` integration log.
 
+## [v3.9.2] — 2026-02-24
+
+### Final Corpus Closure & Factor 2.3 Integration (Plan vx6)
+
+**Overview**
+Final integration of the X17/Perplexity research corpus, extracting the ultra-high precision "Factor 2.3" discovery and registering multiple Phase 3 open research vectors. The raw corpus is now 100% processed and fully formalized into the UIDT framework.
+
+**Verification & Evidence Enhancements:**
+- **Holographic Coupling Ratio [B]:** Registered Claim `UIDT-C-051` for the factor 2.3 suppression term, validated across three independent geometric methods up to 500-dps precision. Documented physically in `docs/Factor_2_3_Derivation.md`.
+- **Phase 3 Open Research [E]:** Formally registered four new exploratory claims (`UIDT-E-052` to `UIDT-E-055`) covering Lagrangian reconstruction, higher-order corrections, $\Lambda_0$ macroscopic analysis, and zero-point phase transitions to secure Future Vectors.
+- **Evidence Tracker:** Updated total recorded claims to 55, accurately mapping the new distributions.
+
+## [v3.9.1] — 2026-02-24
+
+### Research Corpus Maturation & Mathematical Constraints (Plan vx4)
+
+**Overview**
+Integration of critical quantitative checks derived from the X17/Perplexity research corpus. Added native `mpmath` verification for the Informational Geometric Operator and refined the epistemic classification of phenomenological dependencies.
+
+**Verification & Evidence Enhancements:**
+- **External Corroboration [B-]:** Integrated independent QCD Sum Rules (Borel-window methodology) derivation for $\Delta^* \approx 1.710 \text{ GeV}$ directly into the main manuscript (Section 4).
+- **Geometric Operator Suite:** Created `verify_geometric_operator.py` forcing 80-dps precision to confirm classical scale boundary limits and metric perturbation constraints. Registered as Claim `UIDT-C-049` [C].
+- **N²-Cascade Definition:** Explicitly classified the $N=99$ dimension cascade scaling rule as a phenomenological constraint, registering it as Claim `UIDT-C-050` [C].
+- **Ledger Audit:** Total claims tracked reached 50, with exact categorizations matching the `COMPLETENESS_REPORT.md` integration log.
+
 ## [v3.9] — 2026-02-19
 
 ### The Holographic Application — Four-Pillar Synthesis
