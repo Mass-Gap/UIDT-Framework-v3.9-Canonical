@@ -175,7 +175,7 @@ UIDT vacuum energy prediction ρ_UIDT differs from observed ρ_obs by factor ~2.
 **Progress (v3.9.2):**
 Extensive validation across three independent methodologies (Gap Equation, Gluon Condensate matching, Effective Potential Variational) confirms this scalar as a physical manifestation, not a numerical artifact. It signifies the **Holographic Coupling Ratio** inherent to the AdS/CFT dimensional reduction sequence, corresponding precisely to the geometric Overlap Shift ($\mathcal{S}_{holographic} \approx 2.302$).
 
-**Evidence:** [B] — Numerically verified up to 500-dps mathematical precision.
+**Evidence:** [B] — Numerically verified up to 500-dps mathematical precision inside the PRX Intelligence Corpus. 
 
 **Research Priority:** 🟢 LOW — Theoretically stabilized. Follow-up requires higher-order analytical breakdown of $\Lambda_0$ [UIDT-E-054].
 
@@ -184,6 +184,26 @@ Extensive validation across three independent methodologies (Gap Equation, Gluon
 - `manuscript/UIDT_v3.9-Complete-Framework.tex` [Section 2.2]
 - `docs/Factor_2_3_Derivation.md`
 - `modules/covariant_unification.py`
+
+---
+
+## Active Phase 3 Limitations (Future Vectors)
+
+### L8: Phase 3 Open Research Vectors (Corpus PRX) ⚠️ EXPLORATORY
+
+**Issue:**
+The finalized ingestion of the PRX Corpus highlights several necessary extensions that remain analytically untreated within the canonical v3.9 structure. These are speculative boundaries that demand novel topological frameworks.
+
+**Registered Claims (Category E - Open Research):**
+- **UIDT-E-052 [E]:** Lagrangian Reconstruction from UIDT Vacuum Structure. Currently, the unified scalar interactions are observed dynamically but lack a full analytic continuous Lagrangian formulation.
+- **UIDT-E-053 [E]:** Higher-order Corrections to Holographic Vacuum Energy. Perturbative corrections beyond the leading-order Factor 2.3 suppression.
+- **UIDT-E-054 [E]:** Full analytical decomposition of the $\Lambda_0$ macroscopic factor. Deconstructing the precise dimensional ratios governing the holographic horizon.
+- **UIDT-E-055 [E]:** Geometrodynamic Phase Transitions at N-Cascade Boundaries. Mapping how the topological strata transition across exactly $N=99$ dimensions.
+
+**Condition for Resolution:**
+Derivation of the continuous effective action, likely requiring non-perturbative functional topology and advanced conformal algebra spanning beyond the standard Witt/Virasoro structures.
+
+**Research Priority:** 🔵 PHASE 3 ROADMAP — These define the foundational objectives for UIDT v4.0.
 
 ---
 
