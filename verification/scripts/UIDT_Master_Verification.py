@@ -306,14 +306,33 @@ def run_master_verification():
             log_print(f"   > PILLAR II-CSF ERROR: {e}")
             pillar_csf_data_block = f"\n### Pillar II-CSF Failed: {e}\n"
 
+        log_print("\n[7] L2 CANDIDATE: ELECTROWEAK MIXING [Category D]...")
+        try:
+            from verification.scripts.verify_electroweak_mixing import verify_electroweak_mixing
+            ew_report = verify_electroweak_mixing()
+            log_print(f"   > Electron Ratio: {ew_report['m_e_ratio']:.4f}")
+            log_print(f"   > Implied sin²(θ_W): {ew_report['implied_sin2_theta_W']:.4f}")
+            log_print(f"   > Muon Consistency: {'PASSED' if ew_report['muon_consistent'] else 'FAILED'}")
+            pillar_ew_data_block = f"""
+### 4c. L2 Candidate: Weinberg Angle Conjecture [D]
+> **Weak Isospin Projection:** m_e^UIDT ≈ m_e^obs * cos²(θ_W)
+- Electron Ratio (UIDT/Obs): `{ew_report['m_e_ratio']:.6f}`
+- Implied sin²(θ_W): `{ew_report['implied_sin2_theta_W']:.6f}`
+- Muon Consistency Check: `{'PASSED' if ew_report['muon_consistent'] else 'FAILED'}`
+- Limitations: Cross-lepton consistency fails. No derivation.
+"""
+        except Exception as e:
+            log_print(f"   > L2 ELECTROWEAK ERROR: {e}")
+            pillar_ew_data_block = f"\n### L2 Electroweak Failed: {e}\n"
+
     # ---------------------------------------------------------
     # STEP 3: Report Generation
     # ---------------------------------------------------------
     # We use Delta_star from the proof if it exists, otherwise fall back to target
     final_delta = delta_proof if 'delta_proof' in locals() else DELTA_TARGET
-    generate_final_report(closed, proof_data_block, pillar_ii_data_block, pillar_iii_data_block, pillar_iv_data_block, pillar_csf_data_block, m_S, v_final, final_delta)
+    generate_final_report(closed, proof_data_block, pillar_ii_data_block, pillar_iii_data_block, pillar_iv_data_block, pillar_csf_data_block, pillar_ew_data_block, m_S, v_final, final_delta)
 
-def generate_final_report(closed, proof_data, p_ii, p_iii, p_iv, p_csf, m_S, v_final, delta_val):
+def generate_final_report(closed, proof_data, p_ii, p_iii, p_iv, p_csf, p_ew, m_S, v_final, delta_val):
     timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     
     # Hash of the code for integrity
@@ -358,6 +377,8 @@ signature: "SHA256:{sig}"
 
 ## 4b. Pillar II-CSF: Covariant Scalar-Field Synthesis
 {p_csf}
+
+{p_ew}
 
 ---
 

@@ -154,6 +154,19 @@ UIDT formula for electron mass shows **23% residual** when applying universal γ
 - γ-scaling applies to strong sector only
 - Higher-order corrections (λ², κ³) needed
 
+**Candidate Resolution: Weinberg Angle Isospin Projection (v3.9)**
+- **Observation:** `m_e^UIDT / m_e^obs ≈ 0.767 ≈ cos²(θ_W)` where `sin²(θ_W) ≈ 0.233` at low energy.
+- **Conjecture:** `m_e^UIDT = m_e^obs · cos²(θ_W)` — The geometric operator Ĝ computes the weak-isospin projection of the electron mass prior to electroweak symmetry breaking.
+- **Risk Flags (Mandatory Governance):**
+  - **Post-hoc identification:** The 23% residual was observed first; `sin²(θ_W)` was identified afterward.
+  - **Cross-Lepton Inconsistency:** The muon (n=1) ratio `m_μ^UIDT / m_μ^obs ≈ 0.990` does **NOT** match `cos²(θ_W) ≈ 0.767`, which falsifies the universal applicability of the hypothesis.
+  - **No derivation exists:** Connecting Ĝ to the electroweak mixing mechanism.
+  - **Scale Ambiguity:** `sin²(θ_W)` is a running coupling; the implied value 0.233 lies between the MS-bar value at M_Z (0.2312) and the low energy value (0.2386), without a principled scale choice.
+- **Evidence:** [D] — Numerically suggestive, post-hoc, cross-lepton consistency NOT established.
+- **Status:** Remains "PARTIAL RESOLUTION"
+- **Verification:** `verification/scripts/verify_electroweak_mixing.py`
+- **Research Priority:** 🟡 MEDIUM — Upgrade to [B] requires derivation and cross-lepton consistency.
+
 **Condition for Resolution:**
 - Improved electroweak coupling in UIDT framework
 - Separate scaling for leptonic vs. hadronic sectors
@@ -259,7 +272,7 @@ v = 0.854 MeV in Framework v3.2 was **erroneous** due to algebraic error.
 | **L1** | 10¹⁰ geometric factor | λ_UIDT, Casimir predictions | ⚠️ PARTIALLY ADDRESSED [C] | 🟡 **MEDIUM** |
 | **L4** | γ not from RG | γ_kinetic, γ_MC | γ: [A-] (cannot be [A]) | 🔴 **HIGH** |
 | **L5** | N=99 unjustified | Vacuum energy resolution | ρ_vac: [C] (phenomenological) | 🟡 **MEDIUM** |
-| **L2** | Electron mass 23% | Lepton mass formulas | m_e: [D] (approximate) | 🟡 **MEDIUM** |
+| **L2** | Electron mass 23% (Weinberg Conjecture; see `verify_electroweak_mixing.py`) | Lepton mass formulas | m_e: [D] (approximate) | 🟡 **MEDIUM** |
 | **L3** | Vacuum factor 2.3 | Cosmological parameters | ✅ RESOLVED IN PRINCIPLE [B] | 🟢 **LOW** |
 | **L8** | Phase 3 Roadmap | Future topological integration | ⚠️ EXPLORATORY [E] | 🔵 **FUTURE** |
 

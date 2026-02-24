@@ -4,6 +4,17 @@ All notable changes to claims, parameters, and concepts.
 
 Format: [CLAIM-ID] [DATE] [OLD→NEW] [REASON]
 
+### [2026-02-25] TKT-105: Weinberg Angle Conjecture registered
+- Claim ID: UIDT-C-060
+- Old Value: (new claim)
+- New Value: m_e^UIDT ≈ m_e^obs · cos²(θ_W) [D] — conjecture
+- Category Change: L2 status remains PARTIAL RESOLUTION
+- Reason: Numerically suggestive post-hoc identification of 23% L2 residual with sin²(θ_W)
+- Verification: verification/scripts/verify_electroweak_mixing.py
+- Impact: Cross-lepton consistency check FAILS for muon. No upgrade to [B] without derivation.
+
+---
+
 ## [TICK-20260224-Phase3_Discoveries] — Phase 3 Discoveries
 
 ### Track A: SU(3) Gamma Theorem

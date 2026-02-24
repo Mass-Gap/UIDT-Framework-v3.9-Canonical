@@ -1,9 +1,9 @@
 {
   "metadata": {
     "version": "3.9-TICK-20260224",
-    "last_updated": "2026-02-24",
+    "last_updated": "2026-02-25",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 59
+    "total_claims": 60
   },
   "claims": [
     {
@@ -654,6 +654,22 @@
       "falsification": "LHCb measurement above 5.0 GeV",
       "since": "v4.0-alpha",
       "notes": "Blind parameter-free prediction for Run 3/4."
+    },
+    {
+      "id": "UIDT-C-060",
+      "statement": "Weinberg Angle Conjecture: m_e^UIDT ≈ m_e^obs · cos²(θ_W) — geometric operator n=3 eigenvalue as pre-symmetry-breaking lepton mass",
+      "type": "conjecture",
+      "status": "open",
+      "evidence": "D",
+      "confidence": 0.4,
+      "dependencies": [
+        "UIDT-C-001",
+        "UIDT-C-002",
+        "geometric_operator.py",
+        "verify_electroweak_mixing.py"
+      ],
+      "since": "v3.9",
+      "notes": "Post-hoc identification. Numerically consistent for electron (n=3) only. Cross-lepton consistency check FAILS for muon (n=1). No first-principles derivation. Limitation L2 candidate resolution. Risk: parameter fitting."
     }
   ],
   "statistics": {
@@ -661,14 +677,14 @@
     "category_A-": 7,
     "category_B": 8,
     "category_C": 6,
-    "category_D": 8,
+    "category_D": 9,
     "category_E": 13,
     "verified": 24,
     "calibrated": 7,
     "predicted": 7,
-    "open": 14,
+    "open": 15,
     "withdrawn": 2,
     "rectified": 1,
-    "conjectured": 1
+    "conjectured": 2
   }
 }
