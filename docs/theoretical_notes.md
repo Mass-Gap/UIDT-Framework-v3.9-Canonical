@@ -119,3 +119,41 @@ This **divergence** proves that $\gamma = 16.339$ is **phenomenological** [Categ
 
 **Classification:**
 This result is classified as **Evidence Category D** (Numerical/Simulation Artifact) and confirms the composite nature of the parameter $\gamma$.
+
+---
+
+## 4. Neutrino Mass Constraints in Dynamical Vacuum (PR #43)
+
+**Status:** Consistent with Direct Measurement and $w_0 w_a$ Cosmology
+**Classification:** **Category B** (Theoretical Upper Bound) / **Category C** (Observational Comparison)
+**Date:** 2026-02-23
+
+### Theoretical Context
+In the standard $\Lambda$CDM model, cosmological data (Planck+DESI) strongly suppresses the sum of neutrino masses ($\sum m_{\nu} < 0.064$ eV), creating tension with some laboratory expectations and hierarchy models.
+
+However, UIDT v3.7.1 incorporates a dynamic Dark Energy EOS ($w_0, w_a$) motivated by the **Bare-Factor** $\gamma_{\infty} \approx 16.3437$ (see Section 3). In this dynamical vacuum framework, the cosmological upper bound on $\sum m_{\nu}$ relaxes significantly.
+
+**UIDT Theoretical Upper Bound:**
+$$ \sum m_{\nu} \le 0.160 \text{ eV} $$
+
+This bound is derived from the requirement that the dynamical vacuum energy density remains consistent with the observed Hubble expansion rate $H(z)$ in the presence of massive neutrinos. A potential scaling relation linking the VEV $v$ and the Gamma invariant $\gamma$ suggests:
+$$ \sum m_{\nu} \approx \frac{v}{\gamma^7} \approx \frac{47.7 \text{ MeV}}{16.339^7} \approx 0.15 \text{ eV} $$
+
+### Observational Consistency Audit (2025/2026)
+
+**1. KATRIN Experiment (Direct Kinematic Mass):**
+- **Status (2025):** Upper limit $m_{\nu_e} < 0.45$ eV (90% CL).
+- **Projection (2026):** Sensitivity approaching $0.3$ eV.
+- **Verdict:** The UIDT limit ($\sum m_{\nu} \le 0.16$ eV) is **fully compatible** with the direct KATRIN bounds ($< 0.45$ eV).
+
+**2. DESI DR2 Cosmology ($w_0 w_a$ CDM):**
+- **Status:** While $\Lambda$CDM fits prefer $\sum m_{\nu} \approx 0$, extensions to time-varying Dark Energy ($w_0 w_a$) relax the upper bound to $\sim 0.24$ eV (95% CL).
+- **Verdict:** The UIDT prediction of $\le 0.16$ eV lies comfortably within the allowed parameter space of DESI DR2 dynamical dark energy models.
+
+### Hierarchy Analysis (Sandbox Validation)
+An analysis of neutrino mass hierarchies compatible with the UIDT-preferred range $\sum m_{\nu} \in [0.12, 0.16]$ eV reveals:
+
+- **Normal Hierarchy (NH):** Requires a lightest neutrino mass $m_{lightest} \approx 0.030 - 0.046$ eV.
+- **Inverted Hierarchy (IH):** Requires a lightest neutrino mass $m_{lightest} \approx 0.014 - 0.036$ eV.
+
+**Conclusion:** The **Inverted Hierarchy** is favored within the UIDT framework as it allows for a smaller, more "natural" lightest mass (closer to the massless limit or a higher-order geometric suppression like $v/\gamma^8 \approx 0.009$ eV) to achieve the target sum. The Normal Hierarchy would require a more tuned degeneracy.
