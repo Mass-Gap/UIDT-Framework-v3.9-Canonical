@@ -40,7 +40,7 @@ $$\lambda_{obs} = \lambda_{Pl} \cdot 2^{34.58} \approx \lambda_{Pl} \cdot 2.53 \
 
 ---
 
-### L4: γ NOT Derived from Renormalization Group First Principles 🔬 HIGH PRIORITY
+### L4: γ NOT Derived from Renormalization Group First Principles 🔬 CANDIDATE SOLUTION IDENTIFIED
 
 **Issue:**
 The universal scaling invariant **γ = 16.339** is phenomenologically determined from kinetic vacuum expectation value (VEV) matching, **NOT** derived from renormalization group (RG) flow equations.
@@ -58,8 +58,7 @@ The universal scaling invariant **γ = 16.339** is phenomenologically determined
 
 **Attempted Derivations:**
 1. **Perturbative RG (1-loop):** γ* ≈ 55.8 ❌ (factor 3.4 too large)
-2. **QCD color algebra:** γ = (2N_c + 1)² / N_c = 49/3 ≈ 16.33 ✅ (matches!)
-   - **However:** Lacks rigorous proof connecting to UIDT VEV
+2. **QCD color algebra:** γ = (2N_c + 1)² / N_c = 49/3 ≈ 16.33 ✅ (0.037% numerical match — algebraic VEV connection pending)
 3. **Functional Renormalization Group (FRG):** Not yet attempted
 
 **Condition for Resolution:**
@@ -68,6 +67,9 @@ The universal scaling invariant **γ = 16.339** is phenomenologically determined
 - **Option C:** Accept γ as fundamental phenomenological constant (like α_EM)
 
 **Research Priority:** 🔴 **HIGH** — Resolving this would upgrade γ from [A-] to [A]
+
+**Resolution Path:**
+- See [su3_gamma_theorem.md](su3_gamma_theorem.md) for the algebraic derivation candidate.
 
 **Disclosed In:**
 - Manuscript Section 10.3 (RG Fixed Point Analysis)
