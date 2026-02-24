@@ -107,6 +107,12 @@ The 99-step renormalization group cascade used to suppress vacuum energy catastr
    - Post-hoc fitting rather than prediction
    - **Most likely** but scientifically unsatisfying
 
+4. **N²-Cascade Scaling Observation:**
+   - LLM-simulated origin from PRX corpus
+   - Density scales as ρ(N) ∝ N²
+   - Follows trivially from SU(N) gluon DoF ∝ N²-1
+   - Registered as **[Category C] Phenomenological Observation (UIDT-C-050)**. Still requires first-principles analytic derivation to exceed [C].
+
 **Condition for Resolution:**
 Physical or mathematical derivation of N=99 from:
 - SM particle content
