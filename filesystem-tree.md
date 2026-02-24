@@ -311,6 +311,8 @@ UIDT-OS/
 │   └── CLAIMS.json                   # Machine-readable evidentiary claims mapping
 └── PLANS/                            # Agent execution roadmaps
     ├── PLANE_DONE-ARCHIV/            # Completed work strategies
+    │   ├── PR_TICK-20260224_Phase3.md      # Archived Phase 3 Pull Request Draft
+    │   └── PR_v3.9.2_Corpus_Integration.md # Archived Corpus Integration PR Draft
     ├── PLAN-UPDATES-TRAE/            # Trae IDE plans
     └── UIDT-UPDATES-ANTIGRAV/        # Antigravity IDE plans
 ```

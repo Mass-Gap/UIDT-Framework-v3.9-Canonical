@@ -1,7 +1,7 @@
 # Pull Request: Phase 3 Breakthroughs (SU(3) Theorem & LHCb Predictions)
 
 **Ticket:** TICK-20260224-Phase3_Discoveries
-**Branch:** `feature/v4.0-phase3-discoveries`
+**Branch:** `feature/TICK-20260224-Phase3_Discoveries`
 **Target Branch:** `main`
 
 ## Description
