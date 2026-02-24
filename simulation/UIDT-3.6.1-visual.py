@@ -60,7 +60,6 @@ def plot_parameter_distributions(m_S, kappa, lam):
     xmin, xmax = ax1.get_xlim()
     x = np.linspace(xmin, xmax, 100)
     p = norm.pdf(x, mu, std)
-    # FIX: Raw strings (r'...') for LaTeX
     ax1.plot(x, p, 'r--', linewidth=2, label=rf'Fit: $\mu={mu:.3f}$')
     
     # Targets
