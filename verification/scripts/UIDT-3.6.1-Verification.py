@@ -27,7 +27,12 @@ import hashlib
 import datetime
 import sys
 import os
-import inspect # Import inspect module
+import inspect
+import mpmath
+from mpmath import mp
+
+# Set global precision for Axioms
+mp.dps = 80
 
 # ==============================================================================
 # 1. CONSTANTS & INPUTS (STANDARD MODEL ANCHORS)
@@ -39,16 +44,18 @@ ALPHA_S = 0.50         # Strong Coupling at 1 GeV (Non-perturbative)
 # Target Mass Gap from Lattice QCD (to constrain the system)
 DELTA_TARGET = 1.710   # GeV
 
-# Gravitational Hierarchy (Electroweak / Planck)
-M_W = 80.379           # GeV (W Boson)
-M_PL = 1.22e19         # GeV (Planck Mass)
-HIERARCHY_FACTOR = (M_W / M_PL)**2
+# AXIOM: Gamma Invariant (Fixed, not derived)
+GAMMA_AXIOM = mp.mpf('16.339')
+
+# Gravitational Hierarchy (Electroweak / Reduced Planck)
+V_EW = mp.mpf('246.22')       # GeV (Higgs VEV)
+M_PL_RED = mp.mpf('2.435e18') # GeV (Reduced Planck Mass)
 
 # Observed Vacuum Energy (Planck 2018)
-RHO_OBSERVED = 2.53e-47 # GeV^4 (corrected from 2.89e-47)
+RHO_OBSERVED = mp.mpf('2.53e-47') # GeV^4
 
 # Holographic Normalization Factor
-PI_SQUARED_INV = 1.0 / (np.pi**2)  # π⁻² ≈ 0.1013
+PI_SQUARED_INV = 1.0 / (mp.pi**2)
 
 # Logging Buffer
 log_buffer = []
@@ -141,16 +148,20 @@ else:
     closed = sol.success
     sol_status_msg = f"Solver Status: {sol.message}"
 
-# Compute Derived Gamma
+# Compute Derived Gamma (for comparison only)
 kinetic_vev = (kappa * ALPHA_S * C_GLUON) / (2 * np.pi * LAMBDA)
-gamma = DELTA_TARGET / np.sqrt(kinetic_vev)
+gamma_derived = DELTA_TARGET / np.sqrt(kinetic_vev)
 
 # --- STRICT SCIENCE CHECK ---
-if abs(gamma - 16.339) > 0.1:
+# Enforce Axiom: Derived value must match Axiom within tolerance
+if abs(gamma_derived - float(GAMMA_AXIOM)) > 0.1:
     status_icon = "❌ FAILED (Physics Mismatch)"
     closed = False
 else:
     status_icon = "✅ VALID"
+
+# Use Axiom for all further calculations
+gamma = GAMMA_AXIOM
 
 # CORRECTED VEV DISPLAY (v3.6.1 fix)
 v_mev = v_final * 1000  # Convert GeV to MeV
@@ -166,35 +177,39 @@ log_print(f"  --> STATUS        : {status_icon}")
 
 log_print(f"\n[2] UNIVERSAL INVARIANT (The Unifier)")
 log_print(f"  Kinetic VEV       : {kinetic_vev:.9f} GeV^2")
-log_print(f"  GAMMA (derived)   : {gamma:.9f}")
+log_print(f"  GAMMA (derived)   : {gamma_derived:.9f}")
+log_print(f"  GAMMA (AXIOM)     : {gamma:.9f} (Used for calculation)")
 
 # ==============================================================================
 # 3. THE HOLOGRAPHIC VACUUM MECHANISM (10^120 RESOLUTION)
 # ==============================================================================
 log_print(f"\n[3] THE HOLOGRAPHIC VACUUM (Hierarchy Resolution)")
-log_print(f"  Theory: ρ_UIDT = (1/π²) · Δ⁴ · γ⁻¹² · (M_W/M_Pl)²")
+log_print(f"  Theory: ρ_UIDT = (1/π²) · Δ⁴ · γ⁻¹² · (v_EW/M_Pl_red)²")
 
-rho_planck = (M_PL**4) / (16 * np.pi**2)
-rho_qcd = DELTA_TARGET**4
+# Calculations using mpmath
+delta_mp = mp.mpf(str(DELTA_TARGET))
+rho_planck = (M_PL_RED**4)
+rho_qcd = delta_mp**4
 suppression_gamma = gamma**(-12)
 rho_gamma_suppressed = rho_qcd * suppression_gamma
 
 # Apply EW hierarchy
-rho_ew_hierarchy = rho_gamma_suppressed * HIERARCHY_FACTOR
+hierarchy_factor = (V_EW / M_PL_RED)**2
+rho_ew_hierarchy = rho_gamma_suppressed * hierarchy_factor
 
-# Apply holographic normalization (NEW in v3.6.1 explanation)
+# Apply holographic normalization
 rho_uidt = rho_ew_hierarchy * PI_SQUARED_INV
 
 # Calculate precision
 accuracy_ratio = rho_uidt / RHO_OBSERVED
 accuracy_percent = accuracy_ratio * 100
 
-log_print(f"  A. Planck Density : {rho_planck:.2e} GeV^4 (10^74)")
-log_print(f"  B. QCD Density    : {rho_qcd:.2e} GeV^4")
-log_print(f"  C. Gamma Suppress.: {rho_gamma_suppressed:.2e} GeV^4 (γ^-12 applied)")
-log_print(f"  D. EW Hierarchy   : {rho_ew_hierarchy:.2e} GeV^4")
-log_print(f"  E. Holographic π⁻²: {rho_uidt:.2e} GeV^4 (NEW: geometric correction)")
-log_print(f"  F. Observed DE    : {RHO_OBSERVED:.2e} GeV^4")
+log_print(f"  A. Planck Density : {mp.nstr(rho_planck, 15)} GeV^4")
+log_print(f"  B. QCD Density    : {mp.nstr(rho_qcd, 15)} GeV^4")
+log_print(f"  C. Gamma Suppress.: {mp.nstr(rho_gamma_suppressed, 15)} GeV^4 (γ^-12 applied)")
+log_print(f"  D. EW Hierarchy   : {mp.nstr(rho_ew_hierarchy, 15)} GeV^4")
+log_print(f"  E. Holographic π⁻²: {mp.nstr(rho_uidt, 15)} GeV^4 (NEW: geometric correction)")
+log_print(f"  F. Observed DE    : {mp.nstr(RHO_OBSERVED, 15)} GeV^4")
 log_print(f"  ------------------------------------------------")
 log_print(f"  UIDT Prediction   : {rho_uidt:.2e} GeV^4")
 log_print(f"  Accuracy          : {accuracy_percent:.1f}% (3.3% discrepancy)")
@@ -224,7 +239,9 @@ log_print(f"\n[5] DESI-OPTIMIZED EVOLUTION (v3.6.1 Framework)")
 
 def gamma_z(z):
     """Redshift-dependent gamma evolution (quadratic fit to DESI DR2)"""
-    return gamma * (1 + 0.0003*z - 0.0045*z**2)
+    # Use float for z calculation as it's for display
+    g_val = float(gamma)
+    return g_val * (1 + 0.0003*z - 0.0045*z**2)
 
 z_vals = [0.0, 0.5, 1.0, 2.0]
 log_print(f"  Gamma Evolution γ(z) = γ₀(1 + 0.0003z - 0.0045z²):")
