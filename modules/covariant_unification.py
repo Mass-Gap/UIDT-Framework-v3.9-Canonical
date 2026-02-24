@@ -24,7 +24,7 @@ class CovariantUnification:
         SU(3) algebraic candidate: 49/3 = 16.333... (0.037% deviation, see UIDT-C-047)
         """
         self.GAMMA_UIDT = mpf(gamma_uidt)  # v3.9 canonical [A-]
-        self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5)
+        self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5) [Category C: Phenomenological constraint UIDT-C-050]
 
     def derive_csf_anomalous_dimension(self):
         """

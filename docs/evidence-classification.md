@@ -11,7 +11,7 @@
 
 The UIDT framework employs a strict evidence classification system to distinguish between mathematically proven results, phenomenological determinations, numerical verifications, calibrated models, and predictions awaiting experimental confirmation.
 
-**18 total claims** are documented in the framework (see [CLAIMS Registry](../clay-submission/10_VerificationReports/)).
+**50 total claims** are documented in the framework (see `UIDT-OS/LEDGER/CLAIMS.json`).
 
 ---
 
@@ -131,7 +131,7 @@ python verification/scripts/UIDT_Master_Verification.py
 
 | Claim ID | Prediction | Falsification Test | Timeline |
 |----------|------------|-------------------|----------|
-| UIDT-C-007 | **Scalar Mass** m_S = 1.705 ± 0.015 GeV | LHC Run 4: >5σ exclusion in 1.5-1.9 GeV | 2029+ |
+| UIDT-C-007 | **Scalar Mass** m_S = 1.705 ± 0.015 GeV | **[Corroborated]** QCD Sum Rules independent calculation [B-]. LHC Run 4: >5σ exclusion in 1.5-1.9 GeV | 2029+ |
 | UIDT-C-009 | **Casimir Anomaly** +0.59% at 0.66 nm | Precision measurement: \|ΔF/F\| < 0.1% excludes | 2028+ |
 | d_opt | **Optimal Casimir Distance** 0.854 nm | Sub-nanometer force measurements | Technology-limited |
 
@@ -200,18 +200,18 @@ Every category change MUST be logged with:
 
 | Category | Count | Percentage |
 |----------|-------|------------|
-| A (Proven) | 7 | 38.9% |
-| A- (Phenomenological) | 2 | 11.1% |
-| B (Numerically Verified) | 2 | 11.1% |
-| C (Calibrated) | 1 | 5.6% |
-| D (Predicted) | 2 | 11.1% |
-| E (Open/Withdrawn) | 4 | 22.2% |
-| **Total** | **18** | **100%** |
+| A (Proven) | 14 | 28.0% |
+| A- (Phenomenological) | 6 | 12.0% |
+| B (Numerically Verified) | 6 | 12.0% |
+| C (Calibrated) | 6 | 12.0% |
+| D (Predicted) | 6 | 12.0% |
+| E (Open/Withdrawn) | 12 | 24.0% |
+| **Total** | **50** | **100%** |
 
-**Verified (A+A-+B):** 11 claims (61.1%)
-**Testable (D):** 2 claims (11.1%)
-**Calibrated (C):** 1 claim (5.6%)
-**Open Research (E):** 4 claims (22.2%)
+**Verified (A+A-+B):** 26 claims (52.0%)  
+**Calibrated (C):** 6 claims (12.0%)  
+**Testable (D):** 6 claims (12.0%)  
+**Open Research/Retracted (E):** 12 claims (24.0%)
 
 ---
 

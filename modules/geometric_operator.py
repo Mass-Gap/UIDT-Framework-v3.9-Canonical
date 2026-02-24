@@ -19,6 +19,8 @@ class GeometricOperator:
         """
         Initialisiert die fundamentalen geometrischen Konstanten der Theorie.
         Diese Werte sind nicht mehr 'gefittet', sondern als Axiome definiert.
+        
+        # TODO [D]: Derive area operator spectrum from Banach fixed-point topology
         """
         # 1. PILLAR I: QFT Core Constants
         # Abgeleitet aus QCD Sum Rules & Banach Fixed Point (v3.7)
