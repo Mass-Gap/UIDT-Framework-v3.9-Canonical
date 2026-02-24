@@ -81,11 +81,11 @@ def apply_brst_reduction(total_raw):
     }
 
     # Hypothesis D: Strict BRST Cohomology (Physical States Only)
-    # Bosonic physical = 2 (photon) + 6 (W/Z) + 3 (gluons?) + 1 (Higgs) = 12
+    # Bosonic physical = 2 (photon) + 6 (W/Z) + 16 (8 gluons) + 1 (Higgs) = 25
     # Fermionic physical = 90
-    res_D = mpf('12') + mpf('90')
+    res_D = mpf('25') + mpf('90')
     hypotheses['D'] = {
-        "name": "Strict Cohomology (Physical On-Shell Only, 102)",
+        "name": "Strict Cohomology (Physical On-Shell Only, 115)",
         "result": res_D,
         "gap": res_D - target,
         "closes": (res_D == target)
