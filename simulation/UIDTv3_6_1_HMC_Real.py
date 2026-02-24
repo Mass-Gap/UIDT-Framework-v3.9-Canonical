@@ -25,8 +25,12 @@ import numpy as np
 import time
 import sys
 from dataclasses import dataclass
-from typing import Tuple, Optional, List
+from typing import Tuple, Optional, List, Any
 import argparse
+from mpmath import mp
+
+# Force precision locally (Anti-Tampering Rule)
+mp.dps = 80
 
 # =============================================================================
 # CONFIGURATION (parse_known_args for Jupyter/Colab compatibility)
@@ -53,12 +57,13 @@ def get_params():
 @dataclass
 class UIDTConstants:
     """Canonical UIDT v3.6.1 constants."""
-    KAPPA: float = 0.500
-    LAMBDA_S: float = 0.417
-    M_S: float = 1.705
-    TARGET_DELTA: float = 1.710
-    TARGET_GAMMA: float = 16.339
-    GLUON_CONDENSATE: float = 0.277
+    # High-precision initialization via mpmath strings
+    KAPPA: Any = mp.mpf('0.500')
+    LAMBDA_S: Any = mp.mpf('0.417')
+    M_S: Any = mp.mpf('1.705')
+    TARGET_DELTA: Any = mp.mpf('1.710035046742')  # Precise Geometric Operator value
+    TARGET_GAMMA: Any = mp.mpf('16.339')
+    GLUON_CONDENSATE: Any = mp.mpf('0.277')
 
 
 # =============================================================================
