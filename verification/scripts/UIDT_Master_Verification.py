@@ -110,7 +110,9 @@ DELTA_TARGET  = 1.710
 
 def solve_exact_cubic_v(m_S, lambda_S, kappa):
     """Solves the vacuum equation exactly for v."""
-    if lambda_S == 0: return 0.0
+    if lambda_S == 0:
+        # Exact linear physical solution for lambda_S = 0
+        return (kappa * C_GLUON_FLOAT) / (LAMBDA_FLOAT * m_S**2)
     p = (6 * m_S**2) / lambda_S
     q = -(6 * kappa * C_GLUON_FLOAT) / (LAMBDA_FLOAT * lambda_S)
     roots = np.roots([1, 0, p, q])
