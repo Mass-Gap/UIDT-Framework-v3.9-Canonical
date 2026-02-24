@@ -313,7 +313,7 @@ UIDT v3.9 establishes that:
 | Electron mass prediction | 23% | Open Question |
 | Holographic scale hierarchy | 10¹⁰ factor | Unresolved |
 | Vacuum energy residual | Factor 2.3 | Under study |
-| RG gamma vs. kinetic VEV | Factor 3.4 | Open Question |
+| RG gamma vs. kinetic VEV | Factor 3.4 | Candidate Solution Identified |
 | Casimir experimental status | No peer-reviewed data | Corrected / Category D |
 
 ---
