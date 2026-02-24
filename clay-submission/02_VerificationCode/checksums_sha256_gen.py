@@ -290,8 +290,28 @@ def verify_manifest(manifest_path: Path, base_path: Path) -> Tuple[int, int, Lis
                 continue
 
             expected_hash = m.group('hash')
-            rel_path = Path(m.group('path'))
-            filepath = base_path / rel_path
+            rel_path_str = m.group('path')
+
+            # Security check: Prevent path traversal
+            try:
+                # Resolve paths to absolute forms
+                base_path_resolved = base_path.resolve()
+                filepath = (base_path / rel_path_str).resolve()
+
+                # Check if resolved file path is within the base directory
+                if not filepath.is_relative_to(base_path_resolved):
+                    failed += 1
+                    errors.append(f"{rel_path_str}: SECURITY VIOLATION - Path traversal detected")
+                    print(f"  ✗ {rel_path_str} - SECURITY VIOLATION (Path traversal)")
+                    continue
+
+            except Exception as e:
+                failed += 1
+                errors.append(f"{rel_path_str}: PATH ERROR - {str(e)}")
+                print(f"  ✗ {rel_path_str} - PATH ERROR")
+                continue
+
+            rel_path = Path(rel_path_str)
             if filepath.exists():
                 actual_hash = compute_sha256(filepath)
                 if actual_hash == expected_hash:
