@@ -24,7 +24,7 @@ except ImportError:
 # 2. Math Kernel Import (v3.6.1 Precision)
 try:
     # Must match the filename with underscores defined previously
-    from UIDTv3_2_cayley_hamiltonian import su3_expm_hybrid
+    from UIDTv3_6_1_su3_expm_cayley_hamiltonian_Modul import su3_expm_hybrid
 except ImportError:
     print("⚠️ WARNING: UIDTv3_2_cayley_hamiltonian module not found.")
     print("   Falling back to slow scipy.linalg.expm.")
@@ -194,6 +194,7 @@ class UIDTLatticeOptimized:
                     shift_second_axis=None, shift_second_dir=0):
         """
         Helper for periodic shifts (Toroidal Boundary Conditions).
+        OPTIMIZED: Uses array slicing instead of xp.roll for better performance.
         
         Args:
             U: Gauge field
@@ -202,42 +203,53 @@ class UIDTLatticeOptimized:
             forward: True (+1 step in lattice), False (-1 step)
             shift_second_axis: Optional secondary shift (for negative staples)
         """
-        # Determine primary shift
-        # np.roll shift=+1 moves data from left to right (x-1 comes to x)
-        # We need U(x+mu). To get data at x+mu to position x, we shift LEFT (-1).
-        shift1 = -1 if forward else 1
-        
         # Select component
         tensor = U[..., target_idx, :, :]
         
-        # Apply primary shift
-        res = xp.roll(tensor, shift=shift1, axis=axis_idx)
+        # --- Primary Shift ---
+        # forward=True -> shift=-1 (left shift). [0, 1, 2] -> [1, 2, 0]
+        # Slicing: [1:] + [:1]
+        # forward=False -> shift=1 (right shift). [0, 1, 2] -> [2, 0, 1]
+        # Slicing: [-1:] + [:-1]
+
+        # Create slices dynamically for arbitrary axis
+        sl_1 = [slice(None)] * tensor.ndim
+        sl_2 = [slice(None)] * tensor.ndim
         
-        # Apply secondary shift if requested (for x+mu-nu cases)
+        if forward:
+            sl_1[axis_idx] = slice(1, None)
+            sl_2[axis_idx] = slice(None, 1)
+            p1 = tensor[tuple(sl_1)]
+            p2 = tensor[tuple(sl_2)]
+            res = xp.concatenate((p1, p2), axis=axis_idx)
+        else:
+            sl_1[axis_idx] = slice(-1, None)
+            sl_2[axis_idx] = slice(None, -1)
+            p1 = tensor[tuple(sl_1)]
+            p2 = tensor[tuple(sl_2)]
+            res = xp.concatenate((p1, p2), axis=axis_idx)
+
+        # --- Secondary Shift ---
         if shift_second_axis is not None:
-            # e.g. shift_second_dir = -1 means we want data from x-nu? 
-            # If logic is consistent: forward=True -> shift=-1.
-            # Here explicitly passed: -1 (left shift) or 1 (right shift)
-            # For x-nu, we need data from x-1, so shift=+1.
-            # User snippet logic: "shift_nu=-1". 
-            # In snippet: if shift_nu == -1 -> shifts[nu] = -1. 
-            # shift=-1 corresponds to "forward" in snippet logic logic for the array index.
-            # Actually: To bring (x+1) to x, you roll -1. To bring (x-1) to x, you roll +1.
+            # shift_second_dir: -1 (left/forward) or 1 (right/backward)
+            # If dir is -1, treat as forward=True
+            # If dir is 1, treat as forward=False
+            is_fwd_2 = (shift_second_dir == -1)
             
-            # Mapping user snippet logic:
-            # snippet: shift=-1 (hardcoded for negative staple logic)
-            # This corresponds to bringing data from +1 to x?
-            # Wait, U(x+mu-nu). We are at x. We want U at x+mu-nu.
-            # 1. Start at x.
-            # 2. Roll -1 in mu (brings x+mu to x). Now we have grid(x+mu).
-            # 3. Roll +1 in nu (brings y-nu to y). Now we have grid(x+mu-nu).
+            sl_1 = [slice(None)] * res.ndim
+            sl_2 = [slice(None)] * res.ndim
             
-            # Snippet used shifts[nu] = -1. This rolls LEFT. Brings (y+1) to y.
-            # So snippet calculates U at (x + mu + nu) ??? 
-            # Standard negative staple requires (x - nu).
-            # Let's trust the snippet's explicit logic if it worked for you:
-            # "shifts[nu] = -1".
-            
-            res = xp.roll(res, shift=shift_second_dir, axis=shift_second_axis)
+            if is_fwd_2:
+                sl_1[shift_second_axis] = slice(1, None)
+                sl_2[shift_second_axis] = slice(None, 1)
+                p1 = res[tuple(sl_1)]
+                p2 = res[tuple(sl_2)]
+                res = xp.concatenate((p1, p2), axis=shift_second_axis)
+            else:
+                sl_1[shift_second_axis] = slice(-1, None)
+                sl_2[shift_second_axis] = slice(None, -1)
+                p1 = res[tuple(sl_1)]
+                p2 = res[tuple(sl_2)]
+                res = xp.concatenate((p1, p2), axis=shift_second_axis)
             
         return res
