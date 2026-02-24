@@ -1,0 +1,52 @@
+
+Running HMC (Tiny Lattice)...
+======================================================================
+  UIDT v3.6.1 HMC SIMULATION - REAL PHYSICS
+======================================================================
+Lattice: 2^3 x 4
+Beta: 6.0
+UIDT kappa: 0.5
+Thermalization: 20 trajectories
+Measurements: 50 trajectories
+MD steps: 2, step size: 0.01
+======================================================================
+
+Thermalization...
+  Therm   10: <P> = 1.000000, acc = 0.17
+  Therm   20: <P> = 1.000000, acc = 0.06
+
+Measurements...
+  Meas   50: <P> = 1.000000, <(dS)^2> = 0.000000
+
+======================================================================
+RESULTS
+======================================================================
+Runtime: 9.7 seconds
+Acceptance rate: 0.00%
+Average plaquette: 1.000000 +/- 0.000000
+Kinetic VEV <(dS)^2>: 0.000000 +/- 0.000000
+Computed gamma: nan (target: 16.339)
+======================================================================
+
+Running Metropolis (Tiny Lattice)...
+Adding noise to initial configuration...
+Thermalization...
+  Therm 10/20
+  Therm 20/20
+Measurements...
+  Meas 10/50: <P> = 0.085693
+  Meas 20/50: <P> = 0.014892
+  Meas 30/50: <P> = 0.008662
+  Meas 40/50: <P> = -0.028226
+  Meas 50/50: <P> = -0.015794
+Gauge Acceptance: 87.63%
+Scalar Acceptance: 68.97%
+
+========================================
+ERGODICITY CHECK RESULTS
+========================================
+Algorithm       | Tau (steps) | Mean Plaq
+----------------------------------------
+HMC             | 0.00       | 1.0000
+Metropolis      | 8.50       | 0.0223
+========================================
