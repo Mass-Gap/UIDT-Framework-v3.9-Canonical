@@ -66,15 +66,15 @@ The universal scaling invariant **γ = 16.339** is phenomenologically determined
 - **Option B:** Derive γ from non-perturbative FRG with full propagator dressing
 - **Option C:** Accept γ as fundamental phenomenological constant (like α_EM)
 
-**Research Priority:** 🔴 **HIGH** — Resolving this would upgrade γ from [A-] to [A]
+**Resolution Path (TICK-20260224-Phase3_Discoveries):**
+The $\gamma_{\text{SU(3)}}$ conjecture mathematically reduces the discrepancy to $<0.037\%$. See `docs/su3_gamma_theorem.md` for the formal statement and numerical bounds. Research priority continues on binding the structure analytically.
 
-**Resolution Path:**
-- See [su3_gamma_theorem.md](su3_gamma_theorem.md) for the algebraic derivation candidate.
+**Research Priority:** 🟡 **CANDIDATE SOLUTION IDENTIFIED** — Resolving this completely would upgrade γ from [A-] to [A].
 
 **Disclosed In:**
 - Manuscript Section 10.3 (RG Fixed Point Analysis)
 - [evidence-classification.md](evidence-classification.md) Category A- notes
-- CHANGELOG.md v3.6.1 (γ reclassified from [A] to [A-])
+- CHANGELOG.md TICK-20260224-Phase3_Discoveries (SU(3) Gamma Conjecture)
 
 ---
 
