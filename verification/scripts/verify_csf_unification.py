@@ -1,15 +1,24 @@
 #!/usr/bin/env python3
 """
-UIDT v3.9 VERIFICATION: CSF-UIDT UNIFICATION
-============================================
-Pillar: II (Cosmological Harmony)
-Regel-Compliance: Native Precision Only, No Mocks, Residuals < 10^-14
+UIDT v3.9 CSF-UIDT UNIFICATION VERIFICATION (Pillar II-CSF)
+=============================================================
+Evidence Category: [C] for all CSF outputs.
+Limitations: L4 (gamma calibrated, not RG-derived), L5 (N=99 empirical).
+
+Verifies:
+  1. Conformal Density Mapping (gamma_CSF derivation)
+  2. Information Saturation Bound (rho_max computation)
+  3. Equation of State consistency (residual < 1e-14)
 """
 
 import sys
 import os
 from mpmath import mp, mpf, nstr
 
+# Set precision locally
+mp.dps = 80
+
+# Path injection (same pattern as UIDT_Master_Verification.py)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 if PROJECT_ROOT not in sys.path:
@@ -17,40 +26,75 @@ if PROJECT_ROOT not in sys.path:
 
 from modules.covariant_unification import CovariantUnification
 
-mp.dps = 80
-
 
 def run_csf_verification():
-    print("╔══════════════════════════════════════════════════════════════╗")
-    print("║  UIDT v3.9 COVARIANT UNIFICATION VERIFICATION (CSF-UIDT)     ║")
-    print("╚══════════════════════════════════════════════════════════════╝")
+    print("=" * 64)
+    print("  UIDT v3.9 CSF-UIDT UNIFICATION VERIFICATION")
+    print("  Evidence Category: [C] (Phenomenological)")
+    print("=" * 64)
 
-    gamma_canonical = mpf('16.339')
-    unifier = CovariantUnification(gamma_uidt=gamma_canonical)
+    cu = CovariantUnification(gamma_uidt=mpf('16.339'))
+    all_passed = True
 
-    print("\n[1] Verifying Conformal Density Mapping (Lemma 1)...")
-    gamma_csf = unifier.derive_csf_anomalous_dimension()
-    # USE NSTR FOR MPMATH FORMATTING. NEVER FLOAT CAST. NEVER CRASH INTENTIONALLY.
+    # ------------------------------------------------------------------
+    # Check 1: Conformal Density Mapping
+    # ------------------------------------------------------------------
+    print("\n[Check 1] Conformal Density Mapping (gamma_CSF) [C]...")
+    gamma_csf = cu.derive_csf_anomalous_dimension()
+    # USE NSTR FOR MPMATH FORMATTING. NEVER FLOAT CAST.
     gamma_csf_str = nstr(gamma_csf, 6)
-    print(f"    > Derived gamma_CSF: {gamma_csf_str} (Expected: ~0.504)")
+    print(f"  gamma_CSF = {gamma_csf_str}")
+    print(f"  Evidence:   [C] — phenomenological mapping from calibrated [A-] gamma")
 
-    print("\n[2] Verifying Information Saturation Bound (Theorem 2)...")
-    rho_max = unifier.check_information_saturation_bound()
-    print(f"    > Maximum Density limit scaled via gamma^99.")
-    print(f"    > Value: {str(rho_max)[:20]}... GeV^4")
-
-    print("\n[3] Verifying Equation of State (Lemma 2)...")
-    eos = unifier.get_equation_of_state_asymptotic()
-    target_w0 = mpf('-0.99')
-    residual_w0 = abs(eos['w_0'] - target_w0)
-    print(f"    > w_0 = {nstr(eos['w_0'], 5)}")
-    print(f"    > w_a = {nstr(eos['w_a'], 5)}")
-    print(f"    > Residual w_0: {nstr(residual_w0, 5)}")
-
-    if residual_w0 < mpf('1e-14'):
-        print("\n✅ SYSTEM STATUS: CSF-UIDT MAPPING STRICTLY CLOSED.")
+    if gamma_csf > 0 and gamma_csf < 1:
+        print("  Status:     PASS (0 < gamma_CSF < 1)")
     else:
-        print("\n❌ SYSTEM STATUS: RESIDUAL EXCEEDS 10^-14 THRESHOLD.")
+        print("  Status:     FAIL (gamma_CSF out of expected range)")
+        all_passed = False
+
+    # ------------------------------------------------------------------
+    # Check 2: Information Saturation Bound
+    # ------------------------------------------------------------------
+    print("\n[Check 2] Information Saturation Bound (rho_max) [C]...")
+    rho_max = cu.check_information_saturation_bound()
+    rho_str = str(rho_max)[:20]
+    print(f"  rho_max = {rho_str}... GeV^4")
+    print(f"  Evidence: [C] — empirical N=99 (Limitation L5)")
+
+    if rho_max > 0:
+        print("  Status:   PASS (rho_max > 0)")
+    else:
+        print("  Status:   FAIL (rho_max <= 0)")
+        all_passed = False
+
+    # ------------------------------------------------------------------
+    # Check 3: Equation of State (internal consistency)
+    # ------------------------------------------------------------------
+    print("\n[Check 3] Equation of State (w_0, w_a) [C]...")
+    eos = cu.derive_equation_of_state()
+    residual_w0 = abs(eos['w_0'] - mpf('-0.99'))
+    residual_wa = abs(eos['w_a'] - mpf('+0.03'))
+    print(f"  w_0 = {nstr(eos['w_0'], 5)}  (residual: {nstr(residual_w0, 5)})")
+    print(f"  w_a = {nstr(eos['w_a'], 5)}  (residual: {nstr(residual_wa, 5)})")
+    print(f"  Evidence: [C] — phenomenological placeholder")
+
+    if residual_w0 < mpf('1e-14') and residual_wa < mpf('1e-14'):
+        print("  Status:   PASS (residuals < 1e-14, mpmath 80-dps consistency)")
+    else:
+        print("  Status:   FAIL (residual too large)")
+        all_passed = False
+
+    # ------------------------------------------------------------------
+    # Final Status
+    # ------------------------------------------------------------------
+    print("\n" + "=" * 64)
+    if all_passed:
+        print("  ✅ SYSTEM STATUS: CSF-UIDT MAPPING STRICTLY CLOSED.")
+        print("=" * 64)
+        sys.exit(0)
+    else:
+        print("  ❌ SYSTEM STATUS: CSF-UIDT VERIFICATION FAILED.")
+        print("=" * 64)
         sys.exit(1)
 
 

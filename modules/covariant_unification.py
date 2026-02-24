@@ -1,63 +1,97 @@
 """
-UIDT MODULE: COVARIANT UNIFICATION (CSF-UIDT Synthesis)
-=======================================================
-Version: 3.9 Canonical
-Evidence Category: [A-] (Derived from phenomenological gamma).
+UIDT MODULE: COVARIANT SCALAR-FIELD UNIFICATION (Pillar II-CSF)
+================================================================
+Version: 3.9 (Constructive Synthesis)
+Context: Cosmology / Scalar Field Mapping
+Evidence Category: [C] for all cosmology outputs (phenomenological mapping from calibrated [A-] γ)
 
-Berechnet die konformen Mappings zwischen dem QFT-Fundament der UIDT (Gamma Invariant) und der makroskopischen Kosmologie (CSF).
+This module implements the Covariant Scalar-Field (CSF) mapping that connects
+the UIDT mass-gap framework to dark-energy phenomenology. It maps the calibrated
+scaling constant γ into an anomalous dimension γ_CSF, an information saturation
+bound ρ_max, and a placeholder equation of state (w_0, w_a).
+
+Limitations acknowledged:
+  L4: γ is calibrated [A-], not RG-derived from first principles.
+  L5: N=99 RG steps is empirically chosen (no analytic derivation).
 """
 
 from mpmath import mp, mpf, pi, sqrt, log
 
-# ABSOLUTE DIRECTIVE: Local precision initialization (Do not move to config)
+# Set precision locally — never in a config file (UIDT Directive #1)
 mp.dps = 80
 
 
 class CovariantUnification:
+    """
+    Covariant Scalar-Field Unification Engine.
+
+    Maps the calibrated [A-] lattice invariant γ_UIDT into cosmological
+    observables. All outputs are evidence category [C] (phenomenological).
+    """
 
     def __init__(self, gamma_uidt=mpf('16.339')):
         """
-        Initialisiert das Unifikations-Modul.
-        Nimmt den phaenomenologisch kalibrierten Universal Scaling Factor [Category A-].
+        Initializes the CSF engine with the UIDT scaling constant.
 
-        gamma = 16.339: v3.9 canonical (updated from v3.7.2: 16.374)
-        SU(3) algebraic candidate: 49/3 = 16.333... (0.037% deviation, see UIDT-C-047)
+        Args:
+            gamma_uidt: The lattice invariant γ. Calibrated [A-] — never "derived".
+                        Default: 16.339 (per CONSTANTS.md / AGENTS.md).
+
+        Note:
+            γ is an input axiom of the theory (Category A-), not a prediction.
+            See Limitation L4.
         """
-        self.GAMMA_UIDT = mpf(gamma_uidt)  # v3.9 canonical [A-]
-        self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5)
+        self.GAMMA_UIDT = gamma_uidt
+        self.RG_STEPS = mpf('99')  # Empirical choice — see Limitation L5
 
     def derive_csf_anomalous_dimension(self):
         """
-        Lemma 1: Conformal Density Mapping.
-        Leitet die CSF Anomalous Dimension aus dem UIDT Gamma ab.
-        Formel: gamma_CSF = 1 / (2 * sqrt(pi * ln(gamma_UIDT)))
+        Derives the CSF anomalous dimension from the lattice invariant.
+
+        Formula: γ_CSF = 1 / (2 * sqrt(π * ln(γ)))
+
+        Evidence Category: [C] — Phenomenological mapping from [A-] constant.
+        This is NOT a first-principles derivation; it maps the calibrated γ
+        through a conformal density integral.
+
+        Returns:
+            mpf: The anomalous dimension γ_CSF.
         """
-        log_term = log(self.GAMMA_UIDT)
-        denominator = mpf('2') * sqrt(pi * log_term)
-        gamma_csf = mpf('1') / denominator
+        gamma_csf = 1 / (2 * sqrt(pi * log(self.GAMMA_UIDT)))
         return gamma_csf
 
     def check_information_saturation_bound(self, delta_mass_gap=mpf('1.710')):
         """
-        Theorem 2: Information Saturation Bound.
-        Berechnet die maximale Dichte (Planck-Singularitaets-Regularisierung).
-        Formel: rho_max = Delta^4 * gamma^99
-        """
-        delta = mpf(delta_mass_gap)
-        rho_max_qft = (delta ** 4) * (self.GAMMA_UIDT ** self.RG_STEPS)
-        return rho_max_qft
+        Computes the information saturation bound (maximum conformal density).
 
-    def get_equation_of_state_asymptotic(self):
-        """
-        Asymptotic Equation of State Parameters.
+        Formula: ρ_max = Δ⁴ · γ^N  (N = 99 RG steps)
 
-        Returns the DESI-calibrated EOS values [Category C].
-        These are target values from observational cosmology,
-        NOT derived from first principles within UIDT.
+        Evidence Category: [C] — Uses empirically chosen N=99 (Limitation L5).
+        The mass gap Δ = 1.710 GeV is Category A+.
 
-        Evidence: [C] Calibrated to DESI BAO data.
-        Upgrade path: Derive w_0, w_a from UIDT density functional -> [A-]
+        Args:
+            delta_mass_gap: The mass gap in GeV. Default: 1.710 (Category A+).
+
+        Returns:
+            mpf: The saturation bound ρ_max (GeV⁴).
         """
-        w_0 = mpf('-0.99')   # DESI Year 1 central value [C]
-        w_a = mpf('+0.03')   # DESI Year 1 central value [C]
-        return {"w_0": w_0, "w_a": w_a, "evidence": "C", "source": "DESI_BAO_2024"}
+        rho_max = (delta_mass_gap ** 4) * (self.GAMMA_UIDT ** self.RG_STEPS)
+        return rho_max
+
+    def derive_equation_of_state(self):
+        """
+        Returns the dark-energy equation of state parameters.
+
+        Evidence Category: [C] — These are phenomenological placeholders,
+        NOT analytically derived from the CSF action. They represent the
+        target range consistent with Planck 2018 + BAO constraints.
+
+        Returns:
+            dict: {'w_0': mpf('-0.99'), 'w_a': mpf('+0.03')}
+        """
+        # TODO [D]: Replace with Taylor expansion of UIDT density response
+        #           once the full covariant action integral is derived.
+        return {
+            "w_0": mpf('-0.99'),
+            "w_a": mpf('+0.03')
+        }
