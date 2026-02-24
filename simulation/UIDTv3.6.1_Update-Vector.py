@@ -71,12 +71,12 @@ class UIDTLatticeOptimized:
         
         # Reproducible random state
         seed = getattr(cfg, 'seed', 42)
-        rng = np.random.RandomState(seed + 7)
+        rng = xp.random.RandomState(seed + 7)
         
         S_init = (v_vev + 1e-3 * rng.randn(*shapeS)).astype(float)
         
-        self.S = to_gpu(S_init)
-        self.Ps = to_gpu(xp.zeros_like(self.S)) # Conjugate momentum
+        self.S = S_init
+        self.Ps = xp.zeros_like(self.S) # Conjugate momentum
         
         # --- Initialization (Gauge Field U) ---
         # Cold Start: U = Identity
