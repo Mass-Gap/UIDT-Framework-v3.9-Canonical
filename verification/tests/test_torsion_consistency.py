@@ -67,7 +67,7 @@ class TestTorsionConsistency(unittest.TestCase):
         e_t = self.E_T_TARGET
 
         f_expected = (delta / gamma) + e_t
-        f_actual = self.lattice.get_corrected_vacuum_frequency()
+        f_actual = self.lattice.calculate_vacuum_frequency()
 
         residual = abs(f_actual - f_expected)
 
