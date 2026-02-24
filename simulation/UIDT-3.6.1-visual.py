@@ -93,7 +93,8 @@ def plot_parameter_distributions(m_S, kappa, lam):
     ax3.grid(True, alpha=0.3)
     
     # FIX: tight_layout rect parameter handles suptitle overlap issues better
-    plt.tight_layout()
+    fig.suptitle(r"UIDT Framework v3.9 - Physical Parameter Distributions", fontsize=16, fontweight='bold')
+    plt.tight_layout(rect=[0, 0.03, 1, 0.95])
     plt.savefig('uidt_v3.6.1_parameter_dist.png', dpi=300)
     print("🖼️  Saved: uidt_v3.6.1_parameter_dist.png")
 
