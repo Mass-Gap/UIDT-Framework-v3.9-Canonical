@@ -35,7 +35,6 @@ class LatticeConfig:
                  N_therm=20, N_meas=50, N_skip=2, seed=12345,
                  kappa=0.5, Lambda=1.0, 
                  m_S=1.705, lambda_S=0.417, v_vev=0.0477):
-        # FIX: Speichere Attribute sowohl als N_... als auch als Nx/Nt
         self.N_spatial = N_spatial
         self.N_temporal = N_temporal
         
