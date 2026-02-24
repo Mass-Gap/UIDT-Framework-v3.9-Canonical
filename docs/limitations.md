@@ -107,12 +107,20 @@ The 99-step renormalization group cascade used to suppress vacuum energy catastr
    - Post-hoc fitting rather than prediction
    - **Most likely** but scientifically unsatisfying
 
+4. **BRST Physical DoF Cascade:**
+   - Raw SM DoF: 118 (28 bosonic + 90 fermionic)
+   - BRST quantization removes unphysical DoF (Faddeev-Popov ghosts, longitudinal polarizations of massless gauge bosons)
+   - Candidate: if exactly 19 unphysical DoF are identified via BRST cohomology, the cascade reduces to N = 99
+   - **Status:** UNVERIFIED — no counting scheme yet produces exactly 19 unphysical DoF; see `verification/scripts/verify_brst_dof_reduction.py` for systematic enumeration
+   - **Risk flag:** Post-hoc fitting risk — the target N=99 must not drive the DoF counting
+
 **Condition for Resolution:**
 Physical or mathematical derivation of N=99 from:
 - SM particle content
 - Holographic duality (AdS/CFT)
 - Non-perturbative QCD vacuum structure
 - RG β-function zeros
+- BRST cohomology (see `verification/scripts/verify_brst_dof_reduction.py`)
 
 **Research Priority:** 🟡 **MEDIUM** — Affects cosmological interpretation but not QFT core
 

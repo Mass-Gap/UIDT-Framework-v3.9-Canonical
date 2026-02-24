@@ -80,6 +80,27 @@ def verify_discoveries():
     print(f"    > Derived Factor               : {str(folding_factor)[:20]}... (Order of 10^10)")
     print("    ✅ STATUS: Holographic scale derived via discrete lattice octaves.")
 
+    # --- 4. HARMONIC-24 RESONANCE ---
+    print("\n[4] Verifying Harmonic-24 Resonance (Pseudoscalar Glueball / f_vac)...")
+    from modules.harmonic_predictions import HarmonicPredictor
+
+    hp = HarmonicPredictor(
+        vacuum_freq_gev=mpf('0.10710'),
+        delta_gap_gev=mpf('1.710')
+    )
+    h24 = hp.check_harmonic_24_resonance()
+
+    print(f"    > m_pseudo (0-+)   : {h24['m_pseudo_MeV']:.3f} MeV")
+    print(f"    > f_vac            : {h24['f_vac_MeV']:.3f} MeV")
+    print(f"    > Ratio            : {h24['ratio']:.6f}")
+    print(f"    > |Ratio - 24|     : {h24['deviation_from_24']:.6f}")
+
+    if mpf(str(h24['deviation_from_24'])) < mpf('0.1'):
+        print("    ✅ STATUS: Ratio ≈ 24 confirmed [Category D — numerical coincidence, factor 1.5 empirical].")
+    else:
+        print("    ⚠️  STATUS: Ratio deviates from 24 beyond 0.1 tolerance.")
+        all_passed = False
+
     # --- FINAL STATUS ---
     print("")
     if all_passed:

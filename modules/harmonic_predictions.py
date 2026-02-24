@@ -65,6 +65,35 @@ class HarmonicPredictor:
 
     def predict_glueball_pseudoscalar(self):
         return self.delta * mpf('1.5')
+
+    def check_harmonic_24_resonance(self):
+        """
+        Harmonic-24 Resonance Check:
+        Computes the ratio of the pseudoscalar glueball mass (0-+) to f_vac.
+
+        EPISTEMIC CORRECTION [D]:
+        The factor 1.5 in predict_glueball_pseudoscalar() is EMPIRICALLY CHOSEN.
+        Therefore the ratio ≈ 24 is a NUMERICAL COINCIDENCE, NOT a
+        parameter-free first-principles derivation. Any connection to the
+        24 transverse degrees of freedom in bosonic string theory is
+        interpretive and unverified.
+
+        Returns:
+            dict: m_pseudo_MeV, f_vac_MeV, ratio, deviation_from_24, note
+        """
+        m_pseudo_mev = self.delta * mpf('1.5') * 1000
+        f_vac_mev = self.f_vac * 1000
+        ratio = m_pseudo_mev / f_vac_mev
+        deviation_from_24 = abs(ratio - mpf('24'))
+
+        return {
+            "m_pseudo_MeV": float(m_pseudo_mev),
+            "f_vac_MeV": float(f_vac_mev),
+            "ratio": float(ratio),
+            "deviation_from_24": float(deviation_from_24),
+            "note": "Factor 1.5 is empirical [D]. Ratio ≈ 24 is a numerical "
+                    "coincidence, not a parameter-free derivation."
+        }
         
     def generate_report(self):
         """Generates a report with all predictions."""
