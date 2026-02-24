@@ -25,8 +25,8 @@ def omelyan_integrator_2nd_order(self, n_steps=10, step_size=0.02, lambda_omelya
     
     # Initiale Momenta (Randomisierung)
     self.Pu = self.random_momenta()
-    # Skalar-Impulse: Normalverteiltes Rauschen
-    self.Ps = self.xp.array(np.random.randn(self.Nx, self.Ny, self.Nz, self.Nt), dtype=float)
+    # Skalar-Impulse: Normalverteiltes Rauschen (Direkt auf Device generiert)
+    self.Ps = self.xp.random.randn(self.Nx, self.Ny, self.Nz, self.Nt).astype(float)
     
     # Store initial configuration for Metropolis check
     U_old = self.U.copy()
