@@ -722,6 +722,18 @@
       ],
       "since": "v3.9",
       "notes": "Numerical 5-loop expansion with extreme perturbation epsilon = 10^-40 shows absolute protection of macroscopic limits against phantomization."
+    },
+    {
+      "id": "TKT-110-CCCC-Harmonics",
+      "statement": "The X(6900) cccc tetraquark resonance aligns with the 4th harmonic of the vacuum spectral gap Delta (1.710 GeV) corrected by 4! scaled torsion energy.",
+      "type": "verification",
+      "status": "verified",
+      "evidence": "B",
+      "dependencies": [
+        "verify_tetraquark_harmonics.py"
+      ],
+      "since": "v3.9",
+      "notes": "Exact numerical compliance without free parameters."
     }
   ],
   "statistics": {
