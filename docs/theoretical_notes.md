@@ -119,3 +119,25 @@ This **divergence** proves that $\gamma = 16.339$ is **phenomenological** [Categ
 
 **Classification:**
 This result is classified as **Evidence Category D** (Numerical/Simulation Artifact) and confirms the composite nature of the parameter $\gamma$.
+
+---
+
+## 4. Systematic Robustness Audit: UIDT vs. Baryonic Feedback (PR #43)
+
+**Status:** ✅ Separable Signal
+**Classification:** **Category B** (Mathematically Distinguishable)
+**Date:** 2026-02-23
+
+### Objective
+To verify if the UIDT Dark Energy decay signature ($\sigma_8$ suppression) can be distinguished from systematic baryonic feedback (e.g., AGN) in Euclid-like weak lensing surveys.
+
+### Methodology
+- **Signal 1 (UIDT):** Scale-independent growth suppression derived from $\gamma_{\infty} \to w_a \approx -1.30$.
+- **Signal 2 (Baryons):** Scale-dependent power spectrum suppression ($k > 1 \, h/\text{Mpc}$) using AGN feedback proxy.
+- **Metric:** Separation Factor $\mathcal{F}_{\text{sep}} = 1 - |\text{Corr}(S_{\text{UIDT}}, S_{\text{Baryon}})|$ over Euclid sensitivity window ($z \in [0.4, 0.9]$, $k \in [0.1, 10]$).
+
+### Result
+- **Separation Factor:** **0.968** (> 0.8 Threshold)
+- **Conclusion:** The UIDT signal (amplitude shift) is statistically orthogonal to the baryonic signal (shape distortion). Euclid can distinguish the two effects.
+
+**Reference:** [Full Audit Report](systematic_robustness_report.md)
