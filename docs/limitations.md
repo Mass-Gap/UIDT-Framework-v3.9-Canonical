@@ -66,15 +66,15 @@ The universal scaling invariant **γ = 16.339** is phenomenologically determined
 - **Option B:** Derive γ from non-perturbative FRG with full propagator dressing
 - **Option C:** Accept γ as fundamental phenomenological constant (like α_EM)
 
-**Resolution Path (TICK-20260224-Phase3_Discoveries):**
-The $\gamma_{\text{SU(3)}}$ conjecture mathematically reduces the discrepancy to $<0.037\%$. See `docs/su3_gamma_theorem.md` for the formal statement and numerical bounds. Research priority continues on binding the structure analytically.
+**Research Priority:** 🔴 **HIGH** — Resolving this would upgrade γ from [A-] to [A]
 
-**Research Priority:** 🟡 **CANDIDATE SOLUTION IDENTIFIED** — Resolving this completely would upgrade γ from [A-] to [A].
+**Resolution Path:**
+- See [su3_gamma_theorem.md](su3_gamma_theorem.md) for the algebraic derivation candidate.
 
 **Disclosed In:**
 - Manuscript Section 10.3 (RG Fixed Point Analysis)
 - [evidence-classification.md](evidence-classification.md) Category A- notes
-- CHANGELOG.md TICK-20260224-Phase3_Discoveries (SU(3) Gamma Conjecture)
+- CHANGELOG.md v3.6.1 (γ reclassified from [A] to [A-])
 
 ---
 
@@ -175,7 +175,7 @@ UIDT vacuum energy prediction ρ_UIDT differs from observed ρ_obs by factor ~2.
 **Progress (v3.9.2):**
 Extensive validation across three independent methodologies (Gap Equation, Gluon Condensate matching, Effective Potential Variational) confirms this scalar as a physical manifestation, not a numerical artifact. It signifies the **Holographic Coupling Ratio** inherent to the AdS/CFT dimensional reduction sequence, corresponding precisely to the geometric Overlap Shift ($\mathcal{S}_{holographic} \approx 2.302$).
 
-**Evidence:** [B] — Numerically verified up to 500-dps mathematical precision inside the PRX Intelligence Corpus. 
+**Evidence:** [B] — Numerically verified up to 500-dps mathematical precision.
 
 **Research Priority:** 🟢 LOW — Theoretically stabilized. Follow-up requires higher-order analytical breakdown of $\Lambda_0$ [UIDT-E-054].
 
@@ -187,23 +187,23 @@ Extensive validation across three independent methodologies (Gap Equation, Gluon
 
 ---
 
-## Active Phase 3 Limitations (Future Vectors)
+## Topological Observations [Category D]
 
-### L8: Phase 3 Open Research Vectors (Corpus PRX) ⚠️ EXPLORATORY
+The following represent exact or near-exact numerical scaling laws and algebraic facts that arise naturally within the UIDT computational framework. However, because they lack independent derivations bridging the microscopic vacuum geometry to specific Standard Model mechanisms, they are currently mapped as **Category D (Interpretive)**.
 
-**Issue:**
-The finalized ingestion of the PRX Corpus highlights several necessary extensions that remain analytically untreated within the canonical v3.9 structure. These are speculative boundaries that demand novel topological frameworks.
+| ID | Observation | Mathematical Fact | Interpretation | Evidence |
+|----|-------------|-------------------|----------------|----------|
+| **O1** | Rational Fixed Points | κ = 1/2, λ_S = 5/12 satisfy 5κ² = 3λ_S exactly | Topological protection / integrable system | [A] math, [D] interpretation |
+| **O2** | SU(3) Color Projection | η_CSF / γ_CSF ≈ 2.986 ≈ N_c = 3 | Macroscopic color confinement | [D] numerical coincidence |
+| **O3** | Kissing Number Suppression | Exponent −12 = K₃ (3D kissing number) | 12-neighbor vacuum shielding | [D] interpretive |
 
-**Registered Claims (Category E - Open Research):**
-- **UIDT-E-052 [E]:** Lagrangian Reconstruction from UIDT Vacuum Structure. Currently, the unified scalar interactions are observed dynamically but lack a full analytic continuous Lagrangian formulation.
-- **UIDT-E-053 [E]:** Higher-order Corrections to Holographic Vacuum Energy. Perturbative corrections beyond the leading-order Factor 2.3 suppression.
-- **UIDT-E-054 [E]:** Full analytical decomposition of the $\Lambda_0$ macroscopic factor. Deconstructing the precise dimensional ratios governing the holographic horizon.
-- **UIDT-E-055 [E]:** Geometrodynamic Phase Transitions at N-Cascade Boundaries. Mapping how the topological strata transition across exactly $N=99$ dimensions.
+**Verification Protocol:**
+- **O1:** `verification/scripts/verify_coupling_quantization.py`
+- **O2:** `verification/scripts/verify_su3_color_projection.py`
+- **O3:** `verification/scripts/verify_kissing_number_suppression.py`
 
-**Condition for Resolution:**
-Derivation of the continuous effective action, likely requiring non-perturbative functional topology and advanced conformal algebra spanning beyond the standard Witt/Virasoro structures.
-
-**Research Priority:** 🔵 PHASE 3 ROADMAP — These define the foundational objectives for UIDT v4.0.
+**Risk Flags:** Post-hoc pattern matching and rationalization. A formal derivation is required to upgrade any observation to [A-].
+**Research Priority:** 🟢 LOW — does not affect Category A fundamental claims.
 
 ---
 

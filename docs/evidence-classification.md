@@ -12,7 +12,6 @@
 The UIDT framework employs a strict evidence classification system to distinguish between mathematically proven results, phenomenological determinations, numerical verifications, calibrated models, and predictions awaiting experimental confirmation.
 
 **55 total claims** are documented in the framework (see `UIDT-OS/LEDGER/CLAIMS.json`).
-
 ---
 
 ## Category A — Mathematically Proven
@@ -200,21 +199,12 @@ Every category change MUST be logged with:
 
 | Category | Count | Percentage |
 |----------|-------|------------|
-<<<<<<< HEAD
-| A (Proven) | 14 | 28.0% |
-| A- (Phenomenological) | 6 | 12.0% |
-| B (Numerically Verified) | 6 | 12.0% |
-| C (Calibrated) | 6 | 12.0% |
-| D (Predicted) | 6 | 12.0% |
-| E (Open/Withdrawn) | 12 | 24.0% |
-=======
 | A (Proven) | 14 | 25.4% |
 | A- (Phenomenological) | 6 | 10.9% |
 | B (Numerically Verified) | 7 | 12.7% |
 | C (Calibrated) | 6 | 10.9% |
 | D (Predicted) | 6 | 10.9% |
 | E (Open/Withdrawn) | 16 | 29.1% |
->>>>>>> e111f4c (feat(corpus): Final Corpus Closure (Plan vx6) & Factor 2.3 Integration)
 | **Total** | **55** | **100%** |
 
 **Verified (A+A-+B):** 27 claims (49.1%)  

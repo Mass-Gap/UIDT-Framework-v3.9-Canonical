@@ -11,7 +11,7 @@
 UIDT-OS/
 UIDT-OS.zip
 UIDT-OS*.zip
-
+UIDT-OS\LEDGER\CLAIMS.json (dont marge in main)
 # ============================================================================
 # LARGE ARCHIVES (Redundant - use GitHub Releases instead)
 # ============================================================================
@@ -173,3 +173,7 @@ TODO
 
 # Local utility scripts (hardcoded paths)
 auto_update_repo.bat
+UIDT-OS/LEDGER/CLAIMS.json
+UIDT-OS/LEDGER/CLAIMS.json
+UIDT-OS/LEDGER/CLAIMS.json
+UIDT-OS/LEDGER/CLAIMS.json

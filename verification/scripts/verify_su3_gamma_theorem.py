@@ -1,51 +1,36 @@
-"""
-Verification Script: SU(3) Gamma Theorem (L4 Candidate Resolution)
-UIDT Framework TICK-20260224-Phase3_Discoveries
-"""
+from mpmath import mp, mpf, fabs, nstr
 
-import sys
-from mpmath import mp, mpf
-
-# ABSOLUTE DIRECTIVE: Local precision initialization (Do not move to config)
+# UIDT v3.9: Native Precision Enforcement
 mp.dps = 80
 
-def verify_su3_gamma():
-    print("="*60)
-    print("UIDT VERIFICATION: SU(3) GAMMA THEOREM CONJECTURE")
-    print("="*60)
-    
-    gamma_kinetic = mpf('16.339') # Canonical v3.9 Value
-    
-    # Theorem: gamma = (2Nc + 1)^2 / Nc
-    def calculate_gamma_nc(nc_val):
-        nc = mpf(str(nc_val))
-        return ((mpf('2') * nc + mpf('1')) ** 2) / nc
+def verify_gamma_theorem():
+    """
+    Verifies the SU(3) Gamma Theorem candidate resolution.
+    gamma_SU3 = (2N_c + 1)^2 / N_c
+    For N_c = 3, gamma_SU3 = 49/3
+    """
 
-    print(f"\n[1] Reference Gamma (Kinetic VEV): {gamma_kinetic}")
-    
-    # N_c scan
-    print("\n[2] Algebraic Combinations for N_c in {2, 3, 4}:")
-    for nc in [2, 3, 4]:
-        val = calculate_gamma_nc(nc)
-        print(f"    N_c = {nc}: gamma = {float(val):.6f}")
-        
-    gamma_su3 = calculate_gamma_nc(3)
-    
-    residual_abs = abs(gamma_su3 - gamma_kinetic)
-    residual_rel = residual_abs / gamma_kinetic
-    
-    print("\n[3] Precision Analysis for N_c = 3 (QCD SU(3)):")
-    print(f"    gamma_SU(3)   = {gamma_su3}")
-    print(f"    Absolute Diff = {residual_abs}")
-    print(f"    Relative Diff = {residual_rel * mpf('100')} %")
-    
-    print("\n[4] Epistemic Status (Condition L4):")
-    if residual_rel < mpf('0.001'):  # 0.1% condition
-        print("    [PASS] Residual < 0.1%. Strong numerical evidence.")
-        print("    Status: [A-] Conjecture confirmed. Awaiting formal QFT derivation.")
-    else:
-        print("    [FAIL] Residual > 0.1%.")
-        sys.exit(1)
+    # Fundamental SU(3) derivation
+    gamma_SU3 = mpf('49') / mpf('3')
+
+    # Calibrated kinetic value (Category A-)
+    gamma_kinetic = mpf('16.339')
+
+    # Calculate absolute and relative residuals
+    abs_residual = fabs(gamma_SU3 - gamma_kinetic)
+    rel_residual = abs_residual / gamma_kinetic
+
+    print("--- SU(3) Gamma Theorem Verification ---")
+    print(f"Theoretical gamma_SU3 (49/3): {nstr(gamma_SU3, 80)}")
+    print(f"Calibrated gamma_kinetic:     {nstr(gamma_kinetic, 80)}")
+    print(f"Absolute Residual:            {nstr(abs_residual, 80)}")
+    print(f"Relative Residual:            {nstr(rel_residual, 80)}")
+
+    # Assert numerical match within 0.1% tolerance
+    assert rel_residual < 0.001, f"Relative residual {rel_residual} exceeds 0.001 tolerance"
+
+    print("\n[VERIFICATION SUCCESSFUL]")
+    print(f"Relative deviation is {nstr(rel_residual * 100, 5)}%, which is within the 0.1% limit.")
 
 if __name__ == "__main__":
-    verify_su3_gamma()
+    verify_gamma_theorem()

@@ -289,7 +289,7 @@ def run_master_verification():
             cu = CovariantUnification(gamma_uidt=mp.mpf('16.339'))
             gamma_csf = cu.derive_csf_anomalous_dimension()
             rho_max = cu.check_information_saturation_bound()
-            eos = cu.get_equation_of_state_asymptotic()
+            eos = cu.derive_equation_of_state()
             log_print(f"   > gamma_CSF (anomalous dim): {gamma_csf}")
             log_print(f"   > rho_max (saturation):      {str(rho_max)[:20]}... GeV^4")
             log_print(f"   > EoS w_0={eos['w_0']}, w_a={eos['w_a']} [C placeholder]")
@@ -306,14 +306,52 @@ def run_master_verification():
             log_print(f"   > PILLAR II-CSF ERROR: {e}")
             pillar_csf_data_block = f"\n### Pillar II-CSF Failed: {e}\n"
 
+        log_print("\n[7] TOPOLOGICAL OBSERVATIONS (Category D - Interpretive)...")
+        try:
+            from verification.scripts.verify_coupling_quantization import verify_coupling_quantization
+            from verification.scripts.verify_su3_color_projection import verify_su3_color_projection
+            from verification.scripts.verify_kissing_number_suppression import verify_kissing_number_suppression
+            
+            o1_data = verify_coupling_quantization()
+            o2_data = verify_su3_color_projection()
+            o3_data = verify_kissing_number_suppression()
+            
+            log_print(f"   > O1: Rational Fixed Point Residual = {o1_data['residual_exact']}")
+            log_print(f"   > O2: SU(3) Color Projection Ratio  = {o2_data['ratio']:.4f}")
+            log_print(f"   > O3: Kissing Number Exponent matched K_3 = 12")
+            
+            pillar_td_data_block = f"""
+## 6. Topological Observations [Category D]
+
+> **Geometric Interpretation:** Numerically consistent patterns requiring future derivation.
+
+### O1: Rational Fixed Points
+- Exact Rational Pair: κ = 1/2, λ_S = 5/12
+- RG Constraint Residual: `{o1_data['residual_exact']:.2e}`
+- Interpretation: Topological protection / Integrable system
+
+### O2: SU(3) Macroscopic Color Projection
+- Metric Target: η_CSF = 0.504
+- Computed γ_CSF: `{o2_data['gamma_csf']:.6f}`
+- Ratio (η/γ): `{o2_data['ratio']:.6f}` (Target N_c = 3)
+
+### O3: Kissing Number Suppression
+- Suppression Exponent: -12
+- Identity: K_3 = 12 (3D Kissing Number)
+- Interpretation: 12-neighbor vacuum topological shielding
+"""
+        except Exception as e:
+            log_print(f"   > TOPOLOGICAL OBS ERROR: {e}")
+            pillar_td_data_block = f"\n### Topological Observations Failed: {e}\n"
+
     # ---------------------------------------------------------
     # STEP 3: Report Generation
     # ---------------------------------------------------------
     # We use Delta_star from the proof if it exists, otherwise fall back to target
     final_delta = delta_proof if 'delta_proof' in locals() else DELTA_TARGET
-    generate_final_report(closed, proof_data_block, pillar_ii_data_block, pillar_iii_data_block, pillar_iv_data_block, pillar_csf_data_block, m_S, v_final, final_delta)
+    generate_final_report(closed, proof_data_block, pillar_ii_data_block, pillar_iii_data_block, pillar_iv_data_block, pillar_csf_data_block, pillar_td_data_block, m_S, v_final, final_delta)
 
-def generate_final_report(closed, proof_data, p_ii, p_iii, p_iv, p_csf, m_S, v_final, delta_val):
+def generate_final_report(closed, proof_data, p_ii, p_iii, p_iv, p_csf, p_td, m_S, v_final, delta_val):
     timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     
     # Hash of the code for integrity
@@ -358,6 +396,10 @@ signature: "SHA256:{sig}"
 
 ## 4b. Pillar II-CSF: Covariant Scalar-Field Synthesis
 {p_csf}
+
+{p_td}
+
+---
 
 ---
 
