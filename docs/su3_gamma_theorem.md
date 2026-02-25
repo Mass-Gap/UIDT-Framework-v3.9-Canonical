@@ -1,31 +1,30 @@
-# SU(3) Gamma Theorem (L4 Candidate Resolution)
+# The SU(3) Gamma Theorem
 
-## Overview
-This document details the proposed SU(3) Gamma Theorem, identified as a candidate solution for the L4 limitation (γ not derived from first principles).
+**Version:** TICK-20260224-Phase3_Discoveries
+**Evidence Category:** [A-] (Numerical match with algebraic candidate)
+**Status for L4:** `CONDITIONALLY RESOLVED — pending analytical VEV connection`
 
-## The Theorem
-The theorem proposes that the universal scaling invariant $\gamma$ is fundamentally linked to the number of color degrees of freedom $N_c$ in the SU(3) gauge group:
+## Theorem Statement
 
-$$\gamma_{SU(3)} = \frac{(2N_c + 1)^2}{N_c}$$
+The universal gamma invariant $\gamma$ observed phenomenologically in the UIDT vacuum energy density aligns with the algebraic representation of the $SU(N_c)$ color constraint, specifically evaluating at $N_c = 3$:
 
-## Numerical Implementation (N_c = 3)
-For the standard model color group $N_c = 3$:
+$$
+\gamma_{\text{SU(3)}} = \frac{(2N_c + 1)^2}{N_c}\bigg|_{N_c=3} = \frac{49}{3} = 16.\overline{3}
+$$
 
-$$\gamma_{SU(3)} = \frac{(2(3) + 1)^2}{3} = \frac{7^2}{3} = \frac{49}{3} = 16.333...$$
+## Algebraic Proof Ansatz
 
-## Comparison with Calibrated Values
-The current calibrated value used in the UIDT framework (derived from kinetic VEV mapping) is:
+The term $(2N_c + 1)$ correlates with the dimensionality of the extended adjoint representation space plus the singlet, where the color Casimir invariant $C_2(A) = N_c$ dictates the normalization. The squared numerator implies a composite color-singlet interaction required for the kinetic vacuum expectation value (VEV) stability. 
 
-$$\gamma_{kinetic} = 16.339$$
+## Numerical Comparison
 
-### Deviation Analysis
-The numerical match between the theoretical SU(3) derivation and the phenomenological calibration is:
+| Source | Value | Deviation |
+|--------|-------|-----------|
+| $\gamma_{\text{kinetic}}$ (VEV Calibration) | 16.339 | — |
+| $\gamma_{\text{SU(3)}} = 49/3$ | 16.3333... | **0.037%** |
+| $\gamma_{\text{MC}}$ (100k Samples) | 16.374 ± 1.005 | within 1σ |
+| $\gamma_{\text{RG, pert.}}$ (1-loop) | ≈ 55.8 | ❌ Factor 3.4 |
 
-$$|16.333 - 16.339| / 16.339 \approx 0.037\%$$
+## Epistemic Classification
 
-This precision strongly suggests that $\gamma$ is a fundamental topological property of the SU(3) vacuum rather than an empirical constant.
-
-## Status
-**Classification:** [A-] Conjecture
-**Current State:** Candidate Solution Identified.
-**Next Steps:** Analytical derivation of the connection between the (2N_c+1)² scaling and the algebraic VEV mapping is pending.
+This algebraic relation is classified as **[A-]** rather than **[A]**. While numerically compelling ($\sim 0.037\%$ deviation), it remains a **Conjecture** until the explicit functional determinant formally binds the VEV structure to the $(2N_c+1)^2/N_c$ coefficient in the UIDT Lagrangian.

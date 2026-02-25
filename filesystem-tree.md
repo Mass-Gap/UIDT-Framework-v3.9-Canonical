@@ -16,14 +16,17 @@ UIDT-Framework-V3.6.1/
 ├── .cursor/                          # Cursor IDE configuration
 ├── .kilocode/                        # Kilocode configuration
 ├── clay-submission/                  # Clay Mathematics Institute submission materials
-├── docs/                             # Documentation
+├── core/                             # Core UIDT proof engine
+├── docs/                             # Project documentation
 ├── figures/                          # Visual figures
-├── manuscript/                       # Main manuscript
+├── manuscript/                       # Main theoretical manuscript
 ├── metadata/                         # Project metadata files
+├── modules/                          # Additional theoretical modules
 ├── references/                       # Reference materials
 ├── simulation/                       # Simulation code
 ├── Supplementary_Results/            # Supplementary results
 ├── Supporting_Documents/            # Supporting documents
+├── UIDT-OS/                          # Official Tracking Operating System
 └── verification/                     # Verification and validation code
 ```
 
@@ -172,7 +175,10 @@ docs/
 ├── data-availability.md             # Data availability
 ├── evidence-classification.md      # Evidence classification
 ├── falsification-criteria.md       # Falsification criteria
+├── heavy_quark_predictions.md      # LHCb Heavy Quark Predictions
+├── lhcb_predictions_paper_draft.md # Foundation paper draft for LHCb predictions
 ├── limitations.md                  # Project limitations
+├── su3_gamma_theorem.md            # L4 Candidate Resolution (SU(3) Gamma)
 ├── verification-guide.md           # Verification guide
 └── validation/
     └── UIDT_v37-fin-max_Validation_Report.md # V3.7 final max validation
@@ -283,7 +289,32 @@ verification/
     ├── rg_flow_analysis.py          # RG flow analysis
     ├── udt_proof_core.py            # Proof core
     ├── UIDT-3.6.1-Verification-visual.py # Visual verification
-    └── UIDT-3.6.1-Verification.py   # Main verification script
+    ├── UIDT-3.6.1-Verification.py   # Main verification script
+    ├── verify_heavy_quark_predictions.py # Heavy quark predictions validation
+    └── verify_su3_gamma_theorem.py  # SU(3) Gamma theorem validation
+```
+
+## 9. UIDT Operating System (/UIDT-OS/)
+
+This directory acts as the canonical tracking ledger and continuous compliance framework.
+
+```
+UIDT-OS/
+├── .env                              # Environment configurations
+├── .env.local                        # Local environment overrides
+├── md_scan_results.txt               # Aggregated markdown scan outputs
+├── scan_results.txt                  # General codebase scan logs
+├── CANONICAL/                        # Axioms and static constant values
+│   └── CONSTANTS.md                  # Core UIDT mathematical constraints
+├── LEDGER/                           # Change logs and claims tracking
+│   ├── CHANGELOG.md                  # Project release updates
+│   └── CLAIMS.json                   # Machine-readable evidentiary claims mapping
+└── PLANS/                            # Agent execution roadmaps
+    ├── PLANE_DONE-ARCHIV/            # Completed work strategies
+    │   ├── PR_TICK-20260224_Phase3.md      # Archived Phase 3 Pull Request Draft
+    │   └── PR_v3.9.2_Corpus_Integration.md # Archived Corpus Integration PR Draft
+    ├── PLAN-UPDATES-TRAE/            # Trae IDE plans
+    └── UIDT-UPDATES-ANTIGRAV/        # Antigravity IDE plans
 ```
 
 ## Project Overview
