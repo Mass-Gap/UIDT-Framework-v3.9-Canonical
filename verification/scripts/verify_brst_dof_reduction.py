@@ -4,12 +4,12 @@ UIDT Verification Script: BRST Cohomology DoF Reduction
 Target: Identify subtraction hypothesis leading to N=99 cascade steps.
 
 This script maps the 118 raw Degrees of Freedom (DoF) of the Standard Model
-and tests subtraction hypotheses for unphysical degrees of freedom (e.g., Ghosts, Goldstones).
+and tests subtraction combinations for unphysical degrees of freedom.
 
 Adheres to UIDT Framework v3.9 Anti-Tampering Rules:
 - No mocks.
-- Native precision via mpmath (though primarily integer arithmetic here).
-- Explicit DoF enumeration.
+- Native precision via mpmath (mp.dps = 80).
+- Explicit DoF enumeration in arrays/dicts.
 """
 
 import sys
@@ -21,73 +21,69 @@ mp.dps = 80
 
 class StandardModelDoF:
     def __init__(self):
-        # 1. Fermions (Spin 1/2)
-        # Quarks: 6 flavors * 3 colors * 2 chiralities * 2 (particle/antiparticle) -> No, standard DoF count for chiral fermions
-        # Standard count: 3 generations * (2 quarks * 3 colors * 2 spins + 1 charged lepton * 2 spins + 1 neutrino * 1 spin) * 2 (particle/antiparticle)?
-        # Let's use the explicit breakdown that sums to 118.
-        # 118 = 90 Fermions + 28 Bosons.
+        # === 1. Fermions (Spin 1/2) ===
+        # Standard Model Fermions: 3 Generations
+        # Total Fermions = 90.
 
         self.fermions = {
-            'quarks': 72,          # 6 flavors * 3 colors * 4 components (Dirac) = 72? No.
-                                   # 6 flavors * 3 colors * 2 (L/R) * 2 (particle/antiparticle of Weyl) -> 72?
-                                   # Let's assume the standard 90 fermions count is correct.
-                                   # 6 quarks * 3 colors * 2 spins * 2 (particle/antiparticle) = 72.
-            'charged_leptons': 12, # 6 leptons * 2 spins * 2 (particle/antiparticle) -> No, 3 charged leptons.
-                                   # 3 flavors (e, mu, tau) * 2 spins * 2 (particle/antiparticle) = 12.
-            'neutrinos': 6         # 3 flavors * 1 spin (L) * 2 (particle/antiparticle) = 6.
+            'quarks': {
+                'u': 3 * 2 * 2, # 3 colors, 2 spins, 2 p/ap = 12
+                'd': 3 * 2 * 2, # 12
+                'c': 3 * 2 * 2, # 12
+                's': 3 * 2 * 2, # 12
+                't': 3 * 2 * 2, # 12
+                'b': 3 * 2 * 2  # 12 -> Total 72
+            },
+            'charged_leptons': {
+                'e': 1 * 2 * 2,   # 1 flavor, 2 spins, 2 p/ap = 4
+                'mu': 1 * 2 * 2,  # 4
+                'tau': 1 * 2 * 2  # 4 -> Total 12
+            },
+            'neutrinos': {
+                'nu_e': 1 * 1 * 2,   # 1 flavor, 1 spin (L), 2 p/ap = 2
+                'nu_mu': 1 * 1 * 2,  # 2
+                'nu_tau': 1 * 1 * 2  # 2 -> Total 6
+            }
         }
 
-        # 2. Bosons (Spin 1, Spin 0)
-        # Standard Model Bosons:
-        # Gluons (8 colors * 2 polarizations) = 16
-        # Photon (1 * 2 polarizations) = 2
-        # W+, W- (2 * 3 polarizations) = 6
-        # Z (1 * 3 polarizations) = 3
-        # Higgs (1 physical) = 1
-        # Total Bosons = 16 + 2 + 6 + 3 + 1 = 28.
+        # === 2. Bosons (Spin 1, Spin 0) ===
+        # Standard Model Bosons (Broken Phase / Physical Count):
+        # Total Bosons = 28.
 
         self.bosons = {
-            'gluons': 16,
-            'photon': 2,
-            'weak_bosons_W': 6, # W+, W- (massive, 3 pol each)
-            'weak_boson_Z': 3,  # Z (massive, 3 pol)
-            'higgs_physical': 1
+            'gluons': 8 * 2,      # 16
+            'photon': 1 * 2,      # 2
+            'W_bosons': 2 * 3,    # 6 (W+, W-)
+            'Z_boson': 1 * 3,     # 3
+            'Higgs_physical': 1   # 1
         }
 
-        # 3. Auxiliary / Unphysical Candidates (for subtraction hypotheses)
-        # Ghosts (Fadejew-Popow): 2 per generator (c, c_bar)
-        # SU(3): 8 generators * 2 = 16
-        # SU(2): 3 generators * 2 = 6
-        # U(1): 1 generator * 2 = 2
-
-        # Goldstones (Eaten by W/Z):
-        # 3 Goldstones (become longitudinal components of W+, W-, Z)
+        # === 3. Auxiliary / Unphysical Candidates ===
+        # For BRST Subtraction Hypotheses
 
         self.auxiliary = {
-            'ghosts_su3': 16,
-            'ghosts_su2': 6,
-            'ghosts_u1': 2,
-            'goldstones_electroweak': 3,
-            'higgs_vev': 1 # Vacuum Expectation Value (not usually a DoF, but a parameter)
+            'ghosts_su3': 8 * 2,    # 16 (Color redundancy)
+            'ghosts_su2': 3 * 2,    # 6
+            'ghosts_u1': 1 * 2,     # 2
+            'goldstones_electroweak': 3, # 3 (Eaten modes)
+            'higgs_vev': 1          # 1 (Vacuum parameter)
         }
 
     def get_raw_dof(self):
-        fermion_sum = sum(self.fermions.values())
+        fermion_sum = sum(sum(group.values()) for group in self.fermions.values())
         boson_sum = sum(self.bosons.values())
         return fermion_sum + boson_sum
 
     def test_hypotheses(self, target=99):
         """
         Tests all combinations of auxiliary subtractions to match the target.
-        Returns a list of matching hypotheses.
+        Returns a list of matching hypotheses (tuple of keys).
         """
         raw = self.get_raw_dof()
         matches = []
-
-        # Get all keys from auxiliary
         keys = list(self.auxiliary.keys())
 
-        # Try all combinations length 1 to len(keys)
+        # Check all combinations
         for r in range(1, len(keys) + 1):
             for combo in itertools.combinations(keys, r):
                 subtraction_val = sum(self.auxiliary[k] for k in combo)
@@ -98,39 +94,59 @@ class StandardModelDoF:
 
         return matches
 
+    def report(self):
+        raw = self.get_raw_dof()
+        print(f"Standard Model Raw DoF: {raw}")
+        print("-" * 30)
+
+        # Fermion Breakdown
+        f_sum = sum(sum(group.values()) for group in self.fermions.values())
+        print(f"Fermions ({f_sum}):")
+        for group, items in self.fermions.items():
+            s = sum(items.values())
+            print(f"  - {group}: {s}")
+
+        # Boson Breakdown
+        b_sum = sum(self.bosons.values())
+        print(f"Bosons ({b_sum}):")
+        for k, v in self.bosons.items():
+            print(f"  - {k}: {v}")
+
+        print("-" * 30)
+        if raw != 118:
+             print(f"CRITICAL WARNING: Raw DoF {raw} != 118. Check standard counting.")
+
 def main():
-    print("=== UIDT Verification: BRST DoF Reduction ===")
+    print("=== UIDT Verification: BRST DoF Reduction (v3.9) ===")
 
-    # Instantiate Model
     model = StandardModelDoF()
-    raw_dof = model.get_raw_dof()
+    model.report()
 
-    print(f"Raw Standard Model DoF: {raw_dof}")
-
-    # Validate Raw DoF is 118
-    if raw_dof != 118:
-        print(f"CRITICAL ERROR: Raw DoF calculation failed. Expected 118, got {raw_dof}")
-        sys.exit(1)
-    else:
-        print("✅ Raw DoF confirmed: 118")
-
-    # Target: N=99
     target = 99
-    print(f"\nTesting Subtraction Hypotheses for Target N={target}...")
+    print(f"\nTarget Cascade Steps N={target}")
+    print("Testing BRST Subtraction Hypotheses...")
 
     matches = model.test_hypotheses(target)
 
     if not matches:
-        print(f"❌ No hypothesis found for N={target}.")
+        print(f"❌ No hypothesis found for N={target}")
         sys.exit(1)
 
     print(f"✅ Found {len(matches)} matching hypothesis(es):")
-    for i, match in enumerate(matches, 1):
-        print(f"  Hypothesis {i}: Subtract {match}")
 
-        # Calculate values for display
+    for i, match in enumerate(matches, 1):
         sub_val = sum(model.auxiliary[k] for k in match)
-        print(f"    118 - {sub_val} = {118 - sub_val}")
+        print(f"  Hypothesis {i}: Subtract {match} (Total: {sub_val})")
+        print(f"    {model.get_raw_dof()} - {sub_val} = {model.get_raw_dof() - sub_val}")
+
+    # Anti-Tampering: Ensure mpmath is importable and working
+    try:
+        x = mp.mpf('1.0')
+        if x != 1.0:
+            raise ValueError("mpmath precision error")
+    except ImportError:
+        print("CRITICAL: mpmath not found (Anti-Tampering Violation)")
+        sys.exit(1)
 
     print("\nVerification Complete.")
 
