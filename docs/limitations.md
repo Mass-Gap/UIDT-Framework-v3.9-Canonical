@@ -187,6 +187,26 @@ Extensive validation across three independent methodologies (Gap Equation, Gluon
 
 ---
 
+## Topological Observations [Category D]
+
+The following represent exact or near-exact numerical scaling laws and algebraic facts that arise naturally within the UIDT computational framework. However, because they lack independent derivations bridging the microscopic vacuum geometry to specific Standard Model mechanisms, they are currently mapped as **Category D (Interpretive)**.
+
+| ID | Observation | Mathematical Fact | Interpretation | Evidence |
+|----|-------------|-------------------|----------------|----------|
+| **O1** | Rational Fixed Points | κ = 1/2, λ_S = 5/12 satisfy 5κ² = 3λ_S exactly | Topological protection / integrable system | [A] math, [D] interpretation |
+| **O2** | SU(3) Color Projection | η_CSF / γ_CSF ≈ 2.986 ≈ N_c = 3 | Macroscopic color confinement | [D] numerical coincidence |
+| **O3** | Kissing Number Suppression | Exponent −12 = K₃ (3D kissing number) | 12-neighbor vacuum shielding | [D] interpretive |
+
+**Verification Protocol:**
+- **O1:** `verification/scripts/verify_coupling_quantization.py`
+- **O2:** `verification/scripts/verify_su3_color_projection.py`
+- **O3:** `verification/scripts/verify_kissing_number_suppression.py`
+
+**Risk Flags:** Post-hoc pattern matching and rationalization. A formal derivation is required to upgrade any observation to [A-].
+**Research Priority:** 🟢 LOW — does not affect Category A fundamental claims.
+
+---
+
 ## Resolved Limitations (Historical)
 
 ### L6: Spectral Gap vs. Particle Mass ✅ CLARIFIED (2025-12-25)
