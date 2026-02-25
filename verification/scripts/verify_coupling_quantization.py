@@ -40,10 +40,10 @@ def verify_coupling_quantization():
     print("="*70)
     
     return {
-        "kappa_exact": float(kappa_exact),
-        "lambda_s_exact": float(lambda_s_exact),
-        "residual_exact": float(residual_exact),
-        "deviation": float(deviation)
+        "kappa_exact": kappa_exact,
+        "lambda_s_exact": lambda_s_exact,
+        "residual_exact": residual_exact,
+        "deviation": deviation
     }
 
 if __name__ == "__main__":

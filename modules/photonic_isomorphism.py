@@ -47,8 +47,8 @@ class PhotonicInterface:
         epsilon_critical = n_critical ** 2
 
         return {
-            "n_critical": float(n_critical),
-            "epsilon_critical": float(epsilon_critical),
+            "n_critical": n_critical,
+            "epsilon_critical": epsilon_critical,
             "Reference": "Song et al. (2025), Nat. Commun. 16, 8915",
         }
 
