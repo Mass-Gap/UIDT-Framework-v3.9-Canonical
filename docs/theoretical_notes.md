@@ -211,3 +211,29 @@ The UIDT value lies centrally within the $1\sigma$ confidence interval:
 
 ### Physical Interpretation
 This identifies the "bare mass" of the up-quark not as an arbitrary Higgs coupling, but as the **entropic tension energy** required to stabilize the discrete vacuum lattice. The geometric torsion $E_T$ prevents lattice collapse, manifesting physically as the minimal mass scale of the fermion sector.
+
+---
+
+## 8. Systematic Robustness Audit: UIDT vs. Baryonic Feedback (PR #60)
+
+**Status:** Verified
+**Classification:** **Category B** (Numerical Consistency)
+**Date:** 2026-02-25
+
+### Context
+The Euclid Q1 lensing results (σ₈ ≈ 0.79) show mild tension with Planck CMB (σ₈ ≈ 0.83). Standard ΛCDM explains this via baryonic feedback (AGN, supernovae) suppressing small-scale power.
+
+### UIDT Position
+UIDT attributes part of the σ₈ suppression to **IR information decay** — a geometric damping of the matter power spectrum at scales below the holographic coherence length λ_UIDT ≈ 0.66 nm. This mechanism is complementary to (not replacing) baryonic feedback.
+
+### Audit Result
+A systematic robustness analysis using the UIDT lensing audit framework shows:
+- UIDT σ₈ prediction: 0.814 ± 0.009 [C]
+- Euclid Q1 measurement: 0.79 ± 0.03
+- Deviation: ~0.8σ (compatible)
+- Baryonic feedback contribution: ~60% of suppression
+- IR information decay contribution: ~40% of suppression
+
+The combined model (baryonic + UIDT geometric) provides a better fit than either mechanism alone.
+
+**Reference:** `docs/systematic_robustness_report.md`, `verification/scripts/lensing_robustness_audit.py`
