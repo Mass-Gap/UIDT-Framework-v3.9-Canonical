@@ -32,19 +32,29 @@ def verify_heavy_quark_predictions():
     print(f"    M(Omega_bbb) = 135 * f_vac = {float(m_omega):.4f} GeV ± {float(err_omega):.2f} GeV")
     print(f"    M(cccc)  = 42 * f_vac  = {float(m_tetra):.4f} GeV ± {float(err_tetra):.2f} GeV")
     
-    # Cross-reference known targets
+    # Cross-reference known targets and error magnitudes
     target_omega = mpf('14.4585')
     target_tetra = mpf('4.4982')
+    
+    target_err_omega = mpf('0.0675')
+    target_err_tetra = mpf('0.0210')
     
     residual_omega = abs(m_omega - target_omega)
     residual_tetra = abs(m_tetra - target_tetra)
     
+    err_residual_omega = abs(err_omega - target_err_omega)
+    err_residual_tetra = abs(err_tetra - target_err_tetra)
+    
     print("\n[2] Numerical Constraint Check")
     print(f"    Omega_bbb Residual: {residual_omega}")
     print(f"    cccc Residual:  {residual_tetra}")
+    print(f"    Omega_bbb Delta Residual: {err_residual_omega}")
+    print(f"    cccc Delta Residual: {err_residual_tetra}")
     
-    if residual_omega < mpf('1e-4') and residual_tetra < mpf('1e-4'):
-        print("\n    [PASS] Both predictions match internal consistency targets.")
+    # Assert mass predictions and error propagations
+    if (residual_omega < mpf('1e-4') and residual_tetra < mpf('1e-4') and
+        err_residual_omega < mpf('1e-14') and err_residual_tetra < mpf('1e-14')):
+        print("\n    [PASS] Both predictions and uncertainties match internal consistency targets.")
     else:
         print("\n    [FAIL] Targets do not match harmonic factors.")
         sys.exit(1)

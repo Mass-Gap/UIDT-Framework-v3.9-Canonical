@@ -29,28 +29,27 @@ class HarmonicPredictor:
         self.f_vac = vacuum_freq_gev
         self.delta = delta_gap_gev
 
-    def predict_omega_bbb(self):
+    def predict_omega_bbb(self, delta_f_vac=mpf('0.0005')):
         """
         Predicts the mass of the Omega_bbb (Triple Bottom) baryon.
-        Rule: f_vac * (3 * 54 - 27)
-        
-        The numbers 3, 54, 27 are geometric integers from the 3-6-9 model.
+        Rule: f_vac * (3 * 54 - 27) = 135 * f_vac
+        Returns: (mass, delta_mass)
         """
-        # (3 * 54) - 27 = 162 - 27 = 135
-        # M = 135 * f_vac
-        mass = self.f_vac * (3 * 54 - 27)
-        return mass
+        factor = mpf('135')
+        mass = self.f_vac * factor
+        delta_mass = delta_f_vac * factor
+        return (mass, delta_mass)
 
-    def predict_tetraquark_cccc(self):
+    def predict_tetraquark_cccc(self, delta_f_vac=mpf('0.0005')):
         """
         Predicts the mass of the cccc tetraquark.
-        Rule: f_vac * (4 * 15 - 18)
-        
-        (4 * 15) - 18 = 60 - 18 = 42
-        M = 42 * f_vac
+        Rule: f_vac * (4 * 15 - 18) = 42 * f_vac
+        Returns: (mass, delta_mass)
         """
-        mass = self.f_vac * (4 * 15 - 18)
-        return mass
+        factor = mpf('42')
+        mass = self.f_vac * factor
+        delta_mass = delta_f_vac * factor
+        return (mass, delta_mass)
 
     def predict_x17_anomaly(self):
         return self.delta * mpf('0.01')
@@ -68,8 +67,8 @@ class HarmonicPredictor:
         
     def generate_report(self):
         """Generates a report with all predictions."""
-        m_omega = self.predict_omega_bbb()
-        m_tetra = self.predict_tetraquark_cccc()
+        m_omega, err_omega = self.predict_omega_bbb()
+        m_tetra, err_tetra = self.predict_tetraquark_cccc()
         m_x17 = self.predict_x17_anomaly()
         m_x2370 = self.predict_x2370_resonance()
         m_tensor = self.predict_glueball_tensor()
@@ -77,7 +76,9 @@ class HarmonicPredictor:
         
         return {
             "Omega_bbb_GeV": float(m_omega),
+            "Omega_bbb_Error_GeV": float(err_omega),
             "Tetra_cccc_GeV": float(m_tetra),
+            "Tetra_cccc_Error_GeV": float(err_tetra),
             "X17_NoiseFloor_MeV": float(m_x17) * 1000,
             "X2370_Resonance_GeV": float(m_x2370),
             "Glueball_2++_GeV": float(m_tensor),
