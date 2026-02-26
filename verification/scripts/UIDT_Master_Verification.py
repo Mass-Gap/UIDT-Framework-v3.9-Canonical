@@ -227,20 +227,20 @@ def run_master_verification():
             from modules.harmonic_predictions import HarmonicPredictor
             predictor = HarmonicPredictor(f_vac_val, mp.mpf('1.710'))
             report = predictor.generate_report()
-            log_print(f"   > Omega_bbb: {report['Omega_bbb_GeV']:.4f} GeV")
-            log_print(f"   > Tetraquark: {report['Tetra_cccc_GeV']:.4f} GeV")
-            log_print(f"   > X17 Noise Floor: {report['X17_NoiseFloor_MeV']:.2f} MeV")
-            log_print(f"   > X2370 Resonance: {report['X2370_Resonance_GeV']:.4f} GeV")
-            log_print(f"   > Tensor Glueball: {report['Glueball_2++_GeV']:.4f} GeV")
+            log_print(f"   > Omega_bbb: {mp.mpf(report['Omega_bbb_GeV']):.4f} GeV")
+            log_print(f"   > Tetraquark: {mp.mpf(report['Tetra_cccc_GeV']):.4f} GeV")
+            log_print(f"   > X17 Noise Floor: {mp.mpf(report['X17_NoiseFloor_MeV']):.2f} MeV")
+            log_print(f"   > X2370 Resonance: {mp.mpf(report['X2370_Resonance_GeV']):.4f} GeV")
+            log_print(f"   > Tensor Glueball: {mp.mpf(report['Glueball_2++_GeV']):.4f} GeV")
             pillar_iii_data_block = f"""
 ### 📊 Pillar III: Spectral Expansion (Blind Predictions)
 > **Harmonic Resonance:** 3-6-9 Octave Scaling
-- Omega_bbb (Triple Bottom): `{report['Omega_bbb_GeV']:.4f}` GeV
-- Tetraquark (cccc): `{report['Tetra_cccc_GeV']:.4f}` GeV
-- X17 Anomaly (Noise Floor): `{report['X17_NoiseFloor_MeV']:.2f}` MeV
-- X2370 Resonance: `{report['X2370_Resonance_GeV']:.4f}` GeV
-- Tensor Glueball (2++): `{report['Glueball_2++_GeV']:.4f}` GeV
-- Pseudoscalar Glueball (0-+): `{report['Glueball_0-+_GeV']:.4f}` GeV
+- Omega_bbb (Triple Bottom): `{mp.mpf(report['Omega_bbb_GeV']):.4f}` GeV
+- Tetraquark (cccc): `{mp.mpf(report['Tetra_cccc_GeV']):.4f}` GeV
+- X17 Anomaly (Noise Floor): `{mp.mpf(report['X17_NoiseFloor_MeV']):.2f}` MeV
+- X2370 Resonance: `{mp.mpf(report['X2370_Resonance_GeV']):.4f}` GeV
+- Tensor Glueball (2++): `{mp.mpf(report['Glueball_2++_GeV']):.4f}` GeV
+- Pseudoscalar Glueball (0-+): `{mp.mpf(report['Glueball_0-+_GeV']):.4f}` GeV
 """
         except ImportError as e:
             log_print(f"   > ❌ PILLAR III ERROR: {e}")
@@ -256,28 +256,28 @@ def run_master_verification():
             photonics = PhotonicInterface(op_instance)
             w_trans = photonics.predict_wormhole_transition()
 
-            log_print(f"   > Critical Refractive Index (n): {w_trans['n_critical']:.4f}")
-            log_print(f"   > Required Permittivity (ε):     {w_trans['epsilon_critical']:.4f}")
+            log_print(f"   > Critical Refractive Index (n): {mp.mpf(w_trans['n_critical']):.4f}")
+            log_print(f"   > Required Permittivity (ε):     {mp.mpf(w_trans['epsilon_critical']):.4f}")
             log_print("   > Interpretation: Photonic analogy threshold (not a GR wormhole).")
 
             log_print("\n[4] PROTON ANCHOR (Consistency, Category B)...")
             vac_freq_gev = mp.mpf("0.1071")
             predictor = HarmonicPredictor(vac_freq_gev)
             pchk = predictor.check_proton_anchor()
-            log_print(f"   > m_p / f_vac: {pchk['ratio']:.4f} (target 8.7500)")
-            log_print(f"   > deviation:   {pchk['deviation']:+.4f}")
+            log_print(f"   > m_p / f_vac: {mp.mpf(pchk['ratio']):.4f} (target 8.7500)")
+            log_print(f"   > deviation:   {mp.mpf(pchk['deviation']):+.4f}")
 
             pillar_iv_data_block = f"""
 ### 🧪 Pillar IV Audit (Photonics, Category D)
 > **External Platform:** Song et al. (2025), Nat. Commun. 16, 8915, DOI: 10.1038/s41467-025-63981-3
-- n_critical: `{w_trans['n_critical']:.6f}`
-- epsilon_critical: `{w_trans['epsilon_critical']:.6f}`
+- n_critical: `{mp.mpf(w_trans['n_critical']):.6f}`
+- epsilon_critical: `{mp.mpf(w_trans['epsilon_critical']):.6f}`
 
 ### ⚓ Proton Anchor (Consistency, Category B)
-- f_vac: `{pchk['f_vac_MeV']:.2f}` MeV
-- m_p: `{pchk['m_p_MeV']:.2f}` MeV
-- m_p / f_vac: `{pchk['ratio']:.6f}` (target 35/4 = 8.75)
-- deviation: `{pchk['deviation']:+.6f}`
+- f_vac: `{mp.mpf(pchk['f_vac_MeV']):.2f}` MeV
+- m_p: `{mp.mpf(pchk['m_p_MeV']):.2f}` MeV
+- m_p / f_vac: `{mp.mpf(pchk['ratio']):.6f}` (target 35/4 = 8.75)
+- deviation: `{mp.mpf(pchk['deviation']):+.6f}`
 """
         except Exception as e:
             log_print(f"   > ❌ PILLAR IV ERROR: {e}")
@@ -406,9 +406,9 @@ signature: "SHA256:{sig}"
 ## 5. Fundamental Constants (Derived)
 | Parameter | Value | Unit | Description |
 | :--- | :--- | :--- | :--- |
-| **Mass Gap (Δ)** | {delta_val:.6f} | GeV | Fundamental Scale |
-| **Scalar Mass (m_S)** | {m_S:.6f} | GeV | Resonance Target |
-| **VEV (v)** | {v_final*1000:.4f} | MeV | Vacuum Expectation |
+| **Mass Gap (Δ)** | {mp.mpf(delta_val):.6f} | GeV | Fundamental Scale |
+| **Scalar Mass (m_S)** | {mp.mpf(m_S):.6f} | GeV | Resonance Target |
+| **VEV (v)** | {mp.mpf(v_final)*1000:.4f} | MeV | Vacuum Expectation |
 | **Gamma (γ)** | 16.339 | - | Lattice Invariant |
 
 ---

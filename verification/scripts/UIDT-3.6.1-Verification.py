@@ -239,9 +239,10 @@ log_print(f"\n[5] DESI-OPTIMIZED EVOLUTION (v3.6.1 Framework)")
 
 def gamma_z(z):
     """Redshift-dependent gamma evolution (quadratic fit to DESI DR2)"""
-    # Use mpf for z calculation
+    # Use mpf for calculation
     g_val = gamma
-    return g_val * (1 + 0.0003*z - 0.0045*z**2)
+    z_mp = mp.mpf(z)
+    return g_val * (1 + 0.0003*z_mp - 0.0045*z_mp**2)
 
 z_vals = [0.0, 0.5, 1.0, 2.0]
 log_print(f"  Gamma Evolution γ(z) = γ₀(1 + 0.0003z - 0.0045z²):")

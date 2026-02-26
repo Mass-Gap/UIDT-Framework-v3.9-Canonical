@@ -15,7 +15,7 @@ Offizielle Referenz:
   Link: https://www.nature.com/articles/s41467-025-63981-3
 """
 
-from mpmath import mp, mpf
+from mpmath import mp, mpf, nstr
 
 mp.dps = 80
 
@@ -47,8 +47,8 @@ class PhotonicInterface:
         epsilon_critical = n_critical ** 2
 
         return {
-            "n_critical": n_critical,
-            "epsilon_critical": epsilon_critical,
+            "n_critical": nstr(n_critical, 15),
+            "epsilon_critical": nstr(epsilon_critical, 15),
             "Reference": "Song et al. (2025), Nat. Commun. 16, 8915",
         }
 

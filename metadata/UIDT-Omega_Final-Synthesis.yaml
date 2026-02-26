@@ -33,7 +33,7 @@ UIDT_OMEGA_FINAL_SYNTHESIS:
     SCALING_RELATIONS:
       - DOMAIN: "Cosmology (Vacuum Energy)"
         FORMULA: "$$ \rho_{DE} \sim \Delta^4 / \gamma^{12} $$"
-        MECHANISM: "99-Step Hierarchical RG Cascade"
+        MECHANISM: "99-Step Hierarchical RG Cascade [FALSIFIED: See N=94.05 baseline in docs/theoretical_notes.md]"
         ROLE: "Suppresses Planck density by 120 orders of magnitude to observed Dark Energy."
       
       - DOMAIN: "Weak Interaction (Electroweak)"

@@ -25,6 +25,10 @@ class CovariantUnification:
         """
         self.GAMMA_UIDT = mpf(gamma_uidt)  # v3.9 canonical [A-]
         self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5) [Category C: Phenomenological constraint UIDT-C-050]
+        # TODO [D]: Derive N=99 from N² cascade first principles
+        #           (SU(N) gluon DoF ∝ N²-1 gives scaling but not the fixed value N=99;
+        #            see UIDT-C-050, UIDT-C-017, UIDT-C-039, docs/limitations.md L5)
+
 
     def derive_csf_anomalous_dimension(self):
         """

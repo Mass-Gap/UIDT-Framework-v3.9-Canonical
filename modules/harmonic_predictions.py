@@ -12,7 +12,7 @@ Source:
 - Zenodo Record: 18664814
 """
 
-from mpmath import mp, mpf
+from mpmath import mp, mpf, nstr
 
 # Precision must remain consistent
 mp.dps = 80
@@ -76,14 +76,14 @@ class HarmonicPredictor:
         m_pseudo = self.predict_glueball_pseudoscalar()
         
         return {
-            "Omega_bbb_GeV": m_omega,
-            "Tetra_cccc_GeV": m_tetra,
-            "X17_NoiseFloor_MeV": m_x17 * 1000,
-            "X2370_Resonance_GeV": m_x2370,
-            "Glueball_2++_GeV": m_tensor,
-            "Glueball_0-+_GeV": m_pseudo,
-            "MassGap_0++_GeV": self.delta,
-            "Base_Freq_MeV": self.f_vac * 1000,
+            "Omega_bbb_GeV": nstr(m_omega, 15),
+            "Tetra_cccc_GeV": nstr(m_tetra, 15),
+            "X17_NoiseFloor_MeV": nstr(m_x17 * 1000, 15),
+            "X2370_Resonance_GeV": nstr(m_x2370, 15),
+            "Glueball_2++_GeV": nstr(m_tensor, 15),
+            "Glueball_0-+_GeV": nstr(m_pseudo, 15),
+            "MassGap_0++_GeV": nstr(self.delta, 15),
+            "Base_Freq_MeV": nstr(self.f_vac * 1000, 15),
             "Source": "Zenodo 18664814 (Expanded)"
         }
 
@@ -102,11 +102,11 @@ class HarmonicPredictor:
         deviation = ratio - target
 
         return {
-            "m_p_MeV": proton_mass_mev,
-            "f_vac_MeV": f_vac_mev,
-            "ratio": ratio,
-            "target": target,
-            "deviation": deviation,
+            "m_p_MeV": nstr(proton_mass_mev, 15),
+            "f_vac_MeV": nstr(f_vac_mev, 15),
+            "ratio": nstr(ratio, 15),
+            "target": nstr(target, 15),
+            "deviation": nstr(deviation, 15),
         }
 
 # Self-test
