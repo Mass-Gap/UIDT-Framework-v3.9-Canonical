@@ -92,7 +92,7 @@ def main():
     verify_metric_fluctuations()
     
     print("\n" + "="*80)
-    print("UIDT GEOMETRIC OPERATOR MATHEMATICALLY VERIFIED [CATEGORY B-]")
+    print("UIDT GEOMETRIC OPERATOR MATHEMATICALLY VERIFIED [CATEGORY C]")
     print("Classical Limits and Quantization rules hold under 80-dps mpmath conditions.")
     print("================================================================================\n")
     sys.exit(0)
