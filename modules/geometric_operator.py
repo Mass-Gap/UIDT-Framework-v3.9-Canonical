@@ -69,9 +69,9 @@ class GeometricOperator:
 
     def get_info(self):
         return {
-            "Delta_GeV": float(self.DELTA_GAP),
-            "Gamma": float(self.GAMMA),
-            "Noise_Floor_GeV": float(self.NOISE_FLOOR),
+            "Delta_GeV": self.DELTA_GAP,
+            "Gamma": self.GAMMA,
+            "Noise_Floor_GeV": self.NOISE_FLOOR,
             "Version": "3.8 Constructive"
         }
 

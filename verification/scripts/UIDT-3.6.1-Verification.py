@@ -154,7 +154,7 @@ gamma_derived = DELTA_TARGET / np.sqrt(kinetic_vev)
 
 # --- STRICT SCIENCE CHECK ---
 # Enforce Axiom: Derived value must match Axiom within tolerance
-if abs(gamma_derived - float(GAMMA_AXIOM)) > 0.1:
+if abs(gamma_derived - GAMMA_AXIOM) > 0.1:
     status_icon = "❌ FAILED (Physics Mismatch)"
     closed = False
 else:
@@ -239,8 +239,8 @@ log_print(f"\n[5] DESI-OPTIMIZED EVOLUTION (v3.6.1 Framework)")
 
 def gamma_z(z):
     """Redshift-dependent gamma evolution (quadratic fit to DESI DR2)"""
-    # Use float for z calculation as it's for display
-    g_val = float(gamma)
+    # Use mpf for z calculation
+    g_val = gamma
     return g_val * (1 + 0.0003*z - 0.0045*z**2)
 
 z_vals = [0.0, 0.5, 1.0, 2.0]
