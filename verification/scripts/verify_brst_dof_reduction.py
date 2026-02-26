@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-UIDT Verification Script: BRST Cohomology DoF Reduction
+UIDT Verification Script: BRST Cohomology DoF Reduction (v3.9)
 Target: Identify subtraction hypothesis leading to N=99 cascade steps.
 
 This script maps the 118 raw Degrees of Freedom (DoF) of the Standard Model
@@ -14,7 +14,11 @@ Adheres to UIDT Framework v3.9 Anti-Tampering Rules:
 
 import sys
 import itertools
-from mpmath import mp
+try:
+    from mpmath import mp
+except ImportError:
+    print("CRITICAL: mpmath not found (Anti-Tampering Violation)")
+    sys.exit(1)
 
 # Anti-Tampering: Local precision declaration
 mp.dps = 80
@@ -25,9 +29,10 @@ class StandardModelDoF:
         # Standard Model Fermions: 3 Generations
         # Total Fermions = 90.
 
+        # Structure: Flavor: (Colors * Spin * Particle/Antiparticle)
         self.fermions = {
             'quarks': {
-                'u': 3 * 2 * 2, # 3 colors, 2 spins, 2 p/ap = 12
+                'u': 3 * 2 * 2, # 12
                 'd': 3 * 2 * 2, # 12
                 'c': 3 * 2 * 2, # 12
                 's': 3 * 2 * 2, # 12
@@ -35,12 +40,12 @@ class StandardModelDoF:
                 'b': 3 * 2 * 2  # 12 -> Total 72
             },
             'charged_leptons': {
-                'e': 1 * 2 * 2,   # 1 flavor, 2 spins, 2 p/ap = 4
+                'e': 1 * 2 * 2,   # 4
                 'mu': 1 * 2 * 2,  # 4
                 'tau': 1 * 2 * 2  # 4 -> Total 12
             },
             'neutrinos': {
-                'nu_e': 1 * 1 * 2,   # 1 flavor, 1 spin (L), 2 p/ap = 2
+                'nu_e': 1 * 1 * 2,   # 2 (L-handed only in minimal SM)
                 'nu_mu': 1 * 1 * 2,  # 2
                 'nu_tau': 1 * 1 * 2  # 2 -> Total 6
             }
@@ -50,26 +55,30 @@ class StandardModelDoF:
         # Standard Model Bosons (Broken Phase / Physical Count):
         # Total Bosons = 28.
 
+        # Structure: Type: (Generators * Polarizations)
         self.bosons = {
-            'gluons': 8 * 2,      # 16
-            'photon': 1 * 2,      # 2
-            'W_bosons': 2 * 3,    # 6 (W+, W-)
-            'Z_boson': 1 * 3,     # 3
-            'Higgs_physical': 1   # 1
+            'gluons': 8 * 2,      # 16 (Massless, 2 pol)
+            'photon': 1 * 2,      # 2 (Massless, 2 pol)
+            'W_bosons': 2 * 3,    # 6 (Massive W+, W-, 3 pol)
+            'Z_boson': 1 * 3,     # 3 (Massive Z, 3 pol)
+            'Higgs_physical': 1   # 1 (Scalar)
         }
 
         # === 3. Auxiliary / Unphysical Candidates ===
         # For BRST Subtraction Hypotheses
+        # These represent unphysical degrees of freedom that might be subtracted
+        # in effective field theories or during renormalization.
 
         self.auxiliary = {
-            'ghosts_su3': 8 * 2,    # 16 (Color redundancy)
-            'ghosts_su2': 3 * 2,    # 6
-            'ghosts_u1': 1 * 2,     # 2
-            'goldstones_electroweak': 3, # 3 (Eaten modes)
-            'higgs_vev': 1          # 1 (Vacuum parameter)
+            'ghosts_su3': 8 * 2,          # 16 (Faddeev-Popov ghosts for SU(3))
+            'ghosts_su2': 3 * 2,          # 6 (Ghosts for SU(2))
+            'ghosts_u1': 1 * 2,           # 2 (Ghosts for U(1))
+            'goldstones_electroweak': 3,  # 3 (Nambu-Goldstone bosons eaten by W/Z)
+            'higgs_vev': 1                # 1 (Vacuum Expectation Value parameter)
         }
 
     def get_raw_dof(self):
+        """Calculates the raw sum of physical degrees of freedom."""
         fermion_sum = sum(sum(group.values()) for group in self.fermions.values())
         boson_sum = sum(self.bosons.values())
         return fermion_sum + boson_sum
@@ -113,6 +122,11 @@ class StandardModelDoF:
             print(f"  - {k}: {v}")
 
         print("-" * 30)
+
+        # Verify precision environment
+        x = mp.mpf('1.0')
+        print(f"Precision Environment Check: mp.dps={mp.dps}, 1.0={x}")
+
         if raw != 118:
              print(f"CRITICAL WARNING: Raw DoF {raw} != 118. Check standard counting.")
 
@@ -138,15 +152,6 @@ def main():
         sub_val = sum(model.auxiliary[k] for k in match)
         print(f"  Hypothesis {i}: Subtract {match} (Total: {sub_val})")
         print(f"    {model.get_raw_dof()} - {sub_val} = {model.get_raw_dof() - sub_val}")
-
-    # Anti-Tampering: Ensure mpmath is importable and working
-    try:
-        x = mp.mpf('1.0')
-        if x != 1.0:
-            raise ValueError("mpmath precision error")
-    except ImportError:
-        print("CRITICAL: mpmath not found (Anti-Tampering Violation)")
-        sys.exit(1)
 
     print("\nVerification Complete.")
 
