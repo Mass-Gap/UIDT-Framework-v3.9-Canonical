@@ -70,6 +70,17 @@ UIDT_OMEGA_FINAL_SYNTHESIS:
       STATUS: "Category D (Unverified / Tech-Limited)."
       VERIFICATION_PATH: "Future interferometry at NIST/MIT (Pending)."
 
+  QUARK_SECTOR_V3_9:
+    UNIFICATION_PRINCIPLE: "Isotopic Torsion & Mass-Gap Scaling"
+    LIGHT_QUARKS:
+      MASS_U: "2.443 MeV (bare) -> 2.163 MeV (QED)"
+      MASS_D: "4.886 MeV (bare) -> 4.706 MeV (QED)"
+      MASS_S: "93.812 MeV (bare) -> 94.008 MeV (QED)"
+    HEAVY_QUARKS:
+      MASS_C: "1.27 GeV"
+      MASS_B: "4.18 GeV"
+      MASS_T: "171.0 GeV"
+
   CONCLUSION:
     STATEMENT: "UIDT v3.6.1 is a self-consistent, fully constrained, and unified theory. It proposes that information-density is the foundational entity of physical reality, unifying Quantum Field Theory and General Relativity through the derived constant γ."
     FINAL_STATUS: "Canonical synthesis complete. Scientific claims strictly classified. All predictions consistent with 2025 data."

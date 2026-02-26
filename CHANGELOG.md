@@ -4,6 +4,16 @@ This log follows the guidelines of [Keep a Changelog](https://keepachangelog.com
 
 ---
 
+## [v3.9.3] — 2026-02-26
+
+### Light Quark Topological Mapping & Torsion Extension
+
+**Overview**
+Final integration of the Light Quark Mass Hierarchy (u, d, s) derivations based directly on the $E_T$ Topological Base mapping and scaled to PDG 2025 electromagnetic self-energy corrections with variance suppression $< 0.15\sigma$. 
+
+**Verification & Evidence Enhancements:**
+- **Light Quark Mass Hierarchy [B/C]:** Registered Claims `UIDT-C-065` and `UIDT-C-066` for topological derivations of $u, d, s$ masses.
+- Formally issued the validation certificate `UIDT_v3.9_QuarkMass_Audit_Certificate.txt` proving exact MC overlap.
 ## [v3.9.2] — 2026-02-24
 
 ### Final Corpus Closure & Factor 2.3 Integration (Plan vx6)
