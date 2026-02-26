@@ -237,3 +237,9 @@ A systematic robustness analysis using the UIDT lensing audit framework shows:
 The combined model (baryonic + UIDT geometric) provides a better fit than either mechanism alone.
 
 **Reference:** `docs/systematic_robustness_report.md`, `verification/scripts/lensing_robustness_audit.py`
+
+---
+
+## Daily Radar Logs (2026)
+
+*   arXiv:2601.20972 (Lambert W EoS) yields $H_0 = 67.4 \pm 1.2$. This $2.5\sigma$ tension to UIDT's $70.4$ confirms that early-universe fits without UIDT vacuum decay ($w_a = -1.30$) cannot reach the local topological equilibrium.
