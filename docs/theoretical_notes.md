@@ -237,3 +237,27 @@ A systematic robustness analysis using the UIDT lensing audit framework shows:
 The combined model (baryonic + UIDT geometric) provides a better fit than either mechanism alone.
 
 **Reference:** `docs/systematic_robustness_report.md`, `verification/scripts/lensing_robustness_audit.py`
+
+---
+
+## 9. The N=94 Cosmological Cascade (Falsification & Paradigm Shift)
+
+**Status:** Falsified (N=99) / Established (N=94.05)
+**Classification:** **Category B** (Mathematical Derivation / Exclusion)
+**Date:** 2026-02-26
+
+### Scientific Verdict
+The hypothesis linking the cosmological hierarchy gap to the 99 BRST degrees of freedom has been **rigorously falsified** by topological sandbox scans (Grok, Feb 2026).
+
+### Falsification Mechanism
+Numerical analysis demonstrated that bridging the logarithmic gap $K = \gamma^{4.95} \approx 1.01 \times 10^6$ using standard geometric phase space volumes (e.g., $(2\pi)^8$ or 3-sphere volume $2\pi^2$) leads to an overcorrection ($N \approx 99.31$).
+This requires an ad-hoc fine-tuning parameter, which violates the core axioms of the UIDT framework.
+
+### New Canonical Baseline (N=94.05)
+The **Reduced Planck Density** $\rho_{\text{Pl, red}}$ provides a geometrically consistent solution without fine-tuning:
+
+$$ N = \log_\gamma \left( \frac{\rho_{\text{Pl, red}}}{\rho_{\text{vac}}} \right) \approx 94.05 $$
+
+This value is declared the new **canonical baseline** for future research. The integer proximity to $N=94$ suggests a discrete conformal scaling law rather than the previously assumed $N=99$ BRST symmetry breaking cascade.
+
+**Action:** All prior references to "N=99" as a proven constant are hereby marked as **[FALSIFIED]**. Future models must derive vacuum suppression from the $N \approx 94$ baseline.
