@@ -24,8 +24,8 @@ UIDT-Framework-V3.6.1/
 ├── modules/                          # Additional theoretical modules
 ├── references/                       # Reference materials
 ├── simulation/                       # Simulation code
-├── Supplementary_Results/            # Supplementary results
-├── Supporting_Documents/            # Supporting documents
+
+
 ├── UIDT-OS/                          # Official Tracking Operating System
 └── verification/                     # Verification and validation code
 ```

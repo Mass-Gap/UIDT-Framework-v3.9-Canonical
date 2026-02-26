@@ -346,7 +346,7 @@ The system status is: **{"✅ SCIENTIFICALLY VERIFIED (Clean State)" if closed e
 **DOI:** 10.5281/zenodo.17835200
 """
 
-    output_dir = "Supplementary_Results"
+    output_dir = "verification/data"
     try:
         os.makedirs(output_dir, exist_ok=True)
         output_path = os.path.join(output_dir, "Verification_Report_v3.6.1.md")
