@@ -1,5 +1,5 @@
 import sys
-from mpmath import mp, mpf
+from mpmath import mp, mpf, nstr
 
 # AGENTS.md Anti-Centralization Rule: Local precision declaration
 mp.dps = 80
@@ -40,10 +40,10 @@ def verify_coupling_quantization():
     print("="*70)
     
     return {
-        "kappa_exact": float(kappa_exact),
-        "lambda_s_exact": float(lambda_s_exact),
-        "residual_exact": float(residual_exact),
-        "deviation": float(deviation)
+        "kappa_exact": nstr(kappa_exact, 15),
+        "lambda_s_exact": nstr(lambda_s_exact, 15),
+        "residual_exact": nstr(residual_exact, 15),
+        "deviation": nstr(deviation, 15)
     }
 
 if __name__ == "__main__":

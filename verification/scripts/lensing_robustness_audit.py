@@ -35,9 +35,9 @@ def get_precise_parameters():
     w_a_uidt = -1.30
 
     return {
-        'gamma_phys': float(gamma_phys),
-        'gamma_inf': float(gamma_inf),
-        'delta_gamma': float(delta_gamma),
+        'gamma_phys': gamma_phys,
+        'gamma_inf': gamma_inf,
+        'delta_gamma': delta_gamma,
         'w_0': w_0_uidt,
         'w_a': w_a_uidt
     }

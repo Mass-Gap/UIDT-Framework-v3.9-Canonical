@@ -1,7 +1,7 @@
 ---
 title: "UIDT Verification Report: Canonical v3.6.1 (Clean State)"
 author: "Automated Verification Pipeline (AVP)"
-date: "2026-02-24 23:33:21 UTC"
+date: "2026-02-26 04:51:10 UTC"
 version: "3.6.1"
 status: "PASSED"
 signature: "SHA256:13e9f5e4a7c629d2..."
@@ -19,7 +19,7 @@ corrections: "VEV corrected to 47.7 MeV; Casimir reclassified to Category D"
 
 | Metric | Measured Value |
 | :--- | :--- |
-| **Execution Time** | 2026-02-24 23:33:21 UTC |
+| **Execution Time** | 2026-02-26 04:51:10 UTC |
 | **Hardware** | x86_64 |
 | **OS / Kernel** | Linux 6.8.0 |
 | **Python Version** | 3.12.12 |

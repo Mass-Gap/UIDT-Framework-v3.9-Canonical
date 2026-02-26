@@ -9,7 +9,7 @@ Er integriert den 'Physical Stress Test' (Unterscheidbarkeits-Prüfung) direkt
 in die Erzeugungslogik gemäß den ANAM-Prinzipien (Petina).
 """
 
-from mpmath import mp, mpf
+from mpmath import mp, mpf, nstr
 
 # Setze Präzision ausreichend für Banach-Fixpunkt-Verifikation
 mp.dps = 80
@@ -69,9 +69,9 @@ class GeometricOperator:
 
     def get_info(self):
         return {
-            "Delta_GeV": float(self.DELTA_GAP),
-            "Gamma": float(self.GAMMA),
-            "Noise_Floor_GeV": float(self.NOISE_FLOOR),
+            "Delta_GeV": nstr(self.DELTA_GAP, 15),
+            "Gamma": nstr(self.GAMMA, 15),
+            "Noise_Floor_GeV": nstr(self.NOISE_FLOOR, 15),
             "Version": "3.8 Constructive"
         }
 
