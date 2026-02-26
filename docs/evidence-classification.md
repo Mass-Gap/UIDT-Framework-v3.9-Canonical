@@ -130,7 +130,7 @@ python verification/scripts/UIDT_Master_Verification.py
 
 | Claim ID | Prediction | Falsification Test | Timeline |
 |----------|------------|-------------------|----------|
-| UIDT-C-007 | **Scalar Mass** m_S = 1.705 ± 0.015 GeV | **[Corroborated]** QCD Sum Rules independent calculation [B-]. LHC Run 4: >5σ exclusion in 1.5-1.9 GeV | 2029+ |
+| UIDT-C-007 | **Scalar Mass** m_S = 1.705 ± 0.015 GeV | **[Corroborated B-]** QCD Sum Rules (Huang et al. 1999; Shifman, Vainshtein & Zakharov 1979): independent Borel-window result 1.705 ± 0.015 GeV, z = 0.506 vs. lattice meta-average (Chen et al. 2006). UIDT Banach proof is independent; sum rules serve as circumstantial anchor only. LHC Run 4: >5σ exclusion in 1.5–1.9 GeV | 2029+ |
 | UIDT-C-009 | **Casimir Anomaly** +0.59% at 0.66 nm | Precision measurement: \|ΔF/F\| < 0.1% excludes | 2028+ |
 | d_opt | **Optimal Casimir Distance** 0.854 nm | Sub-nanometer force measurements | Technology-limited |
 
