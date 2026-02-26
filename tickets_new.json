@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Restore UIDT-OS Directory",
+    "description": "The UIDT-OS directory, containing the canonical LEDGER/CLAIMS.json, is missing. This blocks all integrity audits.",
+    "priority": "P0",
+    "component": "Infrastructure",
+    "type": "Incident"
+  },
+  {
+    "title": "Update Proof Engine to v3.9",
+    "description": "core/uidt_proof_engine.py uses v3.6.1 constants. Update to v3.9 canonical values.",
+    "priority": "P1",
+    "component": "Core",
+    "type": "Bug"
+  }
+]

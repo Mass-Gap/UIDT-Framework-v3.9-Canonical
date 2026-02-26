@@ -1,0 +1,16 @@
+{
+  "critical_risks": [
+    {
+      "risk_id": "RISK-001",
+      "description": "Missing canonical claims database (CLAIMS.json)",
+      "impact": "Cannot verify integrity of any scientific claim.",
+      "severity": "CATASTROPHIC"
+    },
+    {
+      "risk_id": "RISK-002",
+      "description": "Version Drift (v3.6.1 vs v3.9)",
+      "impact": "Code may not reflect latest theory.",
+      "severity": "HIGH"
+    }
+  ]
+}
