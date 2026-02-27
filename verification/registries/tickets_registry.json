@@ -1,0 +1,14 @@
+[
+  {
+    "ticket_id": "TKT-111",
+    "title": "Precision Audit — Light Quark Masses Torsion",
+    "status": "ERFOLGREICH VERIFIZIERT",
+    "closed_at": "2026-02-25",
+    "release_tag": "3.9",
+    "evidence_refs": [
+      "verification/data/Precision_Audit_TKT-111_2026-02-25.md"
+    ],
+    "residual": "2.1e-81",
+    "evidence_category": "A"
+  }
+]
