@@ -430,3 +430,9 @@ Using the established electromagnetic shift for the Down quark ($\Delta m_d \app
 - **Correction:** $\Delta m_u = 2 \times \Delta m_d = -0.36$ MeV
 - **Physical Prediction:** $m_u^{phys} = 2.44 - 0.36 = 2.08$ MeV
 - **Comparison:** The predicted $2.08$ MeV lies within the FLAG 2024 interval ($2.14 \pm 0.08$ MeV) with a deviation of only **0.75σ**, fully resolving the tension.
+
+---
+
+## Daily Radar Logs (2026)
+
+*   arXiv:2601.20972 (Lambert W EoS) yields $H_0 = 67.4 \pm 1.2$. This $2.5\sigma$ tension to UIDT's $70.4$ confirms that early-universe fits without UIDT vacuum decay ($w_a = -1.30$) cannot reach the local topological equilibrium.
