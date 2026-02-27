@@ -1,16 +1,26 @@
 [
   {
-    "title": "Restore UIDT-OS Directory",
-    "description": "The UIDT-OS directory, containing the canonical LEDGER/CLAIMS.json, is missing. This blocks all integrity audits.",
-    "priority": "P0",
-    "component": "Infrastructure",
-    "type": "Incident"
+    "title": "Restore LEDGER/CLAIMS.json",
+    "description": "The canonical claims database is missing. Restore it immediately.",
+    "priority": "Critical",
+    "type": "Governance"
   },
   {
-    "title": "Update Proof Engine to v3.9",
-    "description": "core/uidt_proof_engine.py uses v3.6.1 constants. Update to v3.9 canonical values.",
-    "priority": "P1",
-    "component": "Core",
-    "type": "Bug"
+    "title": "Restore FORMALISM.md",
+    "description": "The formal definitions file is missing. Restore it immediately.",
+    "priority": "Critical",
+    "type": "Governance"
+  },
+  {
+    "title": "Restore EVIDENCE_SYSTEM.md",
+    "description": "The evidence system rules are missing. Restore it immediately.",
+    "priority": "Critical",
+    "type": "Governance"
+  },
+  {
+    "title": "Restore CANONICAL/ Directory",
+    "description": "The CANONICAL directory (CONSTANTS.md, LIMITATIONS.md, etc.) is missing. Restore it immediately.",
+    "priority": "Critical",
+    "type": "Governance"
   }
 ]

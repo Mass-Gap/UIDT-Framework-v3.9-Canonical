@@ -1,11 +1,9 @@
 {
-  "total_claims": 0,
-  "verified_claims": 0,
-  "findings_count": {
-    "S0": 1,
-    "S1": 1,
-    "S2": 1,
-    "S3": 0
-  },
-  "coverage_percent": 0
+  "files_scanned": 0,
+  "claims_verified": 0,
+  "findings_count": 5,
+  "s0_blockers": 5,
+  "s1_critical": 0,
+  "s2_major": 0,
+  "s3_minor": 0
 }
