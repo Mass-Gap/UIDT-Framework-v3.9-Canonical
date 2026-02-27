@@ -29,8 +29,8 @@ def verify_heavy_quark_predictions():
     
     print("\n[1] Derivation Chain")
     print(f"    f_vac  = {f_vac_gev * 1000} MeV")
-    print(f"    M(Omega_bbb) = 135 * f_vac = {float(m_omega):.4f} GeV ± {float(err_omega):.2f} GeV")
-    print(f"    M(cccc)  = 42 * f_vac  = {float(m_tetra):.4f} GeV ± {float(err_tetra):.2f} GeV")
+    print(f"    M(Omega_bbb) = 135 * f_vac = {mp.nstr(m_omega, 5)} GeV ± {mp.nstr(err_omega, 3)} GeV")
+    print(f"    M(cccc)  = 42 * f_vac  = {mp.nstr(m_tetra, 5)} GeV ± {mp.nstr(err_tetra, 3)} GeV")
     
     # Cross-reference known targets and error magnitudes
     target_omega = mpf('14.4585')

@@ -39,9 +39,9 @@ def verify_kissing_number_suppression():
     print("="*70)
 
     return {
-        "rho_uidt_gev4": float(rho_uidt_gev4),
-        "suppression_factor": float(suppression_factor),
-        "ratio": float(ratio)
+        "rho_uidt_gev4": mp.nstr(rho_uidt_gev4),
+        "suppression_factor": mp.nstr(suppression_factor),
+        "ratio": mp.nstr(ratio)
     }
 
 if __name__ == "__main__":
