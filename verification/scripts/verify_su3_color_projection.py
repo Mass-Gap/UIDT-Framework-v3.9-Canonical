@@ -1,5 +1,8 @@
 import sys
+import os
 from mpmath import mp, mpf
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 from modules.covariant_unification import CovariantUnification
 
 # AGENTS.md Anti-Centralization Rule: Local precision declaration
@@ -43,9 +46,9 @@ def verify_su3_color_projection():
     print("="*70)
 
     return {
-        "gamma_csf": float(gamma_csf),
-        "ratio": float(ratio),
-        "deviation": float(deviation)
+        "gamma_csf": mp.nstr(gamma_csf),
+        "ratio": mp.nstr(ratio),
+        "deviation": mp.nstr(deviation)
     }
 
 if __name__ == "__main__":

@@ -37,8 +37,8 @@ def run_stress_test():
     macro_vals = [mp.mpf(x) for x in samples]
     # Scipy requires float array, use numpy conversion to avoid explicit float()
     ks_stat_macro, p_macro = stats.kstest(np.array(macro_vals, dtype=float), 'uniform')
-    print(f"    > KS Statistic: {ks_stat_macro:.6f}")
-    print(f"    > p-value:      {p_macro:.6e}")
+    print(f"    > KS Statistic: {mp.nstr(mp.mpf(ks_stat_macro), 6)}")
+    print(f"    > p-value:      {mp.nstr(mp.mpf(p_macro), 6)}")
 
     # 4. Test 2: Micro Uniformity (Digits > 40)
     print("[-] Running Test 2: Micro Uniformity (Digits > 40)...")
@@ -53,8 +53,8 @@ def run_stress_test():
 
     # Scipy requires float array, use numpy conversion to avoid explicit float()
     ks_stat_micro, p_micro = stats.kstest(np.array(micro_vals, dtype=float), 'uniform')
-    print(f"    > KS Statistic: {ks_stat_micro:.6f}")
-    print(f"    > p-value:      {p_micro:.6e}")
+    print(f"    > KS Statistic: {mp.nstr(mp.mpf(ks_stat_micro), 6)}")
+    print(f"    > p-value:      {mp.nstr(mp.mpf(p_micro), 6)}")
 
     # 5. Test 3: Lag-1 Autocorrelation (Lattice Artifact Check)
     print("[-] Running Test 3: Lag-1 Autocorrelation (Micro Scale)...")
@@ -73,9 +73,9 @@ def run_stress_test():
     # Avoid explicit float() call by using numpy casting
     p_autocorr = 2 * (1 - stats.norm.cdf(np.array(abs(z_score), dtype=float))) # Two-tailed test
 
-    print(f"    > Autocorrelation: {autocorr:.6e}")
-    print(f"    > Z-score:         {z_score:.4f}")
-    print(f"    > p-value:         {p_autocorr:.6e}")
+    print(f"    > Autocorrelation: {mp.nstr(mp.mpf(autocorr), 6)}")
+    print(f"    > Z-score:         {mp.nstr(mp.mpf(z_score), 4)}")
+    print(f"    > p-value:         {mp.nstr(mp.mpf(p_autocorr), 6)}")
 
     # 6. Combined Confidence
     # Conservative approach: Minimum p-value dictates the "weakest link" confidence
@@ -92,12 +92,12 @@ def run_stress_test():
         status = "⚠️ WARNING (Marginal Randomness)"
 
     print(f"Status: {status}")
-    print(f"Statistical Confidence Level (p-value): {min_p:.6e}")
+    print(f"Statistical Confidence Level (p-value): {mp.nstr(mp.mpf(min_p), 6)}")
     print("="*60)
 
     # Special output for chat extraction
     print("\n--- CHAT OUTPUT BLOCK ---")
-    print(f"Statistical Confidence Level (p-value): {min_p:.6e}")
+    print(f"Statistical Confidence Level (p-value): {mp.nstr(mp.mpf(min_p), 6)}")
     print("-------------------------")
 
 if __name__ == "__main__":
