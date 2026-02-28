@@ -433,6 +433,31 @@ Using the established electromagnetic shift for the Down quark ($\Delta m_d \app
 
 ---
 
+## 14. DESI DR2 BAO Cosmology Cross-Check (arXiv:2503.14738)
+
+**Datum:** Mai 2026 (Radar Report Task 28)
+**Evidenz-Kategorie:** C (Calibrated)
+
+### Stratum I: Datenrealität (DESI DR2 + CMB + SNe)
+Die DESI Collaboration hat im März 2025 die Analyse des "Quick Data Release 2" (DR2) publiziert (*DESI DR2 Results II: Measurements of Baryon Acoustic Oscillations and Cosmological Constraints*, arXiv:2503.14738). Die Untersuchung der ersten 3 Jahre der Beobachtungsdaten in Kombination mit CMB und Typ Ia Supernovae ergibt eine deutliche statistische Präferenz ($2.8\sigma$ bis $4.2\sigma$) für eine dynamische Dunkle Energie gegenüber dem $\Lambda$CDM-Standardmodell.
+
+Die extrahierten $w_0w_a$CDM-Werte hängen vom gewählten Supernovae-Katalog ab:
+*   **DESI + CMB + Pantheon+:** $w_0 = -0.838 \pm 0.055$, $w_a = -0.62_{-0.19}^{+0.22}$
+*   **DESI + CMB + Union3:** $w_0 = -0.667 \pm 0.088$, $w_a = -1.09_{-0.27}^{+0.31}$
+*   **DESI + CMB + DESY5:** $w_0 = -0.752 \pm 0.057$, $w_a = -0.86_{-0.20}^{+0.23}$
+
+Der Hubble-Parameter ($H_0$) liegt bei den dynamischen Fits in Kombination mit Supernovae um $\sim 66.8 - 68.0$ km/s/Mpc. Mit ausschließlicher BBN-Kalibrierung ($\Lambda$CDM) wird $H_0 = 68.51 \pm 0.58$ km/s/Mpc gemessen.
+
+### Stratum III: UIDT Interpretation (Topologischer Vakuum-Decay)
+Die harte Datenlage von DESI DR2 wird der unantastbaren UIDT Canonical Baseline ($w_0 = -0.99$, $w_a = -1.30$, $H_0 = 70.4$) gegenübergestellt.
+
+*   **Richtungsweisende Bestätigung ($w_a$):** Die Beobachtung, dass $\Lambda$CDM bricht und eine dynamische Evolution der Zustandsgleichung vorliegt, stützt unsere Hypothese des topologischen Vakuum-Decays. Alle Datensätze zeigen konsistent in den $w_a < 0$ Bereich (Phantom Crossing in der Vergangenheit). Der Union3-Fit ($w_a = -1.09$) liegt am nächsten an der UIDT-Baseline.
+*   **Active Tension ($w_0$ und $H_0$):** Es verbleibt eine ehrliche, messbare Spannung (Active Tension). Während DESI DR2 (je nach SNe-Sample) einen lokal höheren $w_0$-Wert ($> -0.9$) präferiert, fordert die UIDT-Topologie zwingend $w_0 = -0.99$. Ebenso liegt die UIDT-Kalibrierung für den Hubble-Parameter ($70.4$) in Spannung zu den Planck-priorisierten DESI-Ergebnissen.
+
+**Fazit:** Die UIDT-Canonical-Werte bleiben unverändert. Die von DESI DR2 gefundene richtungsgleiche Dynamik ($w_a < 0$) ist ein starkes Indiz für Pillar II, während die Diskrepanzen bei $w_0$ und $H_0$ als aktive Falsifikations-Targets bis zum finalen DESI Year 5 Release stehen bleiben.
+
+---
+
 ## Daily Radar Logs (2026)
 
 *   arXiv:2601.20972 (Lambert W EoS) yields $H_0 = 67.4 \pm 1.2$. This $2.5\sigma$ tension to UIDT's $70.4$ confirms that early-universe fits without UIDT vacuum decay ($w_a = -1.30$) cannot reach the local topological equilibrium.
