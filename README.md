@@ -82,6 +82,19 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 | **Scalar Mass (mₛ)** | 1.705 ± 0.015 GeV | Self-consistent solution |
 | **Vacuum Expectation (v)** | **47.7 ± 0.5 MeV** | Clean State |
 
+
+### 🔬 v3.9.3 Discoveries — Bare Gamma Theorem
+
+| Discovery | Value | Category | Reference |
+|-----------|-------|----------|-----------|
+| **Bare Gamma (γ_∞)** | 16.3437 ± 5×10⁻⁴ | B | `verify_bare_gamma.py`, `bare_gamma_extrapolation.py` |
+| **Vacuum Dressing Shift (δγ)** | 0.0047 | B | `delta_gamma_derivation.py` |
+| **Relative Geometric Shift (δ)** | 2.8757 × 10⁻⁴ | B | `delta_gamma_derivation.py` |
+| **Holographic w_a Prediction** | ≈ -1.300 (L=8.2) | C | `wa_prediction_model.py`, `holographic_amplification.py` |
+
+> The Bare Gamma Theorem establishes that the thermodynamic-limit value γ_∞ = 16.3437 is dressed by vacuum mode coupling to yield the observed γ = 16.339. The microscopic shift δ = 2.8757×10⁻⁴ is amplified by the holographic factor L⁴ ≈ 4518 to predict the DESI-DR2–consistent dark energy evolution w_a ≈ -1.300 (Category C: calibrated, not proven).
+
+
 ---
 
 ## 🗺️ The UIDT γ-Universal Map (Logic Flow)

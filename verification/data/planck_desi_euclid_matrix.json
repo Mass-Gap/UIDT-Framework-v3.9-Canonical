@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "version": "3.9.0",
+    "date": "2026-02-28",
+    "author": "P. Rietz",
+    "orcid": "0009-0007-4307-1609",
+    "doi": "10.5281/zenodo.17835200",
+    "title": "Vacuum Information Density as the Fundamental Geometric Scalar",
+    "references": {
+      "Planck_2018": "arXiv:1807.06209",
+      "Planck_PR4": "arXiv:2007.04997",
+      "DESI_DR2": "arXiv:2503.14738",
+      "Euclid_Q1": "arXiv:2405.13491",
+      "SH0ES_2022": "arXiv:2112.04510",
+      "KATRIN_2024": "arXiv:2406.13516"
+    },
+    "notes": "All cosmology parameters capped at Category C per UIDT evidence system. UIDT values are calibrated interpretive mappings, not independent measurements."
+  },
+  "parameters": {
+    "Omega_m": {
+      "Planck2018": {
+        "value": 0.315,
+        "err": 0.007,
+        "source": "Planck 2018 TT,TE,EE+lowE+lensing (arXiv:1807.06209)"
+      },
+      "DESI_DR2": {
+        "value": 0.310,
+        "err": 0.010,
+        "source": "DESI DR2 BAO (arXiv:2503.14738)"
+      },
+      "Euclid_Q1": {
+        "value_range": [0.30, 0.32],
+        "err": null,
+        "source": "Euclid Q1 preliminary (arXiv:2405.13491)",
+        "note": "Preliminary range; formal uncertainties not yet published"
+      },
+      "UIDT": {
+        "value": 0.315,
+        "err": null,
+        "source": "UIDT v3.9 calibrated mapping",
+        "note": "Calibrated to Planck 2018+lensing central value"
+      }
+    },
+    "sigma_8": {
+      "Planck2018": {
+        "value": 0.811,
+        "err": 0.006,
+        "source": "Planck 2018 TT,TE,EE+lowE+lensing (arXiv:1807.06209)"
+      },
+      "UIDT": {
+        "value": 0.811,
+        "err": null,
+        "source": "UIDT v3.9 calibrated mapping",
+        "note": "Calibrated to Planck 2018+lensing central value; no independent derivation claimed"
+      }
+    },
+    "w_a": {
+      "DESI_DR2_Union3": {
+        "value": -1.27,
+        "err": 0.32,
+        "source": "DESI DR2 + Union3 SNe Ia (arXiv:2503.14738)"
+      },
+      "DESI_DR2_DESY5": {
+        "value": -0.75,
+        "err": 0.25,
+        "source": "DESI DR2 + DESY5 SNe Ia (arXiv:2503.14738)"
+      },
+      "DESI_DR2_Pantheon": {
+        "value": -0.60,
+        "err": 0.28,
+        "source": "DESI DR2 + Pantheon+ SNe Ia (arXiv:2503.14738)"
+      },
+      "UIDT": {
+        "value": -1.300,
+        "err": null,
+        "source": "UIDT v3.9: w_a = -delta * L^4, delta = 0.00028757, L = 8.2",
+        "note": "Interpretive prediction; consistent with DESI+Union3 within 0.1 sigma but in tension with DESI+Pantheon+"
+      }
+    },
+    "H0": {
+      "Planck2018": {
+        "value": 67.4,
+        "err": 0.5,
+        "unit": "km/s/Mpc",
+        "source": "Planck 2018 TT,TE,EE+lowE+lensing (arXiv:1807.06209)"
+      },
+      "SH0ES": {
+        "value": 73.04,
+        "err": 1.04,
+        "unit": "km/s/Mpc",
+        "source": "SH0ES 2022 Cepheid-calibrated (arXiv:2112.04510)"
+      },
+      "UIDT": {
+        "value": 70.4,
+        "err": null,
+        "unit": "km/s/Mpc",
+        "source": "UIDT v3.9 calibrated mapping",
+        "note": "Intermediate value calibrated to bridge early/late-Universe measurements; not an independent resolution of the Hubble tension"
+      }
+    }
+  },
+  "evidence_categories": {
+    "Omega_m": "C",
+    "sigma_8": "C",
+    "w_a": "C",
+    "H0": "C"
+  },
+  "category_definitions": {
+    "A": "Lattice QCD confirmed, residual < 10^-14",
+    "A-": "Phenomenological fit, high precision but not first-principles",
+    "B": "Numerically verified extrapolation",
+    "C": "Observationally consistent, interpretive mapping",
+    "D": "Falsifiable prediction, awaiting test",
+    "E": "Speculative / heuristic"
+  }
+}
