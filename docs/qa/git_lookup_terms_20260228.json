@@ -1,0 +1,46 @@
+{
+  "matches": {
+    "Patch Critique": [],
+    "PatchCritique": [],
+    "Epistemic Downgrade": [],
+    "Post-Merge": [
+      {
+        "sha": "4364511c307759c5e05947dbea9bcac2a8b221ef",
+        "subject": "Final submission of lensing robustness audit (post-merge acknowledgement)"
+      }
+    ],
+    "AUDIT BLOCKED": [],
+    "Hubble Tension Resolution": [
+      {
+        "sha": "96509a9c022148b183791663e3bb121003bc4458",
+        "subject": "cosmology: formal Hubble tension resolution JWST (PR #83)"
+      },
+      {
+        "sha": "32b7d7928323d04e1b2adc5fede99d643ab846e2",
+        "subject": "feat(cosmology): Integrate JWST Hubble Tension resolution into v3.9 manuscript"
+      }
+    ],
+    "Hubble tension": [
+      {
+        "sha": "9ec526cc6a20aec49741d9bd895860d8dffb1884",
+        "subject": "Performed JWST/Hubble Tension Monitor research and reported results in chat. No file changes requested."
+      },
+      {
+        "sha": "96509a9c022148b183791663e3bb121003bc4458",
+        "subject": "cosmology: formal Hubble tension resolution JWST (PR #83)"
+      },
+      {
+        "sha": "32b7d7928323d04e1b2adc5fede99d643ab846e2",
+        "subject": "feat(cosmology): Integrate JWST Hubble Tension resolution into v3.9 manuscript"
+      },
+      {
+        "sha": "dd060d3ea55ad8efa7a032cfb2f9ca6c79c14f66",
+        "subject": "Research Mode: JWST Hubble Tension Scan Results (Chat Only)"
+      },
+      {
+        "sha": "bff4bdddd1f997b379990fdb127d36cb28e7f800",
+        "subject": "Research Mode: JWST Hubble Tension Scan Results"
+      }
+    ]
+  }
+}

@@ -202,7 +202,7 @@ If \|ΔF/F\| < 0.1% @ 0.66 nm with controlled systematics → **CASIMIR PREDICTI
 
 ## MODERATE TESTS (Calibration-Dependent)
 
-### F8: Hubble Tension Resolution (JWST Cycle 3-4) 🌌 SHORT-TERM
+### F8: Hubble Tension Pathway (JWST Cycle 3-4) 🌌 SHORT-TERM
 
 **Prediction:**
 H₀ = 70.4 ± 0.16 km/s/Mpc (DESI-calibrated) [Category C]
@@ -216,14 +216,14 @@ If independent measurements converge to H₀ ≠ 70.4 km/s/Mpc at >3σ:
 - **H₀ = 73.0 ± 0.5 km/s/Mpc** (SH0ES confirmed) → **DESI CALIBRATION QUESTIONED**
 
 **Current Status:**
-⚠️ **UNCERTAIN** — JWST early results show 72.6 ± 2.0 km/s/Mpc (1.1σ from UIDT)
+⚠️ **UNCERTAIN** — JWST early results show 72.6 ± 2.0 km/s/Mpc (heuristic comparison to the calibrated 70.4 context value)
 
 **Timeline:**
 - **2025-2026:** JWST Cycle 3 Cepheid program
 - **2027:** Combined JWST+DESI analysis
 
 **Impact:**
-H₀ is **calibrated [C]**, not independent prediction. Falsification would question DESI DR2 data, not UIDT core.
+H₀ is **calibrated [C]**, not an independent prediction. A mismatch would invalidate this calibration pathway and require re-baselining, without directly touching the non-cosmology core constants.
 
 ---
 

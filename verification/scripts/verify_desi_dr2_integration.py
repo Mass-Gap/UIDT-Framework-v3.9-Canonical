@@ -29,7 +29,7 @@ if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
 print(f"--- DESI-DR2 Integration Verification (UIDT v3.9) ---")
-print(f"Target: Validate UIDT prediction w0={UIDT_W0}, wa={UIDT_WA} against Union3 data.")
+print(f"Target: Illustrative comparison of UIDT (w0={UIDT_W0}, wa={UIDT_WA}) against approximate constraints.")
 
 # --- 1. MCMC Implementation (Metropolis-Hastings) ---
 
@@ -95,9 +95,9 @@ print(f"  UIDT Prediction:  w0 = {UIDT_W0:.4f}, wa = {UIDT_WA:.4f}")
 print(f"  --> Mahalanobis Distance (Sigma): {mahalanobis_dist:.4f} sigma")
 
 if mahalanobis_dist < 1.0:
-    print("  --> STATUS: EXCELLENT AGREEMENT (Category B/C Verified)")
+    print("  --> STATUS: ILLUSTRATIVE ONLY (PLACEHOLDER CONSTRAINTS; NOT EXTERNAL VALIDATION)")
 else:
-    print("  --> STATUS: TENSION OBSERVED")
+    print("  --> STATUS: ILLUSTRATIVE ONLY (PLACEHOLDER CONSTRAINTS; NOT EXTERNAL VALIDATION)")
 
 # --- 3. Symbolic Reconstruction of rho_DE(z) ---
 

@@ -18,4 +18,4 @@ $$107.10 \text{ MeV} \approx 104.66 \text{ MeV} + 2.44 \text{ MeV}$$
 ### Significance of the 2.44 MeV Shift:
 - It represents the **Torsion Binding Energy** of the vacuum.
 - It resolves the discrepancy between the theoretical $n=1$ state and the 3-6-9 Octave Scaling frequency used in Pillar III.
-- This shift is the "Missing Link" that proves space-time is not a continuous background but a discrete, interacting substrate.
+- This shift is the "Missing Link" that demonstrates consistency with space-time not being a continuous background but a discrete, interacting substrate.
