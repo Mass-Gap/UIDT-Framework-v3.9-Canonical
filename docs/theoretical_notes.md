@@ -501,3 +501,30 @@ Therefore, UIDT does not *solve* the crisis in absolute terms; rather, it *offer
 **Model Dependency:** The value $H_0 = 70.4$ remains model-dependent and calibrated. It is heavily reliant on future high-precision data releases.
 
 **Falsification Warning:** This prediction crucially depends on forthcoming data from JWST DR3 (2027) and Euclid DR1. If these upcoming surveys conclusively drift away from the $70.4$ target (e.g., locking strictly to $\Lambda$CDM and late-universe deviations disappear), this would constitute a falsification of the UIDT late-universe topological projection. Future local distance ladder calibrations must be rigorously monitored.
+
+## 14. Topological Lepton Flavor Universality Violation (LFUV) Hypothesis
+
+**Status:** Under Active Investigation
+**Classification:** **Category D** (Phenomenological Fit / Theoretical Hypothesis)
+**Date:** 2026-02-28
+
+### Theoretical Context
+The UIDT framework posits that the topological scaling of the vacuum lattice inherently predicts a violation of Lepton Flavor Universality (LFUV). In this geometric paradigm, the lepton generations (quantified by the index $n$) couple asymmetrically to the electroweak sector:
+*   The **electron ($n=3$)** couples fully to the electroweak shift.
+*   The **muon ($n=1$)** completely decouples from this correction, maintaining structural alignment with the bare gamma scaling.
+
+### Baseline Calibration (CMS 2026)
+This hypothesis is rigorously calibrated against the most precise current measurements of the weak mixing angle. The calculations rely on the newly reported CMS baseline:
+$$ \sin^2 \theta_{\text{eff}} = 0.23156 \quad \text{(Ref: arXiv:2601.20717)} $$
+
+### The Damping Function
+To model the generation-dependent coupling strength to the electroweak symmetry, a topological damping function $f(n)$ was constructed. This function acts as the exponent in the electroweak correction factor $K(n)$:
+$$ K(n) = (\cos^2\theta_W)^{-f(n)} $$
+
+Using 80-digit precision (`mp.dps=80`), the optimal quadratic damping function required to exactly reproduce the PDG rest masses is found to be:
+$$ f(n) \approx 0.21459 n^2 - 0.35837 n + 0.14377 $$
+
+### Epistemic Caution (HARD-STOP)
+Caution: This quadratic function is strictly a phenomenological fit (Evidence Category D) to correctly map the PDG masses. The ab-initio derivation of these coefficients from the underlying lattice homology and cascade Euler characteristics is still pending.
+
+---
