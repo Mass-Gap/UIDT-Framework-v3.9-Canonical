@@ -129,6 +129,7 @@ class StandardModelDoF:
 
         if raw != 118:
              print(f"CRITICAL WARNING: Raw DoF {raw} != 118. Check standard counting.")
+             sys.exit(1)
 
 def main():
     print("=== UIDT Verification: BRST DoF Reduction (v3.9) ===")
@@ -152,6 +153,14 @@ def main():
         sub_val = sum(model.auxiliary[k] for k in match)
         print(f"  Hypothesis {i}: Subtract {match} (Total: {sub_val})")
         print(f"    {model.get_raw_dof()} - {sub_val} = {model.get_raw_dof() - sub_val}")
+
+    # Strict assertion for verification suite (outside the evaluation loop to avoid crashing incorrectly)
+    assert len(matches) > 0, "No subtraction hypotheses yielded target N=99 DoF."
+
+    # Assert each found match exactly reaches the target 99 to fulfill the rigid check without crashing loops
+    for match in matches:
+        sub_val = sum(model.auxiliary[k] for k in match)
+        assert (model.get_raw_dof() - sub_val) == target, f"Match {match} failed to yield exactly {target} DoF"
 
     print("\nVerification Complete.")
 
