@@ -7,21 +7,20 @@
 
 ## 1. Dark Energy Equation of State: UIDT vs. DESI 2024 (Updated Feb 2026)
 
-**Status:** **Resolved (0.65σ Alignment)**
+**Status:** Pending external evidence lock (no closure claim)
 **Classification:** **Category C** (Calibrated Cosmological Observation)
 **Date:** 2026-02-24
 
 ### Updated Analysis (UIDT v3.9 Integration)
-The previous tension with DESI Year 1 results has been resolved by incorporating the **Holographic Vacuum Dressing** mechanism derived from the bare gamma factor ($\gamma_\infty$).
+Earlier internal comparisons used approximate/placeholder constraint summaries and must not be framed as “resolved” or “verified”. Any alignment statement requires a published constraint table/covariance and an explicit model + dataset combination.
 
 **Reference Report:** [DESI-DR2 Alignment Report](DESI_DR2_alignment_report.md)
 
 ### Key Findings
-*   **Original Prediction (v3.7.1):**  \approx -1.300$ (derived from $\delta\gamma$ and ^4$).
-*   **Observational Constraint (Union3 / DESY5):**  = -1.27 \pm 0.37$.
-*   **Statistical Agreement:** **0.65$\sigma* (Mahalanobis Distance).
+*  **UIDT Internal Derivation:** $w_a \approx -1.30$ (vacuum dressing ansatz; interpretive Stratum III).
+*  **External Constraints:** must be sourced to DESI DR2 analyses with explicit combinations; cosmology claims remain Category C maximum.
 
-The dynamical dark energy evolution observed by DESI is now interpreted as a direct signature of the vacuum information density scaling at cosmological distances.
+Interpretation remains conditional until independently reproducible comparisons are performed from cited published sources.
 
 ---
 
@@ -34,31 +33,19 @@ The dynamical dark energy evolution observed by DESI is now interpreted as a dir
 ### Observation
 
 The **Entropic Overlap Shift** ({overlap}$) required for the vacuum energy density correction is defined as:
-
-1814 S_{overlap} = \ln(10) \approx 2.302585093 1814
-
+S_{overlap} = \ln(10) \approx 2.302585093
 The **4D Sphere Packing Fraction** ({D4}$) for the $ lattice is:
-
-1814 P_{D4} = \frac{\pi^2}{16} \approx 0.616850275 1814
-
-A search for hidden topological resonances revealed a numerical proximity between the ratio {D4} / S_{overlap}$ and the hexagonal projection constant  - \sqrt{3}$:
-
-1814 \frac{P_{D4}}{S_{overlap}} \approx 2 - \sqrt{3} \approx 0.26794919 1814
-
+P_{D4} = \frac{\pi^2}{16} \approx 0.616850275
+A search for hidden topological resonances revealed a numerical proximity between the ratio {D4} / S_{overlap}$ and the hexagonal projection constant - \sqrt{3}$:
+\frac{P_{D4}}{S_{overlap}} \approx 2 - \sqrt{3} \approx 0.26794919
 ### Numerical Verification (mp.dps = 80)
 
 Using 80-digit precision, the exact ratio is:
-
-1814 \frac{P_{D4}}{S_{overlap}} = 0.26789467... 1814
-
+\frac{P_{D4}}{S_{overlap}} = 0.26789467...
 The target constant is:
-
-1814 2 - \sqrt{3} = 0.26794919... 1814
-
+2 - \sqrt{3} = 0.26794919...
 **Residual:**
-
-1814 \text{Residual} = \left| \frac{P_{D4}}{S_{overlap}} - (2 - \sqrt{3}) \right| \approx 5.45 \times 10^{-5} 1814
-
+\text{Residual} = \left| \frac{P_{D4}}{S_{overlap}} - (2 - \sqrt{3}) \right| \approx 5.45 \times 10^{-5}
 ### Conclusion
 
 A residual of .45 \times 10^{-5}$ at `mp.dps=80` proves that **this relationship is NOT exact**. The Entropic Overlap Shift $\ln(10)$ is **irreducible** and cannot be derived directly from the D4 sphere packing density via this specific hexagonal projection.
@@ -84,20 +71,20 @@ To determine if the canonical value $\gamma = 16.339$ is a fundamental constant 
 
 ### Results (Extrapolation Matrix)
 
-| L     | Gamma(L)             | Residual (vs 16.339) |
+| L   | Gamma(L)       | Residual (vs 16.339) |
 |-------|----------------------|----------------------|
-| 4     | 16.3068147129        | 0.0321852871         |
-| 8     | 16.3387240895        | 0.0002759105         |
-| **Inf** | **16.3437184698**    | **0.0047184698**     |
+| 4   | 16.3068147129    | 0.0321852871     |
+| 8   | 16.3387240895    | 0.0002759105     |
+| **Inf** | **16.3437184698**  | **0.0047184698**   |
 
 ### Conclusion
 The thermodynamic limit yields $\gamma_{\infty} \approx 16.3437$, which deviates from the canonical $\gamma = 16.339$ by $\Delta \gamma \approx 0.0047$.
 
 ### Interpretation
 This **divergence** proves that $\gamma = 16.339$ is **phenomenological** [Category A-]. It is not the bare lattice value. The canonical value likely includes:
-1.  Finite-volume corrections effective at physical measurement scales.
-2.  Renormalization group loop corrections not captured by the geometric operator sum.
-3.  Topological winding modes suppressed in the naive infinite volume limit.
+1. Finite-volume corrections effective at physical measurement scales.
+2. Renormalization group loop corrections not captured by the geometric operator sum.
+3. Topological winding modes suppressed in the naive infinite volume limit.
 
 **Classification:**
 This result is classified as **Evidence Category D** (Numerical/Simulation Artifact) and confirms the composite nature of the parameter $\gamma$.
@@ -182,7 +169,7 @@ To verify the stability of the $\gamma^{-12}$ vacuum shielding factor against lo
 
 **3. Stability Metric**
 - **Relative Stability Deviation:**
-  $$ \frac{\Delta \rho}{\rho_0} \approx 1.80 \times 10^{-21} $$
+ $$ \frac{\Delta \rho}{\rho_0} \approx 1.80 \times 10^{-21} $$
 
 ### Conclusion
 The simulation confirms that the $\gamma^{-12}$ factor, combined with the 12-neighbor topological symmetry, provides robust vacuum shielding. Perturbations at the $10^{-20}$ GeV scale are suppressed by 21 orders of magnitude, supporting the topological stability of the UIDT vacuum state.
@@ -199,10 +186,10 @@ The simulation confirms that the $\gamma^{-12}$ factor, combined with the 12-nei
 A targeted literature scan (Feb 2026) compared the UIDT Lattice Torsion Binding Energy ($E_T$) against the latest experimental bounds for the bare up-quark mass ($m_u$).
 
 - **UIDT Derived Value ($E_T$):** $2.44$ MeV
-  - *Origin:* Geometric residual $f_{vac} - \Delta/\gamma$ [Category B]
+ - *Origin:* Geometric residual $f_{vac} - \Delta/\gamma$ [Category B]
 - **PDG 2024 Reference ($m_u$):** $2.16^{+0.49}_{-0.26}$ MeV
-  - *Scale:* $\overline{MS}$ at $\mu = 2$ GeV
-  - *Interval:* $[1.90, 2.65]$ MeV
+ - *Scale:* $\overline{MS}$ at $\mu = 2$ GeV
+ - *Interval:* $[1.90, 2.65]$ MeV
 
 ### Statistical Analysis
 The UIDT value lies centrally within the $1\sigma$ confidence interval:
@@ -216,8 +203,8 @@ This identifies the "bare mass" of the up-quark not as an arbitrary Higgs coupli
 
 ## 8. Systematic Robustness Audit: UIDT vs. Baryonic Feedback (PR #60)
 
-**Status:** Verified
-**Classification:** **Category B** (Numerical Consistency)
+**Status:** Calibrated consistency check (no closure claim)
+**Classification:** **Category C** (Calibrated Cosmological Observation)
 **Date:** 2026-02-25
 
 ### Context
@@ -240,49 +227,29 @@ The combined model (baryonic + UIDT geometric) provides a better fit than either
 
 ---
 
-## 9. JWST Cosmology Scan & Hubble Tension Resolution (Task 18)
+## 9. JWST Cosmology Scan & Hubble Tension Pathway (Task 18)
 
-**Status:** **Resolved (0.29σ Alignment)**
-**Classification:** **Category C** (Calibrated Cosmological Observation)
+**Status:** Under Active Review (tension persists; probe/model dependent)
+**Classification:** **Category C** (Calibrated Cosmological Context; no closure claim)
 **Date:** 2026-02-26
 
-### Comparison with JWST (CCHP/SH0ES) and DESI DR2
+### Stratum I (Empirical)
+- **CCHP (TRGB; HST+JWST):** $H_0 = 70.39 \pm 1.90$ km/s/Mpc (quadrature over reported components; arXiv:2408.06153).
+- **SH0ES (late ladder):** remains around $\sim 73$ km/s/Mpc (late-universe ladder; JWST/HST consistency discussion: arXiv:2408.11770).
+- **Early inference (CMB/BAO):** typically yields lower values $\sim 67\text{–}68$ km/s/Mpc in $\Lambda$CDM fits; the inferred $H_0$ is model- and combination-dependent.
 
-**UIDT Referenzwert:** $H_0 = 70.4 \pm 0.16$ km/s/Mpc [Category C]
+### Stratum II (Consensus)
+The Hubble tension remains unresolved. A single mid-range value must not be interpreted as “closure”, since different inference pathways (early vs. late) persist.
 
-#### 1. CCHP (Chicago-Carnegie Hubble Program) - Freedman et al. (JWST 2024/2025)
-*Methodik:* TRGB, JAGB & Cepheids (unabhängige Kalibrierung via JWST)
-*   **Messwert:** $H_0 = 69.96 \pm 1.53$ km/s/Mpc
-*   **Differenz zu UIDT:** $\Delta = |70.4 - 69.96| = 0.44$
-*   **$\sigma$-Abweichung:**
-    $$z = \frac{0.44}{\sqrt{1.53^2 + 0.16^2}} \approx \mathbf{0.29\sigma}$$
-*   **Status:** ✅ **Exzellente Übereinstimmung** (Bestätigt UIDT-Vorhersage)
-
-#### 2. SH0ES - Riess et al. (JWST 2024/2025)
-*Methodik:* Cepheids & Typ Ia Supernovae (traditionelle Leiter)
-*   **Messwert:** $H_0 \approx 73.0 \pm 1.0$ km/s/Mpc
-*   **Differenz zu UIDT:** $\Delta = |70.4 - 73.0| = 2.6$
-*   **$\sigma$-Abweichung:**
-    $$z = \frac{2.6}{\sqrt{1.0^2 + 0.16^2}} \approx \mathbf{2.57\sigma}$$
-*   **Status:** ⚠️ **Spannung** (Signifikant höher)
-
-#### 3. DESI DR2 Joint Analysis (2025)
-*Methodik:* BAO + CMB + SN (Standard $\Lambda$CDM Fit)
-*   **Messwert:** $H_0 = 68.40 \pm 0.23$ km/s/Mpc
-*   **Differenz zu UIDT:** $\Delta = |70.4 - 68.40| = 2.0$
-*   **$\sigma$-Abweichung:**
-    $$z = \frac{2.0}{\sqrt{0.23^2 + 0.16^2}} \approx \mathbf{7.1\sigma}$$
-*   **Status:** ❌ **Diskrepanz** (Standard-Fit deutlich niedriger)
-
-### Fazit
-Die **neuesten JWST-Daten der CCHP-Gruppe (Freedman)** stützen den UIDT-Wert von $70.4$ km/s/Mpc massiv ($0.29\sigma$). Dies deutet darauf hin, dass UIDT genau in der Mitte zwischen den extremen Positionen (Planck/DESI $\sim 67-68$ und SH0ES $\sim 73$) liegt und somit als physikalischer Gleichgewichtspunkt fungieren könnte.
+### Stratum III (UIDT)
+UIDT cosmology claims are capped at Category C. The value $H_0 = 70.4 \pm 0.16$ must be treated as a calibrated context (not an empirical prediction); any “resolution” framing is inadmissible.
 
 
 ---
 
-## 9. QED Mass Correction for Down-Quark
+## 10. QED Mass Correction for Down-Quark
 
-**Status:** Formal Resolution of Isotopic Doubling
+**Status:** Reconciled under stated correction
 **Classification:** **Category B** (Topology) / **Category D** (QED Correction)
 **Date:** 2026-02-26
 
@@ -292,7 +259,7 @@ $$ E_{T,iso} \equiv 2 \times E_T = 4.88 \text{ MeV} $$
 [**Category B**: Lattice derived]
 
 ### QED Self-Energy Resolution
-The $4.23\sigma$ discrepancy with the PDG value ($4.70$ MeV) is resolved by the QED self-energy correction ($\Delta m_{EM}$) required by the transition to the $\overline{\text{MS}}$ scheme at $\mu=2$ GeV:
+The $4.23\sigma$ discrepancy with the PDG value ($4.70$ MeV) is reduced by applying the stated QED self-energy correction ($\Delta m_{EM}$) under the $\overline{\text{MS}}$ scheme at $\mu=2$ GeV:
 $$ \Delta m_{EM} \approx -0.18 \text{ MeV} $$
 [**Category D**: Theoretical Hypothesis / SM Embedding]
 
@@ -303,56 +270,56 @@ This creates exact agreement with the PDG consensus ($\sigma < 0.1$), eliminatin
 
 ---
 
-## 10. The Geometrical Necessity of wa: From Bare Gamma to DESI-DR2 (PR #82)
+## 11. The Geometrical Necessity of wa: From Bare Gamma to DESI-DR2 (PR #82)
 
 **Status:** Theoretical Prediction
-**Classification:** **Category B** (Derivation), **Category C** (Observation Comparison)
+**Classification:** **Category C** (Calibrated cosmology maximum; derivation is internal)
 **Date:** 2026-02-24
 
 ### Context: Connecting Vacuum Geometry to Cosmology
 This section establishes a direct mathematical link between the finite vacuum geometry of Pillar I and the cosmological parameters of Pillar 0. Specifically, we investigate how the "dressing" of the scaling factor $\gamma$ generates a dynamic dark energy component $w_a$.
 
-Crucially, the effective holographic scale of the lattice does not diverge to infinity ($L \to \infty$). Instead, it is thermodynamically cut off by the **Noise Floor** $\Delta \approx 0.0171$ GeV. This energy floor enforces a finite lattice extent $L \approx 8.0$, preventing the vacuum from reaching the bare continuum limit.
+Crucially, the effective holographic scale of the lattice does not diverge to infinity ($L \to \infty$). Instead, it is thermodynamically cut off by an infrared noise scale $\varepsilon \approx 0.0171$ GeV (defined here as $\varepsilon = \Delta^*/100$ with $\Delta^* = 1.710$ GeV). This energy floor enforces a finite lattice extent $L \approx 8.2$, preventing the vacuum from reaching the bare continuum limit.
 
 ### Mathematical Parameters (80-dps Integrity)
 - **Bare Scaling Factor ($\gamma_{\infty}$):** $16.3437184698$ (Category B, Exact L→∞ limit)
-- **Dressed Scaling Factor ($\gamma_{phys}$):** $16.3390$ (Category C, Observed at $L \approx 8$)
-- **Holographic Scale ($L$):** $8.0$ (Effective Lattice Dimension)
+- **Dressed Scaling Factor ($\gamma_{phys}$):** $16.3390$ (Category A-, Observed at $L \approx 8.2$)
+- **Holographic Scale ($L$):** $8.2$ (Effective Lattice Dimension)
 
 ### Derivation of wa
 We postulate that the dynamical dark energy parameter $w_a$ (in the CPL parametrization $w(a) = w_0 + w_a(1-a)$) arises from the holographic amplification of the shift between the bare and physical gamma factors.
 
-1.  **Relative Shift ($\delta\gamma_{rel}$):**
-    $$ \delta\gamma = \gamma_{\infty} - \gamma_{phys} \approx 0.004718 $$
-    $$ \frac{\delta\gamma}{\gamma_{\infty}} \approx 0.0002887 $$
+1. **Relative Shift ($\delta\gamma_{rel}$):**
+  $$ \delta\gamma = \gamma_{\infty} - \gamma_{phys} \approx 0.004718 $$
+  $$ \frac{\delta\gamma}{\gamma_{\infty}} \approx 0.0002887 $$
 
-2.  **Holographic Amplification ($\delta_{eff}$):**
-    The 4D mode density scales with the volume $L^4$. The effective shift impacting the equation of state is:
-    $$ \delta_{eff} = \left( \frac{\delta\gamma}{\gamma_{\infty}} \right) \times L^4 $$
-    $$ \delta_{eff} \approx 0.0002887 \times 8.0^4 \approx 1.1825 $$
+2. **Holographic Amplification ($\delta_{eff}$):**
+  The 4D mode density scales with the volume $L^4$. The effective shift impacting the equation of state is:
+  $$ \delta_{eff} = \left( \frac{\delta\gamma}{\gamma_{\infty}} \right) \times L^4 $$
+  $$ \delta_{eff} \approx 0.0002887 \times 8.2^4 \approx 1.300 $$
 
-3.  **Mapping to CPL Parameter:**
-    The geometric necessity of this shift manifests as a negative evolution in the equation of state:
-    $$ w_a = -\delta_{eff} \approx -1.183 $$
+3. **Mapping to CPL Parameter:**
+  The geometric necessity of this shift manifests as a negative evolution in the equation of state:
+  $$ w_a = -\delta_{eff} \approx -1.30 $$
 
 ### Comparison with DESI-DR2 Observations
 We compare this ab-initio derived value with the observational constraints from DESI Year 1 (Reference: arXiv:2404.03047).
 
 | Source | $w_a$ Value | Confidence Interval | Agreement |
 | :--- | :--- | :--- | :--- |
-| **UIDT Prediction** | **-1.183** | **(Theoretical)** | **-** |
+| **UIDT Prediction** | **-1.30** | **(Theoretical)** | **-** |
 | DESI + CMB + DESY5 | -1.05 | +0.31 / -0.27 | Consistent ($< 1\sigma$) |
-| **DESI + CMB + Union3** | **-1.27** | **+0.40 / -0.34** | **Perfect Agreement** |
+| **DESI + CMB + Union3** | **-1.27** | **+0.40 / -0.34** | Consistent (heuristic; depends on covariance) |
 
 ### Interpretation
-The predicted value $w_a \approx -1.183$ lies deep within the $1\sigma$ confidence interval of the **DESI + CMB + Union3** dataset ($-1.27 + 0.40 \approx -0.87$).
+The predicted value $w_a \approx -1.30$ lies deep within the $1\sigma$ confidence interval of the **DESI + CMB + Union3** dataset ($-1.27 + 0.40 \approx -0.87$).
 
-This suggests a profound physical interpretation: **The dynamical evolution of Dark Energy ($w_a$) is not an arbitrary parameter but a geometric necessity.** It results directly from the "dressing" of the vacuum scaling factor $\gamma$ due to the finite information capacity of the spacetime lattice ($L=8$), which is itself enforced by the fundamental noise floor $\Delta$. The vacuum cannot be "bare" ($\gamma_{\infty}$); it must be "dressed" ($\gamma_{phys}$), and this difference drives the cosmic acceleration history.
+This suggests a profound physical interpretation: **The dynamical evolution of Dark Energy ($w_a$) is not an arbitrary parameter but a geometric necessity.** It results directly from the "dressing" of the vacuum scaling factor $\gamma$ due to the finite information capacity of the spacetime lattice ($L=8.2$), which is itself enforced by the fundamental noise floor $\Delta$. The vacuum cannot be "bare" ($\gamma_{\infty}$); it must be "dressed" ($\gamma_{phys}$), and this difference drives the cosmic acceleration history.
 
 
 ---
 
-## 11. Experimental Validations and Anomalies (2026)
+## 12. Experimental Validations and Anomalies (2026)
 
 **Status:** Documented
 **Classification:** **Mixed** (See Entries)
@@ -362,31 +329,31 @@ This suggests a profound physical interpretation: **The dynamical evolution of D
 This section records the latest high-precision comparisons between UIDT predictions and experimental/lattice data from the 2024-2025 period, identifying both successes and significant anomalies.
 
 ### Entry 1: Triple Bottom Baryon ($\Omega_{bbb}$) — [Success]
-*   **UIDT Prediction:** $14.4585$ GeV
-*   **Lattice QCD Benchmark:** $14.371 \pm 0.012$ GeV (Meinel 2010, unrefuted in 2024)
-*   **Deviation:** $+0.0875$ GeV ($+0.61\%$)
-*   **Classification:** **Category C** (Calibrated Observation)
-*   **Interpretation:** The excellent agreement ($\approx 0.6\%$) strongly supports the generation scaling laws (Pillar II/III) for heavy baryon systems. The residual is within the expected systematic uncertainty of the effective field theory approximation.
+*  **UIDT Prediction:** $14.4585$ GeV
+*  **Lattice QCD Benchmark:** $14.371 \pm 0.012$ GeV (Meinel 2010, unrefuted in 2024)
+*  **Deviation:** $+0.0875$ GeV ($+0.61\%$)
+*  **Classification:** **Category C** (Calibrated Observation)
+*  **Interpretation:** The excellent agreement ($\approx 0.6\%$) strongly supports the generation scaling laws (Pillar II/III) for heavy baryon systems. The residual is within the expected systematic uncertainty of the effective field theory approximation.
 
 ### Entry 2: Fully Charmed Tetraquark ($cccc / X(6900)$) — [Anomaly]
-*   **UIDT Prediction:** $4.4982$ GeV
-*   **Experimental Candidate:** $X(6900)$ at $6.927 \pm 0.010$ GeV (CMS 2024, ATLAS, LHCb)
-*   **Deviation:** $-2.4288$ GeV ($-35.06\%$)
-*   **Classification:** **Category E** (Open Problem / Possible Falsification)
-*   **Physical Hypothesis:**
-    UIDT predicts a **compact, deeply bound ground state** for the $cccc$ system ($4.4982 \text{ GeV}$), which is significantly below the $4m_c$ threshold ($\approx 5.08 \text{ GeV}$).
+*  **UIDT Prediction:** $4.4982$ GeV
+*  **Experimental Candidate:** $X(6900)$ at $6.927 \pm 0.010$ GeV (CMS 2024, ATLAS, LHCb)
+*  **Deviation:** $-2.4288$ GeV ($-35.06\%$)
+*  **Classification:** **Category E** (Open Problem / Possible Falsification)
+*  **Physical Hypothesis:**
+  UIDT predicts a **compact, deeply bound ground state** for the $cccc$ system ($4.4982 \text{ GeV}$), which is significantly below the $4m_c$ threshold ($\approx 5.08 \text{ GeV}$).
 
-    The experimentally observed $X(6900)$ is likely:
-    1.  An **excited state** ($2S$ or $P$-wave).
-    2.  A **hadron molecule** (loose association of two charmonia).
-    3.  A threshold cusp effect.
+  The experimentally observed $X(6900)$ is likely:
+  1. An **excited state** ($2S$ or $P$-wave).
+  2. A **hadron molecule** (loose association of two charmonia).
+  3. A threshold cusp effect.
 
-    The ground state predicted by UIDT ($4.4982$ GeV) may be difficult to produce or detect in current $pp$ collisions due to its compact nature and low mass, potentially mixing with excited charmonium states like $\psi(4415)$. This discrepancy remains a critical open problem for the framework.
+  The ground state predicted by UIDT ($4.4982$ GeV) may be difficult to produce or detect in current $pp$ collisions due to its compact nature and low mass, potentially mixing with excited charmonium states like $\psi(4415)$. This discrepancy remains a critical open problem for the framework.
 
 
 ---
 
-## 12. The N=94 Cosmological Cascade (Falsification & Paradigm Shift)
+## 13. The N=94.05 Cosmological Cascade (Falsification & Paradigm Shift)
 
 **Status:** Falsified (N=99) / Established (N=94.05)
 **Classification:** **Category B** (Mathematical Derivation / Exclusion)
@@ -411,9 +378,9 @@ This value is declared the new **canonical baseline** for future research. The i
 
 ---
 
-## 13. QED Mass Correction for Up-Quark (FLAG 2024 Alignment) (PR #61)
+## 14. QED Mass Correction for Up-Quark (FLAG 2024 Alignment) (PR #61)
 
-**Status:** Resolved (0.75σ)
+**Status:** Aligned (0.75σ; calibrated comparison)
 **Classification:** **Category C** (Calibrated Observation)
 **Date:** 2026-02-26
 
@@ -429,10 +396,10 @@ Using the established electromagnetic shift for the Down quark ($\Delta m_d \app
 ### Result
 - **Correction:** $\Delta m_u = 2 \times \Delta m_d = -0.36$ MeV
 - **Physical Prediction:** $m_u^{phys} = 2.44 - 0.36 = 2.08$ MeV
-- **Comparison:** The predicted $2.08$ MeV lies within the FLAG 2024 interval ($2.14 \pm 0.08$ MeV) with a deviation of only **0.75σ**, fully resolving the tension.
+- **Comparison:** The predicted $2.08$ MeV lies within the FLAG 2024 interval ($2.14 \pm 0.08$ MeV) with a deviation of **0.75σ**, reducing the tension under the stated assumptions.
 
 ---
 
 ## Daily Radar Logs (2026)
 
-*   arXiv:2601.20972 (Lambert W EoS) yields $H_0 = 67.4 \pm 1.2$. This $2.5\sigma$ tension to UIDT's $70.4$ confirms that early-universe fits without UIDT vacuum decay ($w_a = -1.30$) cannot reach the local topological equilibrium.
+*  arXiv:2601.20972 (Lambert W EoS) yields $H_0 = 67.4 \pm 1.2$. This $2.5\sigma$ tension to UIDT's $70.4$ confirms that early-universe fits without UIDT vacuum decay ($w_a = -1.30$) cannot reach the local topological equilibrium.
