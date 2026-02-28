@@ -2,36 +2,46 @@
   {
     "id": "UIDT-S0-001",
     "severity": "S0",
-    "component": "UIDT-OS",
-    "evidence_refs": [
-      "filesystem-tree.md",
-      ".gitignore"
-    ],
-    "impact": "Canonical claims database inaccessible. Full audit blocked.",
-    "root_cause": "Directory explicitly excluded by .gitignore or missing from repo.",
-    "fix_plan": "Restore UIDT-OS/ directory and commit LEDGER/CLAIMS.json."
+    "component": "UIDT-OS Governance",
+    "evidence_refs": ["filesystem"],
+    "impact": "Audit cannot proceed. Canonical claims database missing.",
+    "root_cause": "Missing file: LEDGER/CLAIMS.json",
+    "fix_plan": "Restore LEDGER/CLAIMS.json from backup or canonical source."
   },
   {
-    "id": "UIDT-S1-001",
-    "severity": "S1",
-    "component": "core/uidt_proof_engine.py",
-    "evidence_refs": [
-      "core/uidt_proof_engine.py",
-      "README.md"
-    ],
-    "impact": "Code uses outdated constants (v3.6.1) vs canonical documentation (v3.9).",
-    "root_cause": "Proof engine not updated to match v3.9 constants.",
-    "fix_plan": "Update core/uidt_proof_engine.py to use v3.9 constants (e.g. rho_obs)."
+    "id": "UIDT-S0-002",
+    "severity": "S0",
+    "component": "UIDT-OS Governance",
+    "evidence_refs": ["filesystem"],
+    "impact": "Audit cannot proceed. Formal definitions missing.",
+    "root_cause": "Missing file: FORMALISM.md",
+    "fix_plan": "Restore FORMALISM.md from backup or canonical source."
   },
   {
-    "id": "UIDT-S2-001",
-    "severity": "S2",
-    "component": "filesystem-tree.md",
-    "evidence_refs": [
-      "filesystem-tree.md"
-    ],
-    "impact": "Documentation structure does not match actual file system.",
-    "root_cause": "Documentation drift.",
-    "fix_plan": "Update filesystem-tree.md or restore missing directories."
+    "id": "UIDT-S0-003",
+    "severity": "S0",
+    "component": "UIDT-OS Governance",
+    "evidence_refs": ["filesystem"],
+    "impact": "Audit cannot proceed. Evidence rules missing.",
+    "root_cause": "Missing file: EVIDENCE_SYSTEM.md",
+    "fix_plan": "Restore EVIDENCE_SYSTEM.md from backup or canonical source."
+  },
+  {
+    "id": "UIDT-S0-004",
+    "severity": "S0",
+    "component": "UIDT-OS Governance",
+    "evidence_refs": ["filesystem"],
+    "impact": "Audit cannot proceed. Canonical constants missing.",
+    "root_cause": "Missing file: CANONICAL/CONSTANTS.md",
+    "fix_plan": "Restore CANONICAL/CONSTANTS.md from backup or canonical source."
+  },
+  {
+    "id": "UIDT-S0-005",
+    "severity": "S0",
+    "component": "Audit Input",
+    "evidence_refs": ["input"],
+    "impact": "Audit cannot proceed. Mandatory inputs missing.",
+    "root_cause": "Missing last release tag and tickets list.",
+    "fix_plan": "Provide mandatory inputs to the audit agent."
   }
 ]
