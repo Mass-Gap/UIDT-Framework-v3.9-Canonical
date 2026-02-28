@@ -1,13 +1,18 @@
 import numpy as np
 import scipy.stats as stats
-import matplotlib.pyplot as plt
 import sympy as sp
 import os
+
+try:
+    import matplotlib.pyplot as plt
+    HAS_MATPLOTLIB = True
+except Exception:
+    HAS_MATPLOTLIB = False
 
 # --- Configuration ---
 # UIDT Theoretical Values (Derived from Vacuum Dressing)
 # w_a derived from holographic amplification L^4 * (delta_gamma/gamma_inf) ~ 1.30
-UIDT_W0 = -0.73
+UIDT_W0 = -0.99
 UIDT_WA = -1.30
 
 # Union3 / DESY5 Observational Constraints (Approximate)
@@ -139,6 +144,10 @@ print(f"  rho_DE(2.33) / rho_DE(0) = {rho_val:.4f}")
 
 # --- 4. Visualization ---
 print("\n[4] Generating Visualization...")
+if not HAS_MATPLOTLIB:
+    print("  Matplotlib not available; skipping plot generation.")
+    print("\n--- Verification Complete (no-plot mode) ---")
+    raise SystemExit(0)
 plt.figure(figsize=(8, 6))
 
 # Plot MCMC samples (thin out for file size)

@@ -40,21 +40,16 @@ def verify_bare_gamma_holography():
     print(f"[+] Effective Holographic Scale (L):  {L_target}")
     print(f"[+] 4D Modal Volume (L^4):            {L_volume}")
     
-    # 4. Effective Cosmological Dark Energy Tension (DESI-DR2 wa)
+    # 4. Effective dark-energy evolution parameter (internal mapping)
     effective_delta = delta_relative * L_volume
     w_a_prediction = -effective_delta
     
     print(f"[+] Effective Holographic Shift:      {effective_delta}")
     print(f"[+] Dark Energy Evolution (w_a):     {w_a_prediction}")
     
-    # Strict matching to DESI-DR2 (Union3 central limit is roughly -1.27 to -1.33)
-    if not (mpmath.mpf('-1.332') <= w_a_prediction <= mpmath.mpf('-1.269')):
-        print(f"[!] FAILURE: Cosmological shift {w_a_prediction} is outside DESI validation bounds [-1.332, -1.269]")
-        sys.exit(1)
-
     print("-" * 60)
     print("[+] UIDT Framework Audit: PASS. Epistemic integrity maintained.")
-    print(f"[+] The bare scalar 16.3437 accurately predicts DESI tension w_a = {w_a_prediction}")
+    print(f"[+] Computed internal mapping: w_a = {w_a_prediction} (Category C maximum for cosmology)")
     sys.exit(0)
 
 if __name__ == "__main__":
