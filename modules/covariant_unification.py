@@ -24,9 +24,9 @@ class CovariantUnification:
         SU(3) algebraic candidate: 49/3 = 16.333... (0.037% deviation, see UIDT-C-047)
         """
         self.GAMMA_UIDT = mpf(gamma_uidt)  # v3.9 canonical [A-]
-        self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5) [Category C: Phenomenological constraint UIDT-C-050]
-        # TODO [D]: Derive N=99 from N² cascade first principles
-        #           (SU(N) gluon DoF ∝ N²-1 gives scaling but not the fixed value N=99;
+        self.RG_STEPS = mpf('94.05') # N=94.05 Cascade [Category C/D: Phenomenological constraint]
+        # TODO [D]: Derive N=94.05 from N² cascade first principles
+        #           (SU(N) gluon DoF ∝ N²-1 gives scaling but not the fixed value N=94.05;
         #            see UIDT-C-050, UIDT-C-017, UIDT-C-039, docs/limitations.md L5)
 
 
@@ -48,7 +48,7 @@ class CovariantUnification:
         """
         Theorem 2: Information Saturation Bound.
         Berechnet die maximale Dichte (Planck-Singularitaets-Regularisierung).
-        Formel: rho_max = Delta^4 * gamma^99
+        Formel: rho_max = Delta^4 * gamma^94.05
         """
         delta = mpf(delta_mass_gap)
         rho_max_qft = (delta ** 4) * (self.GAMMA_UIDT ** self.RG_STEPS)

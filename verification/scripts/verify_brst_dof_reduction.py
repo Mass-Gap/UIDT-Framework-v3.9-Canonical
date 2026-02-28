@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 UIDT Verification Script: BRST Cohomology DoF Reduction (v3.9)
-Target: Identify subtraction hypothesis leading to N=99 cascade steps.
+Target: Identify subtraction hypothesis leading to N=94.05 cascade steps.
 
 This script maps the 118 raw Degrees of Freedom (DoF) of the Standard Model
 and tests subtraction combinations for unphysical degrees of freedom.
@@ -83,7 +83,7 @@ class StandardModelDoF:
         boson_sum = sum(self.bosons.values())
         return fermion_sum + boson_sum
 
-    def test_hypotheses(self, target=99):
+    def test_hypotheses(self, target=94.05):
         """
         Tests all combinations of auxiliary subtractions to match the target.
         Returns a list of matching hypotheses (tuple of keys).
@@ -136,7 +136,7 @@ def main():
     model = StandardModelDoF()
     model.report()
 
-    target = 99
+    target = 94.05
     print(f"\nTarget Cascade Steps N={target}")
     print("Testing BRST Subtraction Hypotheses...")
 
