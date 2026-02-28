@@ -4,7 +4,7 @@ UIDT MODULE: COVARIANT UNIFICATION (CSF-UIDT Synthesis)
 Version: 3.9 Canonical
 Evidence Category: [A-] (Derived from phenomenological gamma).
 
-Berechnet die konformen Mappings zwischen dem QFT-Fundament der UIDT (Gamma Invariant) und der makroskopischen Kosmologie (CSF).
+Computes conformal mappings between the UIDT QFT basis (gamma invariant) and macroscopic cosmology (CSF).
 """
 
 from mpmath import mp, mpf, pi, sqrt, log
@@ -17,10 +17,10 @@ class CovariantUnification:
 
     def __init__(self, gamma_uidt=mpf('16.339')):
         """
-        Initialisiert das Unifikations-Modul.
-        Nimmt den phaenomenologisch kalibrierten Universal Scaling Factor [Category A-].
+        Initializes the unification module.
+        Uses the phenomenologically calibrated universal scaling factor [Category A-].
 
-        gamma = 16.339: v3.9 canonical (updated from v3.7.2: 16.374)
+        gamma = 16.339: v3.9 canonical kinetic gamma [A-] (gamma_MC = 16.374 ± 1.005 is separate)
         SU(3) algebraic candidate: 49/3 = 16.333... (0.037% deviation, see UIDT-C-047)
         """
         self.GAMMA_UIDT = mpf(gamma_uidt)  # v3.9 canonical [A-]
@@ -33,7 +33,7 @@ class CovariantUnification:
     def derive_csf_anomalous_dimension(self):
         """
         Lemma 1: Conformal Density Mapping.
-        Leitet die CSF Anomalous Dimension aus dem UIDT Gamma ab.
+        Derives the CSF anomalous dimension from UIDT gamma.
         Formel: gamma_CSF = 1 / (2 * sqrt(pi * ln(gamma_UIDT)))
         
         # UIDT-C-051 [B]: Holographic suppression ratio ~ 2.3 is explicitly 
@@ -47,7 +47,7 @@ class CovariantUnification:
     def check_information_saturation_bound(self, delta_mass_gap=mpf('1.710')):
         """
         Theorem 2: Information Saturation Bound.
-        Berechnet die maximale Dichte (Planck-Singularitaets-Regularisierung).
+        Computes the maximum density (Planck singularity regularization mapping).
         Formel: rho_max = Delta^4 * gamma^94.05
         """
         delta = mpf(delta_mass_gap)
@@ -84,4 +84,3 @@ class CovariantUnification:
             psi_ir = self.GAMMA_UIDT * (mu_simulation ** 2)
             residual_limit += eps * psi_ir
         return residual_limit
-
