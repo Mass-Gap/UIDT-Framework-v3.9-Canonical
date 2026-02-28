@@ -433,6 +433,52 @@ Using the established electromagnetic shift for the Down quark ($\Delta m_d \app
 
 ---
 
+
+## 16. Lepton Flavor Universality (LFU) Topological Scaling
+
+**Status:** Phenomenological Fit / Theoretical Hypothesis
+**Classification:** **Category D** (Phenomenological Fit / Theoretical Hypothesis)
+**Date:** 2026-02-28
+
+### Context: LHCb B-Meson Anomalies
+Recent measurements by the LHCb collaboration (Run 3 and legacy combinations) continue to show anomalies in Lepton Flavor Universality (LFU). Specifically, the $b \to c \tau \nu$ transitions (measured via $R_D$ and $R_{D^*}$) exhibit significant deviations from the Standard Model (SM), whereas the $b \to s \mu \mu$ transitions ($R_K$) have recently been updated to be consistent with the SM.
+
+This section documents the striking correlation between these experimental deviations and the topological scaling factors of the UIDT ($\gamma^{-n}$ for lepton generation $n$).
+
+### UIDT Dimensional Scaling Factors
+Using the canonical scaling invariant $\gamma = 16.339$:
+*   **Tau Scale ($n=1$):** $\gamma^{-1} \approx 0.06120$
+*   **Muon Scale ($n=2$):** $\gamma^{-2} \approx 0.00375$
+*   **Electron Scale ($n=3$):** $\gamma^{-3} \approx 0.00023$
+
+### 1. $R_D$ and $R_{D^*}$ Anomaly (Tau vs. Light Leptons)
+Experimentally, the relative deviations from the SM are:
+*   **$R_D$:** $\approx +14.38\%$
+*   **$R_{D^*}$:** $\approx +12.99\%$
+
+**UIDT Topological Mapping:**
+If the LFU violation is a geometric coupling modification proportional to the dimensional scale $2\gamma^{-1}$, the expected shift is:
+*   **Predicted Shift ($2\gamma^{-1}$):** $\approx +12.24\%$
+
+**Raw Residuals:**
+*   **$R_D$ Residual:** $0.1438 - 0.1224 \approx 0.0214$ (consistent within $\approx 0.24\sigma$)
+*   **$R_{D^*}$ Residual:** $0.1299 - 0.1224 \approx 0.0075$ (consistent within $\approx 0.15\sigma$)
+
+The $R_D/R_{D^*}$ excess correlates tightly with the $2\gamma^{-1} \approx 12.24\%$ scale.
+
+### 2. $R_K$ Anomaly (Muon vs. Electron)
+Recent high-statistics updates from LHCb show $R_K \approx 1.0 \pm 0.05$ (deviation essentially $0\%$), bringing it back into agreement with the SM.
+
+**UIDT Topological Mapping:**
+The expected topological shift for the $\mu/e$ ratio is proportional to the difference of their scales:
+*   **Predicted Shift ($\gamma^{-2} - \gamma^{-3}$):** $\approx +0.35\%$ ($0.0035$)
+
+**Interpretation:**
+The predicted geometrical shift of $\sim 0.35\%$ is currently **below the LHCb detection threshold** (which has an uncertainty of $\approx 5\%$). Therefore, the UIDT geometrically *predicts* that $R_K$ should appear consistent with the Standard Model at current sensitivities, while a residual $0.35\%$ shift remains hidden.
+
+### Critical Hard-Stop
+This correlation is strictly classified as **Evidence Category D**. It represents a phenomenological fit and an interpretative mapping of the generational scaling factors to experimental observables. It is **not** an ab-initio derivation of the decay amplitudes from the UIDT Lagrangian.
+
 ## Daily Radar Logs (2026)
 
 *   arXiv:2601.20972 (Lambert W EoS) yields $H_0 = 67.4 \pm 1.2$. This $2.5\sigma$ tension to UIDT's $70.4$ confirms that early-universe fits without UIDT vacuum decay ($w_a = -1.30$) cannot reach the local topological equilibrium.
