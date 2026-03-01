@@ -1,10 +1,10 @@
-# The SU(3) Gamma Theorem
+# The SU(3) Gamma Conjecture
 
 **Version:** TICK-20260224-Phase3_Discoveries
 **Evidence Category:** [A-] (Numerical match with algebraic candidate)
 **Status for L4:** `CONDITIONALLY RESOLVED — pending analytical VEV connection`
 
-## Theorem Statement
+## Conjecture Statement
 
 The universal gamma invariant $\gamma$ observed phenomenologically in the UIDT vacuum energy density aligns with the algebraic representation of the $SU(N_c)$ color constraint, specifically evaluating at $N_c = 3$:
 
