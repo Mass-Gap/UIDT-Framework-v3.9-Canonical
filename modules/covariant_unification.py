@@ -24,8 +24,8 @@ class CovariantUnification:
         SU(3) algebraic candidate: 49/3 = 16.333... (0.037% deviation, see UIDT-C-047)
         """
         self.GAMMA_UIDT = mpf(gamma_uidt)  # v3.9 canonical [A-]
-        self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5) [C] Phenomenological constraint (UIDT-C-050)DT-C-050]
-        # TODO [D]: Derive N from first principles. N=99 (UIDT-C-050 [C]) vs N=94.05 (UIDT-C-046 [E]) unresolved.
+        self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5) [D] Lattice topology (UIDT-C-050)
+        # TODO [D]: Derive N from first principles. N=99 (UIDT-C-050 [D]) vs N=94.05 (UIDT-C-046 [E]) unresolved.
         #           (SU(N) gluon DoF ∝ N²-1 gives scaling but not the fixed value N=99;
         #            see UIDT-C-050, UIDT-C-017, UIDT-C-039, docs/limitations.md L5)
 
