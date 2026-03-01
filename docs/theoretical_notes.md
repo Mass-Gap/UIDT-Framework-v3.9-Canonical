@@ -156,7 +156,7 @@ $$ \sum m_{\nu} \approx \frac{v}{\gamma^7} \approx \frac{47.7 \text{ MeV}}{16.33
 ## 6. Topological Vacuum Shielding and Kissing Number Symmetry (PR #56)
 
 **Status:** Confirmed
-**Classification:** **Category B** (Mathematical Derivation / Numerical Consistency)
+**Classification:** **Category C** (Calibrated — depends on DESI cosmological parameters)
 **Date:** 2026-02-24
 
 ### Objective
@@ -199,7 +199,7 @@ The simulation confirms that the $\gamma^{-12}$ factor, combined with the 12-nei
 A targeted literature scan (Feb 2026) compared the UIDT Lattice Torsion Binding Energy ($E_T$) against the latest experimental bounds for the bare up-quark mass ($m_u$).
 
 - **UIDT Derived Value ($E_T$):** $2.44$ MeV
-  - *Origin:* Geometric residual $f_{vac} - \Delta/\gamma$ [Category B]
+  - *Origin:* Geometric residual $f_{vac} - \Delta/\gamma$ [Category D] (depends on f_vac [C])
 - **PDG 2024 Reference ($m_u$):** $2.16^{+0.49}_{-0.26}$ MeV
   - *Scale:* $\overline{MS}$ at $\mu = 2$ GeV
   - *Interval:* $[1.90, 2.65]$ MeV
@@ -306,7 +306,7 @@ This creates exact agreement with the PDG consensus ($\sigma < 0.1$), eliminatin
 ## 10. The Geometrical Necessity of wa: From Bare Gamma to DESI-DR2 (PR #82)
 
 **Status:** Theoretical Prediction
-**Classification:** **Category B** (Derivation), **Category C** (Observation Comparison)
+**Classification:** **Category C** (L-dependent derivation, see S1-01), **Category C** (Observation Comparison)
 **Date:** 2026-02-24
 
 ### Context: Connecting Vacuum Geometry to Cosmology
@@ -415,7 +415,7 @@ This value is **proposed** as an alternative baseline, pending independent verif
 
 ## 13. QED Mass Correction for Up-Quark (FLAG 2024 Alignment) (PR #61)
 
-**Status:** Resolved (0.75σ)
+**Status:** Consistent [C] (0.75σ)
 **Classification:** **Category C** (Calibrated Observation)
 **Date:** 2026-02-26
 

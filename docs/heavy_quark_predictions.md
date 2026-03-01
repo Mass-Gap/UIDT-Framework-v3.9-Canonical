@@ -12,7 +12,7 @@ The predictions rely explicitly on the harmonic scaling of the derived vacuum re
   ↓  ÷ γ = 16.339
 E_geo = 104.66 MeV
   ↓  + E_torsion = 2.44 MeV
-f_vac = 107.10 MeV  [B]
+f_vac = 107.10 MeV  [C] (calibrated, UIDT-C-048)
   ↓  × 135  (3-6-9 Octave Scaling)
 M(Ω_bbb) = 14.4585 ± 0.07 GeV  [D]
   ↓  × 42

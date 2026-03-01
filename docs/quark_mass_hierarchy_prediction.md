@@ -1,29 +1,29 @@
 # Parameter-Free Quark Mass Hierarchy Predictions
 
 **Version:** UIDT v3.9 Light Quark Torsion Hierarchy
-**Evidence Category:** [B] (Analytical/Topological Extraction) and [D] (Pheno-Predictive Precision)
+**Evidence Category:** [A] (spectral gap Δ*), [A-] (γ phenomenological), [C] (f_vac calibrated), [D] (quark mass predictions)
 
 ## Derivation Chain
 
 The predictions map out the entirety of the six-quark spectrum using a single unifying topological base unit $E_T$, which represents the minimal symmetry break.
 
 ```
-Δ* = 1.710 GeV  [A+]
+Δ* = 1.710 GeV  [A]
 gamma = 16.339  [C]
 f_vac = 107.10 MeV [C]
   ↓  
-E_T = f_vac - (Δ/γ) = 2.44 MeV [B]
+E_T = f_vac - (Δ/γ) = 2.44 MeV [D] (depends on f_vac [C])
 ```
 
 ### Generation I: Isotopic Torsion Doubling
 ```
-M(u) = 1 × E_T = 2.44 MeV [B]
-M(d) = 2 × E_T = 4.88 MeV [B]
+M(u) = 1 × E_T = 2.44 MeV [D]
+M(d) = 2 × E_T = 4.88 MeV [D]
 ```
 
 ### Generation II: Strange Scaling & Charm Assymetry
 ```
-M(s) = 38.40 × E_T = 93.81 MeV [B]
+M(s) = 38.40 × E_T = 93.81 MeV [D]
 M(c) = Δ * √(9/γ) = 1.27 GeV [C]
 ```
 
