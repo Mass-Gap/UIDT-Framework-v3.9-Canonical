@@ -60,7 +60,7 @@ Every numeric value in the PR diff MUST be cross-referenced against CANONICAL/CO
 
 **Known tension parameters requiring special attention:**
 - N (RG steps): CLAIMS.json says N=99 [E/open]. theoretical_notes §12 says N=94.05. Code uses N=99. → Any PR touching N MUST explicitly state which value and why.
-- w₀: CLAIMS.json UIDT-C-037 says w = -0.961 [C]. Other docs say -0.99 or -0.73. → PR MUST reconcile or explicitly note discrepancy.
+- w₀: Canonical w₀ = −0.99 [C] (Decision D-002). UIDT-C-037 updated. Any PR using w₀ must use −0.99.
 - w_a: Not in CLAIMS.json. Two derivations exist (-1.183 with L=8, -1.300 with L=8.2). → PR MUST state which L and why.
 - L (holographic length): NOT a canonical parameter. Any use requires [C/D] tag.
 
@@ -248,7 +248,7 @@ These items MUST be checked against any PR that touches related content:
 |----|-------|---------------|-----------------|
 | KI-01 | w_a = -1.183 vs -1.300 | theoretical_notes.md, DESI_DR2_alignment_report.md | Define canonical L |
 | KI-02 | N=99 vs N=94.05 | limitations.md, covariant_unification.py, theoretical_notes.md | Reconcile or version |
-| KI-03 | w₀ = -0.961 vs -0.99 vs -0.73 | CLAIMS.json, systematic_robustness_report.md, DESI report | Single canonical w₀ |
+| KI-03 | w₀ = −0.99 [C] | **RESOLVED** per Decision D-002 | Canonical w₀ = −0.99 |
 | KI-04 | γ tagged [C] in quark_mass doc | quark_mass_hierarchy_prediction.md | Enforce [A-] |
 | KI-05 | [A+] category used | quark_mass_hierarchy_prediction.md | Remove (non-existent) |
 | KI-06 | Duplicate §9 numbering | theoretical_notes.md | Renumber |
