@@ -1,0 +1,220 @@
+{
+  "prs_found": 19,
+  "summary": [
+    {
+      "pr": 11,
+      "sha": "30e30a987953346e14985a54619de2824f98b10e",
+      "subject": "[UIDT-v3.9] Cosmology + Topology: CSF-UIDT Synthesis, Topological Quantization, Evidence Compliance (PR #11)",
+      "hype_hits": 11,
+      "invalid_evidence_tags": [
+        "[A-]"
+      ],
+      "evidence_tags_count": 36,
+      "doi_count": 15,
+      "arxiv_count": 1,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 52,
+      "sha": "14e604bfdebb6d2f7b979c1c10c34c59dbb63b18",
+      "subject": "Add LHCb B-Meson anomaly research scan [D] (PR #52)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 1,
+      "doi_count": 0,
+      "arxiv_count": 1,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 61,
+      "sha": "c1acec4d04e85aca7e4acfd2cfdfa0d7f44f507b",
+      "subject": "DESI-DR2 integration: holographic ρ_DE(z) reconstruction, w_a=-1.30 [B/C] (PR #61)",
+      "hype_hits": 5,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 1,
+      "arxiv_count": 2,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 65,
+      "sha": "2a5a7540854cd8cd1b0e2255ac68020eea1d4a98",
+      "subject": "Add RG fixed-point verification script (PR #65)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 0,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 70,
+      "sha": "3bd198b1842b9e7d897321318c3402830826c479",
+      "subject": "Tech debt: operator unitarity, Euclid Q1 radar, stresstest scripts (PR #70)",
+      "hype_hits": 8,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 0,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 71,
+      "sha": "e7138ee841d02debe076eb18fb8c32582421839c",
+      "subject": "refactor: replace float() with mpmath.mpf() precision audit (PR #71)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 2,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 72,
+      "sha": "40c741831d900e0b95a21d92f740750868ad3c0f",
+      "subject": "verify: BRST DoF reduction N=99 (PR #72)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 0,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 73,
+      "sha": "2703160b777e3bac096a9314134582d68860e3cd",
+      "subject": "feat: daily circular dependency audit script (PR #73)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 2,
+      "doi_count": 0,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 76,
+      "sha": "561859dc56c162682f8d814e69f812bb730e6d14",
+      "subject": "research: LHCb anomaly scan Run3 script (PR #76)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 0,
+      "arxiv_count": 1,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 77,
+      "sha": "118da08e7fb1b970fa66d616c57c698e0dc09919",
+      "subject": "refs: fix undefined bibitem keys QCD sum rules (PR #77)",
+      "hype_hits": 3,
+      "invalid_evidence_tags": [
+        "[B-]"
+      ],
+      "evidence_tags_count": 3,
+      "doi_count": 3,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 78,
+      "sha": "d84418ecf3fced02571c75ef60134de0c1479f3c",
+      "subject": "fix: evidence category banner to [C] (PR #78)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 1,
+      "doi_count": 0,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 79,
+      "sha": "2bcea8e7a26009c681a4372661ceaf54f729a6b4",
+      "subject": "audit: UIDT-OS QA audit report v3.0 (PR #79)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 0,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 83,
+      "sha": "96509a9c022148b183791663e3bb121003bc4458",
+      "subject": "cosmology: formal Hubble tension resolution JWST (PR #83)",
+      "hype_hits": 9,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 0,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 88,
+      "sha": "548cf93ccdff11dcc045aad972029d27c2a3c0f7",
+      "subject": "optimization: HMC vectorization SIMD + LHCb alignment (PR #88)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 1,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 89,
+      "sha": "fb851e1bf79ca5855e1c0f7eec844eb1448154ae",
+      "subject": "theory: UIDT Lagrangian integration + N=94 BRST (PR #89)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 0,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 92,
+      "sha": "a4e1e0088eaed81c448ff288cb8d3a4d13866000",
+      "subject": "Isotopic torsion update TKT-214→227: quark mass hierarchy (PR #92)",
+      "hype_hits": 12,
+      "invalid_evidence_tags": [
+        "[A+]"
+      ],
+      "evidence_tags_count": 15,
+      "doi_count": 12,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 95,
+      "sha": "add92232339bed891f4744131e6a3e1e0b899602",
+      "subject": "fix: BRST DoF verification script update (PR #95)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 0,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 96,
+      "sha": "2c6aa7acb70718b98493fce4e2dfcff2bb6950dd",
+      "subject": "docs: add arXiv:2601.20972 radar log entry (PR #96)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 0,
+      "arxiv_count": 2,
+      "local_path_hits": 0
+    },
+    {
+      "pr": 98,
+      "sha": "b40b7f9829ceabce2d70af2ac88105d1f268a1aa",
+      "subject": "feat: daily circular-dependency audit script (PR #98)",
+      "hype_hits": 0,
+      "invalid_evidence_tags": [],
+      "evidence_tags_count": 0,
+      "doi_count": 0,
+      "arxiv_count": 0,
+      "local_path_hits": 0
+    }
+  ]
+}

@@ -34,14 +34,14 @@ class TestHarmonicPredictor:
         """Test predict_omega_bbb calculation."""
         # Formula: f_vac * (3 * 54 - 27) = f_vac * 135
         expected = self.vacuum_freq_gev * 135
-        actual = self.predictor.predict_omega_bbb()
+        actual, _ = self.predictor.predict_omega_bbb()
         assert abs(actual - expected) < 1e-14
 
     def test_predict_tetraquark_cccc(self):
         """Test predict_tetraquark_cccc calculation."""
         # Formula: f_vac * (4 * 15 - 18) = f_vac * 42
         expected = self.vacuum_freq_gev * 42
-        actual = self.predictor.predict_tetraquark_cccc()
+        actual, _ = self.predictor.predict_tetraquark_cccc()
         assert abs(actual - expected) < 1e-14
 
     def test_predict_x17_anomaly(self):
@@ -88,7 +88,8 @@ class TestHarmonicPredictor:
         # Verify specific values (converted to float in report, so check within tolerance)
         # Note: report converts mpf to float, potentially losing precision, but should be close.
         # However, checking consistency is key.
-        assert abs(report["Omega_bbb_GeV"] - float(self.predictor.predict_omega_bbb())) < 1e-14
+        omega_mass, _ = self.predictor.predict_omega_bbb()
+        assert abs(report["Omega_bbb_GeV"] - float(omega_mass)) < 1e-14
         assert abs(report["X2370_Resonance_GeV"] - float(self.predictor.predict_x2370_resonance())) < 1e-14
 
     def test_check_proton_anchor(self):

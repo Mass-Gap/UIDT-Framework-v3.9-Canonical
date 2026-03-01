@@ -50,7 +50,7 @@ Final integration of the X17/Perplexity research corpus, extracting the ultra-hi
 Integration of critical quantitative checks derived from the X17/Perplexity research corpus. Added native `mpmath` verification for the Informational Geometric Operator and refined the epistemic classification of phenomenological dependencies.
 
 **Verification & Evidence Enhancements:**
-- **External Corroboration [B-]:** Integrated independent QCD Sum Rules (Borel-window methodology) derivation for $\Delta^* \approx 1.710 \text{ GeV}$ directly into the main manuscript (Section 4).
+- **External Corroboration [C]:** Integrated independent QCD Sum Rules (Borel-window methodology) derivation for $\Delta^* \approx 1.710 \text{ GeV}$ directly into the main manuscript (Section 4).
 - **Geometric Operator Suite:** Created `verify_geometric_operator.py` forcing 80-dps precision to confirm classical scale boundary limits and metric perturbation constraints. Registered as Claim `UIDT-C-049` [C].
 - **N²-Cascade Definition:** Explicitly classified the $N=99$ dimension cascade scaling rule as a phenomenological constraint, registering it as Claim `UIDT-C-050` [C].
 - **Ledger Audit:** Total claims tracked reached 50, with exact categorizations matching the `COMPLETENESS_REPORT.md` integration log.
@@ -75,7 +75,7 @@ Final integration of the X17/Perplexity research corpus, extracting the ultra-hi
 Integration of critical quantitative checks derived from the X17/Perplexity research corpus. Added native `mpmath` verification for the Informational Geometric Operator and refined the epistemic classification of phenomenological dependencies.
 
 **Verification & Evidence Enhancements:**
-- **External Corroboration [B-]:** Integrated independent QCD Sum Rules (Borel-window methodology) derivation for $\Delta^* \approx 1.710 \text{ GeV}$ directly into the main manuscript (Section 4).
+- **External Corroboration [C]:** Integrated independent QCD Sum Rules (Borel-window methodology) derivation for $\Delta^* \approx 1.710 \text{ GeV}$ directly into the main manuscript (Section 4).
 - **Geometric Operator Suite:** Created `verify_geometric_operator.py` forcing 80-dps precision to confirm classical scale boundary limits and metric perturbation constraints. Registered as Claim `UIDT-C-049` [C].
 - **N²-Cascade Definition:** Explicitly classified the $N=99$ dimension cascade scaling rule as a phenomenological constraint, registering it as Claim `UIDT-C-050` [C].
 - **Ledger Audit:** Total claims tracked reached 50, with exact categorizations matching the `COMPLETENESS_REPORT.md` integration log.

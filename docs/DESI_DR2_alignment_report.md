@@ -30,7 +30,7 @@ The difference represents the **spectral damping**:
 $$ \delta\gamma = \gamma_\infty - \gamma_{eff} \approx 0.0047 $$
 
 ### 2.2 Holographic Amplification
-In the UIDT holographic dual, this spectral shift is amplified by the geometric volume factor ^4$ (where  \approx 8.2$ is the characteristic holographic length scale in natural units). This defines the **Effective Vacuum Shift** $\delta_{eff}$:
+In the UIDT holographic dual, this spectral shift is amplified by the geometric volume factor ^4$ (where  \approx 8.2$ is the characteristic holographic length scale in natural units — **assumed for this calculation, not canonical**; L is formally undetermined until L = f(γ, N_eff) is closed per Decision D-003). This defines the **Effective Vacuum Shift** $\delta_{eff}$:
 
 $$ \delta_{eff} = \left( \frac{\delta\gamma}{\gamma_\infty} \right) \times L^4 \approx \left( \frac{0.0047}{16.3437} \right) \times (8.2)^4 \approx 1.30 $$
 
@@ -54,9 +54,9 @@ We utilize the **Union3 / DESY5** combined analysis (Feb 2026), which provides t
 *    = -1.27 \pm 0.37$
 
 ### 3.2 UIDT Prediction
-*    = -0.73$ (Calibrated Baseline)
+*    = -0.99$ (Canonical [C] per Decision D-002)
 
-> **⚠️ w₀ Inconsistency (S1-04):** This w₀ = −0.73 conflicts with canonical w = −0.961 (UIDT-C-037) and systematic_robustness_report.md w₀ ≈ −0.99. A single canonical w₀ must be declared.
+> **✅ w₀ Resolved (D-002):** Canonical w₀ = −0.99 [C] declared per Decision D-002. Previous values (−0.73, −0.961) are superseded.
 *    = -1.30$ (Derived Vacuum Dressing)
 
 ### 3.3 MCMC Validation

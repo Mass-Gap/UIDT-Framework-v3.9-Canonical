@@ -312,7 +312,7 @@ This creates exact agreement with the PDG consensus ($\sigma < 0.1$), eliminatin
 ### Context: Connecting Vacuum Geometry to Cosmology
 This section establishes a direct mathematical link between the finite vacuum geometry of Pillar I and the cosmological parameters of Pillar 0. Specifically, we investigate how the "dressing" of the scaling factor $\gamma$ generates a dynamic dark energy component $w_a$.
 
-Crucially, the effective holographic scale of the lattice does not diverge to infinity ($L \to \infty$). Instead, it is thermodynamically cut off by the **Noise Floor** $\Delta \approx 0.0171$ GeV. This energy floor enforces a finite lattice extent $L \approx 8.0$, preventing the vacuum from reaching the bare continuum limit.
+Crucially, the effective holographic scale of the lattice does not diverge to infinity ($L \to \infty$). Instead, it is thermodynamically cut off by the **Noise Floor** $\Delta \approx 0.0171$ GeV. This energy floor enforces a finite lattice extent $L \approx 8.0$ (**assumed for this calculation, not canonical** — L is formally undetermined until L = f(γ, N_eff) is closed), preventing the vacuum from reaching the bare continuum limit.
 
 ### Mathematical Parameters (80-dps Integrity)
 - **Bare Scaling Factor ($\gamma_{\infty}$):** $16.3437184698$ (Category B, Exact L→∞ limit)
@@ -349,7 +349,7 @@ We compare this L-dependent calibrated value [C] with the observational constrai
 ### Interpretation
 The predicted value $w_a \approx -1.183$ lies deep within the $1\sigma$ confidence interval of the **DESI + CMB + Union3** dataset ($-1.27 + 0.40 \approx -0.87$).
 
-This suggests a profound physical interpretation: **The dynamical evolution of Dark Energy ($w_a$) is not an arbitrary parameter but a geometric necessity.** It results directly from the "dressing" of the vacuum scaling factor $\gamma$ due to the finite information capacity of the spacetime lattice ($L=8$), which is itself enforced by the fundamental noise floor $\Delta$. The vacuum cannot be "bare" ($\gamma_{\infty}$); it must be "dressed" ($\gamma_{phys}$), and this difference drives the cosmic acceleration history.
+This suggests a profound physical interpretation: **The dynamical evolution of Dark Energy ($w_a$) is not an arbitrary parameter but a geometric necessity.** It results directly from the "dressing" of the vacuum scaling factor $\gamma$ due to the finite information capacity of the spacetime lattice ($L=8$, assumed — not canonical), which is itself enforced by the fundamental noise floor $\Delta$. The vacuum cannot be "bare" ($\gamma_{\infty}$); it must be "dressed" ($\gamma_{phys}$), and this difference drives the cosmic acceleration history.
 
 
 ---
@@ -390,7 +390,7 @@ This section records the latest high-precision comparisons between UIDT predicti
 
 ## 12. The N=94 Cosmological Cascade (Hypothesis Under Investigation)
 
-**Status:** Under Investigation — N=99 (UIDT-C-050 [C]) vs N=94.05 (UIDT-C-046 [E])
+**Status:** Contested / Under Investigation — N=99 (UIDT-C-050 [D]) vs N_eff=94.05 (UIDT-C-046 [E])
 **Classification:** **Category E** (Conjectured — contradicts production code N=99, no independent verification)
 **Date:** 2026-02-26
 
@@ -408,7 +408,7 @@ $$ N = \log_\gamma \left( \frac{\rho_{\text{Pl, red}}}{\rho_{\text{vac}}} \right
 
 This value is **proposed** as an alternative baseline, pending independent verification and code update. N=99 remains in production code (covariant_unification.py, verify_brst_dof_reduction.py). The integer proximity to $N=94$ suggests a discrete conformal scaling law rather than the previously assumed $N=99$ BRST symmetry breaking cascade.
 
-**Action:** The N=99 vs N=94.05 discrepancy must be resolved before v3.10 release. Either update all code to N=94.05 with independent verification, or revert this section. Current status: **UNRESOLVED** (UIDT-C-046 [E] vs UIDT-C-050 [C]).cuum suppression from the $N \approx 94$ baseline.
+**Action:** The N=99 vs N=94.05 discrepancy must be resolved before v3.10 release. Either update all code to N=94.05 with independent verification, or revert this section. Current status: **UNRESOLVED** (UIDT-C-046 [E] vs UIDT-C-050 [D]).cuum suppression from the $N \approx 94$ baseline.
 
 
 ---

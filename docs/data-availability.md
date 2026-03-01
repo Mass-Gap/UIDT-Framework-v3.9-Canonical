@@ -41,7 +41,7 @@ licenses.
 
 | File | Description |
 | :--- | :--- |
-| `UIDT_Master_Verification.py` | Four-Pillar Master Verification Suite (v3.9); proves mass gap, Banach convergence, and spectral expansions |
+| `UIDT_Master_Verification.py` | Four-Pillar Master Verification Suite (v3.9); provides numerical evidence for mass gap, Banach convergence, and spectral expansions |
 | `UIDT-3.6.1-Verification.py` | Newton–Raphson solver for coupled field equations; computes Δ, γ, κ, λ_S, m_S with residuals < 10⁻¹⁴ |
 | `UIDT-3.6.1-Verification-visual.py` | Visualization engine generating Figures 12.1–12.4 |
 | `rg_flow_analysis.py` | RG flow analysis confirming the fixed-point relation 5κ² = 3λ_S |

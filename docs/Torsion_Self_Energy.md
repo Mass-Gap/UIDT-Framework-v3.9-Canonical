@@ -66,7 +66,7 @@ corrected_freq = base_freq + self.TORSION_ENERGY_GEV
 
 ## Related Documents
 
-- [`CONSTANTS.md`](../UIDT-OS/CANONICAL/CONSTANTS.md) — Canonical parameter table
+- [`CONSTANTS.md`](../CANONICAL/CONSTANTS.md) — Canonical parameter table
 - [`limitations.md`](limitations.md) — Framework limitations (L1, L4)
 - [`topological_quantization.tex`](../manuscript/topological_quantization.tex) — Vacuum topology manuscript
 - [`lattice_topology.py`](../modules/lattice_topology.py) — Implementation
