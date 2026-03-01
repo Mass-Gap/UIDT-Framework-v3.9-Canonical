@@ -36,7 +36,7 @@ def run_stress_test():
     # Use mpf (scipy might cast internally, but we avoid explicit float())
     macro_vals = [mp.mpf(x) for x in samples]
     # Scipy requires float array, use numpy conversion to avoid explicit float()
-    ks_stat_macro, p_macro = stats.kstest(np.array(macro_vals, dtype=float), 'uniform')
+    ks_stat_macro, p_macro = stats.kstest(np.array(macro_vals, dtype=np.float64), 'uniform')
     print(f"    > KS Statistic: {mp.nstr(mp.mpf(ks_stat_macro), 6)}")
     print(f"    > p-value:      {mp.nstr(mp.mpf(p_macro), 6)}")
 
@@ -52,7 +52,7 @@ def run_stress_test():
         micro_vals.append(mp.mpf(val))
 
     # Scipy requires float array, use numpy conversion to avoid explicit float()
-    ks_stat_micro, p_micro = stats.kstest(np.array(micro_vals, dtype=float), 'uniform')
+    ks_stat_micro, p_micro = stats.kstest(np.array(micro_vals, dtype=np.float64), 'uniform')
     print(f"    > KS Statistic: {mp.nstr(mp.mpf(ks_stat_micro), 6)}")
     print(f"    > p-value:      {mp.nstr(mp.mpf(p_micro), 6)}")
 
@@ -71,7 +71,7 @@ def run_stress_test():
     sigma = 1 / np.sqrt(N)
     z_score = autocorr / sigma
     # Avoid explicit float() call by using numpy casting
-    p_autocorr = 2 * (1 - stats.norm.cdf(np.array(abs(z_score), dtype=float))) # Two-tailed test
+    p_autocorr = 2 * (1 - stats.norm.cdf(np.array(abs(z_score), dtype=np.float64))) # Two-tailed test
 
     print(f"    > Autocorrelation: {mp.nstr(mp.mpf(autocorr), 6)}")
     print(f"    > Z-score:         {mp.nstr(mp.mpf(z_score), 4)}")
