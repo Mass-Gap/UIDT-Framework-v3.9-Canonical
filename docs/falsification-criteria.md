@@ -115,7 +115,7 @@ Monitor DESI publications for equation-of-state w(z) constraints
 ### F4: Photonic Isomorphism (Metamaterial Analog) 🔬 NEAR-TERM
 
 **Prediction:**
-Critical refractive index $n_{\mathrm{critical}} = \gamma \approx 16.339$ (equivalently $\varepsilon_r \approx \gamma^2 \approx 267$) [Category D+: analog verification]
+Critical refractive index $n_{\mathrm{critical}} = \gamma \approx 16.339$ (equivalently $\varepsilon_r \approx \gamma^2 \approx 267$) [Category D: analog verification]
 
 **Experimental Test:**
 Nonlocal metamaterial analog platform (Song et al., Nature Communications 2025 as the external platform)
