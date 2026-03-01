@@ -122,7 +122,7 @@ This "Precision Guardrail" ensures that the initial conditions of the HMC evolut
 
 ## 5. Neutrino Mass Constraints in Dynamical Vacuum (PR #46)
 
-**Status:** Consistent with Direct Measurement and $w_0 w_a$ Cosmology
+**Status:** Consistent [C] with Direct Measurement and $w_0 w_a$ Cosmology
 **Classification:** **Category D** (Scaling Relation — NOT derived from first principles)
 **Date:** 2026-02-23
 
@@ -413,7 +413,7 @@ This value is declared the new **canonical baseline** for future research. The i
 
 ## 13. QED Mass Correction for Up-Quark (FLAG 2024 Alignment) (PR #61)
 
-**Status:** Resolved (0.75σ)
+**Status:** Consistent [C] (0.75σ)
 **Classification:** **Category C** (Calibrated Observation)
 **Date:** 2026-02-26
 
