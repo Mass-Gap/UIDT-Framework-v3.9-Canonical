@@ -21,18 +21,18 @@ This resolves the previous tension noted in v3.7.1 and firmly establishes the UI
 
 ### 2.1 The Bare vs. Effective Gamma
 The bare lattice geometry yields a thermodynamic limit of:
-1814 \gamma_\infty \approx 16.3437 1814
+$$ \gamma_\infty \approx 16.3437 $$
 
 The phenomenological (effective) gamma observed at physical scales is:
-1814 \gamma_{eff} = 16.339 1814
+$$ \gamma_{eff} = 16.339 $$
 
 The difference represents the **spectral damping**:
-1814 \delta\gamma = \gamma_\infty - \gamma_{eff} \approx 0.0047 1814
+$$ \delta\gamma = \gamma_\infty - \gamma_{eff} \approx 0.0047 $$
 
 ### 2.2 Holographic Amplification
 In the UIDT holographic dual, this spectral shift is amplified by the geometric volume factor ^4$ (where  \approx 8.2$ is the characteristic holographic length scale in natural units). This defines the **Effective Vacuum Shift** $\delta_{eff}$:
 
-$$ \delta_{eff} = \left( \frac{\delta\gamma}{\gamma_\infty} \right) \times L^4 \approx \left( \frac{0.0047}{16.3437} \right) \times (8.2)^4 \approx 1.30 1814
+$$ \delta_{eff} = \left( \frac{\delta\gamma}{\gamma_\infty} \right) \times L^4 \approx \left( \frac{0.0047}{16.3437} \right) \times (8.2)^4 \approx 1.30 $$
 
 ### 2.3 The Dynamical Parameter $
 The dark energy equation of state evolution parameter $ is identified directly with the negative of this vacuum shift:
@@ -83,7 +83,7 @@ $$ \rho_{DE}(z) = \rho_{DE,0} \exp\left( \frac{3 [w_a + (-w_a + (w_0 + w_a + 1)\
 ### 4.2 Numerical Check (Lyman-alpha Anchor)
 At the critical Lyman-alpha forest anchor point  = 2.33$:
 
-1814 \frac{\rho_{DE}(2.33)}{\rho_{DE}(0)} \approx 0.3722 1814
+$$ \frac{\rho_{DE}(2.33)}{\rho_{DE}(0)} \approx 0.3722 $$
 
 This confirms the specific damping signature of the vacuum energy density predicted by the holographic dressing mechanism.
 

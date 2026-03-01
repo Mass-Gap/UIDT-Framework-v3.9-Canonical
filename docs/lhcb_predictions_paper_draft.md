@@ -4,7 +4,7 @@
 **Target Journal:** TBD (Post-Run 3 LHCb results)
 
 ## Abstract
-We present two parameter-free, fully rigid mass predictions for the fully-heavy $\Omega_{bbb}$ baryon and the $T_{cccc}$ tetraquark state, derived strictly from the Unified Information-Density Topology (UIDT) vacuum structure. Unlike phenomenological potential models or lattice QCD methods that rely on fitted interpolating fields, these predictions arise from the exact harmonic resonance of the non-perturbative geometric mass gap. We define explicit falsifiable boundaries for the upcoming high-luminosity LHCb measurements.
+We present two parameter-free, parameter-constrained mass predictions for the fully-heavy $\Omega_{bbb}$ baryon and the $T_{cccc}$ tetraquark state, derived strictly from the Unified Information-Density Topology (UIDT) vacuum structure. Unlike phenomenological potential models or lattice QCD methods that rely on fitted interpolating fields, these predictions arise from the exact harmonic resonance of the non-perturbative geometric mass gap. We define explicit falsifiable boundaries for the upcoming high-luminosity LHCb measurements.
 
 ## 1. Introduction: The UIDT Spectral Framework
 The UIDT framework establishes a continuous mapping between the Yang-Mills mass gap $\Delta^* = 1.710 \text{ GeV}$ and the microscopic vacuum topological resonance frequency $f_{vac} \approx 107.10 \text{ MeV}$. This anchor requires the strict topological folding rule observed across the multiquark states via harmonic octave scaling.
@@ -23,7 +23,7 @@ $$ M(T_{cccc}) = 42 \times f_{vac} = 4.4982 \pm 0.02 \text{ GeV} $$
 **Comparison:** Lattice studies frequently place $T_{cccc}$ in the higher range of $[5.8, 6.2]$ GeV. The UIDT assigns this resonance to an explicitly lower vacuum harmonic state purely based on information density conservation bounds. Finding the lowest mass fully-charmed tetraquark state above $5.0$ GeV strictly refutes this prediction.
 
 ## 4. Experimental Testability (LHC Run 3/4)
-We challenge the high-energy physics community to test these exact harmonic bounds. As pure "Category D" blind predictions, they act as the ultimate discriminant between traditional quark-model phenomenology and information-density harmonic geometry.
+We challenge the high-energy physics community to test these harmonic bound predictions [D]. As pure "Category D" blind predictions, they act as the ultimate discriminant between traditional quark-model phenomenology and information-density harmonic geometry.
 
 ## Appendix A: Derivation Variables
 - **Base Frequency:** $107.10 \text{ MeV}$
