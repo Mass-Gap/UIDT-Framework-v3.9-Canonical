@@ -1,5 +1,31 @@
 # Changelog
 
+## [3.9.4] — 2026-03-01 — Audit Resolution
+
+### Fixed — Priority 1: Self-Contradictions (PR #117)
+- N=99 vs N=94.05: §12 downgraded [B]→[E], status "Under Investigation"
+- w_a L-dependency: L=8.0 marked non-canonical, [B]→[C], warning added
+- w₀ triple inconsistency (-0.73/-0.961/-0.99) flagged across reports
+- γ historical note corrected, γ_phys [C]→[A-]
+
+### Fixed — Priority 2: Evidence Tags (PR #120)
+- [A+]→[A] (quark_mass_hierarchy), [D+]→[D] (falsification-criteria)
+- 6× quark mass [B]→[D], E_T [B]→[D], f_vac [B]→[C] (UIDT-C-048)
+- Neutrino mass [B]→[C], w_a derivation [B]→[C], N=94.05 [B]→[E]
+- "Resolved"→"Consistent [C]" for cosmology semantics
+
+### Fixed — Priority 3: Language & LaTeX (PR #121)
+- 21× broken "1814"→"$$" LaTeX delimiters (theoretical_notes, DESI report)
+- 5× "proves"→"derives/suggests/demonstrates/confirms"
+- "Theorem"→"Conjecture" (su3_gamma)
+- Prestige language removed: "fully rigid", "exact harmonic bounds"
+
+### Open (Require PI Decision)
+- N=99 vs N=94.05: production code uses 99, §12 proposes 94.05
+- w₀ canonical value undeclared: -0.73 / -0.961 / -0.99
+- L holographic scale not in CONSTANTS.md
+
+
 This log follows the guidelines of [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and adheres to the specifications of [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
