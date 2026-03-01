@@ -3,14 +3,14 @@
 UIDT VERIFICATION SCRIPT: Operator Unitarity Check (PR #48)
 ===========================================================
 Version: 3.9 (Canonical)
-Purpose: Formally prove that the Geometric Operator G is non-unitary (contractive).
+Purpose: Demonstrate that the Geometric Operator G is non-unitary (contractive).
 Evidence: Category B (Mathematical Derivation / Consistency)
 
 Logic:
 - The Geometric Operator G scales vacuum states by gamma^-n.
 - A unitary operator U must satisfy U^dagger U = I.
 - We verify that G^dagger G = gamma^-2n I != I for n > 0.
-- This proves the system is dissipative (Information Shift to Deep IR).
+- This demonstrates contractive behavior (information shift to deep IR).
 
 Precision: 80 digits (mpmath)
 """

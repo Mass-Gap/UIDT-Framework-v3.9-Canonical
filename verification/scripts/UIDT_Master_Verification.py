@@ -300,7 +300,7 @@ def run_master_verification():
 - rho_max (information saturation): `{str(rho_max)[:40]}...` GeV^4
 - EoS w_0: `{eos['w_0']}` [C placeholder]
 - EoS w_a: `{eos['w_a']}` [C placeholder]
-- Limitations: L4 (gamma not RG-derived), L5 (N=99 empirical)
+- Limitations: L4 (gamma not RG-derived), L5 (N=94.05 empirical)
 """
         except Exception as e:
             log_print(f"   > PILLAR II-CSF ERROR: {e}")

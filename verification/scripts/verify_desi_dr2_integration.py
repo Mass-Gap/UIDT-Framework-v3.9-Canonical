@@ -1,13 +1,18 @@
 import numpy as np
 import scipy.stats as stats
-import matplotlib.pyplot as plt
 import sympy as sp
 import os
+
+try:
+    import matplotlib.pyplot as plt
+    HAS_MATPLOTLIB = True
+except Exception:
+    HAS_MATPLOTLIB = False
 
 # --- Configuration ---
 # UIDT Theoretical Values (Derived from Vacuum Dressing)
 # w_a derived from holographic amplification L^4 * (delta_gamma/gamma_inf) ~ 1.30
-UIDT_W0 = -0.73
+UIDT_W0 = -0.99
 UIDT_WA = -1.30
 
 # Union3 / DESY5 Observational Constraints (Approximate)
@@ -29,7 +34,7 @@ if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
 print(f"--- DESI-DR2 Integration Verification (UIDT v3.9) ---")
-print(f"Target: Validate UIDT prediction w0={UIDT_W0}, wa={UIDT_WA} against Union3 data.")
+print(f"Target: Illustrative comparison of UIDT (w0={UIDT_W0}, wa={UIDT_WA}) against approximate constraints.")
 
 # --- 1. MCMC Implementation (Metropolis-Hastings) ---
 
@@ -95,9 +100,9 @@ print(f"  UIDT Prediction:  w0 = {UIDT_W0:.4f}, wa = {UIDT_WA:.4f}")
 print(f"  --> Mahalanobis Distance (Sigma): {mahalanobis_dist:.4f} sigma")
 
 if mahalanobis_dist < 1.0:
-    print("  --> STATUS: EXCELLENT AGREEMENT (Category B/C Verified)")
+    print("  --> STATUS: ILLUSTRATIVE ONLY (PLACEHOLDER CONSTRAINTS; NOT EXTERNAL VALIDATION)")
 else:
-    print("  --> STATUS: TENSION OBSERVED")
+    print("  --> STATUS: ILLUSTRATIVE ONLY (PLACEHOLDER CONSTRAINTS; NOT EXTERNAL VALIDATION)")
 
 # --- 3. Symbolic Reconstruction of rho_DE(z) ---
 
@@ -139,6 +144,10 @@ print(f"  rho_DE(2.33) / rho_DE(0) = {rho_val:.4f}")
 
 # --- 4. Visualization ---
 print("\n[4] Generating Visualization...")
+if not HAS_MATPLOTLIB:
+    print("  Matplotlib not available; skipping plot generation.")
+    print("\n--- Verification Complete (no-plot mode) ---")
+    raise SystemExit(0)
 plt.figure(figsize=(8, 6))
 
 # Plot MCMC samples (thin out for file size)
