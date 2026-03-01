@@ -33,7 +33,7 @@ def verify_bare_gamma_holography():
     print(f"[+] Relative Geometric Shift:         {delta_relative}")
     
     # 3. Holographic Amplification
-    # Target finite lattice scale L ~ 8.2
+    # Target finite lattice scale L ~ 8.2 (assumed, NOT canonical — D-003: L is derived, not fundamental)
     L_target = mpmath.mpf('8.2')
     L_volume = L_target**4
     

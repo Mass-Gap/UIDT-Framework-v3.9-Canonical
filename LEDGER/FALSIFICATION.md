@@ -36,7 +36,7 @@ $$|\Delta F/F| < 0.1\% \quad \text{at} \quad d \approx 0.66 \text{ nm}$$
 ---
 
 ### F3: DESI Dark Energy
-**Prediction:** $w \approx -0.97 \pm 0.02$ (deviation from $\Lambda$CDM)
+**Prediction:** $w_0 = -0.99$ [C] (Canonical per Decision D-002)
 
 **Falsification Condition:**
 $$w = -1.00 \pm 0.01 \quad \text{(exact } \Lambda\text{CDM)}$$
@@ -77,3 +77,23 @@ Wenn zukünftige LHCb Run 3/4 Daten die Unsicherheit von $R_K$ auf $< 0.1\%$ red
 - Anomaly currently measured as $0 \pm 0.05$.
 
 **Timeline:** LHCb Run 3/4 high-statistics updates.
+
+---
+
+### F6: RG Cascade Steps N_bare
+**Prediction:** $N_{\text{bare}} = 99$ [D] (Lattice topology, Decision D-001)
+
+**Physical Basis:**
+N_bare = 99 represents the unrenormalized discrete lattice limit. The effective renormalized value N_eff = 94.05 [E] is conjectured via fractal damping (5%). Neither value has first-principles derivation.
+
+**Falsification Condition:**
+$$N_{\text{derived}} \neq 99 \pm 5 \quad \text{from non-perturbative RG calculation}$$
+
+Specifically: If a first-principles derivation of the RG cascade step count from SU(3) vacuum structure, holographic duality, or \u03b2-function zeros yields $N \neq 99 \pm 5$, the lattice topology claim is refuted.
+
+**Current Status:** \u23f3 PENDING
+- No first-principles derivation exists for N=99
+- N=99 is phenomenologically chosen to match $\rho_{\text{vac}} = \rho_{\text{obs}}$
+- See Limitation L5 and Decision D-001
+
+**Timeline:** Requires analytic progress on vacuum structure
