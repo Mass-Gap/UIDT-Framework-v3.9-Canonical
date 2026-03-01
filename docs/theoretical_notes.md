@@ -337,19 +337,19 @@ We postulate that the dynamical dark energy parameter $w_a$ (in the CPL parametr
     The geometric necessity of this shift manifests as a negative evolution in the equation of state:
     $$ w_a = -\delta_{eff} \approx -1.183 $$
 
-### Comparison with DESI-DR2 Observations
-We compare this L-dependent calibrated value [C] with the observational constraints from DESI Year 1 (Reference: arXiv:2404.03047).
+### Comparison with DESI Year 1 Constraints (DR1)
+We compare this L-dependent calibrated value [C] with the observational constraints reported in the DESI Year 1 cosmology analysis (Reference: arXiv:2404.03002).
 
 | Source | $w_a$ Value | Confidence Interval | Agreement |
 | :--- | :--- | :--- | :--- |
-| **UIDT Prediction** | **-1.183** | **(Theoretical)** | **-** |
+| **UIDT (L=8.0; non-canonical)** | **-1.183** | **(Model-dependent)** | **-** |
 | DESI + CMB + DESY5 | -1.05 | +0.31 / -0.27 | Consistent ($< 1\sigma$) |
 | **DESI + CMB + Union3** | **-1.27** | **+0.40 / -0.34** | **Consistent ($< 1\sigma$)** |
 
 ### Interpretation
-The predicted value $w_a \approx -1.183$ lies deep within the $1\sigma$ confidence interval of the **DESI + CMB + Union3** dataset ($-1.27 + 0.40 \approx -0.87$).
+The value $w_a \approx -1.183$ lies within the $1\sigma$ confidence interval of the **DESI + CMB + Union3** dataset.
 
-This suggests a profound physical interpretation: **The dynamical evolution of Dark Energy ($w_a$) is not an arbitrary parameter but a geometric necessity.** It results directly from the "dressing" of the vacuum scaling factor $\gamma$ due to the finite information capacity of the spacetime lattice ($L=8$, assumed — not canonical), which is itself enforced by the fundamental noise floor $\Delta$. The vacuum cannot be "bare" ($\gamma_{\infty}$); it must be "dressed" ($\gamma_{phys}$), and this difference drives the cosmic acceleration history.
+This supports the working hypothesis that a negative $w_a$ can be accommodated within the UIDT calibration pipeline. This mapping remains explicitly model-dependent and hinges on the non-canonical choice of $L$ (see warning above).
 
 
 ---
