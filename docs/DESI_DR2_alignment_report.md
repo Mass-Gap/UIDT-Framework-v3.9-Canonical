@@ -2,7 +2,7 @@
 
 > **DATE:** 2026-02-24
 > **VERSION:** UIDT v3.9 Canonical
-> **STATUS:** Verified (Category B/C)
+> **STATUS:** Calibrated (Category C — cosmology max [C] per EVIDENCE_SYSTEM)
 > **DOI:** 10.5281/zenodo.17835200
 
 ---
@@ -40,7 +40,7 @@ The dark energy equation of state evolution parameter $ is identified directly w
 1814 w_a = -\delta_{eff} \approx -1.300 1814
 
 **Evidence Classification:**
-> **Category B (Mathematical Necessity):** This value is derived parameter-free from the bare geometry and holographic scaling. It is *not* fitted to the supernova data.
+> **Category C (Calibrated):** [formerly "B Mathematical Necessity" — downgraded: cosmology max [C], L-dependent] This value is derived parameter-free from the bare geometry and holographic scaling. It is *not* fitted to the supernova data.
 
 ---
 
