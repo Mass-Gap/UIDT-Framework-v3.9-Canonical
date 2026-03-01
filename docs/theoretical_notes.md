@@ -61,7 +61,7 @@ $$ \text{Residual} = \left| \frac{P_{D4}}{S_{overlap}} - (2 - \sqrt{3}) \right| 
 
 ### Conclusion
 
-A residual of .45 \times 10^{-5}$ at `mp.dps=80` proves that **this relationship is NOT exact**. The Entropic Overlap Shift $\ln(10)$ is **irreducible** and cannot be derived directly from the D4 sphere packing density via this specific hexagonal projection.
+A residual of .45 \times 10^{-5}$ at `mp.dps=80` demonstrates that **this relationship is NOT exact**. The Entropic Overlap Shift $\ln(10)$ is **irreducible** and cannot be derived directly from the D4 sphere packing density via this specific hexagonal projection.
 
 While the proximity is an interesting coincidence potentially related to effective lattice symmetries, it remains a heuristic observation and is **not a valid derivation** for the overlap shift constant. The overlap shift $\ln(10)$ remains an independent entropic parameter.
 
@@ -94,7 +94,7 @@ To determine if the canonical value $\gamma = 16.339$ is a fundamental constant 
 The thermodynamic limit yields $\gamma_{\infty} \approx 16.3437$, which deviates from the canonical $\gamma = 16.339$ by $\Delta \gamma \approx 0.0047$.
 
 ### Interpretation
-This **divergence** proves that $\gamma = 16.339$ is **phenomenological** [Category A-]. It is not the bare lattice value. The canonical value likely includes:
+This **divergence** demonstrates that $\gamma = 16.339$ is **phenomenological** [Category A-]. It is not the bare lattice value. The canonical value likely includes:
 1.  Finite-volume corrections effective at physical measurement scales.
 2.  Renormalization group loop corrections not captured by the geometric operator sum.
 3.  Topological winding modes suppressed in the naive infinite volume limit.
