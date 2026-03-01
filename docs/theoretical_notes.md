@@ -316,8 +316,8 @@ Crucially, the effective holographic scale of the lattice does not diverge to in
 
 ### Mathematical Parameters (80-dps Integrity)
 - **Bare Scaling Factor ($\gamma_{\infty}$):** $16.3437184698$ (Category B, Exact L→∞ limit)
-- **Dressed Scaling Factor ($\gamma_{phys}$):** $16.3390$ (Category C, Observed at $L \approx 8$)
-- **Holographic Scale ($L$):** $8.0$ (Effective Lattice Dimension)
+- **Dressed Scaling Factor ($\gamma_{phys}$):** $16.3390$ (Category A-, canonical kinetic VEV; characterized at $L \approx 8$)
+- **Holographic Scale ($L$):** $8.0$ (Effective Lattice Dimension — **NOT canonical**, not in CONSTANTS.md; see S1-01)
 
 ### Derivation of wa
 We postulate that the dynamical dark energy parameter $w_a$ (in the CPL parametrization $w(a) = w_0 + w_a(1-a)$) arises from the holographic amplification of the shift between the bare and physical gamma factors.
@@ -331,18 +331,20 @@ We postulate that the dynamical dark energy parameter $w_a$ (in the CPL parametr
     $$ \delta_{eff} = \left( \frac{\delta\gamma}{\gamma_{\infty}} \right) \times L^4 $$
     $$ \delta_{eff} \approx 0.0002887 \times 8.0^4 \approx 1.1825 $$
 
+    > **⚠️ L-Dependency Warning (S1-01):** This result depends on L=8.0, which is NOT a canonical parameter (not in CONSTANTS.md). L=8.2 yields w_a ≈ −1.30. The value of L must be defined canonically before w_a can be considered fixed.
+
 3.  **Mapping to CPL Parameter:**
     The geometric necessity of this shift manifests as a negative evolution in the equation of state:
     $$ w_a = -\delta_{eff} \approx -1.183 $$
 
 ### Comparison with DESI-DR2 Observations
-We compare this ab-initio derived value with the observational constraints from DESI Year 1 (Reference: arXiv:2404.03047).
+We compare this L-dependent calibrated value [C] with the observational constraints from DESI Year 1 (Reference: arXiv:2404.03047).
 
 | Source | $w_a$ Value | Confidence Interval | Agreement |
 | :--- | :--- | :--- | :--- |
 | **UIDT Prediction** | **-1.183** | **(Theoretical)** | **-** |
 | DESI + CMB + DESY5 | -1.05 | +0.31 / -0.27 | Consistent ($< 1\sigma$) |
-| **DESI + CMB + Union3** | **-1.27** | **+0.40 / -0.34** | **Perfect Agreement** |
+| **DESI + CMB + Union3** | **-1.27** | **+0.40 / -0.34** | **Consistent ($< 1\sigma$)** |
 
 ### Interpretation
 The predicted value $w_a \approx -1.183$ lies deep within the $1\sigma$ confidence interval of the **DESI + CMB + Union3** dataset ($-1.27 + 0.40 \approx -0.87$).
@@ -386,27 +388,27 @@ This section records the latest high-precision comparisons between UIDT predicti
 
 ---
 
-## 12. The N=94 Cosmological Cascade (Falsification & Paradigm Shift)
+## 12. The N=94 Cosmological Cascade (Hypothesis Under Investigation)
 
-**Status:** Falsified (N=99) / Established (N=94.05)
-**Classification:** **Category B** (Mathematical Derivation / Exclusion)
+**Status:** Under Investigation — N=99 (UIDT-C-050 [C]) vs N=94.05 (UIDT-C-046 [E])
+**Classification:** **Category E** (Conjectured — contradicts production code N=99, no independent verification)
 **Date:** 2026-02-26
 
 ### Scientific Verdict
-The hypothesis linking the cosmological hierarchy gap to the 99 BRST degrees of freedom has been **rigorously falsified** by topological sandbox scans (Grok, Feb 2026).
+The hypothesis linking the cosmological hierarchy gap to the 99 BRST degrees of freedom has been **questioned** by topological sandbox scans (Grok, Feb 2026).
 
 ### Falsification Mechanism
 Numerical analysis demonstrated that bridging the logarithmic gap $K = \gamma^{4.95} \approx 1.01 \times 10^6$ using standard geometric phase space volumes (e.g., $(2\pi)^8$ or 3-sphere volume $2\pi^2$) leads to an overcorrection ($N \approx 99.31$).
 This requires an ad-hoc fine-tuning parameter, which violates the core axioms of the UIDT framework.
 
-### New Canonical Baseline (N=94.05)
+### Proposed Alternative: N=94.05 (UIDT-C-046 [E])
 The **Reduced Planck Density** $\rho_{\text{Pl, red}}$ provides a geometrically consistent solution without fine-tuning:
 
 $$ N = \log_\gamma \left( \frac{\rho_{\text{Pl, red}}}{\rho_{\text{vac}}} \right) \approx 94.05 $$
 
-This value is declared the new **canonical baseline** for future research. The integer proximity to $N=94$ suggests a discrete conformal scaling law rather than the previously assumed $N=99$ BRST symmetry breaking cascade.
+This value is **proposed** as an alternative baseline, pending independent verification and code update. N=99 remains in production code (covariant_unification.py, verify_brst_dof_reduction.py). The integer proximity to $N=94$ suggests a discrete conformal scaling law rather than the previously assumed $N=99$ BRST symmetry breaking cascade.
 
-**Action:** All prior references to "N=99" as a proven constant are hereby marked as **[FALSIFIED]**. Future models must derive vacuum suppression from the $N \approx 94$ baseline.
+**Action:** The N=99 vs N=94.05 discrepancy must be resolved before v3.10 release. Either update all code to N=94.05 with independent verification, or revert this section. Current status: **UNRESOLVED** (UIDT-C-046 [E] vs UIDT-C-050 [C]).cuum suppression from the $N \approx 94$ baseline.
 
 
 ---

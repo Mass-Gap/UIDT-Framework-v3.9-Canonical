@@ -25,7 +25,7 @@ This audit evaluates the robustness of the Unified Information-Density Theory (U
 
 **UIDT Signal (Scale-Independent):**
 The theory predicts an IR-decay of the vacuum energy density, effectively modeled as a dynamic Dark Energy equation of state:
-- $w_0 \approx -0.99$
+- $w_0 \approx -0.99$ (**⚠️ S1-04:** conflicts with canonical w = −0.961 [C] (UIDT-C-037) and DESI_DR2_alignment_report.md w₀ = −0.73)
 - $w_a \approx -1.30$ (Derived from $\delta\gamma = \gamma_{\infty} - \gamma_{phys}$)
 
 This induces a suppression in the linear growth factor $D(z)$ relative to $\Lambda$CDM. The signal is defined as the ratio of power spectra (linear regime approximation):
