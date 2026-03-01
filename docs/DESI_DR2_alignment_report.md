@@ -2,7 +2,7 @@
 
 > **DATE:** 2026-02-24
 > **VERSION:** UIDT v3.9 Canonical
-> **STATUS:** Verified (Category B/C)
+> **STATUS:** Calibrated (Category C — all cosmology claims max [C] per EVIDENCE_SYSTEM)
 > **DOI:** 10.5281/zenodo.17835200
 
 ---
@@ -32,15 +32,15 @@ The difference represents the **spectral damping**:
 ### 2.2 Holographic Amplification
 In the UIDT holographic dual, this spectral shift is amplified by the geometric volume factor ^4$ (where  \approx 8.2$ is the characteristic holographic length scale in natural units). This defines the **Effective Vacuum Shift** $\delta_{eff}$:
 
-1814 \delta_{eff} = \left( \frac{\delta\gamma}{\gamma_\infty} \right) \times L^4 \approx \left( \frac{0.0047}{16.3437} \right) \times (8.2)^4 \approx 1.30 1814
+$$ \delta_{eff} = \left( \frac{\delta\gamma}{\gamma_\infty} \right) \times L^4 \approx \left( \frac{0.0047}{16.3437} \right) \times (8.2)^4 \approx 1.30 1814
 
 ### 2.3 The Dynamical Parameter $
 The dark energy equation of state evolution parameter $ is identified directly with the negative of this vacuum shift:
 
-1814 w_a = -\delta_{eff} \approx -1.300 1814
+$$ w_a = -\delta_{eff} \approx -1.300 $$
 
 **Evidence Classification:**
-> **Category B (Mathematical Necessity):** This value is derived parameter-free from the bare geometry and holographic scaling. It is *not* fitted to the supernova data.
+> **Category C (Calibrated):** This value depends on L=8.2, a non-canonical free parameter (not in CONSTANTS.md). Cosmology claims are max [C] per EVIDENCE_SYSTEM. Note: theoretical_notes.md §10 uses L=8.0 → w_a ≈ −1.183. This L-ambiguity (S1-01) must be resolved. It is *not* fitted to the supernova data.
 
 ---
 
@@ -55,6 +55,8 @@ We utilize the **Union3 / DESY5** combined analysis (Feb 2026), which provides t
 
 ### 3.2 UIDT Prediction
 *    = -0.73$ (Calibrated Baseline)
+
+> **⚠️ w₀ Inconsistency (S1-04):** This w₀ = −0.73 conflicts with canonical w = −0.961 (UIDT-C-037) and systematic_robustness_report.md w₀ ≈ −0.99. A single canonical w₀ must be declared.
 *    = -1.30$ (Derived Vacuum Dressing)
 
 ### 3.3 MCMC Validation
@@ -76,7 +78,7 @@ Using the CPL parametrization (z) = w_0 + w_a \frac{z}{1+z}$, we reconstruct the
 ### 4.1 Analytical Formula (SymPy Derivation)
 The energy density $\rho_{DE}(z)$ evolves as:
 
-1814 \rho_{DE}(z) = \rho_{DE,0} \exp\left( \frac{3 [w_a + (-w_a + (w_0 + w_a + 1)\ln(z+1))(z+1)]}{z+1} \right) 1814
+$$ \rho_{DE}(z) = \rho_{DE,0} \exp\left( \frac{3 [w_a + (-w_a + (w_0 + w_a + 1)\ln(z+1))(z+1)]}{z+1} \right) $$
 
 ### 4.2 Numerical Check (Lyman-alpha Anchor)
 At the critical Lyman-alpha forest anchor point  = 2.33$:
