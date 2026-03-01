@@ -137,6 +137,9 @@ def main():
     model = StandardModelDoF()
     model.report()
 
+    # NOTE: N=99 (UIDT-C-050 [C]) is current production value.
+    # theoretical_notes.md §12 proposes N=94.05 (UIDT-C-046 [E]) — UNRESOLVED.
+    # Do NOT change target without resolving contradiction across all files.
     target = 99
     print(f"\nTarget Cascade Steps N={target}")
     print("Testing BRST Subtraction Hypotheses...")
