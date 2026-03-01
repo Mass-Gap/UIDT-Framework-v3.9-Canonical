@@ -115,7 +115,7 @@ Monitor DESI publications for equation-of-state w(z) constraints
 ### F4: Photonic Isomorphism (Metamaterial Analog) 🔬 NEAR-TERM
 
 **Prediction:**
-Critical refractive index $n_{\mathrm{critical}} = \gamma \approx 16.339$ (equivalently $\varepsilon_r \approx \gamma^2 \approx 267$) [Category D+: analog verification]
+Critical refractive index $n_{\mathrm{critical}} = \gamma \approx 16.339$ (equivalently $\varepsilon_r \approx \gamma^2 \approx 267$) [Category D: analog verification]
 
 **Experimental Test:**
 Nonlocal metamaterial analog platform (Song et al., Nature Communications 2025 as the external platform)
@@ -288,7 +288,7 @@ Set arXiv alerts for keywords:
 | **F1** | Δ = 1.710 ± 0.015 GeV | A | Lattice >3σ exclusion | 2026-2028 | ✅ Currently passes (z=0.37σ) |
 | **F2** | $E_T \approx 2.44$ MeV | D | $E_T \approx 0$ (pure geometry) | 2025-2026 | ⚠️ Pending |
 | **F3** | w(z) dynamic | C | w = -1.00 ± 0.01 (static) | 2027 | ✅ DESI Y1 supports |
-| **F4** | $n_{\mathrm{critical}} = 16.339$ | D+ | $n_{crit} \neq 16.339 \pm 0.1$ | 2026 | ⚠️ Pending |
+| **F4** | $n_{\mathrm{critical}} = 16.339$ | D | $n_{crit} \neq 16.339 \pm 0.1$ | 2026 | ⚠️ Pending |
 | **F5** | Scalar $m_S = 1.705 \pm 0.015$ GeV | D | >5σ exclusion (1.5–1.9 GeV) | 2029+ | ⚠️ Pending |
 | **F6** | $m_p/f_{vac} \approx 8.75$ | D | >3σ deviation | Ongoing | ⚠️ Pending |
 | **F7** | Casimir +0.59% | D | \|ΔF/F\| < 0.1% @ 0.66 nm | 2028+ | ❌ No data exists |
