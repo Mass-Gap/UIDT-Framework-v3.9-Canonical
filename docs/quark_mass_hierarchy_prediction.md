@@ -50,7 +50,7 @@ The topological predictions ($m^{topo}$) represent bare rest masses prior to env
 
 ## Falsification Triggers
 
-- **Generation I:** If Lattice QCD independently proves the $d$-quark pole mass strictly exceeds $4.90$ MeV (pre-QED), the Isotopic Torsion Doubling limit is formally refuted.
+- **Generation I:** If Lattice QCD independently confirms the $d$-quark pole mass strictly exceeds $4.90$ MeV (pre-QED), the Isotopic Torsion Doubling limit is formally refuted.
 - **Generation II:** If the $s$-quark strange scaling mapping falls outside $[90, 96]$ MeV across independent models, the geometric ratio $38.40$ is falsified.
 - **Generation III:** If the top quark pole mass is rigorously constrained above $174$ GeV in lepton colliders, the $100\times$ mass-gap ceiling is disproven.
 
