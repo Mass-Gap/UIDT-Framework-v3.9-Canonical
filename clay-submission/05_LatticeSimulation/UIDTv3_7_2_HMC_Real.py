@@ -38,6 +38,7 @@ def get_params():
     parser.add_argument('--Ns', type=int, default=8, help='Spatial lattice size')
     parser.add_argument('--Nt', type=int, default=16, help='Temporal lattice size')
     parser.add_argument('--beta', type=float, default=6.0, help='Inverse coupling')
+    parser.add_argument('--seed', type=int, default=123456, help='Deterministic RNG seed')
     parser.add_argument('--n_therm', type=int, default=100, help='Thermalization sweeps')
     parser.add_argument('--n_meas', type=int, default=200, help='Measurement sweeps')
     parser.add_argument('--n_skip', type=int, default=5, help='Skip between measurements')
@@ -47,6 +48,7 @@ def get_params():
     
     # parse_known_args ignores Jupyter kernel arguments
     args, _ = parser.parse_known_args()
+    np.random.seed(args.seed)
     return args
 
 
@@ -91,17 +93,18 @@ def project_su3_field(U: np.ndarray) -> np.ndarray:
 def su3_exp_field(A: np.ndarray) -> np.ndarray:
     """
     Vectorized matrix exponential for su(3) algebra field.
-    Uses Taylor expansion to 4th order (sufficient for small step_size=0.02).
+    Uses Taylor expansion to 40th order for audit-grade numerical integrity.
     A is (..., 3, 3).
     """
-    I = np.eye(3, dtype=A.dtype)
-    A2 = A @ A
-    A3 = A2 @ A
-    A4 = A3 @ A
-    # 5th order for safety
-    A5 = A4 @ A
-
-    return I + A + A2/2.0 + A3/6.0 + A4/24.0 + A5/120.0
+    order = 40
+    expA = np.zeros_like(A)
+    idx = np.arange(3)
+    expA[..., idx, idx] = 1.0
+    term = expA.copy()
+    for k in range(1, order + 1):
+        term = (term @ A) / k
+        expA = expA + term
+    return expA
 
 
 # =============================================================================
@@ -417,11 +420,13 @@ class UIDTLattice:
 def run_hmc(Ns: int = 8, Nt: int = 16, beta: float = 6.0,
             n_therm: int = 100, n_meas: int = 200, n_skip: int = 5,
             md_steps: int = 20, step_size: float = 0.02,
-            verbose: bool = True) -> dict:
+            verbose: bool = True, seed: Optional[int] = None) -> dict:
     """
     Run complete HMC simulation and return results.
     """
     constants = UIDTConstants()
+    if seed is not None:
+        np.random.seed(seed)
     
     if verbose:
         print("=" * 70)
@@ -430,6 +435,8 @@ def run_hmc(Ns: int = 8, Nt: int = 16, beta: float = 6.0,
         print(f"Lattice: {Ns}^3 x {Nt}")
         print(f"Beta: {beta}")
         print(f"UIDT kappa: {constants.KAPPA}")
+        if seed is not None:
+            print(f"Seed: {seed}")
         print(f"Thermalization: {n_therm} trajectories")
         print(f"Measurements: {n_meas} trajectories")
         print(f"MD steps: {md_steps}, step size: {step_size}")
@@ -527,6 +534,7 @@ if __name__ == "__main__":
         Ns=args.Ns,
         Nt=args.Nt,
         beta=args.beta,
+        seed=args.seed,
         n_therm=args.n_therm,
         n_meas=args.n_meas,
         n_skip=args.n_skip,
