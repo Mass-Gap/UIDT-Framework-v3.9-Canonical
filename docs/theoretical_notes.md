@@ -35,29 +35,29 @@ The dynamical dark energy evolution observed by DESI is now interpreted as a dir
 
 The **Entropic Overlap Shift** ({overlap}$) required for the vacuum energy density correction is defined as:
 
-1814 S_{overlap} = \ln(10) \approx 2.302585093 1814
+$$ S_{overlap} = \ln(10) \approx 2.302585093 $$
 
 The **4D Sphere Packing Fraction** ({D4}$) for the $ lattice is:
 
-1814 P_{D4} = \frac{\pi^2}{16} \approx 0.616850275 1814
+$$ P_{D4} = \frac{\pi^2}{16} \approx 0.616850275 $$
 
 A search for hidden topological resonances revealed a numerical proximity between the ratio {D4} / S_{overlap}$ and the hexagonal projection constant  - \sqrt{3}$:
 
-1814 \frac{P_{D4}}{S_{overlap}} \approx 2 - \sqrt{3} \approx 0.26794919 1814
+$$ \frac{P_{D4}}{S_{overlap}} \approx 2 - \sqrt{3} \approx 0.26794919 $$
 
 ### Numerical Verification (mp.dps = 80)
 
 Using 80-digit precision, the exact ratio is:
 
-1814 \frac{P_{D4}}{S_{overlap}} = 0.26789467... 1814
+$$ \frac{P_{D4}}{S_{overlap}} = 0.26789467... $$
 
 The target constant is:
 
-1814 2 - \sqrt{3} = 0.26794919... 1814
+$$ 2 - \sqrt{3} = 0.26794919... $$
 
 **Residual:**
 
-1814 \text{Residual} = \left| \frac{P_{D4}}{S_{overlap}} - (2 - \sqrt{3}) \right| \approx 5.45 \times 10^{-5} 1814
+$$ \text{Residual} = \left| \frac{P_{D4}}{S_{overlap}} - (2 - \sqrt{3}) \right| \approx 5.45 \times 10^{-5} $$
 
 ### Conclusion
 
