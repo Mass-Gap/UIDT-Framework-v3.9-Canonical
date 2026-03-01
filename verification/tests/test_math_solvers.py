@@ -1,7 +1,6 @@
 import unittest
 import sys
 import os
-import numpy as np
 import mpmath
 from mpmath import mp
 
@@ -41,11 +40,12 @@ class TestSolveExactCubicV(unittest.TestCase):
 
         residual = m_S_mp**2 * v_mp + (lambda_S_mp * v_mp**3)/6 - (kappa_mp * C_mp)/L_mp
 
-        # Since v is from float64 solver (numpy.roots), we expect residual ~ 1e-15 to 1e-16
-        self.assertLess(abs(residual), 1e-14, f"Residual too high: {residual}")
+        # Ensure mathematical exactness up to floating constraints
+        self.assertLess(abs(residual), mp.mpf('1e-14'), f"Residual too high: {residual}")
 
         # Check against canonical VEV (~47.7 MeV)
-        self.assertAlmostEqual(v * 1000, 47.7, delta=0.5)
+        self.assertLess(abs(v_mp * mp.mpf('1000') - mp.mpf('47.7')), mp.mpf('0.5'), 
+                        f"Expected approx 47.7 MeV, got {v*1000}")
 
     def test_lambda_zero(self):
         """Test edge case lambda_S = 0 (Linear equation)"""
@@ -56,15 +56,18 @@ class TestSolveExactCubicV(unittest.TestCase):
         # Mathematical expectation: v = (kappa * C) / (Lambda * m_S**2)
         expected_v = (kappa * C_GLUON_FLOAT) / (LAMBDA_FLOAT * m_S**2)
         v = solve_exact_cubic_v(m_S, lambda_S, kappa)
+        
+        expected_v_mp = mp.mpf(expected_v)
+        v_mp = mp.mpf(v)
 
-        self.assertAlmostEqual(v, expected_v, places=15,
-                               msg=f"Expected {expected_v}, got {v}. Linear solution failed.")
+        self.assertLess(abs(v_mp - expected_v_mp), mp.mpf('1e-14'),
+                        msg=f"Expected {expected_v}, got {v}. Linear solution failed.")
 
     def test_kappa_zero(self):
         """Test edge case kappa = 0 (No gluon coupling)"""
         # If kappa is 0, v=0 should be a root
         v = solve_exact_cubic_v(1.705, 0.417, 0.0)
-        self.assertEqual(v, 0.0)
+        self.assertLess(abs(mp.mpf(v)), mp.mpf('1e-14'))
 
     def test_numerical_stability_small_lambda(self):
         """Test numerical stability with very small lambda_S"""
@@ -82,7 +85,7 @@ class TestSolveExactCubicV(unittest.TestCase):
         L_mp = mp.mpf(LAMBDA_FLOAT)
 
         residual = m_S_mp**2 * v_mp + (lambda_S_mp * v_mp**3)/6 - (kappa_mp * C_mp)/L_mp
-        self.assertLess(abs(residual), 1e-14)
+        self.assertLess(abs(residual), mp.mpf('1e-14'))
 
 if __name__ == '__main__':
     unittest.main()

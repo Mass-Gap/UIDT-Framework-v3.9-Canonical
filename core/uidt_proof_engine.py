@@ -209,7 +209,9 @@ class UIDT_Prover:
             print("\n✅ STATUS: PRECISE AGREEMENT (< 10% Error)")
             print("   THEOREM 6.1 VALIDATED")
         else:
-            print(f"\n⚠️  STATUS: Deviation = {abs(1-float(ratio))*100:.1f}%")
+            deviation_percent = abs(mpf('1') - ratio) * mpf('100')
+            deviation_rounded = mp.nint(deviation_percent * mpf('10')) / mpf('10')
+            print(f"\n⚠️  STATUS: Deviation = {mp.nstr(deviation_rounded, 10)}%")
 
         return rho_phys, ratio
 

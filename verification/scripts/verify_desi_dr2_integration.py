@@ -14,8 +14,8 @@ except ImportError:
     HAS_MATPLOTLIB = False
 
 # --- Configuration ---
-# UIDT Theoretical Values (Derived from Vacuum Dressing)
-# w_a derived from holographic amplification L^4 * (delta_gamma/gamma_inf) ~ 1.30
+# UIDT Canonical Values (Calibrated)
+# w_a is calibrated at L=8.2 (Category C)
 UIDT_W0 = mpf('-0.99')
 UIDT_WA = mpf('-1.30')
 
@@ -156,7 +156,7 @@ def run_integration_verification():
     print(f"\n[2] Statistical Results (80 dps precision):")
     print(f"  Reference MCMC Mean: w0 = {mp.nstr(mean_w0, 5)} +/- {mp.nstr(std_w0, 5)}")
     print(f"  Reference MCMC Mean: wa = {mp.nstr(mean_wa, 5)} +/- {mp.nstr(std_wa, 5)}")
-    print(f"  UIDT Prediction:  w0 = {mp.nstr(UIDT_W0, 5)}, wa = {mp.nstr(UIDT_WA, 5)}")
+    print(f"  UIDT Canonical [C]: w0 = {mp.nstr(UIDT_W0, 5)}, wa = {mp.nstr(UIDT_WA, 5)}")
     print(f"  --> Mahalanobis Distance (Sigma): {mp.nstr(mahalanobis_dist, 5)} sigma")
     print("  --> STATUS: ILLUSTRATIVE ONLY (PLACEHOLDER CONSTRAINTS; NOT EXTERNAL VALIDATION)")
 
@@ -230,7 +230,7 @@ def run_integration_verification():
     plot_ellipse([mean_w0, mean_wa], cov_2d, scale2, 'cyan', '2-sigma')
 
     uidt_w0_f, uidt_wa_f = float(UIDT_W0), float(UIDT_WA)
-    plt.scatter([uidt_w0_f], [uidt_wa_f], color='red', s=100, marker='*', label='UIDT v3.9 Prediction')
+    plt.scatter([uidt_w0_f], [uidt_wa_f], color='red', s=100, marker='*', label='UIDT v3.9 (C)')
     plt.text(uidt_w0_f + 0.02, uidt_wa_f + 0.05, f"UIDT\n({uidt_w0_f:.2f}, {uidt_wa_f:.2f})", color='red')
 
     obs_w0, obs_wa = float(OBS_W0_MEAN), float(OBS_WA_MEAN)
