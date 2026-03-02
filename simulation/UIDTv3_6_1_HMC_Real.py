@@ -47,10 +47,16 @@ def get_params():
     parser.add_argument('--n_skip', type=int, default=5, help='Skip between measurements')
     parser.add_argument('--md_steps', type=int, default=20, help='MD steps per trajectory')
     parser.add_argument('--step_size', type=float, default=0.02, help='MD step size')
+    parser.add_argument('--seed', type=int, default=42, help='Random seed for reproducibility')
     parser.add_argument('--verbose', action='store_true', help='Verbose output')
     
     # parse_known_args ignores Jupyter kernel arguments
     args, _ = parser.parse_known_args()
+    
+    # Set seed if provided
+    if args.seed is not None:
+        np.random.seed(args.seed)
+        
     return args
 
 

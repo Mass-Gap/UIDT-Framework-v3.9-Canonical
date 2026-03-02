@@ -6,7 +6,7 @@
 | :--- | :--- |
 | [![Repository Badge](https://img.shields.io/badge/Repository-UIDT--Framework--v3.9--Canonical-blue.svg?style=for-the-badge&logo=github)](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical) | **Name:** UIDT-Framework-v3.9-Canonical |
 | [![Version Badge](https://img.shields.io/badge/Version-v3.9--Clean--State-green.svg?style=for-the-badge&logo=semver)](https://doi.org/10.5281/zenodo.17835200) | **Version:** v3.9 (Canonical Clean State) |
-| [![Status Badge](https://img.shields.io/badge/Status-Scientifically--Closed-orange.svg?style=for-the-badge&logo=statuspage)](https://doi.org/10.5281/zenodo.17835200) | **Status:** 🔋 Scientifically Closed – Evidence Classified |
+| [![Status Badge](https://img.shields.io/badge/Status-Scientifically--Consistent-orange.svg?style=for-the-badge&logo=statuspage)](https://doi.org/10.5281/zenodo.17835200) | **Status:** 🔋 Scientifically Consistent – Evidence Classified |
 | [![License Badge](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg?style=for-the-badge&logo=creativecommons)](https://creativecommons.org/licenses/by/4.0/) | **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [![DOI Badge](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17835200-blue.svg?style=for-the-badge&logo=zenodo)](https://doi.org/10.5281/zenodo.17835200) | **DOI:** [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200) |
 
@@ -25,7 +25,7 @@
 
 ---
 
-**Central Result:** Analytical derivation of Yang-Mills mass gap Δ* ≈ 1.710 GeV through information-geometric coupling, achieving mathematical closure with residuals < 10⁻⁴⁰. 
+**Central Result:** Analytical derivation of Yang-Mills mass gap Δ* ≈ 1.710 GeV (spectral gap) through information-geometric coupling, achieving mathematical closure with residuals < 10⁻⁴⁰. 
 
 **Physical Significance:** Resolves 10¹²⁰ vacuum energy hierarchy via γ⁻¹² suppression mechanism combined with holographic normalization (π⁻²), reducing cosmological constant problem to 3.3% precision. Introduces the Lattice Torsion Binding Energy (2.44 MeV) to stabilize the discrete vacuum structure.
 
@@ -74,7 +74,7 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 
 | Constant | Value | Status |
 |----------|-------|--------|
-| **Yang-Mills Mass Gap (Δ)** | 1.710 ± 0.015 GeV | Category A+ (Proven Theorem) |
+| **Yang-Mills Mass Gap (Δ)** | 1.710 ± 0.015 GeV | Category A (Mathematical Consistency) |
 | **Universal Gamma Invariant (γ)** | 16.339 (exact) | Calibrated via Kinetic VEV [A-] |
 | **Lattice Torsion Binding Energy (E_T)** | 2.44 MeV | Missing Link Resolved |
 | **Holographic Length (λ)** | 0.66 nm | Category C (DESI-calibrated) |
@@ -114,7 +114,7 @@ graph TD
 * **Achievement:** Constructive proof of the Yang-Mills Mass Gap via non-minimal coupling
 * **Result:**  GeV (self-consistent solution)
 * **Verification:** Validated by the **Banach Fixed-Point Theorem** (Contraction )
-* **Status:** **Category A+ (Proven Consistency)**
+* **Status:** **Category A (Mathematical Consistency)**
 
 **Key Mathematical Result:**
 
@@ -159,7 +159,7 @@ All claims are strictly classified by evidence strength:
 
 | Category | Description | Example |
 | --- | --- | --- |
-| **A+ (Proven Theorem)** | Mathematical self-consistency verified | Three-equation closure (residuals < 10⁻⁴⁰) |
+| **A (Proven Theorem)** | Mathematical self-consistency verified | Three-equation closure (residuals < 10⁻⁴⁰) |
 | **B (Lattice Consistent)** | Agreement with independent QCD simulations | Δ = 1.710 GeV (z-score ≈ 0 vs. lattice) |
 | **C (Calibrated Model)** | Dependent on DESI/JWST calibration | H₀, λ_UIDT from global fit |
 | **D (Unverified Prediction)** | Awaiting experimental confirmation | **X17 origin, X2370 resonance, Casimir anomaly** |

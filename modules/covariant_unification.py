@@ -4,7 +4,7 @@ UIDT MODULE: COVARIANT UNIFICATION (CSF-UIDT Synthesis)
 Version: 3.9 Canonical
 Evidence Category: [A-] (Calibrated from phenomenological gamma [A-]).
 
-Berechnet die konformen Mappings zwischen dem QFT-Fundament der UIDT (Gamma Invariant) und der makroskopischen Kosmologie (CSF).
+Calculates the conformal mappings between the UIDT QFT foundation (Gamma Invariant) and macroscopic cosmology (CSF).
 """
 
 from mpmath import mp, mpf, pi, sqrt, log
@@ -17,7 +17,7 @@ class CovariantUnification:
 
     def __init__(self, gamma_uidt=mpf('16.339')):
         """
-        Initialisiert das Unifikations-Modul.
+        Initializes the unification module.
         Nimmt den phaenomenologisch kalibrierten Universal Scaling Factor [Category A-].
 
         gamma = 16.339: v3.9 canonical kinetic VEV [A-] (gamma_MC = 16.374 ± 1.005 is separate quantity)
@@ -33,7 +33,7 @@ class CovariantUnification:
     def derive_csf_anomalous_dimension(self):
         """
         Lemma 1: Conformal Density Mapping.
-        Leitet die CSF Anomalous Dimension aus dem UIDT Gamma ab.
+        Derives the CSF Anomalous Dimension from UIDT Gamma.
         Formel: gamma_CSF = 1 / (2 * sqrt(pi * ln(gamma_UIDT)))
         
         # UIDT-C-051 [B]: Holographic suppression ratio ~ 2.3 is explicitly 
@@ -47,7 +47,7 @@ class CovariantUnification:
     def check_information_saturation_bound(self, delta_mass_gap=mpf('1.710')):
         """
         Theorem 2: Information Saturation Bound.
-        Berechnet die maximale Dichte (Planck-Singularitaets-Regularisierung).
+        Calculates the maximum density (Planck Singularity Regularization).
         Formel: rho_max = Delta^4 * gamma^99
         """
         delta = mpf(delta_mass_gap)
