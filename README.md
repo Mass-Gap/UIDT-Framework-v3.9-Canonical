@@ -75,7 +75,7 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 | Constant | Value | Status |
 |----------|-------|--------|
 | **Yang-Mills Mass Gap (Δ)** | 1.710 ± 0.015 GeV | Category A+ (Proven Theorem) |
-| **Universal Gamma Invariant (γ)** | 16.339 (exact) | Derived from Kinetic VEV |
+| **Universal Gamma Invariant (γ)** | 16.339 (exact) | Calibrated via Kinetic VEV [A-] |
 | **Lattice Torsion Binding Energy (E_T)** | 2.44 MeV | Missing Link Resolved |
 | **Holographic Length (λ)** | 0.66 nm | Category C (DESI-calibrated) |
 | **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Resolves Tension with JWST |
@@ -135,7 +135,7 @@ Three-Equation System Closure:
 
 ### Pillar III: Spectral Expansion & Thermodynamic Censorship
 
-* **Achievement:** Falsifiable, parameter-free predictions for table-top and collider experiments.
+* **Achievement:** Falsifiable, falsifiable predictions for precision and collider experiments.
 * **Predictions:**
 * **Thermodynamic Censorship (Wolpert Limit):** Formalizes the fundamental noise floor at ** MeV**, providing an analytical origin for the **X17 anomaly**.
 * **Blind Resonances:** Predicts the BESIII **X2370 resonance** as a harmonic overtone, alongside higher glueball states (Tensor  at 2.418 GeV).
