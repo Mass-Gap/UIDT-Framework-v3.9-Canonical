@@ -22,7 +22,7 @@ PI = mp.pi
 def area_operator_sphere(R):
     """Calculates the Area Operator expectation value in GeV^-2 using mpmath."""
     # Classical Term
-    classical_term = V * 4 * PI * R**2 / (4 * L_PL_GEV**2)
+    classical_term = 4 * PI * R**2 / (4 * L_PL_GEV**2)
     
     # Quantum Correction
     quantum_correction = mp.fmul(mp.mpf('0.5'), mp.log(DELTA_STAR**2 + (1.0/R)**2))
@@ -41,7 +41,7 @@ def verify_classical_limit():
     ratio = A_op / A_class
     residual = abs(mp.mpf('1.0') - ratio)
     
-    print(f"R = {R_macro * GEV_TO_M:.2e} m")
+    print(f"R = {mp.nstr(R_macro * GEV_TO_M, 10)} m")
     print(f"A_op    = {A_op}")
     print(f"A_class = {A_class}")
     print(f"Ratio   = {ratio}")
