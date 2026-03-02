@@ -33,7 +33,7 @@
 - Casimir anomaly +0.59% at 0.66 nm (Category D: **predicted, unverified**)
 - Glueball resonance at 1.705 ± 0.015 GeV (Category B: lattice-consistent)
 - Absence of Torsion Energy (E_T → 0) in precision hadron spectroscopy (Category A)
-- DESI dark energy evolution w₀ = -0.762 (Category C: calibrated model)
+- DESI dark energy evolution w₀ = −0.99 [C] (Canonical per Decision D-002, DESI-calibrated)
 - Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D+: analog verification)
 
 ---
