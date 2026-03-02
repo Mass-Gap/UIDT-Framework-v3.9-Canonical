@@ -7,17 +7,18 @@ Evidence tags: [A] proven | [A-] calibrated | [B] corroborated | [C] phenomenolo
 
 ---
 
-## [v3.9.0] — 2026-03-02 — Canonical Audit Cycle (PRs #117–#131)
+## [v3.9.0] — Update 2026-03-02: Canonical Audit Cycle (TKT-20260303-changelog-consolidation-001)
 
 ### [AUDIT]
-- **Evidence Downgrades:** N=99 vs N=94.05 downgraded [B]→[E] (Under Investigation); quark mass hierarchy [A+]→[A]; falsification criteria [D+]→[D]; 6× quark mass [B]→[D]; neutrino mass [B]→[C]; w_a derivation [B]→[C].
-- **Anti-Crackpot Compliance:** Removed prestige language ("proves", "breakthrough", "fully rigid") and emoji markers.
+- **Evidence Downgrades:** N=99 vs N=94.05 downgraded [B]→[E] (Under Investigation); quark mass hierarchy [A] (Mathematical Consistency); falsification criteria [D]; 6× quark mass [B]→[D]; neutrino mass [B]→[C]; w_a derivation [B]→[C].
+- **Gamma Correction:** γ confirmed as calibrated [A-] (was previously inconsistently labeled [C] or [A]).
+- **Anti-Crackpot Compliance:** Removed prestige language and emoji markers.
 - **Legacy Cleanup:** Salvaged D-001/D-002/D-003 definitions.
 - **Consistency:** Enforced w_0 D-002 compliance and anti-crackpot wording in PR #130/#131.
 
 ### [FIX]
 - **LaTeX Hygiene:** Replaced 21 instances of broken delimiters ("1814") with standard LaTeX math delimiters `$` in theoretical notes and DESI report.
-- **Scientific Language:** Replaced "proves" with "derives/suggests/demonstrates" across 5 core documents. Renamed "Theorem" to "Conjecture" for su3_gamma.
+- **Scientific Language:** Replaced affirmative claims with "derives/suggests/demonstrates" across 5 core documents. Renamed "Theorem" to "Conjecture" for su3_gamma.
 - **Precision Safety:** Fixed float precision leaks by enforcing `np.float64` and `mp.nstr` in `verification/scripts/`.
 
 ### [FEAT]
@@ -31,21 +32,9 @@ Evidence tags: [A] proven | [A-] calibrated | [B] corroborated | [C] phenomenolo
 ### Open Issues (Require PI Decision)
 - N=99 vs N=94.05: production code uses 99; §12 proposes 94.05 [E — Under Investigation]
 - w_0 canonical value undeclared: -0.73 / -0.961 / -0.99 (superseded values pending PI decision)
-- L holographic scale not registered in CANONICAL/CONSTANTS.md
+- L holographic scale not registered in `data/canonical/CONSTANTS.md`
 
 ---
-
-## [v3.9.2] — 2026-02-24
-
-### Final Corpus Closure & Factor 2.3 Integration (Plan vx6)
-
-**Overview**
-Final integration of the X17/Perplexity research corpus, extracting the high-precision "Factor 2.3" observation and registering multiple Phase 3 open research vectors. The raw corpus is now processed and formalized into the UIDT framework.
-
-**Verification & Evidence Enhancements:**
-- **Holographic Coupling Ratio [B]:** Registered Claim `UIDT-C-051` for the factor 2.3 suppression term, validated across three independent geometric methods up to 500-dps precision. Documented physically in `docs/Factor_2_3_Derivation.md`.
-- **Phase 3 Open Research [E]:** Formally registered four new exploratory claims (`UIDT-E-052` to `UIDT-E-055`) covering Lagrangian reconstruction, higher-order corrections, $\Lambda_0$ macroscopic analysis, and zero-point phase transitions to secure Future Vectors.
-- **Evidence Tracker:** Updated total recorded claims to 55, accurately mapping the new distributions.
 
 ## [v3.9.1] — 2026-02-24
 
@@ -59,6 +48,18 @@ Integration of critical quantitative checks derived from the X17/Perplexity rese
 - **Geometric Operator Suite:** Created `verify_geometric_operator.py` forcing 80-dps precision to confirm classical scale boundary limits and metric perturbation constraints. Registered as Claim `UIDT-C-049` [C].
 - **N²-Cascade Definition:** Explicitly classified the $N=99$ dimension cascade scaling rule as a phenomenological constraint, registering it as Claim `UIDT-C-050` [C].
 - **Ledger Audit:** Total claims tracked reached 50, with exact categorizations matching the `COMPLETENESS_REPORT.md` integration log.
+
+## [v3.9.2] — 2026-02-24
+
+### Final Corpus Closure & Factor 2.3 Integration (Plan vx6)
+
+**Overview**
+Final integration of the X17/Perplexity research corpus, extracting the high-precision "Factor 2.3" observation and registering multiple Phase 3 open research vectors. The raw corpus is now processed and formalized into the UIDT framework.
+
+**Verification & Evidence Enhancements:**
+- **Holographic Coupling Ratio [B]:** Registered Claim `UIDT-C-051` for the factor 2.3 suppression term, validated across three independent geometric methods up to 500-dps precision. Documented physically in `docs/Factor_2_3_Derivation.md`.
+- **Phase 3 Open Research [E]:** Formally registered four new exploratory claims (`UIDT-E-052` to `UIDT-E-055`) covering Lagrangian reconstruction, higher-order corrections, $\Lambda_0$ macroscopic analysis, and zero-point phase transitions to secure Future Vectors.
+- **Evidence Tracker:** Updated total recorded claims to 55, accurately mapping the new distributions.
 
 ## [v3.9] — 2026-02-19
 
@@ -89,9 +90,9 @@ Formal integration of the Covariant Scalar-Field (CSF) macro-mechanics with the 
 Comprehensive audit of all 82 Python files against canonical reference data. All canonical parameters confirmed consistent across the full codebase. Five clear issues identified and resolved; five context-dependent issues documented for follow-up. New final manuscript `UIDT_v3.7.3-Complete-Framework.tex` consolidated. Internal audit infrastructure established under `.claude/`.
 
 **Evidence Classification (rg_flow_analysis.py — both copies):**
-- Fixed: γ evidence tag corrected from `Category A` to `Category A-` in `clay-submission/02_VerificationCode/rg_flow_analysis.py`.
+- Fixed: γ evidence tag corrected from `calibrated [A-]` to `calibrated [A-]` in `clay-submission/02_VerificationCode/rg_flow_analysis.py`.
 - Fixed: Same correction in `verification/scripts/rg_flow_analysis.py`.
-- Rule: γ = 16.339 is phenomenologically determined [A-], never first-principles derived [A].
+- Rule: γ = 16.339 is `calibrated [A-]`, never first-principles derived [A].
 
 **Encoding Fixes (Windows cp1252 → UTF-8):**
 - Fixed: `clay-submission/02_VerificationCode/brst_cohomology_verification.py` — `open()` now uses `encoding='utf-8'`.
