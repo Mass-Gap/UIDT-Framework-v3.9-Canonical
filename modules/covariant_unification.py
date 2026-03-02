@@ -2,7 +2,7 @@
 UIDT MODULE: COVARIANT UNIFICATION (CSF-UIDT Synthesis)
 =======================================================
 Version: 3.9 Canonical
-Evidence Category: [A-] (Derived from phenomenological gamma).
+Evidence Category: [A-] (Calibrated from phenomenological gamma [A-]).
 
 Berechnet die konformen Mappings zwischen dem QFT-Fundament der UIDT (Gamma Invariant) und der makroskopischen Kosmologie (CSF).
 """
