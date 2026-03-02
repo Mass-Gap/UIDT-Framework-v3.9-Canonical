@@ -17,7 +17,7 @@ The previous tension with DESI Year 1 results has been resolved by incorporating
 **Reference Report:** [DESI-DR2 Alignment Report](DESI_DR2_alignment_report.md)
 
 ### Key Findings
-*   **Original Prediction (v3.7.1):**  \approx -1.300$ (derived from $\delta\gamma$ and ^4$).
+*   **Original Prediction (v3.7.1):**  \approx -1.300$ (inferred from $\delta\gamma$ and ^4$).
 *   **Observational Constraint (Union3 / DESY5):**  = -1.27 \pm 0.37$.
 *   **Statistical Agreement:** **0.65$\sigma* (Mahalanobis Distance).
 
