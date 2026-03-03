@@ -109,7 +109,7 @@ def check_epistemic_violations(graph, claim_map):
     return violations
 
 def main():
-    filepath = 'UIDT-OS/LEDGER/CLAIMS.json'
+    filepath = 'data/ledger/CLAIMS.json'
     if not os.path.exists(filepath):
         print(f"Error: {filepath} not found.")
         sys.exit(1)

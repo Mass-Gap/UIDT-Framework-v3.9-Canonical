@@ -4,10 +4,10 @@ UIDT MODULE: PHOTONIC ISOMORPHISM (Pillar IV)
 Version: 3.9 (Holographic Application)
 Context: Experimental Verification via Metamaterials
 
-Dieses Modul implementiert die Isomorphie zwischen der skalaren Vakuum-Dichte S(x)
-und dem optischen Brechungsindex n(x) in Metamaterialien.
+This module implements the isomorphism between the scalar vacuum density S(x)
+and the optical refractive index n(x) in metamaterials.
 
-Offizielle Referenz:
+Official Reference:
 - Song, T., Jing, Y., Shen, C. et al. (2025). "Nonlocality-enabled photonic analogies of
   parallel spaces, wormholes and multiple realities".
   Nature Communications, 16, 8915.
@@ -23,7 +23,7 @@ mp.dps = 80
 class PhotonicInterface:
     def __init__(self, geometric_op):
         """
-        Initialisiert die Schnittstelle zwischen Quantengeometrie und Optik.
+        Initializes the interface between quantum geometry and optics.
         """
         self.gamma = geometric_op.GAMMA
         self.delta = geometric_op.DELTA_GAP
@@ -31,8 +31,8 @@ class PhotonicInterface:
 
     def calculate_metamaterial_index(self, alpha_density):
         """
-        Berechnet n_eff für Metamaterialien.
-        Motiviert durch nichtlokale Photonik und grenzselektive effektive Medien
+        Calculates n_eff for metamaterials.
+        Motivated by nonlocal photonics and boundary-selective effective media
         (Song et al., Nat. Commun. 16, 8915 (2025)).
         """
         alpha_density = mpf(alpha_density)

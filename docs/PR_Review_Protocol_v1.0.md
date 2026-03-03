@@ -3,7 +3,7 @@
 **Effective:** 2026-02-28
 **Scope:** All PRs into `Mass-Gap/UIDT-Framework-v3.9-Canonical`
 **Authority:** Supersedes ad-hoc merge decisions. Binding for all merge agents (human, Claude, Jules).
-**Baseline:** UIDT-OS v3.7.3 CANONICAL/ + LEDGER/ as single source of truth.
+**Baseline:** UIDT-OS v3.7.3 `data/canonical/` + `data/ledger/` as single source of truth.
 
 ---
 
@@ -56,7 +56,7 @@ Every numeric value in the PR diff MUST be cross-referenced against CANONICAL/CO
 **FAIL conditions:**
 - Any parameter value that deviates from canonical without explicit justification → REJECT
 - Any parameter tagged with a HIGHER evidence category than canonical → REJECT
-- Any new parameter NOT present in CONSTANTS.md used without [D] or [E] tag → FLAG
+- Any new parameter NOT present in `data/canonical/CONSTANTS.md` used without [D] or [E] tag → FLAG
 
 **Known tension parameters requiring special attention:**
 - N (RG steps): CLAIMS.json says N=99 [E/open]. theoretical_notes §12 says N=94.05. Code uses N=99. → Any PR touching N MUST explicitly state which value and why.

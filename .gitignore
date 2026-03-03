@@ -148,22 +148,13 @@ manuscript/.uidt_os_cache/
 
 # Windows null device artifact
 nul
-.kilocode/skills/changelog-generator/SKILL.md
-.kilocode/mcp.json
-.kilocode/skills/content-research-writer/SKILL.md
-.kilocode/skills/internal-comms/LICENSE.txt
-.kilocode/skills/internal-comms/SKILL.md
-.kilocode/skills/internal-comms/examples/3p-updates.md
-.kilocode/skills/internal-comms/examples/company-newsletter.md
-.kilocode/skills/internal-comms/examples/faq-answers.md
-.kilocode/skills/internal-comms/examples/general-comms.md
-.kilocode/skills/lead-research-assistant/SKILL.md
-.kilocodemodes
+.kilocode
 clay-submission/CITATION.cff
 .cursor/rules/uidt-os-system.mdc
 .kilocode/skills/file-organizer/SKILL.md
 verification/scripts/uidt_os_integration_check.py
-.kilocode/skills/uidt-data-curator/SKILL.md
+arxiv_scan.py
+.kilocodemodes
 # UIDT-OS provisioning (local only)
 jules_api_provisioning.py
 
@@ -178,3 +169,11 @@ UIDT-OS/LEDGER/CLAIMS.json
 UIDT-OS/LEDGER/CLAIMS.json
 UIDT-OS/LEDGER/CLAIMS.json
 UIDT-OS/LEDGER/CLAIMS.json
+verification/scripts/cache_lookup.py
+.gitignore
+LEDGER/
+CANONICAL/
+MCP_REPAIR_INSTRUCTIONS.md
+SYSTEM_VERIFICATION_REPORT_20260302.md
+PR_DRAFT_SYSTEM_VERIFICATION.md
+verification/scripts/verify_template.py

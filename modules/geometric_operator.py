@@ -4,21 +4,21 @@ UIDT MODULE: GEOMETRIC OPERATOR (Pillar I & 0)
 Version: 3.8 (Constructive Synthesis)
 Context: Core Logic / Mathematical Engine
 
-Dieser Modul implementiert den Operator G^, der Massenzustände aus dem Vakuum generiert.
-Er integriert den 'Physical Stress Test' (Unterscheidbarkeits-Prüfung) direkt 
-in die Erzeugungslogik gemäß den ANAM-Prinzipien (Petina).
+This module implements the Operator G^, which generates mass states from the vacuum.
+It integrates the 'Physical Stress Test' (distinguishability check) directly
+into the generation logic according to ANAM principles (Petina).
 """
 
 from mpmath import mp, mpf, nstr
 
-# Setze Präzision ausreichend für Banach-Fixpunkt-Verifikation
+# Set precision sufficient for Banach Fixed Point Verification
 mp.dps = 80
 
 class GeometricOperator:
     def __init__(self):
         """
-        Initialisiert die fundamentalen geometrischen Konstanten der Theorie.
-        Diese Werte sind nicht mehr 'gefittet', sondern als Axiome definiert.
+        Initializes the fundamental geometric constants of the theory.
+        These values are no longer 'fitted', but defined as axioms.
         
         # TODO [D]: Derive area operator spectrum from Banach fixed-point topology
         """
@@ -36,7 +36,7 @@ class GeometricOperator:
 
     def apply(self, n_harmonic):
         """
-        Wendet den Geometrischen Operator G^ auf den Vakuumzustand |0> an.
+        Applies the Geometric Operator G^ to the vacuum state |0>.
         Eigenwert-Gleichung: G^ |n> = (Delta * gamma^-n)
         
         Args:
@@ -56,8 +56,8 @@ class GeometricOperator:
     def stress_test(self, energy_gev):
         """
         PILLAR 0 IMPLEMENTATION: Physical Stress Test.
-        Prüft, ob ein generierter Eigenwert vom Vakuumrauschen unterscheidbar ist.
-        Basierend auf Alena Petina's 'Architecture of Necessity'.
+        Checks if a generated eigenvalue is distinguishable from vacuum noise.
+        Based on Alena Petina's 'Architecture of Necessity'.
         
         Returns:
             (bool, str): Status (True=Stabil, False=Zensiert) und Diagnose.
