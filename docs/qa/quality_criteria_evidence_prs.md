@@ -32,3 +32,5 @@ Before a PR is merged, the submitter must provide:
 - A “Reproduction Note” (one command) to reproduce every quantitative check.
 - A DOI/arXiv resolvability check result for all cited identifiers.
 
+**Verified:** 2026-03-03 (UIDT-OS)
+
