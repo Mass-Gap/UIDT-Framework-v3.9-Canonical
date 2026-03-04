@@ -38,8 +38,8 @@ f_vac = mpf('107.10091') # MeV
 E_T = f_vac - (delta_gap / gamma)
 
 print("CANONICAL PARAMETERS:")
-print("  Delta  =", float(delta_gap), "MeV [Category A+]")
-print("  gamma  =", float(gamma), "[Category C]")
+print("  Delta  =", float(delta_gap), "MeV [Category A]")
+print("  gamma  =", float(gamma), "[Category A-]")
 print("  f_vac  =", float(f_vac), "MeV [Category C]")
 print("  E_T    =", float(E_T), "MeV [Category B]")
 print()
