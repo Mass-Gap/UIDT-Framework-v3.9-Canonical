@@ -124,8 +124,8 @@ if __name__ == "__main__":
         
         f.write("[CANONICAL PARAMETERS]\n")
         f.write("E_T = " + str(float(E_T)) + " MeV [Category B]\n")
-        f.write("Delta = " + str(float(delta_gap)) + " MeV [Category A+]\n")
-        f.write("gamma = " + str(float(gamma)) + " [Category C]\n\n")
+        f.write("Delta = " + str(float(delta_gap)) + " MeV [Category A]\n")
+        f.write("gamma = " + str(float(gamma)) + " [Category A-]\n\n")
         
         f.write("[QUARK MASS Z-SCORES vs PDG 2025]\n")
         for q in ['u', 'd', 's', 'c', 'b', 't']:
