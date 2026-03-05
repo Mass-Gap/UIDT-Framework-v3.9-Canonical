@@ -2,9 +2,9 @@
 UIDT MODULE: COVARIANT UNIFICATION (CSF-UIDT Synthesis)
 =======================================================
 Version: 3.9 Canonical
-Evidence Category: [A-] (Derived from phenomenological gamma).
+Evidence Category: [A-] (Calibrated from phenomenological gamma [A-]).
 
-Computes conformal mappings between the UIDT QFT foundation (gamma invariant) and macroscopic cosmology (CSF).
+Calculates the conformal mappings between the UIDT QFT foundation (Gamma Invariant) and macroscopic cosmology (CSF).
 """
 
 from mpmath import mp, mpf, pi, sqrt, log
@@ -18,20 +18,23 @@ class CovariantUnification:
     def __init__(self, gamma_uidt=mpf('16.339')):
         """
         Initializes the unification module.
-        Takes the phenomenologically calibrated universal scaling factor [A-].
+        Nimmt den phaenomenologisch kalibrierten Universal Scaling Factor [Category A-].
 
         gamma = 16.339: v3.9 canonical kinetic VEV [A-] (gamma_MC = 16.374 ± 1.005 is separate quantity)
         SU(3) algebraic candidate: 49/3 = 16.333... (0.037% deviation, see UIDT-C-047)
         """
         self.GAMMA_UIDT = mpf(gamma_uidt)  # v3.9 canonical [A-]
-        self.RG_STEPS = mpf('99')
+        self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5) [D] Lattice topology (UIDT-C-050)
+        # TODO [D]: Derive N from first principles. N=99 (UIDT-C-050 [D]) vs N=94.05 (UIDT-C-046 [E]) unresolved.
+        #           (SU(N) gluon DoF ∝ N²-1 gives scaling but not the fixed value N=99;
+        #            see UIDT-C-050, UIDT-C-017, UIDT-C-039, docs/limitations.md L5)
 
 
     def derive_csf_anomalous_dimension(self):
         """
         Lemma 1: Conformal Density Mapping.
-        Derives the CSF anomalous dimension from UIDT gamma.
-        Formula: gamma_CSF = 1 / (2 * sqrt(pi * ln(gamma_UIDT)))
+        Derives the CSF Anomalous Dimension from UIDT Gamma.
+        Formel: gamma_CSF = 1 / (2 * sqrt(pi * ln(gamma_UIDT)))
         
         # UIDT-C-051 [B]: Holographic suppression ratio ~ 2.3 is explicitly 
         # recovered in the denominator (verified to 500 dps).
@@ -44,8 +47,8 @@ class CovariantUnification:
     def check_information_saturation_bound(self, delta_mass_gap=mpf('1.710')):
         """
         Theorem 2: Information Saturation Bound.
-        Computes the maximum density scale (Planck singularity regularization).
-        Formula: rho_max = Delta^4 * gamma^N
+        Calculates the maximum density (Planck Singularity Regularization).
+        Formel: rho_max = Delta^4 * gamma^99
         """
         delta = mpf(delta_mass_gap)
         rho_max_qft = (delta ** 4) * (self.GAMMA_UIDT ** self.RG_STEPS)
@@ -69,8 +72,8 @@ class CovariantUnification:
     def evaluate_ir_limit(self, epsilon: mpf):
         """
         Theorem 3: Topological Protection at the Infrared Fixed Point.
-        Evaluates the 5-loop renormalization group limit as mu -> 0 under a continuous metric perturbation epsilon.
-        Ensures that the macroscopic gap Delta remains stable under the perturbation.
+        Evluates the 5-loop Renormalization Group limit as mu -> 0 under a continuous metric perturbation epsilon.
+        Ensures that the macroscopic mass gap Delta does not phantomize.
         
         Returns the absolute residual boundary limit.
         """
@@ -81,3 +84,4 @@ class CovariantUnification:
             psi_ir = self.GAMMA_UIDT * (mu_simulation ** 2)
             residual_limit += eps * psi_ir
         return residual_limit
+

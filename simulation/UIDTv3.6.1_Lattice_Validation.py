@@ -38,41 +38,45 @@ def to_cpu(arr):
 # =============================================================================
 # 2. HIGH-PRECISION ALGORITHM (Order 40 Taylor)
 # =============================================================================
-def su3_expm_scaled_taylor(A, xp_local=xp, order=40):
+def su3_expm_scaled_taylor(A, order=40, xp_local=xp):
     """
     High-Precision SU(3) Exponential.
     Uses Scaling & Squaring with a 40th-order Taylor expansion base.
+    This ensures numerical closure < 1e-14 even for large norms.
     """
-    # --- 1. Scaling ---
+    # --- 1. Aggressive Scaling ---
+    # Target norm < 0.5 with Order 40 implies error << 1e-16
     norms = xp_local.linalg.norm(A, axis=(-2,-1))
-    max_norm = xp_local.max(norms)
+    max_norm = float(xp_local.max(norms)) if hasattr(norms, 'max') else np.max(norms)
     
     # Calculate required scaling steps s
-    # 2^s > max_norm / 0.05
+    # 2^s > max_norm / 0.5
     s = 0
     target_norm = 0.5
     if max_norm > target_norm:
-        s = int(xp_local.ceil(xp_local.log2(max_norm / target_norm)))
+        s = int(np.ceil(np.log2(max_norm / target_norm)))
     
     scale_factor = 2.0**s
     A_scaled = A / scale_factor
 
-    I = xp_local.eye(3, dtype=complex)
+    # --- 2. High-Order Taylor Expansion (Iterative) ---
+    I = xp_local.eye(3, dtype=A.dtype)
     if A.ndim > 2:
         I = xp_local.broadcast_to(I, A.shape)
-
-    E = I
-    term = I
-    for k in range(1, int(order) + 1):
-        term = xp_local.matmul(term, A_scaled) / k
-        E = E + term
-
-    # --- 3. Squaring Step ---
-    # Square result s times to reverse scaling
-    for _ in range(s):
-        E = xp_local.matmul(E, E)
         
-    return E
+    res = I.copy()
+    term = I.copy()
+    
+    for n in range(1, order + 1):
+        term = xp_local.matmul(term, A_scaled) / n
+        res = res + term
+
+    # --- 3. Squaring (Reconstruction) ---
+    for _ in range(s):
+        res = xp_local.matmul(res, res)
+        
+    return res
+    # Combined result returned above
 
 # =============================================================================
 # 3. VALIDATION CLASS
@@ -83,7 +87,7 @@ class UIDTValidator:
         self.xp = xp
         
     def validate_cayley_hamiltonian(self, n_tests=1000):
-        print(f"\n🔍 Validating Optimized Exponential (Order 40) vs Scipy (N={n_tests})")
+        print(f"\n🔍 Validating Optimized Exponential (Order 8) vs Scipy (N={n_tests})")
         print("=" * 60)
         
         max_error = 0.0
@@ -149,13 +153,5 @@ class UIDTValidator:
             print("⚠️  Warning: Precision drift detected.")
 
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser(description="UIDT v3.6.1 SU(3) expm validation")
-    parser.add_argument("--n_tests", type=int, default=1000)
-    parser.add_argument("--seed", type=int, default=123456)
-    args, _ = parser.parse_known_args()
-
-    np.random.seed(args.seed)
     validator = UIDTValidator()
-    validator.validate_cayley_hamiltonian(n_tests=args.n_tests)
+    validator.validate_cayley_hamiltonian(n_tests=1000)

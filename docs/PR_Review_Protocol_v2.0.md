@@ -1,9 +1,10 @@
-# UIDT v3.9 — Formalized Pull Request Review Protocol v1.0
+# UIDT v3.9 — Formalized Pull Request Review Protocol v2.0
 
-**Effective:** 2026-02-28
+**Effective:** 2026-03-03
 **Scope:** All PRs into `Mass-Gap/UIDT-Framework-v3.9-Canonical`
-**Authority:** Supersedes ad-hoc merge decisions. Binding for all merge agents (human, Claude, Jules).
-**Baseline:** UIDT-OS v3.7.3 CANONICAL/ + LEDGER/ as single source of truth.
+**Authority:** Supersedes v1.0. Binding for all merge agents (TRAE, UIDT-OS).
+**Approval:** P. Rietz (Opus) via PR Review.
+**Baseline:** UIDT-OS v3.9 `data/canonical/` + `data/ledger/` as single source of truth.
 
 ---
 
@@ -34,6 +35,7 @@ For each PR, determine:
 | Modifies `theoretical_notes.md` | → Flag 🟡 append-conflict risk, manual merge |
 | Modifies `modules/*.py` or `verification/*.py` | → Flag ⚪ code review required |
 | Modifies `manuscript/*.tex` or `clay-submission/` | → Flag 🔵 publication-grade review |
+| Source branch age > 7 days | → Flag 🟠 STALE BRANCH. Check for merge conflicts and deprecated parameters ($w_0=-0.961$). |
 
 ---
 
@@ -51,16 +53,18 @@ Every numeric value in the PR diff MUST be cross-referenced against CANONICAL/CO
 | v | 47.7 MeV | exact match | [A] |
 | m_S | 1.705 ± 0.015 GeV | exact match | [D] |
 | H₀ | 70.4 ± 0.16 km/s/Mpc | exact match | [C] |
+| w₀ | -0.99 | exact match | [C] |
 | 5κ² = 3λ_S | 1.250 ≈ 1.251 | |Δ| < 0.01 | [A] |
 
 **FAIL conditions:**
 - Any parameter value that deviates from canonical without explicit justification → REJECT
 - Any parameter tagged with a HIGHER evidence category than canonical → REJECT
-- Any new parameter NOT present in CONSTANTS.md used without [D] or [E] tag → FLAG
+- Any new parameter NOT present in `data/canonical/CONSTANTS.md` used without [D] or [E] tag → FLAG
+- **Gamma Classification:** $\gamma$ MUST be tagged `[Category A-]`. If tagged `[A]` (derived) or `[C]` (pheno), → REJECT.
+- **w₀ Consistency:** If $w_0 = -0.961$ or $-0.73$ appears, → REJECT (Superseded by D-002).
 
 **Known tension parameters requiring special attention:**
 - N (RG steps): CLAIMS.json says N=99 [E/open]. theoretical_notes §12 says N=94.05. Code uses N=99. → Any PR touching N MUST explicitly state which value and why.
-- w₀: Canonical w₀ = −0.99 [C] (Decision D-002). UIDT-C-037 updated. Any PR using w₀ must use −0.99.
 - w_a: Not in CLAIMS.json. Two derivations exist (-1.183 with L=8, -1.300 with L=8.2). → PR MUST state which L and why.
 - L (holographic length): NOT a canonical parameter. Any use requires [C/D] tag.
 
@@ -98,6 +102,39 @@ Every PR that introduces or modifies a scientific claim MUST separate content in
 - Interpretive mapping to UIDT parameters
 - MUST be labeled as "UIDT interpretation" or "model-dependent" if not externally validated
 - Example: "UIDT proposes [C] H₀ = 70.4 ± 0.16 km/s/Mpc, calibrated to DESI DR2"
+
+---
+
+## 4. ANTI-CRACKPOT CHECKLIST (Gate C — Mandatory)
+
+To protect scientific integrity, every PR text/doc update MUST pass this filter:
+
+| Forbidden Term | Required Replacement |
+|----------------|----------------------|
+| "Proves" (in physics context) | "Demonstrates consistency with", "Derives within framework" |
+| "Breakthrough" | "Advance", "Result" |
+| "Holy Grail" | "Long-standing problem" |
+| "Definitive Solution" | "Proposed mechanism", "Candidate solution" |
+| "Parameter-free" | "Minimal parameter", "Determined by constraints" |
+| "Resolved" (for open tensions) | "Addressed", "Modeled", "Consistent with" |
+| "Truth" | "Model validity", "Evidence" |
+
+**Violation:** Any PR containing forbidden terms in `docs/` or `manuscript/` → REJECT immediately.
+
+---
+
+## 5. TRAE PR ACCEPTANCE CRITERIA
+
+For automated agents (TRAE/UIDT-OS), the following criteria apply to generated PRs:
+
+1. **Opus Review:** All TRAE-generated PRs must be flagged for review by P. Rietz (Opus). No self-merge.
+2. **Evidence Tags:** Every quantitative claim in the PR body or committed text must have an [A-E] tag.
+3. **Protected Paths:** No modifications to `data/canonical/` or `data/ledger/` are permitted without explicit instruction.
+4. **Clean History:** PRs must be squashed or cleanly committed (no "wip", "fix", "try again" commit logs).
+5. **Verification:** PR body must include a "Verification" section listing the tests run (e.g., "Ran `pytest verification/` - PASS").
+
+---
+
 
 **Missing stratification for any claim → S2 finding, PR requires revision before merge.**
 

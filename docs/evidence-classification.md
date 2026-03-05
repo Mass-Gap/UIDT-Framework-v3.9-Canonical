@@ -11,7 +11,7 @@
 
 The UIDT framework employs a strict evidence classification system to distinguish between mathematically proven results, phenomenological determinations, numerical verifications, calibrated models, and predictions awaiting experimental confirmation.
 
-**73 total claims** are documented in the framework (see `LEDGER/CLAIMS.json`).
+**73 total claims** are documented in the framework (see `data/ledger/CLAIMS.json`).
 ---
 
 ## Category A — Mathematically Proven

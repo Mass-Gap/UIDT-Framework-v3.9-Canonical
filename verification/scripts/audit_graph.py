@@ -87,7 +87,7 @@ def check_epistemic_breach(claim_map, adj):
     return breaches
 
 def main():
-    filepath = 'UIDT-OS/LEDGER/CLAIMS.json'
+    filepath = 'data/ledger/CLAIMS.json'
     print(f"Reading {filepath}...")
     claims = load_claims(filepath)
     claim_map, adj = build_graph(claims)

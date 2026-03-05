@@ -17,9 +17,10 @@ The previous tension with DESI Year 1 results has been resolved by incorporating
 **Reference Report:** [DESI-DR2 Alignment Report](DESI_DR2_alignment_report.md)
 
 ### Key Findings
-*   **Original Prediction (v3.7.1):**  \approx -1.300$ (derived from $\delta\gamma$ and ^4$).
-*   **Observational Constraint (Union3 / DESY5):**  = -1.27 \pm 0.37$.
+*   **Original Prediction (v3.7.1):**  \approx -1.300$ (inferred from $\delta\gamma$ and ^4$).
+*   **Observational Constraint (Union3 / DESY5 / DESI Y1):**  = -1.27 \pm 0.37$.
 *   **Statistical Agreement:** **0.65$\sigma* (Mahalanobis Distance).
+*   **Canonical Reference:** arXiv:2405.13588 (DESI Year 1 Results)
 
 The dynamical dark energy evolution observed by DESI is now interpreted as a direct signature of the vacuum information density scaling at cosmological distances.
 
