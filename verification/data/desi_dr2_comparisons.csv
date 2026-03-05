@@ -1,0 +1,22 @@
+# UIDT Framework v3.9 — DESI-DR2 Cosmological Parameter Comparisons
+# Author: P. Rietz (ORCID: 0009-0007-4307-1609)
+# DOI: 10.5281/zenodo.17835200
+# Date: 2026-02-28
+# Title: Vacuum Information Density as the Fundamental Geometric Scalar
+#
+# References:
+#   DESI DR2: arXiv:2503.14738
+#   Planck 2018: arXiv:1807.06209
+#
+# Notes:
+#   - Agreement_sigma = |w_a(UIDT) - w_a(data)| / sigma(data)  [heuristic z-score, no correlation modeling]
+#   - All cosmology comparisons capped at Evidence Category [C]
+#   - UIDT w_a prediction: w_a = -delta * L^4 with delta = 0.00028757, L = 8.2
+#   - UIDT values are calibrated interpretive mappings, not independent measurements
+#
+Dataset,w0,w0_err,wa,wa_err,Omega_m,Omega_m_err,UIDT_wa,UIDT_wa_from_L,Agreement_sigma,Evidence_Category
+DESI-DR2+Union3,-0.76,0.11,-1.27,0.32,0.310,0.010,-1.300,8.2,0.09,[C]
+DESI-DR2+DESY5,-0.80,0.10,-0.75,0.25,0.312,0.009,-1.300,8.2,2.20,[C]
+DESI-DR2+Pantheon+,-0.84,0.09,-0.60,0.28,0.308,0.008,-1.300,8.2,2.50,[C]
+Planck2018+BAO,-1.00,0.05,-0.00,0.20,0.315,0.007,-1.300,8.2,6.50,[C]
+UIDT-Prediction,-1.00,NA,-1.300,NA,0.315,NA,-1.300,8.2,0.00,[C]
