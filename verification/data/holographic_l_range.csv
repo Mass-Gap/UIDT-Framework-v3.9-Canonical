@@ -1,0 +1,26 @@
+# UIDT Framework v3.9 — Holographic L-Range Scan
+# Author: P. Rietz (ORCID: 0009-0007-4307-1609)
+# DOI: 10.5281/zenodo.17835200
+# Title: Vacuum Information Density as the Fundamental Geometric Scalar
+# Date: 2026-02-28
+#
+# Formulae:
+#   delta_eff = delta * L^4,  where delta = 0.00028757
+#   w_a = -delta_eff
+#
+# DESI-DR2+Union3 1-sigma band: w_a in [-1.59, -0.95]
+# DESI-DR2+DESY5  1-sigma band: w_a in [-1.00, -0.50]
+#
+# Evidence Category: [C] for all cosmological parameters
+L,L4,delta_eff,w_a,within_DESI_Union3,within_DESI_DESY5
+8.15,4411.9485,1.268744,-1.268744,YES,NO
+8.16,4433.6421,1.274982,-1.274982,YES,NO
+8.17,4455.4157,1.281244,-1.281244,YES,NO
+8.18,4477.2693,1.287528,-1.287528,YES,NO
+8.19,4499.2032,1.293836,-1.293836,YES,NO
+8.20,4521.2176,1.300167,-1.300167,YES,NO
+8.21,4543.3127,1.306520,-1.306520,YES,NO
+8.22,4565.4887,1.312898,-1.312898,YES,NO
+8.23,4587.7457,1.319298,-1.319298,YES,NO
+8.24,4610.0841,1.325722,-1.325722,YES,NO
+8.25,4632.5039,1.332169,-1.332169,YES,NO
