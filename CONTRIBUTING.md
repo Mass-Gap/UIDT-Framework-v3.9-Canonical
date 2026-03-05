@@ -14,7 +14,7 @@ The values for $\Delta$ (1.710 GeV) and $\gamma$ (16.339) are analytically deriv
 * **External Validation:** Scripts that compare UIDT predictions against new external datasets (e.g., Euclid, future DESI releases).
 
 ### ❌ What We Reject
-* **Parameter Tuning:** Attempts to manually fit $\Delta$ or $\gamma$ to data. The theory is parameter-free.
+* **Parameter Tuning:** Attempts to manually fit $\Delta$ or $\gamma$ to data. The theory is minimally parameterized.
 * **Non-Canonical Physics:** Pull requests introducing arbitrary scalar potentials not derived from the information-density axiom.
 
 ## 🛠 How to Submit

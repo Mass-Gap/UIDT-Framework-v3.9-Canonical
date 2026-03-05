@@ -38,7 +38,7 @@ II. THREE-PATHWAY VERIFICATION
 Pathway A (Banach Fixed-Point):
   Method: Contraction mapping iteration
   Result: Δ = 1.710035 ± 0.000001 GeV
-  Evidence: Category A+ (Mathematical proof)
+  Evidence: Category A (Mathematical proof)
 
 Pathway B (Schwinger-Dyson Equations):
   Method: Self-consistent gluon propagator

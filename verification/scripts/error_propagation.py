@@ -124,7 +124,7 @@ def propagate_errors():
     print(f"v (VEV)       = {v_central:.1f} ± {dv_mev:.1f} MeV  [RECTIFIED]")
     print(f"γ (Gamma)     = {gamma_central:.3f} ± {dgamma:.3f} [CANONICAL]")
     print(f"{'='*72}")
-    print("\nSTATUS: Numerical closure achieved. Convergence warnings resolved.")
+    print("\nSTATUS: Numerical closure achieved. Convergence warnings addressed.")
     print("        The 99-step cascade is stable within σ-bounds.")
     print(f"{'='*72}")
 

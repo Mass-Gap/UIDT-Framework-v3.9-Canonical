@@ -41,7 +41,7 @@ print("CANONICAL PARAMETERS:")
 print("  Delta  =", float(delta_gap), "MeV [Category A]")
 print("  gamma  =", float(gamma), "[Category A-]")
 print("  f_vac  =", float(f_vac), "MeV [Category C]")
-print("  E_T    =", float(E_T), "MeV [Category B]")
+print("  E_T    =", float(E_T), "MeV [Category D]")
 print()
 
 def compute_quark_masses():
@@ -123,7 +123,7 @@ if __name__ == "__main__":
         f.write("Precision: 80 Decimal Digits\n\n")
         
         f.write("[CANONICAL PARAMETERS]\n")
-        f.write("E_T = " + str(float(E_T)) + " MeV [Category B]\n")
+        f.write("E_T = " + str(float(E_T)) + " MeV [Category D]\n")
         f.write("Delta = " + str(float(delta_gap)) + " MeV [Category A]\n")
         f.write("gamma = " + str(float(gamma)) + " [Category A-]\n\n")
         

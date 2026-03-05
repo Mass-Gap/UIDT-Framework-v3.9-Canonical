@@ -20,7 +20,7 @@ import hashlib
 from datetime import datetime
 
 # Set precision
-mp.dps = 50
+mp.dps = 80
 
 # =============================================================================
 # CANONICAL CONSTANTS (v3.6.1)
@@ -206,7 +206,7 @@ def run_error_analysis():
     print(f"γ (Gamma)     = {totals['gamma'][0]:.3f} ± {totals['gamma'][1]:.3f} [CANONICAL]")
     print("=" * 72)
     
-    print("\nSTATUS: Numerical closure achieved. Convergence warnings resolved.")
+    print("\nSTATUS: Numerical closure achieved. Convergence warnings addressed.")
     print("        The 99-step cascade is stable within σ-bounds.")
     print("=" * 72)
     

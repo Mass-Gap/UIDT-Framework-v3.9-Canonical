@@ -103,7 +103,7 @@ corrections: "VEV corrected to 47.7 MeV; Casimir reclassified to Category D"
 The system status is: **✅ SCIENTIFICALLY VERIFIED (Clean State)**
 
 ### Evidence Classification Integrity:
-- ✅ Category A+ (Mathematical): Residuals < 10⁻⁴⁰
+- ✅ Category A (Mathematical): Residuals < 10⁻⁴⁰
 - ✅ Category B (Lattice): z-score ≈ 0 vs. Chen et al. (2006)
 - ✅ Category C (Cosmology): DESI-calibrated (H₀, λ_UIDT)
 - ✅ Category D (Lab): Casimir **correctly classified as unverified**

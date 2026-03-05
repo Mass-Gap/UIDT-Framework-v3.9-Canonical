@@ -12,7 +12,7 @@
 **Date:** 2026-02-24
 
 ### Updated Analysis (UIDT v3.9 Integration)
-The previous tension with DESI Year 1 results has been resolved by incorporating the **Holographic Vacuum Dressing** mechanism derived from the bare gamma factor ($\gamma_\infty$).
+The previous tension with DESI Year 1 results has been addressed by incorporating the **Holographic Vacuum Dressing** mechanism derived from the bare gamma factor ($\gamma_\infty$).
 
 **Reference Report:** [DESI-DR2 Alignment Report](DESI_DR2_alignment_report.md)
 
@@ -293,7 +293,7 @@ $$ E_{T,iso} \equiv 2 \times E_T = 4.88 \text{ MeV} $$
 [**Category B**: Lattice derived]
 
 ### QED Self-Energy Resolution
-The $4.23\sigma$ discrepancy with the PDG value ($4.70$ MeV) is resolved by the QED self-energy correction ($\Delta m_{EM}$) required by the transition to the $\overline{\text{MS}}$ scheme at $\mu=2$ GeV:
+The $4.23\sigma$ discrepancy with the PDG value ($4.70$ MeV) is modeled by the QED self-energy correction ($\Delta m_{EM}$) required by the transition to the $\overline{\text{MS}}$ scheme at $\mu=2$ GeV:
 $$ \Delta m_{EM} \approx -0.18 \text{ MeV} $$
 [**Category D**: Theoretical Hypothesis / SM Embedding]
 

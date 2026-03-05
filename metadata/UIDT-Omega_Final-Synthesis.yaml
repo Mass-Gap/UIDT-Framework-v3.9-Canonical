@@ -56,7 +56,7 @@ UIDT_OMEGA_FINAL_SYNTHESIS:
       FOCUS: "Microscopic Foundation"
       CLAIM: "Mass gap Δ = 1.710 GeV derived from scalar–Yang-Mills coupling."
       VERIFICATION: "Lattice QCD Continuum Limit (Consistent, z-score < 0.5)."
-      METHOD: "Hybrid Monte Carlo (HMC) & Analytical Closure (Category A+)."
+      METHOD: "Hybrid Monte Carlo (HMC) & Analytical Closure (Category A)."
     
     PILLAR_2_COSMOLOGY:
       FOCUS: "Macroscopic Harmony"

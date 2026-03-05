@@ -40,7 +40,7 @@ class TorsionLattice:
         
         # 3. TORSION BINDING ENERGY (Solution for Muon Frequency)
         # Difference between pure geometry (104.7) and lattice resonance (107.1)
-        self.TORSION_ENERGY_GEV = mpf('0.00244') # 2.44 MeV, torsion binding energy [Category C]
+        self.TORSION_ENERGY_GEV = mpf('0.00244') # 2.44 MeV, torsion binding energy [Category D]
         
         # Constants
         self.HBAR_C_NM = mpf('0.1973269804') * 1e-6 # GeV*nm

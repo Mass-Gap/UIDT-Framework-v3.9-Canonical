@@ -299,7 +299,7 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
 UIDT v3.9 establishes that:
 
 * ✅ **Yang-Mills Mass Gap Millennium Problem is qualitatively solved** (mathematical closure achieved)
-* ✅ **The "Missing Link" is resolved** via the 2.44 MeV Lattice Torsion Binding Energy
+* ✅ **The "Missing Link" is addressed** via the 2.44 MeV Lattice Torsion Binding Energy
 * ✅ **The X17 Anomaly origin is identified** as Thermodynamic Censorship (17.10 MeV)
 * 🤝 **CSF-UIDT Unification** provides a covariant path forward
 * ⚠️ **Open Questions remain** (electron mass, holographic scale hierarchy, RG γ-derivation)

@@ -4,7 +4,7 @@
 **Target Journal:** TBD (Post-Run 3 LHCb results)
 
 ## Abstract
-We present two parameter-free, parameter-constrained mass predictions for the fully-heavy $\Omega_{bbb}$ baryon and the $T_{cccc}$ tetraquark state, derived strictly from the Unified Information-Density Topology (UIDT) vacuum structure. Unlike phenomenological potential models or lattice QCD methods that rely on fitted interpolating fields, these predictions arise from the exact harmonic resonance of the non-perturbative geometric mass gap. We define explicit falsifiable boundaries for the upcoming high-luminosity LHCb measurements.
+We present two parameter-constrained mass predictions for the fully-heavy $\Omega_{bbb}$ baryon and the $T_{cccc}$ tetraquark state, derived strictly from the Unified Information-Density Topology (UIDT) vacuum structure. Unlike phenomenological potential models or lattice QCD methods that rely on fitted interpolating fields, these predictions arise from the exact harmonic resonance of the non-perturbative geometric mass gap. We define explicit falsifiable boundaries for the upcoming high-luminosity LHCb measurements.
 
 ## 1. Introduction: The UIDT Spectral Framework
 The UIDT framework establishes a continuous mapping between the Yang-Mills mass gap $\Delta^* = 1.710 \text{ GeV}$ and the microscopic vacuum topological resonance frequency $f_{vac} \approx 107.10 \text{ MeV}$. This anchor requires the strict topological folding rule observed across the multiquark states via harmonic octave scaling.
