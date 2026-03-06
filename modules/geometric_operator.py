@@ -4,50 +4,51 @@ UIDT MODULE: GEOMETRIC OPERATOR (Pillar I & 0)
 Version: 3.8 (Constructive Synthesis)
 Context: Core Logic / Mathematical Engine
 
-This module implements the operator G^, generating mass states from the vacuum.
-It integrates the physical stress test (distinguishability check) directly into the
-generation logic under the ANAM principles (Petina).
+This module implements the Operator G^, which generates mass states from the vacuum.
+It integrates the 'Physical Stress Test' (distinguishability check) directly
+into the generation logic according to ANAM principles (Petina).
 """
 
 from mpmath import mp, mpf, nstr
 
-# Local precision for Banach fixed-point verification
+# Set precision sufficient for Banach Fixed Point Verification
 mp.dps = 80
 
 class GeometricOperator:
     def __init__(self):
         """
-        Initializes the fundamental geometric constants of the framework.
-        These values are treated as axioms within the canonical implementation.
+        Initializes the fundamental geometric constants of the theory.
+        These values are no longer 'fitted', but defined as axioms.
         
         # TODO [D]: Derive area operator spectrum from Banach fixed-point topology
         """
         # 1. PILLAR I: QFT Core Constants
-        # Derived from QCD sum rules & Banach fixed point (v3.7)
+        # Abgeleitet aus QCD Sum Rules & Banach Fixed Point (v3.7)
         self.DELTA_GAP = mpf('1.710035046742')  # GeV (The "String")
         self.GAMMA = mpf('16.339')              # (The "Scaling")
         
         # 2. PILLAR 0: Logic & Ontology Constants
-        # Wolpert limit derived from the X17 energy window and thermodynamic censorship
+        # Wolpert Limit abgeleitet aus X17 Anomalie und thermodynamischer Zensur
         self.NOISE_FLOOR = mpf('0.0171')        # 17.1 MeV (Thermodynamic Censorship Limit)
         
-        # Coupling constant (equipartition theorem)
+        # 3. Kopplungskonstante (Equipartition Theorem)
         self.KAPPA = mpf('0.5')
 
     def apply(self, n_harmonic):
         """
-        Applies the geometric operator G^ to the vacuum state |0>.
-        Eigenvalue equation: G^ |n> = (Delta * gamma^-n)
+        Applies the Geometric Operator G^ to the vacuum state |0>.
+        Eigenwert-Gleichung: G^ |n> = (Delta * gamma^-n)
         
         Args:
-            n_harmonic (int): Harmonic index (0=gap, 1=muon/vac, 2=censored)
+            n_harmonic (int): Die Oktave (0=Gap, 1=Myon/Vac, 2=Zensiert)
             
         Returns:
-            mpf: Raw geometric eigenvalue (energy in GeV)
+            mpf: Der rohe geometrische Eigenwert (Energie in GeV)
         """
         if n_harmonic == 0:
             return self.DELTA_GAP
         
+        # Berechne rohen geometrischen Eigenwert
         # E_n = Delta / gamma^n
         eigenvalue = self.DELTA_GAP * (self.GAMMA ** (-n_harmonic))
         return eigenvalue
@@ -55,11 +56,11 @@ class GeometricOperator:
     def stress_test(self, energy_gev):
         """
         PILLAR 0 IMPLEMENTATION: Physical Stress Test.
-        Checks whether a generated eigenvalue is distinguishable from the vacuum noise floor.
-        Based on Alena Petina's "Architecture of Necessity".
+        Checks if a generated eigenvalue is distinguishable from vacuum noise.
+        Based on Alena Petina's 'Architecture of Necessity'.
         
         Returns:
-            (bool, str): Status (True=stable, False=censored) and diagnosis string.
+            (bool, str): Status (True=Stabil, False=Zensiert) und Diagnose.
         """
         if energy_gev < self.NOISE_FLOOR:
             return False, f"CENSORED: {energy_gev} GeV < Noise Floor ({self.NOISE_FLOOR} GeV)"

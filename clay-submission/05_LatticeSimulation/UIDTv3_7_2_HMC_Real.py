@@ -38,17 +38,21 @@ def get_params():
     parser.add_argument('--Ns', type=int, default=8, help='Spatial lattice size')
     parser.add_argument('--Nt', type=int, default=16, help='Temporal lattice size')
     parser.add_argument('--beta', type=float, default=6.0, help='Inverse coupling')
-    parser.add_argument('--seed', type=int, default=123456, help='Deterministic RNG seed')
     parser.add_argument('--n_therm', type=int, default=100, help='Thermalization sweeps')
     parser.add_argument('--n_meas', type=int, default=200, help='Measurement sweeps')
     parser.add_argument('--n_skip', type=int, default=5, help='Skip between measurements')
     parser.add_argument('--md_steps', type=int, default=20, help='MD steps per trajectory')
     parser.add_argument('--step_size', type=float, default=0.02, help='MD step size')
+    parser.add_argument('--seed', type=int, default=42, help='Random seed for reproducibility')
     parser.add_argument('--verbose', action='store_true', help='Verbose output')
     
     # parse_known_args ignores Jupyter kernel arguments
     args, _ = parser.parse_known_args()
-    np.random.seed(args.seed)
+    
+    # Set seed if provided
+    if args.seed is not None:
+        np.random.seed(args.seed)
+        
     return args
 
 
@@ -90,21 +94,31 @@ def project_su3_field(U: np.ndarray) -> np.ndarray:
     det = np.linalg.det(U_unit)
     return U_unit / (det[..., None, None] ** (1/3))
 
-def su3_exp_field(A: np.ndarray) -> np.ndarray:
+def su3_exp_field(A: np.ndarray, order: int = 40) -> np.ndarray:
     """
     Vectorized matrix exponential for su(3) algebra field.
-    Uses Taylor expansion to 40th order for audit-grade numerical integrity.
+    Uses Taylor expansion to high order (default 40) for precision compliance.
     A is (..., 3, 3).
     """
-    order = 40
-    expA = np.zeros_like(A)
-    idx = np.arange(3)
-    expA[..., idx, idx] = 1.0
-    term = expA.copy()
-    for k in range(1, order + 1):
-        term = (term @ A) / k
-        expA = expA + term
-    return expA
+    I = np.eye(3, dtype=A.dtype)
+    
+    # Initialize sum with Identity
+    res = I.copy()
+    
+    # Term for current power A^n / n!
+    term = I.copy()
+    
+    # Broadcast identity to match A's shape if necessary
+    if A.ndim > 2:
+        res = np.broadcast_to(I, A.shape).copy()
+        term = np.broadcast_to(I, A.shape).copy()
+
+    for n in range(1, order + 1):
+        # term_n = term_{n-1} * A / n
+        term = term @ A / n
+        res = res + term
+        
+    return res
 
 
 # =============================================================================
@@ -420,13 +434,11 @@ class UIDTLattice:
 def run_hmc(Ns: int = 8, Nt: int = 16, beta: float = 6.0,
             n_therm: int = 100, n_meas: int = 200, n_skip: int = 5,
             md_steps: int = 20, step_size: float = 0.02,
-            verbose: bool = True, seed: Optional[int] = None) -> dict:
+            verbose: bool = True) -> dict:
     """
     Run complete HMC simulation and return results.
     """
     constants = UIDTConstants()
-    if seed is not None:
-        np.random.seed(seed)
     
     if verbose:
         print("=" * 70)
@@ -435,8 +447,6 @@ def run_hmc(Ns: int = 8, Nt: int = 16, beta: float = 6.0,
         print(f"Lattice: {Ns}^3 x {Nt}")
         print(f"Beta: {beta}")
         print(f"UIDT kappa: {constants.KAPPA}")
-        if seed is not None:
-            print(f"Seed: {seed}")
         print(f"Thermalization: {n_therm} trajectories")
         print(f"Measurements: {n_meas} trajectories")
         print(f"MD steps: {md_steps}, step size: {step_size}")
@@ -534,7 +544,6 @@ if __name__ == "__main__":
         Ns=args.Ns,
         Nt=args.Nt,
         beta=args.beta,
-        seed=args.seed,
         n_therm=args.n_therm,
         n_meas=args.n_meas,
         n_skip=args.n_skip,

@@ -7,7 +7,7 @@ Context: Experimental Verification via Metamaterials
 This module implements the isomorphism between the scalar vacuum density S(x)
 and the optical refractive index n(x) in metamaterials.
 
-Offizielle Referenz:
+Official Reference:
 - Song, T., Jing, Y., Shen, C. et al. (2025). "Nonlocality-enabled photonic analogies of
   parallel spaces, wormholes and multiple realities".
   Nature Communications, 16, 8915.
@@ -31,7 +31,7 @@ class PhotonicInterface:
 
     def calculate_metamaterial_index(self, alpha_density):
         """
-        Computes n_eff for metamaterials.
+        Calculates n_eff for metamaterials.
         Motivated by nonlocal photonics and boundary-selective effective media
         (Song et al., Nat. Commun. 16, 8915 (2025)).
         """
@@ -41,7 +41,7 @@ class PhotonicInterface:
 
     def predict_wormhole_transition(self):
         """
-        Prediction of the critical transition (optical wormhole).
+        Vorhersage des kritischen Übergangs (Optical Wormhole).
         """
         n_critical = self.gamma
         epsilon_critical = n_critical ** 2

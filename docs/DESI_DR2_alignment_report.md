@@ -11,7 +11,7 @@
 
 This report documents the final integration of **DESI-DR2 / Union3** observational constraints into the **UIDT v3.9 Canonical Framework**.
 
-Using a **Holographic Vacuum Dressing** mechanism derived from the bare gamma factor ($\gamma_\infty$), UIDT predicts a dynamic dark energy evolution with ** = -1.30*. This prediction has been validated against the latest DESI-DR2 + Union3 dataset ( = -1.27^{+0.40}_{-0.34}$), achieving a statistical agreement of **0.65$\sigma*.
+Using a **Holographic Vacuum Dressing** mechanism obtained from the bare gamma factor ($\gamma_\infty$), UIDT predicts a dynamic dark energy evolution with ** = -1.30*. This prediction has been validated against the latest DESI-DR2 + Union3 dataset ( = -1.27^{+0.40}_{-0.34}$), achieving a statistical agreement of **0.65$\sigma*.
 
 This resolves the previous tension noted in v3.7.1 and firmly establishes the UIDT Dark Energy Sector as consistent with high-precision cosmology.
 
