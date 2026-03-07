@@ -580,24 +580,9 @@ V(S) &= \frac{1}{2}m_S^2 S^2 + \frac{\lambda_S}{4!}S^4
 
 The interaction term preserves gauge invariance as $\Tr(F_{\mu\nu}F^{\mu\nu})$ 
 is a gauge singlet. Dimensional consistency verified in Appendix~\ref{app:dimensions}.
-\newpage
-\subsection{Field Equations and Vacuum Structure}
 
-Variation yields classical equations of motion:
+\input{sections/banach_fixpoint.tex}
 
-\begin{align}
-D_\mu^{ab} F^{b\mu\nu} &= -\frac{2\kappa}{\Lambda}S F^{a\mu\nu}
-\label{eq:gaugeEOM}\\
-\Box S + m_S^2 S + \frac{\lambda_S}{6}S^3 &= \frac{\kappa}{\Lambda}\Tr(F_{\mu\nu}F^{\mu\nu})
-\label{eq:scalarEOM}
-\end{align}
-
-Taking vacuum expectation value with $\Box S \to 0$ yields:
-
-\begin{equation}
-\boxed{m_S^2 v + \frac{\lambda_S v^3}{6} = \frac{\kappa \mathcal{C}}{\Lambda}}
-\label{eq:vacuum}
-\end{equation}
 
 where $\mathcal{C} \equiv \vev{\Tr(F_{\mu\nu}F^{\mu\nu})} = 0.277 \pm 0.014\,\GeV^4$ 
 is the gluon condensate from QCD sum rules.
