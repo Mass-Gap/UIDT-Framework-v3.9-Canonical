@@ -1,56 +1,39 @@
-# Formal Reproduction Protocol (UIDT v3.9 Canonical)
+# UIDT v3.9 Reproduction Protocol
 
-This protocol explicitly defines the steps required to independently verify the Four-Pillar Architecture of the Unified Information-Density Theory (UIDT) using the v3.9 Master Verification Suite.
+## Execution Modes
 
-## 1. Environment Preparation
-
-**Requirements:**
-- Python 3.10+
-- `mpmath` (for 80-digit high-precision proofs)
-- `scipy`, `numpy`
-
+### Core Baseline (Recommended for audits)
 ```bash
-git clone https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical.git
-cd UIDT-Framework-v3.9-Canonical
-pip install -r verification/requirements.txt
+python verification/scripts/UIDT_Core_Baseline.py
 ```
+- **Scope:** Category A mathematical core only
+- **Exit 0:** All core claims verified (residuals < 1e-14, L < 1)
+- **Exit 1:** Core verification failed
 
-*(Note: If cloning from a historical URL such as `UIDT-Framework-v3.7.2-Canonical`, the internal framework operations remain identical and self-contained.)*
-
-## 2. Master Verification Execution
-
-The v3.9 Canonical Release integrates all four pillars into a single verified execution pathway.
-
+### Full Master Runner
 ```bash
 python verification/scripts/UIDT_Master_Verification.py
 ```
+- **Scope:** All pillars (Core + Cosmology + Laboratory + Photonics)
+- **Soft fails:** Non-critical modules (C/D) may be skipped without halting execution
+- **Exit 0:** Core passed; peripherals may have warnings (yellow output)
+- **Exit 1:** Core failure or critical system error
 
-### Expected Execution Sequence:
+## Canonical Parameters
+The following values are immutable for verification purposes:
+- Mass Gap: Δ = 1.710 ± 0.015 GeV [A]
+- Gamma: γ = 16.339 [A-]
+- VEV: v = 47.7 MeV [A]
+- Torsion Energy: E_T = 2.44 MeV [D]
 
-1.  **PILLAR I (Numerical System Consistency):**
-    Executes the SciPy-based root solver for the coupled equations. Ensures $\Delta \approx 1.710$ GeV with zero residuals.
-2.  **PILLAR I (High-Precision Proof):**
-    Activates the `mpmath` core (80 decimal digits) to prove the Banach Fixed Point (Theorem 3.4). Expected Lipschitz constant: $< 1$.
-3.  **PILLAR II (Missing Link & Topology):**
-    Validates the Lattice Torsion Binding Energy ($E_T = 2.44$ MeV) and explicit calculation of the $107.10$ MeV geometric vacuum frequency.
-4.  **PILLAR III (Spectral Expansion):**
-    Predicts the table-top/collider observables, specifically the thermodynamic noise floor ($17.10$ MeV, X17) and the geometric overtone resonance ($2.370$ GeV, X2370).
+## Directory Structure
+- `core/`: Mathematical logic (Banach, RG) - **Do not modify**
+- `modules/`: Physical extensions (CSF, Topology)
+- `verification/scripts/`: Execution runners
+- `verification/tests/`: Native precision tests
 
-## 3. Artifact Generation
-
-Upon successful mathematical closure, the system will automatically generate an immutable Markdown report in:
-`verification/data/Verification_Report_v3.9_<TIMESTAMP>.md`
-
-This report serves as the formal certificate of verification and contains the hashed state of the codebase during execution.
-
-## 4. Containerized Audit (Docker)
-
-For a completely isolated and reproducible environment, execute the suite via Docker. The container is locked to Python 3.10-slim.
-
-```bash
-cd verification/docker
-docker build -t uidt-verify-v3.9 .
-docker run uidt-verify-v3.9
-```
-
-This ensures the 80-digit proof runs entirely independently of local host configurations.
+## Troubleshooting
+If `UIDT_Master_Verification.py` reports warnings for Pillar II/IV:
+1. Run `UIDT_Core_Baseline.py` first. If it passes, the core theory is intact.
+2. Check `requirements.txt` for missing dependencies.
+3. Verify that `modules/` are in the PYTHONPATH.

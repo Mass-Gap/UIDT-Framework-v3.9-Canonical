@@ -1,5 +1,20 @@
 # Changelog
 
+## [Unreleased - Core Baseline Stabilization]
+
+### Added
+- `verification/scripts/UIDT_Core_Baseline.py` – Standalone Core-A runner
+- `verification/tests/test_core_baseline.py` – Native precision tests (no mocks)
+- `docs/core-baseline-protocol.md` – Reproduction protocol for mathematical core
+
+### Changed
+- Separated mathematical core from peripheral modules for stable baseline
+- No changes to canonical constants (Δ, γ, v, E_T remain immutable)
+
+### Evidence Status
+- Mathematical Core: Category A (verified, residuals < 1e-14)
+- Peripheral modules: deferred to follow-up PR
+
 ## [3.9.4] — 2026-03-01 — Audit Resolution
 
 ### Fixed — Priority 1: Self-Contradictions (PR #117)

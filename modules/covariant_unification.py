@@ -66,6 +66,10 @@ class CovariantUnification:
         w_a = mpf('+0.03')   # DESI Year 1 central value [C]
         return {"w_0": w_0, "w_a": w_a, "evidence": "C", "source": "DESI_BAO_2024"}
 
+    def derive_equation_of_state(self):
+        """Legacy compatibility wrapper."""
+        return self.get_equation_of_state_asymptotic()
+
     def evaluate_ir_limit(self, epsilon: mpf):
         """
         Theorem 3: Topological Protection at the Infrared Fixed Point.
