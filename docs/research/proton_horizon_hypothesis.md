@@ -1,3 +1,9 @@
-# Placeholder for docs/research/proton_horizon_hypothesis.md
+# Proton-Horizon Hypothesis
 
-This file is part of the Holographic Gamma research plan.
+**Hypothesis:** $N_{Horizon} / N_{Proton} \approx \gamma^k$
+
+## Initial Check
+Using $H_0 = 70.4$ km/s/Mpc.
+$N_{Horizon} \approx 10^{122}$.
+
+Detailed calculation pending in `proton_horizon_ratio.py`.
