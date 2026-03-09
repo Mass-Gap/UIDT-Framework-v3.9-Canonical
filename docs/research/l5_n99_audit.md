@@ -1,3 +1,10 @@
-# Placeholder for docs/research/l5_n99_audit.md
+# L5 Audit: N99 vs N94.05
 
-This file is part of the Holographic Gamma research plan.
+## Tension
+- **N=99**: Used in production. Empirically chosen.
+- **N=94.05**: Suggested by PR-87. Not implemented.
+
+## Resolution Plan
+- Compare observables with N=99 vs N=94.05.
+- Until resolved, **L5 remains OPEN**.
+- Cosmology claims capped at [C].
