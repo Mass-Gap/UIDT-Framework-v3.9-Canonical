@@ -74,13 +74,20 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 
 | Constant | Value | Status |
 |----------|-------|--------|
-| **Yang-Mills Spectral Gap (Δ)** | 1.710 ± 0.015 GeV | Category A (verified; spectral gap, not a particle mass) |
-| **Universal Gamma Invariant (γ)** | 16.339 (exact) | Category A- (phenomenologically calibrated; not RG-derived) |
-| **Lattice Torsion Energy (E_T)** | 2.44 MeV | Category D (predicted; unverified) |
-| **Holographic Length (λ)** | 0.66 nm | Category C (DESI-calibrated) |
-| **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Category C (calibrated; not an independent prediction) |
-| **Scalar Mass (mₛ)** | 1.705 ± 0.015 GeV | Category D (predicted; unverified) |
-| **Vacuum Expectation (v)** | **47.7 MeV** | Category A (verified) |
+| **Yang-Mills Spectral Gap (Δ*)** | 1.710 ± 0.015 GeV | **[A]** Spectral gap (NOT mass!) |
+| **Gamma Invariant (γ)** | 16.339 (exact) | **[A-]** Kinetic VEV derivation |
+| **Gamma MC Mean (γ_MC)** | 16.374 ± 1.005 | **[A-]** Monte Carlo mean |
+| **Coupling (κ)** | 0.500 ± 0.008 | **[A]** Non-minimal gauge-scalar |
+| **Self-Coupling (λ_S)** | 0.417 ± 0.007 | **[A]** Scalar self-interaction |
+| **Vacuum Expectation (v)** | 47.7 MeV | **[A]** Corrected v3.6.1 |
+| **Scalar Mass (m_S)** | 1.705 ± 0.015 GeV | **[D]** Prediction |
+| **Hubble Constant (H₀)** | 70.4 ± 0.16 km/s/Mpc | **[C]** DESI calibrated |
+| **Dark Energy EOS (w₀)** | -0.99 | **[C]** Canonical dark energy |
+| **Holographic EOS (w_a)** | -1.30 | **[C]** Holographic dark energy |
+| **UIDT Wavelength (λ_UIDT)** | 0.660 nm | **[C]** Characteristic scale |
+| **Holographic Length (L)** | ~8.2 (derived) | **[D/E]** NOT canonical — assumed |
+| **RG Cascade (N_bare)** | 99 | **[D]** Unrenormalized lattice limit |
+| **Lattice Torsion (E_T)** | 2.44 MeV | **[D]** Effective IR term |
 
 ---
 

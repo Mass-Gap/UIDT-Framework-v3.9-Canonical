@@ -15,6 +15,16 @@
 - Mathematical Core: Category A (verified, residuals < 1e-14)
 - Peripheral modules: deferred to follow-up PR
 
+## [v3.9.5] — 2026-03-09 — Public Claims Alignment
+
+### Changed
+- **README.md**: Aligned "Core Derived Constants" table with strict evidence classifications from `CONSTANTS.md` (Quick Copy Block).
+- **Manuscript**: Updated numerical precision references (60-digit → 80-digit) and residual claims (< 10^-14) to match verified limits.
+- **Terminology**: Clarified "Holographic Length" as "UIDT Wavelength (λ_UIDT)" in public documentation.
+
+### Fixed
+- **Evidence Consistency**: Resolved discrepancies between README summary and canonical ledger for E_T ([D]) and L ([D/E]).
+
 ## [3.9.4] — 2026-03-01 — Audit Resolution
 
 ### Fixed — Priority 1: Self-Contradictions (PR #117)
