@@ -25,7 +25,7 @@ canonical_values = {
 # 48 hours
 recent_cutoff = datetime.now(timezone.utc) - timedelta(days=2)
 
-print("Starte ArXiv Scan im RESEARCH-MODE...")
+print("Starting ArXiv scan in RESEARCH-MODE...")
 
 found_relevant = False
 
@@ -60,17 +60,17 @@ def extract_and_compare(text, paper_info):
 
     if m_cccc is not None:
         diff = m_cccc - canonical_values["M_cccc"]
-        print(f"FUND: {paper_info} -> M_cccc = {m_cccc} GeV (Abweichung: {diff:+.4f} GeV)")
+        print(f"MATCH: {paper_info} -> M_cccc = {m_cccc} GeV (deviation: {diff:+.4f} GeV)")
         found_anything = True
 
     if m_omega is not None:
         diff = m_omega - canonical_values["M_Omega_bbb"]
-        print(f"FUND: {paper_info} -> M_Omega_bbb = {m_omega} GeV (Abweichung: {diff:+.4f} GeV)")
+        print(f"MATCH: {paper_info} -> M_Omega_bbb = {m_omega} GeV (deviation: {diff:+.4f} GeV)")
         found_anything = True
 
     if w_0 is not None:
         diff = w_0 - canonical_values["w_0"]
-        print(f"FUND: {paper_info} -> w_0 = {w_0} (Abweichung: {diff:+.4f})")
+        print(f"MATCH: {paper_info} -> w_0 = {w_0} (deviation: {diff:+.4f})")
         found_anything = True
 
     if found_anything:
@@ -97,11 +97,9 @@ for kw in keywords:
                 continue
             published_str = published_elem.text
 
-            # parse the full datetime string, e.g., '2025-02-26T18:00:00Z'
             try:
                 published_date = datetime.strptime(published_str, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
             except ValueError:
-                # fallback if format is different
                 published_date = datetime.strptime(published_str[:10], "%Y-%m-%d").replace(tzinfo=timezone.utc)
 
             if published_date >= recent_cutoff:
@@ -109,14 +107,10 @@ for kw in keywords:
                 summary = entry.find('atom:summary', ns).text.strip().replace('\n', ' ')
 
                 paper_info = f"{published_str[:10]} | {title}"
-                # We check the summary for values
-                if not extract_and_compare(summary, paper_info):
-                    # Even if no specific values found, we might want to flag the paper since it matched the query and is recent
-                    # The prompt asked to "Vergleiche neue experimentelle Massen oder Parameter...". If none are in the abstract, we can't compare.
-                    pass
+                extract_and_compare(summary, paper_info)
 
     except Exception as e:
         print(f"Exception querying {kw}: {e}")
 
 if not found_relevant:
-    print("Clear - Keine neuen relevanten Publikationen")
+    print("Clear — no new relevant publications found.")
