@@ -64,5 +64,16 @@
       "missing-file",
       "S0-blocker"
     ]
+  },
+  {
+    "id": "TKT-AUDIT-007",
+    "title": "Populate LOCAL/logs/traceability.json",
+    "description": "traceability.json is currently an empty scaffold. Requires population with ticket_id -> files -> tests -> docs -> status mapping per QA spec.",
+    "priority": "High",
+    "type": "Governance",
+    "labels": [
+      "scaffold",
+      "S2-major"
+    ]
   }
 ]

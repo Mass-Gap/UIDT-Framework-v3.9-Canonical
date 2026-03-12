@@ -12,4 +12,5 @@
 - Category A -> Category C/D Violations: 0
 
 ## Conclusion
-The epistemic integrity of the UIDT framework (v3.7.2) is maintained. No circular dependencies or forbidden foundational dependencies were found.
+The epistemic integrity of the UIDT framework (v3.7.2) is maintained.
+No circular dependencies or forbidden foundational dependencies were found.
