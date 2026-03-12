@@ -50,7 +50,7 @@
 
 ### GeV
 
-*(Established analytic precision limit $\mathcal{O}(10^{-280})$)*
+*(Numerical precision: residuals < 10⁻¹⁴ in canonical closure system)*
 
 <br>
 
@@ -183,7 +183,7 @@ All claims are strictly classified by evidence strength:
 
 ```bash
 # Clone verification environment
-git clone [https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical)
+git clone https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical
 cd UIDT-Framework-v3.9-Canonical
 
 # Install dependencies
@@ -283,7 +283,7 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
   year        = {2026},
   month       = {February},
   doi         = {10.5281/zenodo.17835200},
-  url         = {[https://doi.org/10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200)},
+  url         = {https://doi.org/10.5281/zenodo.17835200},
   publisher   = {Zenodo},
   version     = {3.9 Canonical},
   copyright   = {CC BY 4.0}
@@ -321,7 +321,7 @@ UIDT v3.9 establishes that:
 ---
 
 ```
-🚀 Final Status: UIDT Ω v3.9 is scientifically synthesized and technically CLOSED.
+🚀 Status: UIDT v3.9 — Evidence Classified. Open questions documented.
 
 ```
 
@@ -336,7 +336,3 @@ UIDT v3.9 establishes that:
 ---
 
 *"The successful transition from microscopic to macroscopic physics requires that the gluons acquire mass. This phenomenon, known as the 'mass gap,' is one of the deepest problems in theoretical physics." — Clay Mathematics Institute*
-
-```
-
-```
