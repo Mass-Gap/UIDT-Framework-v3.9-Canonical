@@ -217,7 +217,13 @@ The arbitrary-precision verification suite reported in the UIDT v3.9 manuscript 
 1.710035046742213182459174582930182736459\ldots\ \mathrm{GeV}.
 \label{eq:high_prec_value}
 \end{equation}
-The manuscript further reports closure residuals below \(10^{-40}\) for the coupled system and presents the mass gap as the anchor of the full closure relations
+% AUDIT FIX 2026-03-12: The earlier informal figure of 10^{-40} referenced
+% algorithm-internal intermediates under extended precision and has been
+% superseded by the automatically tested bound < 10^{-14}.
+% See verification/scripts/UIDT_Core_Baseline.py (acceptance criterion 1e-14).
+The numerical verification suite reports closure residuals below \(10^{-14}\)
+(\texttt{verification/scripts/UIDT\_Core\_Baseline.py}),
+and presents the mass gap as the anchor of the full closure relations
 \begin{equation}
 m_S^2 v+\frac{\lambda_S}{6}v^3=\frac{\kappa C}{\Lambda},
 \label{eq:closure_1}
