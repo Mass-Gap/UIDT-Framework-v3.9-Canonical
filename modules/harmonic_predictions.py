@@ -21,7 +21,7 @@ class HarmonicPredictor:
     def __init__(self, vacuum_freq_gev, delta_gap_gev=mpf('1.710')):
         """
         Initializes the predictor with the fundamental vacuum frequency.
-        
+
         Args:
             vacuum_freq_gev (mpf): The frequency derived from Pillar II (~0.1071 GeV).
             delta_gap_gev (mpf): Mass Gap (1.710 GeV) for extended resonances.
@@ -55,7 +55,7 @@ class HarmonicPredictor:
         return self.delta * mpf('0.01')
 
     def predict_x2370_resonance(self):
-        # 22.13 ≈ (m_p / f_vac) × (π/2) — empirical harmonic factor,
+        # 22.13 approx (m_p / f_vac) x (pi/2) — empirical harmonic factor,
         # pending analytical derivation from Geometric Operator spectrum
         return self.f_vac * mpf('22.13')
 
@@ -64,7 +64,7 @@ class HarmonicPredictor:
 
     def predict_glueball_pseudoscalar(self):
         return self.delta * mpf('1.5')
-        
+
     def generate_report(self):
         """Generates a report with all predictions."""
         m_omega, err_omega = self.predict_omega_bbb()
@@ -73,18 +73,18 @@ class HarmonicPredictor:
         m_x2370 = self.predict_x2370_resonance()
         m_tensor = self.predict_glueball_tensor()
         m_pseudo = self.predict_glueball_pseudoscalar()
-        
+
         return {
-            "Omega_bbb_GeV": float(m_omega),
-            "Omega_bbb_Error_GeV": float(err_omega),
-            "Tetra_cccc_GeV": float(m_tetra),
-            "Tetra_cccc_Error_GeV": float(err_tetra),
-            "X17_NoiseFloor_MeV": float(m_x17 * 1000),
-            "X2370_Resonance_GeV": float(m_x2370),
-            "Glueball_2++_GeV": float(m_tensor),
-            "Glueball_0-+_GeV": float(m_pseudo),
-            "MassGap_0++_GeV": float(self.delta),
-            "Base_Freq_MeV": float(self.f_vac * 1000),
+            "Omega_bbb_GeV": mp.nstr(m_omega),
+            "Omega_bbb_Error_GeV": mp.nstr(err_omega),
+            "Tetra_cccc_GeV": mp.nstr(m_tetra),
+            "Tetra_cccc_Error_GeV": mp.nstr(err_tetra),
+            "X17_NoiseFloor_MeV": mp.nstr(m_x17 * 1000),
+            "X2370_Resonance_GeV": mp.nstr(m_x2370),
+            "Glueball_2++_GeV": mp.nstr(m_tensor),
+            "Glueball_0-+_GeV": mp.nstr(m_pseudo),
+            "MassGap_0++_GeV": mp.nstr(self.delta),
+            "Base_Freq_MeV": mp.nstr(self.f_vac * 1000),
             "Source": "Zenodo 18664814 (Expanded)"
         }
 
@@ -103,11 +103,11 @@ class HarmonicPredictor:
         deviation = ratio - target
 
         return {
-            "m_p_MeV": float(proton_mass_mev),
-            "f_vac_MeV": float(f_vac_mev),
-            "ratio": float(ratio),
-            "target": float(target),
-            "deviation": float(deviation)
+            "m_p_MeV": mp.nstr(proton_mass_mev),
+            "f_vac_MeV": mp.nstr(f_vac_mev),
+            "ratio": mp.nstr(ratio),
+            "target": mp.nstr(target),
+            "deviation": mp.nstr(deviation)
         }
 
 # Self-test
@@ -116,7 +116,7 @@ if __name__ == "__main__":
     test_freq = mpf('0.1071')
     pred = HarmonicPredictor(test_freq)
     report = pred.generate_report()
-    
+
     print(f"Harmonic Predictions v3.9 online.")
     print(f"Base Frequency: {report['Base_Freq_MeV']} MeV")
     print(f"Omega_bbb Prediction: {report['Omega_bbb_GeV']} GeV")
