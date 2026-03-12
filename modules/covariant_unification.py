@@ -20,10 +20,18 @@ class CovariantUnification:
         Initializes the unification module.
         Takes the phenomenologically calibrated universal scaling factor [A-].
 
-        gamma = 16.339: v3.9 canonical kinetic VEV [A-] (gamma_MC = 16.374 ± 1.005 is separate quantity)
-        SU(3) algebraic candidate: 49/3 = 16.333... (0.037% deviation, see UIDT-C-047)
+        gamma = 16.339: v3.9 canonical kinetic VEV [A-] (gamma_MC = 16.374 +/- 1.005 is separate quantity)
+        SU(3) algebraic candidate: 49/3 = 16.333... (0.037% deviation, see UIDT-C-056)
         """
         self.GAMMA_UIDT = mpf(gamma_uidt)  # v3.9 canonical [A-]
+
+        # N=99 Cascade -- Limitation L5 [D] (UIDT-C-050)
+        # TODO [D]: Derive N from first principles. N=99 (UIDT-C-050 [D]) vs
+        #           N=94.05 (UIDT-C-046 [E]) remains unresolved.
+        #           (SU(N) gluon DoF proportional to N^2-1 gives scaling but
+        #            not the fixed value N=99; see UIDT-C-050, UIDT-C-017,
+        #            UIDT-C-039, docs/limitations.md L5)
+        # LINTER PROTECTION -- Do NOT remove this comment block (Directive v4.1).
         self.RG_STEPS = mpf('99')
 
 

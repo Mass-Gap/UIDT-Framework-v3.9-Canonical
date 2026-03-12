@@ -14,7 +14,8 @@ Source:
 
 from mpmath import mp, mpf
 
-# Precision must remain consistent
+# ABSOLUTE DIRECTIVE: Local precision initialization (Do not move to config)
+# Race Condition Lock: mp.dps=80 must remain local (UIDT-OS Directive v4.1)
 mp.dps = 80
 
 class HarmonicPredictor:
@@ -55,7 +56,7 @@ class HarmonicPredictor:
         return self.delta * mpf('0.01')
 
     def predict_x2370_resonance(self):
-        # 22.13 ≈ (m_p / f_vac) × (π/2) — empirical harmonic factor,
+        # 22.13 ~ (m_p / f_vac) x (pi/2) -- empirical harmonic factor,
         # pending analytical derivation from Geometric Operator spectrum
         return self.f_vac * mpf('22.13')
 
@@ -66,7 +67,11 @@ class HarmonicPredictor:
         return self.delta * mpf('1.5')
         
     def generate_report(self):
-        """Generates a report with all predictions."""
+        """Generates a report with all predictions.
+        
+        NUMERICAL DETERMINISM: All values returned as mp.nstr(x, 20) strings.
+        Never use float() -- silently destroys 80-digit precision (UIDT-OS Directive v4.1).
+        """
         m_omega, err_omega = self.predict_omega_bbb()
         m_tetra, err_tetra = self.predict_tetraquark_cccc()
         m_x17 = self.predict_x17_anomaly()
@@ -75,16 +80,16 @@ class HarmonicPredictor:
         m_pseudo = self.predict_glueball_pseudoscalar()
         
         return {
-            "Omega_bbb_GeV": float(m_omega),
-            "Omega_bbb_Error_GeV": float(err_omega),
-            "Tetra_cccc_GeV": float(m_tetra),
-            "Tetra_cccc_Error_GeV": float(err_tetra),
-            "X17_NoiseFloor_MeV": float(m_x17 * 1000),
-            "X2370_Resonance_GeV": float(m_x2370),
-            "Glueball_2++_GeV": float(m_tensor),
-            "Glueball_0-+_GeV": float(m_pseudo),
-            "MassGap_0++_GeV": float(self.delta),
-            "Base_Freq_MeV": float(self.f_vac * 1000),
+            "Omega_bbb_GeV":         mp.nstr(m_omega, 20),
+            "Omega_bbb_Error_GeV":   mp.nstr(err_omega, 20),
+            "Tetra_cccc_GeV":        mp.nstr(m_tetra, 20),
+            "Tetra_cccc_Error_GeV":  mp.nstr(err_tetra, 20),
+            "X17_NoiseFloor_MeV":    mp.nstr(m_x17 * 1000, 20),
+            "X2370_Resonance_GeV":   mp.nstr(m_x2370, 20),
+            "Glueball_2++_GeV":      mp.nstr(m_tensor, 20),
+            "Glueball_0-+_GeV":      mp.nstr(m_pseudo, 20),
+            "MassGap_0++_GeV":       mp.nstr(self.delta, 20),
+            "Base_Freq_MeV":         mp.nstr(self.f_vac * 1000, 20),
             "Source": "Zenodo 18664814 (Expanded)"
         }
 
@@ -92,6 +97,9 @@ class HarmonicPredictor:
         """
         Consistency Check ("Proton Anchor"):
         Compares m_p against the derived vacuum resonance f_vac.
+
+        NUMERICAL DETERMINISM: All values returned as mp.nstr(x, 20) strings.
+        Never use float() (UIDT-OS Directive v4.1).
 
         Returns:
             dict: m_p, f_vac, ratio, target (35/4), deviation
@@ -103,11 +111,11 @@ class HarmonicPredictor:
         deviation = ratio - target
 
         return {
-            "m_p_MeV": float(proton_mass_mev),
-            "f_vac_MeV": float(f_vac_mev),
-            "ratio": float(ratio),
-            "target": float(target),
-            "deviation": float(deviation)
+            "m_p_MeV":   mp.nstr(proton_mass_mev, 20),
+            "f_vac_MeV": mp.nstr(f_vac_mev, 20),
+            "ratio":     mp.nstr(ratio, 20),
+            "target":    mp.nstr(target, 20),
+            "deviation": mp.nstr(deviation, 20)
         }
 
 # Self-test
