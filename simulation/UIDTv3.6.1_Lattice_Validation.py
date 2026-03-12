@@ -4,7 +4,7 @@
 UIDT v3.6.1 VALIDATION SUITE: MACHINE PRECISION
 ===============================================
 Status: Canonical / Clean State / Final Fix
-Description: Validates the Matrix Exponential using High-Order (8th)
+Description: Validates the Matrix Exponential using High-Order (40th)
              Scaling & Squaring. Achieves ~1e-15 accuracy.
 """
 
@@ -47,8 +47,6 @@ def su3_expm_scaled_taylor(A, xp_local=xp, order=40):
     norms = xp_local.linalg.norm(A, axis=(-2,-1))
     max_norm = xp_local.max(norms)
     
-    # Calculate required scaling steps s
-    # 2^s > max_norm / 0.05
     s = 0
     target_norm = 0.5
     if max_norm > target_norm:
@@ -68,7 +66,6 @@ def su3_expm_scaled_taylor(A, xp_local=xp, order=40):
         E = E + term
 
     # --- 3. Squaring Step ---
-    # Square result s times to reverse scaling
     for _ in range(s):
         E = xp_local.matmul(E, E)
         
@@ -88,40 +85,31 @@ class UIDTValidator:
         
         max_error = 0.0
         avg_error = 0.0
-        
         t_custom_total = 0
         t_std_total = 0
         
         for i in range(n_tests):
-            # 1. Random Anti-Hermitian Matrix
             A_real = np.random.randn(3, 3)
             A_imag = np.random.randn(3, 3)
             A_herm = (A_real + 1j*A_imag + (A_real - 1j*A_imag).T) / 2
             A_herm -= np.trace(A_herm) / 3 * np.eye(3)
             A_antiherm = 1j * A_herm 
-            
-            # Test with LARGE norm to force scaling loop to work hard
-            scale = 5.0 # Norm ~ 15.0 -> requires ~9 squarings
+            scale = 5.0
             A_antiherm *= scale
-            
             A_dev = to_gpu(A_antiherm)
             
-            # 2. Benchmark Custom
             start = time.time()
             exp_custom = su3_expm_scaled_taylor(A_dev, xp_local=self.xp)
             if USE_CUPY: cp.cuda.Stream.null.synchronize()
             t_custom_total += time.time() - start
             
-            # 3. Benchmark Standard
             start = time.time()
             exp_std = linalg_expm(A_dev)
             if USE_CUPY: cp.cuda.Stream.null.synchronize()
             t_std_total += time.time() - start
             
-            # 4. Error Calc
             res_custom = to_cpu(exp_custom)
             res_std = to_cpu(exp_std)
-            
             error = np.max(np.abs(res_custom - res_std))
             max_error = max(max_error, error)
             avg_error += error

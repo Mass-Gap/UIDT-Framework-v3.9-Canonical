@@ -69,28 +69,21 @@ class UIDTConstants:
 
 def random_su3_algebra_field(shape: tuple) -> np.ndarray:
     """Generate random su(3) algebra field (traceless anti-Hermitian)."""
-    # 8 Gell-Mann generators approach or direct Hermitian
     H = np.random.randn(*shape) + 1j * np.random.randn(*shape)
     H = (H + H.conj().swapaxes(-1, -2)) / 2.0  # Hermitian
     tr = np.trace(H, axis1=-2, axis2=-1)
-    
-    # Broadcast trace subtraction
     eye = np.eye(3, dtype=complex)
-    # tr is (...,), make it (..., 1, 1)
     H = H - (tr[..., None, None] / 3.0) * eye
     return 1j * H
 
 def project_su3_field(U: np.ndarray) -> np.ndarray:
     """Project field to SU(3) via polar decomposition (SVD-based)."""
-    # SVD: U = u * s * vh -> Nearest unitary is u * vh
     u, s, vh = np.linalg.svd(U)
     U_unit = u @ vh
-
-    # Fix determinant (make it 1)
     det = np.linalg.det(U_unit)
     return U_unit / (det[..., None, None] ** (1/3))
 
-def su3_exp_field(A: np.ndarray) -> np.ndarray:
+def su3_exp_field(A: np.ndarray, order: int = 40) -> np.ndarray:
     """
     Vectorized matrix exponential for su(3) algebra field.
     Uses Taylor expansion to 40th order for audit-grade numerical integrity.
@@ -123,87 +116,48 @@ class UIDTLattice:
         self.Nd = 4
         self.beta = beta
         self.constants = UIDTConstants()
-        
-        # Gauge field: U[t,z,y,x,mu] in SU(3)
         self.U = self._init_gauge_field()
-        
-        # Scalar field: S[t,z,y,x] real
         self.S = np.zeros((Nt, Ns, Ns, Ns), dtype=float)
-        
-        # Conjugate momenta
-        self.Pu = None  # For gauge
-        self.Ps = None  # For scalar
-        
-        # Diagnostics
+        self.Pu = None
+        self.Ps = None
         self.acceptance_rate = 0.5
         self.avg_delta_H = 0.0
         self.plaquette_history = []
         self.action_history = []
     
     def _init_gauge_field(self) -> np.ndarray:
-        """Initialize gauge field (cold start: all identity)."""
         shape = (self.Nt, self.Ns, self.Ns, self.Ns, self.Nd, 3, 3)
         U = np.zeros(shape, dtype=complex)
-        # Set diagonal to 1
         idx = np.arange(3)
         U[..., idx, idx] = 1.0
         return U
     
     def _init_momenta(self):
-        """Initialize conjugate momenta."""
-        # Gauge momenta: su(3) algebra valued
         shape = (self.Nt, self.Ns, self.Ns, self.Ns, self.Nd, 3, 3)
         self.Pu = random_su3_algebra_field(shape)
-        
-        # Scalar momenta
         self.Ps = np.random.randn(self.Nt, self.Ns, self.Ns, self.Ns)
 
-    # =========================================================================
-    # ACTION CALCULATIONS (VECTORIZED)
-    # =========================================================================
-    
     def shift(self, F: np.ndarray, mu: int, direction: int) -> np.ndarray:
-        """
-        Shift field F in direction mu.
-        direction = +1: F(x+mu) -> roll(F, -1, axis=mu)
-        direction = -1: F(x-mu) -> roll(F, +1, axis=mu)
-        
-        Note: self.U has shape (Nt, Ns, Ns, Ns, Nd, 3, 3).
-        mu index for shift corresponds to axis 0, 1, 2, 3.
-        """
-        # Axis mapping: t=0, z=1, y=2, x=3
         return np.roll(F, -direction, axis=mu)
 
     def plaquette_field(self, mu: int, nu: int) -> np.ndarray:
-        """Compute plaquette field P_mu_nu(x) for all x."""
-        # U_mu(x)
         U_mu = self.U[..., mu, :, :]
-        # U_nu(x+mu)
         U_nu_xmu = self.shift(self.U[..., nu, :, :], mu, 1)
-        # U_mu(x+nu)
         U_mu_xnu = self.shift(self.U[..., mu, :, :], nu, 1)
-        # U_nu(x)
         U_nu = self.U[..., nu, :, :]
-        
-        # P = U_mu(x) U_nu(x+mu) U_mu(x+nu)^dag U_nu(x)^dag
-        # conj().swapaxes(-1, -2) is Hermitian conjugate for stacked matrices
         return U_mu @ U_nu_xmu @ U_mu_xnu.conj().swapaxes(-1, -2) @ U_nu.conj().swapaxes(-1, -2)
     
     def average_plaquette(self) -> float:
-        """Compute average plaquette (order parameter)."""
         plaq_sum = 0.0
-        # Sum over mu < nu
         for mu in range(self.Nd):
             for nu in range(mu + 1, self.Nd):
                 P = self.plaquette_field(mu, nu)
                 plaq_sum += np.sum(np.real(np.trace(P, axis1=-2, axis2=-1))) / 3.0
-
         volume = self.Nt * self.Ns**3
         num_plaquettes = volume * (self.Nd * (self.Nd - 1) // 2)
         return plaq_sum / num_plaquettes
     
     def gauge_action(self) -> float:
-        """Wilson gauge action: S_G = beta * sum(1 - Re Tr P / 3)."""
         plaq_sum = 0.0
         for mu in range(self.Nd):
             for nu in range(mu + 1, self.Nd):
@@ -212,210 +166,118 @@ class UIDTLattice:
         return self.beta * plaq_sum
     
     def scalar_action(self) -> float:
-        """UIDT scalar field action with kappa coupling."""
-        kappa = self.constants.KAPPA
         lambda_S = self.constants.LAMBDA_S
         m_S = self.constants.M_S
-        
-        # Kinetic term: (1/2) sum (nabla S)^2
         kinetic = 0.0
         for mu in range(self.Nd):
             S_fwd = self.shift(self.S, mu, 1)
             kinetic += 0.5 * np.sum((S_fwd - self.S)**2)
-        
-        # Potential term
         potential = 0.5 * m_S**2 * np.sum(self.S**2) + 0.25 * lambda_S * np.sum(self.S**4)
-        
         return kinetic + potential
     
     def total_action(self) -> float:
-        """Total action S = S_gauge + S_scalar."""
         return self.gauge_action() + self.scalar_action()
     
     def kinetic_energy(self) -> float:
-        """Kinetic energy from momenta: T = (1/2) Tr(P^2)."""
         T_gauge = 0.0
         if self.Pu is not None:
-            # P_gauge trace
-            # Pu is (..., Nd, 3, 3)
             tr_P2 = np.trace(self.Pu @ self.Pu.conj().swapaxes(-1, -2), axis1=-2, axis2=-1)
             T_gauge = 0.5 * np.sum(np.real(tr_P2))
-        
         T_scalar = 0.0
         if self.Ps is not None:
             T_scalar = 0.5 * np.sum(self.Ps**2)
-        
         return T_gauge + T_scalar
     
     def hamiltonian(self) -> float:
-        """Total Hamiltonian H = T + S."""
         return self.kinetic_energy() + self.total_action()
 
-    # =========================================================================
-    # FORCE CALCULATIONS (VECTORIZED)
-    # =========================================================================
-    
     def gauge_force_field(self) -> np.ndarray:
-        """
-        Compute gauge force for all links.
-        Returns tensor shape (Nt, Ns, Ns, Ns, Nd, 3, 3).
-        """
         force = np.zeros_like(self.U)
-        
-        # Iterate mu to construct force for U_mu
         for mu in range(self.Nd):
             staple_sum = np.zeros_like(self.U[..., mu, :, :])
-            
             for nu in range(self.Nd):
                 if nu == mu:
                     continue
-
-                # Forward staple
                 U_nu_xmu = self.shift(self.U[..., nu, :, :], mu, 1)
                 U_mu_xnu = self.shift(self.U[..., mu, :, :], nu, 1)
                 U_nu_x = self.U[..., nu, :, :]
-
                 staple_fwd = U_nu_xmu @ U_mu_xnu.conj().swapaxes(-1, -2) @ U_nu_x.conj().swapaxes(-1, -2)
-
-                # Backward staple
-                # Shifted by -nu
                 U_nu_xmu_nub = self.shift(U_nu_xmu, nu, -1)
                 U_mu_xnub = self.shift(self.U[..., mu, :, :], nu, -1)
                 U_nu_xnub = self.shift(self.U[..., nu, :, :], nu, -1)
-
                 staple_bwd = U_nu_xmu_nub.conj().swapaxes(-1, -2) @ U_mu_xnub.conj().swapaxes(-1, -2) @ U_nu_xnub
-
                 staple_sum += staple_fwd + staple_bwd
-            
-            # Project to traceless anti-Hermitian
             U_mu = self.U[..., mu, :, :]
             Omega = U_mu @ staple_sum
             F_mu = (self.beta / 3.0) * (Omega - Omega.conj().swapaxes(-1, -2))
-            
-            # Traceless
             tr = np.trace(F_mu, axis1=-2, axis2=-1)
             eye = np.eye(3, dtype=complex)
             F_mu = F_mu - (tr[..., None, None] / 3.0) * eye
-            
             force[..., mu, :, :] = F_mu
-            
         return force
     
     def scalar_force_field(self) -> np.ndarray:
-        """
-        Compute scalar field force for all sites.
-        """
         lambda_S = self.constants.LAMBDA_S
         m_S = self.constants.M_S
-        
-        # Laplacian
         laplacian = np.zeros_like(self.S)
         for mu in range(self.Nd):
             laplacian += self.shift(self.S, mu, 1) + self.shift(self.S, mu, -1) - 2*self.S
-        
-        # Force
         return -m_S**2 * self.S - lambda_S * self.S**3 + laplacian
 
-    # =========================================================================
-    # OMELYAN INTEGRATOR (VECTORIZED)
-    # =========================================================================
-    
     def omelyan_trajectory(self, n_steps: int = 20, step_size: float = 0.02) -> Tuple[bool, float]:
-        """Vectorized HMC trajectory."""
         xi = 0.193
         gamma = 0.5 - xi
         eps = step_size
-        
-        # Store old
         U_old = self.U.copy()
         S_old = self.S.copy()
-        
-        # Refresh momenta
         self._init_momenta()
         H_initial = self.hamiltonian()
-        
-        # P -> P + force * dt
-        # F_gauge points UPHILL (Gradient) with factor 2. So P -= 0.5 * Gradient.
         F_gauge = self.gauge_force_field()
         self.Pu -= xi * eps * 0.5 * F_gauge
-        
-        # F_scalar points DOWNHILL (Force). So P += Force.
         F_scalar = self.scalar_force_field()
         self.Ps += xi * eps * F_scalar
-        
         for step in range(n_steps):
-            # Q -> Q + gamma*eps*P
-            # Gauge update: U = exp(P)*U
             exp_P = su3_exp_field(gamma * eps * self.Pu)
             self.U = exp_P @ self.U
             self.U = project_su3_field(self.U)
-            
-            # Scalar update (gamma=0.5 preserved from original code)
             self.S += 0.5 * eps * self.Ps
-            
-            # P -> P
             F_gauge = self.gauge_force_field()
             self.Pu -= (1 - 2*xi) * eps * 0.5 * F_gauge
-            
             F_scalar = self.scalar_force_field()
             self.Ps += (1 - 2*xi) * eps * F_scalar
-            
-            # Q -> Q
             exp_P = su3_exp_field(gamma * eps * self.Pu)
             self.U = exp_P @ self.U
             self.U = project_su3_field(self.U)
-            
             self.S += 0.5 * eps * self.Ps
-            
-            # Final P (except last)
             if step < n_steps - 1:
                 F_gauge = self.gauge_force_field()
                 self.Pu -= 2*xi * eps * 0.5 * F_gauge
-                
                 F_scalar = self.scalar_force_field()
                 self.Ps += 2*xi * eps * F_scalar
-        
-        # Final P
         F_gauge = self.gauge_force_field()
         self.Pu -= (1 - xi) * eps * 0.5 * F_gauge
-        
         F_scalar = self.scalar_force_field()
         self.Ps += (1 - xi) * eps * F_scalar
-        
-        # Metropolis
         H_final = self.hamiltonian()
         delta_H = H_final - H_initial
-        
         accepted = False
         if np.random.rand() < np.exp(-delta_H):
             accepted = True
         else:
             self.U = U_old
             self.S = S_old
-
         self.avg_delta_H = 0.9 * self.avg_delta_H + 0.1 * abs(delta_H)
         self.acceptance_rate = 0.9 * self.acceptance_rate + (0.1 if accepted else 0.0)
-        
         return accepted, delta_H
 
-    # =========================================================================
-    # MEASUREMENT (VECTORIZED)
-    # =========================================================================
-    
     def measure_kinetic_vev(self) -> float:
-        """Measure <(nabla S)^2>."""
         kin_sum = 0.0
         for mu in range(self.Nd):
             S_fwd = self.shift(self.S, mu, 1)
             kin_sum += np.sum((S_fwd - self.S)**2)
-        
         count = self.Nt * self.Ns**3 * self.Nd
         return kin_sum / count
 
-
-# =============================================================================
-# MAIN RUN FUNCTION
-# =============================================================================
 
 def run_hmc(Ns: int = 8, Nt: int = 16, beta: float = 6.0,
             n_therm: int = 100, n_meas: int = 200, n_skip: int = 5,
@@ -442,25 +304,19 @@ def run_hmc(Ns: int = 8, Nt: int = 16, beta: float = 6.0,
         print(f"MD steps: {md_steps}, step size: {step_size}")
         print("=" * 70)
     
-    # Initialize lattice
     lattice = UIDTLattice(Ns=Ns, Nt=Nt, beta=beta)
-    
     start_time = time.time()
     
-    # Thermalization
     if verbose:
         print("\nThermalization...")
-    
     for i in range(n_therm):
         accepted, dH = lattice.omelyan_trajectory(n_steps=md_steps, step_size=step_size)
         if verbose and (i + 1) % 10 == 0:
             plaq = lattice.average_plaquette()
             print(f"  Therm {i+1:4d}: <P> = {plaq:.6f}, acc = {lattice.acceptance_rate:.2f}")
     
-    # Measurements
     if verbose:
         print("\nMeasurements...")
-    
     plaquette_measurements = []
     kinetic_vev_measurements = []
     accepted_count = 0
@@ -469,32 +325,20 @@ def run_hmc(Ns: int = 8, Nt: int = 16, beta: float = 6.0,
         accepted, dH = lattice.omelyan_trajectory(n_steps=md_steps, step_size=step_size)
         if accepted:
             accepted_count += 1
-        
         if (i + 1) % n_skip == 0:
             plaq = lattice.average_plaquette()
             kin_vev = lattice.measure_kinetic_vev()
-            
             plaquette_measurements.append(plaq)
             kinetic_vev_measurements.append(kin_vev)
-            
             if verbose and (i + 1) % 50 == 0:
                 print(f"  Meas {i+1:4d}: <P> = {plaq:.6f}, <(dS)^2> = {kin_vev:.6f}")
     
     elapsed = time.time() - start_time
-    
-    # Compute results
     plaq_mean = np.mean(plaquette_measurements)
     plaq_err = np.std(plaquette_measurements) / np.sqrt(len(plaquette_measurements))
-    
     kin_vev_mean = np.mean(kinetic_vev_measurements)
     kin_vev_err = np.std(kinetic_vev_measurements) / np.sqrt(len(kinetic_vev_measurements))
-    
-    # Compute gamma from kinetic VEV
-    if kin_vev_mean > 0:
-        gamma_computed = constants.TARGET_DELTA / np.sqrt(kin_vev_mean)
-    else:
-        gamma_computed = float('nan')
-    
+    gamma_computed = constants.TARGET_DELTA / np.sqrt(kin_vev_mean) if kin_vev_mean > 0 else float('nan')
     acceptance = accepted_count / n_meas
     
     if verbose:
@@ -516,20 +360,12 @@ def run_hmc(Ns: int = 8, Nt: int = 16, beta: float = 6.0,
         'gamma': gamma_computed,
         'acceptance': acceptance,
         'runtime': elapsed,
-        'measurements': {
-            'plaquette': plaquette_measurements,
-            'kinetic_vev': kinetic_vev_measurements
-        }
+        'measurements': {'plaquette': plaquette_measurements, 'kinetic_vev': kinetic_vev_measurements}
     }
 
 
-# =============================================================================
-# MAIN ENTRY POINT
-# =============================================================================
-
 if __name__ == "__main__":
     args = get_params()
-    
     results = run_hmc(
         Ns=args.Ns,
         Nt=args.Nt,
@@ -542,6 +378,5 @@ if __name__ == "__main__":
         step_size=args.step_size,
         verbose=True
     )
-    
     print("\n[COMPLETE] Real HMC simulation finished.")
     print(f"[RESULT] gamma = {results['gamma']:.3f}")
