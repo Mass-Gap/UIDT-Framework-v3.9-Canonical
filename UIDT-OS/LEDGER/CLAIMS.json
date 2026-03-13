@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "3.9-TICK-20260224",
-    "last_updated": "2026-02-25",
+    "last_updated": "2026-03-13",
     "doi": "10.5281/zenodo.17835200",
     "total_claims": 63
   },
@@ -106,7 +106,7 @@
       "evidence": "A",
       "dependencies": ["rg_flow_analysis.py"],
       "since": "v3.2",
-      "notes": "Residual 0.001 < tolerance 0.01"
+      "notes": "Exact rational values κ=1/2, λ_S=5/12 give LHS=RHS=5/4 exactly. Residual = 0 (algebraic). Tolerance < 1e-14 satisfied."
     },
     {
       "id": "UIDT-C-011",
@@ -721,7 +721,7 @@
         "covariant_unification.py"
       ],
       "since": "v3.9",
-      "notes": "Numerical 5-loop expansion with extreme perturbation epsilon = 10^-40 shows absolute protection of macroscopic limits against phantomization."
+      "notes": "Banach contraction check: RG constraint |5κ²-3λ_S| = 0 (exact rational). IR stability verified via scalar mass relation with honest residual reporting."
     },
     {
       "id": "TKT-110-CCCC-Harmonics",

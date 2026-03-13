@@ -1,4 +1,4 @@
-from mpmath import mp, mpf, pi
+from mpmath import mp, mpf, pi, nstr
 
 # AGENTS.md Anti-Centralization Rule: Local precision declaration
 mp.dps = 80
@@ -9,16 +9,16 @@ def verify_kissing_number_suppression():
     print("="*70)
 
     print("\n--- Section 1: Reproduce Theorem 6.1 (Canonical Values) ---")
-    delta = mpf('1.710035') # GeV
+    delta = mpf('1.710035')  # GeV
     gamma = mpf('16.339')
-    v_ew = mpf('246.22') # GeV
-    m_pl = mpf('2.435e18') # GeV
-    
+    v_ew = mpf('246.22')     # GeV
+    m_pl = mpf('2.435e18')   # GeV
+
     # rho_uidt = (1/pi**2) * delta**4 * gamma**(-12) * (v_ew/m_pl)**2
     rho_uidt_gev4 = (mpf('1') / (pi**2)) * (delta**4) * (gamma**-12) * ((v_ew / m_pl)**2)
-    rho_obs_gev4 = mpf('2.53e-47') # GeV^4
+    rho_obs_gev4 = mpf('2.53e-47')  # GeV^4
     ratio = rho_uidt_gev4 / rho_obs_gev4
-    
+
     print(f"Computed Vacuum Energy (rho_UIDT): {rho_uidt_gev4} GeV^4")
     print(f"Observed Vacuum Energy (rho_OBS) : {rho_obs_gev4} GeV^4")
     print(f"Ratio (UIDT/OBS)                 : {ratio}")
@@ -38,10 +38,11 @@ def verify_kissing_number_suppression():
     print("Risk flag: post-hoc rationalization.")
     print("="*70)
 
+    # [NUMERICAL DETERMINISM] All return values use nstr() — no float() conversion
     return {
-        "rho_uidt_gev4": float(rho_uidt_gev4),
-        "suppression_factor": float(suppression_factor),
-        "ratio": float(ratio)
+        "rho_uidt_gev4": nstr(rho_uidt_gev4, 80),
+        "suppression_factor": nstr(suppression_factor, 80),
+        "ratio": nstr(ratio, 80)
     }
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 import sys
-from mpmath import mp, mpf
+from mpmath import mp, mpf, nstr
 from modules.covariant_unification import CovariantUnification
 
 # AGENTS.md Anti-Centralization Rule: Local precision declaration
@@ -28,7 +28,7 @@ def verify_su3_color_projection():
     eta_csf_frg = mpf('0.504')
     ratio = eta_csf_frg / gamma_csf
     deviation = abs(ratio - mpf('3'))
-    
+
     print(f"Target eta_CSF_FRG : {eta_csf_frg}")
     print(f"Ratio (eta/gamma)  : {ratio} (~ N_c)")
     print(f"Deviation from 3   : {deviation}")
@@ -42,10 +42,11 @@ def verify_su3_color_projection():
     print("the color gauge group. Risk flag: post-hoc pattern matching.")
     print("="*70)
 
+    # [NUMERICAL DETERMINISM] All return values use nstr() — no float() conversion
     return {
-        "gamma_csf": float(gamma_csf),
-        "ratio": float(ratio),
-        "deviation": float(deviation)
+        "gamma_csf": nstr(gamma_csf, 80),
+        "ratio": nstr(ratio, 80),
+        "deviation": nstr(deviation, 80)
     }
 
 if __name__ == "__main__":
