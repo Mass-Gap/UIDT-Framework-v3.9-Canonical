@@ -55,6 +55,7 @@ dist/
 downloads/
 eggs/
 .eggs/
+.eggs/
 lib/
 lib64/
 parts/
@@ -166,12 +167,8 @@ TODO
 # Local utility scripts (hardcoded paths)
 auto_update_repo.bat
 UIDT-OS/LEDGER/CLAIMS.json
-UIDT-OS/LEDGER/CLAIMS.json
-UIDT-OS/LEDGER/CLAIMS.json
-UIDT-OS/LEDGER/CLAIMS.json
 verification/scripts/cache_lookup.py
 .gitignore
-
 MCP_REPAIR_INSTRUCTIONS.md
 SYSTEM_VERIFICATION_REPORT_20260302.md
 PR_DRAFT_SYSTEM_VERIFICATION.md
