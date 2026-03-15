@@ -1,10 +1,10 @@
 {
   "metadata": {
     "version": "3.9.0",
-    "last_updated": "2026-02-28",
+    "last_updated": "2026-03-15",
     "doi": "10.5281/zenodo.17835200",
     "total_claims": 53,
-    "audit_note": "Updated from PRs #1-#99 retroactive audit. 11 new claims (C-043 to C-053), 2 existing claims updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3."
+    "audit_note": "Updated from PRs #1-#99 retroactive audit. 11 new claims (C-043 to C-053), 2 existing claims updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99) on 2026-03-15."
   },
   "claims": [
     {
@@ -387,14 +387,14 @@
     },
     {
       "id": "UIDT-C-037",
-      "statement": "Dark energy equation of state w = -0.961",
+      "statement": "Dark energy equation of state w₀ = -0.99",
       "type": "cosmology",
       "status": "calibrated",
       "evidence": "C",
       "confidence": 0.9,
       "dependencies": [],
       "since": "v3.7.2",
-      "notes": "Canonical dark energy EOS. INCONSISTENCY: systematic_robustness_report.md states w₀≈-0.99, DESI_DR2_alignment_report.md uses w₀=-0.73. Three values coexist without reconciliation. Audit S1-04."
+      "notes": "Canonical dark energy EOS per Decision D-002. Previous values (-0.961, -0.762, -0.73) superseded. CONSTANTS.md v3.9.4 authoritative. Synchronized 2026-03-15."
     },
     {
       "id": "UIDT-C-038",
