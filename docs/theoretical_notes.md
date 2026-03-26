@@ -339,7 +339,7 @@ We postulate that the dynamical dark energy parameter $w_a$ (in the CPL parametr
     $$ w_a = -\delta_{eff} \approx -1.183 $$
 
 ### Comparison with DESI-DR2 Observations
-We compare this L-dependent calibrated value [C] with the observational constraints from DESI Year 1 (Reference: arXiv:2404.03047).
+We compare this L-dependent calibrated value [C] with the observational constraints from DESI Year 1 (Reference: arXiv:2404.03002).
 
 | Source | $w_a$ Value | Confidence Interval | Agreement |
 | :--- | :--- | :--- | :--- |
