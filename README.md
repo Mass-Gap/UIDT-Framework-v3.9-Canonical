@@ -25,7 +25,7 @@
 
 ---
 
-**Central Result:** Analytical derivation of Yang-Mills mass gap Δ* ≈ 1.710 GeV (spectral gap) through information-geometric coupling, achieving mathematical closure with residuals < 10⁻⁴⁰. 
+**Central Result:** Analytical derivation of Yang-Mills mass gap Δ* ≈ 1.710 GeV (spectral gap) through information-geometric coupling, achieving mathematical closure with residuals < 10⁻⁴⁰.
 
 **Physical Significance:** Resolves 10¹²⁰ vacuum energy hierarchy via γ⁻¹² suppression mechanism combined with holographic normalization (π⁻²), reducing cosmological constant problem to 3.3% precision. Introduces the Lattice Torsion Binding Energy (2.44 MeV) to stabilize the discrete vacuum structure.
 
@@ -35,6 +35,28 @@
 - Absence of Torsion Energy (E_T → 0) in precision hadron spectroscopy (Category A)
 - DESI dark energy evolution w₀ = −0.99 [C] (Canonical per Decision D-002, DESI-calibrated)
 - Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D+: analog verification)
+
+---
+
+> [!NOTE]
+> ## 🔬 Active Lattice Collaboration Request — March 2026
+>
+> **Current research focus:** First-principles determination of the cc-diquark NBS wavefunction at the origin for the Ξ\_cc system.
+>
+> The UIDT framework predicts, via four-term chromomagnetic decomposition at 80-digit mpmath precision:
+>
+> **|ψ\_cc(0)|² = 0.4719 fm⁻³** — falsification window: [0.378, 0.566] fm⁻³
+>
+> This is the sole uncontrolled element in the Ξ\_cc isospin splitting prediction ΔM = 1.504 MeV
+> (residuum 0.074 MeV < 0.10σ from LHCb 2026: 1.43 ± 0.76 MeV).
+>
+> A formal collaboration request has been submitted to the **HAL QCD Collaboration**
+> (Prof. N. Ishii & Dr. K.-W. Kelvin-Lee, RCNP Osaka University; arXiv:2601.10091),
+> requesting NBS wavefunction extraction on existing CP-PACS/JLQCD ensembles.
+>
+> 📄 **Technical specification:** [doi:10.5281/zenodo.19157809](https://doi.org/10.5281/zenodo.19157809)
+>
+> *Evidence category: B → A− conditional on lattice result. Known limitation: γ = 16.339 is phenomenological [A−], not derived from RG first principles (see [docs/limitations.md §L4](docs/limitations.md)).*
 
 ---
 
@@ -135,13 +157,11 @@ Three-Equation System Closure:
 
 ### Pillar III: Spectral Expansion & Thermodynamic Censorship
 
-* **Achievement:** Falsifiable, falsifiable predictions for precision and collider experiments.
+* **Achievement:** Falsifiable predictions for precision and collider experiments.
 * **Predictions:**
 * **Thermodynamic Censorship (Wolpert Limit):** Formalizes the fundamental noise floor at ** MeV**, providing an analytical origin for the **X17 anomaly**.
 * **Blind Resonances:** Predicts the BESIII **X2370 resonance** as a harmonic overtone, alongside higher glueball states (Tensor  at 2.418 GeV).
 * **Casimir Anomaly:**  deviation at  nm (**Category D**).
-
-
 * **Status:** **Category D (Prediction Awaiting Verification)**
 
 ### Pillar IV: Photonic Isomorphism (Analog Verification)
@@ -181,7 +201,7 @@ All claims are strictly classified by evidence strength:
 
 ```bash
 # Clone verification environment
-git clone [https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical)
+git clone https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical
 cd UIDT-Framework-v3.9-Canonical
 
 # Install dependencies
@@ -192,7 +212,6 @@ pip install -r verification/requirements.txt
 ### Verification Run
 
 **1. Primary Solver**
-Executes the Four-Pillar Verification Suite (v3.9).
 
 ```bash
 python verification/scripts/UIDT_Master_Verification.py
@@ -224,14 +243,13 @@ python verification/scripts/UIDT_Master_Verification.py
 [4] PILLAR III: SPECTRAL EXPANSION & PREDICTIONS...
    > X17 Noise Floor: 17.10 MeV
    > X2370 Resonance: 2.370 GeV
-   
+
 [5] PILLAR IV: PHOTONIC APPLICATION (Metamaterials, Category D)...
    > Critical Refractive Index (n): 16.3390
 
 ```
 
 **2. Containerized Audit**
-Run the Master Verification Suite in a completely isolated environment:
 
 ```bash
 docker build -t uidt-verify-v3.9 .
@@ -281,7 +299,7 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
   year        = {2026},
   month       = {February},
   doi         = {10.5281/zenodo.17835200},
-  url         = {[https://doi.org/10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200)},
+  url         = {https://doi.org/10.5281/zenodo.17835200},
   publisher   = {Zenodo},
   version     = {3.9 Canonical},
   copyright   = {CC BY 4.0}
@@ -327,14 +345,10 @@ UIDT v3.9 establishes that:
 
 **ORCID:** [0009-0007-4307-1609](https://orcid.org/0009-0007-4307-1609)
 
-**Contact:** badbugs.arts@gmail.com
+**Contact:** uidt-framework@outlook.com
 
 **DOI:** [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200)
 
 ---
 
 *"The successful transition from microscopic to macroscopic physics requires that the gluons acquire mass. This phenomenon, known as the 'mass gap,' is one of the deepest problems in theoretical physics." — Clay Mathematics Institute*
-
-```
-
-```
