@@ -1,6 +1,6 @@
 # Falsification Matrix
 
-**UIDT v3.9** | Last Updated: 2026-02-19
+**UIDT v3.9.5** | Last Updated: 2026-03-28
 
 > **Purpose:** Define experimental tests that would refute the theory
 > **Principle:** A theory that cannot be falsified is not scientific
@@ -227,6 +227,70 @@ H₀ is **calibrated [C]**, not independent prediction. Falsification would ques
 
 ---
 
+### F9: Topological Susceptibility (Wilson Flow / Quenched Lattice) 🔬 NEAR-TERM
+
+> Added: 2026-03-28 | Audit Reference: UIDT-TOPO-AUDIT-2026-03-28
+> Linked script: `verification/scripts/verify_wilson_flow_topology.py`
+
+**UIDT Estimate (SVZ continuum, Category B):**
+$$\chi_{\mathrm{top}}^{1/4} \approx 145\text{–}200\,\mathrm{MeV}\quad(\text{SVZ leading order, }\alpha_s=0.30,\;C_{\mathrm{gluon}}=0.277\,\mathrm{GeV}^4)$$
+
+**Lattice Benchmarks (quenched SU(3)):**
+| Reference | $\chi_{\mathrm{top}}^{1/4}$ [MeV] | σ [MeV] | DOI |
+|---|---|---|---|
+| Athenodorou & Teper 2021 | 190 | 5 | [10.1007/JHEP11(2021)172](https://doi.org/10.1007/JHEP11(2021)172) |
+| Del Debbio et al. 2004 | 191 | 5 | [10.1088/1126-6708/2004/08/044](https://doi.org/10.1088/1126-6708/2004/08/044) |
+| Ce et al. 2015 | 185 | 5 | [10.1103/PhysRevD.92.074502](https://doi.org/10.1103/PhysRevD.92.074502) |
+
+**Falsification Threshold:**
+If a future quenched-lattice continuum extrapolation yields
+$$\chi_{\mathrm{top}}^{1/4} < 120\,\mathrm{MeV}\quad\text{or}\quad\chi_{\mathrm{top}}^{1/4} > 250\,\mathrm{MeV}$$
+at **>3σ**, the UIDT gluon-condensate estimate (Category A-) requires revision.
+
+> Note: The UIDT SVZ estimate is a **leading-order continuum check**, not a
+> first-principles prediction. Higher-order α_s corrections and non-perturbative
+> contributions can shift χ_top by 10–30%. Falsification threshold is therefore
+> set conservatively wide.
+
+**Current Status:**
+⚠️ **PENDING** — verify_wilson_flow_topology.py confirms SVZ estimate is order-of-magnitude
+consistent with the lattice band (z < 2 for all three benchmarks at leading order).
+Full α_s-running and higher-order corrections not yet included.
+
+**Epistemic Boundary (what is NOT claimed):**
+- The topological charge Q is integer-valued by the Atiyah–Singer index theorem
+  (mathematical theorem, not a numerical result).
+- No discrete lattice simulation is performed in the UIDT framework.
+- Residuals of order 10⁻⁷⁴ for Q are **physically impossible** for real gauge
+  configurations and would constitute a fabricated result.
+- Δ* = 1.710 GeV is established via the Banach fixed-point (Category A), not via
+  Wilson flow.
+
+**Timeline:**
+- **2026:** Initial consistency check via verify_wilson_flow_topology.py (done)
+- **2027:** Include NLO α_s corrections; compare with Borsanyi et al. (Budapest-Marseille-Wuppertal) updated results
+- **2028+:** Full dynamical-fermion χ_top comparison
+
+**Falsification Example:**
+- $\chi_{\mathrm{top}}^{1/4} = 110 \pm 5\,\mathrm{MeV}$ from future lattice → **GLUON CONDENSATE ESTIMATE REVISED**
+- $\chi_{\mathrm{top}}^{1/4} = 188 \pm 4\,\mathrm{MeV}$ from future lattice → **SVZ ESTIMATE CONFIRMED** → Category B maintained
+
+**Verification Protocol:**
+1. Run: `python verification/scripts/verify_wilson_flow_topology.py`
+2. Monitor arXiv:hep-lat for quenched χ_top continuum extrapolations
+3. Compute z-score: z = |χ14_UIDT − χ14_lattice| / σ_lattice
+4. If z > 3 for all published benchmarks → [TENSION ALERT] → gluon condensate C requires PI review
+
+**Claim IDs registered:** UIDT-C-TOPO-01 (B), UIDT-C-TOPO-02 (A-), UIDT-C-TOPO-03 (A-)
+
+**Impact if F9 falsified:**
+- C_gluon (A-) requires revision → propagates into SVZ-based estimates only
+- Δ* = 1.710 GeV (A, Banach) **UNAFFECTED**
+- γ = 16.339 (A-) **UNAFFECTED**
+- Severity: 🟡 **PARAMETER REVISION NEEDED** (not theory-killing)
+
+---
+
 ## VERIFICATION PROTOCOL FOR RESEARCHERS
 
 ### Step 1: Monitor Experimental Literature
@@ -240,6 +304,7 @@ H₀ is **calibrated [C]**, not independent prediction. Falsification would ques
 **Automated Alerts:**
 Set arXiv alerts for keywords:
 - "Yang-Mills mass gap"
+- "topological susceptibility quenched SU(3)"
 - "Casimir force sub-nanometer"
 - "DESI dark energy"
 - "LHC scalar resonance 1.7 GeV"
@@ -256,7 +321,8 @@ Set arXiv alerts for keywords:
 2. Run verification:
    ```bash
    python verification/scripts/UIDT_Master_Verification.py
-   # Expected: PASS with residuals < 10⁻⁴⁰
+   python verification/scripts/verify_wilson_flow_topology.py
+   # Expected: PASS with residuals < 10⁻⁴⁰ (master) and Category B (topology)
    ```
 
 3. Compare with experimental data:
@@ -293,6 +359,7 @@ Set arXiv alerts for keywords:
 | **F6** | $m_p/f_{vac} \approx 8.75$ | D | >3σ deviation | Ongoing | ⚠️ Pending |
 | **F7** | Casimir +0.59% | D | \|ΔF/F\| < 0.1% @ 0.66 nm | 2028+ | ❌ No data exists |
 | **F8** | H₀ = 70.4 ± 0.16 km/s/Mpc | C | H₀ ≠ 70.4 at >3σ | 2025-2027 | ⚠️ Uncertain |
+| **F9** | $\chi_{\mathrm{top}}^{1/4} \in [145, 200]$ MeV | B | z > 3 vs. all quenched benchmarks | 2026-2028 | ⚠️ Leading-order consistent |
 
 ---
 
@@ -323,14 +390,21 @@ Set arXiv alerts for keywords:
 - **Core QFT/cosmology/lab pillars** **UNAFFECTED**
 - **Severity:** 🟡 **PILLAR IV REFUTED** (but QFT core survives)
 
+### If Test 9 (Topological Susceptibility) FAILS:
+- **C_gluon = 0.277 GeV⁴** (A-) requires revision
+- SVZ-based cross-checks invalidated
+- **Δ* = 1.710 GeV** (A, Banach) **UNAFFECTED**
+- **γ = 16.339** (A-) **UNAFFECTED**
+- **Severity:** 🟡 **PARAMETER REVISION NEEDED** (not theory-killing)
+
 ---
 
 ## Citation
 
 ```bibtex
-@misc{Rietz2025_Falsification,
+@misc{Rietz2026_Falsification,
   author = {Rietz, Philipp},
-  title  = {UIDT v3.9 Falsification Matrix},
+  title  = {UIDT v3.9.5 Falsification Matrix},
   year   = {2026},
   doi    = {10.5281/zenodo.17835200},
   url    = {https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/blob/main/docs/falsification-criteria.md}
@@ -341,9 +415,10 @@ Set arXiv alerts for keywords:
 - [Evidence Classification (A-E)](evidence-classification.md)
 - [Known Limitations (L1-L6)](limitations.md)
 - [Verification Guide](verification-guide.md)
+- [Wilson Flow Topology Script](../verification/scripts/verify_wilson_flow_topology.py)
 
 ---
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-03-28 (F9 added — Audit UIDT-TOPO-AUDIT-2026-03-28)
 **DOI:** 10.5281/zenodo.17835200
-**Next Review:** After DESI Year 3 (2025), Metamaterial analog tests (2026), and Lattice 2026 Conference
+**Next Review:** After Lattice 2026 Conference; after NLO α_s corrections integrated
