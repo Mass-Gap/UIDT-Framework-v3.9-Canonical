@@ -4,6 +4,19 @@
 # Computes RT-geodesic invariants and maps them to an effective
 # geometric coupling gamma_eff^RT.
 #
+# ============================================================
+# [SCAFFOLD — NO PHYSICS YET]
+# This module is a well-structured scaffold. The physical
+# RT-geodesic derivation has NOT yet been implemented.
+# Until at least one physically motivated configuration
+# produces a non-trivial gamma_eff_rt value, this module
+# must NOT be cited as evidence for any numerical claim.
+# All current output (gamma_eff_rt = 0.0 for all configs)
+# is a known artefact of the placeholder, not a result.
+# Merge to main is blocked until physics is implemented.
+# See PR #185 review comments for details.
+# ============================================================
+#
 # Stratum: III (UIDT interpretive mapping — numerical only in this module)
 # Evidence cap: [D] for interpretation, [A]/[B]-compatible for pure numerics
 # Author: P. Rietz
@@ -29,6 +42,10 @@ def compute_rt_geodesic_invariants(params: Dict[str, Any]) -> Dict[str, Any]:
     """
     Compute RT-geodesic invariants for a given configuration.
 
+    [SCAFFOLD — NO PHYSICS YET]
+    The 'invariant_example' key currently returns 0.0 unconditionally.
+    Replace with the actual RT-geometry integration before use.
+
     Parameters
     ----------
     params : dict
@@ -40,7 +57,7 @@ def compute_rt_geodesic_invariants(params: Dict[str, Any]) -> Dict[str, Any]:
     -------
     dict with keys:
         - 'config_id' (str)
-        - 'invariant_example' (mpmath.mpf): placeholder for actual invariant
+        - 'invariant_example' (mpmath.mpf): placeholder (= 0.0 until implemented)
         Additional computed invariants should be added here as mp.mpf values.
 
     Notes
@@ -54,7 +71,8 @@ def compute_rt_geodesic_invariants(params: Dict[str, Any]) -> Dict[str, Any]:
 
     config_id = params.get("config_id", "UNSPECIFIED")
 
-    # Placeholder: replace with actual RT-geometry integration.
+    # [SCAFFOLD] Replace with actual RT-geometry integration.
+    # Current output: invariant_example = 0.0 (placeholder, not a result).
     # All numerical values MUST be mpmath types, never builtin float.
     invariant_example = mp.mpf("0.0")
 
@@ -70,6 +88,12 @@ def effective_gamma_from_geodesics(invariants: Dict[str, Any]) -> Any:
     """
     Map RT-geodesic invariants to an effective geometric coupling gamma_eff^RT.
 
+    [SCAFFOLD — NO PHYSICS YET]
+    Current implementation: gamma_eff_rt = 0.0 + invariant_example = 0.0.
+    This is a known artefact. The residual vs. gamma_inf = 16.3437 will
+    therefore be 1.0 (100%) for all configurations until physics is added.
+    Do NOT interpret CSV output from this scaffold as a meaningful result.
+
     Parameters
     ----------
     invariants : dict
@@ -79,6 +103,7 @@ def effective_gamma_from_geodesics(invariants: Dict[str, Any]) -> Any:
     -------
     gamma_eff_rt : mpmath.mpf
         Effective geometric coupling derived from RT geometry.
+        Currently returns 0.0 (scaffold placeholder).
 
     Notes
     -----
@@ -101,7 +126,8 @@ def effective_gamma_from_geodesics(invariants: Dict[str, Any]) -> Any:
     if not isinstance(inv, mp.mpf):
         inv = mp.mpf(inv)
 
-    # Placeholder mapping: replace with actual RT -> gamma_eff derivation.
+    # [SCAFFOLD] Replace with actual RT -> gamma_eff derivation.
+    # Current output: 0.0 + 0.0 = 0.0 for all configurations.
     gamma_eff_rt = mp.mpf("0.0") + inv
 
     return gamma_eff_rt
@@ -122,6 +148,8 @@ def generate_default_rt_configs() -> List[Dict[str, Any]]:
     - Deterministic; no random state.
     - All numerical parameters must be representable without builtin float.
     - Extend this list as the RT research program develops.
+    - [SCAFFOLD] Add physically motivated parameters (e.g. entropy gradient
+      scale, boundary geometry, AdS radius) as keys in each config dict.
     """
     configs: List[Dict[str, Any]] = []
 
