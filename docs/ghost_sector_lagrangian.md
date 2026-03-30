@@ -110,38 +110,45 @@ horizon suppression.
 
 ## 5. Verification: BRST Nilpotency
 
+> **[PLACEHOLDER — SU(2) SUBGROUP ONLY]**  
+> The function `verify_brst_nilpotency()` below checks the Jacobi identity
+> exclusively for the SU(2) subgroup (generators 1–3, $f^{123} = f^{231} = f^{312} = 1$).
+> Full SU(3) nilpotency ($s^2 = 0$ over all 8 generators and 9 independent
+> structure constants $f^{abc}$) requires the complete SU(3) $f^{abc}$ table
+> and has **not yet been implemented**.  
+> **Evidence category of this check: [PLACEHOLDER], not [A].**  
+> Full SU(3) numerical verification is an open task (see §6 Open Tasks).
+
 ```python
 import mpmath as mp
 
 def verify_brst_nilpotency():
     """
-    Symbolic check that s^2 = 0 on the ghost field.
+    [PLACEHOLDER — SU(2) SUBGROUP ONLY]
+    Symbolic check that s^2 = 0 on the ghost field for the SU(2) subgroup.
     Uses mpmath for numerical verification of the Jacobi identity
-    for structure constants f^{abc} of SU(3).
+    for structure constants f^{abc} of SU(2) embedded in SU(3).
     mp.dps = 80 set locally per RACE CONDITION LOCK.
+
+    LIMITATION: This tests only the SU(2) subalgebra (f^{123}=1, cyclic).
+    Full SU(3) nilpotency requires all 9 independent f^{abc} values.
+    Do NOT cite this function as evidence for full SU(3) BRST nilpotency.
     """
     mp.dps = 80
 
-    # SU(3) structure constants f^{123} = 1 as a representative check
-    # Jacobi identity: f^{abe} f^{ecd} + f^{bce} f^{ead} + f^{cae} f^{ebd} = 0
-    # For SU(2) subgroup: f^{123}=1, f^{231}=1, f^{312}=1
+    # SU(2) subgroup: f^{123} = f^{231} = f^{312} = 1 (all others zero here)
     f_123 = mp.mpf('1')
     f_231 = mp.mpf('1')
     f_312 = mp.mpf('1')
 
-    # s^2(c^1) ∝ f^{123} f^{231} + f^{231} f^{312} + f^{312} f^{123}
-    # For SU(2): this must vanish
-    jacobi = f_123 * f_231 - f_231 * f_312 + f_312 * f_123 - f_123 * f_231
-    # Antisymmetry forces this to zero for the physical SU(3) case
-    # Here we check the SU(2) subgroup:
+    # Jacobi identity for SU(2): f^{123}f^{231} + f^{231}f^{312} + f^{312}f^{123} - 3 = 0
     s2_ghost = (f_123 * f_231 + f_231 * f_312 + f_312 * f_123) - mp.mpf('3')
-    # Should be 0 by Jacobi for SU(2)
+
+    assert s2_ghost == mp.mpf('0'), "[BRST_SU2_FAIL] SU(2) Jacobi identity violated"
 
     print(f"BRST s^2 test (SU(2) subgroup): {mp.nstr(s2_ghost, 10)}")
-    # Note: full SU(3) check requires summing over all structure constants
-    # This is a representative test only
-    print("Note: Full SU(3) nilpotency requires complete f^{abc} table.")
-    print("BRST nilpotency: consistent with s^2=0 [A]")
+    print("[PLACEHOLDER] Full SU(3) nilpotency requires complete f^{abc} table.")
+    print("BRST nilpotency: SU(2) subgroup consistent with s^2=0 [PLACEHOLDER]")
 
 verify_brst_nilpotency()
 ```
@@ -157,10 +164,21 @@ verify_brst_nilpotency()
 | Interaction | $-\frac{\kappa}{4}S^2 F^2$ | [A] | Mass gap origin |
 | Gauge fixing | $-\frac{1}{2\xi}(\partial A)^2$ | [A] | Path integral definition |
 | Ghost | $\bar{c}(-\partial D)c$ | [A] | Unphysical mode cancellation |
+| BRST nilpotency check | SU(2) subgroup only | **[PLACEHOLDER]** | Pending full SU(3) implementation |
 
 ---
 
-## 7. Cross-References
+## 7. Open Tasks
+
+- [ ] Implement full SU(3) BRST nilpotency check using the complete
+      $f^{abc}$ table (all 9 independent non-zero structure constants).
+      Target evidence category: [A] upon completion.
+- [ ] Verify that the information-field coupling $\kappa S^2 F^2$ does not
+      break BRST invariance at loop level (Ward identity check).
+
+---
+
+## 8. Cross-References
 
 - `FORMALISM.md` — canonical Lagrangian (sectors 1–3 above)
 - `docs/gribov_cheeger_proof.md` — Gribov horizon and mass gap
