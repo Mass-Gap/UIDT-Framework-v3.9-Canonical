@@ -23,7 +23,7 @@ quantitative characterisation, and its implications — including the interpreti
 mapping to the cosmological dark-energy parameter w\_a [C].
 
 **Terminological note:** In earlier internal drafts, this effect was referred to
-as "Vakuumreibung" (vacuum friction). The English-language term *vacuum dressing*
+as “Vakuumreibung” (vacuum friction). The English-language term *vacuum dressing*
 is preferred in the canonical repository, as it more precisely captures the
 finite-volume mode-coupling origin of the shift without implying a dissipative
 process.
@@ -109,6 +109,15 @@ constants in perturbative QFT:
 
 ## 5. Holographic Amplification
 
+> **WARNING — L IS NOT CANONICAL (Audit S1-01):** The holographic extent
+> L = 8.2 is **calibrated** to DESI-DR2 + Union3 observational data. It is
+> **not** derived from UIDT first principles. Consequently, the formula
+> `w_a = −δ × L⁴` constitutes an **interpretive calibrated mapping**, not an
+> ab-initio prediction. L-sensitivity is significant: L = 8.0 yields
+> w\_a ≈ −1.18; L = 8.2 yields w\_a ≈ −1.30; L = 8.25 yields w\_a ≈ −1.33.
+> Do not cite this result as a first-principles derivation. See also
+> CLAIM C-045 on main branch and Audit S1-01.
+
 The central quantitative connection to cosmology is the holographic
 amplification:
 
@@ -158,9 +167,12 @@ constraints from DESI-DR2 (arXiv:2503.14738):
 
 **Note:** Agreement\_sigma values are heuristic z-scores computed as
 |w\_a(UIDT) − w\_a(data)| / σ(data), without modelling parameter correlations.
-The strong agreement with DESI+Union3 and the tension with DESI+Pantheon+
-reflect the current spread in supernova calibration systematics, not a
-definitive validation or falsification of the UIDT mapping.
+The UIDT prediction w\_a ≈ −1.300 is **consistent** with DESI+Union3 (0.09σ)
+but shows **significant tension** with DESI+Pantheon+ (2.50σ) and
+DESI+DESY5 (2.20σ). These discrepancies reflect the current spread in
+supernova calibration systematics and represent **active falsification
+pressure** on the UIDT holographic mapping. No single dataset combination
+conclusively confirms or refutes the UIDT prediction at current precision.
 
 ### 6.2 Interpretive Framework
 
@@ -169,8 +181,8 @@ structure to dark-energy parameters. It is not an independent measurement. All
 cosmological parameters derived within UIDT are capped at Evidence Category [C].
 
 **Language constraints:**
-- Use "consistent with", "calibrated to", "proposes" — never "resolves",
-  "solves", or "proves" for cosmological claims.
+- Use “consistent with”, “calibrated to”, “proposes” — never “resolves”,
+  “solves”, or “proves” for cosmological claims.
 
 ---
 
@@ -226,27 +238,27 @@ protocol.
 
 ## 9. References
 
-1. P. Rietz, "Vacuum Information Density as the Fundamental Geometric Scalar,"
+1. P. Rietz, “Vacuum Information Density as the Fundamental Geometric Scalar,”
    UIDT Framework v3.9, DOI: [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200)
 
-2. DESI Collaboration, "DESI DR2 Baryon Acoustic Oscillation Measurements,"
+2. DESI Collaboration, “DESI DR2 Baryon Acoustic Oscillation Measurements,”
    arXiv: [2503.14738](https://arxiv.org/abs/2503.14738)
 
-3. Planck Collaboration, "Planck 2018 results. VI. Cosmological parameters,"
+3. Planck Collaboration, “Planck 2018 results. VI. Cosmological parameters,”
    arXiv: [1807.06209](https://arxiv.org/abs/1807.06209),
    DOI: [10.1051/0004-6361/201833910](https://doi.org/10.1051/0004-6361/201833910)
 
-4. KATRIN Collaboration, "Direct neutrino-mass measurement based on 259 days
-   of KATRIN data," arXiv: [2406.13516](https://arxiv.org/abs/2406.13516)
+4. KATRIN Collaboration, “Direct neutrino-mass measurement based on 259 days
+   of KATRIN data,” arXiv: [2406.13516](https://arxiv.org/abs/2406.13516)
 
-5. M. Lüscher, "Volume dependence of the energy spectrum in massive quantum
-   field theories," Commun. Math. Phys. **104**, 177 (1986),
+5. M. Lüscher, “Volume dependence of the energy spectrum in massive quantum
+   field theories,” Commun. Math. Phys. **104**, 177 (1986),
    DOI: [10.1007/BF01211589](https://doi.org/10.1007/BF01211589)
 
-6. M. Chevallier and D. Polarski, "Accelerating universes with scaling dark
-   matter," Int. J. Mod. Phys. D **10**, 213 (2001),
+6. M. Chevallier and D. Polarski, “Accelerating universes with scaling dark
+   matter,” Int. J. Mod. Phys. D **10**, 213 (2001),
    DOI: [10.1142/S0218271801000822](https://doi.org/10.1142/S0218271801000822)
 
-7. E. V. Linder, "Exploring the expansion history of the universe,"
+7. E. V. Linder, “Exploring the expansion history of the universe,”
    Phys. Rev. Lett. **90**, 091301 (2003),
    arXiv: [astro-ph/0208512](https://arxiv.org/abs/astro-ph/0208512)
