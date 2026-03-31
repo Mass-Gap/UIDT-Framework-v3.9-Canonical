@@ -7,7 +7,7 @@
 **New Claims Registered:**
 - `UIDT-C-067` [B]: γ_∞ = 16.3437 ± 5×10⁻⁴ (Bare Gamma, thermodynamic limit)
 - `UIDT-C-068` [B]: δγ = 0.0047 (Vacuum Dressing Shift, δ = 2.8757×10⁻⁴)
-- `UIDT-C-069` [C]: Holographic w_a ≈ -1.300 via ab-initio mechanism at L=8.2
+- `UIDT-C-069` [C]: Holographic w_a ≈ -1.300 via interpretive calibrated mapping at L=8.2
 
 **New Verification Scripts:**
 - `bare_gamma_extrapolation.py` — FSS γ(L) → γ_∞ for L=4–16
