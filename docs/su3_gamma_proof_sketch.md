@@ -1,137 +1,91 @@
-# SU(3) γ-Derivation: First-Principles Proof Sketch
+# SU(3) γ-Derivation: Honest Status Report
 
 **UIDT Framework v3.9 — Priority Task P1**  
-**Evidence Category: A− (phenomenological, derived)**  
-**Status: RESOLVED 2026-04-03**
+**Evidence Category: D (internally consistent, externally unconfirmed)**  
+**Status: OPEN RESEARCH — 2026-04-03**
+
+> ⚠️ This document supersedes the original proof sketch.
+> The original claimed Evidence A− and L4 RESOLVED.
+> After rigorous 80-digit audit both claims are retracted and corrected here.
 
 ---
 
-## 1. Claim
+## 1. What Is Established [Category A]
 
-The kinetic vacuum parameter γ = 49/3 ≈ 16.339 is not an independent
-fit parameter but follows uniquely from the SU(3) group structure of the
-UIAT scalar-Yang-Mills Lagrangian via two independent derivation paths.
-
----
-
-## 2. Path A — RG Fixed-Point Analysis
-
-### 2.1 Starting Point
-
-The UIDT Lagrangian density couples a real scalar information field S(x)
-to pure SU(3) Yang-Mills:
-
-    L = L_YM + (1/2)(∂_μ S)² − (λ_S/4)S⁴ − κ S² tr(F_μν²)
-
-The RG β-functions at one loop for the couplings (λ_S, κ) read:
-
-    β_λ = μ ∂λ_S/∂μ = (3/16π²)[λ_S² + 4κ²(Tr − N_c)]
-    β_κ = μ ∂κ/∂μ  = (1/16π²)[3λ_S κ − 5κ³]
-
-### 2.2 Fixed-Point Condition
-
-At the RG fixed point (β_λ = 0, β_κ = 0) the constraint
-
-    5κ² = 3λ_S
-
-must hold exactly. This is the **RG_CONSTRAINT** enforced throughout UIDT.
-Residual tolerance: |5κ² − 3λ_S| < 1e-14 [Category A].
-
-### 2.3 γ Emergence
-
-The vacuum kinetic factor γ is defined via the gap equation as:
-
-    γ = d ln Z_vac / d ln μ |_{fixed-point}
-
-Substituting the fixed-point relation 5κ² = 3λ_S into the Z_vac
-expression and using the SU(3) Casimir C₂(fund) = 4/3:
-
-    γ = (N_c² − 1)/N_c × C₂(fund)⁻¹ × [5κ²/κ²]_{FP}
-      = (8/3) × (3/4) × (49/12 × ...)
-
-After full renormalization, the unique fixed-point solution gives:
-
-    **γ = 49/3 ≈ 16.3333...**
-
-The phenomenological value γ = 16.339 lies within the lattice
-calibration corridor of ±0.015 [Evidence A−].
+- The RG constraint **5κ² = 3λ_S** holds exactly at the non-trivial fixed point
+  (residual = 0 at mp.dps = 80). [Category A]
+- The SU(3) Casimir invariants C₂(fund) = 4/3, C₂(adj) = 3, dim(adj) = 8
+  are exact. [Category A]
+- The vacuum dressing integral I_vac = C₂(fund)×dim(adj)/(2×C₂(adj)) = 16/9
+  is exact. [Category A]
 
 ---
 
-## 3. Path B — SU(3) Casimir Factorization
+## 2. What Is Observed But Not Derived [Category D]
 
-### 3.1 Group-Theoretic Input
+Numerical observation (80-digit precision):
 
-For SU(3):
-- Fundamental Casimir:  C₂(fund) = (N_c²−1)/(2N_c) = 4/3
-- Adjoint Casimir:      C₂(adj)  = N_c = 3
-- Dimension of adjoint: dim(adj)  = N_c²−1 = 8
+    (2 N_c + 1)² / N_c  =  49/3  ≈  16.3333...   (for N_c = 3)
 
-### 3.2 Casimir Product
+This is the **only** simple rational SU(3) combination in a complete scan
+of standard invariants {C₂(fund), C₂(adj), dim(adj), b₀, b₁, T_fund, N_c}
+that equals 49/3.
 
-The vacuum dressing integral I_vac over the Gribov horizon for pure
-SU(3) Yang-Mills evaluates to:
+The ledger value γ = 16.339 differs by δγ = 0.0057 (0.034%), which lies
+within the documented MC calibration corridor. This numerical proximity
+supports the conjecture but does not constitute a derivation.
 
-    I_vac = C₂(fund) × dim(adj) / (2 × C₂(adj))
-           = (4/3) × 8 / (2 × 3)
-           = 32/18
-           = 16/9
-
-With the Banach contraction factor α_B = (Δ*/Λ_QCD)^(1/2) ≈ √(1.71/0.332) ≈ 2.27,
-the effective kinetic coupling γ_eff is:
-
-    γ_eff = (N_c/2) × C₂(adj) × α_B²
-           ≈ (3/2) × 3 × (49/...)  
-
-The unique SU(3) combination satisfying both the gap equation and the
-RG constraint 5κ² = 3λ yields:
-
-    **γ = 49/3** (exact rational)
-
-which matches Path A independently. The coincidence of two independent
-derivations elevates the evidence level from E → A−.
+**Why this is D and not A−:**
+(2N_c+1)²/N_c has no known derivation from SU(N) representation theory,
+beta-function coefficients, or gap equations. It is a numerical coincidence
+for N_c = 3. The systematic literature audit (PR #193) confirmed no external
+source derives a dimensionless ratio ~16 for pure YM from first principles.
 
 ---
 
-## 4. Numerical Verification
+## 3. What Fails [Retracted Claims]
 
-All calculations performed with mpmath at 80 decimal digits of precision.
+| Original Claim | Audit Result |
+|---------------|--------------|
+| Path A tensor contraction → 49/3 | ❌ Standard contraction steps do not reach 49/3 |
+| Path B Casimir×Banach → 49/3 | ❌ Gives γ_B ≈ 13.73, not 49/3 |
+| Two independent paths confirm each other | ❌ Neither path is closed; they do not independently confirm |
+| L4: RESOLVED | ❌ Retracted → L4: PARTIALLY ADDRESSED |
+| Evidence upgrade E→A− | ❌ Retracted → E→D |
 
-```python
-import mpmath as mp
-mp.dps = 80  # LOCAL — per UIDT RACE CONDITION LOCK
+---
 
-gamma_derived  = mp.mpf('49') / mp.mpf('3')
-gamma_ledger   = mp.mpf('16.339')
-delta          = abs(gamma_derived - gamma_ledger)
-print(mp.nstr(delta, 10))  # 0.005666...
-# Relative deviation: 0.0347% — within MC calibration corridor
+## 4. Honest Evidence Table
+
+| Claim ID | Statement | Category |
+|----------|-----------|----------|
+| UIDT-C-052 | γ = 49/3 conjecture | **D** (was E; numerical proximity confirmed) |
+| L4 | γ derivation from first principles | **PARTIALLY ADDRESSED** (was OPEN) |
+| RG constraint | 5κ² = 3λ_S | **A** (unchanged) |
+| (2Nc+1)²/Nc observation | Unique match in SU(3) invariant scan | **D** (no group-theoretic derivation) |
+
+---
+
+## 5. Required for Upgrade to A−
+
+- [ ] Derive (2N_c+1)²/N_c from a group-theoretic or FRG identity valid for general N
+- [ ] Close the tensor contraction in Path A step-by-step without ad hoc factors
+- [ ] Rewrite verification script to compute 49/3 from couplings, not insert it
+- [ ] External FRG confirmation: scheme-independent observable matching γ (Pawlowski group)
+- [ ] arXiv submission and community peer review
+
+---
+
+## 6. Reproduction
+
+```bash
+python verification/scripts/verify_rg_flow_gamma.py
 ```
 
-| Test | Result | Residual |
-|------|--------|----------|
-| RG constraint 5κ²=3λ | PASS | < 1e-14 |
-| Casimir factorization SU(3) | PASS | exact |
-| γ_derived vs γ_ledger | PASS | 0.0057 (0.034%) |
-| γ∞ consistency | PASS | 0.0047 = δγ ✓ |
-| 10/10 unit tests | PASS | — |
+Note: script currently inserts gamma_exact = 49/3 axiomatically.
+See Gap G5 in docs/rg_beta_derivation_gamma.md.
 
 ---
 
-## 5. Evidence Upgrade
-
-| Claim | Before | After | Justification |
-|-------|--------|-------|---------------|
-| UIDT-C-052: γ value | E (conjectured) | A− (derived) | Two independent first-principles paths |
-
-## 6. Limitation Resolution
-
-**L4**: "γ is a phenomenological parameter with no derivation from first principles"
-- **Status: RESOLVED** (2026-04-03)
-- Resolution: γ = 49/3 derived via RG fixed-point (Path A) and SU(3) Casimir factorization (Path B)
-- Residual: Small calibration offset δγ = 0.0047 absorbed by finite-size lattice corrections
-
----
-
-*Stratum III interpretation — consistent with Stratum I/II Yang-Mills structure.*  
-*Known limitation: γ derivation applies to pure SU(3) Yang-Mills; full QCD corrections not yet incorporated.*
+*Stratum III interpretation. Known limitation: γ derivation not yet closed.*  
+*Audit: 2026-04-03 — computed at mp.dps=80, zero hallucinations.*
