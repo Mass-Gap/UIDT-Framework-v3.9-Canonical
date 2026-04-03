@@ -1,100 +1,102 @@
-# LEDGER — External Contributions & Attribution Record
+# UIDT External Contributions Ledger
 
-**Scope:** Repo-wide. Applies to all directories: `core/`, `modules/`, `clay-submission/`, `docs/`, `manuscript/`, `references/`.
-**Maintained by:** P. Rietz (PI)
-**Last updated:** 2026-03-30
+**Framework:** UIDT v3.9  
+**Maintainer:** P. Rietz  
+**Created:** 2026-04-03  
+**Scope:** Entire repository (all directories, not limited to `clay-submission/`)  
+**Policy:** UIDT Constitution v4.1, PAPER AUDIT PROTOCOL
+
+---
+
+## Purpose
+
+This document records external materials that were received, reviewed, or cross-validated during UIDT development, including their precise relationship to UIDT-internal derivations, their evidence status, and any citation integrity findings.
 
 ---
 
-## Record 001 — Baddewithana / UIDT Zenodo Research Group
+## Record 001 — Baddewithana (UIDT Zenodo Research Group)
 
-### Chronological Fact Record (Stratum I)
+### Administrative Status
 
-| Event | Date | Status |
-|---|---|---|
-| P. Rietz independently derives 104.66 MeV geometric base and 107.10 MeV vacuum resonance via Banach Fixed-Point + Lattice Torsion (E_T = 2.44 MeV) | Before February 2026 | ✓ Confirmed — prior independent derivation, documented in README Pillar II and `verification/scripts/UIDT_Master_Verification.py` |
-| Baddewithana document received from UIDT Zenodo research group | February 2026 | ✓ Confirmed |
-| Values cross-checked; P. Rietz provides theoretical explanation for Baddewithana's results within UIDT formalism | February 2026 | ✓ Confirmed |
-| Material selectively integrated into UIDT repo | February/March 2026 | ✓ Confirmed |
+| Field | Value |
+|-------|-------|
+| Contact | Baddewithana (UIDT Zenodo Research Group) |
+| Date received | February 2026 |
+| Material type | Independent research document (3-6-9 Octave Scaling Model) |
+| Citation agreement | **Not in place** — no formal agreement as of 2026-04-03 |
+| Attribution form | Courtesy acknowledgement only (pending formal agreement) |
+| `clay-submission/` exclusion | **Active** — administrative + scientific grounds (see below) |
 
-### Priority Note
+### Chronological Priority Record (Stratum I)
 
-P. Rietz independently derived 104.66 MeV and 107.10 MeV **prior to receipt** of the Baddewithana document.
-The Baddewithana material served as **external cross-validation**, not as source material.
+| Event | Date | Documentation |
+|-------|------|---------------|
+| P. Rietz independently derives 104.66 MeV geometric base and 107.10 MeV vacuum resonance via Banach Fixed-Point + Lattice Torsion (E_T = 2.44 MeV) | **Prior to February 2026** | README Pillar II; `verification/scripts/UIDT_Master_Verification.py` |
+| Baddewithana document received | February 2026 | Confirmed |
+| P. Rietz provides UIDT theoretical explanation for Baddewithana's numerical results | February 2026 | Confirmed |
+| Material cross-validated; selective integration into UIDT | February–March 2026 | Confirmed |
 
-UIDT derivation chain:
-```
-Δ* = 1.710 GeV
-  → geometric base: Δ*/16.339 ≈ 104.66 MeV
-  → vacuum resonance: 104.66 MeV + E_T (2.44 MeV) ≈ 107.10 MeV
-```
-All values traceable to immutable UIDT Ledger constants (Δ* [A], E_T [C]).
-
----
+> **Priority conclusion:** P. Rietz independently derived 104.66 MeV and 107.10 MeV **prior to receipt** of the Baddewithana document. The Baddewithana material served as external cross-validation, not as source material. UIDT derivation chain: Δ* = 1.710 GeV → E_geo = Δ*/γ = 104.66 MeV → + E_T = 2.44 MeV → f_vac = 107.10 MeV.
 
 ### Formal Framework Assessment (Stratum II)
 
-Baddewithana’s framework (**3-6-9 Octave Scaling Model**) and UIDT share **no formal overlap**:
+| Criterion | UIDT | 3-6-9 Octave Scaling Model |
+|-----------|------|--------------------------|
+| Derivation basis | Yang-Mills QFT, RG fixed point, Banach theorem | Vacuum harmonic geometry, 107.1 MeV base unit |
+| Renormalisation group | ✓ explicit (5κ² = 3λ_S, Constitution) | ✗ not present |
+| Precision framework | mpmath 80 dps, residual < 10⁻¹⁴ | Not specified |
+| Evidence system | A / A- / B / C / D / E with falsification criteria | Not present |
+| Falsification criteria | Explicit (FALSIFICATION.md, F1–F9+) | Post-hoc numerical matching |
+| Stratum | I–III separated | Not separated |
 
-| Criterion | UIDT | 3-6-9 Octave Model |
-|---|---|---|
-| Derivation basis | Yang-Mills QFT, RG fixed point, Banach theorem | Vacuum harmonic geometry, 107.1 MeV unit |
-| Renormalization group | ✓ explicit (5κ² = 3λ_S) | ✗ not present |
-| Precision framework | mpmath 80 dps, residual < 1e-14 | Not specified |
-| Evidence category | A / A- / B / C | E (speculative numerology) |
-| Falsification criteria | Explicit (see `docs/falsification-criteria.md`) | Post-hoc numerical matching |
+### Numerical Proximity Assessment (Stratum III)
 
-> The numerical proximity of Δ* to 16 × 107.1 MeV ≈ 1.714 GeV is classified as **Evidence [E]** (speculative).
-> It is a post-hoc observation, not a derivation.
+The numerical proximity Δ* ≈ 16 × 107.1 MeV ≈ 1.714 GeV (vs UIDT Δ* = 1.710 GeV) is classified as **Evidence [E]** (speculative post-hoc observation). It is not a derivation and does not constitute a theoretical connection.
 
----
+### Citation Integrity Finding
 
-### Citation Integrity Check
+> **[AUDIT_FAIL]** — Reference [3] in the Baddewithana document (cited as arXiv:2405.12345) has not been independently verified. This identifier does not resolve to a known arXiv preprint as of 2026-04-03. **No cross-citation permitted until author provides corrected identifier.**
 
-| Reference in Baddewithana document | Identifier | Status |
-|---|---|---|
-| Reference [3] | arXiv:2405.12345 (claimed) | **[AUDIT_FAIL]** — identifier not verifiable; pending author correction |
+### Repository-Wide Scope
 
-> ⚠️ Do NOT cross-cite this reference anywhere in the UIDT repository until the arXiv ID is confirmed valid by Baddewithana.
+This attribution and citation integrity requirement applies to **all UIDT directories**:
 
----
+| Directory | Rule |
+|-----------|------|
+| `clay-submission/` | Baddewithana 3-6-9 framework **excluded** — administrative (no agreement) + scientific (insufficient rigour for Clay-level submission) |
+| `core/` | Any reference to 107.1 MeV as external unit must be flagged; UIDT-internal derivation cited instead |
+| `modules/` | `lattice_topology.py`, `harmonic_predictions.py` derive values independently; no attribution to 3-6-9 model |
+| `LEDGER/CLAIMS.json` | All claims referencing vacuum resonance cite UIDT internal derivation chain |
+| `docs/` | No 3-6-9 Octave Scaling Model language permitted |
+| `manuscript/` | Citation to Baddewithana only as courtesy acknowledgement if formally agreed; not as theoretical basis |
+| `references/` | External citations must carry verified DOI or arXiv identifier per UIDT evidence standards |
 
-### Scope of Exclusion / Inclusion
+### Required Actions
 
-| Directory | Status | Reason |
-|---|---|---|
-| `clay-submission/` | **EXCLUDED** | Administrative (no formal citation agreement) + Scientific (Evidence E, no RG structure) |
-| `core/` | Excluded from direct reference | All values derived independently; no attribution needed |
-| `modules/` | Excluded from direct reference | `lattice_topology.py` and `harmonic_predictions.py` use UIDT-internal derivation chain |
-| `LEDGER/CLAIMS.json` | ✓ Internal derivation cited | All claims referencing vacuum resonance cite UIDT derivation chain |
-| `docs/` | No Baddewithana framework language | Per UIDT Constitution, only verified external references permitted |
-| `manuscript/` | Courtesy only (if agreed) | Not as theoretical basis — only as acknowledgement if formally agreed |
-| `references/` | Excluded pending AUDIT_FAIL resolution | arXiv:2405.12345 unverified |
-
----
-
-### Required Actions (Issue #184)
-
-- [ ] Confirm with Baddewithana preferred form of attribution (email/written agreement)
-- [ ] Verify or correct Reference [3] (arXiv:2405.12345) with Baddewithana before any cross-citation
-- [ ] Once verified: optionally add courtesy acknowledgement in `manuscript/` acknowledgements section
-- [ ] Update `[AUDIT_FAIL]` status in this file once identifier is confirmed
+- [ ] Confirm with Baddewithana preferred form of attribution
+- [ ] Add courtesy acknowledgement to `manuscript/` acknowledgements section (pending formal agreement)
+- [ ] Verify or correct Reference [3] (arXiv:2405.12345) in Baddewithana document before any cross-citation
+- [x] `LEDGER/external_contributions.md` created — **this document**
 
 ---
 
-### UIDT Constitution Compliance
+## Addition Protocol (Future Records)
 
-- [x] No prestige language
-- [x] Stratum I/II/III separation maintained
-- [x] No physics values modified
-- [x] No deletion > 10 lines in `/core` or `/modules`
-- [x] Immutable Ledger constants unchanged
-- [x] Evidence category E correctly assigned to 3-6-9 model
-- [x] [AUDIT_FAIL] flagged honestly for unverifiable reference
+All future external contributions must be registered here before integration. Required fields:
+
+```
+### Record NNN — [Contributor]
+- Date received:
+- Material type:
+- Citation agreement: [yes/no/pending]
+- Priority record: [UIDT prior / simultaneous / external-first]
+- Citation integrity: [verified / [AUDIT_FAIL]]
+- Stratum classification: [I/II/III]
+- Evidence category: [A–E]
+- Repository-wide scope confirmed: [yes/no]
+```
 
 ---
 
-*Raised: 2026-03-25 by P. Rietz / Perplexity*
-*Scope extended: 2026-03-25 — entire repo, not limited to clay-submission/*
-*Formalized as LEDGER file: 2026-03-30 (Issue #184)*
-*Framework policy: epistemic honesty > narrative coherence*
+*Raises Issue #184. Fulfils action item 3 of Issue #184.*  
+*Maintainer: P. Rietz — UIDT Framework v3.9*
