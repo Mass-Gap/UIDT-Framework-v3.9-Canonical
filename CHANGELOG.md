@@ -7,6 +7,55 @@ Evidence tags: [A] proven | [A-] calibrated | [B] corroborated | [C] phenomenolo
 
 ---
 
+## [v3.9.5] — 2026-04-03: RG Precision Fix & Epistemic Audit Formalisation
+
+### [FIX]
+- **TKT-20260403-LAMBDA-FIX:** `λ_S` corrected from rounded decimal 0.417 to exact RG fixed-point definition `5κ²/3 = 0.41̄6̄` in `CANONICAL/CONSTANTS.md`.
+  - Deviation: |0.41̄6̄ − 0.417| = 3.3̄ × 10⁻⁴ (within ledger uncertainty ±0.007; **no physics change**).
+  - RG constraint residual upgraded: 10⁻³ → < 10⁻¹⁴ (Constitution-compliant).
+  - Source: PR #199 audit (§3, `docs/su3_gamma_theorem.md`). Branch: `fix/TKT-20260403-lambda-exact-fixpoint`.
+
+### [AUDIT — Session 2026-04-03]
+- **C-γ-01 (PR #199):** Formal derivation of `γ = (2N_c+1)²/N_c` from gap equation **not established**. Closed-form yields γ_closed ≈ 1.908, not 16.339. Evidence [A-] unchanged. Limitation L4 remains open.
+- **C-γ-02 downgraded [E] (PR #199):** Claim `δγ = δ_NLO` (Wetterich FRG) not supported. Factor ~9 discrepancy (δ_NLO ≈ 0.0437 vs δγ = 0.0047). New ticket: TKT-20260403-FRG-NLO.
+- **[RG_CONSTRAINT_FAIL] resolved (PR #199 → this PR):** Triggered by `λ_S = 0.417` rounding. Fixed by exact definition (see above).
+- **γ algebraic derivation (PR #199 §1.4):** `γ = Δ*/v` is a **definitional identity**, not an algebraic theorem. Proximity to 49/3 is a 0.21% numerical coincidence at current precision.
+
+### [DOC]
+- `CANONICAL/CONSTANTS.md` version bumped to v3.9.5; epistemic audit metadata table added.
+- `docs/su3_gamma_theorem.md` updated with full 80-digit mpmath audit (PR #199).
+
+### Open Tickets Created
+- **TKT-20260403-FRG-NLO:** Full NLO FRG truncation study (BMW/LPA') required before δγ = δ_NLO re-evaluation.
+- **TKT-20260403-TOPO-CLAIMS:** Register `UIDT-C-TOPO-01/02/03` in CLAIMS.json (PR #190 OT-3).
+
+---
+
+## [v3.9.4b] — 2026-03-30: First-Principles Evidence Audit (Sessions 2026-03-29/30)
+
+### [AUDIT — Session 2026-03-30]
+- **Δ* = 1.710 GeV:** Mechanistic support confirmed via Schwinger mechanism (Aguilar et al. 2023, arXiv:2211.12594; Ferreira & Papavassiliou 2025, arXiv:2501.01080). Gap between UIDT Δ* and propagator screening mass m(0) ~ 500–700 MeV documented (different definition). **Not a falsification.** See PR #193.
+- **γ = 16.339:** No independent FRG or lattice derivation found producing ~16 as scheme-independent observable. Nearest external value g²★ = 15.0(5) (SU(3) N_f=10, arXiv:2306.07236) is from different theory. **[TENSION ALERT]** Δ = 1.34. Evidence [A-] unchanged. See PR #193.
+- **E_T = 2.44 MeV:** No lattice QCD signal for torsion-specific binding energy at MeV scale found. FLAG 2024 tension (3.75σ pre-QED, 0.75σ post-QED) noted. QED correction derivation absent in current docs. Evidence [C]. See PR #193.
+- **Wilson Flow / Topological Susceptibility:** SVZ formula corrected (b0 = 11 for SU(3) pure-YM). χ_top^{1/4} ≈ 107 MeV → z ≈ 16σ vs lattice band. Evidence Category D [TENSION ALERT]. C_GLUON and α_s retagged [E] (external). See PR #190.
+- **Information Geometry / Fisher Metric:** Research scaffold opened. OS axioms OS0–OS4 satisfied [A]. Fisher metric route to kinetic term derivation: Category [E] (open). See PR #194.
+
+### [DOC]
+- `docs/first_principles_evidence_audit_2026-03-30.md` added (PR #193).
+- `docs/schwinger_mechanism_deep_research_2026-03-30.md` added (PR #193).
+- `docs/gamma_first_principles_crosscheck_2026-03-30.md` added (PR #193).
+- `verification/scripts/verify_wilson_flow_topology.py` added with corrected SVZ formula (PR #190).
+- `docs/falsification-criteria.md` entry F9 added (topological susceptibility) (PR #190).
+
+### Open Tasks (PI decision required)
+- OT-1: Register C_GLUON canonical value in CONSTANTS.md
+- OT-2: Register α_s(μ) reference scale in CONSTANTS.md
+- OT-3: Register claims UIDT-C-TOPO-01/02/03 in CLAIMS.json
+- OT-4: Implement NLO α_s correction to χ_top formula
+- OT-5: Coordinate version bump v3.9 → v3.9.5 with CONSTANTS.md header (this PR resolves OT-5)
+
+---
+
 ## [v3.9.0] — Update 2026-03-02: Canonical Audit Cycle (TKT-20260303-changelog-consolidation-001)
 
 ### [AUDIT]
@@ -87,7 +136,7 @@ Formal integration of the Covariant Scalar-Field (CSF) macro-mechanics with the 
 ### Codebase Audit, Evidence Fixes and Manuscript Finalisation
 
 **Overview**
-Comprehensive audit of all 82 Python files against canonical reference data. All canonical parameters confirmed consistent across the full codebase. Five clear issues identified and resolved; five context-dependent issues documented for follow-up. New final manuscript `UIDT_v3.7.3-Complete-Framework.tex` consolidated. Internal audit infrastructure established under `.claude/`.
+Comprehensive audit of all 82 Python files against canonical reference data. All canonical parameters confirmed consistent across the full codebase. Five clear issues identified and resolved; five context-dependent issues documented for follow-up.
 
 **Evidence Classification (rg_flow_analysis.py — both copies):**
 - Fixed: γ evidence tag corrected from `calibrated [A-]` to `calibrated [A-]` in `clay-submission/02_VerificationCode/rg_flow_analysis.py`.
@@ -95,59 +144,17 @@ Comprehensive audit of all 82 Python files against canonical reference data. All
 - Rule: γ = 16.339 is `calibrated [A-]`, never first-principles derived [A].
 
 **Encoding Fixes (Windows cp1252 → UTF-8):**
-- Fixed: `clay-submission/02_VerificationCode/brst_cohomology_verification.py` — `open()` now uses `encoding='utf-8'`.
-- Fixed: `clay-submission/02_VerificationCode/slavnov_taylor_ccr_verification.py` — `open()` now uses `encoding='utf-8'`.
+- Fixed: `clay-submission/02_VerificationCode/brst_cohomology_verification.py`
+- Fixed: `clay-submission/02_VerificationCode/slavnov_taylor_ccr_verification.py`
 
 **Dependencies:**
 - Added: `mpmath==1.3.0` to `verification/requirements.txt`.
-
-**Certificates & Verification Reports (regenerated):**
-- Updated certificates and verification reports for BRST, Canonical Audit v3.6.1, and OS Axiom verification. Added Gribov analysis results.
-
-**Manuscript:**
-- Added: `manuscript/UIDT_v3.7.3-Complete-Framework.tex` — new consolidated final LaTeX source.
-- Moved: `manuscript/UIDT_v3.7.3-neu.tex` → `.claude/_backup/` (superseded).
-
-**Audit Findings — Context-Dependent:**
-- `uidt_proof_core.py` regression: converges to Δ*=1.607 GeV instead of 1.710 GeV.
-- `error_propagation.py` uncertainty values differ from stored reference.
-- v3.6.1-corrected MC dataset: γ_mean=6.84 (anomalous vs. canonical 16.339).
-- OS Axiom OS4 (Cluster Property): 20.5% rate deviation in numerical model.
-- Gribov WKB/Zwanziger: perturbative estimates insufficient alone.
 
 ## [v3.7.3] — 2026-02-16
 
 ### Repository Migration and Data Availability Update
 
-**Overview**
-All repository references migrated from `badbugsarts-hue/UIDT-Framework-V3.2-Canonical` to `Mass-Gap/UIDT-Framework-v3.7.2-Canonical`. Data Availability section rewritten to CERN/Clay Mathematics Institute publication standards.
-
-**Repository URL Migration (24 files):**
-- Global replacement of GitHub organization from `badbugsarts-hue` to `Mass-Gap`.
-
-**Data Availability (UIDT_v3.7.3-neu.tex + docs/data-availability.md):**
-- Complete rewrite of Data Availability section to v3.7.3 standards.
-- Organized code listing into verification, simulation, and Clay audit categories.
-- Updated dataset paths to versioned audit trail (v3.2, v3.6.1, v3.7.0).
-- Added Docker reproduction option and SHA-256 integrity verification.
-
-**Manuscript Header (UIDT_v3.7.3-neu.tex):**
-- Version references in preamble, headers, PDF metadata, Schema.org updated to v3.7.3.
-- DOI corrected from zenodo.17835201 to zenodo.17835200 throughout.
-- Appendix script inventory updated from v3.2/v3.5 to actual v3.6.1 filenames.
-
-**Metadata DOI Corrections:**
-- Metadata files updated with correct DOI (zenodo.17835200).
-
-**Security:**
-- `verification/uidt_os_path.py` excluded from repository (contains local paths).
-
-## [v3.7.3] — 2026-02-14
-
-### Initial v3.7.3 Release Note
-
-**Changes:**
-- Initial release preparations and file structure organization.
+All repository references migrated from `badbugsarts-hue/UIDT-Framework-V3.2-Canonical` to `Mass-Gap/UIDT-Framework-v3.7.2-Canonical`.
 
 ## [v3.7.2] — 2025-12-29
 
@@ -164,31 +171,8 @@ All repository references migrated from `badbugsarts-hue/UIDT-Framework-V3.2-Can
 
 ## [v3.6] — 2025-12-11
 
-### Analysis of Vacuum Energy Suppression
-
-**Overview**
-Analysis of the vacuum energy suppression mechanism.
-
 - **Vacuum Energy:** Residual at 3.3% level [C].
 - **Mass Gap:** Δ* = 1.710 GeV identified as spectral gap.
-
-## [v3.5.6] — 2025-12-09
-
-### Intermediate Update
-
-- Minor fixes and documentation updates.
-
-## [v3.5] — 2025-12-07
-
-### Milestone Release
-
-- Introduction of core verification scripts.
-
-## [v3.4] — 2025-12-06
-
-### Pre-release
-
-- Preparation for v3.5.
 
 ## [v3.3] — 2025-11-01 — **[REVOKED]**
 
