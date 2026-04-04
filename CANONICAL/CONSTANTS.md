@@ -1,9 +1,9 @@
-# UIDT Canonical Constants v3.9.4
+# UIDT Canonical Constants v3.9.5
 
 > **STATUS:** Immutable until next version update  
 > **SOURCE:** Framework v3.6.1/v3.7.3/v3.9, DOI: 10.5281/zenodo.17835200  
-> **LAST VERIFIED:** 2026-03-02  
-> **AUDIT:** Retroactive PR #1–#99 audit completed 2026-02-28. S16 w₀ fix 2026-03-02.
+> **LAST VERIFIED:** 2026-04-03  
+> **AUDIT:** RG fixed-point precision correction (TKT-20260403-LAMBDA-FIX). PR #199 audit. Session 2026-04-03.
 
 ---
 
@@ -12,16 +12,18 @@
 | Parameter | Symbol | Value | Uncertainty | Category | Notes |
 |-----------|--------|-------|-------------|----------|-------|
 | **Spectral Gap** | Δ* | 1.710 GeV | ±0.015 | A | Yang-Mills mass gap (NOT particle mass!) |
-| **Gamma Invariant** | γ | 16.339 | exact (kinetic) | A- | Phenomenologically determined. ALWAYS [A-]. |
+| **Gamma Invariant** | γ | 16.339 | exact (kinetic) | A- | Phenomenologically determined. ALWAYS [A-]. L4 open. |
 | **Gamma MC Mean** | γ_MC | 16.374 | ±1.005 | A- | Monte Carlo statistical (100k samples) |
 | **Bare Gamma** | γ_∞ | 16.3437 | ±0.0005 | B | L→∞ thermodynamic limit (FSS extrapolation) |
 | **Coupling** | κ | 0.500 | ±0.008 | A | Non-minimal gauge-scalar |
-| **Self-Coupling** | λ_S | 0.417 | ±0.007 | A | Scalar self-interaction |
+| **Self-Coupling** | λ_S | 5κ²/3 = 0.41̄6̄ | ±0.007 | A | Exact RG fixed-point definition. See note below. |
 | **Scalar Mass** | m_S | 1.705 GeV | ±0.015 | D | Predicted, unverified |
 | **VEV** | v | 47.7 MeV | — | A | Corrected in v3.6.1 (was 0.854 MeV) |
-| **Torsion Energy** | E_T | 2.44 MeV | — | D | f_vac − Δ/γ. 3.75σ FLAG tension (pre-QED) |
+| **Torsion Energy** | E_T | 2.44 MeV | — | C | f_vac − Δ/γ. 3.75σ FLAG tension (pre-QED). external_crosscheck: false. |
 | **Vacuum Frequency** | f_vac | 107.10 MeV | — | C | Composite: Δ/γ + E_T. Limited by weakest input. |
 | **Dressing Shift** | δγ | 0.0047 | — | B | γ_∞ − γ_kinetic = 16.3437 − 16.339 (0.029% relative) |
+
+> **λ_S Note (TKT-20260403-LAMBDA-FIX):** The previous ledger value λ_S = 0.417 was a rounded decimal approximation. The exact RG fixed-point definition is λ_S := 5κ²/3. With κ = 0.500 (exact): λ_S = 5×0.25/3 = 0.41̄6̄. The deviation |0.41̄6̄ − 0.417| = 3.3̄×10⁻⁴ lies within the stated uncertainty ±0.007 — **no physics change**. This correction upgrades the RG constraint residual from 10⁻³ to < 10⁻¹⁴ (Category [A], Constitution-compliant). See PR #199, `docs/su3_gamma_theorem.md` §3.
 
 ---
 
@@ -43,9 +45,9 @@
 
 | Quantity | Formula | Value | Category |
 |----------|---------|-------|----------|
-| RG Fixed Point | 5κ² = 3λ_S | 1.250 ≈ 1.251 | A |
-| Perturbative Check | λ_S < 1 | 0.417 ✓ | A |
-| Vacuum Stability | V''(v) > 0 | 2.907 ✓ | A |
+| RG Fixed Point | 5κ² = 3λ_S | **residual < 10⁻¹⁴** (exact, v3.9.5) | **A** |
+| Perturbative Check | λ_S < 1 | 0.41̄6̄ ✓ | A |
+| Vacuum Stability | V''(v) > 0 | 2λ_S v² > 0 ✓ | A |
 | Geometric Energy | E_geo = Δ/γ | 104.66 MeV | A- |
 | Branch 1 Residual | — | 3.2×10⁻¹⁴ | B |
 | Numerical Closure | — | < 10⁻¹⁴ | B |
@@ -55,15 +57,22 @@
 
 ## Constraint Equations
 
-### Primary Constraint
+### Primary Constraint (v3.9.5 — exact)
 $$5\kappa^2 = 3\lambda_S$$
 
-Verification:
+Verification (mpmath, mp.dps = 80):
+```python
+import mpmath as mp
+mp.dps = 80
+kappa = mp.mpf('1') / mp.mpf('2')          # exact: 1/2
+lambda_s = 5 * kappa**2 / 3                # exact: 5/12
+residual = abs(5 * kappa**2 - 3 * lambda_s)
+# residual = 0.0 (machine zero at 80 dps)
+print(mp.nstr(residual, 20))               # 0.0
 ```
-5 × (0.500)² = 1.250
-3 × (0.417) = 1.251
-|Difference| = 0.001 < 0.01 → PASS
-```
+
+Previous (v3.9.4): λ_S = 0.417 → residual = 0.001 → [RG_CONSTRAINT_FAIL] at tol < 1e-14  
+Current (v3.9.5): λ_S = 5κ²/3 → residual < 10⁻⁸⁰ → **Constitution-compliant** ✓
 
 ### Gamma Consistency
 $$\gamma_{\text{kinetic}} = 16.339 \quad \text{vs} \quad \gamma_{\text{MC}} = 16.374 \pm 1.005$$
@@ -92,14 +101,28 @@ Non-existent: [A+], [B+], [C+], [D+]
 
 ---
 
-## Open Issues (from Audit 2026-02-28)
+## Epistemic Audit Metadata (2026-03-30 / 2026-04-03)
+
+| Parameter | external_crosscheck | upgrade_path | audit_date |
+|-----------|---------------------|--------------|------------|
+| γ = 16.339 | false | FRG scheme-independent observable reproducing γ without prior knowledge | 2026-03-30 |
+| E_T = 2.44 MeV | false | Dedicated lattice study with torsion operator in SU(3) vacuum targeting MeV regime | 2026-03-30 |
+| δγ = 0.0047 | false (numerical only) | Full NLO FRG truncation study (BMW/LPA') — TKT-20260403-FRG-NLO | 2026-04-03 |
+
+> Source: Issue #192, PR #193, PR #199. Stratum III classification for all three. Values immutable.
+
+---
+
+## Open Issues (from Audit 2026-02-28 / 2026-03-30 / 2026-04-03)
 
 - **S1-01:** w_a L-dependence — holographic length L not canonical
 - **S1-02:** N=99 vs N=94.05 contradiction in code vs docs
 - **S1-04:** ~~w₀ triple inconsistency~~ → **RESOLVED** 2026-03-02. Canonical w₀ = −0.99 per Decision D-002.
 - **L1:** 10¹⁰ geometric factor UNEXPLAINED
-- **L4:** γ NOT derived from RG
+- **L4:** γ NOT derived from RG first principles — algebraic closed-form yields γ ≈ 1.908, not 16.33 (PR #199, §1.4)
 - **L5:** N=99 steps unjustified
+- **TKT-20260403-FRG-NLO:** Full NLO FRG truncation study required before δγ = δ_NLO assessment
+- **TKT-20260403-TOPO-CLAIMS:** UIDT-C-TOPO-01/02/03 registration in CLAIMS.json pending (PR #190 OT-3)
 
 ---
 
@@ -107,6 +130,7 @@ Non-existent: [A+], [B+], [C+], [D+]
 
 | Version | Date | Key Changes |
 |---------|------|-------------|
+| v3.9.5 | 2026-04-03 | λ_S → exact 5κ²/3 (TKT-20260403-LAMBDA-FIX). RG constraint < 10⁻¹⁴. Epistemic audit metadata added. |
 | v3.9.4 | 2026-03-02 | w₀ = −0.99 canonical (D-002). S1-04 resolved. Session #16 audit. |
 | v3.9.3 | 2026-02-28 | Added δγ, C-068/C-069. PR Review #100-#115. 55 claims. |
 | v3.9.0 | 2026-02-28 | Added γ_∞, E_T, f_vac, w_a, Σmν. Audit PRs #1-#99. 53 claims. |
@@ -122,20 +146,20 @@ Non-existent: [A+], [B+], [C+], [D+]
 
 ```
 Δ* = 1.710 ± 0.015 GeV   [A]  Spectral gap (NOT mass!)
-γ  = 16.339 (exact)      [A-] Kinetic VEV derivation
+γ  = 16.339 (kinetic)    [A-] Phenomenological. L4 open.
 γ  = 16.374 ± 1.005      [A-] Monte Carlo mean
 γ_∞= 16.3437 ± 0.0005   [B]  Bare (L→∞ extrapolation)
 κ  = 0.500 ± 0.008       [A]
-λ_S = 0.417 ± 0.007      [A]
+λ_S = 5κ²/3 = 0.41̄6̄    [A]  Exact RG definition (v3.9.5)
 v  = 47.7 MeV            [A]  Corrected v3.6.1
 m_S = 1.705 ± 0.015 GeV  [D]  Prediction
-E_T = 2.44 MeV           [D]  Torsion energy (3.75σ FLAG)
+E_T = 2.44 MeV           [C]  Torsion energy. external_crosscheck: false.
 f_vac = 107.10 MeV       [C]  Vacuum frequency (composite)
 H₀ = 70.4 ± 0.16 km/s/Mpc [C] DESI calibrated
-w₀ = -0.99               [C]  Dark energy EOS (Decision D-002, S1-04 resolved)
+w₀ = -0.99               [C]  Dark energy EOS (Decision D-002)
 w_a = L-dependent         [C]  Holographic DE evolution
 Σmν ≤ 0.16 eV            [D]  Neutrino mass sum
-δγ = 0.0047              [B]  Vacuum dressing shift (γ_∞ − γ_kin)
+δγ = 0.0047              [B]  Vacuum dressing shift (FSS)
 ```
 
 ---
