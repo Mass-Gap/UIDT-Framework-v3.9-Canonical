@@ -13,8 +13,9 @@
 # must NOT be cited as evidence for any numerical claim.
 # All current output (gamma_eff_rt = 0.0 for all configs)
 # is a known artefact of the placeholder, not a result.
-# Merge to main is blocked until physics is implemented.
-# See PR #185 review comments for details.
+# [SCAFFOLD — 2026-04-03] Module on main for integration testing.
+# Physics implementation pending. All output = 0.0 (placeholder).
+# Do NOT cite as evidence for any numerical claim.
 # ============================================================
 #
 # Stratum: III (UIDT interpretive mapping — numerical only in this module)
