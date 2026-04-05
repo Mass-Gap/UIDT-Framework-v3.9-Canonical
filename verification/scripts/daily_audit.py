@@ -14,13 +14,17 @@ def load_claims(filepath):
 def build_graph(claims):
     graph = {}
     claim_map = {c['id']: c for c in claims}
+    # Using a pre-computed set of claim IDs for faster membership lookups
+    # within the list comprehension. This preserves dependency order and
+    # handles large lists more efficiently than direct dictionary key lookups.
+    claim_ids = set(claim_map.keys())
 
     for claim in claims:
         claim_id = claim['id']
         deps = claim.get('dependencies', [])
         # Only add dependencies that are also claims in the list
         # This focuses the graph on internal claim interdependencies
-        valid_deps = [d for d in deps if d in claim_map]
+        valid_deps = [d for d in deps if d in claim_ids]
         graph[claim_id] = valid_deps
 
     return graph, claim_map
