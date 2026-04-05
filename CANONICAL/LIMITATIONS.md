@@ -1,4 +1,4 @@
-# UIDT Known Limitations v3.7.2
+# UIDT Known Limitations v3.9.5
 
 > **PURPOSE:** Transparent documentation of unresolved issues  
 > **PRINCIPLE:** Acknowledge what we don't know
@@ -70,7 +70,8 @@ Accepted as within framework tolerance. 99-step RG cascade + π⁻² normalizati
 - OR derive from non-perturbative FRG
 - OR accept as empirical constant
 
-**Note:** In RESEARCH-MODE, exploring γ derivation is permitted with [E] tag.
+**Note:** Claim UIDT-C-070 (Evidence D) provides a FRG mechanism for the functional form
+γ ~ (Λ_UV/Λ_IR)^{η_*}. This does NOT upgrade γ to [A]; see L6 for truncation caveats.
 
 ---
 
@@ -94,9 +95,40 @@ Physical/mathematical derivation of N=99 from first principles
 
 ---
 
+### L6: FRG Derivation of γ — Minimal Truncation (NEW — v3.9.5)
+**Status:** 🔬 ACTIVE RESEARCH  
+**Claim:** UIDT-C-070 (Evidence D, Stratum III)
+
+**Description:**  
+The FRG derivation of the γ-mechanism (Claim UIDT-C-070) uses a minimal truncation with:
+- η_A = 0 (background-field approximation; gluon fluctuations not fully accounted for)
+- A single dimension-5 operator S F² without higher-dimensional operators (e.g. S² F²)
+- An optimised Litim regulator in the w → 0 limit (conformal window)
+
+The resulting anomalous dimension η_* ≈ 0.072 lies near the phenomenological threshold
+η_* ≈ 0.063 required for γ = 16.339, but is not a first-principles proof.
+
+**Technical signal:**  
+Complex eigenvalues of the stability matrix (spiral RG flow in the IR) are interpreted as a
+truncation artefact, likely caused by missing higher operators (S² F²). This does not
+destroy the fixed-point but limits its status to Evidence D.
+
+**Impact:**  
+- Functional form γ ~ (Λ_UV/Λ_IR)^{η_*} is supported (Stratum III)
+- γ = 16.339 remains strictly [A-] (phenomenological; see L4)
+- The Cauchy deformation (θ ≥ 0.2 rad) and [CAUCHY_CLOSURE] protocol are mandatory
+  for all future momentum-dependent FRG solvers (see `verification/scripts/solve_momentum_frg.py`)
+
+**Condition for Resolution (Evidence D → B):**  
+1. Full momentum projection (∂_{p²}) with Gauss-Chebyshev grid  
+2. Dynamic gluon mass via Faddeev-Popov ghost sector (YMGhostGluonSolver)  
+3. Im(I) < 1e-70 across all loop integrals (Cauchy closure verified)  
+
+---
+
 ## Resolved Limitations (Historical)
 
-### L6: Spectral Gap vs. Particle Mass [RESOLVED]
+### L7: Spectral Gap vs. Particle Mass [RESOLVED]
 **Status:** ✅ CLARIFIED
 
 **Previous Issue:**  
@@ -108,7 +140,7 @@ Glueball identification explicitly WITHDRAWN [E].
 
 ---
 
-### L7: VEV Value [RESOLVED]
+### L8: VEV Value [RESOLVED]
 **Status:** ✅ CORRECTED
 
 **Previous Issue:**  
@@ -128,6 +160,7 @@ Corrected to v = 47.7 MeV. Old value was erroneous.
 | L3 | Vacuum energy | ρ_vac factor 2.3 | 🟢 Accepted |
 | L4 | γ not from RG | γ remains [A-] not [A] | 🔴 High |
 | L5 | N=99 unjustified | RG cascade phenomenological | 🟡 Medium |
+| L6 | FRG truncation artefact | η_* ~ 0.072 stays Evidence D | 🟡 Medium |
 
 ---
 
