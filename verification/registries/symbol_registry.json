@@ -27,7 +27,7 @@
   {
     "symbol": "λ_S",
     "defn": "Scalar self-coupling constant",
-    "value": "0.417 ± 0.007",
+    "value": "5κ²/3 (exact)",
     "unit": "dimensionless",
     "evidence_cat": "A",
     "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
