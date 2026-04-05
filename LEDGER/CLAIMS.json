@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "version": "3.9.0",
-    "last_updated": "2026-03-15",
+    "version": "3.9.5",
+    "last_updated": "2026-04-05",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 53,
-    "audit_note": "Updated from PRs #1-#99 retroactive audit. 11 new claims (C-043 to C-053), 2 existing claims updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99) on 2026-03-15."
+    "total_claims": 54,
+    "audit_note": "Updated from PRs #1-#99 retroactive audit. 11 new claims (C-043 to C-053), 2 existing claims updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99) on 2026-03-15. Session #17 (2026-04-05): UIDT-C-070 added (FRG fixed point for gamma scaling mechanism, Evidence D, extended 4x4 truncation). Total claims updated 53->54."
   },
   "claims": [
     {
@@ -168,7 +168,7 @@
       "evidence": "E",
       "dependencies": [],
       "since": "v3.2",
-      "notes": "Active research field. Perturbative RG gives γ* ≈ 55.8. See also UIDT-C-052 (SU(3) conjecture)."
+      "notes": "Active research field. Perturbative RG gives γ* ≈ 55.8. See also UIDT-C-052 (SU(3) conjecture) and UIDT-C-070 (FRG truncation-level pathway, Evidence D)."
     },
     {
       "id": "UIDT-C-017",
@@ -581,6 +581,25 @@
       "since": "v3.9",
       "notes": "Ω_bbb within lattice QCD range (14.37-14.57 GeV). T_cccc BELOW lattice range (5.6-6.2 GeV) — high-risk falsification. 3-6-9 octave scaling of f_vac. Source: heavy_quark_predictions.md, lhcb_predictions_paper_draft.md.",
       "falsification": "LHCb: M(Ω_bbb) ∉ [14.2,14.7] GeV refutes octave scaling. M(T_cccc) > 5.0 GeV refutes harmonic tetraquark rule."
+    },
+    {
+      "id": "UIDT-C-070",
+      "statement": "A stable, nontrivial UV/IR fixed point exists for the extended SU(3) Yang-Mills scalar sector (SF², S²F²) within the tested FRG truncation. Inclusion of the dimension-6 operator S²F² removes the complex IR eigenvalue pair present in the minimal truncation and stabilizes the infrared flow of the truncated system. The resulting scalar anomalous dimension η_* ≈ 0.045 supports the emergent scaling mechanism γ ∼ (Λ_UV / Λ_IR)^{η_*}. Exact numerical closure to γ = 16.339 requires explicit inclusion of gluonic infrared dynamics (η_A ≠ 0, Gribov-Zwanziger sector).",
+      "type": "derivation",
+      "status": "predicted",
+      "evidence": "D",
+      "confidence": 0.85,
+      "sigma": null,
+      "dependencies": [
+        "verification/scripts/derive_rg_gamma_extended.py",
+        "output/rg_run_log_extended.txt",
+        "UIDT-C-002",
+        "UIDT-C-043",
+        "UIDT-C-016"
+      ],
+      "sinceversion": "v3.9.5",
+      "falsification": "If a full Gribov-Zwanziger truncation (η_A ≠ 0) yields a fixed-point anomalous dimension inconsistent with η_* < 0.10, or if the extended 4×4 fixed point cannot be reproduced at mp.dps = 80 within |residual| < 1e-12, the claim is refuted.",
+      "notes": "Extended 4×4 FRG analysis (Litim regulator, mp.dps = 80) yields real, negative IR eigenvalues for the tested truncation. The complex IR pair from the minimal SF² basis is removed by inclusion of S²F². Evidence Category D (analytical projection) because η_A = 0 throughout; η_* ≈ 0.045 is a truncation-level result, not a full Yang-Mills result. Canonical γ = 16.339 remains strictly [A-] (phenomenologically calibrated; see L4 and UIDT-C-002). UIDT-C-016 (γ RG derivation, E-open) remains open; UIDT-C-070 establishes a concrete truncation-level pathway but does not resolve it."
     }
   ],
   "statistics": {
@@ -588,11 +607,11 @@
     "category_A-": 4,
     "category_B": 7,
     "category_C": 8,
-    "category_D": 8,
+    "category_D": 9,
     "category_E": 12,
     "verified": 22,
     "calibrated": 8,
-    "predicted": 9,
+    "predicted": 10,
     "open": 6,
     "withdrawn": 2,
     "rectified": 1,

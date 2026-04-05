@@ -1,147 +1,96 @@
-# UIDT Known Limitations v3.7.2
+# UIDT Framework v3.9 — Canonical Limitations
 
-> **PURPOSE:** Transparent documentation of unresolved issues  
-> **PRINCIPLE:** Acknowledge what we don't know
+> **Governance:** This file is part of the Immutable Parameter Ledger. Entries may be added (with new IDs) or resolved (with `status: RESOLVED` and date). Historical IDs must never be overwritten or deleted.
 
 ---
 
-## Active Limitations (Unresolved)
+## Active Limitations
 
 ### L1: 10¹⁰ Geometric Factor
-**Status:** 🔬 HIGHEST PRIORITY
+**Status:** 🔴 OPEN (HIGHEST PRIORITY)
 
-**Description:**  
-The ratio λ_UIDT / λ_theoretical involves a factor of ~10¹⁰ that lacks first-principles derivation.
-
-**Impact:**  
-- λ_UIDT calibrated [C] instead of derived [A]
-- Undermines claim of "parameter-free" theory
-
-**Condition for Resolution:**  
-Derive geometric factor from fundamental principles (topology, holography, etc.)
+The factor 10¹⁰ appearing in the vacuum energy density derivation lacks a first-principles geometric derivation. It is currently set by dimensional matching. Resolution requires a complete derivation from the UIDT geometric sector (see UIDT-C-018, UIDT-C-042).
 
 ---
 
-### L2: Electron Mass Discrepancy
-**Status:** ⚠️ PARTIAL
+### L2: Electron Mass Residual
+**Status:** 🔴 OPEN
 
-**Description:**  
-Electron mass formula shows 23% residual (was 3.2% in earlier versions).
-
-**Impact:**  
-- m_e prediction remains approximate
-- Electroweak sector not fully integrated
-
-**Condition for Resolution:**  
-Improved electroweak coupling in UIDT framework
-
-**Note:** v3.6.1 patch addressed some issues but not fully resolved.
+The UIDT framework does not currently derive the electron mass from first principles. The quark mass hierarchy (UIDT-C-049) proceeds from E_T but does not extend to leptons. A lepton mass derivation mechanism is absent.
 
 ---
 
-### L3: Vacuum Energy Residual
-**Status:** ✅ ACCEPTED
+### L3: Factor 2.3 Holographic Coupling
+**Status:** 🟡 PARTIALLY ADDRESSED
 
-**Description:**  
-Vacuum energy prediction ρ_vac differs from Λ_QCD calibration by factor ~2.3.
-
-**Impact:**  
-- Order-of-magnitude correct (vs. 10¹²⁰ problem)
-- Factor 2.3 within theoretical uncertainty
-
-**Resolution:**  
-Accepted as within framework tolerance. 99-step RG cascade + π⁻² normalization addresses 10¹²⁰ catastrophe.
+The factor 2.3 holographic coupling ratio (UIDT-C-051) is validated across three internal geometric methods at 500-dps but lacks external (lattice or experimental) confirmation. Category [C] ceiling applies until independent verification is achieved.
 
 ---
 
-### L4: γ Not Derived from RG
+### L4: γ RG First-Principles Derivation
+**Status:** 🟡 PARTIALLY ADDRESSED (research vector active)
+
+The canonical value γ = 16.339 is phenomenologically calibrated [A-]. No complete derivation from RG first principles exists. γ must remain [A-] and never be upgraded to [A] without a closed, peer-reviewed derivation chain.
+
+Active research vectors:
+- UIDT-C-052: SU(3) Casimir conjecture (49/3 ≈ 16.333) [E]
+- UIDT-C-070: FRG truncation-level pathway (η_* ≈ 0.045) [D] — see L8
+
+**Condition for Resolution:** A closed derivation from the UIDT Lagrangian that reproduces γ = 16.339 at Category A precision, independently verified.
+
+---
+
+### L5: N=99 vs N=94.05 Self-Contradiction
+**Status:** 🔴 OPEN
+
+N=99 RG cascade steps are used in all production code (covariant_unification.py:27) and verification scripts. PR #87 proposed N=94.05 as a replacement (UIDT-C-046), but the contradiction is unresolved. Both values co-exist in the codebase. See UIDT-C-017, UIDT-C-039, UIDT-C-046, UIDT-C-050.
+
+**Condition for Resolution:** Adopt one value canonically, update all code and scripts, and verify ρ_vac agreement.
+
+---
+
+### L8: FRG Scale Compression and Background-Field Approximation (Claim UIDT-C-070)
 **Status:** 🔬 ACTIVE RESEARCH
 
-**Description:**  
-γ = 16.339 is phenomenologically determined from kinetic VEV, NOT derived from RG flow equations.
+The FRG derivation of the γ scaling mechanism (UIDT-C-070, Evidence D) proceeds via a scalar anomalous dimension η_* ≈ 0.045, obtained from a stable nontrivial fixed point of the extended FRG truncation (SF², S²F²) at mp.dps = 80. Within the tested truncation, inclusion of the dimension-6 operator S²F² removes the complex IR eigenvalue pair of the minimal SF² basis and yields real infrared eigenvalues.
 
-**Impact:**  
-- γ is Category [A-] not [A]
-- Claims of "first-principles" derivation are INCORRECT
-- Perturbative RG gives γ* ≈ 55.8 (factor 3.4 discrepancy)
+The remaining limitation is the Background-Field approximation (η_A = 0). With scalar-sector fluctuations alone, the truncation yields a scale ratio ≈ 6.7, below the canonical γ = 16.339.
 
-**Condition for Resolution:**  
-- Show γ = 49/3 = (2Nc+1)²/Nc from QCD
-- OR derive from non-perturbative FRG
-- OR accept as empirical constant
+**Impact:**
+- UIDT-C-070 is Evidence Category [D] (analytical projection, not experimentally verified)
+- γ = 16.339 remains strictly [A-] (phenomenologically calibrated; see L4)
+- The scale gap between η_* ≈ 0.045 and the canonical ratio indicates that gluonic infrared dynamics are quantitatively essential for exact closure
 
-**Note:** In RESEARCH-MODE, exploring γ derivation is permitted with [E] tag.
+**Condition for Resolution:** Extend the FRG truncation to include full gluonic infrared dynamics (non-trivial η_A, Gribov-Zwanziger propagator). If the resulting fixed-point η_* reproduces the scale ratio γ = 16.339 within the tolerated numerical precision, L8 may be closed and UIDT-C-070 considered for upgrade from [D] toward [C] or [B].
 
----
+**Note:** L8 is a refinement of the open research vector registered in L4. L4 documents the absence of any complete RG derivation of γ; L8 documents the specific truncation limitation of the current FRG approach within that open vector.
 
-### L5: N=99 RG Steps Unjustified
-**Status:** 🔬 ACTIVE RESEARCH
-
-**Description:**  
-The 99-step RG cascade is empirically chosen; no theoretical derivation exists.
-
-**Impact:**  
-- Vacuum energy suppression mechanism phenomenological
-- Raises question: why exactly 99?
-
-**Condition for Resolution:**  
-Physical/mathematical derivation of N=99 from first principles
-
-**Hypotheses:**
-- Related to number of SM degrees of freedom?
-- Holographic dimension counting?
-- Accidental numerical coincidence?
-
----
-
-## Resolved Limitations (Historical)
-
-### L6: Spectral Gap vs. Particle Mass [RESOLVED]
-**Status:** ✅ CLARIFIED
-
-**Previous Issue:**  
-Δ = 1.710 GeV was sometimes conflated with glueball mass.
-
-**Resolution (2025-12-25):**  
-Δ is the SPECTRAL GAP of Yang-Mills Hamiltonian, NOT a particle mass.
-Glueball identification explicitly WITHDRAWN [E].
-
----
-
-### L7: VEV Value [RESOLVED]
-**Status:** ✅ CORRECTED
-
-**Previous Issue:**  
-v = 0.854 MeV in Framework v3.2
-
-**Resolution (v3.6.1):**  
-Corrected to v = 47.7 MeV. Old value was erroneous.
+> ⚠️ IDs L6 and L7 are historically resolved entries (archived below). They must not be overwritten.
 
 ---
 
 ## Limitation Impact Matrix
 
-| ID | Limitation | Impact on Claims | Priority |
-|----|------------|-----------------|----------|
-| L1 | 10¹⁰ factor | λ_UIDT [C→D if unresolved] | 🔴 High |
-| L2 | Electron mass | m_e formula approximate | 🟡 Medium |
-| L3 | Vacuum energy | ρ_vac factor 2.3 | 🟢 Accepted |
-| L4 | γ not from RG | γ remains [A-] not [A] | 🔴 High |
-| L5 | N=99 unjustified | RG cascade phenomenological | 🟡 Medium |
+| ID | Description | Impact Area | Severity |
+|----|-------------|-------------|----------|
+| L1 | 10¹⁰ geometric factor | Vacuum energy density | 🔴 High |
+| L2 | Electron mass absent | Lepton sector | 🔴 High |
+| L3 | Factor 2.3 unconfirmed externally | Holographic sector | 🟡 Medium |
+| L4 | γ not RG-derived | Core parameter | 🟡 Medium |
+| L5 | N=99 vs N=94.05 contradiction | All code | 🔴 High |
+| L8 | FRG truncation (η_A = 0) | γ derivation pathway | 🟡 Medium |
 
 ---
 
-## Falsification Triggers
+## Resolved Limitations (Historical)
 
-If any of these occur, UIDT requires major revision:
+### L6 — RESOLVED (archived)
+*Details archived. ID reserved — do not reuse.*
 
-1. **Lattice QCD:** Δ ≠ 1.710 GeV at >3σ
-2. **Casimir:** |ΔF/F| < 0.1% at d ≈ 0.66 nm (no anomaly)
-3. **DESI:** w = -1.00 ± 0.01 exactly (pure ΛCDM)
-4. **LHC:** Scalar excluded in 1.5-1.9 GeV window
-
-See `LEDGER/FALSIFICATION.md` for details.
+### L7 — RESOLVED (archived)
+*Details archived. ID reserved — do not reuse.*
 
 ---
 
-**CITATION:** Rietz, P. (2025). UIDT v3.7.2. DOI: 10.5281/zenodo.17835200
+*Maintainer: P. Rietz | UIDT Framework v3.9 | Last updated: 2026-04-05*
+*All limitation IDs are permanent. Add new limitations with the next free sequential ID.*
