@@ -1,0 +1,100 @@
+[
+  {
+    "id": "AX-001",
+    "statement": "Yang-Mills Lagrangian: L_YM = -1/4 F^a_μν F^{aμν}",
+    "deps": [],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-002",
+    "statement": "Scalar Lagrangian: L_S = 1/2 ∂_μ S ∂^μ S - V(S)",
+    "deps": [],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-003",
+    "statement": "Scalar Potential: V(S) = λ_S/4 (S^2 - v^2)^2",
+    "deps": ["AX-002"],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-004",
+    "statement": "Non-Minimal Coupling: L_int = -κ/4 S^2 F^a_μν F^{aμν}",
+    "deps": ["AX-001", "AX-002"],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-005",
+    "statement": "RG Fixed Point Constraint: 5κ^2 = 3λ_S",
+    "deps": ["AX-004"],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md", "AGENTS.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-006",
+    "statement": "Vacuum Expectation: <S> = v = 47.7 MeV",
+    "deps": ["AX-003"],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md", "AGENTS.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-007",
+    "statement": "Schwinger-Dyson Equation: □S + λ_S S(S^2 - v^2) + κ/2 S F^2 = 0",
+    "deps": ["AX-002", "AX-003", "AX-004"],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-008",
+    "statement": "Spectral Gap: Δ = γ · Λ_QCD",
+    "deps": ["AX-009"],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md", "AGENTS.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-009",
+    "statement": "Kinetic VEV: γ = 16.339 (phenomenologically calibrated)",
+    "deps": [],
+    "evidence_refs": ["UIDT-OS/CANONICAL/EVIDENCE.md", "AGENTS.md"],
+    "category": "A-"
+  },
+  {
+    "id": "AX-010",
+    "statement": "Scalar Mass: m_S^2 = 2λ_S v^2",
+    "deps": ["AX-003", "AX-006"],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-011",
+    "statement": "Perturbative Stability: λ_S < 1",
+    "deps": ["AX-003"],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-012",
+    "statement": "Vacuum Stability: V''(v) = 2λ_S v^2 > 0",
+    "deps": ["AX-003", "AX-006"],
+    "evidence_refs": ["UIDT-OS/CANONICAL/FORMALISM.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-013",
+    "statement": "Numerical Precision: mpmath.mp.dps = 80 (local declaration required)",
+    "deps": [],
+    "evidence_refs": ["AGENTS.md", ".kiro/steering/uidt-framework-constitution.md"],
+    "category": "A"
+  },
+  {
+    "id": "AX-014",
+    "statement": "Residual Threshold: |residual| < 10^-14 for Category A claims",
+    "deps": ["AX-013"],
+    "evidence_refs": ["UIDT-OS/CANONICAL/EVIDENCE.md", "AGENTS.md"],
+    "category": "A"
+  }
+]

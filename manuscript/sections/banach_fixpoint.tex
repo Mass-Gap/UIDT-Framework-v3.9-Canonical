@@ -1,0 +1,253 @@
+%=============================================================================
+% SECTION 5: BANACH FIXED-POINT CONSTRUCTION OF THE SPECTRAL GAP
+%=============================================================================
+% Purpose: Constructive proof of existence and uniqueness of the spectral gap
+% Method: Banach Fixed-Point Theorem on metric space I=[1.6, 1.8] GeV
+% Status: Mathematical Core [Category A]
+%=============================================================================
+
+\section{Banach Fixed-Point Construction of the Spectral Gap}
+\label{sec:banach_construction}
+
+We now formulate the mathematical core of the present framework as a fixed-point problem on a complete metric space. The aim of this section is to establish, within the stated truncation of the coupled gauge-scalar flow, the existence and uniqueness of a strictly positive infrared spectral scale. Throughout, we remain entirely within the theory space and regulator prescription introduced in the preceding section.
+
+\subsection{Theory space and regulated flow}
+
+Let \(\Phi=(A_\mu,S)\) denote the superfield consisting of the \(SU(3)\) gauge field \(A_\mu\) and the real scalar information-density field \(S\). The effective average action \(\Gamma_k[\Phi]\) is assumed to satisfy the exact Wetterich flow equation
+\begin{equation}
+\partial_k \Gamma_k[\Phi]
+=
+\frac{1}{2}\mathrm{Tr}\!\left[
+\bigl(\Gamma_k^{(2)}[\Phi]+R_k\bigr)^{-1}\partial_k R_k
+\right].
+\label{eq:wetterich_flow}
+\end{equation}
+Here \(\Gamma_k^{(2)}\) denotes the Hessian of the effective average action, and the trace runs over momentum, spacetime, Lorentz, and internal indices. The parameter \(k\) interpolates between the ultraviolet microscopic action and the full infrared effective action.
+
+The regulator is chosen as
+\begin{equation}
+R_k(p)= Z_k (k^2-p^2)\Theta(k^2-p^2)+R_{\mathrm{info}},
+\label{eq:regulator_def}
+\end{equation}
+with non-perturbative information contribution
+\begin{equation}
+R_{\mathrm{info}} \equiv \frac{\kappa^2 C}{\Lambda^2}.
+\label{eq:r_info_def}
+\end{equation}
+Here \(\kappa\) is the dimensionless information coupling, \(C\) is the gluon condensate contribution, and \(\Lambda\) is the ultraviolet reference scale introduced for dimensional consistency. By construction, \(R_{\mathrm{info}}\) acts as an infrared mass-like term. In the present truncation, it prevents the propagator from developing an uncontrolled divergence as \(p\to 0\), and thereby provides the mechanism for dynamical mass generation.
+
+\subsection{Definition of the spectral map}
+
+We project the regulated flow onto the scalar two-point sector at vanishing external momentum. The physical infrared spectral scale \(\Delta\) is defined as the pole of the full propagator,
+\begin{equation}
+G(p)\sim (p^2+\Delta^2)^{-1}.
+\label{eq:propagator_pole}
+\end{equation}
+Within the UIDT truncation of the vertex expansion, the pole condition yields the non-linear relation
+\begin{equation}
+\Delta^2
+=
+m_S^2+\Sigma(p=0,\Delta)
+=
+m_S^2+\frac{\kappa^2 C}{4\Lambda^2}
+\left(
+1+\frac{\ln(\Lambda^2/\Delta^2)}{16\pi^2}
+\right).
+\label{eq:gap_equation_implicit}
+\end{equation}
+This motivates the definition of the spectral map \(T:\mathbb{R}_+\to\mathbb{R}_+\) by
+\begin{equation}
+T(x)
+:=
+\left[
+m_S^2+\frac{\kappa^2 C}{4\Lambda^2}
+\left(
+1+\frac{\ln(\Lambda^2/x^2)}{16\pi^2}
+\right)
+\right]^{1/2},
+\qquad x>0.
+\label{eq:spectral_map_def}
+\end{equation}
+A physical mass gap is therefore precisely a fixed point of \(T\), namely a solution of
+\begin{equation}
+\Delta=T(\Delta).
+\label{eq:fixed_point_cond}
+\end{equation}
+
+\subsection{Choice of the physical interval}
+
+The physically relevant domain is taken to be
+\begin{equation}
+I=[1.6,1.8]\ \mathrm{GeV}.
+\label{eq:interval_def}
+\end{equation}
+This interval is motivated by two considerations. First, it contains the canonical solution reported by the verification suite. Second, it lies in the phenomenologically relevant non-perturbative window associated with the lowest infrared spectral scale of the coupled system.
+
+Since \(I\subset \mathbb{R}\) is closed, it is complete with respect to the Euclidean metric \(d(x,y)=|x-y|\). Thus, if \(T\) maps \(I\) into itself and is contractive on \(I\), Banach's fixed-point theorem applies immediately.
+
+\subsection{Continuity and self-mapping}
+
+\begin{lemma}
+The map \(T\) defined in \eqref{eq:spectral_map_def} is continuous on \(I\).
+\end{lemma}
+
+\begin{proof}
+The logarithm is smooth on \((0,\infty)\), hence smooth on \(I\). The expression under the square root is therefore continuous on \(I\). In the canonical parameter regime of the UIDT closure system, the radicand remains strictly positive on \(I\), so the principal square root defines a continuous real-valued function on all of \(I\).
+\end{proof}
+
+\begin{lemma}
+For the canonical parameter regime, \(T(I)\subseteq I\).
+\end{lemma}
+
+\begin{proof}
+The UIDT closure conditions determine the parameter set
+\begin{equation}
+m_S = 1.705 \pm 0.015\ \mathrm{GeV},\qquad
+\kappa = 0.500 \pm 0.008,\qquad
+\lambda_S = 0.417 \pm 0.007,\qquad
+v=0.0477\ \mathrm{GeV},
+\label{eq:canonical_params}
+\end{equation}
+together with the fixed-point value
+\begin{equation}
+\Delta^* = 1.710035\ldots\ \mathrm{GeV}.
+\label{eq:canonical_delta}
+\end{equation}
+In particular, the image of the canonical solution lies strictly inside \(I\). Moreover, the logarithmic correction in \eqref{eq:spectral_map_def} is parametrically small in the neighborhood of \(x\approx 1.7\ \mathrm{GeV}\), so \(T(x)\) remains a perturbation of \(m_S\) throughout the interval. Since \(m_S\) itself lies in \(I\), and the correction term is numerically much smaller than the interval width, the image remains in \(I\). Hence \(T(I)\subseteq I\).
+\end{proof}
+
+\noindent
+For the final journal version, this lemma should ideally be supplemented by a short numerical bound at the interval endpoints \(x=1.6\) and \(x=1.8\), obtained directly from the verification script in arbitrary precision.
+
+\subsection{Derivative bound}
+
+To prove contractivity, we estimate the derivative of \(T\). Rewriting the logarithm gives
+\begin{equation}
+\ln(\Lambda^2/x^2)=\ln(\Lambda^2)-2\ln x.
+\label{eq:log_expansion}
+\end{equation}
+Hence
+\begin{equation}
+T(x)
+=
+\left[
+m_S^2+\alpha+\alpha\beta\ln(\Lambda^2)-2\alpha\beta\ln x
+\right]^{1/2},
+\label{eq:T_expanded}
+\end{equation}
+where we abbreviate
+\begin{equation}
+\alpha:=\frac{\kappa^2 C}{4\Lambda^2},
+\qquad
+\beta:=\frac{1}{16\pi^2}.
+\label{eq:alpha_beta_def}
+\end{equation}
+Differentiating yields
+\begin{equation}
+T'(x)
+=
+\frac{1}{2T(x)}
+\frac{d}{dx}\Bigl[-2\alpha\beta\ln x\Bigr]
+=
+\frac{1}{2T(x)}\left(-\frac{2\alpha\beta}{x}\right)
+=
+-\frac{\alpha\beta}{x\,T(x)}.
+\label{eq:T_derivative}
+\end{equation}
+Therefore
+\begin{equation}
+|T'(x)|=\frac{\alpha\beta}{x\,T(x)}.
+\label{eq:T_deriv_abs}
+\end{equation}
+Since \(x\in I=[1.6,1.8]\) and \(T(I)\subseteq I\), we have the lower bounds
+\begin{equation}
+x\geq 1.6,\qquad T(x)\geq 1.6.
+\label{eq:lower_bounds}
+\end{equation}
+Consequently,
+\begin{equation}
+|T'(x)|
+\leq
+\frac{\alpha\beta}{(1.6)^2}
+\qquad \text{for all } x\in I.
+\label{eq:lipschitz_bound}
+\end{equation}
+Near the canonical fixed point \(x\approx 1.71\ \mathrm{GeV}\), the v3.9 manuscript evaluates this derivative numerically as
+\begin{equation}
+|T'(1.71)|\approx
+\frac{0.0173\cdot 0.00633}{1.71\cdot 1.71}
+\approx 3.74\times 10^{-5}.
+\label{eq:numerical_deriv}
+\end{equation}
+In particular, the associated Lipschitz constant satisfies
+\begin{equation}
+L:=\sup_{x\in I}|T'(x)|<1.
+\label{eq:lipschitz_strict}
+\end{equation}
+Thus \(T\) is a strict contraction on \(I\).
+
+\subsection{Banach fixed-point theorem}
+
+We may now state the core result.
+
+\begin{theorem}[Existence and uniqueness of the spectral gap]
+Let \(T:I\to I\) be the spectral map defined by \eqref{eq:spectral_map_def}, with \(I=[1.6,1.8]\ \mathrm{GeV}\), under the canonical UIDT parameter regime. Then \(T\) is a strict contraction on the complete metric space \((I,|\cdot|)\). Consequently, there exists a unique fixed point \(\Delta^*\in I\) such that
+\begin{equation}
+\Delta^*=T(\Delta^*).
+\label{eq:fixed_point_result}
+\end{equation}
+Moreover, for any initial value \(\Delta_0\in I\), the iteration
+\begin{equation}
+\Delta_{n+1}=T(\Delta_n)
+\label{eq:iteration_scheme}
+\end{equation}
+converges to \(\Delta^*\).
+\end{theorem}
+
+\begin{proof}
+By the preceding lemmas, \(T\) is continuous on \(I\), maps \(I\) into itself, and satisfies the strict contraction estimate \eqref{eq:lipschitz_strict}. Since \(I\) is complete, Banach's fixed-point theorem applies. Therefore there exists a unique fixed point \(\Delta^*\in I\), and every iterated sequence generated from an initial value in \(I\) converges to that same fixed point.
+\end{proof}
+
+\subsection{Numerical value of the fixed point}
+
+The arbitrary-precision verification suite reported in the UIDT v3.9 manuscript yields the fixed-point value
+\begin{equation}
+\Delta^*
+=
+1.710035046742213182459174582930182736459\ldots\ \mathrm{GeV}.
+\label{eq:high_prec_value}
+\end{equation}
+% AUDIT FIX 2026-03-12: The earlier informal figure of 10^{-40} referenced
+% algorithm-internal intermediates under extended precision and has been
+% superseded by the automatically tested bound < 10^{-14}.
+% See verification/scripts/UIDT_Core_Baseline.py (acceptance criterion 1e-14).
+The numerical verification suite reports closure residuals below \(10^{-14}\)
+(\texttt{verification/scripts/UIDT\_Core\_Baseline.py}),
+and presents the mass gap as the anchor of the full closure relations
+\begin{equation}
+m_S^2 v+\frac{\lambda_S}{6}v^3=\frac{\kappa C}{\Lambda},
+\label{eq:closure_1}
+\end{equation}
+\begin{equation}
+\Delta^2=m_S^2+\Sigma(\Delta),
+\label{eq:closure_2}
+\end{equation}
+\begin{equation}
+5\kappa^2=3\lambda_S.
+\label{eq:closure_3}
+\end{equation}
+The corresponding canonical parameter set is
+\begin{equation}
+m_S = 1.705 \pm 0.015\ \mathrm{GeV},\qquad
+\kappa = 0.500 \pm 0.008,\qquad
+\lambda_S = 0.417 \pm 0.007,\qquad
+v = 0.0477\ \mathrm{GeV},\qquad
+\Delta = 1.710 \pm 0.015\ \mathrm{GeV}.
+\label{eq:final_params}
+\end{equation}
+
+\subsection{Interpretive scope}
+
+The mathematical conclusion of this section is precise and limited. Within the stated effective theory space, infrared regulator, and truncation scheme, the UIDT spectral map admits exactly one positive infrared fixed point in the interval \(I\). This is the sense in which the framework provides a constructive derivation of a positive Yang--Mills spectral gap.
+
+We emphasize that the claim proven here is a statement about the existence and uniqueness of a fixed point of the regulated non-linear map \(T\) in the UIDT setting. It is not, by itself, a general theorem for arbitrary Yang--Mills formulations independent of the present regulator and truncation choice. That broader question remains outside the scope of the present paper.

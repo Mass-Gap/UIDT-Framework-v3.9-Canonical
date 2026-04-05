@@ -1,0 +1,93 @@
+[
+  {
+    "symbol": "Δ",
+    "defn": "Spectral gap (Yang-Mills Hamiltonian gap, NOT glueball mass)",
+    "value": "1.710 ± 0.015",
+    "unit": "GeV",
+    "evidence_cat": "A",
+    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
+  },
+  {
+    "symbol": "γ",
+    "defn": "Kinetic vacuum expectation value (phenomenologically calibrated)",
+    "value": "16.339",
+    "unit": "dimensionless",
+    "evidence_cat": "A-",
+    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/EVIDENCE.md"],
+    "note": "Calibrated, NOT RG-derived"
+  },
+  {
+    "symbol": "κ",
+    "defn": "Non-minimal coupling constant",
+    "value": "0.500 ± 0.008",
+    "unit": "dimensionless",
+    "evidence_cat": "A",
+    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
+  },
+  {
+    "symbol": "λ_S",
+    "defn": "Scalar self-coupling constant",
+    "value": "0.417 ± 0.007",
+    "unit": "dimensionless",
+    "evidence_cat": "A",
+    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
+  },
+  {
+    "symbol": "v",
+    "defn": "Vacuum expectation value of scalar field",
+    "value": "47.7",
+    "unit": "MeV",
+    "evidence_cat": "A",
+    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
+  },
+  {
+    "symbol": "H₀",
+    "defn": "Hubble constant (DESI-calibrated)",
+    "value": "70.4 ± 0.16",
+    "unit": "km/s/Mpc",
+    "evidence_cat": "C",
+    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"],
+    "note": "Calibrated to DESI DR2"
+  },
+  {
+    "symbol": "m_S",
+    "defn": "Scalar mass (predicted, unverified)",
+    "value": "1.705 ± 0.015",
+    "unit": "GeV",
+    "evidence_cat": "D",
+    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
+  },
+  {
+    "symbol": "Λ_QCD",
+    "defn": "QCD scale parameter",
+    "value": "0.1046",
+    "unit": "GeV",
+    "evidence_cat": "A",
+    "refs": ["UIDT-OS/CANONICAL/FORMALISM.md"]
+  },
+  {
+    "symbol": "λ_UIDT",
+    "defn": "UIDT characteristic wavelength",
+    "value": "0.660 ± 0.005",
+    "unit": "nm",
+    "evidence_cat": "C",
+    "refs": ["UIDT-OS/CANONICAL/FORMALISM.md"]
+  },
+  {
+    "symbol": "E_T",
+    "defn": "Lattice torsion binding energy (effective infrared term)",
+    "value": "2.44",
+    "unit": "MeV",
+    "evidence_cat": "C",
+    "refs": [".kiro/steering/uidt-framework-constitution.md"],
+    "note": "NOT derived from Dyson loop integral; kill-switch: if E_T=0 then Σ_T=0"
+  },
+  {
+    "symbol": "S₈",
+    "defn": "Matter fluctuation amplitude (calibrated)",
+    "value": "0.814 ± 0.009",
+    "unit": "dimensionless",
+    "evidence_cat": "C",
+    "refs": ["UIDT-OS/CANONICAL/FORMALISM.md"]
+  }
+]
