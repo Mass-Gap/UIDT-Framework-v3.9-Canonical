@@ -1,21 +1,28 @@
 # Glueball Spectrum Predictions — UIDT v3.9
 
-> **Evidence Category:** [A] Mathematically derived | [D] Experimental prediction  
+> **Evidence Category:** [A] Spectral gap (Δ\*) | [D] Mass ratio predictions | [E] Glueball identification (WITHDRAWN)  
 > **Version:** v3.9 | **Source:** Ultra Main Paper §9.1, §7.6  
-> **Affected Constants:** Δ* = 1.710 ± 0.015 GeV [A]
+> **Affected Constants:** Δ\* = 1.710 ± 0.015 GeV [A]  
+> **Limitation:** L6 (Glueball f₀(1710) identification WITHDRAWN 2025-12-25)
 
 ---
 
 ## 1. Overview
 
-The UIDT mass-gap mechanism predicts not only the ground-state glueball mass
-$m_{0^{++}} = \Delta^* = 1710 \pm 15$ MeV [A], but also the full low-lying
-glueball spectrum via the RG fixed-point structure and the Cheeger spectral
-gap hierarchy.
+> **Epistemic Note (L6 Resolution, 2025-12-25):**
+> The spectral gap Δ\* = 1.710 ± 0.015 GeV [A] is the lowest eigenvalue
+> of the Yang-Mills Hamiltonian — **NOT** a particle mass.
+> The identification Δ\* = m(0⁺⁺) was **WITHDRAWN [E]** on 2025-12-25.
+> Lattice QCD independently finds m(0⁺⁺) ≈ 1.710 GeV; the numerical
+> proximity is noted but classified **[E]** (speculative coincidence).
 
-> **Epistemic Note:** The absolute mass $\Delta^*$ is Evidence [A].
-> The mass *ratios* below are derived from it under UIDT assumptions and
-> classified [D] (predictions awaiting experimental confirmation).
+The UIDT spectral gap Δ\* = 1710 ± 15 MeV [A] provides an energy scale
+for the low-lying glueball spectrum via the RG fixed-point structure and
+the Cheeger spectral gap hierarchy.
+
+> The mass *ratios* below use Δ\* as a reference scale under UIDT assumptions
+> and are classified [D] (predictions awaiting experimental confirmation).
+> They do **not** depend on the withdrawn glueball identification.
 
 ---
 
@@ -38,11 +45,11 @@ space (see `docs/gribov_cheeger_proof.md`).
 
 ## 3. Absolute Mass Predictions
 
-Anchored to $\Delta^* = 1710 \pm 15$ MeV [A]:
+Anchored to the spectral gap $\Delta^* = 1710 \pm 15$ MeV [A] as reference energy scale:
 
 | State | $J^{PC}$ | UIDT [MeV] | Lattice QCD [MeV] | Status |
 |-------|----------|------------|-------------------|--------|
-| Ground state scalar | $0^{++}$ | **1710 ± 15** | 1710 ± 80 | Compatible [A/B] |
+| Spectral gap scale | $0^{++}$ | **1710 ± 15** | 1710 ± 80 | Δ\* = scale [A]; lattice coincidence [E] |
 | Tensor | $2^{++}$ | 2386 ± 35 | 2400 ± 100 | Compatible [D/B] |
 | Pseudoscalar | $0^{-+}$ | 2554 ± 40 | 2590 ± 130 | Compatible [D/B] |
 | Excited scalar | $0^{++*}$ | 2664 ± 45 | ~2670 (uncertain) | Predicted [D] |
