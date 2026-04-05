@@ -81,7 +81,7 @@ The gradient-bilinear construction must be shown to yield Lorentz signature
 with the Yang-Mills propagator light cone, and a well-defined UV limit
 `y → x` under explicit renormalisation.
 
-The torsion sector (`E_T = 2.44 MeV`, UIDT-C-044, Cat. D) may contribute
+The torsion sector (`E_T = 2.44 MeV`, UIDT-C-044, Cat. C) may contribute
 off-diagonal structure; independence from `E_T` must be verified.
 
 **Required action:** Construct explicit Wick-rotation argument or
