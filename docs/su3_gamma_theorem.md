@@ -43,11 +43,11 @@ For $\gamma_{\text{closed}} = 49/3$ to hold exactly, the gap equation would requ
 
 ### 1.4  Conclusion
 
-**The relation γ = Δ\*/v is a definitional identity** (phenomenologically determined $v = 47.7$ MeV), not an algebraic theorem derivable from the gap equation. The numerical proximity $|\gamma_{\text{kinetic}} - 49/3| / (49/3) \approx 0.037\%$ remains a **coincidence at current precision**, not a proven constraint.
+**The relation γ = Δ\*/v is a definitional identity** (phenomenologically determined $v = 47.7$ MeV), not an algebraic theorem derivable from the gap equation. The numerical proximity $|\gamma_{\text{kinetic}} - 49/3| / (49/3) \approx 0.035\%$ remains a **coincidence at current precision**, not a proven constraint.
 
 | Source | Value | Deviation from 49/3 |
 |--------|-------|---------------------|
-| $\gamma_{\text{kinetic}}$ (ledger) | 16.339 | +0.034 (0.21%) |
+| $\gamma_{\text{kinetic}}$ (ledger) | 16.339 | +0.006 (0.035%) |
 | $49/3$ (algebraic candidate) | 16.3333… | 0 (reference) |
 | $\gamma_{\text{MC}}$ (100k samples) | 16.374 ± 1.005 | within 1σ |
 | $\gamma_{\text{closed}}$ (Gap-Eq.) | **1.908** | **−14.43 (−88%)** |
