@@ -33,7 +33,7 @@ $$
 
 ### 1.3  Numerical Evaluation (80-digit precision)
 
-With canonical ledger values ($\Delta^* = 1.710$ GeV, $\lambda_S = 0.417$, $\kappa = 0.500$, $\mathcal{C} = 0.277$ GeV$^4$):
+With canonical ledger values ($\Delta^* = 1.710$ GeV, $\lambda_S = 5\kappa^2/3 = 0.41\overline{6}$, $\kappa = 0.500$, $\mathcal{C} = 0.277$ GeV$^4$):
 
 $$
 \gamma_{\text{closed}} = \left(\frac{6 \times 1.710^3 \times 0.417}{13 \times 0.500 \times 0.277}\right)^{1/3} \approx 1.908
