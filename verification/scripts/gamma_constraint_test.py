@@ -43,7 +43,7 @@ mp.dps = 80
 # Evidence [A]
 DELTA_STAR = mp.mpf('1.710')         # GeV — Yang-Mills spectral gap [A]
 KAPPA      = mp.mpf('0.500')         # non-minimal gauge-scalar coupling [A]
-LAMBDA_S   = mp.mpf('0.417')         # scalar self-coupling [A]
+LAMBDA_S   = 5 * mp.mpf('0.5')**2 / 3  # exact RG fixed-point: 5κ²/3 [A]
 V_VEV      = mp.mpf('0.0477')        # GeV — vacuum expectation value [A]
 
 # Evidence [A-]

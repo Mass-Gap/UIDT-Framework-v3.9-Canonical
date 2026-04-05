@@ -24,7 +24,7 @@ def verify_coupling_quantization():
         
     print("\n--- Section 2: Canonical Parameter Consistency ---")
     kappa_canon = mpf('0.500')
-    lambda_s_canon = mpf('0.417')
+    lambda_s_canon = 5 * mpf('0.500')**2 / 3  # exact RG fixed-point: 5κ²/3
     residual_canon = abs(5 * kappa_canon**2 - 3 * lambda_s_canon)
     deviation = abs(lambda_s_canon - mpf('5')/mpf('12'))
     

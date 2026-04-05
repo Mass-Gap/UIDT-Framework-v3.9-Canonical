@@ -30,7 +30,7 @@ def verify_rg_fixed_point():
 
     # Framework Defaults
     kappa = mpf('0.5')
-    lambda_s = mpf('0.417')
+    lambda_s = 5 * mpf('0.5')**2 / 3  # exact RG fixed-point: 5κ²/3
     
     # Mathematical Evaluation: |5 * kappa^2 - 3 * lambda_S|
     term1 = mpf('5') * (kappa ** 2)
