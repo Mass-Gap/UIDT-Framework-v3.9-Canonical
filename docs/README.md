@@ -6,73 +6,65 @@
 
 ## Quick Navigation
 
-### Core Documentation
-- [Evidence Classification System](evidence-classification.md) - Categories A through E
-- [Falsification Criteria](falsification-criteria.md) - L1-L6 limitations and kill-switches
-- [Reproduction Protocol](reproduction-protocol.md) - One-command reproducibility
-- [Verification Guide](verification-guide.md) - 80-digit precision testing
-- [Data Availability](data-availability.md) - All simulation and verification data
+### 📐 Foundations (Mathematical Proofs - Clay Math Relevant)
+- [Bare Gamma Theorem](foundations/bare_gamma_theorem.md) - γ = 16.339 calibration [A-]
+- [SU(3) Gamma Conjecture Audit](foundations/su3_gamma_conjecture_audit.md) - RG fixed point analysis
+- [SU(3) Gamma Proof Sketch](foundations/su3_gamma_proof_sketch.md) - 5κ² = 3λ_S constraint
+- [Gribov-Cheeger Proof](foundations/gribov_cheeger_proof.md) - Topological quantization
+- [GNS Hilbert Construction](foundations/gns_hilbert_construction.md) - Operator algebra
+- [Kugo-Ojima Criterion](foundations/kugo_ojima_criterion.md) - Confinement mechanism
+- [CE8 Derivation](foundations/CE8_derivation.md) - Exceptional Lie algebra connection
+- [Factor 2.3 Derivation](foundations/Factor_2_3_Derivation.md) - Vacuum energy residual [L3]
+- [Torsion Self-Energy](foundations/Torsion_Self_Energy.md) - E_T = 2.44 MeV lattice binding
+- [Ghost Sector Lagrangian](foundations/ghost_sector_lagrangian.md) - BRST cohomology
+- [SI Lagrangian Corrections](foundations/si_lagrangian_corrections.md) - Higher-order terms
 
-### Theoretical Foundations
-- [Cosmological Unification v3.9](Cosmological_Unification_v3.9.md) - H₀, Ω_m, w₀ predictions
-- [Cosmological Implications v3.9](cosmological_implications_v3.9.md) - DESI/JWST/ACT alignment
-- [Generation Scaling v3.9](Generation_Scaling_v3.9.md) - Quark mass hierarchy
-- [Emergent Geometry Section 7](emergent_geometry_section7.md) - Geometric operator construction
-- [Theoretical Notes](theoretical_notes.md) - General framework overview
+### ⚛️ QCD & Lattice (CERN/FLAG/ILDG Relevant)
+- [QCD Derivation](qcd-lattice/derivation_qcd.md) - Yang-Mills spectral gap
+- [Schwinger-Dyson Propagator](qcd-lattice/schwinger_dyson_propagator.md) - Self-energy equations
+- [Wilson Loop String Tension](qcd-lattice/wilson_loop_string_tension.md) - Confinement observable
+- [Spectral Function Positivity](qcd-lattice/spectral_function_positivity.md) - Källén-Lehmann representation
+- [RG 2-Loop Beta](qcd-lattice/rg_2loop_beta.md) - Renormalization group flow
+- [RG Beta Derivation Gamma](qcd-lattice/rg_beta_derivation_gamma.md) - γ from RG equations
+- [N_dof Phase Transition](qcd-lattice/ndof_phase_transition.md) - Degrees of freedom evolution
+- [Holographic BH-YM Correspondence](qcd-lattice/holographic_bh_ym_correspondence.md) - AdS/CFT connection
+- [MCMC Bayesian Calibration](qcd-lattice/mcmc_bayesian_calibration.md) - Parameter estimation
 
-### Mathematical Proofs & Derivations
-- [Bare Gamma Theorem](bare_gamma_theorem.md) - γ = 16.339 calibration [A-]
-- [SU(3) Gamma Conjecture Audit](su3_gamma_conjecture_audit.md) - RG fixed point analysis
-- [SU(3) Gamma Proof Sketch](su3_gamma_proof_sketch.md) - 5κ² = 3λ_S constraint
-- [Gribov-Cheeger Proof](gribov_cheeger_proof.md) - Topological quantization
-- [GNS Hilbert Construction](gns_hilbert_construction.md) - Operator algebra
-- [Kugo-Ojima Criterion](kugo_ojima_criterion.md) - Confinement mechanism
+### 🔬 Predictions (Experimental - LHC/DESI)
+- [Glueball Spectrum Predictions](predictions/glueball_spectrum_predictions.md) - f₀(1710) retracted [E]
+- [Heavy Quark Predictions](predictions/heavy_quark_predictions.md) - Charm and bottom masses
+- [Quark Mass Hierarchy Prediction](predictions/quark_mass_hierarchy_prediction.md) - Generation scaling
+- [LHC Predictions: Drell-Yan](predictions/lhc_predictions_drell_yan.md) - High-energy cross sections
+- [LHCb Predictions Paper Draft](predictions/lhcb_predictions_paper_draft.md) - B-physics observables
+- [DESI DR2 Alignment Report](predictions/DESI_DR2_alignment_report.md) - Cosmology validation
+- [Cosmological Unification v3.9](predictions/Cosmological_Unification_v3.9.md) - H₀, Ω_m, w₀ predictions
+- [Cosmological Implications v3.9](predictions/cosmological_implications_v3.9.md) - DESI/JWST/ACT alignment
+- [Generation Scaling v3.9](predictions/Generation_Scaling_v3.9.md) - Quark mass hierarchy
+- [Emergent Geometry Section 7](predictions/emergent_geometry_section7.md) - Geometric operator construction
+- [v Parameter Tension Note](predictions/v_parameter_tension_note.md) - v = 47.7 MeV calibration
 
-### QCD & Lattice Simulations
-- [QCD Derivation](derivation_qcd.md) - Yang-Mills spectral gap
-- [Schwinger-Dyson Propagator](schwinger_dyson_propagator.md) - Self-energy equations
-- [Wilson Loop String Tension](wilson_loop_string_tension.md) - Confinement observable
-- [Spectral Function Positivity](spectral_function_positivity.md) - Källén-Lehmann representation
-- [RG 2-Loop Beta](rg_2loop_beta.md) - Renormalization group flow
-- [RG Beta Derivation Gamma](rg_beta_derivation_gamma.md) - γ from RG equations
+### 📋 Governance (Quality & Standards)
+- [Evidence Classification System](governance/evidence-classification.md) - Categories A through E
+- [Falsification Criteria](governance/falsification-criteria.md) - L1-L6 limitations and kill-switches
+- [Limitations](governance/limitations.md) - Known issues L1-L6
+- [Reproduction Protocol](governance/reproduction-protocol.md) - One-command reproducibility
+- [Verification Guide](governance/verification-guide.md) - 80-digit precision testing
+- [Data Availability](governance/data-availability.md) - All simulation and verification data
+- [Citation Guide](governance/citation-guide.md) - How to cite UIDT
+- [Core Baseline Protocol](governance/core-baseline-protocol.md) - Regression testing
+- [PR Review Protocol v2.0](governance/PR_Review_Protocol_v2.0.md) - Quality gates A-G
+- [Experimental Roadmap](governance/experimental_roadmap.md) - Future validation plans
+- [Theory Comparison](governance/theory_comparison.md) - UIDT vs. alternatives
+- [Theoretical Notes](governance/theoretical_notes.md) - General framework overview
 
-### Experimental Predictions
-- [Glueball Spectrum Predictions](glueball_spectrum_predictions.md) - f₀(1710) retracted [E]
-- [Heavy Quark Predictions](heavy_quark_predictions.md) - Charm and bottom masses
-- [Quark Mass Hierarchy Prediction](quark_mass_hierarchy_prediction.md) - Generation scaling
-- [LHC Predictions: Drell-Yan](lhc_predictions_drell_yan.md) - High-energy cross sections
-- [LHCb Predictions Paper Draft](lhcb_predictions_paper_draft.md) - B-physics observables
-- [DESI DR2 Alignment Report](DESI_DR2_alignment_report.md) - Cosmology validation
-
-### Epistemic Audits & Quality Control
-- [Epistemic Audit 2026-03-30](epistemic_audit_2026-03-30.md) - Evidence category review
-- [First Principles Evidence Audit 2026-03-30](first_principles_evidence_audit_2026-03-30.md) - Derivation validation
-- [Gamma First Principles Crosscheck 2026-03-30](gamma_first_principles_crosscheck_2026-03-30.md) - γ = 16.339 audit
-- [Schwinger Mechanism Deep Research 2026-03-30](schwinger_mechanism_deep_research_2026-03-30.md) - Confinement analysis
-- [Critical Review 2025](critical_review_2025.md) - Framework limitations
-- [Systematic Robustness Report](systematic_robustness_report.md) - Stability analysis
-
-### Specialized Topics
-- [CE8 Derivation](CE8_derivation.md) - Exceptional Lie algebra connection
-- [Factor 2.3 Derivation](Factor_2_3_Derivation.md) - Vacuum energy residual [L3]
-- [Torsion Self-Energy](Torsion_Self_Energy.md) - E_T = 2.44 MeV lattice binding
-- [Ghost Sector Lagrangian](ghost_sector_lagrangian.md) - BRST cohomology
-- [SI Lagrangian Corrections](si_lagrangian_corrections.md) - Higher-order terms
-- [Holographic BH-YM Correspondence](holographic_bh_ym_correspondence.md) - AdS/CFT connection
-- [N_dof Phase Transition](ndof_phase_transition.md) - Degrees of freedom evolution
-- [v Parameter Tension Note](v_parameter_tension_note.md) - v = 47.7 MeV calibration
-
-### Statistical Methods
-- [MCMC Bayesian Calibration](mcmc_bayesian_calibration.md) - Parameter estimation
-- [Core Baseline Protocol](core-baseline-protocol.md) - Regression testing
-
-### Process & Governance
-- [PR Review Protocol v2.0](PR_Review_Protocol_v2.0.md) - Quality gates A-G
-- [Citation Guide](citation-guide.md) - How to cite UIDT
-- [Limitations](limitations.md) - Known issues L1-L6
-- [Test Results v3.9.0](test_results_v3.9.0.md) - Verification suite output
-- [Theory Comparison](theory_comparison.md) - UIDT vs. alternatives
-- [Experimental Roadmap](experimental_roadmap.md) - Future validation plans
+### 🔍 Audits (Epistemic Quality Control)
+- [Epistemic Audit 2026-03-30](audits/epistemic_audit_2026-03-30.md) - Evidence category review
+- [First Principles Evidence Audit 2026-03-30](audits/first_principles_evidence_audit_2026-03-30.md) - Derivation validation
+- [Gamma First Principles Crosscheck 2026-03-30](audits/gamma_first_principles_crosscheck_2026-03-30.md) - γ = 16.339 audit
+- [Schwinger Mechanism Deep Research 2026-03-30](audits/schwinger_mechanism_deep_research_2026-03-30.md) - Confinement analysis
+- [Critical Review 2025](audits/critical_review_2025.md) - Framework limitations
+- [Systematic Robustness Report](audits/systematic_robustness_report.md) - Stability analysis
+- [Test Results v3.9.0](audits/test_results_v3.9.0.md) - Verification suite output
 
 ### Subdirectories
 - [archival-notes/](archival-notes/) - Historical development notes
@@ -109,6 +101,27 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) in the repository root for guidelines 
 - Numerical precision standards (mp.dps = 80)
 - PR review protocol
 - Anti-tampering rules
+
+## File System Laws (Extended)
+
+This documentation structure enforces the following File System Laws:
+
+### Original Laws (L-FS-01 through L-FS-10)
+See `UIDT-OS/PLANS/UIDT-UPDATES/2026-03-08_optimize_structure/Plan_o1___Optimize_File_Structure.md`
+
+### Extended Laws for External Research Compatibility
+
+| Law | Description | Rationale |
+|-----|-------------|-----------|
+| **L-FS-11** | **External Metadaten-Pflicht**: Every publication-relevant directory (`clay-submission/`, `manuscript/`, `docs/`) must contain `metadata.yaml` or `codemeta.json` with Dublin-Core-compatible fields. | HAL/Zenodo/CDS interoperability |
+| **L-FS-12** | **Reproduzierbarkeits-Manifest**: Every directory with verification/simulation code must contain a `reana.yaml`-compatible workflow description or at minimum a `REPRODUCE.md`. | CERN CAP/REANA compatibility |
+| **L-FS-13** | **Docs-Taxonomie**: `docs/` follows a four-layer taxonomy: `foundations/`, `qcd-lattice/`, `predictions/`, `governance/`, `audits/`. | FLAG-Review compatibility, reviewer orientation |
+
+### Compliance Status
+
+- ✅ **L-FS-11:** `docs/metadata.yaml` and `clay-submission/metadata.yaml` created (Dublin Core)
+- ✅ **L-FS-12:** `clay-submission/REPRODUCE.md` created (REANA-compatible)
+- ✅ **L-FS-13:** Four-layer taxonomy implemented (50+ documents organized)
 
 ## License
 

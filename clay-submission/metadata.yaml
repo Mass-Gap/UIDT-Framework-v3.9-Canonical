@@ -1,0 +1,179 @@
+# Dublin Core Metadata for Clay Mathematics Institute Submission
+# HAL / Zenodo / CERN CDS / SCOAP³ Compatible
+
+# Basic Identification
+title: "Unified Information-Density Theory: A Constructive Proof of the Yang-Mills Mass Gap"
+identifier: "10.5281/zenodo.17835200"
+type: "Research Article"
+language: "en"
+
+# Authorship
+creator:
+  - name: "Philipp Rietz"
+    orcid: "0009-0007-4307-1609"
+    affiliation: "Independent Researcher"
+    email: "badbugs.arts@gmail.com"
+    role: "Principal Investigator"
+
+# Content Description
+subject:
+  - "Yang-Mills Theory"
+  - "Mass Gap Problem"
+  - "Millennium Prize"
+  - "Quantum Chromodynamics"
+  - "Constructive Quantum Field Theory"
+  - "Spectral Gap"
+  - "Confinement Mechanism"
+  - "Lattice QCD"
+
+description: |
+  Complete submission package for the Clay Mathematics Institute Millennium Prize Problem:
+  Yang-Mills Existence and Mass Gap. Provides a constructive proof that pure Yang-Mills
+  theory in 4D exhibits a spectral gap Δ = 1.710 ± 0.015 GeV [Category A].
+  
+  Includes: manuscript, verification code, audit data, certificates, lattice simulations,
+  Monte Carlo validation, documentation, supplementary JSON, and verification reports.
+  
+  Framework satisfies Wightman axioms and Osterwalder-Schrader axioms for constructive QFT.
+
+# Publication Info
+date: "2026-04-06"
+publisher: "UIDT Framework Project"
+rights: "CC-BY-4.0"
+license: "https://creativecommons.org/licenses/by/4.0/"
+
+# Version Control
+version: "3.9"
+relation:
+  - type: "IsVersionOf"
+    identifier: "10.5281/zenodo.17835200"
+  - type: "HasPart"
+    identifier: "01_Manuscript"
+  - type: "HasPart"
+    identifier: "02_VerificationCode"
+  - type: "HasPart"
+    identifier: "03_AuditData"
+  - type: "HasPart"
+    identifier: "04_Certificates"
+  - type: "HasPart"
+    identifier: "05_LatticeSimulation"
+  - type: "HasPart"
+    identifier: "06_FormalProofs"
+  - type: "HasPart"
+    identifier: "07_MonteCarlo"
+  - type: "HasPart"
+    identifier: "08_Documentation"
+  - type: "HasPart"
+    identifier: "09_Supplementary_JSON"
+  - type: "HasPart"
+    identifier: "10_VerificationReports"
+
+# Coverage
+coverage:
+  spatial: "4D Euclidean Spacetime"
+  temporal: "2024-2026"
+
+# Format
+format:
+  - "application/pdf"
+  - "text/x-tex"
+  - "text/x-python"
+  - "application/json"
+
+# Audience
+audience: "Clay Mathematics Institute, Peer Reviewers, Theoretical Physicists"
+
+# Provenance
+provenance: |
+  Developed 2024-2026 by P. Rietz.
+  All numerical claims verified with 80-digit precision (mpmath).
+  Evidence classification system: [A] < 10^-14, [A-] phenomenological, [B] lattice-consistent,
+  [C] calibrated, [D] predicted, [E] withdrawn.
+
+# Quality
+conformsTo:
+  - "Clay Mathematics Institute Submission Guidelines"
+  - "Wightman Axioms (Constructive QFT)"
+  - "Osterwalder-Schrader Axioms"
+  - "Dublin Core Metadata Initiative (DCMI)"
+  - "HAL OAI-PMH"
+  - "CERN Document Server (CDS)"
+  - "SCOAP³ Metadata Schema"
+
+# Access
+accessRights: "Open Access"
+available: "2026-04-06"
+embargo: "None"
+
+# Technical Requirements
+requires:
+  - "Python 3.11+"
+  - "mpmath 1.3.0+"
+  - "pytest 7.0+"
+  - "LaTeX (TeX Live 2023+)"
+  - "Docker 24.0+ (for REANA compatibility)"
+
+# Keywords (Clay Math / HAL Classification)
+keywords:
+  - "Yang-Mills Mass Gap"
+  - "Millennium Prize Problem"
+  - "Constructive Quantum Field Theory"
+  - "Spectral Gap"
+  - "SU(3) Gauge Theory"
+  - "Confinement"
+  - "Lattice QCD"
+  - "Renormalization Group"
+  - "Banach Fixed-Point Theorem"
+
+# HAL-Specific Fields
+hal_domain: "math.mp"  # Mathematical Physics
+hal_type: "PREPRINT"
+hal_version: "1"
+hal_submission_type: "file"
+
+# CERN-Specific Fields
+cern_category: "Mathematical Physics and Mathematics"
+cern_keywords: "Yang-Mills, mass gap, constructive QFT"
+cern_experiment: "Theoretical"
+
+# SCOAP³-Specific Fields
+scoap3_category: "Theoretical Physics"
+scoap3_license: "CC-BY-4.0"
+scoap3_copyright_holder: "Philipp Rietz"
+scoap3_copyright_year: "2026"
+
+# Zenodo-Specific Fields
+zenodo_communities:
+  - "millennium-problems"
+  - "mathematical-physics"
+  - "lattice-qcd"
+  - "theoretical-physics"
+zenodo_upload_type: "publication"
+zenodo_publication_type: "preprint"
+
+# Clay Mathematics Institute Specific
+clay_problem: "Yang-Mills Existence and Mass Gap"
+clay_problem_number: "4"
+clay_submission_type: "Qualifying Outlet Preparation"
+clay_qualifying_outlet_target: "TBD (Peer-Review Journal)"
+
+# Reproducibility (REANA/CAP Compatible)
+reproducibility:
+  docker_image: "python:3.11-slim"
+  entry_point: "verification/scripts/verify_all.py"
+  runtime: "~2 hours (full verification suite)"
+  hardware: "8 CPU cores, 16GB RAM recommended"
+
+# Contact
+contact:
+  name: "Philipp Rietz"
+  email: "badbugs.arts@gmail.com"
+  orcid: "0009-0007-4307-1609"
+
+# Funding
+funding: "Independent Research (No External Funding)"
+
+---
+# File System Laws Enforced
+# L-FS-11: External Metadaten-Pflicht (Dublin Core)
+# L-FS-12: Reproduzierbarkeits-Manifest (see REPRODUCE.md)
