@@ -181,7 +181,7 @@ verify_brst_nilpotency()
 ## 8. Cross-References
 
 - `FORMALISM.md` — canonical Lagrangian (sectors 1–3 above)
-- `docs/gribov_cheeger_proof.md` — Gribov horizon and mass gap
-- `docs/gns_hilbert_construction.md` — BRST cohomology → physical Hilbert space
+- `docs/foundations/gribov_cheeger_proof.md` — Gribov horizon and mass gap
+- `docs/foundations/gns_hilbert_construction.md` — BRST cohomology → physical Hilbert space
 - `clay-submission/01_Manuscript/` — full Clay proof
 - `modules/gribov/` — (to be created) Gribov regularization implementation

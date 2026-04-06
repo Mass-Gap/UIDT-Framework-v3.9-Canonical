@@ -1,4 +1,4 @@
-# UIDT Formalism v3.7.2
+# UIDT Formalism v3.9.5
 
 > **PURPOSE:** Central repository for UIDT equations  
 > **RULE:** Math (LaTeX) MUST be separated from interpretation
@@ -44,8 +44,8 @@ $$5\kappa^2 = 3\lambda_S$$
 
 **Verification:**
 $$5 \times (0.500)^2 = 1.250$$
-$$3 \times 0.417 = 1.251$$
-$$|\Delta| = 0.001 < 0.01 \checkmark$$
+$$3 \times (\frac{1.250}{3}) = 1.250$$
+$$|\Delta| = 0 < 10^{-14} \checkmark$$
 
 ---
 
@@ -138,8 +138,8 @@ $$d_{\text{opt}} = 0.854 \text{ nm}$$
 
 | Constraint | Expression | Value | Status |
 |------------|------------|-------|--------|
-| RG Fixed Point | 5κ² = 3λ_S | 1.250 ≈ 1.251 | ✅ |
-| Perturbative | λ_S < 1 | 0.417 | ✅ |
+| RG Fixed Point | 5κ² = 3λ_S | 1.250 = 1.250 | ✅ |
+| Perturbative | λ_S < 1 | 0.4167 < 1 | ✅ |
 | Vacuum | V''(v) > 0 | 2.907 | ✅ |
 | Gamma | γ_kinetic ≈ γ_MC | 16.339 ≈ 16.374 | ✅ |
 

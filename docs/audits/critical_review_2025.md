@@ -79,7 +79,7 @@ Epistemic Stratification required by the UIDT System Directive.
 
 ## Cross-References
 
-- `docs/theory_comparison.md` — quantitative comparison
-- `docs/experimental_roadmap.md` — future tests
-- `docs/falsification_criteria.md` — falsification matrix
+- `docs/governance/theory_comparison.md` — quantitative comparison
+- `docs/governance/experimental_roadmap.md` — future tests
+- `docs/governance/falsification-criteria.md` — falsification matrix
 - `FORMALISM.md` — canonical formalism

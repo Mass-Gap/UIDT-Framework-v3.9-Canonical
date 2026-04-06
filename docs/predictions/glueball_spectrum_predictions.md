@@ -39,7 +39,7 @@ $$\frac{m_{0^{++*}}}{m_{0^{++}}} = 1.558 \pm 0.025 \qquad [D]$$
 These ratios are derived from the Cheeger spectral hierarchy:
 $$\Delta_n \geq \frac{h_n^2}{2}, \quad h_n = n \cdot h_1$$
 where $h_1$ is the fundamental Cheeger constant of the gauge configuration
-space (see `docs/gribov_cheeger_proof.md`).
+space (see `docs/foundations/gribov_cheeger_proof.md`).
 
 ---
 
@@ -110,14 +110,14 @@ These predictions are falsified (at $5\sigma$) if:
 | Ratio $m_{2^{++}}/m_{0^{++}}$ | Outside $1.30$–$1.50$ |
 
 Primary experimental venue: **BESIII** (Beijing), **LHCb** (CERN Run 3+).
-See `docs/experimental_roadmap.md` Tier 1.
+See `docs/governance/experimental_roadmap.md` Tier 1.
 
 ---
 
 ## 6. Cross-References
 
-- `docs/gribov_cheeger_proof.md` — Cheeger bound derivation
-- `docs/experimental_roadmap.md` — BESIII/LHCb timeline
-- `docs/falsification_criteria.md` — F1 criterion
+- `docs/foundations/gribov_cheeger_proof.md` — Cheeger bound derivation
+- `docs/governance/experimental_roadmap.md` — BESIII/LHCb timeline
+- `docs/governance/falsification-criteria.md` — F1 criterion
 - `FORMALISM.md` — Δ* canonical value
 - `clay-submission/01_Manuscript/` — Clay proof context

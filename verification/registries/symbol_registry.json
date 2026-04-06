@@ -5,7 +5,7 @@
     "value": "1.710 ± 0.015",
     "unit": "GeV",
     "evidence_cat": "A",
-    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
+    "refs": ["AGENTS.md", "FORMALISM.md"]
   },
   {
     "symbol": "γ",
@@ -13,7 +13,7 @@
     "value": "16.339",
     "unit": "dimensionless",
     "evidence_cat": "A-",
-    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/EVIDENCE.md"],
+    "refs": ["AGENTS.md", "CANONICAL/EVIDENCE.md"],
     "note": "Calibrated, NOT RG-derived"
   },
   {
@@ -22,7 +22,7 @@
     "value": "0.500 ± 0.008",
     "unit": "dimensionless",
     "evidence_cat": "A",
-    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
+    "refs": ["AGENTS.md", "FORMALISM.md"]
   },
   {
     "symbol": "λ_S",
@@ -30,7 +30,7 @@
     "value": "5κ²/3 (exact)",
     "unit": "dimensionless",
     "evidence_cat": "A",
-    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
+    "refs": ["AGENTS.md", "FORMALISM.md"]
   },
   {
     "symbol": "v",
@@ -38,7 +38,7 @@
     "value": "47.7",
     "unit": "MeV",
     "evidence_cat": "A",
-    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
+    "refs": ["AGENTS.md", "FORMALISM.md"]
   },
   {
     "symbol": "H₀",
@@ -46,7 +46,7 @@
     "value": "70.4 ± 0.16",
     "unit": "km/s/Mpc",
     "evidence_cat": "C",
-    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"],
+    "refs": ["AGENTS.md", "FORMALISM.md"],
     "note": "Calibrated to DESI DR2"
   },
   {
@@ -55,7 +55,7 @@
     "value": "1.705 ± 0.015",
     "unit": "GeV",
     "evidence_cat": "D",
-    "refs": ["AGENTS.md", "UIDT-OS/CANONICAL/FORMALISM.md"]
+    "refs": ["AGENTS.md", "FORMALISM.md"]
   },
   {
     "symbol": "Λ_QCD",
@@ -63,7 +63,7 @@
     "value": "0.1046",
     "unit": "GeV",
     "evidence_cat": "A",
-    "refs": ["UIDT-OS/CANONICAL/FORMALISM.md"]
+    "refs": ["FORMALISM.md"]
   },
   {
     "symbol": "λ_UIDT",
@@ -71,7 +71,7 @@
     "value": "0.660 ± 0.005",
     "unit": "nm",
     "evidence_cat": "C",
-    "refs": ["UIDT-OS/CANONICAL/FORMALISM.md"]
+    "refs": ["FORMALISM.md"]
   },
   {
     "symbol": "E_T",
@@ -79,7 +79,7 @@
     "value": "2.44",
     "unit": "MeV",
     "evidence_cat": "C",
-    "refs": [".kiro/steering/uidt-framework-constitution.md"],
+    "refs": ["AGENTS.md"],
     "note": "NOT derived from Dyson loop integral; kill-switch: if E_T=0 then Σ_T=0"
   },
   {
@@ -88,6 +88,6 @@
     "value": "0.814 ± 0.009",
     "unit": "dimensionless",
     "evidence_cat": "C",
-    "refs": ["UIDT-OS/CANONICAL/FORMALISM.md"]
+    "refs": ["FORMALISM.md"]
   }
 ]

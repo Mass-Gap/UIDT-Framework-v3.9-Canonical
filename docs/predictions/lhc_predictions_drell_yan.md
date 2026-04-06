@@ -99,7 +99,7 @@ for M_val in ['1.0', '1.710', '5.0', '10.0', '100.0']:
 
 ## 5. Falsification Criteria
 
-From `docs/falsification_criteria.md` F5:
+From `docs/governance/falsification-criteria.md` F5:
 - W/Z boson mass shift absent at $\delta m < 5 \times 10^{-7}$ GeV ($5\sigma$) → UIDT falsified
 
 Additional Drell-Yan falsification:
@@ -110,7 +110,7 @@ Additional Drell-Yan falsification:
 
 ## 6. Cross-References
 
-- `docs/experimental_roadmap.md` — Tier 1/2 LHC predictions
-- `docs/falsification_criteria.md` — F5 criterion
-- `docs/gribov_cheeger_proof.md` — mass gap providing $\mu = \Delta^*$
+- `docs/governance/experimental_roadmap.md` — Tier 1/2 LHC predictions
+- `docs/governance/falsification-criteria.md` — F5 criterion
+- `docs/foundations/gribov_cheeger_proof.md` — mass gap providing $\mu = \Delta^*$
 - `FORMALISM.md` — canonical Δ* value

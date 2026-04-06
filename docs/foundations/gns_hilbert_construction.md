@@ -81,7 +81,7 @@ and the coupling $\kappa S^2 F^2$ preserves reflection positivity because:
 |----------------|-------------|----------|
 | W1: Hilbert space | $\mathcal{H} = \overline{\mathcal{A}/\mathcal{N}}$ — **constructed** | §2.2 above |
 | W2: Poincaré covariance | YM sector inherits Lorentz covariance; $S(x)$ is Lorentz scalar | `FORMALISM.md` |
-| W3: Spectral condition | Mass gap $\Delta^* > 0$ implies $P^2 \geq (\Delta^*)^2 > 0$ on excited states | `docs/gribov_cheeger_proof.md` |
+| W3: Spectral condition | Mass gap $\Delta^* > 0$ implies $P^2 \geq (\Delta^*)^2 > 0$ on excited states | `docs/foundations/gribov_cheeger_proof.md` |
 | W4: Completeness | $\pi(\mathcal{A})\Omega$ dense in $\mathcal{H}$ — GNS cyclicity | §2.3 above |
 | W5: Local commutativity | $[F_{\mu\nu}(x), F_{\rho\sigma}(y)] = 0$ for spacelike $(x-y)$ — **satisfied** (gauge field locality) | Standard YM |
 | W6: Asymptotic completeness | Conjectured; requires S-matrix construction | Open [D] |
@@ -145,16 +145,16 @@ Clay problem statement:
 
 The chain of argument in the Clay submission (`clay-submission/01_Manuscript/`):
 1. GNS construction → physical Hilbert space $\mathcal{H}$ [this document]
-2. Cheeger bound → mass gap $\Delta^* > 0$ [`docs/gribov_cheeger_proof.md`]
+2. Cheeger bound → mass gap $\Delta^* > 0$ [`docs/foundations/gribov_cheeger_proof.md`]
 3. $\Delta^* > 0$ → spectral condition W3 satisfied
-4. Gribov resolution → path integral well-defined [`docs/gribov_cheeger_proof.md`]
+4. Gribov resolution → path integral well-defined [`docs/foundations/gribov_cheeger_proof.md`]
 5. OS reflection positivity → Wightman reconstruction theorem applies
 
 ---
 
 ## 7. Cross-References
 
-- `docs/gribov_cheeger_proof.md` — mass gap proof (W3 spectral condition)
+- `docs/foundations/gribov_cheeger_proof.md` — mass gap proof (W3 spectral condition)
 - `clay-submission/01_Manuscript/` — full Wightman axiom discussion
 - `FORMALISM.md` — canonical Lagrangian and vacuum
-- `docs/ghost_sector_lagrangian.md` — BRST cohomology (physical state space)
+- `docs/foundations/ghost_sector_lagrangian.md` — BRST cohomology (physical state space)

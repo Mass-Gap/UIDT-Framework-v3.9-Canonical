@@ -73,4 +73,4 @@ not replace the canonical value.
 
 - `modules/holographic/` — (to be created) holographic corrections module
 - `FORMALISM.md` — canonical mass gap (no holographic correction)
-- `docs/gribov_cheeger_proof.md` — primary mass gap proof
+- `docs/foundations/gribov_cheeger_proof.md` — primary mass gap proof

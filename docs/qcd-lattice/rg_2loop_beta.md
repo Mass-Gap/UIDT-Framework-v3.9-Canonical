@@ -120,6 +120,6 @@ The 2-loop analysis confirms:
 ## 6. Cross-References
 
 - `FORMALISM.md` — canonical 1-loop RG constraint $5\kappa^2 = 3\lambda_S$
-- `docs/gribov_cheeger_proof.md` — mass gap stability from fixed point
+- `docs/foundations/gribov_cheeger_proof.md` — mass gap stability from fixed point
 - `docs/mcmc_bayesian_calibration.md` — κ, λ_S parameter values
 - `verification/tests/` — automated RG constraint test

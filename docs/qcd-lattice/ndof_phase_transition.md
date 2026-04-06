@@ -85,4 +85,4 @@ assert residual < mp.mpf('1e-14'), "[NDOF_SYMMETRY_FAIL]"
 - `modules/ndof/` — (to be created) full implementation
 - `simulation/` — lattice simulation code
 - `FORMALISM.md` — Lagrangian context
-- `docs/CE8_derivation.md` — CE8 in emergent-time context
+- `docs/foundations/CE8_derivation.md` — CE8 in emergent-time context

@@ -48,6 +48,6 @@ UIDT is falsified if **any** of the following hold:
 
 ## Cross-References
 
-- `docs/falsification_criteria.md` — complete falsification matrix
+- `docs/governance/falsification-criteria.md` — complete falsification matrix
 - `FORMALISM.md` — canonical predictions
 - `clay-submission/08_Documentation/` — Clay submission experimental section

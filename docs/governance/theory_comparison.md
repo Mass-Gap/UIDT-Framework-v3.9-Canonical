@@ -53,6 +53,6 @@
 ## Cross-References
 
 - `FORMALISM.md` — equations
-- `docs/CE8_derivation.md` — CE8 details
-- `docs/v_parameter_tension_note.md` — parameter clarification
+- `docs/foundations/CE8_derivation.md` — CE8 details
+- `docs/predictions/v_parameter_tension_note.md` — parameter clarification
 - `README.md` — project overview
