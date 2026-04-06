@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "version": "3.9.0",
-    "last_updated": "2026-03-15",
+    "version": "3.9.5",
+    "last_updated": "2026-04-06",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 53,
-    "audit_note": "Updated from PRs #1-#99 retroactive audit. 11 new claims (C-043 to C-053), 2 existing claims updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99) on 2026-03-15."
+    "total_claims": 54,
+    "audit_note": "v3.9.5: Added UIDT-C-070 (FRG Gamma Fixed Point, Evidence D, Stratum III). Registers non-trivial UV/IR fixed point for S F^2 operator with anomalous dimension eta_* ~ 0.072. Does NOT upgrade gamma to [A]; canonical gamma=16.339 remains [A-] per CANONICAL/LIMITATIONS L4. See also CANONICAL/LIMITATIONS L6 (FRG truncation artefact). PR: update_20260406_FRG_Gamma_FixedPoint-TKT-20260405."
   },
   "claims": [
     {
@@ -27,7 +27,7 @@
       "evidence": "A-",
       "dependencies": ["kinetic_vev_derivation"],
       "since": "v3.6.1",
-      "notes": "Phenomenologically determined, NOT from RG first principles. ALWAYS [A-] per CANONICAL."
+      "notes": "Phenomenologically determined, NOT from RG first principles. ALWAYS [A-] per CANONICAL. See UIDT-C-070 for FRG mechanism supporting functional form."
     },
     {
       "id": "UIDT-C-003",
@@ -168,7 +168,7 @@
       "evidence": "E",
       "dependencies": [],
       "since": "v3.2",
-      "notes": "Active research field. Perturbative RG gives γ* ≈ 55.8. See also UIDT-C-052 (SU(3) conjecture)."
+      "notes": "Active research field. Perturbative RG gives γ* ≈ 55.8. See also UIDT-C-052 (SU(3) conjecture). UIDT-C-070 provides FRG mechanism (Evidence D)."
     },
     {
       "id": "UIDT-C-017",
@@ -328,7 +328,7 @@
       "confidence": 0.95,
       "dependencies": [],
       "since": "v3.7.2",
-      "notes": "Phenomenologically determined"
+      "notes": "Phenomenologically determined. See UIDT-C-070 for FRG mechanism (Evidence D)."
     },
     {
       "id": "UIDT-C-032",
@@ -428,7 +428,7 @@
       "confidence": 0.7,
       "dependencies": [],
       "since": "v3.7.2",
-      "notes": "Active research field"
+      "notes": "Active research field. See UIDT-C-070 for FRG mechanism (Evidence D)."
     },
     {
       "id": "UIDT-C-041",
@@ -581,6 +581,25 @@
       "since": "v3.9",
       "notes": "Ω_bbb within lattice QCD range (14.37-14.57 GeV). T_cccc BELOW lattice range (5.6-6.2 GeV) — high-risk falsification. 3-6-9 octave scaling of f_vac. Source: heavy_quark_predictions.md, lhcb_predictions_paper_draft.md.",
       "falsification": "LHCb: M(Ω_bbb) ∉ [14.2,14.7] GeV refutes octave scaling. M(T_cccc) > 5.0 GeV refutes harmonic tetraquark rule."
+    },
+    {
+      "id": "UIDT-C-070",
+      "statement": "A non-trivial UV/IR fixed point exists for the operator S F^2 in SU(3) Yang-Mills, generating a scalar anomalous dimension eta_* ≈ 0.072. This mechanism supports the functional form γ ~ (Λ_UV / Λ_IR)^{eta_*}.",
+      "type": "derivation",
+      "status": "predicted",
+      "evidence": "D",
+      "confidence": 0.70,
+      "sigma": null,
+      "sinceversion": "v3.9.5",
+      "dependencies": [
+        "verification/scripts/solve_momentum_frg.py",
+        "output/rg_run_log_momentum.txt",
+        "UIDT-C-002",
+        "UIDT-C-043",
+        "UIDT-C-016"
+      ],
+      "notes": "FRG analysis with optimised Litim regulator and mp.dps=80. Two-stage solver: (A) YMGhostGluonSolver provides dynamic w_g* replacing external DSE input w_g=0.25; (B) CauchyFRGIntegrator computes Pi_SS(p^2) on deformed contour z(t)=t*exp(i*theta), theta>=0.2 rad, with [CAUCHY_CLOSURE] gate Im(I)<1e-70. LPA fixed point: g^2_* ≈ 3.94, lambda_* ≈ 15.88, kappa^2_* ≈ 2.71, eta_* ≈ 0.072. Evidence D: Analytical Projection, not experimentally verified. Complex eigenvalues of stability matrix indicate truncation artefact (see CANONICAL/LIMITATIONS L6). GAMMA RULE: canonical gamma=16.339 remains strictly [A-] (UIDT-C-002). This claim explains the functional form but does NOT replace kinetic calibration and does NOT upgrade gamma to [A].",
+      "falsification": "If a full momentum-dependent FRG analysis with eta_A != 0 and S^2 F^2 operator yields no fixed point, or if eta_* deviates from the range [0.055, 0.085] at the extended truncation level."
     }
   ],
   "statistics": {
@@ -588,14 +607,14 @@
     "category_A-": 4,
     "category_B": 7,
     "category_C": 8,
-    "category_D": 8,
+    "category_D": 9,
     "category_E": 12,
     "verified": 22,
     "calibrated": 8,
-    "predicted": 9,
+    "predicted": 10,
     "open": 6,
     "withdrawn": 2,
     "rectified": 1,
-    "conjectured": 3
+      "conjectured": 3
   }
 }
