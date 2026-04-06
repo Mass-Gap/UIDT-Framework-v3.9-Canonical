@@ -147,11 +147,12 @@ Every verification directory must contain REANA-compatible workflow description.
 
 ## Statistics
 
-**Total Files Affected:** 90+  
+**Total Files Affected:** 120+  
 **Renames/Moves:** 87  
-**New Files:** 7  
-**Directories Created:** 9  
-**Deleted Files:** 1 (duplicate)
+**New Files:** 24  
+**Directories Created:** 10  
+**Deleted Files:** 1 (duplicate)  
+**Archived Files:** 12 (old verification reports)
 
 ## Affected Constants
 
@@ -167,6 +168,7 @@ Every verification directory must contain REANA-compatible workflow description.
 
 ## Verification
 
+### Base Tickets (23 total)
 - [x] All 14 simulation files renamed to snake_case
 - [x] Clay-submission folder renamed (parentheses removed)
 - [x] Ergodicity results moved to data directory
@@ -177,6 +179,19 @@ Every verification directory must contain REANA-compatible workflow description.
 - [x] Bug report template created
 - [x] No imports broken (simulation files are standalone)
 - [x] Cross-platform compatibility improved
+
+### Extended Optimization (World-Class Research Standards)
+- [x] Root governance files (SECURITY.md, CODEOWNERS, FORMALISM.md fix)
+- [x] Verification directory (REANA, REPRODUCE.md, research/README.md)
+- [x] Simulation directory (README.md, DATA_FORMAT.md)
+- [x] Clay submission (JOURNAL_STRATEGY.md, 06_FormalProofs enhanced)
+- [x] CANONICAL/LEDGER (FALSIFICATION.md, CLAIMS.json synchronized)
+- [x] Metadata & references (FAIR_COMPLIANCE.md, references/README.md)
+- [x] GitHub templates (verification_request.md, replication_report.md, FUNDING.yml)
+- [x] Docs governance (FLAG_quality_mapping.md)
+- [x] Core/modules/manuscript README files
+- [x] Verification data archived (12 old reports → archive/)
+- [x] Ergodicity files renamed (v3_9_baseline/extended/final.txt)
 - [ ] Verification suite run (not applicable - no code logic changed)
 
 ## Review Gates
@@ -259,14 +274,19 @@ After merge:
 - Update any external documentation referencing old filenames
 - Notify collaborators of new file structure
 - Consider adding pre-commit hooks to enforce naming conventions
-- **Prepare qualifying outlet submission (Clay Math requirement)**
-- **Submit to HAL/arXiv with Dublin Core metadata**
-- **Configure REANA workflow for CERN CAP**
-- **Engage with FLAG collaboration for lattice QCD review**
+- **Prepare Clay Math submission (Q2 2026)**
+  - External mathematical review (pre-submission)
+  - LaTeX manuscript finalization
+  - Submit to Annals of Mathematics
+- **Submit to HAL/arXiv** with Dublin Core metadata
+- **Configure REANA workflow** for CERN CAP
+- **Engage with FLAG collaboration** for lattice QCD review
+- **Initiate experimental tests** (Casimir, LHC scalar search)
 
 ---
-**Plan:** File Structure Optimization (o1) + External Research Compatibility  
-**Tickets:** 23 base + 3 extended laws  
-**External Platforms:** Clay Math, CERN CAP/REANA, HAL, SCOAP³, FLAG, ILDG  
+**Plan:** File Structure Optimization (o1) + World-Class Research Standards  
+**Tickets:** 23 base + 8 comprehensive optimization steps  
+**External Platforms:** Clay Math, CERN CAP/REANA, HAL, SCOAP³, FLAG, ILDG, FAIR  
 **Maintainer:** P. Rietz (ORCID: 0009-0007-4307-1609)  
-**Generated:** 2026-04-06
+**Generated:** 2026-04-06  
+**Completed:** 2026-04-07
