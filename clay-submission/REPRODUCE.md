@@ -12,7 +12,7 @@ cd UIDT-Framework-v3.9-Canonical
 # Run full verification suite (Docker)
 docker run --rm -v $(pwd):/workspace -w /workspace python:3.11-slim bash -c "
   pip install -q mpmath pytest numpy scipy &&
-  python verification/scripts/verify_all.py
+  pytest verification/tests/ -v
 "
 ```
 
@@ -49,7 +49,7 @@ pip install -r verification/requirements.txt
 ### 3. Run Verification Suite
 ```bash
 # Full verification (all tests)
-python verification/scripts/verify_all.py
+pytest verification/tests/ -v
 
 # Individual components
 python verification/scripts/verify_spectral_gap.py      # Δ = 1.710 GeV [A]
@@ -96,7 +96,7 @@ python verification/audits/parameter_drift_detector.py
 
 ```yaml
 # reana.yaml
-version: 0.9.0
+version: 0.9.3
 inputs:
   files:
     - verification/

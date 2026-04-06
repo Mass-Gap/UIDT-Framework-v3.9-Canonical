@@ -33,12 +33,12 @@
           },
           "type": {
             "type": "string",
-            "enum": ["parameter", "prediction", "cosmology", "constraint", "verification", "derivation", "interpretation", "framework"],
+            "enum": ["parameter", "prediction", "cosmology", "constraint", "verification", "derivation", "interpretation", "framework", "hypothesis"],
             "description": "Claim category"
           },
           "status": {
             "type": "string",
-            "enum": ["verified", "calibrated", "predicted", "rectified", "open", "withdrawn"],
+            "enum": ["verified", "calibrated", "predicted", "rectified", "open", "withdrawn", "conjectured", "superseded"],
             "description": "Current claim status"
           },
           "evidence": {
@@ -68,6 +68,16 @@
           "withdrawn_date": {
             "type": "string",
             "format": "date"
+          },
+          "superseded_by": {
+            "type": "string"
+          },
+          "superseded_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "falsification": {
+            "type": "string"
           },
           "notes": {"type": "string"}
         }

@@ -114,6 +114,7 @@ AGENTS.md
 .cache/
 tmp/
 temp/
+LOCAL/
 
 # ============================================================================
 # LARGE BINARY DATA (Use Git LFS or external storage)

@@ -71,7 +71,8 @@ def verify_light_quark_masses():
     print(f"    sigma_s = {sigma_s}")
 
     # Assertions
-    if float(sigma_u) >= 0.15 or float(sigma_d) >= 0.15 or float(sigma_s) >= 0.15:
+    threshold = mpmath.mpf('0.15')
+    if sigma_u >= threshold or sigma_d >= threshold or sigma_s >= threshold:
         print("[!] FAILURE: Sigma variance exceeds 0.15 constraint after QED correction.")
         sys.exit(1)
 
@@ -79,11 +80,19 @@ def verify_light_quark_masses():
     # Simulate PDG uncertainty distributions to robustly assert topological mapping fits
     runs = 100000
     pass_count = 0
+    
+    # Set deterministic seed
+    random.seed(42)
+
     for _ in range(runs):
-        # Sample from uniform error bounds covering PDG uncertainty
-        sample_u = pdg_u + pdg_u_err * mpmath.mpf(str(random.uniform(-1, 1)))
-        sample_d = pdg_d + pdg_d_err * mpmath.mpf(str(random.uniform(-1, 1)))
-        sample_s = pdg_s + pdg_s_err * mpmath.mpf(str(random.uniform(-1, 1)))
+        # Native 80-dps generation in range [-1, 1]
+        noise_u = mpmath.mpf('2.0') * mpmath.rand() - mpmath.mpf('1.0')
+        noise_d = mpmath.mpf('2.0') * mpmath.rand() - mpmath.mpf('1.0')
+        noise_s = mpmath.mpf('2.0') * mpmath.rand() - mpmath.mpf('1.0')
+        
+        sample_u = pdg_u + pdg_u_err * noise_u
+        sample_d = pdg_d + pdg_d_err * noise_d
+        sample_s = pdg_s + pdg_s_err * noise_s
         
         # Check if derived mass is within the sampled target
         if abs(m_u_corr - sample_u) < pdg_u_err and abs(m_d_corr - sample_d) < pdg_d_err and abs(m_s_corr - sample_s) < pdg_s_err:

@@ -160,7 +160,7 @@ clay_qualifying_outlet_target: "TBD (Peer-Review Journal)"
 # Reproducibility (REANA/CAP Compatible)
 reproducibility:
   docker_image: "python:3.11-slim"
-  entry_point: "verification/scripts/verify_all.py"
+  entry_point: "pytest verification/tests/ -v"
   runtime: "~2 hours (full verification suite)"
   hardware: "8 CPU cores, 16GB RAM recommended"
 
@@ -173,7 +173,6 @@ contact:
 # Funding
 funding: "Independent Research (No External Funding)"
 
----
 # File System Laws Enforced
 # L-FS-11: External Metadaten-Pflicht (Dublin Core)
 # L-FS-12: Reproduzierbarkeits-Manifest (see REPRODUCE.md)

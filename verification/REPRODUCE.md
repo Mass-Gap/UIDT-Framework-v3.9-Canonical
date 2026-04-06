@@ -12,7 +12,7 @@ cd UIDT-Framework-v3.9-Canonical
 # Run full verification suite
 docker run --rm -v $(pwd):/workspace -w /workspace python:3.11-slim bash -c "
   pip install -q mpmath==1.3.0 pytest==7.4.0 numpy==1.24.0 scipy==1.11.0 &&
-  python verification/scripts/verify_all.py
+  pytest verification/tests/ -v
 "
 ```
 
@@ -50,7 +50,7 @@ pip install -r verification/requirements.txt
 
 #### Full Verification (All Tests)
 ```bash
-python verification/scripts/verify_all.py
+pytest verification/tests/ -v
 ```
 
 #### Individual Components
