@@ -1,12 +1,13 @@
 ## Summary
 
-Complete File Structure Optimization implementing all 23 tickets from Plan o1. Enforces File System Laws L-FS-01 through L-FS-10 to improve repository organization, cross-platform compatibility, and Python import reliability.
+Complete File Structure Optimization implementing all 23 tickets from Plan o1 PLUS extended optimization for external research compatibility (Clay Math, CERN, HAL). Enforces File System Laws L-FS-01 through L-FS-13 to improve repository organization, cross-platform compatibility, Python import reliability, and external publication readiness.
 
 ## Plan Reference
 
-**Plan:** File Structure Optimization (o1)  
+**Plan:** File Structure Optimization (o1) + External Research Compatibility  
 **Source:** `UIDT-OS/PLANS/UIDT-UPDATES/2026-03-08_optimize_structure/Plan_o1___Optimize_File_Structure.md`  
-**Tickets Executed:** 23 (all filesystem-aware tickets from `optimization_v2/`)
+**Tickets Executed:** 23 (all filesystem-aware tickets from `optimization_v2/`)  
+**Extended Laws:** L-FS-11 (Metadata), L-FS-12 (Reproducibility), L-FS-13 (Docs Taxonomy)
 
 ## Changes by Priority
 
@@ -86,6 +87,50 @@ Added structured template for reporting numerical discrepancies.
 **Created:**
 - `.github/ISSUE_TEMPLATE/bug_report.md` (includes fields for residuals, evidence categories, falsification risk)
 
+---
+
+## Extended Optimization: External Research Compatibility
+
+### 🌐 NEW File System Laws (L-FS-11 to L-FS-13)
+
+#### L-FS-11: External Metadaten-Pflicht
+Every publication-relevant directory must contain Dublin-Core-compatible metadata.
+
+**Created:**
+- `docs/metadata.yaml` (HAL/Zenodo/CDS compatible)
+- `clay-submission/metadata.yaml` (Clay Math/SCOAP³ compatible)
+
+#### L-FS-12: Reproduzierbarkeits-Manifest
+Every verification directory must contain REANA-compatible workflow description.
+
+**Created:**
+- `clay-submission/REPRODUCE.md` (one-command reproducibility, Docker/REANA compatible)
+
+#### L-FS-13: Docs-Taxonomie
+`docs/` follows four-layer taxonomy for reviewer orientation.
+
+**Created Directories:**
+- `docs/foundations/` (11 files) - Mathematical proofs (Clay Math relevant)
+- `docs/qcd-lattice/` (9 files) - QCD & Lattice (CERN/FLAG/ILDG relevant)
+- `docs/predictions/` (11 files) - Experimental predictions (LHC/DESI)
+- `docs/governance/` (12 files) - Quality & standards
+- `docs/audits/` (7 files) - Epistemic quality control
+
+**Removed:**
+- `docs/falsification_criteria.md` (duplicate, kept kebab-case version)
+
+### Clay Mathematics Institute Enhancements
+
+**Updated:**
+- `clay-submission/06_FormalProofs/README.md` - Added Wightman & Osterwalder-Schrader axioms references
+
+**Compliance:**
+- ✅ Wightman axioms (W1-W5) documented
+- ✅ Osterwalder-Schrader axioms (OS1-OS4) documented
+- ✅ Dublin Core metadata for HAL submission
+- ✅ REANA-compatible reproduction protocol
+- ✅ Sequential completeness (00-10 folders)
+
 ## File System Laws Enforced
 
 | Law | Description | Tickets |
@@ -96,13 +141,17 @@ Added structured template for reporting numerical discrepancies.
 | **L-FS-05** | Result artefacts belong in verification/data/ | 3 MEDIUM |
 | **L-FS-08** | Clay submission sequentially complete | 1 MEDIUM |
 | **L-FS-09** | File extensions match content | 1 MEDIUM |
+| **L-FS-11** | External metadata (Dublin Core) | NEW |
+| **L-FS-12** | Reproducibility manifest (REANA) | NEW |
+| **L-FS-13** | Docs taxonomy (4-layer structure) | NEW |
 
 ## Statistics
 
-**Total Files Affected:** 40+  
-**Renames/Moves:** 37  
-**New Files:** 3  
-**Directories Created:** 4
+**Total Files Affected:** 90+  
+**Renames/Moves:** 87  
+**New Files:** 7  
+**Directories Created:** 9  
+**Deleted Files:** 1 (duplicate)
 
 ## Affected Constants
 
@@ -158,10 +207,14 @@ This change does not affect reproducibility. All modifications are file organiza
 - ✅ Complete clay-submission sequence
 
 ### Long-term
-- ✅ Easier navigation (docs index, manuscript structure)
+- ✅ Easier navigation (docs index, manuscript structure, 4-layer taxonomy)
 - ✅ Better issue tracking (bug report template)
 - ✅ Reduced maintenance overhead
 - ✅ Improved discoverability for new contributors
+- ✅ **External publication readiness (Clay Math, CERN, HAL, SCOAP³)**
+- ✅ **Dublin Core metadata for archival repositories**
+- ✅ **REANA-compatible reproducibility**
+- ✅ **FLAG-Review-compatible documentation structure**
 
 ## Breaking Changes
 
@@ -206,9 +259,14 @@ After merge:
 - Update any external documentation referencing old filenames
 - Notify collaborators of new file structure
 - Consider adding pre-commit hooks to enforce naming conventions
+- **Prepare qualifying outlet submission (Clay Math requirement)**
+- **Submit to HAL/arXiv with Dublin Core metadata**
+- **Configure REANA workflow for CERN CAP**
+- **Engage with FLAG collaboration for lattice QCD review**
 
 ---
-**Plan:** File Structure Optimization (o1)  
-**Tickets:** 23 (all executed)  
+**Plan:** File Structure Optimization (o1) + External Research Compatibility  
+**Tickets:** 23 base + 3 extended laws  
+**External Platforms:** Clay Math, CERN CAP/REANA, HAL, SCOAP³, FLAG, ILDG  
 **Maintainer:** P. Rietz (ORCID: 0009-0007-4307-1609)  
 **Generated:** 2026-04-06

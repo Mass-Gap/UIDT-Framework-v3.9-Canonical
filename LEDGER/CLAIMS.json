@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "version": "3.9.0",
-    "last_updated": "2026-03-15",
+    "version": "3.9.5",
+    "last_updated": "2026-04-07",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 53,
-    "audit_note": "Updated from PRs #1-#99 retroactive audit. 11 new claims (C-043 to C-053), 2 existing claims updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99) on 2026-03-15."
+    "total_claims": 54,
+    "audit_note": "Updated from PRs #1-#236 retroactive audit. 1 new claim (C-054: λ_S exact definition). Claims C-006 and C-034 superseded by C-054 (λ_S = 5κ²/3 exact, NOT 0.417 numerical). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. Repository optimization (PR #236) completed 2026-04-07."
   },
   "claims": [
     {
@@ -63,11 +63,13 @@
       "id": "UIDT-C-006",
       "statement": "Self-Coupling λ_S = 0.417 ± 0.007",
       "type": "parameter",
-      "status": "verified",
+      "status": "superseded",
       "evidence": "A",
       "dependencies": ["RG_fixed_point"],
       "since": "v3.2",
-      "notes": "Perturbative: λ_S < 1"
+      "superseded_by": "UIDT-C-054",
+      "superseded_date": "2026-04-07",
+      "notes": "SUPERSEDED: λ_S is EXACTLY 5κ²/3, NOT 0.417 numerical. See UIDT-C-054 for exact definition."
     },
     {
       "id": "UIDT-C-007",
@@ -356,12 +358,14 @@
       "id": "UIDT-C-034",
       "statement": "λ_S = 0.417 ± 0.007",
       "type": "parameter",
-      "status": "verified",
+      "status": "superseded",
       "evidence": "A",
       "confidence": 0.99,
       "dependencies": [],
       "since": "v3.7.2",
-      "notes": "Scalar self-interaction"
+      "superseded_by": "UIDT-C-054",
+      "superseded_date": "2026-04-07",
+      "notes": "SUPERSEDED: λ_S is EXACTLY 5κ²/3, NOT 0.417 numerical. See UIDT-C-054 for exact definition."
     },
     {
       "id": "UIDT-C-035",
@@ -581,6 +585,18 @@
       "since": "v3.9",
       "notes": "Ω_bbb within lattice QCD range (14.37-14.57 GeV). T_cccc BELOW lattice range (5.6-6.2 GeV) — high-risk falsification. 3-6-9 octave scaling of f_vac. Source: heavy_quark_predictions.md, lhcb_predictions_paper_draft.md.",
       "falsification": "LHCb: M(Ω_bbb) ∉ [14.2,14.7] GeV refutes octave scaling. M(T_cccc) > 5.0 GeV refutes harmonic tetraquark rule."
+    },
+    {
+      "id": "UIDT-C-054",
+      "statement": "Scalar Self-Coupling λ_S = 5κ²/3 (exact RG fixed-point constraint)",
+      "type": "parameter",
+      "status": "verified",
+      "evidence": "A",
+      "confidence": 0.99,
+      "dependencies": ["UIDT-C-005", "UIDT-C-010", "UIDT-C-024"],
+      "since": "v3.9.5",
+      "notes": "EXACT definition from RG fixed-point constraint 5κ² = 3λ_S. With κ = 0.500 ± 0.008, numerical value is λ_S ≈ 0.4167 ± 0.0133. NEVER use 0.417 as primary definition. Supersedes UIDT-C-006 and UIDT-C-034. Source: AGENTS.md, CANONICAL/CONSTANTS.md, verification/registries/symbol_registry.json.",
+      "falsification": "If RG flow analysis yields 5κ² ≠ 3λ_S with residual > 10^-2 (phenomenological tolerance) or > 10^-14 (Category A analytical claims)."
     }
   ],
   "statistics": {
@@ -590,12 +606,13 @@
     "category_C": 8,
     "category_D": 8,
     "category_E": 12,
-    "verified": 22,
+    "verified": 21,
     "calibrated": 8,
     "predicted": 9,
     "open": 6,
     "withdrawn": 2,
     "rectified": 1,
-    "conjectured": 3
+    "conjectured": 3,
+    "superseded": 2
   }
 }

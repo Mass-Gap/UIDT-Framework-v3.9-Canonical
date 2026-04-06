@@ -147,10 +147,10 @@ $$d_{\text{opt}} = 0.854 \text{ nm}$$
 
 ## Reference Implementation
 
-See `WORKSPACE/derivations/` for:
-- `uidt_proof_core.py` — Core proof implementation
-- `rg_flow_analysis.py` — RG flow calculations
-- `error_propagation.py` — Uncertainty analysis
+See `core/` and `verification/scripts/` for:
+- `core/uidt_proof_engine.py` — Core proof implementation
+- `verification/scripts/verify_rg_fixed_point.py` — RG flow calculations
+- `verification/scripts/error_propagation.py` — Uncertainty analysis
 
 ---
 
