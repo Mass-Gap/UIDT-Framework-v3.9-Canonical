@@ -1,4 +1,4 @@
-# UIDT Known Limitations v3.7.2
+# UIDT Known Limitations v3.9.5
 
 > **PURPOSE:** Transparent documentation of unresolved issues  
 > **PRINCIPLE:** Acknowledge what we don't know
@@ -70,7 +70,8 @@ Accepted as within framework tolerance. 99-step RG cascade + π⁻² normalizati
 - OR derive from non-perturbative FRG
 - OR accept as empirical constant
 
-**Note:** In RESEARCH-MODE, exploring γ derivation is permitted with [E] tag.
+**Note:** In RESEARCH-MODE, exploring γ derivation is permitted with [E] tag.  
+**See also:** UIDT-C-070 (FRG fixed-point projection, Evidence D), UIDT-C-072 (Dilaton sourcing, Evidence B).
 
 ---
 
@@ -91,6 +92,43 @@ Physical/mathematical derivation of N=99 from first principles
 - Related to number of SM degrees of freedom?
 - Holographic dimension counting?
 - Accidental numerical coincidence?
+
+---
+
+### L8: Z2 Symmetry Collapse — No Non-Trivial κ² Fixed Point in the ⟨S⟩=0 Phase
+**Status:** 🔴 RESOLVED BY ARCHITECTURE DECISION (2026-04-06)
+
+**Description:**  
+`[Z2_SYMMETRY_COLLAPSE]` In the strict ⟨S⟩ = 0 phase, the Z₂ symmetry (S → −S) of the Yang–Mills scalar sector forbids a linear g²-source term in β_{κ²}. A Newton–Raphson solver on the minimal 3×3 system (g², λ̃_S, κ̃²) with mp.dps = 80 deterministically collapses κ² → 0 regardless of starting magnitude, as no RG mechanism can generate a non-zero ⟨S⟩ from a pure Yang–Mills vacuum without explicit symmetry breaking.
+
+**Impact:**  
+- The minimal S F² truncation (UIDT-C-070, Evidence D) does NOT possess a non-trivial κ² fixed point in this phase.
+- The spiral complex eigenvalues previously observed are confirmed as truncation artefacts of the massless Z₂-symmetric sector.
+- The Gatekeeper Run (2026-04-06, 3×3 system, mp.dps = 80) constitutes a deterministic proof of this theorem.
+
+**Condition for Resolution:**  
+Two architecturally valid resolutions exist:  
+1. **VEV path (Evidence C):** Add a classical symmetry-breaking potential V(S) ∝ −m²S² + λ_S S⁴, inducing ⟨S⟩ = v_S ≠ 0. Generates the required linear κ-source term but introduces a Higgs-portal structure.
+2. **Dilaton/Trace-Anomaly path (Evidence B):** Identify S with the dilaton — the Goldstone boson of broken scale invariance. The gluon condensate ⟨F²⟩ ≠ 0 provides a permanent UV source via the trace anomaly θ^μ_μ = (β(g)/2g) F²_μν, coupling S fundamentally to the QCD scale anomaly without requiring a classical VEV. This path is architecturally consistent with the title "Vacuum Information Density as the Fundamental Geometric Scalar" and is adopted in UIDT-C-072.
+
+**Architecture Decision (2026-04-06):**  
+The Dilaton/Trace-Anomaly path (Option 2) is canonically adopted. See UIDT-C-072.
+
+---
+
+### L9: FRG Truncation Artefact in γ Derivation (Dilaton Sector)
+**Status:** 🔬 ACTIVE RESEARCH
+
+**Description:**  
+The FRG derivation of the γ mechanism (UIDT-C-070, C-072) operates with minimal truncation: η_A = 0 (background-field approximation, gluon fluctuations not fully captured), a single S F²-operator without higher-dimensional extensions (S²F², ∂²S F², ...), and the optimised Litim regulator in the w → 0 conformal limit.
+
+**Impact:**  
+- η_* ≈ 0.072 (current) vs. η_* ≈ 0.063 (phenomenological threshold). Gap Δη ≈ 0.009 attributed to missing gluon anomalous dimension η_A and higher operators.
+- Complex IR eigenvalues of the stability matrix (spiralling RG flow) are a truncation artefact and do not invalidate the fixed-point existence, but limit the result to Evidence D/B pending extended truncation.
+- Dilaton sourcing (C-072) upgrades the β_{κ²} structure; full 5×5 solver (g², λ̃_S, κ̃², η_A, C_dil) required for Evidence A.
+
+**Condition for Resolution:**  
+Extend truncation to include: (a) running η_A ≠ 0; (b) S²F² operator; (c) full momentum-dependent 2-point function Γ^(2)(p²) via Chebyshev projection. See `verification/scripts/solve_momentum_frg.py` (blueprint TKT-20260405).
 
 ---
 
@@ -128,6 +166,8 @@ Corrected to v = 47.7 MeV. Old value was erroneous.
 | L3 | Vacuum energy | ρ_vac factor 2.3 | 🟢 Accepted |
 | L4 | γ not from RG | γ remains [A-] not [A] | 🔴 High |
 | L5 | N=99 unjustified | RG cascade phenomenological | 🟡 Medium |
+| L8 | Z₂ collapse | κ²=0 in ⟨S⟩=0 phase; Dilaton path adopted | 🟢 Resolved by Architecture Decision |
+| L9 | FRG truncation artefact (Dilaton sector) | η_* gap 0.009; complex eigenvalues | 🔴 High (blocks Evidence A for C-072) |
 
 ---
 
@@ -139,9 +179,10 @@ If any of these occur, UIDT requires major revision:
 2. **Casimir:** |ΔF/F| < 0.1% at d ≈ 0.66 nm (no anomaly)
 3. **DESI:** w = -1.00 ± 0.01 exactly (pure ΛCDM)
 4. **LHC:** Scalar excluded in 1.5-1.9 GeV window
+5. **Lattice:** No gluon condensate ⟨F²⟩ ≠ 0 consistent with trace anomaly coupling (would invalidate UIDT-C-072 Dilaton path)
 
 See `LEDGER/FALSIFICATION.md` for details.
 
 ---
 
-**CITATION:** Rietz, P. (2025). UIDT v3.7.2. DOI: 10.5281/zenodo.17835200
+**CITATION:** Rietz, P. (2025/2026). UIDT v3.9.5. DOI: 10.5281/zenodo.17835200
