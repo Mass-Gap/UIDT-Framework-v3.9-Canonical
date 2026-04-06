@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "version": "3.9.0",
-    "last_updated": "2026-03-15",
+    "version": "3.9.5",
+    "last_updated": "2026-04-06",
     "doi": "10.5281/zenodo.17835200",
     "total_claims": 53,
-    "audit_note": "Updated from PRs #1-#99 retroactive audit. 11 new claims (C-043 to C-053), 2 existing claims updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99) on 2026-03-15."
+    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized."
   },
   "claims": [
     {
@@ -67,7 +67,7 @@
       "evidence": "A",
       "dependencies": ["RG_fixed_point"],
       "since": "v3.2",
-      "notes": "Perturbative: λ_S < 1"
+      "notes": "Exact RG definition: λ_S := 5κ²/3 = 0.41̄6̄ (PI Decision D6, PR #209/#221). Value 0.417 was rounded decimal approximation. No physics change: |0.41̄6̄ − 0.417| < ±0.007 uncertainty. Perturbative: λ_S < 1."
     },
     {
       "id": "UIDT-C-007",
@@ -107,7 +107,7 @@
       "evidence": "A",
       "dependencies": ["rg_flow_analysis.py"],
       "since": "v3.2",
-      "notes": "Residual 0.001 < tolerance 0.01"
+      "notes": "Residual = 0.0 (exact, λ_S := 5κ²/3, PI Decision D6, PR #209). Previous residual 0.001 with hardcoded 0.417. Now Constitution-compliant < 10⁻¹⁴."
     },
     {
       "id": "UIDT-C-011",
@@ -247,17 +247,18 @@
     },
     {
       "id": "UIDT-C-024",
-      "statement": "RG Fixed Point: 5κ² = 3λ_S = 1.250 ≈ 1.251",
+      "statement": "RG Fixed Point: 5κ² = 3λ_S = 1.25̄ (exact, residual < 10⁻⁸⁰)",
       "type": "constraint",
       "status": "verified",
       "evidence": "A",
       "confidence": 0.99,
       "dependencies": ["UIDT-C-033", "UIDT-C-034"],
-      "since": "v3.7.2"
+      "since": "v3.7.2",
+      "notes": "Updated v3.9.5: removed erroneous '≈ 1.251'. λ_S := 5κ²/3 exact (PR #209/#221)."
     },
     {
       "id": "UIDT-C-025",
-      "statement": "Perturbative Check: λ_S < 1 → 0.417 ✓",
+      "statement": "Perturbative Check: λ_S < 1 → 0.41̄6̄ ✓",
       "type": "constraint",
       "status": "verified",
       "evidence": "A",
@@ -354,14 +355,14 @@
     },
     {
       "id": "UIDT-C-034",
-      "statement": "λ_S = 0.417 ± 0.007",
+      "statement": "λ_S = 5κ²/3 = 0.41̄6̄ ± 0.007",
       "type": "parameter",
       "status": "verified",
       "evidence": "A",
       "confidence": 0.99,
       "dependencies": [],
       "since": "v3.7.2",
-      "notes": "Scalar self-interaction"
+      "notes": "Scalar self-interaction. Exact: λ_S := 5κ²/3 per PI Decision D6 (PR #221, 2026-04-06). Previous rounded value 0.417 was decimal approximation within stated ±0.007 uncertainty. No physics change."
     },
     {
       "id": "UIDT-C-035",
@@ -394,7 +395,7 @@
       "confidence": 0.9,
       "dependencies": [],
       "since": "v3.7.2",
-      "notes": "Canonical dark energy EOS per Decision D-002. Previous values (-0.961, -0.762, -0.73) superseded. CONSTANTS.md v3.9.4 authoritative. Synchronized 2026-03-15."
+      "notes": "Canonical dark energy EOS per Decision D-002. Previous values (-0.961, -0.762, -0.73) superseded. CONSTANTS.md v3.9.5 authoritative. Synchronized 2026-03-15."
     },
     {
       "id": "UIDT-C-038",
@@ -469,11 +470,11 @@
       "statement": "Torsion Basis Energy E_T = 2.44 MeV",
       "type": "prediction",
       "status": "predicted",
-      "evidence": "D",
+      "evidence": "C",
       "confidence": 0.70,
       "dependencies": ["UIDT-C-001", "UIDT-C-002", "UIDT-C-048"],
       "since": "v3.9",
-      "notes": "E_T = f_vac − Δ/γ = 107.10 − 104.66 MeV. Shows 3.75σ tension with FLAG 2024 m_u=2.14±0.08 MeV (pre-QED correction). After QED: m_u^phys≈2.08 MeV (0.75σ). NOT [B]: z=3.75σ fails B threshold. Source: theoretical_notes.md §7,§13.",
+      "notes": "E_T = f_vac − Δ/γ = 107.10 − 104.66 MeV. Shows 3.75σ tension with FLAG 2024 m_u=2.14±0.08 MeV (pre-QED correction). After QED: m_u^phys≈2.08 MeV (0.75σ). NOT [B]: z=3.75σ fails B threshold. Upgraded [D]→[C] per PR #216 (A5, 2026-04-06): composite scaling-limit parameter. CONSTANTS.md v3.9.5 authoritative. Source: theoretical_notes.md §7,§13.",
       "falsification": "If lattice QCD excludes 2.44 MeV bare torsion at >5σ, E_T is refuted."
     },
     {
@@ -521,7 +522,7 @@
       "confidence": 0.80,
       "dependencies": ["UIDT-C-001", "UIDT-C-002"],
       "since": "v3.9",
-      "notes": "Composite: E_geo=Δ/γ=104.66 MeV [A-] + E_T=2.44 MeV [D]. Limited by weakest input → [C]. Source: derivation_qcd.md, quark_mass_hierarchy_prediction.md."
+      "notes": "Composite: E_geo=Δ/γ=104.66 MeV [A-] + E_T=2.44 MeV [C]. Limited by weakest input → [C]. Source: derivation_qcd.md, quark_mass_hierarchy_prediction.md."
     },
     {
       "id": "UIDT-C-049",
@@ -567,7 +568,7 @@
       "confidence": 0.55,
       "dependencies": ["UIDT-C-002", "UIDT-C-016"],
       "since": "v3.9",
-      "notes": "0.037% match to canonical γ=16.339 but within MC uncertainty. Document titled 'Theorem' but content says 'Conjecture'. Category [E]: no proof that VEV yields this coefficient. Would address L4 if proven. Source: su3_gamma_theorem.md (PR #15).",
+      "notes": "0.037% match to canonical γ=16.339 but within MC uncertainty. Document titled 'Theorem' but content says 'Conjecture'. Category [E]: no proof that VEV yields this coefficient. Would address L4 if proven. Source: su3_gamma_conjecture_audit.md (renamed per PI Decision D2, PR #220, 2026-04-06; previously su3_gamma_theorem.md PR #15).",
       "falsification": "If analytical derivation from UIDT Lagrangian yields γ ≠ 49/3."
     },
     {
@@ -587,8 +588,8 @@
     "category_A": 14,
     "category_A-": 4,
     "category_B": 7,
-    "category_C": 8,
-    "category_D": 8,
+    "category_C": 9,
+    "category_D": 7,
     "category_E": 12,
     "verified": 22,
     "calibrated": 8,
