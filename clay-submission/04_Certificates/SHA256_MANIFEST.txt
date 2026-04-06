@@ -1,5 +1,5 @@
 ==============================================================================
-UIDT v3.6.1 — SHA-256 CRYPTOGRAPHIC MANIFEST
+UIDT v3.6.1 ï¿½ SHA-256 CRYPTOGRAPHIC MANIFEST
 ==============================================================================
 Generated: 2026-02-18T00:37:59.403808
 Files: 105
@@ -90,7 +90,7 @@ a2463ad52e0ea32f7810adeb9ff2c24c6b5447b6d6fb6714cab983f9608b5492  04_Certificate
 ba1e87712ce2ae1fdb34798c0a66508f0461841fdeb511e2d0886fb31449afe5  05_LatticeSimulation\UIDTv3.6.1_Ape-smearing.py
 cf9f6613e7a423bbe57c212907f3403200c6ade45892fc20ee4a39990c4ed410  05_LatticeSimulation\UIDTv3.6.1_CosmologySimulator.py
 7ce1831e459fa6977a7abdfc23dba36e479df41442be8953f44cd46397ae1501  05_LatticeSimulation\UIDTv3.6.1_Evidence_Analyzer.py
-1703558c49dfebe4ec4c761e712428a70cf36947e16f9651274c105d8586ffd5  05_LatticeSimulation\UIDTv3.6.1_HMC_Optimized.py
+1703558c49dfebe4ec4c761e712428a70cf36947e16f9651274c105d8586ffd5  05_LatticeSimulation\uidt_v3_6_1_hmc_optimized.py
 da95307052f228c3fdc64387db5cdbc1cef1c2527995939025252655d5209212  05_LatticeSimulation\UIDTv3.6.1_Lattice_Validation.py
 9c337a4204693be234e18e9c5c9c17caf096ec25ba1bad9bbdfd5ae35232e1bb  05_LatticeSimulation\UIDTv3.6.1_Monitor-Auto-tune.py
 80c79114b856e4c531af576d329d4fa3dc41e0b32d536171915f46dc09b1e974  05_LatticeSimulation\UIDTv3.6.1_Omelyna-Integrator2o.py

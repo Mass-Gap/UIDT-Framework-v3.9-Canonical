@@ -102,7 +102,7 @@ UIDT-FRAMEWORK-V3.6.1\SUPPLEMENTARY_CLAY_MASS_GAP_SUBMISSION
 |       UIDTv3.6.1_Evidence_Analyzer.py
 |       UIDTv3.6.1_Hmc-Diagnostik.py
 |       UIDTv3.6.1_HMC-MASTER-SIMULATION.py
-|       UIDTv3.6.1_HMC_Optimized.py
+|       uidt_v3_6_1_hmc_optimized.py
 |       UIDTv3.6.1_Lattice_Validation.py
 |       UIDTv3.6.1_Monitor-Auto-tune.py
 |       UIDTv3.6.1_Omelyna-Integrator2o.py
