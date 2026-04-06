@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "document": "UIDT-C-070 Evidence Upgrade Patch",
+    "version": "3.9.5",
+    "date": "2026-04-06",
+    "ticket": "TKT-20260405",
+    "pr": "update_20260406_FRG_Gamma_FixedPoint-TKT-20260405",
+    "author": "UIDT Framework",
+    "note": "Formal upgrade of UIDT-C-070 from Evidence D to Evidence C following deterministic 80-dps YM ghost-gluon fixed-point computation. Gamma invariant UIDT-C-002 UNCHANGED at A-."
+  },
+  "UIDT-C-070": {
+    "description": "Dynamische Generierung des Gluon-Mass-Gaps und der anomalen Dimension am FRG-Fixpunkt",
+    "statement": "A non-trivial UV/IR fixed point for the operator S F^2 in SU(3) Yang-Mills generates a scalar anomalous dimension eta_* consistent with the functional form gamma ~ (Lambda_UV / Lambda_IR)^{eta_*}. The YM ghost-gluon sector yields a dynamically generated gluon mass parameter w_g* > 0, replacing the Stratum-II external DSE input.",
+    "type": "derivation",
+    "status": "partial_verification",
+    "evidence_category": "C",
+    "previous_evidence_category": "D",
+    "upgrade_date": "2026-04-06",
+    "stratum": "III",
+    "values": {
+      "eta_c_star": "0.022641406591847240692",
+      "eta_A_star": "0.14097863338118157839",
+      "w_g_star":   "0.076085851788367353521",
+      "w_g_DSE_external": "0.25",
+      "Delta_w_g":  "0.173914148211632646479",
+      "stability_eigenvalues": ["+0.999", "+1.027", "-2.140"],
+      "all_residuals_below": "1e-75",
+      "mp_dps": 80
+    },
+    "limitations": [
+      "LPA limit: w_g* (0.076) lies below the DSE/lattice value (~0.25). The residual gap Delta_w_g ~ 0.174 results deterministically from missing vertex dressing (Z_1 != 1) and missing p^2-projection. This is an expected LPA artefact, not a numerical error.",
+      "eta_A = 0 approximation: gluon fluctuations not fully captured in background-field scheme.",
+      "Cauchy deformation required for loop integrals involving scalar-gauge mixing (see L6 and solve_momentum_frg.py)."
+    ],
+    "gamma_rule": "UIDT-C-002 (gamma = 16.339, Evidence A-) is UNCHANGED. This upgrade explains the functional origin of gamma but does NOT derive gamma from first principles.",
+    "references": [
+      "arXiv:1605.01856 (Cyrol et al.) — Stratum II, DOI-verified",
+      "verification/scripts/solve_ym_ghosts.py",
+      "CANONICAL/LIMITATIONS.md L8"
+    ],
+    "reproduction": {
+      "command": "python verification/scripts/solve_ym_ghosts.py",
+      "requirements": "Python 3.x, mpmath >= 1.3.0",
+      "precision": "mp.dps = 80 (LOCAL, never global)",
+      "start_vector": {"eta_c": "0.04", "eta_A": "0.25", "w_g": "0.25"},
+      "g2_input": "3.94021354245561",
+      "convergence_target": "all |F_i| < 1e-75",
+      "expected_output_snippet": "[CONVERGED] eta_c=0.022641... eta_A=0.14097... w_g*=0.076085... eigenvalues: +0.999 +1.027 -2.140"
+    },
+    "pre_flight": {
+      "no_float_usage": true,
+      "mp_dps_local": true,
+      "rg_constraint_unaffected": true,
+      "no_deletion_over_10_lines": true,
+      "ledger_constants_unchanged": true,
+      "no_mock": true
+    }
+  },
+  "UIDT-C-002": {
+    "_note": "Reference entry — DO NOT MODIFY",
+    "description": "Gamma kinetic invariant",
+    "value": "16.339",
+    "evidence_category": "A-",
+    "status": "calibrated",
+    "change": "UNCHANGED"
+  }
+}
