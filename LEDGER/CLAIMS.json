@@ -584,14 +584,14 @@
     },
     {
       "id": "UIDT-C-056",
-      "statement": "Topological susceptibility \u03c7_top^{1/4} = f_vac / (2\u03c0) \u00d7 (b0 \u03b1_s / \u03c0)^{1/4} \u2248 55 MeV [TENSION]",
+      "statement": "Topological susceptibility \u03c7_top^{1/4} = f_vac / (2\u03c0) \u00d7 (b0 \u03b1_s / \u03c0)^{1/4} \u2248 143 MeV [TENSION]",
       "type": "prediction",
       "status": "predicted",
       "evidence": "D",
       "confidence": 0.30,
       "dependencies": ["UIDT-C-048", "UIDT-C-054", "UIDT-C-055"],
       "since": "v3.9.5",
-      "notes": "TENSION ALERT: UIDT prediction \u03c7_top^{1/4} \u2248 55 MeV vs lattice band 170\u2013200 MeV (z \u2248 16\u03c3). Formula uses SVZ (LO); NLO \u03b1_s correction (OT-4) and full operator-product structure required. b0 = 11 for pure SU(3) Yang-Mills. Previous formula error (b0 not included) corrected in PR #190. Does NOT falsify \u0394* or f_vac — formula derivation chain under investigation. Status: high-risk prediction requiring derivation revision.",
+      "notes": "TENSION ALERT: UIDT prediction \u03c7_top^{1/4} \u2248 143 MeV vs lattice band 170\u2013200 MeV. Formula uses SVZ (LO); NLO \u03b1_s correction (OT-4) and full operator-product structure required. b0 = 11 for pure SU(3) Yang-Mills. Previous formula error (b0 not included) corrected in PR #190. Does NOT falsify \u0394* or f_vac \u2014 formula derivation chain under investigation. Status: high-risk prediction requiring derivation revision.",
       "falsification": "If revised derivation (NLO, correct OPE) yields \u03c7_top^{1/4} outside [140, 220] MeV, formula is refuted."
     }
   ],
