@@ -1,0 +1,68 @@
+[
+  {
+    "param": "Δ",
+    "unit": "GeV",
+    "formula": "γ · Λ_QCD",
+    "dimensional_check": "[Energy]"
+  },
+  {
+    "param": "γ",
+    "unit": "dimensionless",
+    "formula": "phenomenologically calibrated",
+    "dimensional_check": "[1]"
+  },
+  {
+    "param": "κ",
+    "unit": "dimensionless",
+    "formula": "from RG fixed point: 5κ² = 3λ_S",
+    "dimensional_check": "[1]"
+  },
+  {
+    "param": "λ_S",
+    "unit": "dimensionless",
+    "formula": "from RG fixed point: 5κ² = 3λ_S",
+    "dimensional_check": "[1]"
+  },
+  {
+    "param": "v",
+    "unit": "MeV",
+    "formula": "<S>",
+    "dimensional_check": "[Energy]"
+  },
+  {
+    "param": "H₀",
+    "unit": "km/s/Mpc",
+    "formula": "DESI DR2 calibration",
+    "dimensional_check": "[1/Time]"
+  },
+  {
+    "param": "m_S",
+    "unit": "GeV",
+    "formula": "sqrt(2λ_S v²)",
+    "dimensional_check": "[Energy]"
+  },
+  {
+    "param": "Λ_QCD",
+    "unit": "GeV",
+    "formula": "QCD scale",
+    "dimensional_check": "[Energy]"
+  },
+  {
+    "param": "λ_UIDT",
+    "unit": "nm",
+    "formula": "characteristic wavelength",
+    "dimensional_check": "[Length]"
+  },
+  {
+    "param": "E_T",
+    "unit": "MeV",
+    "formula": "lattice torsion binding energy",
+    "dimensional_check": "[Energy]"
+  },
+  {
+    "param": "S₈",
+    "unit": "dimensionless",
+    "formula": "σ₈(Ω_m/0.3)^0.5",
+    "dimensional_check": "[1]"
+  }
+]
