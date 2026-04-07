@@ -12,7 +12,7 @@ creator:
   - name: "Philipp Rietz"
     orcid: "0009-0007-4307-1609"
     affiliation: "Independent Researcher"
-    email: "badbugs.arts@gmail.com"
+    email: "security@uidt-framework.org"
     role: "Principal Investigator"
 
 # Content Description
@@ -167,7 +167,7 @@ reproducibility:
 # Contact
 contact:
   name: "Philipp Rietz"
-  email: "badbugs.arts@gmail.com"
+  email: "security@uidt-framework.org"
   orcid: "0009-0007-4307-1609"
 
 # Funding

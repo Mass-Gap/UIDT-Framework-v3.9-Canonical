@@ -1,4 +1,4 @@
-# LEDGER Addendum: UIDT-C-054 to UIDT-C-056
+# LEDGER Addendum: UIDT-C-055 to UIDT-C-057
 
 **Status:** Proposed — pending canonical review before merge into LEDGER/CLAIMS.json
 
@@ -8,11 +8,11 @@
 
 ---
 
-## UIDT-C-054
+## UIDT-C-055
 
 ```json
 {
-  "id": "UIDT-C-054",
+  "id": "UIDT-C-055",
   "statement": "Gradient bilinear [∂_μ S ∂_ν S]_R as candidate metric seed in emergent geometry",
   "type": "hypothesis",
   "status": "proposed",
@@ -27,17 +27,17 @@
 
 ---
 
-## UIDT-C-055
+## UIDT-C-056
 
 ```json
 {
-  "id": "UIDT-C-055",
+  "id": "UIDT-C-056",
   "statement": "Information-geometric distance d²(x,y) = -log(G_R(x,y;μ)/G_R(μ)) induces a Lorentz metric of signature (1,3)",
   "type": "hypothesis",
   "status": "proposed",
   "evidence": "E",
   "confidence": 0.45,
-  "dependencies": ["UIDT-C-054", "UIDT-C-016"],
+  "dependencies": ["UIDT-C-055", "UIDT-C-016"],
   "since": "v3.9.4",
   "notes": "Lorentz signature (1,3), positivity on spacelike separations, causal structure, and UV short-distance limit y→x are all undemonstrated. Cutoff- and scheme-dependence per [PTEP 2018, 023B02]. Links to OQ-G4. Source: docs/emergent_geometry_section7.md §7.3.",
   "falsification": "If signature (1,3) cannot be recovered from G_R at any renormalisation scale within UIDT truncation, claim is refuted."
@@ -46,11 +46,11 @@
 
 ---
 
-## UIDT-C-056
+## UIDT-C-057
 
 ```json
 {
-  "id": "UIDT-C-056",
+  "id": "UIDT-C-057",
   "statement": "A renormalisation reference scale μ is required for dimensional consistency of g_{μν}^{info}; μ is not yet canonically registered in CONSTANTS.md",
   "type": "constraint",
   "status": "proposed",
@@ -78,25 +78,3 @@
 
 *Proposed: 2026-04-04 | Author: P. Rietz | Review required before CLAIMS.json update*
 
----
-
-## OPUS Advisory: Claim-ID Namespace (2026-04-05)
-
-> **FOR OPUS / PI REVIEW:**
->
-> The OPUS-001 audit flagged a potential collision between:
-> - **UIDT-C-054, C-055, C-056** (this addendum — emergent geometry claims)
-> - **UIDT-C-TOPO-01, C-TOPO-02, C-TOPO-03** (Wilson flow, PR #190)
->
-> **Resolution:** No collision exists. The Wilson flow claims use a **TOPO-**
-> prefixed namespace (`UIDT-C-TOPO-01/02/03`), while the geometry claims
-> use the standard **numeric** namespace (`UIDT-C-054/055/056`).
->
-> These are orthogonal claim families:
-> - **C-054–056:** Emergent geometry (gradient bilinear, distance functional, μ scale)
-> - **C-TOPO-01–03:** Topological susceptibility (χ_top vs. lattice, Δ* anchor, C_SVZ)
->
-> **Action required:** When integrating into CLAIMS.json, confirm that the
-> TOPO namespace is maintained as a separate claim series (not mapped to
-> numeric IDs). This prevents future collisions if additional geometry
-> claims enter the C-057+ range.

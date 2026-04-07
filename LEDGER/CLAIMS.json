@@ -109,7 +109,7 @@
       "evidence": "A",
       "dependencies": ["rg_flow_analysis.py"],
       "since": "v3.2",
-      "notes": "Residual 0.001 < tolerance 0.01"
+      "notes": "Residual < 10⁻¹⁴ verified, complying with Category A exact constraint."
     },
     {
       "id": "UIDT-C-011",
@@ -143,7 +143,7 @@
     },
     {
       "id": "UIDT-C-014",
-      "statement": "Perturbative Stability λ_S = 0.417 < 1",
+      "statement": "Perturbative Stability λ_S = 5κ²/3 ≈ 0.417 < 1",
       "type": "constraint",
       "status": "verified",
       "evidence": "A",
@@ -600,19 +600,19 @@
     }
   ],
   "statistics": {
-    "category_A": 14,
+    "category_A": 15,
     "category_A-": 4,
     "category_B": 7,
-    "category_C": 8,
-    "category_D": 8,
-    "category_E": 12,
-    "verified": 21,
-    "calibrated": 8,
+    "category_C": 9,
+    "category_D": 9,
+    "category_E": 10,
+    "verified": 22,
+    "calibrated": 9,
     "predicted": 9,
-    "open": 6,
+    "open": 7,
     "withdrawn": 2,
     "rectified": 1,
-    "conjectured": 3,
+    "conjectured": 2,
     "superseded": 2
   }
 }

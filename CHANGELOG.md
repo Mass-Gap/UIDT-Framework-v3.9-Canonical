@@ -27,7 +27,7 @@ Evidence tags: [A] proven | [A-] calibrated | [B] corroborated | [C] phenomenolo
 
 ### Open Tickets Created
 - **TKT-20260403-FRG-NLO:** Full NLO FRG truncation study (BMW/LPA') required before δγ = δ_NLO re-evaluation.
-- **TKT-20260403-TOPO-CLAIMS:** Register `UIDT-C-TOPO-01/02/03` in CLAIMS.json (PR #190 OT-3).
+- **TKT-20260403-TOPO-CLAIMS:** Register `UIDT-C-058/001/059` in CLAIMS.json (PR #190 OT-3).
 
 ---
 
@@ -50,7 +50,7 @@ Evidence tags: [A] proven | [A-] calibrated | [B] corroborated | [C] phenomenolo
 ### Open Tasks (PI decision required)
 - OT-1: Register C_GLUON canonical value in CONSTANTS.md
 - OT-2: Register α_s(μ) reference scale in CONSTANTS.md
-- OT-3: Register claims UIDT-C-TOPO-01/02/03 in CLAIMS.json
+- OT-3: Register claims UIDT-C-058/001/059 in CLAIMS.json
 - OT-4: Implement NLO α_s correction to χ_top formula
 - OT-5: Coordinate version bump v3.9 → v3.9.5 with CONSTANTS.md header (this PR resolves OT-5)
 

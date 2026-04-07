@@ -28,7 +28,7 @@ This security policy applies to the **UIDT Framework v3.9 Canonical Repository**
 
 If you discover a security vulnerability, please report it via:
 
-**Email:** badbugs.arts@gmail.com  
+**Email:** security@uidt-framework.org  
 **Subject:** `[SECURITY] UIDT Framework v3.9 - [Brief Description]`
 
 **Please include:**
@@ -113,7 +113,7 @@ See `docs/governance/falsification-criteria.md` for thresholds.
 ## Contact
 
 **Maintainer:** Philipp Rietz  
-**Email:** badbugs.arts@gmail.com  
+**Email:** security@uidt-framework.org  
 **ORCID:** 0009-0007-4307-1609  
 **DOI:** 10.5281/zenodo.17835200
 

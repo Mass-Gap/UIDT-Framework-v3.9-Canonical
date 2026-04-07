@@ -102,7 +102,7 @@ has been corrected to reflect the actual computed value of ~143 MeV.
 >    intended and whether it represents a physically distinct calculation
 >    (e.g., Witten-Veneziano with non-standard f_π).
 >
-> 4. Until resolved, classify UIDT-C-TOPO-01 as **[D] with TENSION ALERT**.
+> 4. Until resolved, classify UIDT-C-058 as **[D] with TENSION ALERT**.
 
 ## 6. Script Changes Made
 

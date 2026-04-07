@@ -122,7 +122,7 @@ Non-existent: [A+], [B+], [C+], [D+]
 - **L4:** γ NOT derived from RG first principles — algebraic closed-form yields γ ≈ 1.908, not 16.33 (PR #199, §1.4)
 - **L5:** N=99 steps unjustified
 - **TKT-20260403-FRG-NLO:** Full NLO FRG truncation study required before δγ = δ_NLO assessment
-- **TKT-20260403-TOPO-CLAIMS:** UIDT-C-TOPO-01/02/03 registration in CLAIMS.json pending (PR #190 OT-3)
+- **TKT-20260403-TOPO-CLAIMS:** UIDT-C-058/001/059 registration in CLAIMS.json pending (PR #190 OT-3)
 
 ---
 

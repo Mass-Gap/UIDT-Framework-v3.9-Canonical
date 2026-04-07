@@ -21,20 +21,20 @@
 >
 > Due to my severe disability, I initially delegated the administrative and formatting aspects of the v3.3 publication to external agencies to ensure a timely release. Regrettably, it became apparent that the standards of precision required for this theoretical framework were not met by these third parties, leading to significant inconsistencies in the data structure.
 >
-> **Action Taken:** The DOI record for v3.3 has been **permanently withdrawn and deleted**. Version 3.9 represents the clean, verified, and definitive implementation of the theory, free from external interference.
+> **Action Taken:** The DOI record for v3.3 has been **permanently withdrawn and deleted**. Version 3.9 represents the clean, verified, and complete implementation of the theory, free from external interference.
 
 ---
 
 **Central Result:** Analytical derivation of Yang-Mills mass gap Δ* ≈ 1.710 GeV (spectral gap) through information-geometric coupling, achieving mathematical closure with residuals < 10⁻⁴⁰. 
 
-**Physical Significance:** Resolves 10¹²⁰ vacuum energy hierarchy via γ⁻¹² suppression mechanism combined with holographic normalization (π⁻²), reducing cosmological constant problem to 3.3% precision. Introduces the Lattice Torsion Binding Energy (2.44 MeV) to stabilize the discrete vacuum structure.
+**Physical Significance:** Addresses 10¹²⁰ vacuum energy hierarchy via γ⁻¹² suppression mechanism combined with holographic normalization (π⁻²), reducing cosmological constant problem to 3.3% precision. Introduces the Lattice Torsion Binding Energy (2.44 MeV) to stabilize the discrete vacuum structure.
 
 **Falsification Threshold:** Five independent experimental pathways with specific numerical predictions:
 - Casimir anomaly +0.59% at 0.66 nm (Category D: **predicted, unverified**)
 - Glueball resonance at 1.705 ± 0.015 GeV (Category B: lattice-consistent)
 - Absence of Torsion Energy (E_T → 0) in precision hadron spectroscopy (Category A)
 - DESI dark energy evolution w₀ = −0.99 [C] (Canonical per Decision D-002, DESI-calibrated)
-- Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D+: analog verification)
+- Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D: analog verification)
 
 ---
 
@@ -78,7 +78,7 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 | **Universal Gamma Invariant (γ)** | 16.339 (exact) | Calibrated via Kinetic VEV [A-] |
 | **Lattice Torsion Binding Energy (E_T)** | 2.44 MeV | Missing Link Resolved |
 | **Holographic Length (λ)** | 0.66 nm | Category C (DESI-calibrated) |
-| **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Resolves Tension with JWST |
+| **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Calibrated to DESI |
 | **Scalar Mass (mₛ)** | 1.705 ± 0.015 GeV | Self-consistent solution |
 | **Vacuum Expectation (v)** | **47.7 ± 0.5 MeV** | Clean State |
 
@@ -149,7 +149,7 @@ Three-Equation System Closure:
 * **Achievement:** A macroscopic analog test channel for UIDT scaling relations
 * **Prediction:** Critical transition at  ()
 * **Platform:** Nonlocal metamaterials ("photonic parallel spaces"; external platform)
-* **Status:** **Category D+ (Analog Verification; interpretation unverified)**
+* **Status:** **Category D (Analog Verification; interpretation unverified)**
 
 ---
 
@@ -298,8 +298,8 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
 **Scientific Legacy:**
 UIDT v3.9 establishes that:
 
-* ✅ **Yang-Mills Mass Gap Millennium Problem is qualitatively solved** (mathematical closure achieved)
-* ✅ **The "Missing Link" is resolved** via the 2.44 MeV Lattice Torsion Binding Energy
+* ✅ **Yang-Mills Mass Gap Millennium Problem is qualitatively addressed** (mathematical closure achieved)
+* ✅ **The "Missing Link" is established** via the 2.44 MeV Lattice Torsion Binding Energy
 * ✅ **The X17 Anomaly origin is identified** as Thermodynamic Censorship (17.10 MeV)
 * 🤝 **CSF-UIDT Unification** provides a covariant path forward
 * ⚠️ **Open Questions remain** (electron mass, holographic scale hierarchy, RG γ-derivation)
@@ -319,7 +319,7 @@ UIDT v3.9 establishes that:
 ---
 
 ```
-🚀 Final Status: UIDT Ω v3.9 is scientifically synthesized and technically CLOSED.
+🚀 Final Status: UIDT Ω v3.9 is scientifically synthesized and technically COMPLETE.
 
 ```
 

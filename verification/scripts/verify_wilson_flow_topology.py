@@ -81,9 +81,9 @@ References (DOI / arXiv verified)
 Claims table (UIDT-TOPO-AUDIT-2026-03-28, revised 2026-03-30)
 --------------------------------------------------------------
 ID              Category  Source                    Note
-UIDT-C-TOPO-01  D         chi_top UIDT vs. lattice  [TENSION ALERT] after correction
-UIDT-C-TOPO-02  A-        Delta* = 1.710 GeV        Ledger [A]
-UIDT-C-TOPO-03  E         C_SVZ = 0.012 GeV^4       External SVZ [4], not Ledger
+UIDT-C-058      D         chi_top UIDT vs. lattice  [TENSION ALERT] after correction
+UIDT-C-001      A         Delta* = 1.710 GeV        Ledger [A]
+UIDT-C-059      E         C_SVZ = 0.012 GeV^4       External SVZ [4], not Ledger
 
 Reproduction
 ------------
@@ -321,7 +321,7 @@ def main():
     print("    OT-1: Register C_GLUON canonical value in CONSTANTS.md")
     print("          with source (SVZ 1979 / lattice-QCD update) and category.")
     print("    OT-2: Register ALPHA_S_REF (mu scale) in CONSTANTS.md.")
-    print("    OT-3: Register claims UIDT-C-TOPO-01/02/03 in CLAIMS.json.")
+    print("    OT-3: Register claims UIDT-C-058/001/059 in CLAIMS.json.")
     print("    OT-4: Implement NLO alpha_s correction to chi_top formula.")
     print("    OT-5: Version bump to v3.9.5 must be coordinated with")
     print("          CONSTANTS.md header version.")

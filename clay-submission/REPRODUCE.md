@@ -11,7 +11,7 @@ cd UIDT-Framework-v3.9-Canonical
 
 # Run full verification suite (Docker)
 docker run --rm -v $(pwd):/workspace -w /workspace python:3.11-slim bash -c "
-  pip install -q mpmath pytest numpy scipy &&
+  pip install -q -r verification/requirements.txt &&
   pytest verification/tests/ -v
 "
 ```
@@ -30,7 +30,7 @@ docker run --rm -v $(pwd):/workspace -w /workspace python:3.11-slim bash -c "
 
 ### Software Dependencies
 ```bash
-pip install mpmath==1.3.0 pytest==7.4.0 numpy==1.24.0 scipy==1.11.0
+pip install -r verification/requirements.txt
 ```
 
 ## Step-by-Step Reproduction
@@ -113,7 +113,7 @@ workflow:
       - name: install_dependencies
         environment: python:3.11-slim
         commands:
-          - pip install mpmath pytest numpy scipy
+          - pip install -r verification/requirements.txt
 
       - name: verify_spectral_gap
         environment: python:3.11-slim
