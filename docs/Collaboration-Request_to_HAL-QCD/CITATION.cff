@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this framework or the Xi_cc isospin splitting prediction in your research, please cite it as follows."
+authors:
+- family-names: "Rietz"
+  given-names: "Philipp"
+  orcid: "https://orcid.org/0009-0007-4307-1609"
+title: "Unified Information-Density Theory (UIDT) v3.9 - Canonical Framework"
+abstract: >-
+  The UIDT Framework provides a formal methodology for calculating vacuum 
+  spectral gaps and chromomagnetic splittings using 80-digit precision. 
+  This release specifically addresses the Xi_cc isospin splitting prediction (1.504 MeV)
+  and requests integration with HAL QCD Lattice data.
+version: v3.9.4
+doi: 10.5281/zenodo.19157809
+date-released: 2026-03-22
+url: "https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical"
+keywords:
+  - "Quantum Field Theory"
+  - "Mass Gap"
+  - "Information Geometry"
+  - "Lattice QCD"
+  - "Doubly Charmed Baryons"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Rietz"
+    given-names: "Philipp"
+  title: "UIDT v3.9: Lattice-QCD Determination of |ψcc(0)|² for the Ξcc Diquark System"
+  year: 2026
+  doi: 10.5281/zenodo.19157809

@@ -1,0 +1,46 @@
+{
+  "title": "Unified Information-Density Theory (UIDT) v3.9 - Canonical Framework: High-Precision Vacuum Spectral Gap Verification and Chromomagnetic Splitting Modules",
+  "description": "The Canonical Framework of the Unified Information-Density Theory (UIDT) v3.9. This release provides the complete formal environment for the 80-digit high-precision verification of the vacuum spectral gap Δ* = 1.71003504674... GeV [Evidence Category A] and the kinetic Gamma invariant γ = 16.339 [Category A-]. It specifically addresses the Ξcc isospin splitting prediction (1.504 MeV) and includes a formal request for integration with HAL QCD Lattice data to determine the cc-diquark NBS wave function |ψ_cc(0)|².",
+  "creators": [
+    {
+      "name": "Rietz, Philipp",
+      "orcid": "0009-0007-4307-1609",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "Quantum Field Theory",
+    "Information Geometry",
+    "Mass Gap",
+    "Lattice QCD",
+    "UIDT Framework",
+    "Precision Physics",
+    "Chromomagnetic Splitting",
+    "Spectral Gap",
+    "Yang-Mills Theory",
+    "Banach Fixed-Point",
+    "Xi_cc Isospin Splitting"
+  ],
+  "communities": [
+    {"identifier": "zenodo"},
+    {"identifier": "hep-ph"},
+    {"identifier": "lattice-qcd"}
+  ],
+  "version": "v3.9.4-canonical",
+  "publication_date": "2026-03-22",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.19157809",
+      "relation": "isVersionOf",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Evidence Classification: Δ* (Category A), γ (Category A-), ΔM_Xi_cc (Category B/D). All calculations performed with 80-digit mpmath precision. Residuals for Category A claims < 10⁻⁴⁰. Contact: uidt-framework@outlook.com"
+}
