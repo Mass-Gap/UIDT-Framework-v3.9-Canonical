@@ -94,10 +94,45 @@ Physical/mathematical derivation of N=99 from first principles
 
 ---
 
+### L6-FRG: FRG Derivation of γ — Minimal Truncation (S F² Sector)
+**Status:** 🔬 ACTIVE RESEARCH — linked to GAP-FRG-001
+
+**Description:**  
+The FRG analysis of Claim UIDT-C-070 (eta_* ≈ 0.072, Evidence D) is based on a minimal
+truncation with the following deliberate methodological compromises:
+
+- **η_A = 0:** Gluon anomalous dimension set to zero (background-field approximation).
+  Gluon fluctuations in the anomalous dimension scheme are not fully captured.
+- **Massless scalar:** The scalar S is treated as massless (w_S → 0 limit).
+- **4×4 truncation only:** The coupling space is {g², λ_S, κ², κ²} without higher operators.
+- **LPA (Local Potential Approximation):** No momentum-dependent vertex projection (∂_p²).
+  The beta-functions are evaluated at p² = 0 only.
+- **Litim regulator in conformal window:** The threshold functions are evaluated in the
+  w → 0 limit, suppressing IR mass effects.
+
+**Impact on current results:**  
+- The anomalous dimension η_* ≈ 0.072 is a truncation-dependent result (Evidence D).
+- Complex eigenvalues (±0.654i) of the stability matrix indicate a spiralling RG flow
+  in the IR — classified as a truncation artefact from missing higher operators (S²F²).
+- The gap Δη ≈ 0.009 between η_* and the phenomenological threshold ≈ 0.063 is
+  consistent with the expected effect of missing gluon fluctuations.
+
+**What this limitation does NOT affect:**  
+- The canonical value γ = 16.339 (Evidence A-) is independent of this truncation.
+  It is a kinematic calibration, not derived from the FRG run.
+- The Yang-Mills spectral gap Δ* = 1.710 ± 0.015 GeV (Evidence A) is not affected.
+
+**Condition for Resolution:**  
+See clay-submission/GAP_ANALYSIS_CLAY.md → GAP-FRG-001 for the full solution path.
+Resolution requires a momentum-dependent vertex projection (∂_p²) and a
+self-consistent Dyson resummation in the full (S, A) propagator matrix.
+
+---
+
 ## Resolved Limitations (Historical)
 
-### L6: Spectral Gap vs. Particle Mass [RESOLVED]
-**Status:** ✅ CLARIFIED
+### L6: Spectral Gap vs. Particle Mass [RESOLVED — superseded by L6-FRG above]
+**Status:** ✅ CLARIFIED (2025-12-25)
 
 **Previous Issue:**  
 Δ = 1.710 GeV was sometimes conflated with glueball mass.
@@ -105,6 +140,9 @@ Physical/mathematical derivation of N=99 from first principles
 **Resolution (2025-12-25):**  
 Δ is the SPECTRAL GAP of Yang-Mills Hamiltonian, NOT a particle mass.
 Glueball identification explicitly WITHDRAWN [E].
+
+*Note: The label L6 has been reused for L6-FRG (active, 2026-04-06).
+This historical entry is preserved for audit continuity.*
 
 ---
 
@@ -121,13 +159,14 @@ Corrected to v = 47.7 MeV. Old value was erroneous.
 
 ## Limitation Impact Matrix
 
-| ID | Limitation | Impact on Claims | Priority |
-|----|------------|-----------------|----------|
-| L1 | 10¹⁰ factor | λ_UIDT [C→D if unresolved] | 🔴 High |
-| L2 | Electron mass | m_e formula approximate | 🟡 Medium |
-| L3 | Vacuum energy | ρ_vac factor 2.3 | 🟢 Accepted |
-| L4 | γ not from RG | γ remains [A-] not [A] | 🔴 High |
-| L5 | N=99 unjustified | RG cascade phenomenological | 🟡 Medium |
+| ID      | Limitation                          | Impact on Claims              | Priority    |
+|---------|--------------------------------------|-------------------------------|-------------|
+| L1      | 10¹⁰ factor                         | λ_UIDT [C→D if unresolved]    | 🔴 High     |
+| L2      | Electron mass                        | m_e formula approximate       | 🟡 Medium   |
+| L3      | Vacuum energy                        | ρ_vac factor 2.3              | 🟢 Accepted |
+| L4      | γ not from RG                        | γ remains [A-] not [A]        | 🔴 High     |
+| L5      | N=99 unjustified                     | RG cascade phenomenological   | 🟡 Medium   |
+| L6-FRG  | FRG minimal truncation (C-070)       | η_* Evidence D, not upgradable| 🔴 High     |
 
 ---
 
