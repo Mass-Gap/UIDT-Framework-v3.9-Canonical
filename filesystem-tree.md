@@ -251,7 +251,7 @@ simulation/
 ├── UIDTv3.6.1_Ape-smearing.py
 ├── UIDTv3.6.1_CosmologySimulator.py
 ├── UIDTv3.6.1_Evidence_Analyzer.py
-├── UIDTv3.6.1_HMC_Optimized.py
+├── uidt_v3_6_1_hmc_optimized.py
 ├── UIDTv3.6.1_Monitor-Auto-tune.py
 ├── UIDTv3.6.1_Omelyna-Integrator2o.py
 ├── UIDTv3.6.1_Scalar-Analyse.py

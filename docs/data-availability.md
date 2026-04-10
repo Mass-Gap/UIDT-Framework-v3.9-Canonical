@@ -52,7 +52,7 @@ licenses.
 
 | File | Description |
 | :--- | :--- |
-| `UIDTv3.6.1_HMC_Optimized.py` | GPU-optimized Hybrid Monte Carlo lattice QCD pipeline |
+| `uidt_v3_6_1_hmc_optimized.py` | GPU-optimized Hybrid Monte Carlo lattice QCD pipeline |
 | `UIDTv3_6_1_HMC_Real.py` | Full real-valued HMC with SU(3) gauge group |
 | `UIDTv3.6.1_Omelyna-Integrator2o.py` | Omelyan second-order symplectic integrator |
 | `UIDTv3.6.1_Ape-smearing.py` | APE smearing for noise reduction in glueball correlators |
