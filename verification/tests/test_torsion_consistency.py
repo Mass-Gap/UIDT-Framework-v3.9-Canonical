@@ -55,7 +55,7 @@ class TestTorsionConsistency(unittest.TestCase):
 
     def test_vacuum_frequency_derivation(self):
         """
-        Verify the derivation of the 'Baddewithana Frequency'.
+        Verify the derivation of the Vacuum Resonance Frequency.
         Formula: f_vac = (Delta / gamma) + E_torsion
         Target: ~107.1 MeV
         """

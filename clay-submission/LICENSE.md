@@ -6,7 +6,7 @@
 
 **Author:** Philipp Rietz  
 **ORCID:** 0009-0007-4307-1609  
-**DOI:** 10.5281/zenodo.18003018
+**DOI:** 10.5281/zenodo.17835200
 
 ---
 
@@ -50,7 +50,7 @@ When using this work, please cite:
 ```
 Rietz, P. (2025). A Constructive Proof of the Yang-Mills Mass Gap via 
 Banach Contraction (UIDT v3.7.0). Zenodo. 
-https://doi.org/10.5281/zenodo.18003018
+https://doi.org/10.5281/zenodo.17835200
 ```
 
 BibTeX:
@@ -61,8 +61,8 @@ BibTeX:
                   via Banach Contraction},
   year         = {2025},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.18003018},
-  url          = {https://doi.org/10.5281/zenodo.18003018}
+  doi          = {10.5281/zenodo.17835200},
+  url          = {https://doi.org/10.5281/zenodo.17835200}
 }
 ```
 

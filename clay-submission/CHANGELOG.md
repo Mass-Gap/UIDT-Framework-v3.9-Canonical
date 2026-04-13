@@ -24,7 +24,7 @@ This release successfully closes the loop on the Standard Model quark mass spect
 
 ### Repository Consolidation and Simulation Infrastructure Update
 
-**DOI:** https://doi.org/10.5281/zenodo.18003017
+**DOI:** https://doi.org/10.5281/zenodo.17835200
 
 **Overview**
 

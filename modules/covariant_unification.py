@@ -69,6 +69,15 @@ class CovariantUnification:
         w_a = mpf('+0.03')   # DESI Year 1 central value [C]
         return {"w_0": w_0, "w_a": w_a, "evidence": "C", "source": "DESI_BAO_2024"}
 
+    def derive_equation_of_state(self):
+        """
+        Derives the Equation of State (w_0, w_a) from UIDT first principles.
+        Currently deferred, returns the phenomenological DESI-calibrated values as a placeholder.
+        
+        TODO [E]: Derive w_0 and w_a explicitly from the UIDT density functional.
+        """
+        return self.get_equation_of_state_asymptotic()
+
     def evaluate_ir_limit(self, epsilon: mpf):
         """
         Theorem 3: Topological Protection at the Infrared Fixed Point.

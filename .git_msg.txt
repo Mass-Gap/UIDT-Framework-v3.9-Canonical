@@ -1,0 +1,5 @@
+[UIDT-v3.9] Compliance: Fix verification precision & cosmology Category C tags
+
+Evidence category: A/C
+Limitation impact: none
+DOI: 10.5281/zenodo.17835200

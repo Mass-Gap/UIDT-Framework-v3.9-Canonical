@@ -8,7 +8,7 @@
 **Author:** Philipp Rietz (ORCID: 0009-0007-4307-1609)  
 **Affiliation:** Independent Researcher  
 **Version:** 3.9 (February 2026)  
-**DOI:** 10.5281/zenodo.18003018  
+**DOI:** 10.5281/zenodo.17835200  
 **License:** CC BY 4.0
 
 ---
@@ -141,8 +141,8 @@ Notable update:
   author       = {Rietz, Philipp},
   title        = {{Constructive Existence and Uniqueness of the Yang--Mills Spectral Gap}},
   year         = {2025},
-  doi          = {10.5281/zenodo.18003018},
-  url          = {https://doi.org/10.5281/zenodo.18003018},
+  doi          = {10.5281/zenodo.17835200},
+  url          = {https://doi.org/10.5281/zenodo.17835200},
   publisher    = {Zenodo}
 }
 ```

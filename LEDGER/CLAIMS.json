@@ -580,7 +580,7 @@
       "confidence": 0.65,
       "dependencies": ["UIDT-C-001", "UIDT-C-002", "UIDT-C-048"],
       "since": "v3.9",
-      "notes": "Ω_bbb within lattice QCD range (14.37-14.57 GeV). T_cccc BELOW lattice range (5.6-6.2 GeV) — high-risk falsification. 3-6-9 octave scaling of f_vac. Source: heavy_quark_predictions.md, lhcb_predictions_paper_draft.md.",
+      "notes": "Ω_bbb within lattice QCD range (14.37-14.57 GeV). T_cccc BELOW lattice range (5.6-6.2 GeV) — high-risk falsification. Vacuum Structural Scaling of f_vac. Source: heavy_quark_predictions.md, lhcb_predictions_paper_draft.md.",
       "falsification": "LHCb: M(Ω_bbb) ∉ [14.2,14.7] GeV refutes octave scaling. M(T_cccc) > 5.0 GeV refutes harmonic tetraquark rule."
     },
     {

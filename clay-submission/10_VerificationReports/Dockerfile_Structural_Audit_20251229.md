@@ -3,7 +3,7 @@
 # UIDT v3.7.2 — Clay Mathematics Institute Submission
 # ══════════════════════════════════════════════════════════════════════════════
 #
-# DOI:       https://doi.org/10.5281/zenodo.18003017
+# DOI:       https://doi.org/10.5281/zenodo.17835200
 # Author:    Philipp Rietz (ORCID: 0009-0007-4307-1609)
 # Generated: 2025-12-29T02:35:00+01:00
 # License:   CC BY 4.0
@@ -19,7 +19,7 @@
 | Script Availability              | ✅ PASS | All 10 audit scripts present         |
 | Root File Completeness           | ✅ PASS | 5/5 root files present               |
 | Version Consistency              | ✅ PASS | v3.7.2 throughout                    |
-| DOI Integration                  | ✅ PASS | zenodo.18003017 referenced           |
+| DOI Integration                  | ✅ PASS | zenodo.17835200 referenced           |
 | Reproducibility Features         | ✅ PASS | Pinned versions, healthcheck         |
 | Scientific Documentation         | ✅ PASS | 8-phase audit sequence               |
 
@@ -33,7 +33,7 @@
 ```
 Version:     3.7.2
 Author:      Philipp Rietz (ORCID: 0009-0007-4307-1609)
-DOI:         https://doi.org/10.5281/zenodo.18003017
+DOI:         https://doi.org/10.5281/zenodo.17835200
 License:     CC BY 4.0
 Base Image:  python:3.11-slim
 ```
@@ -44,7 +44,7 @@ Base Image:  python:3.11-slim
 | maintainer  | Philipp Rietz <ORCID:0009-0007-4307-1609>          | ✅      |
 | description | UIDT v3.7.2 Yang-Mills Mass Gap Verification        | ✅      |
 | version     | 3.7.2                                               | ✅      |
-| doi         | 10.5281/zenodo.18003017                            | ✅      |
+| doi         | 10.5281/zenodo.17835200                            | ✅      |
 | license     | CC-BY-4.0                                           | ✅      |
 
 ---
@@ -239,7 +239,7 @@ sha256sum Dockerfile.clay_audit
 |------------------------------|--------|------------------------------------|
 | Semantic versioning          | ✅      | v3.7.2 follows MAJOR.MINOR.PATCH  |
 | ORCID author identification  | ✅      | 0009-0007-4307-1609               |
-| DOI permanent identifier     | ✅      | zenodo.18003017                   |
+| DOI permanent identifier     | ✅      | zenodo.17835200                   |
 | Open license                 | ✅      | CC BY 4.0                         |
 | Reproducible builds          | ✅      | Pinned versions                   |
 | Automated testing            | ✅      | 8-phase audit sequence            |
@@ -299,7 +299,7 @@ docker run --rm uidt-clay-audit python /app/02_VerificationCode/UIDT_Proof_Engin
 ═══════════════════════════════════════════════════════════════════════════════
 
   Framework:     UIDT v3.7.2
-  DOI:           https://doi.org/10.5281/zenodo.18003017
+  DOI:           https://doi.org/10.5281/zenodo.17835200
   Author:        Philipp Rietz (ORCID: 0009-0007-4307-1609)
   
   Audit Date:    2025-12-29

@@ -2,7 +2,7 @@
 # Python Package Requirements
 #
 # Author: Philipp Rietz (ORCID: 0009-0007-4307-1609)
-# DOI: 10.5281/zenodo.18003018
+# DOI: 10.5281/zenodo.17835200
 #
 # Installation:
 #   pip install -r requirements.txt

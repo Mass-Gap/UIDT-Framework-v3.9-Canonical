@@ -1,7 +1,7 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
-  "identifier": "10.5281/zenodo.18003018",
+  "identifier": "10.5281/zenodo.17835200",
   "name": "UIDT v3.9 Yang-Mills Mass Gap Proof",
   "description": "Complete verification suite for the constructive proof of the Yang-Mills mass gap via Banach contraction. Includes 250-digit precision arithmetic, BRST verification, Osterwalder-Schrader axiom verification, and Monte Carlo validation. v3.7.1 ERRATUM: The spectral gap Δ* = 1.710 GeV represents the spectral gap of pure Yang-Mills theory (mathematical property of Hamiltonian spectrum), not an observable particle mass. All lattice comparisons reference quenched (pure gauge) simulations.",
   "version": "3.7.1",
@@ -86,7 +86,7 @@
       "familyName": "Rietz"
     },
     "datePublished": "2025",
-    "identifier": "10.5281/zenodo.18003018"
+    "identifier": "10.5281/zenodo.17835200"
   },
   "softwareVersion": [
     {

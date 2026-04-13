@@ -9,10 +9,10 @@ authors:
     affiliation: Independent Researcher
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.18003018"
+    value: "10.5281/zenodo.17835200"
     description: "Zenodo archive"
 repository-code: "https://github.com/Mass-Gap/UIDT-Framework-v3.7.2-Canonical"
-url: "https://doi.org/10.5281/zenodo.18003018"
+url: "https://doi.org/10.5281/zenodo.17835200"
 abstract: >-
   A rigorous mathematical proof of the Yang-Mills mass gap for SU(3) gauge 
   theory. The mass gap Δ* = 1.710 ± 0.015 GeV is established via Banach 
@@ -39,6 +39,6 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0007-4307-1609"
   title: "A Constructive Proof of the Yang-Mills Mass Gap via Banach Contraction"
   year: 2026
-  doi: "10.5281/zenodo.18003018"
+  doi: "10.5281/zenodo.17835200"
   journal: "Zenodo"
   notes: "Clay Mathematics Institute Submission"
