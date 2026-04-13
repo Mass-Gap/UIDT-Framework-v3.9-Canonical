@@ -1,0 +1,98 @@
+# REANA Workflow for UIDT Framework v3.9 Verification
+# CERN Analysis Preservation (CAP) Compatible
+# https://reana.readthedocs.io/
+
+version: 0.9.3
+
+inputs:
+  files:
+    - verification/
+    - core/
+    - modules/
+    - CANONICAL/
+    - LEDGER/
+  parameters:
+    precision: 80  # mpmath.dps
+    verification_suite: "full"  # Options: full, quick, spectral_gap_only
+
+workflow:
+  type: serial
+  specification:
+    steps:
+      - name: install_dependencies
+        environment: python:3.11-slim
+        commands:
+          - pip install --no-cache-dir mpmath==1.3.0 pytest==7.4.0 numpy==1.24.0 scipy==1.11.0
+
+      - name: verify_spectral_gap
+        environment: python:3.11-slim
+        commands:
+          - python verification/scripts/verify_spectral_gap.py
+        outputs:
+          files:
+            - verification/data/spectral_gap_results.txt
+
+      - name: verify_rg_fixed_point
+        environment: python:3.11-slim
+        commands:
+          - python verification/scripts/verify_rg_fixed_point.py
+        outputs:
+          files:
+            - verification/data/rg_fixed_point_results.txt
+
+      - name: verify_cosmology
+        environment: python:3.11-slim
+        commands:
+          - python verification/scripts/verify_cosmology.py
+        outputs:
+          files:
+            - verification/data/cosmology_results.txt
+
+      - name: run_pytest_suite
+        environment: python:3.11-slim
+        commands:
+          - pytest verification/tests/ -v --tb=short --maxfail=1
+        outputs:
+          files:
+            - verification/data/pytest_results.txt
+
+      - name: generate_audit_report
+        environment: python:3.11-slim
+        commands:
+          - python verification/audits/framework_integrity_audit.py
+        outputs:
+          files:
+            - verification/data/audit_report.json
+
+outputs:
+  files:
+    - verification/data/spectral_gap_results.txt
+    - verification/data/rg_fixed_point_results.txt
+    - verification/data/cosmology_results.txt
+    - verification/data/pytest_results.txt
+    - verification/data/audit_report.json
+
+# Docker environment specification
+environments:
+  - type: docker
+    image: python:3.11-slim
+    workdir: /workspace
+
+# Resource requirements
+resources:
+  kubernetes_memory_limit: "4Gi"
+  kubernetes_cpu_limit: "2"
+
+# Metadata
+metadata:
+  title: "UIDT Framework v3.9 Verification Suite"
+  author: "Philipp Rietz"
+  orcid: "0009-0007-4307-1609"
+  doi: "10.5281/zenodo.17835200"
+  description: "Complete verification of Yang-Mills mass gap proof with 80-digit precision"
+  keywords:
+    - "Yang-Mills"
+    - "Mass Gap"
+    - "Lattice QCD"
+    - "Millennium Prize"
+  license: "CC-BY-4.0"

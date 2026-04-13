@@ -1,0 +1,34 @@
+# UIDT Framework Code Owners
+# Defines who must review and approve changes to specific paths
+
+# Default owner for everything
+* @Mass-Gap/P-Rietz
+
+# Protected Core Mathematics (Dual Approval Required)
+/core/ @Mass-Gap/P-Rietz
+/modules/ @Mass-Gap/P-Rietz
+
+# Canonical Constants & Claims (Dual Approval Required)
+/CANONICAL/ @Mass-Gap/P-Rietz
+/LEDGER/CLAIMS.json @Mass-Gap/P-Rietz
+
+# Verification Suite (Single Approval)
+/verification/ @Mass-Gap/P-Rietz
+
+# Documentation (Single Approval)
+/docs/ @Mass-Gap/P-Rietz
+
+# Clay Submission Package (Dual Approval Required)
+/clay-submission/ @Mass-Gap/P-Rietz
+
+# Manuscript (Single Approval)
+/manuscript/ @Mass-Gap/P-Rietz
+
+# Simulation Scripts (Single Approval)
+/simulation/ @Mass-Gap/P-Rietz
+
+# Metadata & Governance (Single Approval)
+/metadata/ @Mass-Gap/P-Rietz
+/.github/ @Mass-Gap/P-Rietz
+/CONTRIBUTING.md @Mass-Gap/P-Rietz
+/SECURITY.md @Mass-Gap/P-Rietz
