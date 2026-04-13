@@ -227,6 +227,43 @@ H₀ is **calibrated [C]**, not independent prediction. Falsification would ques
 
 ---
 
+### F9: Topological Susceptibility (Wilson Flow / Quenched Lattice) 🔬 ONGOING
+
+> Added: 2026-04-13  
+> Linked Claim: UIDT-C-056  
+> Linked Script: `verification/scripts/verify_wilson_flow_topology.py`
+
+**Prediction:**
+Topological susceptibility χ_top^{1/4} ≈ 143 MeV (SVZ leading-order estimate) [Category D]
+
+**Experimental Test:**
+Comparison with quenched SU(3) lattice QCD measurements of χ_top^{1/4}
+
+**Falsification Threshold:**
+If the fully NLO-corrected χ_top^{1/4} falls **outside** the range [140, 220] MeV → **SVZ ESTIMATE INAPPLICABLE**
+
+**Current Status:**
+⚠️ **TENSION** — UIDT SVZ LO: 143 MeV vs quenched lattice: 185–191 ± 5 MeV (z ≈ 8–10σ)
+
+**Timeline:**
+- **2026:** NLO corrections to SVZ estimate (+30–80% expected)
+- **2027+:** Dynamical fermion lattice studies
+
+**Falsification Example:**
+- NLO-corrected χ_top^{1/4} = 120 MeV (below [140, 220]) → **SVZ APPROACH REFUTED**
+- NLO-corrected χ_top^{1/4} = 190 MeV (within lattice band) → **TENSION RESOLVED**
+
+**Verification Protocol:**
+1. Compute NLO corrections to SVZ formula using canonical α_s(μ) values
+2. Compare corrected χ_top^{1/4} with quenched lattice continuum extrapolation
+3. If corrected value inside [140, 220] MeV → tension resolved
+4. If outside → falsification trigger activated
+
+**Impact:**
+χ_top is a **derived observable** using external inputs (C_GLUON, α_s). Falsification would question the SVZ approach applicability, NOT the core UIDT parameters (Δ*, γ, κ, λ_S).
+
+---
+
 ## VERIFICATION PROTOCOL FOR RESEARCHERS
 
 ### Step 1: Monitor Experimental Literature
@@ -293,6 +330,7 @@ Set arXiv alerts for keywords:
 | **F6** | $m_p/f_{vac} \approx 8.75$ | D | >3σ deviation | Ongoing | ⚠️ Pending |
 | **F7** | Casimir +0.59% | D | \|ΔF/F\| < 0.1% @ 0.66 nm | 2028+ | ❌ No data exists |
 | **F8** | H₀ = 70.4 ± 0.16 km/s/Mpc | C | H₀ ≠ 70.4 at >3σ | 2025-2027 | ⚠️ Uncertain |
+| **F9** | χ_top^{1/4} ≈ 143 MeV (SVZ LO) | D | NLO outside [140, 220] MeV | 2026-2027 | ⚠️ Tension (z≈9σ vs lattice) |
 
 ---
 
@@ -344,6 +382,6 @@ Set arXiv alerts for keywords:
 
 ---
 
-**Last Updated:** 2026-02-19
+**Last Updated:** 2026-04-13
 **DOI:** 10.5281/zenodo.17835200
 **Next Review:** After DESI Year 3 (2025), Metamaterial analog tests (2026), and Lattice 2026 Conference
