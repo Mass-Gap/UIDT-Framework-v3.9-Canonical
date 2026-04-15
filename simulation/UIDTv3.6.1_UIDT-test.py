@@ -11,21 +11,23 @@ Synchronized with Manuscript v3.6.1:
 - Mass Gap: 1.710 GeV
 """
 
-import numpy as np
-from scipy.optimize import fsolve
-from scipy.constants import physical_constants
+import mpmath
+
+# 80-dps Precision Enforcement (UIDT v3.9 S0-Rule)
+mpmath.mp.dps = 80
 
 # =============================================================================
 # I. CONSTANTS & TARGETS (v3.6.1 CLEAN STATE)
 # =============================================================================
 class UIDT_CONSTANTS:
-    C_QCD = 0.277         # Gluon Condensate [GeV^4]
-    LAMBDA = 1.0          # Effective Scale [GeV]
-    TARGET_DELTA = 1.710  # Mass Gap [GeV]
-    TARGET_GAMMA = 16.339 # Canonical Gamma Invariant
+    # Cast all constants to 80-dps mpf for precision closure
+    C_QCD = mpmath.mpf('0.277')         # Gluon Condensate [GeV^4]
+    LAMBDA = mpmath.mpf('1.0')           # Effective Scale [GeV]
+    TARGET_DELTA = mpmath.mpf('1.710')   # Mass Gap [GeV]
+    TARGET_GAMMA = mpmath.mpf('16.339')  # Canonical Gamma Invariant
     
     # NEW CLEAN STATE PARAMETER
-    VEV_CANONICAL = 0.0477 # 47.7 MeV
+    VEV_CANONICAL = mpmath.mpf('0.0477') # 47.7 MeV
 
 class LATTICE_SETUP:
     L_SPATIAL = 16
@@ -44,8 +46,7 @@ def solve_canonical_parameters():
     print("\n🔍 UIDT PARAMETER SOLVER (v3.6.1 Logic)")
     print("="*40)
     
-    def equations(vars):
-        m_S, kappa, lambda_S = vars
+    def equations(m_S, kappa, lambda_S):
         v = UIDT_CONSTANTS.VEV_CANONICAL
         Lam = UIDT_CONSTANTS.LAMBDA
         C = UIDT_CONSTANTS.C_QCD
@@ -71,9 +72,12 @@ def solve_canonical_parameters():
     guess = [1.70, 0.5, 0.4]
     
     try:
-        m_S, kappa, lambda_S = fsolve(equations, guess)
+        # mpmath.findroot for systems with x0 as list calls func(*x0)
+        # Result is an mpmath matrix [3x1]
+        solution = mpmath.findroot(equations, guess)
+        m_S, kappa, lambda_S = solution[0], solution[1], solution[2]
         
-        print(f"✅ SOLUTION FOUND:")
+        print(f"✅ SOLUTION FOUND (80-dps):")
         print(f"   m_S      = {m_S:.6f} GeV")
         print(f"   kappa    = {kappa:.6f}")
         print(f"   lambda_S = {lambda_S:.6f}")
@@ -98,9 +102,9 @@ if __name__ == "__main__":
         # 2. Check Gamma Consistency
         # Gamma = Mass Gap / VEV approx (or derived scaling)
         # Here we check if the derived parameters yield the invariant
-        gamma_check = m_S / (v * np.sqrt(lam)) # Heuristic check
+        gamma_check = m_S / (v * mpmath.sqrt(lam)) # Heuristic check
         
-        print("\n📋 SIMULATION SETUP:")
+        print("\n📋 SIMULATION SETUP (UIDT Canonical):")
         print(f"   Target Gamma: {UIDT_CONSTANTS.TARGET_GAMMA}")
         print(f"   Status:       READY FOR HMC")
         print(f"   Action:       Use 'UIDTv3.2_Ape-smearing.py' for production.")
