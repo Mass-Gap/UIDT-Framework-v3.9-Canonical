@@ -94,7 +94,7 @@ def project_su3_field(U: np.ndarray) -> np.ndarray:
     det = np.linalg.det(U_unit)
     return U_unit / (det[..., None, None] ** (1/3))
 
-def su3_exp_field(A: np.ndarray, order: int = 40) -> np.ndarray:
+def su3_exp_field(A: np.ndarray, order = 40) -> np.ndarray:
     """
     Vectorized matrix exponential for su(3) algebra field.
     Uses Taylor expansion to high order (default 40) for precision compliance.
