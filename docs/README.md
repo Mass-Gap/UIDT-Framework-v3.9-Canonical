@@ -45,7 +45,7 @@
 
 ### 📋 Governance (Quality & Standards)
 - [Evidence Classification System](governance/evidence-classification.md) - Categories A through E
-- [Falsification Criteria](governance/falsification-criteria.md) - L1-L6 limitations and kill-switches
+- [Falsification Criteria](falsification-criteria.md) - L1-L6 limitations and kill-switches
 - [Limitations](governance/limitations.md) - Known issues L1-L6
 - [Reproduction Protocol](governance/reproduction-protocol.md) - One-command reproducibility
 - [Verification Guide](governance/verification-guide.md) - 80-digit precision testing

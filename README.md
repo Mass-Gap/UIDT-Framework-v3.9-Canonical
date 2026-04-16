@@ -21,7 +21,7 @@
 >
 > Due to my severe disability, I initially delegated the administrative and formatting aspects of the v3.3 publication to external agencies to ensure a timely release. Regrettably, it became apparent that the standards of precision required for this theoretical framework were not met by these third parties, leading to significant inconsistencies in the data structure.
 >
-> **Action Taken:** The DOI record for v3.3 has been **permanently withdrawn and deleted**. Version 3.9 represents the clean, verified, and definitive implementation of the theory, free from external interference.
+> **Action Taken:** The DOI record for v3.3 has been **permanently withdrawn and deleted**. Version 3.9 represents the clean, verified, and canonical implementation of the theory, free from external interference.
 
 ---
 
@@ -34,7 +34,7 @@
 - Glueball resonance at 1.705 ± 0.015 GeV (Category B: lattice-consistent)
 - Absence of Torsion Energy (E_T → 0) in precision hadron spectroscopy (Category A)
 - DESI dark energy evolution w₀ = −0.99 [C] (Canonical per Decision D-002, DESI-calibrated)
-- Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D+: analog verification)
+- Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D (Extended): analog verification)
 
 ---
 
@@ -78,7 +78,7 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 | **Universal Gamma Invariant (γ)** | 16.339 (exact) | Calibrated via Kinetic VEV [A-] |
 | **Lattice Torsion Binding Energy (E_T)** | 2.44 MeV | Category C – Missing Link [calibrated] |
 | **Holographic Length (λ)** | 0.66 nm | Category C (DESI-calibrated) |
-| **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Category C – intermediate calibrated value consistent with JWST within uncertainties; does **not** resolve the H₀ tension |
+| **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Category C – intermediate calibrated value consistent with JWST within uncertainties; does **not** address the H₀ tension |
 | **Scalar Mass (mₛ)** | 1.705 ± 0.015 GeV | Self-consistent solution |
 | **Vacuum Expectation (v)** | **47.7 ± 0.5 MeV** | Clean State |
 
@@ -149,7 +149,7 @@ Three-Equation System Closure:
 * **Achievement:** A macroscopic analog test channel for UIDT scaling relations
 * **Prediction:** Critical transition at  ()
 * **Platform:** Nonlocal metamaterials ("photonic parallel spaces"; external platform)
-* **Status:** **Category D+ (Analog Verification; interpretation unverified)**
+* **Status:** **Category D (Extended) (Analog Verification; interpretation unverified)**
 
 ---
 
