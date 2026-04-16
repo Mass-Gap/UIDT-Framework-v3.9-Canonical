@@ -1,10 +1,9 @@
 # LEDGER Addendum: UIDT-C-054 to UIDT-C-056
 
-**Status:** Proposed — pending canonical review before merge into LEDGER/CLAIMS.json
+**Status:** SUPERSEDED — Claims C-054, C-055, and C-056 have been reassigned in CLAIMS.json v3.9.6.
 
-> These claims are proposed at E-open and must pass the validation workflow
-> in EVIDENCE_SYSTEM.md before integration into the canonical CLAIMS.json.
-> No existing claim is modified by this addendum.
+> [!WARNING]
+> This addendum is obsolete. The claims proposed here collided with the canonical registry and were superseded. This document remains for archival purposes only.
 
 ---
 

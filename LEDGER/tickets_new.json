@@ -8,7 +8,8 @@
     "labels": [
       "missing-file",
       "S0-blocker"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "TKT-AUDIT-002",
@@ -19,7 +20,8 @@
     "labels": [
       "missing-file",
       "S0-blocker"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "TKT-AUDIT-003",
@@ -30,7 +32,8 @@
     "labels": [
       "missing-file",
       "S0-blocker"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "TKT-AUDIT-004",
@@ -41,7 +44,8 @@
     "labels": [
       "missing-file",
       "S0-blocker"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "TKT-AUDIT-005",
@@ -52,7 +56,8 @@
     "labels": [
       "missing-file",
       "S0-blocker"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "TKT-AUDIT-006",
@@ -63,7 +68,8 @@
     "labels": [
       "missing-file",
       "S0-blocker"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "TKT-AUDIT-007",
@@ -74,6 +80,7 @@
     "labels": [
       "scaffold",
       "S2-major"
-    ]
+    ],
+    "status": "closed"
   }
 ]
