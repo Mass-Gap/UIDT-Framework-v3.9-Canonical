@@ -622,16 +622,16 @@
     "category_A": 14,
     "category_A-": 4,
     "category_B": 7,
-    "category_C": 9,
-    "category_D": 8,
-    "category_E": 14,
-    "verified": 22,
-    "calibrated": 8,
+    "category_C": 10,
+    "category_D": 9,
+    "category_E": 12,
+    "verified": 23,
+    "calibrated": 9,
     "predicted": 10,
-    "open": 6,
+    "open": 7,
     "withdrawn": 2,
     "rectified": 1,
-    "conjectured": 3,
+    "conjectured": 2,
     "external": 2
   }
 }
