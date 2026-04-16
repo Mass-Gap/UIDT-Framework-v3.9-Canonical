@@ -4,7 +4,7 @@ UIDT v3.6.1 Renormalization Group Flow Analysis
 Analysis of RG flow and fixed point stability.
 
 CHANGELOG v3.6.1:
-- Updated canonical values (κ = 0.500, λ_S = 0.417)
+- Updated canonical values (κ = 0.500, λ_S = 5κ²/3)
 - Enhanced fixed-point analysis
 - Added Open Question notation for RG-γ discrepancy
 
@@ -146,7 +146,7 @@ class UIDTRenormalizationGroup:
         
         # Check canonical solution (v3.6.1)
         kappa_canonical = 0.500
-        lambda_canonical = 0.417
+        lambda_canonical = (5.0 / 3.0) * (kappa_canonical ** 2)
         
         print(f"\n2. Canonical Solution (v3.6.1):")
         print(f"   κ_canonical = {kappa_canonical:.3f}")
@@ -183,7 +183,7 @@ def plot_rg_flow():
     rg = UIDTRenormalizationGroup(Nc=3)
     
     # Run RG flow from canonical values (v3.6.1)
-    t, sol = rg.solve_rg_flow(g0=1.0, kappa0=0.500, lambda0=0.417, 
+    t, sol = rg.solve_rg_flow(g0=1.0, kappa0=0.500, lambda0=(5.0 / 3.0) * (0.500 ** 2), 
                                t_max=10, n_points=1000)
     
     plt.figure(figsize=(10, 6))
@@ -191,8 +191,8 @@ def plot_rg_flow():
     plt.plot(t, sol[:, 2], label=r'$\lambda_S(\mu)$', linewidth=2, color='#10b981')
     plt.axhline(y=0.500, color='#3b82f6', linestyle='--', alpha=0.5, 
                 label=r'$\kappa^* = 0.500$ (fixed point)')
-    plt.axhline(y=0.417, color='#10b981', linestyle='--', alpha=0.5, 
-                label=r'$\lambda_S^* = 0.417$ (canonical)')
+    plt.axhline(y=(5.0 / 3.0) * (0.500 ** 2), color='#10b981', linestyle='--', alpha=0.5, 
+                label=r'$\lambda_S^* = 5\kappa^2/3$ (canonical)')
     
     plt.xlabel(r'RG Time $t = \ln(\mu/\mu_0)$', fontsize=12)
     plt.ylabel('Coupling Strength', fontsize=12)

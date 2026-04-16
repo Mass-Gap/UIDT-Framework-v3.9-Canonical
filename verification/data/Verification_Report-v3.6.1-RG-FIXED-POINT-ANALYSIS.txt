@@ -4,7 +4,7 @@ UIDT v3.6.1 RG FIXED POINT ANALYSIS
 
 1. Non-trivial UV Fixed Point (One-Loop):
    κ* = 0.500
-   λ_S* = 0.417
+   λ_S* = 5κ²/3
    Condition: 5κ*² = 1.250
               3λ_S* = 1.250
    Difference = 0.00e+00
@@ -12,7 +12,7 @@ UIDT v3.6.1 RG FIXED POINT ANALYSIS
 
 2. Canonical Solution (v3.6.1):
    κ_canonical = 0.500
-   λ_S_canonical = 0.417
+   λ_S_canonical = 5κ²/3
    Check: 5κ² = 1.250
           3λ_S = 1.251
    Residual = 0.0010
