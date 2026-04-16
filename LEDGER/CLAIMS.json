@@ -61,7 +61,7 @@
     },
     {
       "id": "UIDT-C-006",
-      "statement": "Self-Coupling λ_S = 0.417 ± 0.007",
+      "statement": "Self-Coupling λ_S = 5κ²/3 ± 0.007",
       "type": "parameter",
       "status": "verified",
       "evidence": "A",
@@ -141,7 +141,7 @@
     },
     {
       "id": "UIDT-C-014",
-      "statement": "Perturbative Stability λ_S = 0.417 < 1",
+      "statement": "Perturbative Stability λ_S = 5κ²/3 < 1",
       "type": "constraint",
       "status": "verified",
       "evidence": "A",
