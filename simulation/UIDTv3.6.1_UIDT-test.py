@@ -13,9 +13,6 @@ Synchronized with Manuscript v3.6.1:
 
 import mpmath
 
-# 80-dps Precision Enforcement (UIDT v3.9 S0-Rule)
-mpmath.mp.dps = 80
-
 # =============================================================================
 # I. CONSTANTS & TARGETS (v3.6.1 CLEAN STATE)
 # =============================================================================
@@ -43,6 +40,9 @@ def solve_canonical_parameters():
     Solves the system of 3 equations based on v3.6.1 specifications.
     Derives m_S, kappa, and lambda_S consistent with the Mass Gap.
     """
+    # 80-dps Precision Enforcement (UIDT v3.9 S0-Rule) - LOCAL SCOPE
+    mpmath.mp.dps = 80
+
     print("\n🔍 UIDT PARAMETER SOLVER (v3.6.1 Logic)")
     print("="*40)
     
@@ -93,6 +93,9 @@ def solve_canonical_parameters():
 # III. MAIN PROGRAM
 # =============================================================================
 if __name__ == "__main__":
+    # 80-dps Precision Enforcement (UIDT v3.9 S0-Rule) - LOCAL SCOPE
+    mpmath.mp.dps = 80
+
     # 1. Determine Parameters
     params = solve_canonical_parameters()
     
