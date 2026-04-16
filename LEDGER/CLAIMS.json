@@ -72,7 +72,7 @@
     },
     {
       "id": "UIDT-C-006",
-      "statement": "Self-Coupling \u03bb_S = 0.417 \u00b1 0.007",
+      "statement": "Self-Coupling \u03bb_S = 5\u03ba\u00b2/3 \u00b1 0.007",
       "type": "parameter",
       "status": "verified",
       "evidence": "A",
@@ -80,7 +80,7 @@
         "RG_fixed_point"
       ],
       "since": "v3.2",
-      "notes": "Perturbative: \u03bb_S < 1"
+      "notes": "Exact RG fixed-point definition: \u03bb_S := 5\u03ba\u00b2/3 = 0.41\u0305̄6\u0305̄. Perturbative: \u03bb_S < 1. TKT-20260403-LAMBDA-FIX."
     },
     {
       "id": "UIDT-C-007",
@@ -128,7 +128,7 @@
         "rg_flow_analysis.py"
       ],
       "since": "v3.2",
-      "notes": "Residual 0.001 < tolerance 0.01"
+      "notes": "Residual < 10\u207b\u00b9\u2074 (exact with \u03bb_S := 5\u03ba\u00b2/3, v3.9.5). Previous: 0.001 with rounded 0.417."
     },
     {
       "id": "UIDT-C-011",
@@ -168,7 +168,7 @@
     },
     {
       "id": "UIDT-C-014",
-      "statement": "Perturbative Stability \u03bb_S = 0.417 < 1",
+      "statement": "Perturbative Stability \u03bb_S = 5\u03ba\u00b2/3 < 1",
       "type": "constraint",
       "status": "verified",
       "evidence": "A",
@@ -289,7 +289,7 @@
     },
     {
       "id": "UIDT-C-025",
-      "statement": "Perturbative Check: \u03bb_S < 1 \u2192 0.417 \u2713",
+      "statement": "Perturbative Check: \u03bb_S < 1 \u2192 5\u03ba\u00b2/3 \u2248 0.41\u0305̄6\u0305̄ \u2713",
       "type": "constraint",
       "status": "verified",
       "evidence": "A",
@@ -390,14 +390,14 @@
     },
     {
       "id": "UIDT-C-034",
-      "statement": "\u03bb_S = 0.417 \u00b1 0.007",
+      "statement": "\u03bb_S = 5\u03ba\u00b2/3 \u00b1 0.007",
       "type": "parameter",
       "status": "verified",
       "evidence": "A",
       "confidence": 0.99,
       "dependencies": [],
       "since": "v3.7.2",
-      "notes": "Scalar self-interaction"
+      "notes": "Scalar self-interaction. Exact RG fixed-point: \u03bb_S := 5\u03ba\u00b2/3 = 0.41\u0305̄6\u0305̄ (TKT-20260403-LAMBDA-FIX)."
     },
     {
       "id": "UIDT-C-035",
