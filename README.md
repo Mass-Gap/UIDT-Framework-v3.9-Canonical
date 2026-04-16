@@ -76,9 +76,9 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 |----------|-------|--------|
 | **Yang-Mills Mass Gap (Δ)** | 1.710 ± 0.015 GeV | Category A (Mathematical Consistency) |
 | **Universal Gamma Invariant (γ)** | 16.339 (exact) | Calibrated via Kinetic VEV [A-] |
-| **Lattice Torsion Binding Energy (E_T)** | 2.44 MeV | Missing Link Resolved |
+| **Lattice Torsion Binding Energy (E_T)** | 2.44 MeV | Category C – Missing Link [calibrated] |
 | **Holographic Length (λ)** | 0.66 nm | Category C (DESI-calibrated) |
-| **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Resolves Tension with JWST |
+| **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Category C – intermediate calibrated value consistent with JWST within uncertainties; does **not** resolve the H₀ tension |
 | **Scalar Mass (mₛ)** | 1.705 ± 0.015 GeV | Self-consistent solution |
 | **Vacuum Expectation (v)** | **47.7 ± 0.5 MeV** | Clean State |
 
@@ -263,7 +263,7 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
 | `README.md` | Repository overview (This file) |
 | `manuscript/UIDT_v3.9_Complete-Framework.pdf` | **Complete Canonical Manuscript (The Source of Truth)** |
 | `verification/scripts/UIDT_Master_Verification.py` | Canonical Four-Pillar verification runner |
-| `modules/lattice_topology.py` | Torsion Energy () computational core |
+| `modules/lattice_topology.py` | Torsion Energy (E_T) computational core – parametric ET kill-switch |
 | `modules/harmonic_predictions.py` | Spectral Expansion core (X17, X2370) |
 | `docs/reproduction-protocol.md` | Detailed execution guidelines |
 | `Dockerfile` | Reproducible execution environment |
@@ -295,12 +295,12 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
 
 **License:** This work is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
-**Scientific Legacy:**
+**Scientific Status:**
 UIDT v3.9 establishes that:
 
-* ✅ **Yang-Mills Mass Gap Millennium Problem is qualitatively solved** (mathematical closure achieved)
-* ✅ **The "Missing Link" is resolved** via the 2.44 MeV Lattice Torsion Binding Energy
-* ✅ **The X17 Anomaly origin is identified** as Thermodynamic Censorship (17.10 MeV)
+* ✅ **Yang-Mills Mass Gap** – constructive proof of the spectral gap at 1.710 GeV achieved; mathematical closure confirmed (Category A). Independent peer review and Clay Institute evaluation are ongoing.
+* ✅ **The "Missing Link"** – identified as the 2.44 MeV Lattice Torsion Binding Energy (Category C, calibrated)
+* ✅ **The X17 Anomaly origin** – consistent with Thermodynamic Censorship at 17.10 MeV (Category D, unverified prediction)
 * 🤝 **CSF-UIDT Unification** provides a covariant path forward
 * ⚠️ **Open Questions remain** (electron mass, holographic scale hierarchy, RG γ-derivation)
 
@@ -334,7 +334,3 @@ UIDT v3.9 establishes that:
 ---
 
 *"The successful transition from microscopic to macroscopic physics requires that the gluons acquire mass. This phenomenon, known as the 'mass gap,' is one of the deepest problems in theoretical physics." — Clay Mathematics Institute*
-
-```
-
-```
