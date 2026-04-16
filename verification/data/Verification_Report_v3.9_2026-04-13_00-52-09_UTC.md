@@ -1,8 +1,8 @@
 ---
 title: "UIDT Master Verification Report: v3.9 Constructive"
-date: "2026-02-21 05:23:33 UTC"
+date: "2026-04-13 00:52:09 UTC"
 status: "PASSED"
-signature: "SHA256:2ac7ac0e7f807898"
+signature: "SHA256:714142e9e0bcf67d"
 ---
 
 # 🛡️ UIDT v3.9 Master Verification Report
@@ -33,19 +33,19 @@ signature: "SHA256:2ac7ac0e7f807898"
 
 ### 🔗 Pillar II: Missing Link (Lattice Topology)
 > **Thermodynamic Censorship:** Stabilizes the Vacuum
-- Derived Vacuum Frequency (Resonance): `107.10` MeV
-- Thermodynamic Noise Floor (E_noise): `17.10` MeV
+- Derived Vacuum Frequency (Resonance): `107.1` MeV
+- Thermodynamic Noise Floor (E_noise): `17.1` MeV
 
 
 
 ### 📊 Pillar III: Spectral Expansion (Blind Predictions)
 > **Harmonic Resonance:** Vacuum Resonance Scaling
-- Omega_bbb (Triple Bottom): `14.4585` GeV
-- Tetraquark (cccc): `4.4982` GeV
-- X17 Anomaly (Noise Floor): `17.10` MeV
-- X2370 Resonance: `2.3701` GeV
-- Tensor Glueball (2++): `2.4183` GeV
-- Pseudoscalar Glueball (0-+): `2.5650` GeV
+- Omega_bbb (Triple Bottom): `'14.4585'` GeV
+- Tetraquark (cccc): `'4.49819'` GeV
+- X17 Anomaly (Noise Floor): `'17.1'` MeV
+- X2370 Resonance: `'2.37012'` GeV
+- Tensor Glueball (2++): `'2.41831'` GeV
+- Pseudoscalar Glueball (0-+): `'2.565'` GeV
 
 
 ---
@@ -54,15 +54,49 @@ signature: "SHA256:2ac7ac0e7f807898"
 
 ### 🧪 Pillar IV Audit (Photonics, Category D)
 > **External Platform:** Song et al. (2025), Nat. Commun. 16, 8915, DOI: 10.1038/s41467-025-63981-3
-- n_critical: `16.339000`
-- epsilon_critical: `266.962921`
+- n_critical: `'16.339'`
+- epsilon_critical: `'266.962921'`
 
 ### ⚓ Proton Anchor (Consistency, Category B)
-- f_vac: `107.10` MeV
-- m_p: `938.27` MeV
-- m_p / f_vac: `8.760691` (target 35/4 = 8.75)
-- deviation: `+0.010691`
+- f_vac: `'107.1'` MeV
+- m_p: `'938.27'` MeV
+- m_p / f_vac: `'8.76069'` (target 35/4 = 8.75)
+- deviation: `'0.0106909'`
 
+
+## 4b. Pillar II-CSF: Covariant Scalar-Field Synthesis
+
+### Pillar II-CSF: Covariant Scalar-Field Synthesis [Category C]
+> **CSF-UIDT Mapping:** Phenomenological (from calibrated [A-] gamma)
+- gamma_CSF (anomalous dimension): `0.16877824379620744411867142742853394110787502798123203899043500439368440762957854`
+- rho_max (information saturation): `1.09978108526019306635768164498217205402...` GeV^4
+- EoS w_0: `-0.99` [C placeholder]
+- EoS w_a: `0.03` [C placeholder]
+- Limitations: L4 (gamma not RG-derived), L5 (N=94.05 empirical)
+
+
+
+## 6. Topological Observations [Category D]
+
+> **Geometric Interpretation:** Numerically consistent patterns requiring future derivation.
+
+### O1: Rational Fixed Points
+- Exact Rational Pair: κ = 1/2, λ_S = 5/12
+- RG Constraint Residual: `'0.0'`
+- Interpretation: Topological protection / Integrable system
+
+### O2: SU(3) Macroscopic Color Projection
+- Metric Target: η_CSF = 0.504
+- Computed γ_CSF: `'0.168778'`
+- Ratio (η/γ): `'2.98617'` (Target N_c = 3)
+
+### O3: Kissing Number Suppression
+- Suppression Exponent: -12
+- Identity: K_3 = 12 (3D Kissing Number)
+- Interpretation: 12-neighbor vacuum topological shielding
+
+
+---
 
 ---
 
@@ -95,22 +129,32 @@ signature: "SHA256:2ac7ac0e7f807898"
    > THEOREM 3.4: ✅ PROVEN (Existence & Uniqueness)
 
 [3] PILLAR II: DERIVING MISSING LINK (Lattice Topology)...
-   > Vacuum Frequency: 107.10 MeV
-   > Thermodynamic Noise Floor: 17.10 MeV
+   > Vacuum Frequency: 107.1 MeV
+   > Thermodynamic Noise Floor: 17.1 MeV
 
 [4] PILLAR III: SPECTRAL EXPANSION & PREDICTIONS...
-   > Omega_bbb: 14.4585 GeV
-   > Tetraquark: 4.4982 GeV
-   > X17 Noise Floor: 17.10 MeV
-   > X2370 Resonance: 2.3701 GeV
-   > Tensor Glueball: 2.4183 GeV
+   > Omega_bbb: '14.4585' GeV
+   > Tetraquark: '4.49819' GeV
+   > X17 Noise Floor: '17.1' MeV
+   > X2370 Resonance: '2.37012' GeV
+   > Tensor Glueball: '2.41831' GeV
 
 [5] PILLAR IV: PHOTONIC APPLICATION (Metamaterials, Category D)...
-   > Critical Refractive Index (n): 16.3390
-   > Required Permittivity (ε):     266.9629
+   > Critical Refractive Index (n): '16.339'
+   > Required Permittivity (ε):     '266.962921'
    > Interpretation: Photonic analogy threshold (not a GR wormhole).
 
 [4] PROTON ANCHOR (Consistency, Category B)...
-   > m_p / f_vac: 8.7607 (target 8.7500)
-   > deviation:   +0.0107
+   > m_p / f_vac: '8.76069' (target 8.7500)
+   > deviation:   '0.0106909'
+
+[6] PILLAR II-CSF: COVARIANT SCALAR-FIELD SYNTHESIS [Category C]...
+   > gamma_CSF (anomalous dim): 0.16877824379620744411867142742853394110787502798123203899043500439368440762957854
+   > rho_max (saturation):      1.099781085260193066... GeV^4
+   > EoS w_0=-0.99, w_a=0.03 [C placeholder]
+
+[7] TOPOLOGICAL OBSERVATIONS (Category D - Interpretive)...
+   > O1: Rational Fixed Point Residual = 0.0
+   > O2: SU(3) Color Projection Ratio  = '2.98617'
+   > O3: Kissing Number Exponent matched K_3 = 12
 ```

@@ -33,13 +33,13 @@ signature: "SHA256:cf1bc72ad82e5659"
 
 ### 🔗 Pillar II: Missing Link (Lattice Topology)
 > **Thermodynamic Censorship:** Stabilizes the Vacuum
-- Derived Vacuum Frequency (Baddewithana): `107.10` MeV
+- Derived Vacuum Frequency (Resonance): `107.10` MeV
 - Thermodynamic Noise Floor (E_noise): `17.10` MeV
 
 
 
 ### 📊 Pillar III: Spectral Expansion (Blind Predictions)
-> **Harmonic Resonance:** 3-6-9 Octave Scaling
+> **Harmonic Resonance:** Vacuum Resonance Scaling
 - Omega_bbb (Triple Bottom): `14.4585` GeV
 - Tetraquark (cccc): `4.4982` GeV
 - X17 Anomaly (Noise Floor): `17.10` MeV

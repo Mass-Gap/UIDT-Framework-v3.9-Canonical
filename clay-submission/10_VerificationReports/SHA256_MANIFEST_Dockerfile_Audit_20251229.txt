@@ -3,7 +3,7 @@
 # ══════════════════════════════════════════════════════════════════════════════
 #
 # Generated: 2025-12-29T02:36:00+01:00
-# DOI:       https://doi.org/10.5281/zenodo.18003017
+# DOI:       https://doi.org/10.5281/zenodo.17835200
 # Author:    Philipp Rietz (ORCID: 0009-0007-4307-1609)
 #
 # Verification: certutil -hashfile <file> SHA256 (Windows)

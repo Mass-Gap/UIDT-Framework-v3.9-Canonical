@@ -210,13 +210,13 @@ def run_master_verification():
             lat = TorsionLattice(op_instance)
             f_vac_val = lat.calculate_vacuum_frequency()
             noise = lat.check_thermodynamic_limit()
-            log_print(f"   > Vacuum Frequency: {f_vac_val * 1000:.2f} MeV")
-            log_print(f"   > Thermodynamic Noise Floor: {noise * 1000:.2f} MeV")
+            log_print(f"   > Vacuum Frequency: {mp.nstr(f_vac_val * 1000, 5)} MeV")
+            log_print(f"   > Thermodynamic Noise Floor: {mp.nstr(noise * 1000, 5)} MeV")
             pillar_ii_data_block = f"""
 ### 🔗 Pillar II: Missing Link (Lattice Topology)
 > **Thermodynamic Censorship:** Stabilizes the Vacuum
-- Derived Vacuum Frequency (Baddewithana): `{f_vac_val * 1000:.2f}` MeV
-- Thermodynamic Noise Floor (E_noise): `{noise * 1000:.2f}` MeV
+- Derived Vacuum Frequency (Resonance): `{mp.nstr(f_vac_val * 1000, 5)}` MeV
+- Thermodynamic Noise Floor (E_noise): `{mp.nstr(noise * 1000, 5)}` MeV
 """
         except ImportError as e:
             log_print(f"   > ❌ PILLAR II ERROR: {e}")
@@ -227,20 +227,20 @@ def run_master_verification():
             from modules.harmonic_predictions import HarmonicPredictor
             predictor = HarmonicPredictor(f_vac_val, mp.mpf('1.710'))
             report = predictor.generate_report()
-            log_print(f"   > Omega_bbb: {mp.mpf(report['Omega_bbb_GeV']):.4f} GeV")
-            log_print(f"   > Tetraquark: {mp.mpf(report['Tetra_cccc_GeV']):.4f} GeV")
-            log_print(f"   > X17 Noise Floor: {mp.mpf(report['X17_NoiseFloor_MeV']):.2f} MeV")
-            log_print(f"   > X2370 Resonance: {mp.mpf(report['X2370_Resonance_GeV']):.4f} GeV")
-            log_print(f"   > Tensor Glueball: {mp.mpf(report['Glueball_2++_GeV']):.4f} GeV")
+            log_print(f"   > Omega_bbb: {mp.nstr(report['Omega_bbb_GeV'], 5)} GeV")
+            log_print(f"   > Tetraquark: {mp.nstr(report['Tetra_cccc_GeV'], 5)} GeV")
+            log_print(f"   > X17 Noise Floor: {mp.nstr(report['X17_NoiseFloor_MeV'], 5)} MeV")
+            log_print(f"   > X2370 Resonance: {mp.nstr(report['X2370_Resonance_GeV'], 5)} GeV")
+            log_print(f"   > Tensor Glueball: {mp.nstr(report['Glueball_2++_GeV'], 5)} GeV")
             pillar_iii_data_block = f"""
 ### 📊 Pillar III: Spectral Expansion (Blind Predictions)
-> **Harmonic Resonance:** 3-6-9 Octave Scaling
-- Omega_bbb (Triple Bottom): `{mp.mpf(report['Omega_bbb_GeV']):.4f}` GeV
-- Tetraquark (cccc): `{mp.mpf(report['Tetra_cccc_GeV']):.4f}` GeV
-- X17 Anomaly (Noise Floor): `{mp.mpf(report['X17_NoiseFloor_MeV']):.2f}` MeV
-- X2370 Resonance: `{mp.mpf(report['X2370_Resonance_GeV']):.4f}` GeV
-- Tensor Glueball (2++): `{mp.mpf(report['Glueball_2++_GeV']):.4f}` GeV
-- Pseudoscalar Glueball (0-+): `{mp.mpf(report['Glueball_0-+_GeV']):.4f}` GeV
+> **Harmonic Resonance:** Vacuum Structural Scaling
+- Omega_bbb (Triple Bottom): `{mp.nstr(report['Omega_bbb_GeV'], 5)}` GeV
+- Tetraquark (cccc): `{mp.nstr(report['Tetra_cccc_GeV'], 5)}` GeV
+- X17 Anomaly (Noise Floor): `{mp.nstr(report['X17_NoiseFloor_MeV'], 5)}` MeV
+- X2370 Resonance: `{mp.nstr(report['X2370_Resonance_GeV'], 5)}` GeV
+- Tensor Glueball (2++): `{mp.nstr(report['Glueball_2++_GeV'], 5)}` GeV
+- Pseudoscalar Glueball (0-+): `{mp.nstr(report['Glueball_0-+_GeV'], 5)}` GeV
 """
         except ImportError as e:
             log_print(f"   > ❌ PILLAR III ERROR: {e}")
@@ -256,28 +256,28 @@ def run_master_verification():
             photonics = PhotonicInterface(op_instance)
             w_trans = photonics.predict_wormhole_transition()
 
-            log_print(f"   > Critical Refractive Index (n): {mp.mpf(w_trans['n_critical']):.4f}")
-            log_print(f"   > Required Permittivity (ε):     {mp.mpf(w_trans['epsilon_critical']):.4f}")
+            log_print(f"   > Critical Refractive Index (n): {mp.nstr(w_trans['n_critical'], 5)}")
+            log_print(f"   > Required Permittivity (ε):     {mp.nstr(w_trans['epsilon_critical'], 5)}")
             log_print("   > Interpretation: Photonic analogy threshold (not a GR wormhole).")
 
             log_print("\n[4] PROTON ANCHOR (Consistency, Category B)...")
             vac_freq_gev = mp.mpf("0.1071")
             predictor = HarmonicPredictor(vac_freq_gev)
             pchk = predictor.check_proton_anchor()
-            log_print(f"   > m_p / f_vac: {mp.mpf(pchk['ratio']):.4f} (target 8.7500)")
-            log_print(f"   > deviation:   {mp.mpf(pchk['deviation']):+.4f}")
+            log_print(f"   > m_p / f_vac: {mp.nstr(pchk['ratio'], 5)} (target 8.7500)")
+            log_print(f"   > deviation:   {mp.nstr(pchk['deviation'], 4)}")
 
             pillar_iv_data_block = f"""
 ### 🧪 Pillar IV Audit (Photonics, Category D)
 > **External Platform:** Song et al. (2025), Nat. Commun. 16, 8915, DOI: 10.1038/s41467-025-63981-3
-- n_critical: `{mp.mpf(w_trans['n_critical']):.6f}`
-- epsilon_critical: `{mp.mpf(w_trans['epsilon_critical']):.6f}`
+- n_critical: `{mp.nstr(w_trans['n_critical'], 6)}`
+- epsilon_critical: `{mp.nstr(w_trans['epsilon_critical'], 6)}`
 
 ### ⚓ Proton Anchor (Consistency, Category B)
-- f_vac: `{mp.mpf(pchk['f_vac_MeV']):.2f}` MeV
-- m_p: `{mp.mpf(pchk['m_p_MeV']):.2f}` MeV
-- m_p / f_vac: `{mp.mpf(pchk['ratio']):.6f}` (target 35/4 = 8.75)
-- deviation: `{mp.mpf(pchk['deviation']):+.6f}`
+- f_vac: `{mp.nstr(pchk['f_vac_MeV'], 5)}` MeV
+- m_p: `{mp.nstr(pchk['m_p_MeV'], 5)}` MeV
+- m_p / f_vac: `{mp.nstr(pchk['ratio'], 6)}` (target 35/4 = 8.75)
+- deviation: `{mp.nstr(pchk['deviation'], 6)}`
 """
         except Exception as e:
             log_print(f"   > ❌ PILLAR IV ERROR: {e}")
@@ -317,7 +317,7 @@ def run_master_verification():
             o3_data = verify_kissing_number_suppression()
             
             log_print(f"   > O1: Rational Fixed Point Residual = {o1_data['residual_exact']}")
-            log_print(f"   > O2: SU(3) Color Projection Ratio  = {o2_data['ratio']:.4f}")
+            log_print(f"   > O2: SU(3) Color Projection Ratio  = {mp.nstr(o2_data['ratio'], 5)}")
             log_print(f"   > O3: Kissing Number Exponent matched K_3 = 12")
             
             pillar_td_data_block = f"""
@@ -327,13 +327,13 @@ def run_master_verification():
 
 ### O1: Rational Fixed Points
 - Exact Rational Pair: κ = 1/2, λ_S = 5/12
-- RG Constraint Residual: `{o1_data['residual_exact']:.2e}`
+- RG Constraint Residual: `{mp.nstr(o1_data['residual_exact'], 3)}`
 - Interpretation: Topological protection / Integrable system
 
 ### O2: SU(3) Macroscopic Color Projection
 - Metric Target: η_CSF = 0.504
-- Computed γ_CSF: `{o2_data['gamma_csf']:.6f}`
-- Ratio (η/γ): `{o2_data['ratio']:.6f}` (Target N_c = 3)
+- Computed γ_CSF: `{mp.nstr(o2_data['gamma_csf'], 6)}`
+- Ratio (η/γ): `{mp.nstr(o2_data['ratio'], 6)}` (Target N_c = 3)
 
 ### O3: Kissing Number Suppression
 - Suppression Exponent: -12
@@ -406,9 +406,9 @@ signature: "SHA256:{sig}"
 ## 5. Fundamental Constants (Derived)
 | Parameter | Value | Unit | Description |
 | :--- | :--- | :--- | :--- |
-| **Mass Gap (Δ)** | {mp.mpf(delta_val):.6f} | GeV | Fundamental Scale |
-| **Scalar Mass (m_S)** | {mp.mpf(m_S):.6f} | GeV | Resonance Target |
-| **VEV (v)** | {mp.mpf(v_final)*1000:.4f} | MeV | Vacuum Expectation |
+| **Mass Gap (Δ)** | {mp.nstr(mp.mpf(delta_val), 7)} | GeV | Fundamental Scale |
+| **Scalar Mass (m_S)** | {mp.nstr(mp.mpf(m_S), 7)} | GeV | Resonance Target |
+| **VEV (v)** | {mp.nstr(mp.mpf(v_final)*1000, 6)} | MeV | Vacuum Expectation |
 | **Gamma (γ)** | 16.339 | - | Lattice Invariant |
 
 ---

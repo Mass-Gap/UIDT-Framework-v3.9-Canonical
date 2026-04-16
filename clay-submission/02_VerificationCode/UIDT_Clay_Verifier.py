@@ -13,7 +13,7 @@ Version: 3.6.1 (December 2025)
 
 # ═══════════════════════════════════════════════════════════════
 # POST-SUBMISSION ENHANCEMENT (v3.7.3 → v3.9)
-# Original Clay submission preserved at DOI: 10.5281/zenodo.18003018
+# Original Clay submission preserved at DOI: 10.5281/zenodo.17835200
 # Changes: Integration of lattice torsion binding energy E_T
 # Date: 2026-02-20
 # ═══════════════════════════════════════════════════════════════
