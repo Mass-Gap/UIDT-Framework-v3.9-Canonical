@@ -1,12 +1,12 @@
-# UIDT v3.9: Vacuum Information Density as the Fundamental Geometric Scalar (Canonical)
+# UIDT v3.9: Vacuum Information Density — A High-Precision Constraint and Exploration Platform
 
 <div align="center">
 
 | Badge | Details |
 | :--- | :--- |
 | [![Repository Badge](https://img.shields.io/badge/Repository-UIDT--Framework--v3.9--Canonical-blue.svg?style=for-the-badge&logo=github)](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical) | **Name:** UIDT-Framework-v3.9-Canonical |
-| [![Version Badge](https://img.shields.io/badge/Version-v3.9--Clean--State-green.svg?style=for-the-badge&logo=semver)](https://doi.org/10.5281/zenodo.17835200) | **Version:** v3.9 (Canonical Clean State) |
-| [![Status Badge](https://img.shields.io/badge/Status-Scientifically--Consistent-orange.svg?style=for-the-badge&logo=statuspage)](https://doi.org/10.5281/zenodo.17835200) | **Status:** 🔋 Scientifically Consistent – Evidence Classified |
+| [![Version Badge](https://img.shields.io/badge/Version-v3.9--Canonical-green.svg?style=for-the-badge&logo=semver)](https://doi.org/10.5281/zenodo.17835200) | **Version:** v3.9 (Canonical Clean State) |
+| [![Status Badge](https://img.shields.io/badge/Status-Evidence--Classified-orange.svg?style=for-the-badge&logo=statuspage)](https://doi.org/10.5281/zenodo.17835200) | **Status:** Evidence-Classified — Active Research |
 | [![License Badge](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg?style=for-the-badge&logo=creativecommons)](https://creativecommons.org/licenses/by/4.0/) | **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [![DOI Badge](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17835200-blue.svg?style=for-the-badge&logo=zenodo)](https://doi.org/10.5281/zenodo.17835200) | **DOI:** [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200) |
 
@@ -17,70 +17,42 @@
 > [!IMPORTANT]
 > **Notice Regarding Version History and Data Integrity**
 >
-> With the release of **UIDT v3.9 Canonical**, I am formally superseding all previous iterations.
+> With the release of **UIDT v3.9 Canonical**, all previous iterations are formally superseded.
 >
-> Due to my severe disability, I initially delegated the administrative and formatting aspects of the v3.3 publication to external agencies to ensure a timely release. Regrettably, it became apparent that the standards of precision required for this theoretical framework were not met by these third parties, leading to significant inconsistencies in the data structure.
+> Due to the author's severe disability, the administrative and formatting aspects of the v3.3 publication were initially delegated to external agencies to ensure a timely release. The standards of precision required for this theoretical framework were not met by these third parties, leading to significant inconsistencies in the data structure.
 >
-> **Action Taken:** The DOI record for v3.3 has been **permanently withdrawn and deleted**. Version 3.9 represents the clean, verified, and definitive implementation of the theory, free from external interference.
+> **Action Taken:** The DOI record for v3.3 has been **permanently withdrawn and deleted**. Version 3.9 represents the clean, verified implementation of the framework, free from external interference.
 
----
-
-**Central Result:** Analytical derivation of Yang-Mills mass gap Δ* ≈ 1.710 GeV (spectral gap) through information-geometric coupling, achieving mathematical closure with residuals < 10⁻⁴⁰. 
-
-**Physical Significance:** Resolves 10¹²⁰ vacuum energy hierarchy via γ⁻¹² suppression mechanism combined with holographic normalization (π⁻²), reducing cosmological constant problem to 3.3% precision. Introduces the Lattice Torsion Binding Energy (2.44 MeV) to stabilize the discrete vacuum structure.
-
-**Falsification Threshold:** Five independent experimental pathways with specific numerical predictions:
-- Casimir anomaly +0.59% at 0.66 nm (Category D: **predicted, unverified**)
-- Glueball resonance at 1.705 ± 0.015 GeV (Category B: lattice-consistent)
-- Absence of Torsion Energy (E_T → 0) in precision hadron spectroscopy (Category A)
-- DESI dark energy evolution w₀ = −0.99 [C] (Canonical per Decision D-002, DESI-calibrated)
-- Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D+: analog verification)
-
----
-
-<div align="center">
-
-### THE UNIVERSAL MASS GAP CONSTANT
-
-# $\Delta^*$
-
-<div style="background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 20px; font-family: 'Courier New', monospace; font-size: 11px; word-break: break-all; text-align: left; max-width: 800px; margin: 0 auto; color: #24292f; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-<strong>1.710035046742213182020771096611622363294044242291085581231747999663464376395570369445002815542192033041630851992293577578337148116022890290326969033792718321530044021016130813146135502941908808474427620022069439336733684080990670841868721862693239644</strong>
-</div>
-
-### GeV
-
-*(Established analytic precision limit $\mathcal{O}(10^{-280})$)*
-
-<br>
-
-[![Banach Convergence](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/blob/main/figures/supplementary/uidt_visualize1.png?raw=true)](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/blob/main/figures/supplementary/uidt_visualize1.png?raw=true)
-
-**Figure 1:** Algorithmic proof of non-perturbative mass generation. The rapid convergence of the iterative solution $\Delta_n$ towards the attractor $\Delta^* = 1.710$ GeV demonstrates the unique existence of a stable vacuum state.
-
-</div>
+> [!NOTE]
+> **Scope and Status of this Framework**
+>
+> UIDT v3.9 is an **active research framework**, not established physics. It functions as a high-precision, phenomenologically calibrated exploration platform for scale couplings and information densities in QFT and cosmology.
+>
+> **Central result:** An internal constructive proof of the Yang-Mills spectral gap at Δ* ≈ 1.710 GeV (Category A — mathematical consistency), achieved via information-geometric coupling with residuals < 10⁻⁴⁰. Whether this proof satisfies the Clay Mathematics Institute criteria remains **subject to independent external evaluation**.
+>
+> Known limitations (L1–L5) are documented transparently in [`docs/limitations.md`](docs/limitations.md) and summarised below.
 
 ---
 
 ## 📄 Abstract
 
-**UIDT v3.9 presents a constructive, publication-ready framework for the unification of Quantum Field Theory (QFT) and General Relativity via Information Geometry.**
+UIDT v3.9 introduces vacuum information density as a fundamental scalar field S(x) and constructs a four-pillar architecture connecting the Yang-Mills spectral gap, lattice topology, spectral predictions, and a photonic analog platform.
 
-By introducing vacuum information density as a fundamental scalar field $S(x)$, the theory derives the Yang-Mills Mass Gap and constrains the vacuum energy hierarchy. This **Complete Manuscript** establishes the **Four-Pillar Architecture** and synthesizes the framework with the **Covariant Scalar-Field (CSF)** formalism, a topological Lattice Torsion model, and a photonic analog platform.
+The framework is internally closed at 80-digit mpmath precision with an RG fixed-point constraint 5κ² = 3λ_S (residual < 10⁻¹⁴). Canonical parameters span evidence categories A through E. **Claims are never stronger than their assigned evidence category.** Cosmological claims are capped at Category C; phenomenological parameters such as γ = 16.339 carry Category A− (calibrated, not derived from RG first principles — Limitation L4).
 
-Canonical parameters are derived self-consistently via the **Extended Functional Renormalization Group (FRG)** and the **Banach Fixed-Point Theorem**. The solution yields the unique stable vacuum state at **$\Delta = 1.710$ GeV**, demonstrating numerical closure with residuals $< 10^{-40}$.
+The framework produces falsifiable predictions and serves as an algebraic stress-test environment for empirical inputs such as DESI DR2 and lattice QCD updates.
 
-### 🔬 Core Derived Constants (Immutable)
+### 🔬 Core Derived Constants (Immutable Ledger)
 
-| Constant | Value | Status |
-|----------|-------|--------|
-| **Yang-Mills Mass Gap (Δ)** | 1.710 ± 0.015 GeV | Category A (Mathematical Consistency) |
-| **Universal Gamma Invariant (γ)** | 16.339 (exact) | Calibrated via Kinetic VEV [A-] |
-| **Lattice Torsion Binding Energy (E_T)** | 2.44 MeV | Category C – Missing Link [calibrated] |
-| **Holographic Length (λ)** | 0.66 nm | Category C (DESI-calibrated) |
-| **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Category C – intermediate calibrated value consistent with JWST within uncertainties; does **not** resolve the H₀ tension |
-| **Scalar Mass (mₛ)** | 1.705 ± 0.015 GeV | Self-consistent solution |
-| **Vacuum Expectation (v)** | **47.7 ± 0.5 MeV** | Clean State |
+| Constant | Value | Evidence | Note |
+|----------|-------|----------|------|
+| Yang-Mills Spectral Gap Δ* | 1.710 ± 0.015 GeV | **A** | Spectral gap — NOT a particle mass |
+| Universal Gamma Invariant γ | 16.339 | **A−** | Calibrated via Kinetic VEV; not RG-derived (L4) |
+| Lattice Torsion Binding Energy E_T | 2.44 MeV | **C** | Calibrated — Missing Link (L1-adjacent) |
+| Holographic Length λ | 0.66 nm | **C** | DESI-calibrated |
+| Hubble Constant H₀ | 70.4 km/s/Mpc | **C** | Intermediate calibrated value; H₀ tension **not resolved** |
+| Scalar Mass m_S | 1.705 ± 0.015 GeV | **D** | Prediction, unverified |
+| Vacuum Expectation v | 47.7 ± 0.5 MeV | **A** | Clean State |
 
 ---
 
@@ -88,85 +60,93 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 
 ```mermaid
 graph TD
-    A[Vacuum Scalar Field S] -->|Coupling κ| B(Yang-Mills Mass Gap);
-    B -->|Derived| C{Delta = 1.710 GeV};
-    C -->|Geometric Operator Ĝ| D[Gamma Invariant = 16.339];
-    
-    D -->|γ⁻¹² + 99-Step RG| E[Cosmological Constant];
-    D -->|Topological Folding| F[Lattice Torsion Binding E_T = 2.44 MeV];
-    D -->|Harmonic Scaling| G[Thermodynamic Censorship / X17 = 17.1 MeV];
-    D -->|Isomorphism| H[Photonic n_critical = 16.339];
-    
+    A[Vacuum Scalar Field S] -->|Coupling κ| B(Yang-Mills Spectral Gap);
+    B -->|Derived| C{Δ* = 1.710 GeV [A]};
+    C -->|Geometric Operator Ĝ| D[γ Invariant = 16.339 [A-]];
+
+    D -->|γ⁻¹² + 99-Step RG [C]| E[Cosmological Constant Suppression];
+    D -->|Topological Folding [C]| F[Lattice Torsion E_T = 2.44 MeV];
+    D -->|Harmonic Scaling [D]| G[Thermodynamic Censorship / X17 = 17.1 MeV];
+    D -->|Isomorphism [D]| H[Photonic n_critical = 16.339];
+
     style C fill:#f96,stroke:#333,stroke-width:4px
     style D fill:#bbf,stroke:#333,stroke-width:2px
     style F fill:#9f9,stroke:#333,stroke-width:2px
-
 ```
 
 ---
 
 ## 🏛️ The Four-Pillar Architecture
 
-**UIDT v3.9** structures physical reality into four independently verifiable but mutually reinforcing pillars:
+**UIDT v3.9** structures its exploration into four independently verifiable but mutually reinforcing pillars. Evidence categories are stated explicitly for every pillar.
 
-### Pillar I: QFT Foundation (The Mathematical Core)
+### Pillar I: QFT Foundation (Mathematical Core)
 
-* **Achievement:** Constructive proof of the Yang-Mills Mass Gap via non-minimal coupling
-* **Result:**  GeV (self-consistent solution)
-* **Verification:** Validated by the **Banach Fixed-Point Theorem** (Contraction )
-* **Status:** **Category A (Mathematical Consistency)**
+- **Achievement:** Constructive proof of the Yang-Mills spectral gap via non-minimal coupling
+- **Result:** Δ* = 1.710 GeV (self-consistent Banach fixed-point solution)
+- **Verification:** Banach Fixed-Point Theorem (contraction ‖T′‖ < 1); residuals < 10⁻⁴⁰
+- **Status:** **Category A (internal mathematical consistency)**
 
-**Key Mathematical Result:**
+> ⚠️ Category A here denotes internal self-consistency of the three-equation closure system, not external peer review or Clay Institute acceptance. Independent verification is ongoing.
 
 ```
 Three-Equation System Closure:
   Residuals: < 10⁻⁴⁰ (machine precision)
   Monte Carlo validation: 100,000 samples, all posteriors Gaussian
-  Lattice QCD agreement: z-score ≈ 0 (exact match with Chen et al. 2006)
-
+  Lattice QCD z-score: ≈ 0 (consistent with Chen et al. 2006)
 ```
 
-### Pillar II: Lattice Topology & The Missing Link
+### Pillar II: Lattice Topology — The Calibrated Missing Link
 
-* **Achievement:** Replaces phenomenological vacuum-frequency constraints with thermodynamic derivations.
-* **Mechanism:** Derives the **Lattice Torsion Binding Energy ( MeV)**, mathematically bridging the purely geometric QFT resonance (104.7 MeV) to the observed stable vacuum frequency (107.1 MeV) required to prevent discrete lattice collapse.
-* **Vacuum Energy:** Resolves the  catastrophe via a 99-Step RG Cascade ( scaling) and Holographic Normalization ().
-* **Status:** **Category A/C**
+- **Achievement:** Replaces phenomenological vacuum-frequency constraints with thermodynamic derivations
+- **Mechanism:** Derives Lattice Torsion Binding Energy E_T = 2.44 MeV (Category C — calibrated)
+- **Vacuum Energy:** Addresses the 10¹²⁰ hierarchy via 99-Step RG cascade and holographic normalisation (Limitation L5: N=99 empirically chosen, derivation open)
+- **Status:** **Category A/C — mixed; see Limitations L1, L5**
 
 ### Pillar III: Spectral Expansion & Thermodynamic Censorship
 
-* **Achievement:** Falsifiable, falsifiable predictions for precision and collider experiments.
-* **Predictions:**
-* **Thermodynamic Censorship (Wolpert Limit):** Formalizes the fundamental noise floor at ** MeV**, providing an analytical origin for the **X17 anomaly**.
-* **Blind Resonances:** Predicts the BESIII **X2370 resonance** as a harmonic overtone, alongside higher glueball states (Tensor  at 2.418 GeV).
-* **Casimir Anomaly:**  deviation at  nm (**Category D**).
+- **Predictions:**
+  - Thermodynamic Censorship (Wolpert Limit) at 17.10 MeV — analytical origin conjecture for X17 anomaly
+  - X(2370) resonance as harmonic overtone; Tensor glueball at 2.418 GeV
+  - Casimir anomaly +0.59% at 0.66 nm
+- **Status:** **Category D — unverified predictions awaiting experimental confirmation**
 
+### Pillar IV: Photonic Isomorphism (Analog Verification Channel)
 
-* **Status:** **Category D (Prediction Awaiting Verification)**
-
-### Pillar IV: Photonic Isomorphism (Analog Verification)
-
-* **Achievement:** A macroscopic analog test channel for UIDT scaling relations
-* **Prediction:** Critical transition at  ()
-* **Platform:** Nonlocal metamaterials ("photonic parallel spaces"; external platform)
-* **Status:** **Category D+ (Analog Verification; interpretation unverified)**
+- **Prediction:** Critical refractive index transition at n_critical = γ ≈ 16.339
+- **Platform:** Nonlocal metamaterials (external platform — interpretation unverified)
+- **Status:** **Category D — analog verification; interpretation unverified**
 
 ---
 
 ## 🔬 Scientific Integrity: Evidence Classification
 
-All claims are strictly classified by evidence strength:
+All claims carry an explicit evidence tag. No claim may be stated stronger than its assigned category.
 
 | Category | Description | Example |
-| --- | --- | --- |
-| **A (Proven Theorem)** | Mathematical self-consistency verified | Three-equation closure (residuals < 10⁻⁴⁰) |
-| **B (Lattice Consistent)** | Agreement with independent QCD simulations | Δ = 1.710 GeV (z-score ≈ 0 vs. lattice) |
-| **C (Calibrated Model)** | Dependent on DESI/JWST calibration | H₀, λ_UIDT from global fit |
-| **D (Unverified Prediction)** | Awaiting experimental confirmation | **X17 origin, X2370 resonance, Casimir anomaly** |
+|----------|-------------|---------|
+| **A — Proven Theorem** | Internal mathematical self-consistency verified | Three-equation closure, residuals < 10⁻⁴⁰ |
+| **A− — Phenomenological** | Calibrated parameter; not first-principles derived | γ = 16.339 (Limitation L4) |
+| **B — Lattice Consistent** | Agreement with independent QCD simulations | Δ* = 1.710 GeV (z-score ≈ 0 vs. lattice) |
+| **C — Calibrated Model** | Dependent on DESI/JWST calibration | H₀, λ_UIDT from global fit |
+| **D — Unverified Prediction** | Awaiting experimental confirmation | X17 origin, X(2370), Casimir anomaly |
+| **E — Speculative** | Exploratory conjecture, no formal derivation | Stratum-III interpretations |
 
-**Critical Scientific Assessment (Clean State):**
+---
 
-> The status of the predicted Casimir anomaly in Table 22 and Section 10.4 was corrected from "confirmed" to **"predicted, unverified" (Category D)** to comply with the strictest scientific standards. No publications exist documenting sub-nanometer Casimir measurements with claimed precision.
+## ⚠️ Known Limitations (Mandatory Disclosure)
+
+The following limitations are formally acknowledged. They do not invalidate the framework but define its epistemic boundaries.
+
+| ID | Limitation | Impact on Evidence | Priority |
+|----|------------|-------------------|----------|
+| L1 | 10¹⁰ geometric factor — no first-principles derivation | Holographic scale: C, not A | High |
+| L2 | Electron mass formula: 23% residual | Electroweak sector not fully integrated | Medium |
+| L3 | Vacuum energy residual: factor 2.3 | Accepted within framework tolerance | Accepted |
+| L4 | γ = 16.339 not derived from RG flow | γ remains A−, not A; first-principles derivation open | High |
+| L5 | N=99 RG steps empirically chosen | Suppression mechanism phenomenological | Medium |
+
+> Full details: [`docs/limitations.md`](docs/limitations.md)
 
 ---
 
@@ -174,29 +154,21 @@ All claims are strictly classified by evidence strength:
 
 ### Prerequisites
 
-* **Python:** Version 3.10+
-* **Dependencies:** `NumPy`, `SciPy`, `Matplotlib`, `mpmath` (for 100-digit precision)
+- **Python:** 3.10+
+- **Dependencies:** `NumPy`, `SciPy`, `Matplotlib`, `mpmath` (80-digit precision, locally scoped)
 
 ### Installation
 
 ```bash
-# Clone verification environment
-git clone [https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical)
+git clone https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical
 cd UIDT-Framework-v3.9-Canonical
-
-# Install dependencies
 pip install -r verification/requirements.txt
-
 ```
 
 ### Verification Run
 
-**1. Primary Solver**
-Executes the Four-Pillar Verification Suite (v3.9).
-
 ```bash
 python verification/scripts/UIDT_Master_Verification.py
-
 ```
 
 **Expected Output (v3.9):**
@@ -224,47 +196,46 @@ python verification/scripts/UIDT_Master_Verification.py
 [4] PILLAR III: SPECTRAL EXPANSION & PREDICTIONS...
    > X17 Noise Floor: 17.10 MeV
    > X2370 Resonance: 2.370 GeV
-   
+
 [5] PILLAR IV: PHOTONIC APPLICATION (Metamaterials, Category D)...
    > Critical Refractive Index (n): 16.3390
-
 ```
 
-**2. Containerized Audit**
-Run the Master Verification Suite in a completely isolated environment:
+**Containerised Audit:**
 
 ```bash
 docker build -t uidt-verify-v3.9 .
 docker run uidt-verify-v3.9
-
 ```
 
 ---
 
-## 🚫 Falsification Matrix (The Kill-Switch)
+## 🚫 Falsification Matrix (Kill-Switch)
 
-UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
+UIDT v3.9 is strictly falsifiable. The framework is considered refuted if:
 
 | Test | Threshold | Timeline |
-| --- | --- | --- |
-| **Lattice QCD** | Excludes Δ = 1.710 GeV with >3σ confidence | Continuum limit (2026-2028) |
-| **Torsion Collapse** | Absence of 2.44 MeV Torsion Energy (E_T → 0) | Hadron Spec. (2025+) |
-| **DESI Cosmology** | Year 3-5 data confirms static Λ (w = -1 exactly) | 2025-2027 |
-| **Photonic Analog** | Excludes transition at n = 16.339 ± 0.1 | Metamaterial analog (2026) |
-| **Spectral Anomalies** | Explicit exclusion of X17 noise floor / X2370 overtone | Ongoing |
-| **Casimir Laboratory** | Precision experiments exclude anomaly at λ = 0.66 nm | Tech-limited (2028+) |
+|------|-----------|----------|
+| Lattice QCD | Excludes Δ* = 1.710 GeV with >3σ | Continuum limit 2026–2028 |
+| Torsion Collapse | Absence of 2.44 MeV E_T in hadron spectroscopy | 2025+ |
+| DESI Cosmology | Year 3–5 confirms static w = -1 exactly | 2025–2027 |
+| Photonic Analog | Excludes transition at n = 16.339 ± 0.1 | Metamaterial analog 2026 |
+| Spectral Anomalies | Explicit exclusion of X17 noise floor / X(2370) | Ongoing |
+| Casimir Laboratory | Precision experiments exclude anomaly at λ = 0.66 nm | Tech-limited 2028+ |
 
 ---
 
 ## 📚 Repository Structure
 
 | File / Folder | Description |
-| --- | --- |
-| `README.md` | Repository overview (This file) |
-| `manuscript/UIDT_v3.9_Complete-Framework.pdf` | **Complete Canonical Manuscript (The Source of Truth)** |
-| `verification/scripts/UIDT_Master_Verification.py` | Canonical Four-Pillar verification runner |
-| `modules/lattice_topology.py` | Torsion Energy (E_T) computational core – parametric ET kill-switch |
+|---------------|-------------|
+| `README.md` | Repository overview (this file) |
+| `manuscript/UIDT_v3.9_Complete-Framework.pdf` | Complete Canonical Manuscript |
+| `LEDGER/CLAIMS.json` | Evidence-tagged claim ledger (canonical truth) |
+| `verification/scripts/UIDT_Master_Verification.py` | Four-Pillar verification runner |
+| `modules/lattice_topology.py` | Torsion Energy computational core |
 | `modules/harmonic_predictions.py` | Spectral Expansion core (X17, X2370) |
+| `docs/limitations.md` | Known limitations L1–L5 (mandatory reading) |
 | `docs/reproduction-protocol.md` | Detailed execution guidelines |
 | `Dockerfile` | Reproducible execution environment |
 
@@ -272,63 +243,49 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
 
 ## 📜 Citation
 
-**Preferred Citation:**
-
 ```bibtex
 @article{Rietz2026_UIDT_v39,
-  title       = {Vacuum Information Density as the Fundamental Geometric Scalar: The Geometric Operator and the Lattice Torsion Missing Link in the X17/X(2370) Energy Window (UIDT v3.9)},
-  author      = {Rietz, Philipp},
-  year        = {2026},
-  month       = {February},
-  doi         = {10.5281/zenodo.17835200},
-  url         = {[https://doi.org/10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200)},
-  publisher   = {Zenodo},
-  version     = {3.9 Canonical},
-  copyright   = {CC BY 4.0}
+  title     = {Vacuum Information Density as the Fundamental Geometric Scalar:
+               The Geometric Operator and the Lattice Torsion Missing Link
+               in the X17/X(2370) Energy Window (UIDT v3.9)},
+  author    = {Rietz, Philipp},
+  year      = {2026},
+  month     = {February},
+  doi       = {10.5281/zenodo.17835200},
+  url       = {https://doi.org/10.5281/zenodo.17835200},
+  publisher = {Zenodo},
+  version   = {3.9 Canonical},
+  copyright = {CC BY 4.0}
 }
-
 ```
 
 ---
 
-## 📄 License & Status
+## 📄 License & Scientific Status
 
-**License:** This work is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+**License:** [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 
-**Scientific Status:**
-UIDT v3.9 establishes that:
+**Scientific Status Summary:**
 
-* ✅ **Yang-Mills Mass Gap** – constructive proof of the spectral gap at 1.710 GeV achieved; mathematical closure confirmed (Category A). Independent peer review and Clay Institute evaluation are ongoing.
-* ✅ **The "Missing Link"** – identified as the 2.44 MeV Lattice Torsion Binding Energy (Category C, calibrated)
-* ✅ **The X17 Anomaly origin** – consistent with Thermodynamic Censorship at 17.10 MeV (Category D, unverified prediction)
-* 🤝 **CSF-UIDT Unification** provides a covariant path forward
-* ⚠️ **Open Questions remain** (electron mass, holographic scale hierarchy, RG γ-derivation)
+| Component | Status | Evidence |
+|-----------|--------|----------|
+| Yang-Mills spectral gap at 1.710 GeV | Constructive internal proof; independent evaluation ongoing | A |
+| Lattice Torsion Binding Energy 2.44 MeV | Calibrated — identifies the "Missing Link" | C |
+| X17 anomaly origin | Consistent with Thermodynamic Censorship — prediction only | D |
+| CSF-UIDT Unification | Covariant path proposed; not yet independently verified | D/E |
+| H₀ tension | **Not resolved** — UIDT value is an intermediate calibrated parameter | C |
 
----
-
-## 🔍 Known Limitations (Summary)
-
-| Issue | Discrepancy | Status |
-| --- | --- | --- |
-| Electron mass prediction | 23% | Open Question |
-| Holographic scale hierarchy | 10¹⁰ factor | Unresolved |
-| Vacuum energy residual | Factor 2.3 | Under study |
-| RG gamma vs. kinetic VEV | Factor 3.4 | Candidate Solution Identified |
-| Casimir experimental status | No peer-reviewed data | Corrected / Category D |
+**Open Questions (non-exhaustive):**
+- First-principles derivation of γ from RG flow (L4)
+- Electron mass formula (23% residual, L2)
+- Derivation of N=99 RG steps from first principles (L5)
+- 10¹⁰ holographic scale factor (L1)
 
 ---
-
-```
-🚀 Final Status: UIDT Ω v3.9 is scientifically synthesized and technically CLOSED.
-
-```
 
 **Author:** Philipp Rietz
-
 **ORCID:** [0009-0007-4307-1609](https://orcid.org/0009-0007-4307-1609)
-
 **Contact:** badbugs.arts@gmail.com
-
 **DOI:** [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200)
 
 ---
