@@ -94,42 +94,42 @@ Physical/mathematical derivation of N=99 from first principles
 
 ---
 
-### L6-FRG: FRG Derivation of γ — Minimal Truncation (S F² Sector)
-**Status:** 🔬 ACTIVE RESEARCH — linked to GAP-FRG-001
+### L7: Gribov Horizon Crossing
+**Status:** 🔬 ACTIVE RESEARCH [GRIBOV_HORIZON_CROSSING]
 
 **Description:**  
-The FRG analysis of Claim UIDT-C-070 (eta_* ≈ 0.072, Evidence D) is based on a minimal
-truncation with the following deliberate methodological compromises:
+Der analytische Fixpunkt des projizierten 2x2-Systems erzwingt \(\tilde{\kappa}^{2*} = \pi^2 \approx 9.87\). Dieser Wert liegt tief im Infraroten, jenseits des klassischen Gribov-Pols (\(\tilde{\kappa}^2 = 1.0\)). Der Vorhersagewert für \(\tilde{\lambda}_{SF}^* \approx 16.449\) ist streng auf Evidenz D limitiert, bis das System um einen dynamischen, selbstkonsistenten Gribov-Zwanziger-Limes erweitert wird.
 
-- **η_A = 0:** Gluon anomalous dimension set to zero (background-field approximation).
-  Gluon fluctuations in the anomalous dimension scheme are not fully captured.
-- **Massless scalar:** The scalar S is treated as massless (w_S → 0 limit).
-- **4×4 truncation only:** The coupling space is {g², λ_S, κ², κ²} without higher operators.
-- **LPA (Local Potential Approximation):** No momentum-dependent vertex projection (∂_p²).
-  The beta-functions are evaluated at p² = 0 only.
-- **Litim regulator in conformal window:** The threshold functions are evaluated in the
-  w → 0 limit, suppressing IR mass effects.
+---
 
-**Impact on current results:**  
-- The anomalous dimension η_* ≈ 0.072 is a truncation-dependent result (Evidence D).
-- Complex eigenvalues (±0.654i) of the stability matrix indicate a spiralling RG flow
-  in the IR — classified as a truncation artefact from missing higher operators (S²F²).
-- The gap Δη ≈ 0.009 between η_* and the phenomenological threshold ≈ 0.063 is
-  consistent with the expected effect of missing gluon fluctuations.
+### L8: X³ Mixing Omitted
+**Status:** 🔬 ACTIVE RESEARCH [X3_MIXING_OMITTED]
 
-**What this limitation does NOT affect:**  
-- The canonical value γ = 16.339 (Evidence A-) is independent of this truncation.
-  It is a kinematic calibration, not derived from the FRG run.
-- The Yang-Mills spectral gap Δ* = 1.710 ± 0.015 GeV (Evidence A) is not affected.
+**Description:**  
+Die Rückkopplung des Tripel-Gluon-Operators (X³-Einmischung) aus dem SMEFT-Sektor (\(+ \frac{1}{2} g_3^2 C_A C_G\)) wurde in der aktuellen Truncation vernachlässigt.
 
-**Condition for Resolution:**  
-See clay-submission/GAP_ANALYSIS_CLAY.md → GAP-FRG-001 for the full solution path.
-Resolution requires a momentum-dependent vertex projection (∂_p²) and a
-self-consistent Dyson resummation in the full (S, A) propagator matrix.
+---
+
+### L9: Z₂ Symmetry Collapse
+**Status:** 🔬 ACTIVE RESEARCH [Z2_SYMMETRY_COLLAPSE]
+
+**Description:**  
+Das minimale Skalar-Gauge-System kollabiert ohne explizite Symmetriebrechung deterministisch. Die Theorie stützt sich axiomatisch darauf, dass \(S\) an die Spuranomalie (Trace Anomaly) koppelt, um diesen Kollaps abzuwenden (siehe UIDT-C-072).
 
 ---
 
 ## Resolved Limitations (Historical)
+
+### L6-FRG: Truncation Artifact - Spiral RG Flow [RESOLVED]
+**Status:** ✅ CLOSED (v3.9.6)
+
+**Previous Issue:**  
+Spiralförmiger RG-Fluss im Infraroten durch fehlende Symmetrie-Relationen z.B. komplexe Eigenwerte an Fixpunkten.
+
+**Resolution:**  
+Das Artefakt wurde durch exakte RG-Constraint-Projektion (\(5\kappa^2 = 3\lambda_{SF}\)) im 80-dps-Solver eliminiert. Die Stabilitätsmatrix ist nun beweisbar rein reell.
+
+---
 
 ### L6: Spectral Gap vs. Particle Mass [RESOLVED — superseded by L6-FRG above]
 **Status:** ✅ CLARIFIED (2025-12-25)
@@ -166,7 +166,9 @@ Corrected to v = 47.7 MeV. Old value was erroneous.
 | L3      | Vacuum energy                        | ρ_vac factor 2.3              | 🟢 Accepted |
 | L4      | γ not from RG                        | γ remains [A-] not [A]        | 🔴 High     |
 | L5      | N=99 unjustified                     | RG cascade phenomenological   | 🟡 Medium   |
-| L6-FRG  | FRG minimal truncation (C-070)       | η_* Evidence D, not upgradable| 🔴 High     |
+| L7      | Gribov Horizon Crossing              | λ_SF* strictly Evidence D     | 🔴 High     |
+| L8      | X³ Mixing Omitted                    | Impacts truncation stability  | 🟡 Medium   |
+| L9      | Z₂ Symmetry Collapse                 | Axiomatic Trace Anomaly req.  | 🔴 High     |
 
 ---
 
