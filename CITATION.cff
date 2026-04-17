@@ -6,23 +6,23 @@ authors:
     orcid: "https://orcid.org/0009-0007-4307-1609"
     email: "badbugs.arts@gmail.com"
     affiliation: "Independent Researcher"
-title: "Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.9) - Complete Manuscript"
+title: "Information-Geometric Constraint Framework: Unified Information-Density Theory (UIDT v3.9) - Complete Manuscript"
 version: "3.9"
 doi: 10.5281/zenodo.17835200
 date-released: 2026-02-19
 url: "https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical"
-abstract: "UIDT v3.9 presents a publication-ready synthesis of Unified Information-Density Theory (UIDT) with a Four-Pillar Architecture: (1) a mathematically closed derivation of the Yang-Mills Mass Gap (Δ≈1.710 GeV) verified by constructive fixed-point methods; (2) cosmological calibration using DESI DR2 + JWST/ACT constraints with explicit evidence tagging; (3) laboratory-scale falsification targets (Casimir / scalar-sector tests) with conservative status (Category D where unverified); and (4) Photonic Isomorphism, interpreting the UIDT vacuum scalar density S(x) as an effective refractive index channel in nonlocal metamaterials, predicting a critical index n_critical = γ ≈ 16.339. The v3.9 manuscript also introduces the torsion binding energy E_T as the missing link between the geometric vacuum scale and the empirically anchored vacuum resonance."
+abstract: "UIDT v3.9 presents a high-precision, evidence-classified framework for the information-geometric coupling of QFT-sector observables and gravitational parameters. It implements a Four-Pillar Architecture: (1) a mathematically closed derivation of the Yang-Mills Mass Gap (Delta approx 1.710 GeV) verified by constructive fixed-point methods (Category A: internal mathematical consistency, external evaluation pending); (2) cosmological calibration using DESI DR2 + JWST/ACT constraints with explicit evidence tagging (Category C); (3) laboratory-scale falsification targets (Casimir / scalar-sector tests) with conservative status (Category D where unverified); and (4) Photonic Isomorphism, interpreting the UIDT vacuum scalar density S(x) as an effective refractive index channel in nonlocal metamaterials, predicting a critical index n_critical = gamma approx 16.339. The v3.9 manuscript also introduces the torsion binding energy E_T as the missing link between the geometric vacuum scale and the empirically anchored vacuum resonance. Known limitations include a 23% electron mass residual, an unresolved 10^10 holographic scale factor, and a phenomenological gamma parameter pending full RG derivation."
 keywords:
   - "Yang-Mills Theory"
   - "Mass Gap"
-  - "Quantum Gravity"
+  - "Vacuum Energy Geometry"
   - "Gamma Invariant"
   - "Dark Energy"
   - "DESI DR2"
-  - "Hubble Tension"
+  - "Hubble Parameter Calibration"
   - "Information Geometry"
   - "Supermassive Dark Seeds"
-  - "CSF Synthesis"
+  - "Covariant Scalar Field Extension"
   - "Four-Pillar Architecture"
   - "Photonic Isomorphism"
   - "Torsion Binding Energy"
@@ -35,6 +35,6 @@ preferred-citation:
     orcid: "https://orcid.org/0009-0007-4307-1609"
   doi: "10.5281/zenodo.17835200"
   journal: "Zenodo"
-  title: "Universal Gamma Scaling: Unified Information-Density Theory (UIDT v3.9) - Complete Manuscript with Four-Pillar Architecture"
+  title: "Information-Geometric Constraint Framework: Unified Information-Density Theory (UIDT v3.9) - Complete Manuscript with Four-Pillar Architecture"
   year: 2026
   month: 2
