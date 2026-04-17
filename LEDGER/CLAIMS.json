@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "version": "3.9.6",
-    "last_updated": "2026-04-13",
+    "version": "3.9.7",
+    "last_updated": "2026-04-17",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 56,
-    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification."
+    "total_claims": 60,
+    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification. | v3.9.7 (2026-04-17): Added UIDT-C-057 [D] (vacuum indistinguishability), UIDT-C-058 [E] (fermionic 4π-symmetry interpretation), UIDT-C-096 [E] (EFT-UIDT crossover width ΔN conjecture), UIDT-C-097 [E] (γ as IR boundary condition). Session 2026-04-16/17. Forbidden language enforced. No ledger constants modified."
   },
   "claims": [
     {
@@ -188,7 +188,7 @@
       "evidence": "E",
       "dependencies": [],
       "since": "v3.2",
-      "notes": "HIGHEST PRIORITY open question"
+      "notes": "HIGHEST PRIORITY open question. Session 2026-04-16: actual scale ratio λ_UIDT/r_conf ≈ 10^6.5, not 10^10. Problem statement in LIMITATIONS.md requires UV/IR scale specification. See TKT-UIDT-L1-SCALE-DEFINITION."
     },
     {
       "id": "UIDT-C-019",
@@ -614,8 +614,56 @@
       "confidence": 0.55,
       "dependencies": ["UIDT-C-054", "UIDT-C-055"],
       "since": "v3.9.6",
-      "notes": "SVZ leading-order estimate. TENSION ALERT: z ≈ 8–10σ vs quenched lattice (185–191 MeV). NLO corrections expected +30–80%. Previous erroneous values: 55 MeV (wrong formula, PR #190), 107 MeV (partial). Corrected to 142.98 MeV via mpmath 80-dps verification (PR #213, chi_top_formula_audit.md). Falsification: If NLO-corrected χ_top^{1/4} outside [140, 220] MeV.",
+      "notes": "SVZ leading-order estimate. TENSION ALERT: z ≈ 8–10σ vs quenched lattice (185–191 MeV). NLO corrections expected +30–80%. Previous erroneous values: 55 MeV (wrong formula, PR #190), 107 MeV (partial). Corrected to 142.98 MeV via mpmath 80-dps verification (PR #213, chi_top_formula_audit.md). Falsification: If NLO-corrected χ_top^{1/4} outside [140, 220] MeV. Session 2026-04-16: TENSION confirmed. NLO-FRG study required (TKT-20260403-FRG-NLO). Upgrade path: [D]→[B] requires NLO-corrected value within 1σ of lattice.",
       "falsification": "NLO-corrected value outside [140, 220] MeV refutes SVZ estimate applicability."
+    },
+    {
+      "id": "UIDT-C-057",
+      "statement": "Particle indistinguishability emerges from the uniqueness of the vacuum information scalar S(x); particles are local topological modes of S(x), not instances with serial numbers.",
+      "type": "interpretation",
+      "status": "projected",
+      "evidence": "D",
+      "confidence": 0.60,
+      "dependencies": ["UIDT-C-001", "UIDT-C-002"],
+      "since": "v3.9.7",
+      "notes": "Analytical projection [D]: maps QFT indistinguishability (Stratum II) onto UIDT Stratum III. No mathematical first-principles proof. Consistent with QFT field-excitation picture but adds no independently testable prediction beyond Standard QFT at this stage. Upgrade path: [D]→[C] requires a concrete observable consequence distinguishable from QFT baseline. Source: docs/research/topological_indistinguishability.md.",
+      "falsification": "If an observable consequence of this mapping predicts a deviation from Fermi-Dirac statistics and no such deviation is found."
+    },
+    {
+      "id": "UIDT-C-058",
+      "statement": "The 720°-rotation symmetry (SU(2) half-integer spin, 4π periodicity) is interpreted as path-dependent coupling of local information flow to the global metric of the vacuum scalar S(x).",
+      "type": "interpretation",
+      "status": "speculative",
+      "evidence": "E",
+      "confidence": 0.40,
+      "dependencies": ["UIDT-C-001", "UIDT-C-002", "UIDT-C-057"],
+      "since": "v3.9.7",
+      "notes": "Speculative Stratum-III interpretation [E]. No derivation of the fermionic phase factor (−1 after 360°) from γ=16.339 [A-] or Δ*=1.710 GeV [A] exists. NOTE: Original session text proposed Category C — this was REJECTED per Evidence Decision Matrix: Category C requires external data calibration, which is absent. Correct category is [E]. Research challenge: determine whether the topological phase factor follows from γ and Δ* without fit parameters. Forbidden language: 'solved', 'derived', 'proven'. Upgrade path: [E]→[D] requires formal algebraic derivation with zero free parameters. Source: docs/research/topological_indistinguishability.md.",
+      "falsification": "If a formal derivation attempt from UIDT Lagrangian yields a phase factor ≠ −1 after 360° rotation."
+    },
+    {
+      "id": "UIDT-C-096",
+      "statement": "The SU(3) confinement crossover has a finite width in RG-flow space, conjectured as ΔN ≈ 5 steps, representing the transition zone between asymptotic freedom and the IR confinement regime.",
+      "type": "hypothesis",
+      "status": "conjectured",
+      "evidence": "E",
+      "confidence": 0.35,
+      "dependencies": ["UIDT-C-001", "UIDT-C-016", "UIDT-C-017"],
+      "since": "v3.9.7",
+      "notes": "Stratum-III conjecture [E]. The value ΔN ≈ 5 is NOT registered in CONSTANTS.md and has NO mpmath derivation. The word 'exakt' (exact) applied to this value in session 2026-04-16/17 was a language violation per UIDT Constitution — forbidden formulation. The underlying physical picture (Crossover as finite RG-width) is legitimate as a Stratum-III interpretation compatible with lattice evidence for crossover vs. sharp phase transition. Upgrade path: [E]→[D] requires (1) explicit mpmath 80-dps derivation of ΔN, (2) registration in CONSTANTS.md, (3) falsification criterion tied to lattice finite-size scaling. Source: session analysis 2026-04-16.",
+      "falsification": "If lattice finite-size scaling shows a sharp first-order transition (not crossover) in the relevant energy regime."
+    },
+    {
+      "id": "UIDT-C-097",
+      "statement": "γ = 16.339 may be interpreted as the macroscopic IR boundary condition of the SU(3) confinement crossover in the thermodynamic limit (L→∞), encoding the topological structure of the frozen vacuum state.",
+      "type": "interpretation",
+      "status": "conjectured",
+      "evidence": "E",
+      "confidence": 0.40,
+      "dependencies": ["UIDT-C-002", "UIDT-C-016", "UIDT-C-043", "UIDT-C-096"],
+      "since": "v3.9.7",
+      "notes": "Stratum-III interpretation [E]. Compatible with bare_gamma_theorem.md and rg_beta_derivation_gamma.md but NOT derived from them. The characterisation of γ as a 'deterministic boundary condition' or 'zwingend' (compelling/mandatory) in session 2026-04-16/17 was a language violation per UIDT Constitution — γ is [A-] phenomenological, not [A] derived. Upgrade path: [E]→[D] requires (1) a registered ΔN value with explicit mpmath derivation (UIDT-C-096 prerequisite), (2) falsification criterion tied to lattice measurement of γ_L at finite L. Source: session analysis 2026-04-16/17.",
+      "falsification": "If finite-size scaling of γ_L shows no crossover regime consistent with ΔN ≈ 5, the IR-boundary interpretation is not supported."
     }
   ],
   "statistics": {
@@ -623,15 +671,17 @@
     "category_A-": 4,
     "category_B": 7,
     "category_C": 9,
-    "category_D": 8,
-    "category_E": 14,
+    "category_D": 9,
+    "category_E": 17,
     "verified": 22,
     "calibrated": 8,
     "predicted": 10,
     "open": 6,
     "withdrawn": 2,
     "rectified": 1,
-    "conjectured": 3,
+    "conjectured": 5,
+    "projected": 1,
+    "speculative": 1,
     "external": 2
   }
 }
