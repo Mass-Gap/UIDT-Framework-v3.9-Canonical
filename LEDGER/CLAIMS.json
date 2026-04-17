@@ -3,7 +3,7 @@
     "version": "3.9.6",
     "last_updated": "2026-04-13",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 56,
+    "total_claims": 68,
     "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification."
   },
   "claims": [
@@ -15,7 +15,10 @@
       "evidence": "A",
       "confidence": 0.99,
       "sigma": 5.0,
-      "dependencies": ["UIDT-3.6.1-Verification.py", "Lattice QCD"],
+      "dependencies": [
+        "UIDT-3.6.1-Verification.py",
+        "Lattice QCD"
+      ],
       "since": "v3.6.1",
       "notes": "Spectral gap of Yang-Mills Hamiltonian, NOT particle mass"
     },
@@ -25,7 +28,9 @@
       "type": "parameter",
       "status": "calibrated",
       "evidence": "A-",
-      "dependencies": ["kinetic_vev_derivation"],
+      "dependencies": [
+        "kinetic_vev_derivation"
+      ],
       "since": "v3.6.1",
       "notes": "Phenomenologically determined, NOT from RG first principles. ALWAYS [A-] per CANONICAL."
     },
@@ -35,7 +40,9 @@
       "type": "parameter",
       "status": "calibrated",
       "evidence": "A-",
-      "dependencies": ["UIDT_MonteCarlo_100k"],
+      "dependencies": [
+        "UIDT_MonteCarlo_100k"
+      ],
       "since": "v3.7.1",
       "notes": "Statistical mean from 100k Monte Carlo samples"
     },
@@ -45,7 +52,9 @@
       "type": "parameter",
       "status": "rectified",
       "evidence": "A",
-      "dependencies": ["v3.6.1_correction"],
+      "dependencies": [
+        "v3.6.1_correction"
+      ],
       "since": "v3.6.1",
       "notes": "Corrected from erroneous 0.854 MeV in v3.2"
     },
@@ -55,7 +64,9 @@
       "type": "parameter",
       "status": "verified",
       "evidence": "A",
-      "dependencies": ["RG_fixed_point"],
+      "dependencies": [
+        "RG_fixed_point"
+      ],
       "since": "v3.2",
       "notes": "Satisfies 5κ² = 3λ_S"
     },
@@ -65,7 +76,9 @@
       "type": "parameter",
       "status": "verified",
       "evidence": "A",
-      "dependencies": ["RG_fixed_point"],
+      "dependencies": [
+        "RG_fixed_point"
+      ],
       "since": "v3.2",
       "notes": "Exact RG definition: λ_S := 5κ²/3 = 0.41̄6̄ (PI Decision D6, PR #209/#221). Value 0.417 was rounded decimal approximation. No physics change: |0.41̄6̄ − 0.417| < ±0.007 uncertainty. Perturbative: λ_S < 1."
     },
@@ -75,9 +88,11 @@
       "type": "prediction",
       "status": "predicted",
       "evidence": "D",
-      "dependencies": ["m_S² = 2λ_S v²"],
+      "dependencies": [
+        "m_S² = 2λ_S v²"
+      ],
       "since": "v3.2",
-      "notes": "Awaiting LHC/experimental confirmation"
+      "notes": "Awaiting LHC/experimental confirmation INTERPRETATION: Not a fundamental particle, but a composite topological excitation (resonance) of the SU(3) vacuum at the mass gap scale Δ. Replaces withdrawn f0(1710) glueball hypothesis."
     },
     {
       "id": "UIDT-C-008",
@@ -85,7 +100,9 @@
       "type": "cosmology",
       "status": "calibrated",
       "evidence": "C",
-      "dependencies": ["DESI_DR2"],
+      "dependencies": [
+        "DESI_DR2"
+      ],
       "since": "v3.7.2",
       "notes": "Calibrated to DESI, NOT independent prediction"
     },
@@ -95,7 +112,9 @@
       "type": "prediction",
       "status": "predicted",
       "evidence": "D",
-      "dependencies": ["Casimir_calculation"],
+      "dependencies": [
+        "Casimir_calculation"
+      ],
       "since": "v3.6.1",
       "notes": "Falsifiable: |ΔF/F| < 0.1% would refute"
     },
@@ -105,7 +124,9 @@
       "type": "constraint",
       "status": "verified",
       "evidence": "A",
-      "dependencies": ["rg_flow_analysis.py"],
+      "dependencies": [
+        "rg_flow_analysis.py"
+      ],
       "since": "v3.2",
       "notes": "Residual = 0.0 (exact, λ_S := 5κ²/3, PI Decision D6, PR #209). Previous residual 0.001 with hardcoded 0.417. Now Constitution-compliant < 10⁻¹⁴."
     },
@@ -115,7 +136,9 @@
       "type": "verification",
       "status": "verified",
       "evidence": "B",
-      "dependencies": ["lattice_comparison.xlsx"],
+      "dependencies": [
+        "lattice_comparison.xlsx"
+      ],
       "since": "v3.6.1",
       "notes": "Well within 1σ"
     },
@@ -125,7 +148,9 @@
       "type": "verification",
       "status": "verified",
       "evidence": "B",
-      "dependencies": ["UIDT-3.6.1-Verification.py"],
+      "dependencies": [
+        "UIDT-3.6.1-Verification.py"
+      ],
       "since": "v3.6.1",
       "notes": "Branch 1 residual 3.2×10⁻¹⁴"
     },
@@ -135,7 +160,9 @@
       "type": "constraint",
       "status": "verified",
       "evidence": "A",
-      "dependencies": ["stability_check"],
+      "dependencies": [
+        "stability_check"
+      ],
       "since": "v3.2",
       "notes": "Positive definite"
     },
@@ -145,7 +172,9 @@
       "type": "constraint",
       "status": "verified",
       "evidence": "A",
-      "dependencies": ["perturbative_check"],
+      "dependencies": [
+        "perturbative_check"
+      ],
       "since": "v3.2",
       "notes": "Valid expansion"
     },
@@ -252,7 +281,10 @@
       "status": "verified",
       "evidence": "A",
       "confidence": 0.99,
-      "dependencies": ["UIDT-C-033", "UIDT-C-034"],
+      "dependencies": [
+        "UIDT-C-033",
+        "UIDT-C-034"
+      ],
       "since": "v3.7.2",
       "notes": "Updated v3.9.5: removed erroneous '≈ 1.251'. λ_S := 5κ²/3 exact (PR #209/#221)."
     },
@@ -263,7 +295,9 @@
       "status": "verified",
       "evidence": "A",
       "confidence": 0.99,
-      "dependencies": ["UIDT-C-034"],
+      "dependencies": [
+        "UIDT-C-034"
+      ],
       "since": "v3.7.2"
     },
     {
@@ -273,7 +307,9 @@
       "status": "verified",
       "evidence": "A",
       "confidence": 0.99,
-      "dependencies": ["UIDT-C-036"],
+      "dependencies": [
+        "UIDT-C-036"
+      ],
       "since": "v3.7.2"
     },
     {
@@ -461,7 +497,10 @@
       "status": "verified",
       "evidence": "B",
       "confidence": 0.95,
-      "dependencies": ["UIDT-C-002", "UIDT-C-003"],
+      "dependencies": [
+        "UIDT-C-002",
+        "UIDT-C-003"
+      ],
       "since": "v3.9",
       "notes": "Numerical extrapolation from L=4,8,∞ finite-size scaling. Deviates from canonical γ=16.339 by Δγ≈0.0047. Category B: pure numerical extrapolation, no external data dependence. Source: theoretical_notes.md §3 (PR #55)."
     },
@@ -471,8 +510,12 @@
       "type": "prediction",
       "status": "predicted",
       "evidence": "C",
-      "confidence": 0.70,
-      "dependencies": ["UIDT-C-001", "UIDT-C-002", "UIDT-C-048"],
+      "confidence": 0.7,
+      "dependencies": [
+        "UIDT-C-001",
+        "UIDT-C-002",
+        "UIDT-C-048"
+      ],
       "since": "v3.9",
       "notes": "E_T = f_vac − Δ/γ = 107.10 − 104.66 MeV. Shows 3.75σ tension with FLAG 2024 m_u=2.14±0.08 MeV (pre-QED correction). After QED: m_u^phys≈2.08 MeV (0.75σ). NOT [B]: z=3.75σ fails B threshold. Upgraded [D]→[C] per PR #216 (A5, 2026-04-06): composite scaling-limit parameter. CONSTANTS.md v3.9.5 authoritative. Source: theoretical_notes.md §7,§13.",
       "falsification": "If lattice QCD excludes 2.44 MeV bare torsion at >5σ, E_T is refuted."
@@ -484,9 +527,12 @@
       "status": "calibrated",
       "evidence": "C",
       "confidence": 0.75,
-      "dependencies": ["UIDT-C-043", "UIDT-C-002"],
+      "dependencies": [
+        "UIDT-C-043",
+        "UIDT-C-002"
+      ],
       "since": "v3.9",
-      "notes": "CRITICAL: L-dependent. L=8.0→w_a≈−1.18, L=8.2→w_a≈−1.30. L is NOT canonical (absent from CONSTANTS.md). Cosmology=max [C]. Audit S1-01. Source: theoretical_notes.md §10, DESI_DR2_alignment_report.md.",
+      "notes": "CRITICAL: L-dependent. L=8.0→w_a≈−1.18, L=8.2→w_a≈−1.30. L is NOT canonical (absent from CONSTANTS.md). Cosmology=max [C]. Audit S1-01. Source: theoretical_notes.md §10, DESI_DR2_alignment_report.md. INTERPRETATION: Explicit UV/IR mixing via holographic dark energy coupling local vacuum fluctuations to the macroscopic horizon.",
       "falsification": "DESI DR3+ measuring w_a=0.0±0.1 (no dynamic DE) would refute."
     },
     {
@@ -495,8 +541,11 @@
       "type": "derivation",
       "status": "conjectured",
       "evidence": "E",
-      "confidence": 0.60,
-      "dependencies": ["UIDT-C-002", "UIDT-C-037"],
+      "confidence": 0.6,
+      "dependencies": [
+        "UIDT-C-002",
+        "UIDT-C-037"
+      ],
       "since": "v3.9",
       "notes": "PR #87: N=99 'falsified', N=94.05 proposed. BUT: N=99 in covariant_unification.py:27, limitations.md, all verification scripts. Self-contradiction unresolved. Category [E] until all code updated and independently verified. Source: theoretical_notes.md §12.",
       "falsification": "If ρ_vac with N=94.05 deviates from ρ_obs by >1 order of magnitude."
@@ -507,10 +556,14 @@
       "type": "cosmology",
       "status": "predicted",
       "evidence": "D",
-      "confidence": 0.70,
-      "dependencies": ["UIDT-C-004", "UIDT-C-002", "UIDT-C-045"],
+      "confidence": 0.7,
+      "dependencies": [
+        "UIDT-C-004",
+        "UIDT-C-002",
+        "UIDT-C-045"
+      ],
       "since": "v3.9",
-      "notes": "Cosmological prediction from v/γ⁷ where v=47.7 MeV [A], γ=16.339 [A-]. Compatible with DESI w₀waCDM relaxed bound. KATRIN/JUNO will test. Source: theoretical_notes.md §5.",
+      "notes": "Cosmological prediction from v/γ⁷ where v=47.7 MeV [A], γ=16.339 [A-]. Compatible with DESI w₀waCDM relaxed bound. KATRIN/JUNO will test. Source: theoretical_notes.md §5. INTERPRETATION: γ acts as a macroscopic IR boundary condition capping the lowest-energy masses.",
       "falsification": "Σmν measured >0.25 eV OR Σmν=0.000 by cosmology-independent experiment."
     },
     {
@@ -519,8 +572,11 @@
       "type": "parameter",
       "status": "calibrated",
       "evidence": "C",
-      "confidence": 0.80,
-      "dependencies": ["UIDT-C-001", "UIDT-C-002"],
+      "confidence": 0.8,
+      "dependencies": [
+        "UIDT-C-001",
+        "UIDT-C-002"
+      ],
       "since": "v3.9",
       "notes": "Composite: E_geo=Δ/γ=104.66 MeV [A-] + E_T=2.44 MeV [C]. Limited by weakest input → [C]. Source: derivation_qcd.md, quark_mass_hierarchy_prediction.md."
     },
@@ -530,8 +586,13 @@
       "type": "prediction",
       "status": "predicted",
       "evidence": "D",
-      "confidence": 0.60,
-      "dependencies": ["UIDT-C-001", "UIDT-C-002", "UIDT-C-044", "UIDT-C-048"],
+      "confidence": 0.6,
+      "dependencies": [
+        "UIDT-C-001",
+        "UIDT-C-002",
+        "UIDT-C-044",
+        "UIDT-C-048"
+      ],
       "since": "v3.9",
       "notes": "Multiplicative rules lack first-principles derivation. M(u)=2.44 has 3.75σ FLAG tension (pre-QED). NO uncertainties stated. NOT [B]: fails z<1σ. Source: quark_mass_hierarchy_prediction.md, theoretical_notes.md §7,§9,§13.",
       "falsification": "If M(d)/M(u)≠2.0 at >3σ, or M(s) deviates from 93.81 MeV by >10%."
@@ -543,7 +604,9 @@
       "status": "open",
       "evidence": "C",
       "confidence": 0.65,
-      "dependencies": ["UIDT-C-017"],
+      "dependencies": [
+        "UIDT-C-017"
+      ],
       "since": "v3.9",
       "notes": "Referenced in CHANGELOG.md and covariant_unification.py:27 but was never formally registered (phantom claim). N=99 phenomenologically chosen to match ρ_vac. See also UIDT-C-046 (N=94.05 proposed replacement).",
       "falsification": "If N≠99 yields better ρ_vac match (as proposed by N=94.05)."
@@ -554,8 +617,11 @@
       "type": "verification",
       "status": "verified",
       "evidence": "C",
-      "confidence": 0.80,
-      "dependencies": ["UIDT-C-001", "UIDT-C-002"],
+      "confidence": 0.8,
+      "dependencies": [
+        "UIDT-C-001",
+        "UIDT-C-002"
+      ],
       "since": "v3.9",
       "notes": "Referenced in CHANGELOG.md as 'UIDT-C-051' but never registered (phantom claim). Validated across three UIDT-internal geometric methods at 500-dps. Internal validation → [C], not [B]. Related to L3. Source: Factor_2_3_Derivation.md."
     },
@@ -566,7 +632,10 @@
       "status": "conjectured",
       "evidence": "E",
       "confidence": 0.55,
-      "dependencies": ["UIDT-C-002", "UIDT-C-016"],
+      "dependencies": [
+        "UIDT-C-002",
+        "UIDT-C-016"
+      ],
       "since": "v3.9",
       "notes": "0.037% match to canonical γ=16.339 but within MC uncertainty. Document titled 'Theorem' but content says 'Conjecture'. Category [E]: no proof that VEV yields this coefficient. Would address L4 if proven. Source: su3_gamma_conjecture_audit.md (renamed per PI Decision D2, PR #220, 2026-04-06; previously su3_gamma_theorem.md PR #15).",
       "falsification": "If analytical derivation from UIDT Lagrangian yields γ ≠ 49/3."
@@ -578,9 +647,13 @@
       "status": "predicted",
       "evidence": "D",
       "confidence": 0.65,
-      "dependencies": ["UIDT-C-001", "UIDT-C-002", "UIDT-C-048"],
+      "dependencies": [
+        "UIDT-C-001",
+        "UIDT-C-002",
+        "UIDT-C-048"
+      ],
       "since": "v3.9",
-      "notes": "Ω_bbb within lattice QCD range (14.37-14.57 GeV). T_cccc BELOW lattice range (5.6-6.2 GeV) — high-risk falsification. Vacuum Structural Scaling of f_vac. Source: heavy_quark_predictions.md, lhcb_predictions_paper_draft.md.",
+      "notes": "Ω_bbb within lattice QCD range (14.37-14.57 GeV). T_cccc BELOW lattice range (5.6-6.2 GeV) — high-risk falsification. Vacuum Structural Scaling of f_vac. Source: heavy_quark_predictions.md, lhcb_predictions_paper_draft.md. INTERPRETATION: Fully heavy exotics lack light-quark dynamical clouds, directly probing the bare topologic boundary γ.",
       "falsification": "LHCb: M(Ω_bbb) ∉ [14.2,14.7] GeV refutes octave scaling. M(T_cccc) > 5.0 GeV refutes harmonic tetraquark rule."
     },
     {
@@ -589,7 +662,7 @@
       "type": "parameter",
       "status": "external",
       "evidence": "E",
-      "confidence": 0.70,
+      "confidence": 0.7,
       "dependencies": [],
       "since": "v3.9.6",
       "notes": "SVZ estimate: (α_s/π)⟨G²⟩ ≈ 0.012 GeV⁴ (Shifman, Vainshtein, Zakharov 1979; uncertainty factor ~2–3). Used in Wilson Flow / topological susceptibility formula (PR #190). Category [E] (external literature value, not UIDT-derived). NOT to be modified without PI decision. Source: verification/scripts/verify_wilson_flow_topology.py."
@@ -612,26 +685,193 @@
       "status": "predicted",
       "evidence": "D",
       "confidence": 0.55,
-      "dependencies": ["UIDT-C-054", "UIDT-C-055"],
+      "dependencies": [
+        "UIDT-C-054",
+        "UIDT-C-055"
+      ],
       "since": "v3.9.6",
       "notes": "SVZ leading-order estimate. TENSION ALERT: z ≈ 8–10σ vs quenched lattice (185–191 MeV). NLO corrections expected +30–80%. Previous erroneous values: 55 MeV (wrong formula, PR #190), 107 MeV (partial). Corrected to 142.98 MeV via mpmath 80-dps verification (PR #213, chi_top_formula_audit.md). Falsification: If NLO-corrected χ_top^{1/4} outside [140, 220] MeV.",
       "falsification": "NLO-corrected value outside [140, 220] MeV refutes SVZ estimate applicability."
+    },
+    {
+      "id": "UIDT-C-084",
+      "statement": "Fully-heavy tetraquark T_cccc (2++) candidate at M ≈ 6200 MeV minimizes residual to the UIDT canonical value (≈ 6.215 GeV).",
+      "type": "prediction",
+      "status": "predicted",
+      "evidence": "D",
+      "confidence": 0.7,
+      "dependencies": [
+        "UIDT-C-001",
+        "UIDT-C-002",
+        "arXiv:2508.19838v3"
+      ],
+      "since": "v3.9.7",
+      "notes": "Rejects pure 1S-wave classification for higher states, supporting UIDT interpretation of topological excitation."
+    },
+    {
+      "id": "UIDT-C-085",
+      "statement": "Dynamical Dark Energy parameters (w_0 > -1, w_a < 0) from DESI DR2 BAO data show 3.1σ preference over ΛCDM.",
+      "type": "cosmology",
+      "status": "calibrated",
+      "evidence": "C",
+      "confidence": 0.85,
+      "dependencies": [
+        "UIDT-C-045",
+        "arXiv:2604.08449",
+        "arXiv:2603.26861"
+      ],
+      "since": "v3.9.7",
+      "notes": "Empirically supports the time-dependent scalar transition (sign-switching) modelled in the UIDT topological evolution."
+    },
+    {
+      "id": "UIDT-C-086",
+      "statement": "Omega_bbb lattice mass scaling precision improves with C-periodic boundary conditions, reducing Finite Volume Effects (FVE).",
+      "type": "verification",
+      "status": "verified",
+      "evidence": "D",
+      "confidence": 0.75,
+      "dependencies": [
+        "UIDT-C-053",
+        "arXiv:2602.23910"
+      ],
+      "since": "v3.9.7",
+      "notes": "Better FVE control aligns empirical values closer to UIDT 80-digit projections for heavy baryon scales."
+    },
+    {
+      "id": "UIDT-C-088",
+      "statement": "Crowding-bias in SN-Ia host galaxies shows systematic null-difference (–0.022 ± 0.029 mag) using JWST.",
+      "type": "cosmology",
+      "status": "external",
+      "evidence": "C",
+      "confidence": 0.9,
+      "dependencies": [
+        "arXiv:2401.04773"
+      ],
+      "since": "v3.9.7",
+      "notes": "Crowding hypothesis rejected at 8.2σ level. Constrains systematic errors for H_0 calibration."
+    },
+    {
+      "id": "UIDT-C-089",
+      "statement": "Cepheid-based Hubble parameter with reduced dust/metallicity systematics: H_0 = 72.68 ± 1.67 km/s/Mpc.",
+      "type": "cosmology",
+      "status": "external",
+      "evidence": "C",
+      "confidence": 0.85,
+      "dependencies": [
+        "arXiv:2509.09665"
+      ],
+      "since": "v3.9.7",
+      "notes": "Confirms ~3σ tension persists exclusively with Cepheids after systematic reductions."
+    },
+    {
+      "id": "UIDT-C-090",
+      "statement": "Residual tension between TRGB (≈ 69 km/s/Mpc) and SH0ES (73.2 km/s/Mpc) using identical geometric anchors suggests unidentified calibrator-selection systematics.",
+      "type": "cosmology",
+      "status": "external",
+      "evidence": "C",
+      "confidence": 0.8,
+      "dependencies": [
+        "UIDT-C-088",
+        "UIDT-C-089"
+      ],
+      "since": "v3.9.7",
+      "notes": "Prevents claiming resolution of the Hubble Tension via JWST photometry alone."
+    },
+    {
+      "id": "UIDT-C-091",
+      "statement": "Particle indistinguishability arises from the uniqueness of the vacuum information scalar; particles are localized topological modes rather than distinct instances.",
+      "type": "interpretation",
+      "status": "conjectured",
+      "evidence": "E",
+      "confidence": 0.6,
+      "dependencies": [
+        "UIDT-C-002"
+      ],
+      "since": "v3.9.7",
+      "notes": "Stratum III analytical projection bridging quantum statistics and topological information density. Evaluated as Category E per framework rules."
+    },
+    {
+      "id": "UIDT-C-092",
+      "statement": "Spin-1/2 behavior (720° rotation / Exchange Symmetry) is interpreted as a path-dependent coupling of local information flow to the global metric.",
+      "type": "interpretation",
+      "status": "conjectured",
+      "evidence": "E",
+      "confidence": 0.5,
+      "dependencies": [
+        "UIDT-C-001",
+        "UIDT-C-002"
+      ],
+      "since": "v3.9.7",
+      "notes": "Hypothetical geometric derivation of the 4π-symmetry requirement. Lacks formal mathematical proof."
+    },
+    {
+      "id": "UIDT-C-093",
+      "statement": "UIDT acts as a phenomenological, constraint-driven exploratory framework, complementing established Effective Field Theories (EFTs) without replacing the Standard Model formalism.",
+      "type": "interpretation",
+      "status": "conjectured",
+      "evidence": "E",
+      "confidence": 0.7,
+      "dependencies": [],
+      "since": "v3.9.7",
+      "notes": "Meta-claim defining the epistemic scope of the project. Refined mathematically in UIDT-C-095 and UIDT-C-097."
+    },
+    {
+      "id": "UIDT-C-094",
+      "statement": "Cosmological applications of the framework partially address the conceptual QM/GR transition via topological calibrations, but do not constitute a complete theory of quantum gravity.",
+      "type": "interpretation",
+      "status": "conjectured",
+      "evidence": "C",
+      "confidence": 0.9,
+      "dependencies": [],
+      "since": "v3.9.7",
+      "notes": "Strict limitation on cosmological claims to prevent overextension."
+    },
+    {
+      "id": "UIDT-C-095",
+      "statement": "The UIDT geometric scalar γ parameterizes the macroscopic IR/topological organization emerging from quantum gauge fields in the thermodynamic limit.",
+      "type": "interpretation",
+      "status": "conjectured",
+      "evidence": "E",
+      "confidence": 0.6,
+      "dependencies": [
+        "UIDT-C-001",
+        "UIDT-C-002",
+        "UIDT-C-010"
+      ],
+      "since": "v3.9.7",
+      "notes": "Formalizes the framework as an IR-effective constraint engine built upon standard QFT. Category E (interpretative/hypothetical)."
+    },
+    {
+      "id": "UIDT-C-097",
+      "statement": "γ = 16.339 may be interpreted as the macroscopic IR boundary condition of the SU(3) confinement crossover in the thermodynamic limit (L→∞), encoding the topological structure of the frozen vacuum state.",
+      "type": "interpretation",
+      "status": "conjectured",
+      "evidence": "E",
+      "confidence": 0.4,
+      "dependencies": [
+        "UIDT-C-002",
+        "UIDT-C-016",
+        "UIDT-C-043"
+      ],
+      "since": "v3.9.7",
+      "notes": "Stratum III interpretation. No numerical derivation of ΔN exists. Compatible with bare_gamma_theorem.md and rg_beta_derivation_gamma.md but not derived from them. Upgrade to [D] requires: (1) a registered ΔN value with explicit mpmath derivation, (2) falsification criterion tied to lattice measurement.",
+      "falsification": "If finite-size scaling of γ_L shows no crossover regime consistent with ΔN ≈ 5, the IR-boundary interpretation is not supported."
     }
   ],
   "statistics": {
     "category_A": 14,
     "category_A-": 4,
     "category_B": 7,
-    "category_C": 10,
-    "category_D": 9,
-    "category_E": 12,
-    "verified": 23,
-    "calibrated": 9,
-    "predicted": 10,
+    "category_C": 15,
+    "category_D": 11,
+    "category_E": 17,
+    "verified": 24,
+    "calibrated": 10,
+    "predicted": 11,
     "open": 7,
     "withdrawn": 2,
     "rectified": 1,
-    "conjectured": 2,
-    "external": 2
+    "conjectured": 8,
+    "external": 5
   }
 }
