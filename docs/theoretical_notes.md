@@ -389,27 +389,17 @@ This section records the latest high-precision comparisons between UIDT predicti
 
 ---
 
-## 12. The N=94 Cosmological Cascade (Hypothesis Under Investigation)
+## 12. N-Value Resolution: Canonical N=99
 
-**Status:** Contested / Under Investigation — N=99 (UIDT-C-050 [D]) vs N_eff=94.05 (UIDT-C-046 [E])
-**Classification:** **Category E** (Conjectured — contradicts production code N=99, no independent verification)
-**Date:** 2026-02-26
+**Status:** Resolved
+**Classification:** **Category A-** (Canonical Fit Parameter)
+**Date:** 2026-04-17 (v3.9.8)
 
-### Scientific Verdict
-The hypothesis linking the cosmological hierarchy gap to the 99 BRST degrees of freedom has been **questioned** by topological sandbox scans (Grok, Feb 2026).
+### Resolution
+The contradiction between the cosmological scale cascade values $N=99$ and proposed alternative $N=94.05$ has been definitively resolved by PI decision for WP-4.
 
-### Falsification Mechanism
-Numerical analysis demonstrated that bridging the logarithmic gap $K = \gamma^{4.95} \approx 1.01 \times 10^6$ using standard geometric phase space volumes (e.g., $(2\pi)^8$ or 3-sphere volume $2\pi^2$) leads to an overcorrection ($N \approx 99.31$).
-This requires an ad-hoc fine-tuning parameter, which violates the core axioms of the UIDT framework.
-
-### Proposed Alternative: N=94.05 (UIDT-C-046 [E])
-The **Reduced Planck Density** $\rho_{\text{Pl, red}}$ provides a geometrically consistent solution without fine-tuning:
-
-$$ N = \log_\gamma \left( \frac{\rho_{\text{Pl, red}}}{\rho_{\text{vac}}} \right) \approx 94.05 $$
-
-This value is **proposed** as an alternative baseline, pending independent verification and code update. N=99 remains in production code (covariant_unification.py, verify_brst_dof_reduction.py). The integer proximity to $N=94$ suggests a discrete conformal scaling law rather than the previously assumed $N=99$ BRST symmetry breaking cascade.
-
-**Action:** The N=99 vs N=94.05 discrepancy must be resolved before v3.10 release. Either update all code to N=94.05 with independent verification, or revert this section. Current status: **UNRESOLVED** (UIDT-C-046 [E] vs UIDT-C-050 [D]).cuum suppression from the $N \approx 94$ baseline.
+- **Canonical Baseline:** $N=99$ is explicitly established as the canonical phenomenological fit parameter (Claim UIDT-C-050, Category [A-]). All theoretical derivations and verification scripts must utilize this value to maintain consistency across the cascading dimension logic.
+- **Archiving of N=94.05:** The previously proposed value of $N=94.05$ stemming from hypothetical reduced Planck density mapping has been permanently formally archived (Claim UIDT-C-046, Category [E]) due to contradiction with established production formulas.
 
 
 ---

@@ -14,6 +14,13 @@ freedom $N_{\text{dof}} = 0$ and hence $m_{\text{eff}} = 0$.
 
 This discontinuity is the UIDT interpretation of the Yang-Mills mass gap.
 
+## 1.1 N-Value Resolution (WP-4)
+
+The cascading scale dimensions $N$ directly couple to the entropy gradient. 
+- **Canonical Value:** $N=99$ is the definitive, canonical phenomenological fit-parameter [Category A-].
+- **Archived Value:** The previously proposed value $N=94.05$ (UIDT-C-046) has been archived [Category E] as it contradicts production scaling laws.
+All active mathematical verifications rely purely on $N=99$.
+
 ## 2. Activation Function
 
 ### Standard Form

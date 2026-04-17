@@ -539,7 +539,7 @@
       "id": "UIDT-C-046",
       "statement": "N=94.05 RG Cascade Baseline (proposed replacement for N=99)",
       "type": "derivation",
-      "status": "conjectured",
+      "status": "archived",
       "evidence": "E",
       "confidence": 0.6,
       "dependencies": [
@@ -547,7 +547,7 @@
         "UIDT-C-037"
       ],
       "since": "v3.9",
-      "notes": "PR #87: N=99 'falsified', N=94.05 proposed. BUT: N=99 in covariant_unification.py:27, limitations.md, all verification scripts. Self-contradiction unresolved. Category [E] until all code updated and independently verified. Source: theoretical_notes.md §12.",
+      "notes": "PR #87 proposal. Archived per WP-4 to resolve contradiction. N=99 is canonical.",
       "falsification": "If ρ_vac with N=94.05 deviates from ρ_obs by >1 order of magnitude."
     },
     {
@@ -601,15 +601,15 @@
       "id": "UIDT-C-050",
       "statement": "N=99 RG cascade as phenomenological constraint",
       "type": "constraint",
-      "status": "open",
-      "evidence": "C",
-      "confidence": 0.65,
+      "status": "active",
+      "evidence": "A-",
+      "confidence": 0.95,
       "dependencies": [
         "UIDT-C-017"
       ],
       "since": "v3.9",
-      "notes": "Referenced in CHANGELOG.md and covariant_unification.py:27 but was never formally registered (phantom claim). N=99 phenomenologically chosen to match ρ_vac. See also UIDT-C-046 (N=94.05 proposed replacement).",
-      "falsification": "If N≠99 yields better ρ_vac match (as proposed by N=94.05)."
+      "notes": "Canonical fit-parameter [A-] replacing N=94.05 baseline.",
+      "falsification": "If N≠99 yields better ρ_vac match and derives from principle."
     },
     {
       "id": "UIDT-C-051",

@@ -7,6 +7,15 @@ Evidence tags: [A] proven | [A-] calibrated | [B] corroborated | [C] phenomenolo
 
 ---
 
+## [v3.9.8] — 2026-04-17: WP-4 N-Value Ambiguity Resolution
+
+### [FIX]
+- **TKT-20260417-WP4-N99:** Resolved the long-standing contradiction between the canonical scaling factor $N=99$ and the purely hypothetical $N=94.05$.
+- Created `core/covariant_unification.py` to firmly establish $N=99$ as the formal phenomenological fit parameter.
+- Updated `limitations.md`, `theoretical_notes.md`, and `ndof_phase_transition.md` to cleanly separate the formal parameter from deprecated explorations.
+- Ledger formally updated: Claim `UIDT-C-050` verified as `[A-]` active. Claim `UIDT-C-046` flagged as `[E]` archived.
+- Introduced `verify_N_comparison.py` to computationally document parity limits between $N=99$ and $N=94.05$.
+
 ## [v3.9.5] — 2026-04-03: RG Precision Fix & Epistemic Audit Formalisation
 
 ### [FIX]

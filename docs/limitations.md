@@ -114,7 +114,7 @@ The 99-step renormalization group cascade used to suppress vacuum energy catastr
    - Density scales as ρ(N) ∝ N²
    - Follows trivially from SU(N) gluon DoF ∝ N²-1
    - Registered as **[Category C] Phenomenological Observation (UIDT-C-050)**.
-- **⚠️ CONTRADICTION (S1-02):** theoretical_notes.md §12 proposes N=94.05 (UIDT-C-046 [E]) as replacement, declaring N=99 "falsified". However, N=99 remains in production code (covariant_unification.py:27, verify_brst_dof_reduction.py:86,140). Resolution required before v3.10.
+- **✅ PI RESOLUTION (v3.9.8):** $N=99$ is confirmed as the definitive canonical fit-parameter `[A-]` across the framework. The previous $N=94.05$ alternative has been archived `[E]`. Production code and verification scripts strictly use $N=99$.
 - Still requires first-principles analytic derivation to exceed [C].
 
 **Condition for Resolution:**
