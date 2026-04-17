@@ -31,7 +31,7 @@
 
 **Falsification Threshold:** Five independent experimental pathways with specific numerical predictions:
 - Casimir anomaly +0.59% at 0.66 nm (Category D: **predicted, unverified**)
-- Glueball resonance at 1.705 ± 0.015 GeV (Category B: lattice-consistent)
+- Scalar Resonance at 1.705 ± 0.015 GeV (Category B: lattice-consistent)
 - Absence of Torsion Energy (E_T → 0) in precision hadron spectroscopy (Category A)
 - DESI dark energy evolution w₀ = −0.99 [C] (Canonical per Decision D-002, DESI-calibrated)
 - Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D (Extended): analog verification)
@@ -79,8 +79,8 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 | **Lattice Torsion Binding Energy (E_T)** | 2.44 MeV | Category C – Missing Link [calibrated] |
 | **Holographic Length (λ)** | 0.66 nm | Category C (DESI-calibrated) |
 | **Hubble Constant (H₀)** | 70.4 km/s/Mpc | Category C – intermediate calibrated value consistent with JWST within uncertainties; does **not** address the H₀ tension |
-| **Scalar Mass (mₛ)** | 1.705 ± 0.015 GeV | Self-consistent solution |
-| **Vacuum Expectation (v)** | **47.7 ± 0.5 MeV** | Clean State |
+| **Scalar Mass (mₛ)** | 1.705 ± 0.015 GeV | Category B (Lattice Consistent) |
+| **Vacuum Expectation (v)** | **47.7 ± 0.5 MeV** | Category A (Mathematical Consistency) |
 
 ---
 
@@ -138,7 +138,7 @@ Three-Equation System Closure:
 * **Achievement:** Falsifiable, falsifiable predictions for precision and collider experiments.
 * **Predictions:**
 * **Thermodynamic Censorship (Wolpert Limit):** Formalizes the fundamental noise floor at ** MeV**, providing an analytical origin for the **X17 anomaly**.
-* **Blind Resonances:** Predicts the BESIII **X2370 resonance** as a harmonic overtone, alongside higher glueball states (Tensor  at 2.418 GeV).
+* **Blind Resonances:** Predicts the BESIII **X2370 resonance** as a harmonic overtone, alongside higher resonance states (Tensor structure at 2.418 GeV).
 * **Casimir Anomaly:**  deviation at  nm (**Category D**).
 
 
