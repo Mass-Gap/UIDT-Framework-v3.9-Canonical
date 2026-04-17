@@ -284,6 +284,8 @@ def _utc_now_iso() -> str:
 
 
 def _run_git(repo_root: Path, args: list[str]) -> str:
+    # Security: Use a list for subprocess.run to avoid shell injection.
+    # Callers should use the "--" separator where appropriate to prevent argument injection.
     p = subprocess.run(
         ["git", "--no-pager", *args],
         cwd=str(repo_root),
@@ -602,7 +604,7 @@ def main() -> int:
     head = _run_git(repo_root, ["rev-parse", "HEAD"])
     short = _run_git(repo_root, ["rev-parse", "--short", "HEAD"])
     try:
-        last_tag = _run_git(repo_root, ["describe", "--tags", "--abbrev=0"])
+        last_tag = _run_git(repo_root, ["describe", "--tags", "--abbrev=0", "--"])
     except Exception:
         last_tag = ""
 
@@ -1282,7 +1284,7 @@ def main() -> int:
             }
         )
     try:
-        commits_raw = _run_git(repo_root, ["log", f"{last_tag}..HEAD", "--oneline", "--decorate", "-n", "200"])
+        commits_raw = _run_git(repo_root, ["log", "--oneline", "--decorate", "-n", "200", "--", f"{last_tag}..HEAD"])
     except Exception:
         commits_raw = ""
     if commits_raw:
