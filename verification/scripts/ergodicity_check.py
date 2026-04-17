@@ -1,7 +1,6 @@
 import sys
 import os
 import numpy as np
-import time
 from scipy.linalg import expm
 
 # Add the path to the simulation script
