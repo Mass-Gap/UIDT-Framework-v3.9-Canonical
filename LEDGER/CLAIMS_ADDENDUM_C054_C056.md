@@ -80,6 +80,40 @@
 
 ---
 
+## NLO-FRG Topological Susceptibility Update (TKT-20260417-WP1-NLO-FRG)
+
+> **Date:** 2026-04-18 | **Script:** `verification/scripts/nlo_frg_topological_susceptibility.py`
+
+The χ_top tension documented in `UIDT-C-TOPO-01` has been re-evaluated
+using NLO corrections from three independent enhancement channels:
+
+| Channel | Factor | Source |
+|---------|--------|--------|
+| Perturbative NLO | F_NLO = 1.350 | 1 + (α_s/π) · b₀/3, [5] |
+| Anomalous Scaling | F_η = 1.125 | (Δ*/Λ_QCD)^{η_*}, UIDT-C-070 |
+| Dyson Resummation | F_Dyson = 1.279 | (1 + w_g_phys)³, GAP_ANALYSIS_CLAY.md |
+| **Combined** | **F_total = 1.943** | Product of three channels |
+
+**Result:**
+
+| Metric | LO (before) | NLO (after) |
+|--------|-------------|-------------|
+| χ_top^{1/4} | 142.98 MeV | 168.81 MeV |
+| z-score (min, vs Cè 2015) | ~8.4σ | **3.24σ** |
+| z-score (max, vs Del Debbio 2004) | ~9.6σ | 4.44σ |
+| Category A gates | PASS | PASS |
+
+**Assessment:** The NLO correction reduces the tension from ~8-16σ → ~3.2-4.4σ.
+This is a dramatic improvement but does **not** yet reach the Category B threshold (z < 2).
+Status: **UNDER TENSION (CONTROLLED)** — further reduction requires full momentum-dependent
+vertex projection (GAP-FRG-001).
+
+> C-056 in CLAIMS.json is already reframed as EFT correction via PR #303 (v3.9.7).
+> C-096 (NLO-RG conjecture, [E]) is registered.
+> C-TOPO-01 remains Category D with CONTROLLED tension annotation.
+
+---
+
 ## OPUS Advisory: Claim-ID Namespace (2026-04-05)
 
 > **FOR OPUS / PI REVIEW:**
