@@ -38,7 +38,7 @@
           },
           "status": {
             "type": "string",
-            "enum": ["verified", "calibrated", "predicted", "rectified", "open", "withdrawn", "conjectured"],
+            "enum": ["verified", "calibrated", "predicted", "rectified", "open", "withdrawn", "conjectured", "external"],
             "description": "Current claim status"
           },
           "evidence": {
