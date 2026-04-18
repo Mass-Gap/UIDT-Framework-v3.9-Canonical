@@ -21,7 +21,7 @@
 >
 > Due to my severe disability, I initially delegated the administrative and formatting aspects of the v3.3 publication to external agencies to ensure a timely release. Regrettably, it became apparent that the standards of precision required for this theoretical framework were not met by these third parties, leading to significant inconsistencies in the data structure.
 >
-> **Action Taken:** The DOI record for v3.3 has been **permanently withdrawn and deleted**. Version 3.9 represents the clean, verified, and definitive implementation of the theory, free from external interference.
+> **Action Taken:** The DOI record for v3.3 has been **permanently withdrawn and deleted**. Version 3.9 represents the clean, verified, and canonical implementation of the framework, free from external interference.
 
 > [!NOTE]
 > **Framework Scope and Status**
