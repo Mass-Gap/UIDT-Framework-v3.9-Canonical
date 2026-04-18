@@ -3,6 +3,22 @@
 > **Stratum I/II:** Empirical assessment and scientific consensus comparison  
 > **Version:** v3.9 | **Source:** report.2025.pdf (Rietz, P., 2025)
 > **DOI:** https://doi.org/10.17605/osf.io/wdyxc
+>
+> **Sync note (2026-04-18, TKT-20260418):**  
+> A full first-principles epistemic audit for the same parameters (γ = 16.339,
+> E_T = 2.44 MeV, ~17.1 MeV thermodynamic limit) was conducted on 2026-03-30
+> and is documented in [`epistemic_audit_2026-03-30.md`](./epistemic_audit_2026-03-30.md).
+> Key findings from that audit that supersede or extend this 2025 review:
+>
+> | Parameter | 2025 Review Status | 2026 Audit Update |
+> |---|---|---|
+> | γ = 16.339 | consistent with A- | No external crosscheck found; upgrade path to [B] requires TKT-20260403-FRG-NLO |
+> | E_T = 2.44 MeV | consistent with C | FLAG 2024 (arXiv:2411.04268) tension documented (3.75σ pre-QED, 0.75σ post-QED) |
+> | ~17.1 MeV limit | plausible | downgraded to [E] — no QFT Wolpert analogue found in literature |
+> | δγ = δ_NLO claim | not evaluated | **downgraded to [E]** — discrepancy factor ~9 at NLO (PR #199, §1.4) |
+>
+> This 2025 review remains valid as a Stratum I/II baseline; the 2026 audit is the
+> current authoritative epistemic status document.
 
 ---
 
@@ -81,5 +97,6 @@ Epistemic Stratification required by the UIDT System Directive.
 
 - `docs/theory_comparison.md` — quantitative comparison
 - `docs/experimental_roadmap.md` — future tests
-- `docs/falsification_criteria.md` — falsification matrix
+- `docs/falsification-criteria.md` — falsification matrix (canonical)
+- `docs/epistemic_audit_2026-03-30.md` — **current epistemic status document** (supersedes sections above)
 - `FORMALISM.md` — canonical formalism
