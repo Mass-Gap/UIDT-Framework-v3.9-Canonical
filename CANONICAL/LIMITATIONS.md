@@ -170,6 +170,13 @@ Corrected to v = 47.7 MeV. Old value was erroneous.
 
 ---
 
+## H₀ TENSION STATUS (April 2026)
+UIDT predicts H₀ = 70.4 km/s/Mpc [C].
+This value is calibrated to DESI DR2.
+The Hubble tension (SH0ES 73.2 vs Planck 67.4, 5.3-6.3σ) is NOT RESOLVED by this coincidence.
+CCHP 2025 (70.4) and UIDT share the same value for independent methodological reasons.
+FORBIDDEN: declaring the tension 'resolved' or 'solved' per UIDT Language Rules.
+
 ## Falsification Triggers
 
 If any of these occur, UIDT requires major revision:
