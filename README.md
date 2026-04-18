@@ -43,27 +43,33 @@
 
 ---
 
-<div align="center">
+## Documentation Index
 
-### THE UNIVERSAL MASS GAP CONSTANT
+### Canonical entry points
+- [`README.md`](./README.md) — repository overview and claim hierarchy
+- [`FORMALISM.md`](./FORMALISM.md) — formalism snapshot
+- [`GLOSSARY.md`](./GLOSSARY.md) — terminology
+- [`LEDGER/`](./LEDGER) — immutable parameter and claim ledger
+- [`manuscript/`](./manuscript) — manuscript source of truth
+- [`verification/`](./verification) — reproducibility and verification scripts
 
-# $\Delta^*$
+### Recommended technical documents
+- [`docs/bare_gamma_theorem.md`](./docs/bare_gamma_theorem.md)
+- [`docs/cosmological_implications_v3.9.md`](./docs/cosmological_implications_v3.9.md)
+- [`docs/falsification-criteria.md`](./docs/falsification-criteria.md)
+- [`docs/evidence-classification.md`](./docs/evidence-classification.md)
+- [`docs/experimental_roadmap.md`](./docs/experimental_roadmap.md)
+- [`docs/PR_Review_Protocol_v2.0.md`](./docs/PR_Review_Protocol_v2.0.md)
+- [`docs/citation-guide.md`](./docs/citation-guide.md)
+- [`docs/data-availability.md`](./docs/data-availability.md)
+- [`docs/README.md`](./docs/README.md) — documentation landing page
 
-<div style="background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 20px; font-family: 'Courier New', monospace; font-size: 11px; word-break: break-all; text-align: left; max-width: 800px; margin: 0 auto; color: #24292f; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-<strong>1.710035046742213182020771096611622363294044242291085581231747999663464376395570369445002815542192033041630851992293577578337148116022890290326969033792718321530044021016130813146135502941908808474427620022069439336733684080990670841868721862693239644</strong>
-</div>
-
-### GeV
-
-*(Established analytic precision limit $\mathcal{O}(10^{-280})$)*
-
-<br>
-
-[![Banach Convergence](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/blob/main/figures/supplementary/uidt_visualize1.png?raw=true)](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/blob/main/figures/supplementary/uidt_visualize1.png?raw=true)
-
-**Figure 1:** Algorithmic proof of non-perturbative mass generation. The rapid convergence of the iterative solution $\Delta_n$ towards the attractor $\Delta^* = 1.710$ GeV demonstrates the unique existence of a stable vacuum state.
-
-</div>
+### Audit trail
+- [`docs/critical_review_2025.md`](./docs/critical_review_2025.md)
+- [`docs/epistemic_audit_2026-03-30.md`](./docs/epistemic_audit_2026-03-30.md)
+- [`docs/first_principles_evidence_audit_2026-03-30.md`](./docs/first_principles_evidence_audit_2026-03-30.md)
+- [`docs/archive/`](./docs/archive)
+- [`docs/archival-notes/`](./docs/archival-notes)
 
 ---
 
@@ -204,44 +210,6 @@ Executes the Four-Pillar Verification Suite (v3.9).
 
 ```bash
 python verification/scripts/UIDT_Master_Verification.py
-```
-
-**Expected Output (v3.9):**
-
-```text
-╔══════════════════════════════════════════════════════════════╗
-║  UIDT v3.9 MASTER VERIFICATION SUITE (Hybrid Engine)         ║
-║  Strategies: Scipy Solver + Mpmath High-Precision Prover     ║
-╚══════════════════════════════════════════════════════════════╝
-
-[1] RUNNING NUMERICAL SOLVER (System Consistency)...
-   > Solution Found: m_S=1.7050, kappa=0.5001
-   > System Status: ✅ CLOSED
-
-[2] EXECUTING HIGH-PRECISION PROOF (80 Digits)...
-   > Banach Fixed Point: 1.710035046742213182... GeV
-   > Vacuum Energy:      2.447165543834107377... GeV^4
-   > THEOREM 3.4: ✅ PROVEN (Existence & Uniqueness)
-
-[3] PILLAR II: DERIVING MISSING LINK (Lattice Topology)...
-   > Geometry Base: 104.66 MeV
-   > Torsion Energy (E_T): 2.44 MeV
-   > Vacuum Resonance (f_vac): 107.10 MeV
-
-[4] PILLAR III: SPECTRAL EXPANSION & PREDICTIONS...
-   > X17 Noise Floor: 17.10 MeV
-   > X2370 Resonance: 2.370 GeV
-
-[5] PILLAR IV: PHOTONIC APPLICATION (Metamaterials, Category D)...
-   > Critical Refractive Index (n): 16.3390
-```
-
-**2. Containerized Audit**
-Run the Master Verification Suite in a completely isolated environment:
-
-```bash
-docker build -t uidt-verify-v3.9 .
-docker run uidt-verify-v3.9
 ```
 
 ---
