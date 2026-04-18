@@ -474,7 +474,7 @@
       "confidence": 0.70,
       "dependencies": ["UIDT-C-001", "UIDT-C-002", "UIDT-C-048"],
       "since": "v3.9",
-      "notes": "E_T = f_vac − Δ/γ = 107.10 − 104.66 MeV. Shows 3.75σ tension with FLAG 2024 m_u=2.14±0.08 MeV (pre-QED correction). After QED: m_u^phys≈2.08 MeV (0.75σ). NOT [B]: z=3.75σ fails B threshold. Upgraded [D]→[C] per PR #216 (A5, 2026-04-06): composite scaling-limit parameter. CONSTANTS.md v3.9.5 authoritative. Source: theoretical_notes.md §7,§13.",
+      "notes": "E_T = f_vac − Δ/γ = 107.10 − 104.66 MeV. Shows 4.0σ PDG 2025 tension (m_u=2.16±0.07 MeV). After QED: m_u^phys≈2.08 MeV (0.75σ). NOT [B]: z=4.0σ fails B threshold. Upgraded [D]→[C] per PR #216 (A5, 2026-04-06): composite scaling-limit parameter. CONSTANTS.md v3.9.5 authoritative. Source: theoretical_notes.md §7,§13.",
       "falsification": "If lattice QCD excludes 2.44 MeV bare torsion at >5σ, E_T is refuted."
     },
     {
@@ -533,7 +533,7 @@
       "confidence": 0.60,
       "dependencies": ["UIDT-C-001", "UIDT-C-002", "UIDT-C-044", "UIDT-C-048"],
       "since": "v3.9",
-      "notes": "Multiplicative rules lack first-principles derivation. M(u)=2.44 has 3.75σ FLAG tension (pre-QED). NO uncertainties stated. NOT [B]: fails z<1σ. Source: quark_mass_hierarchy_prediction.md, theoretical_notes.md §7,§9,§13.",
+      "notes": "Multiplicative rules lack first-principles derivation. M(u)=2.44 has 4.0σ PDG 2025 tension. NO uncertainties stated. NOT [B]: fails z<1σ. Source: quark_mass_hierarchy_prediction.md, theoretical_notes.md §7,§9,§13.",
       "falsification": "If M(d)/M(u)≠2.0 at >3σ, or M(s) deviates from 93.81 MeV by >10%."
     },
     {
