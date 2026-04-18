@@ -45,7 +45,7 @@ This document serves as the **comprehensive operational specification** for the 
 **Examples:**
 - Δ = 1.710 ± 0.015 GeV (spectral gap) [A]
 - κ = 0.500 ± 0.008 [A]
-- λ_S = 0.417 ± 0.007 [A]
+- λ_S = 5κ²/3 = 0.41̄6̄ ± 0.007 [A]
 - 5κ² = 3λ_S constraint [A]
 - v = 47.7 MeV [A]
 
