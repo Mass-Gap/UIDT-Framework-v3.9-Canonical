@@ -1,10 +1,10 @@
 {
   "metadata": {
     "version": "3.9.7",
-    "last_updated": "2026-04-17",
+    "last_updated": "2026-04-18",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 57,
-    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification. | v3.9.7 (2026-04-17): C-056 notes extended with EFT/IR reframing context. Added UIDT-C-096 (NLO-RG conjecture for χ_top tension, [E]). Session audit 2026-04-16/17."
+    "total_claims": 61,
+    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification. | v3.9.7 (2026-04-17): C-056 notes extended with EFT/IR reframing context. Added UIDT-C-096 (NLO-RG conjecture for χ_top tension, [E]). Session audit 2026-04-16/17. | v3.9.7-patch (2026-04-18): Added C-057 [D] (vacuum indistinguishability), C-058 [E] (fermionic 4π-symmetry), C-098 [E] (SU(3) crossover width ΔN conjecture, renumbered from draft C-096 to avoid collision), C-099 [E] (γ IR boundary condition, renumbered from draft C-097). Extended C-018/C-056 notes."
   },
   "claims": [
     {
@@ -188,7 +188,7 @@
       "evidence": "E",
       "dependencies": [],
       "since": "v3.2",
-      "notes": "HIGHEST PRIORITY open question"
+      "notes": "HIGHEST PRIORITY open question. Session 2026-04-16: actual scale ratio λ_UIDT/r_conf ≈ 10^6.5, not 10^10. Problem statement in LIMITATIONS.md requires UV/IR scale specification. See TKT-UIDT-L1-SCALE-DEFINITION."
     },
     {
       "id": "UIDT-C-019",
@@ -614,7 +614,7 @@
       "confidence": 0.55,
       "dependencies": ["UIDT-C-054", "UIDT-C-055"],
       "since": "v3.9.6",
-      "notes": "SVZ leading-order estimate. TENSION ALERT: z ≈ 8–10σ vs quenched lattice (185–191 MeV). NLO corrections expected +30–80%. Previous erroneous values: 55 MeV (wrong formula, PR #190), 107 MeV (partial). Corrected to 142.98 MeV via mpmath 80-dps verification (PR #213, chi_top_formula_audit.md). Under the IR/EFT reframing (v3.9.7), this tension is interpreted as evidence for missing NLO anomalous-dimension corrections in the SVZ operator and RG-flow truncation errors at scale μ ∼ Δ*. This does NOT affect the Category-A spectral gap Δ* or the Category-A- coupling γ. See UIDT-C-096 (NLO research programme). TENSION ALERT remains active until NLO result available.",
+      "notes": "SVZ leading-order estimate. TENSION ALERT: z ≈ 8–10σ vs quenched lattice (185–191 MeV). NLO corrections expected +30–80%. Previous erroneous values: 55 MeV (wrong formula, PR #190), 107 MeV (partial). Corrected to 142.98 MeV via mpmath 80-dps verification (PR #213, chi_top_formula_audit.md). Under the IR/EFT reframing (v3.9.7), this tension is interpreted as evidence for missing NLO anomalous-dimension corrections in the SVZ operator and RG-flow truncation errors at scale μ ∼ Δ*. This does NOT affect the Category-A spectral gap Δ* or the Category-A- coupling γ. See UIDT-C-096 (NLO research programme). TENSION ALERT remains active until NLO result available. Session 2026-04-16: TENSION confirmed. NLO-FRG study required (TKT-20260403-FRG-NLO). Upgrade path: [D]→[B] requires NLO-corrected value within 1σ of lattice.",
       "falsification": "NLO-corrected value outside [140, 220] MeV refutes SVZ estimate applicability."
     },
     {
@@ -628,6 +628,54 @@
       "since": "v3.9.7",
       "notes": "Category [E] — interpretive conjecture. Formalises the NLO-RG research programme for C-056. No numerical result exists. Upgrade to [D] requires reproducible NLO-FRG script under verification/scripts/ with mp.dps=80 and residual < 1e-14 on all Category-A constraints. Upgrade to [C] requires external lattice cross-check. TENSION ALERT on C-056 remains active until Task T-2 delivers a numerical result. Session origin: 2026-04-16/17 audit.",
       "falsification": "If a complete NLO-FRG truncation at LPA' level cannot bring χ_top^{1/4} within 3σ of quenched lattice QCD without violating 5κ² = 3λ_S, the UIDT topological sector mapping is structurally incompatible with lattice QCD at NLO."
+    },
+    {
+      "id": "UIDT-C-057",
+      "statement": "Particle indistinguishability emerges from the uniqueness of the vacuum information scalar S(x); particles are local topological modes of S(x), not instances with serial numbers.",
+      "type": "interpretation",
+      "status": "conjectured",
+      "evidence": "D",
+      "confidence": 0.60,
+      "dependencies": ["UIDT-C-001", "UIDT-C-002"],
+      "since": "v3.9.7",
+      "notes": "Analytical projection [D]: maps QFT indistinguishability (Stratum II) onto UIDT Stratum III. No mathematical first-principles proof. Consistent with QFT field-excitation picture but adds no independently testable prediction beyond Standard QFT at this stage. Upgrade path: [D]→[C] requires a concrete observable consequence distinguishable from QFT baseline.",
+      "falsification": "If an observable consequence of this mapping predicts a deviation from Fermi-Dirac statistics and no such deviation is found."
+    },
+    {
+      "id": "UIDT-C-058",
+      "statement": "The 720°-rotation symmetry (SU(2) half-integer spin, 4π periodicity) is interpreted as path-dependent coupling of local information flow to the global metric of the vacuum scalar S(x).",
+      "type": "interpretation",
+      "status": "conjectured",
+      "evidence": "E",
+      "confidence": 0.40,
+      "dependencies": ["UIDT-C-001", "UIDT-C-002", "UIDT-C-057"],
+      "since": "v3.9.7",
+      "notes": "Speculative Stratum-III interpretation [E]. No derivation of the fermionic phase factor (−1 after 360°) from γ=16.339 [A-] or Δ*=1.710 GeV [A] exists. Category [E] per Evidence Decision Matrix: no external data calibration. Upgrade path: [E]→[D] requires formal algebraic derivation with zero free parameters.",
+      "falsification": "If a formal derivation attempt from UIDT Lagrangian yields a phase factor ≠ −1 after 360° rotation."
+    },
+    {
+      "id": "UIDT-C-098",
+      "statement": "The SU(3) confinement crossover has a finite width in RG-flow space, conjectured as ΔN ≈ 5 steps, representing the transition zone between asymptotic freedom and the IR confinement regime.",
+      "type": "hypothesis",
+      "status": "conjectured",
+      "evidence": "E",
+      "confidence": 0.35,
+      "dependencies": ["UIDT-C-001", "UIDT-C-016", "UIDT-C-017"],
+      "since": "v3.9.7",
+      "notes": "Stratum-III conjecture [E]. ΔN ≈ 5 is NOT registered in CONSTANTS.md and has NO mpmath derivation. The underlying physical picture (crossover as finite RG-width) is legitimate as Stratum-III interpretation compatible with lattice evidence for crossover vs. sharp phase transition. Upgrade path: [E]→[D] requires (1) explicit mpmath 80-dps derivation of ΔN, (2) registration in CONSTANTS.md, (3) falsification criterion tied to lattice finite-size scaling. Renumbered from draft C-096 to avoid collision with existing UIDT-C-096 (NLO-RG conjecture).",
+      "falsification": "If lattice finite-size scaling shows a sharp first-order transition (not crossover) in the relevant energy regime."
+    },
+    {
+      "id": "UIDT-C-099",
+      "statement": "γ = 16.339 may be interpreted as the macroscopic IR boundary condition of the SU(3) confinement crossover in the thermodynamic limit (L→∞), encoding the topological structure of the frozen vacuum state.",
+      "type": "interpretation",
+      "status": "conjectured",
+      "evidence": "E",
+      "confidence": 0.40,
+      "dependencies": ["UIDT-C-002", "UIDT-C-016", "UIDT-C-043", "UIDT-C-098"],
+      "since": "v3.9.7",
+      "notes": "Stratum-III interpretation [E]. Compatible with bare_gamma_theorem.md and rg_beta_derivation_gamma.md but NOT derived from them. γ is [A-] phenomenological, not [A] derived. Upgrade path: [E]→[D] requires (1) a registered ΔN value with explicit mpmath derivation (UIDT-C-098 prerequisite), (2) falsification criterion tied to lattice measurement of γ_L at finite L. Renumbered from draft C-097 to avoid collision.",
+      "falsification": "If finite-size scaling of γ_L shows no crossover regime consistent with ΔN ≈ 5, the IR-boundary interpretation is not supported."
     }
   ],
   "statistics": {
@@ -635,15 +683,15 @@
     "category_A-": 4,
     "category_B": 7,
     "category_C": 9,
-    "category_D": 8,
-    "category_E": 15,
+    "category_D": 9,
+    "category_E": 18,
     "verified": 22,
     "calibrated": 8,
     "predicted": 10,
     "open": 6,
     "withdrawn": 2,
     "rectified": 1,
-    "conjectured": 4,
+    "conjectured": 7,
     "external": 2
   }
 }
