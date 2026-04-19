@@ -23,7 +23,7 @@ Derive geometric factor from fundamental principles (topology, holography, etc.)
 ---
 
 ### L2: Electron Mass Discrepancy
-**Status:** ⚠️ PARTIAL
+**Status:** ❌ EW FALSIFIED
 
 **Description:**  
 Electron mass formula shows 23% residual (was 3.2% in earlier versions).
@@ -36,6 +36,27 @@ Electron mass formula shows 23% residual (was 3.2% in earlier versions).
 Improved electroweak coupling in UIDT framework
 
 **Note:** v3.6.1 patch addressed some issues but not fully resolved.
+
+**Task-22 EW Correction Audit (2026-04-18):**
+The electroweak correction m = Δ_MeV/(γⁿ·cos²θ_W)
+was tested against PDG masses using
+sin²θ_W = 0.23156 (arXiv:2601.20717, CMS 2026,
+proceedings-level, [A-]).
+
+Electron (n=3): residual −0.161% after correction.
+However, the required factor 1.30344 and
+cos⁻²θ_W = 1.30134 differ by 0.16%  —
+this is a post-hoc numerical near-coincidence,
+not a first-principles derivation. [E]
+
+Muon (n=1): residual +28.9% after correction.
+[TENSION ALERT]: 29% vs SM Lepton-Universality
+(<0.1% experimental, Stratum I).
+
+CONCLUSION: The cos²θ_W correction handle is
+falsified for the muon. L2 remains OPEN.
+EW approach does NOT resolve L2.
+Evidence category for EW approach: [E].
 
 ---
 
@@ -162,7 +183,7 @@ Corrected to v = 47.7 MeV. Old value was erroneous.
 | ID      | Limitation                          | Impact on Claims              | Priority    |
 |---------|--------------------------------------|-------------------------------|-------------|
 | L1      | 10¹⁰ factor                         | λ_UIDT [C→D if unresolved]    | 🔴 High     |
-| L2      | Electron mass                        | m_e formula approximate       | 🟡 Medium   |
+| L2      | Electron mass                        | m_e formula approximate       | ❌ EW FALSIFIED |
 | L3      | Vacuum energy                        | ρ_vac factor 2.3              | 🟢 Accepted |
 | L4      | γ not from RG                        | γ remains [A-] not [A]        | 🔴 High     |
 | L5      | N=99 unjustified                     | RG cascade phenomenological   | 🟡 Medium   |

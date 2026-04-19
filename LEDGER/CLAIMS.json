@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "version": "3.9.6",
-    "last_updated": "2026-04-13",
+    "version": "3.9.8",
+    "last_updated": "2026-04-18",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 56,
-    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification."
+    "total_claims": 57,
+    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification. | v3.9.8 (2026-04-18): Task-22 EW Correction Audit. Added UIDT-C-097 (lepton mass formula falsification)."
   },
   "claims": [
     {
@@ -616,6 +616,21 @@
       "since": "v3.9.6",
       "notes": "SVZ leading-order estimate. TENSION ALERT: z ≈ 8–10σ vs quenched lattice (185–191 MeV). NLO corrections expected +30–80%. Previous erroneous values: 55 MeV (wrong formula, PR #190), 107 MeV (partial). Corrected to 142.98 MeV via mpmath 80-dps verification (PR #213, chi_top_formula_audit.md). Falsification: If NLO-corrected χ_top^{1/4} outside [140, 220] MeV.",
       "falsification": "NLO-corrected value outside [140, 220] MeV refutes SVZ estimate applicability."
+    },
+    {
+      "id": "UIDT-C-097",
+      "statement": "Lepton mass formula m = Δ_MeV / (γⁿ · cos²θ_W): Electron (n=3): residual -0.161% [D]. Muon (n=1): residual +28.9% after EW correction — SM Lepton-Universality violated at ~29% level.",
+      "type": "hypothesis",
+      "status": "open",
+      "evidence": "E",
+      "confidence": 0.20,
+      "dependencies": [
+        "UIDT-C-001",
+        "UIDT-C-002"
+      ],
+      "since": "v3.9.8",
+      "notes": "EW correction (cos²θ_W) does NOT resolve muon mass residual. 29% discrepancy violates SM Lepton-Universality (verified <0.1% experimentally, ATLAS/CMS/LEP). Electron 'success' (-0.161%) is post-hoc numerical fit: required factor 1.30344 vs cos⁻²θ_W = 1.30134, diff = 0.16%. Model falsified for muon. Evidence [E]: quantum numbers n=1,3 not derived. See LIMITATIONS.md L2 (updated).",
+      "falsification": "If lepton mass formula with SAME EW correction produces <5% residual for ALL leptons simultaneously."
     }
   ],
   "statistics": {
@@ -624,11 +639,11 @@
     "category_B": 7,
     "category_C": 9,
     "category_D": 8,
-    "category_E": 14,
+    "category_E": 15,
     "verified": 22,
     "calibrated": 8,
     "predicted": 10,
-    "open": 6,
+    "open": 7,
     "withdrawn": 2,
     "rectified": 1,
     "conjectured": 3,
