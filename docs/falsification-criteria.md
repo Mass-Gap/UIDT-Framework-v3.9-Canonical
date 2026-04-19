@@ -243,7 +243,7 @@ Comparison with quenched SU(3) lattice QCD measurements of χ_top^{1/4}
 If the fully NLO-corrected χ_top^{1/4} falls **outside** the range [140, 220] MeV → **SVZ ESTIMATE INAPPLICABLE**
 
 **Current Status:**
-⚠️ **TENSION** — UIDT SVZ LO: 143 MeV vs quenched lattice: 185–191 ± 5 MeV (z ≈ 8–10σ)
+⚠️ **TENSION** — UIDT SVZ LO: 143 MeV vs quenched lattice: 198.1 ± 2.8 MeV (Dürr et al. 2025, arXiv:2501.08217) (z ≈ 19.7σ (LO), z ≈ 4.2σ (NLO×1.3023))
 
 **Timeline:**
 - **2026:** NLO corrections to SVZ estimate (+30–80% expected)

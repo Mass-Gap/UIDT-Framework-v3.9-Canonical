@@ -7,18 +7,25 @@
 
 ## Active Limitations (Unresolved)
 
-### L1: 10¹⁰ Geometric Factor
-**Status:** 🔬 HIGHEST PRIORITY
+### L1: Geometric Scale Factor (Ill-Defined)
+**Status:** 🔬 HIGHEST PRIORITY — PROBLEM STATEMENT REQUIRES CLARIFICATION
 
 **Description:**  
-The ratio λ_UIDT / λ_theoretical involves a factor of ~10¹⁰ that lacks first-principles derivation.
+Previous versions stated "a factor of ~10¹⁰" without specifying reference scales.
+mpmath 80-dps analysis (TKT-20260416-L1L4L5-analysis.md) reveals:
+
+  λ_UIDT / r_conf = 0.660 nm / 0.197 fm = 3.35 × 10⁶ ≈ 10^6.5 (NOT 10¹⁰)
+
+The actual ratio depends on which UV/IR scales are compared. No energy ratio
+in the Standard Model yields exactly 10¹⁰. Closest approach: λ_UIDT/r_conf ≈ α⁻³ × 1.302.
 
 **Impact:**  
 - λ_UIDT calibrated [C] instead of derived [A]
-- Undermines claim of "parameter-free" theory
+- The problem is real but was previously ill-defined
 
 **Condition for Resolution:**  
-Derive geometric factor from fundamental principles (topology, holography, etc.)
+1. Precisely define which UV and IR scales are compared
+2. Derive the geometric factor from first principles (topology, holography, or α⁻³ connection)
 
 ---
 
@@ -161,7 +168,7 @@ Corrected to v = 47.7 MeV. Old value was erroneous.
 
 | ID      | Limitation                          | Impact on Claims              | Priority    |
 |---------|--------------------------------------|-------------------------------|-------------|
-| L1      | 10¹⁰ factor                         | λ_UIDT [C→D if unresolved]    | 🔴 High     |
+| L1      | Geometric scale (~10^6.5, ill-defined)| λ_UIDT [C→D if unresolved]    | 🔴 High     |
 | L2      | Electron mass                        | m_e formula approximate       | 🟡 Medium   |
 | L3      | Vacuum energy                        | ρ_vac factor 2.3              | 🟢 Accepted |
 | L4      | γ not from RG                        | γ remains [A-] not [A]        | 🔴 High     |
