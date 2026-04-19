@@ -8,6 +8,19 @@ experiment:
 
 model: "v9a_fast"
 
+# --- UIDT Force Overrides ---
+steps: 1200                     # Run long enough for K7
+fine_start: 400                 # Start K diagnostics early
+k7_every: 200                   # 5 samples (400, 600, 800, 1000, 1200)
+# ----------------------------
+
+# -------------------------------------------------------------------
+# K7 Fixed-Anchor Diagnostics  (PRIMARY for UIDT Path A)
+# -------------------------------------------------------------------
+num_anchors: 8                  # 8-16 anchors recommended for stability
+anchor_region_size: 1500        # BFS region size per anchor
+anchor_min_region: 100          # Minimum viable region
+
 external_reference:
   framework: "cblab/raumzeit (emergent geometry causal graphs)"
   repo_url: "https://github.com/cblab/raumzeit"
