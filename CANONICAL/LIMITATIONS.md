@@ -129,6 +129,53 @@ self-consistent Dyson resummation in the full (S, A) propagator matrix.
 
 ---
 
+### L8: UV Hierarchy Gap — Pure γ⁻¹² Model
+**Status:** ⚠️ DOCUMENTED GAP [Evidence E — Research Mode]
+
+**Description:**
+The pure γ⁻¹² suppression model (without the 99-step
+RG cascade) shows a significant discrepancy relative
+to the empirical cosmological constant:
+
+- ρ_DE = (1/π²)·Δ⁴·γ⁻¹² = 2.393×10⁻¹⁵ GeV⁴ [E]
+- ρ_vac (empirical, Planck 2018) ≈ 4.33×10⁻⁴⁷ GeV⁴ [C]
+- Ratio: ρ_DE / ρ_vac ≈ 5.53×10³¹ [E]
+
+UV Hierarchy test (Planck scale):
+- Λ_UV⁴·γ⁻¹² ≈ 6.12×10⁶¹ GeV⁴ [E]
+- Residual divergence factor: ~1.41×10¹⁰⁸ [E]
+
+γ sensitivity (δγ = 0.0047, canonical):
+- Relative ρ_DE variation: 0.345% [A-]
+
+**Impact:**
+- γ⁻¹² alone is NOT sufficient to resolve the
+  cosmological constant problem
+- The 99-step RG cascade (L5) is load-bearing for
+  cosmological calibration — removing it exposes
+  a ~31 OOM gap
+- The perturbation test (ε = 10⁻²⁰ GeV) confirms
+  γ⁻¹² independence: δρ/ρ₀ = 4ε/Δ (γ cancels)
+
+**Relationship to L3 and L5:**
+L3 documents the residual factor ~2.3 WITH the
+full 99-step RG cascade. L8 documents the gap
+WITHOUT the cascade. Both are valid statements
+about different model configurations.
+L5 (N=99 unjustified) is the mechanistic root cause
+of this limitation.
+
+**Condition for Resolution:**
+First-principles derivation of the RG cascade
+depth N=99 from the Yang-Mills spectrum (→ L5).
+Until L5 is resolved, cosmological calibration
+remains at maximum Evidence [C].
+
+**[TENSION ALERT]:** ρ_DE(pure γ⁻¹²) vs. ρ_vac:
+Gap = 31 orders of magnitude [E vs. C].
+
+---
+
 ## Resolved Limitations (Historical)
 
 ### L6: Spectral Gap vs. Particle Mass [RESOLVED — superseded by L6-FRG above]
@@ -167,6 +214,7 @@ Corrected to v = 47.7 MeV. Old value was erroneous.
 | L4      | γ not from RG                        | γ remains [A-] not [A]        | 🔴 High     |
 | L5      | N=99 unjustified                     | RG cascade phenomenological   | 🟡 Medium   |
 | L6-FRG  | FRG minimal truncation (C-070)       | η_* Evidence D, not upgradable| 🔴 High     |
+| L8      | UV Hierarchy Gap (pure γ⁻¹²)         | ρ_DE/ρ_vac = 5.53×10³¹ [E]    | 🔴 High     |
 
 ---
 
