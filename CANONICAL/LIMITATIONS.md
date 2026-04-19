@@ -74,23 +74,18 @@ Accepted as within framework tolerance. 99-step RG cascade + π⁻² normalizati
 
 ---
 
-### L5: N=99 RG Steps Unjustified
+### L5: HOLOGRAPHIC CMB CUTOFF (UIDT-C-098/099)
 **Status:** 🔬 ACTIVE RESEARCH
 
-**Description:**  
-The 99-step RG cascade is empirically chosen; no theoretical derivation exists.
+**Description:**
+$\ell_{min} \approx 18.8$ is derived via $S_h = \ln(10)$, a logarithmic overlap factor without independent first-principles derivation.
 
-**Impact:**  
-- Vacuum energy suppression mechanism phenomenological
-- Raises question: why exactly 99?
+**Impact:**
+- The 87.23% quadrupole suppression is [C]: calibrated to Planck PR4, NOT a blind prediction.
+- Cosmic variance limits $\ell=2$ statistical power.
 
-**Condition for Resolution:**  
-Physical/mathematical derivation of N=99 from first principles
-
-**Hypotheses:**
-- Related to number of SM degrees of freedom?
-- Holographic dimension counting?
-- Accidental numerical coincidence?
+**Condition for Resolution:**
+LiteBIRD B-mode maps (forecast 2028-2032) provide the primary falsification test: If $\ell_{min} < 5$ or no exponential suppression in TT/TE/EE at $\ell < 20$, the prediction is refuted.
 
 ---
 
@@ -126,6 +121,26 @@ truncation with the following deliberate methodological compromises:
 See clay-submission/GAP_ANALYSIS_CLAY.md → GAP-FRG-001 for the full solution path.
 Resolution requires a momentum-dependent vertex projection (∂_p²) and a
 self-consistent Dyson resummation in the full (S, A) propagator matrix.
+
+---
+
+### L7: N=99 RG Steps Unjustified
+**Status:** 🔬 ACTIVE RESEARCH
+
+**Description:**
+The 99-step RG cascade is empirically chosen; no theoretical derivation exists.
+
+**Impact:**
+- Vacuum energy suppression mechanism phenomenological
+- Raises question: why exactly 99?
+
+**Condition for Resolution:**
+Physical/mathematical derivation of N=99 from first principles
+
+**Hypotheses:**
+- Related to number of SM degrees of freedom?
+- Holographic dimension counting?
+- Accidental numerical coincidence?
 
 ---
 
@@ -165,8 +180,9 @@ Corrected to v = 47.7 MeV. Old value was erroneous.
 | L2      | Electron mass                        | m_e formula approximate       | 🟡 Medium   |
 | L3      | Vacuum energy                        | ρ_vac factor 2.3              | 🟢 Accepted |
 | L4      | γ not from RG                        | γ remains [A-] not [A]        | 🔴 High     |
-| L5      | N=99 unjustified                     | RG cascade phenomenological   | 🟡 Medium   |
+| L5      | Holographic CMB Cutoff               | ℓ_min calibrated [C]          | 🟡 Medium   |
 | L6-FRG  | FRG minimal truncation (C-070)       | η_* Evidence D, not upgradable| 🔴 High     |
+| L7      | N=99 unjustified                     | RG cascade phenomenological   | 🟡 Medium   |
 
 ---
 
