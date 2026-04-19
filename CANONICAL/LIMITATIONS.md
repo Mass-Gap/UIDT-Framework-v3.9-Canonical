@@ -129,6 +129,16 @@ self-consistent Dyson resummation in the full (S, A) propagator matrix.
 
 ---
 
+## ARCHITECTURE BOUNDARY: STOCHASTIC vs. DETERMINISTIC
+
+**Context:** Separation of lattice evolution and observable extraction (Task 23).
+
+*   **HMC Markov-Chain-Steps:** The gauge field evolution is inherently stochastic. Because of the enormous statistical uncertainty ($\gg 10^{-80}$), using 80-digit precision (`mp.dps=80`) during Markov Chain steps is physically meaningless. The standard precision for the HMC core is `float64` via NumPy or GPU accelerators.
+*   **UIDT Observables (Δ*, γ, E_T, v, w_0):** The extraction of physical vacuum constants requires absolute deterministic precision. For these operations, `mp.dps=80` via `mpmath` is MANDATORY to guarantee the required $10^{-14}$ residual closure.
+*   **Scope:** This architectural boundary applies to ALL Monte-Carlo methods within the framework (e.g., HMC, APE-smearing MC, etc.). Future implementations or GPU ports must strictly maintain this separation between stochastic generation (`float64`) and deterministic analysis (`mp.dps=80`).
+
+---
+
 ## Resolved Limitations (Historical)
 
 ### L6: Spectral Gap vs. Particle Mass [RESOLVED — superseded by L6-FRG above]
