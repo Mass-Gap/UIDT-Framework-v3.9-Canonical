@@ -1,0 +1,58 @@
+# UIDT v3.9 Spectral Gap Validation — raumzeit Coupling Configuration
+# ====================================================================
+#
+# Purpose: UIDT-tuned batch configuration for cblab/raumzeit K7 runs
+# Target : Path A — validate g_fc proxy against Delta* = 1.710 GeV [A]
+# DOI    : 10.5281/zenodo.17835200
+#
+# Usage:
+#   cd cblab/raumzeit/emergent-geometry-causal-graphs/
+#   python scripts/run_batch.py --config <path-to-this-file>
+#
+# Note: This config inherits from v9a_fast.yaml and adds UIDT-specific
+#       diagnostic parameters.  The V9 ball coherence term is enabled.
+
+inherits: v9a_fast.yaml
+name: uidt_v39_spectral_gap_validation
+
+# -------------------------------------------------------------------
+# K7 Fixed-Anchor Diagnostics  (PRIMARY for UIDT Path A)
+# -------------------------------------------------------------------
+num_anchors: 8                  # 8-16 anchors recommended for stability
+anchor_region_size: 1500        # BFS region size per anchor
+anchor_min_region: 100          # Minimum viable region
+
+# K6 quantile stratification (used within K7)
+k6_core_frac: 0.50             # Inner 50% by graph distance
+k6_mid_frac: 0.30              # Middle 30%
+# Front fraction = 1 - core - mid = 0.20
+
+# K6 spectral dimension estimation within quantiles
+k6_taus: [2, 4, 8, 16]         # Random walker return times
+k6_walkers: 800                # Number of walkers per estimation
+k6_min_start_nodes: 120        # Minimum valid start nodes per class
+
+# -------------------------------------------------------------------
+# K2 Global Spectral Dimension  (Secondary diagnostic)
+# -------------------------------------------------------------------
+k2_region_size: 1500
+k2_taus: [2, 4, 8, 16]
+k2_walkers: 800
+
+# -------------------------------------------------------------------
+# K3 Isotropy Defect  (Quality check)
+# -------------------------------------------------------------------
+k3_radii: [2, 4, 6]
+k3_num_centers: 10
+k3_num_seeds: 10
+k3_max_depth: 8
+
+# -------------------------------------------------------------------
+# Growth Parameters
+# -------------------------------------------------------------------
+# These inherit from v9a_fast.yaml defaults.
+# Override only if testing UIDT-specific N scaling.
+#
+# m_parents: 3
+# n_max: 5000
+# num_seeds: 3
