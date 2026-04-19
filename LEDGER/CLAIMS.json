@@ -533,7 +533,7 @@
       "confidence": 0.60,
       "dependencies": ["UIDT-C-001", "UIDT-C-002", "UIDT-C-044", "UIDT-C-048"],
       "since": "v3.9",
-      "notes": "Multiplicative rules lack first-principles derivation. M(u)=2.44 has 3.75σ FLAG tension (pre-QED). NO uncertainties stated. NOT [B]: fails z<1σ. Source: quark_mass_hierarchy_prediction.md, theoretical_notes.md §7,§9,§13.",
+      "notes": "Multiplicative rules lack first-principles derivation. M(u)=2.44 has 4.0σ PDG 2025 tension (m_u=2.16±0.07 MeV, pre-QED). NO uncertainties stated. NOT [B]: fails z<1σ. Source: quark_mass_hierarchy_prediction.md, theoretical_notes.md §7,§9,§13.",
       "falsification": "If M(d)/M(u)≠2.0 at >3σ, or M(s) deviates from 93.81 MeV by >10%."
     },
     {
@@ -614,7 +614,7 @@
       "confidence": 0.55,
       "dependencies": ["UIDT-C-054", "UIDT-C-055"],
       "since": "v3.9.6",
-      "notes": "SVZ leading-order estimate. TENSION ALERT: z ≈ 8–10σ vs quenched lattice (185–191 MeV). NLO corrections expected +30–80%. Previous erroneous values: 55 MeV (wrong formula, PR #190), 107 MeV (partial). Corrected to 142.98 MeV via mpmath 80-dps verification (PR #213, chi_top_formula_audit.md). Under the IR/EFT reframing (v3.9.7), this tension is interpreted as evidence for missing NLO anomalous-dimension corrections in the SVZ operator and RG-flow truncation errors at scale μ ∼ Δ*. This does NOT affect the Category-A spectral gap Δ* or the Category-A- coupling γ. See UIDT-C-096 (NLO research programme). TENSION ALERT remains active until NLO result available.",
+      "notes": "SVZ leading-order estimate. TENSION ALERT: z ≈ 19.7σ (LO), z ≈ 4.2σ (NLO×1.3023) vs quenched lattice (198.1 ± 2.8 MeV, Dürr et al. 2025, arXiv:2501.08217). NLO corrections expected +30–80%. Previous erroneous values: 55 MeV (wrong formula, PR #190), 107 MeV (partial). Corrected to 142.98 MeV via mpmath 80-dps verification (PR #213, chi_top_formula_audit.md). Under the IR/EFT reframing (v3.9.7), this tension is interpreted as evidence for missing NLO anomalous-dimension corrections in the SVZ operator and RG-flow truncation errors at scale μ ∼ Δ*. This does NOT affect the Category-A spectral gap Δ* or the Category-A- coupling γ. See UIDT-C-096 (NLO research programme). TENSION ALERT remains active until NLO result available.",
       "falsification": "NLO-corrected value outside [140, 220] MeV refutes SVZ estimate applicability."
     },
     {
