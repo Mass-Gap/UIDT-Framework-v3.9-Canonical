@@ -92,24 +92,162 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 ## 🗺️ The UIDT γ-Universal Map (Logic Flow)
 
 ```mermaid
-graph TD
-    A[Vacuum Scalar Field S] -->|Coupling κ| B(Yang-Mills Mass Gap);
-    B -->|Derived| C{Delta = 1.710 GeV};
-    C -->|Geometric Operator Ĝ| D[Gamma Invariant = 16.339];
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor':       '#1a1f2e',
+    'primaryTextColor':   '#e8ecf0',
+    'primaryBorderColor': '#3d4a5c',
+    'lineColor':          '#6b7fa3',
+    'secondaryColor':     '#0d1117',
+    'tertiaryColor':      '#161b22',
+    'background':         '#0d1117',
+    'mainBkg':            '#161b22',
+    'nodeBorder':         '#30363d',
+    'clusterBkg':         '#161b22',
+    'titleColor':         '#c9d1d9',
+    'edgeLabelBackground':'#161b22',
+    'fontFamily':         'ui-monospace, SFMono-Regular, Menlo, monospace'
+  }
+} }%%
+graph LR
 
-    D -->|γ⁻¹² + 99-Step RG| E[Cosmological Constant];
-    D -->|Topological Folding| F[Lattice Torsion Binding E_T = 2.44 MeV];
-    D -->|Harmonic Scaling| G[Thermodynamic Censorship / X17 = 17.1 MeV];
-    D -->|Isomorphism| H[Photonic n_critical = 16.339];
+  subgraph LEVEL_0_1 ["Level 0: Axiom & Level 1: Core Theorem"]
+    S["Vacuum Scalar Field S(x)"]
+    Banach["Banach Fixed Point"]
+    Delta["Delta* = 1.710 ± 0.015 GeV [A]"]
+    RG["5κ² = 3λ_S [A]"]
+    Res["Residuals < 1e-14 [A]"]
+    Kappa["κ = 0.500 ± 0.008 [A]"]
+    LambdaS["λ_S = 0.417 ± 0.007 [A]"]
+    VEV["v = 47.7 MeV [A]"]
+    mS["m_S = 1.705 ± 0.015 GeV [B]"]
+  end
 
-    E -.->|Open: RG derivation of γ — L4| I([Limitation L4]);
-    F -.->|Open: 10¹⁰ factor — L2| J([Limitation L2]);
+  S -->|Coupling κ| Banach
+  Banach -->|Proof| Delta
+  Banach -->|Verification| Res
+  Delta -->|Constraint| RG
+  RG --> Kappa
+  RG --> LambdaS
+  Delta --> VEV
+  Delta --> mS
 
-    style C fill:#f96,stroke:#333,stroke-width:4px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
-    style F fill:#9f9,stroke:#333,stroke-width:2px
-    style I fill:#ffe,stroke:#aaa,stroke-width:1px
-    style J fill:#ffe,stroke:#aaa,stroke-width:1px
+  subgraph LEVEL_2 ["Level 2: Gamma Invariant"]
+    Gamma["γ = 16.339 [A-]"]
+    GammaInf["γ∞ = 16.3437 [A-]"]
+    dGamma["δγ = 0.0047 [A-]"]
+  end
+
+  Delta -->|Operator Ĝ| Gamma
+  Gamma -->|Limit| GammaInf
+  GammaInf --> dGamma
+
+  subgraph PILLAR_I ["🏛 Pillar I: QFT [A]"]
+    QFT_Core["QFT Foundation [A]"]
+  end
+
+  subgraph PILLAR_II ["🏛 Pillar II: Lattice Topology [C]"]
+    ET["E_T = 2.44 MeV [C]"]
+    Eu["E_T ≈ m_u [C, 0.6σ]"]
+    Ed["E_{T,iso} = 4.88 MeV ≈ m_d [B/D]"]
+    w0["w₀ = -0.99 [C]"]
+    wa["w_a ≈ -1.183 [C]"]
+    H0["H₀ = 70.4 km/s/Mpc [C]"]
+    L_UIDT["λ_UIDT = 0.66 nm [C]"]
+    RGCascade["99-Step RG Cascade [C]"]
+    GammaSupp["γ⁻¹² Suppression [C]"]
+    HoloNorm["π⁻² Holographic Norm [C]"]
+    LHolo["L_HOLO = 8.1695 [B]"]
+    Lmin["ℓ_min ≈ 18.8 [B, ARTIFACT]"]
+    ClSupp["C_ℓ supp. 87.23% [C]"]
+  end
+
+  subgraph PILLAR_III ["🏛 Pillar III: Spectral Expansion [D]"]
+    X17["X17 Noise Floor = 17.10 MeV [D]"]
+    X2370["X2370 Resonance = 2.370 GeV [D]"]
+    Casimir["Casimir +0.59% at 0.66 nm [D]"]
+    GlueTensor["Glueball Tensor = 2.418 GeV [D]"]
+  end
+
+  subgraph PILLAR_IV ["🏛 Pillar IV: Photonic Isomorphism [D+]"]
+    ncrit["n_critical = γ ≈ 16.339 [D+]"]
+  end
+
+  Kappa --> QFT_Core
+  LambdaS --> QFT_Core
+
+  Gamma -->|Topological Fold| ET
+  ET --> Eu
+  ET --> Ed
+
+  Gamma -->|Cascade| RGCascade
+  RGCascade --> GammaSupp
+  GammaSupp --> HoloNorm
+  HoloNorm --> w0
+  HoloNorm --> wa
+  HoloNorm --> H0
+
+  Gamma --> L_UIDT
+  Gamma --> LHolo
+  LHolo --> Lmin
+  Lmin --> ClSupp
+
+  Gamma -->|Harmonic| X17
+  Delta --> X2370
+  Delta --> GlueTensor
+  L_UIDT --> Casimir
+
+  Gamma -->|Isomorphism| ncrit
+
+  subgraph LIMITATIONS ["Limitations [OPEN]"]
+    L1["L1 — Electron mass 23%"]
+    L2["L2 — 10¹⁰ holo. scale"]
+    L3["L3 — Vac. energy 2.3"]
+    L4["L4 — RG deriv. of γ"]
+    L5["L5 — Casimir no data"]
+  end
+
+  subgraph KILL_SWITCHES ["Kill-Switches [RED]"]
+    KS1["KS-1 Lattice QCD >3σ"]
+    KS2["KS-2 E_T → 0"]
+    KS3["KS-3 DESI w = -1"]
+    KS4["KS-4 Photonic n ≠ 16.339"]
+    KS5["KS-5 X17/X2370 excl."]
+    KS6["KS-6 Casimir excl."]
+  end
+
+  mS -.->|Open| L1
+  L_UIDT -.->|Open| L2
+  HoloNorm -.->|Open| L3
+  Gamma -.->|Open| L4
+  Casimir -.->|Open| L5
+
+  Delta -.->|Falsifies| KS1
+  ET -.->|Falsifies| KS2
+  w0 -.->|Falsifies| KS3
+  ncrit -.->|Falsifies| KS4
+  X17 -.->|Falsifies| KS5
+  Casimir -.->|Falsifies| KS6
+
+  classDef catA fill:#1a3a2a,stroke:#3fb950,color:#aff8c0;
+  classDef catA_minus fill:#1a2e3a,stroke:#79c0ff,color:#cae8ff;
+  classDef catB fill:#1e2a3a,stroke:#58a6ff,color:#b0d0ff;
+  classDef catC fill:#2a2416,stroke:#d29922,color:#f8e3a3;
+  classDef catD fill:#2a1e2e,stroke:#bc8cff,color:#d8b4fe;
+  classDef limitation fill:#1a1a1a,stroke:#6e7681,color:#8b949e,stroke-dasharray:5 5;
+  classDef killswitch fill:#2d1b1b,stroke:#f85149,color:#ffa198;
+  classDef stratum fill:#161b22,stroke:#30363d,color:#8b949e;
+
+  class S,Banach,Delta,RG,Res,Kappa,LambdaS,VEV,QFT_Core catA;
+  class Gamma,GammaInf,dGamma catA_minus;
+  class mS,LHolo,Lmin,Ed catB;
+  class ET,Eu,w0,wa,H0,L_UIDT,RGCascade,GammaSupp,HoloNorm,ClSupp catC;
+  class X17,X2370,Casimir,GlueTensor,ncrit catD;
+  class L1,L2,L3,L4,L5 limitation;
+  class KS1,KS2,KS3,KS4,KS5,KS6 killswitch;
+
+  class LEVEL_0_1,LEVEL_2,PILLAR_I,PILLAR_II,PILLAR_III,PILLAR_IV,LIMITATIONS,KILL_SWITCHES stratum;
 ```
 
 ---
