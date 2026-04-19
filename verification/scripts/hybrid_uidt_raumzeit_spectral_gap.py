@@ -1,67 +1,57 @@
 """
-[UIDT-v3.9] Hybrid Verification: Spectral Gap Search (raumzeit <-> UIDT)
-=========================================================================
+[UIDT-v3.9] Hybrid Verification: Spectral Gap Search (raumzeit ↔ UIDT)
+Path A — Direct spectral gap validation via causal-set K7 measurements
 
-Path A -- Direct spectral gap validation via causal-set K7 measurements.
+DIMENSIONAL BRIDGE EQUATION: MISSING (TKT-FRG-BRIDGE-01 open)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+g_fc [dimensionless] <-> Δ* [GeV] mapping requires:
 
-Claim under test:
-    Delta* = 1.710 +/- 0.015 GeV  [A]  (UIDT Yang-Mills mass gap)
+  1. N-scaling law: g_fc(N → ∞) → g_fc_inf
+     Current assumption: g_fc_inf ≈ 1.710 (UNJUSTIFIED)
 
-Test observable (from cblab/raumzeit K7 diagnostics):
-    g_fc = ds(front) - ds(core)
+  2. Normalization: g_fc_inf / E_ref = Δ*
+     where E_ref is undefined in emergent geometry framework
 
-    where ds(front) and ds(core) are spectral dimensions estimated by
-    random-walker return probabilities on the outer and inner quantile
-    shells of a fixed-anchor BFS region (see diagnostics_k7.py).
+  3. Dimensional analysis gap:
+     - g_fc: dimensionless (spectral dimension difference)
+     - Δ*: energy [GeV]
+     - No derivation bridging these in UIDT v3.9 canonical
 
-Evidence category: [B] (Numerical robustness check against emergent
-    geometry framework)
+Until TKT-FRG-BRIDGE-01 provides bridge equation:
+  Evidence Category: [E] SPECULATIVE ONLY
+  Upgrade path: [E] → [D] (post-reproduction with explicit bridge)
 
-Limitation impact: L4 (RG-flow derivation of gamma remains open;
-    g_fc is a dimensionless proxy, NOT a direct energy measurement)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-External framework:
-    Repository : https://github.com/cblab/raumzeit
-    Repo ID    : 1207002944
-    Engine     : emergent-geometry-causal-graphs/
-    Config     : configs/v9a_fast.yaml
-    Diagnostic : K7 fixed-anchor (diagnostics_k7.py :: measure_anchor())
-
+Claim: C-100: g_fc clustering signal
+Evidence: [E] (Numerical coincidence, no dimensional justification)
+Limitation: L4 (RG-flow derivation), PLUS dimensional bridge open
+External: cblab/raumzeit (ID: 1207002944) [E-compatible only]
 DOI: 10.5281/zenodo.17835200
-
-Usage
------
-    python hybrid_uidt_raumzeit_spectral_gap.py <results.json> [--output report.txt]
-
-    <results.json> must contain an "observables_k7" array produced by
-    raumzeit batch runs (scripts/run_batch.py).
-
-Exit codes:
-    0 = PASS  (spectral gap signature consistent with Delta*)   -> [B]
-    1 = NEAR / MARGINAL  (warning; review finite-size effects)  -> [B]/[C]
-    2 = FAIL  (no signature; falsification candidate)           -> [D]
 """
 
 from __future__ import annotations
 
 import json
-import math
 import statistics
 import sys
 from pathlib import Path
 from typing import NamedTuple, Optional
 
+
 # =====================================================================
 # Canonical constants (read-only -- rule 03-canonical-constants.md)
 # =====================================================================
 
-DELTA_STAR_GEV: float = 1.710       # +/- 0.015  [A]
-DELTA_TOLERANCE: float = 0.015      # 1-sigma canonical tolerance
-GAMMA_INVARIANT: float = 16.339     # [A-]  calibrated, NOT derived
-KAPPA: float = 0.500                # +/- 0.008  [A]
-LAMBDA_S: float = 5 * KAPPA**2 / 3  # = 5kappa^2/3 = 0.41(6)  [A]
-E_T_MEV: float = 2.44               # [C]  lattice torsion binding energy
-V_MEV: float = 47.7                 # [A]  vacuum expectation value
+import mpmath as mp
+
+DELTA_STAR_GEV = mp.mpf("1.710")      # +/- 0.015  [A]
+DELTA_TOLERANCE = mp.mpf("0.015")     # 1-sigma canonical tolerance
+GAMMA_INVARIANT = mp.mpf("16.339")    # [A-] calibrated, NOT derived
+KAPPA = mp.mpf("0.500")               # +/- 0.008  [A]
+LAMBDA_S = (mp.mpf("5") * KAPPA**2) / mp.mpf("3")
+E_T_MEV = mp.mpf("2.44")              # [C] lattice torsion binding energy
+V_MEV = mp.mpf("47.7")                # [A] vacuum expectation value
 
 
 # =====================================================================
@@ -97,14 +87,17 @@ class SpectralGapMeasurement(NamedTuple):
 
 
 class HybridVerificationResult(NamedTuple):
-    """Summary of the Path A spectral gap validation."""
+    """
+    Stratum I/II observables ONLY.
+    Stratum III interpretation (evidence category, UIDT mapping)
+    belongs in report text, not here.
+    """
     gap_proxy_mean: Optional[float]
     gap_proxy_std: Optional[float]
     gap_proxy_z_score: Optional[float]
-    consistency: str        # PASS | NEAR | MARGINAL | FAIL
-    evidence_category: str  # [B] | [C] | [D] | [E]
+    proximity_label: str
     n_measurements: int
-    confidence: float       # 0.0 -- 1.0
+    confidence: float
 
 
 # =====================================================================
@@ -112,39 +105,12 @@ class HybridVerificationResult(NamedTuple):
 # =====================================================================
 
 def parse_k7_measurements(results_json: Path) -> list[SpectralGapMeasurement]:
-    """Load K7 anchor observables from a raumzeit batch-run JSON.
-
-    Expected schema (produced by raumzeit scripts/run_batch.py)::
-
-        {
-          "observables_k7": [
-            {
-              "step": 5000,
-              "anchor_id": 0,
-              "ds_global": ...,
-              "ds_core": ...,
-              "ds_mid": ...,
-              "ds_front": ...,
-              "g_fc": ...,
-              "g_fm": ...,
-              "g_mc": ...,
-              "iso_defect": ...,
-              "dv_global": ...,
-              "region_nodes": 1500,
-              ...
-            },
-            ...
-          ]
-        }
-    """
     with open(results_json, encoding="utf-8") as fh:
         data = json.load(fh)
 
     raw_records = data.get("observables_k7", [])
-    if not raw_records:
-        # Fallback: try top-level list
-        if isinstance(data, list):
-            raw_records = data
+    if not raw_records and isinstance(data, list):
+        raw_records = data
 
     measurements: list[SpectralGapMeasurement] = []
     for rec in raw_records:
@@ -169,87 +135,83 @@ def parse_k7_measurements(results_json: Path) -> list[SpectralGapMeasurement]:
 # Validation engine
 # =====================================================================
 
-def validate_spectral_gap(
-    measurements: list[SpectralGapMeasurement],
-) -> HybridVerificationResult:
-    """Test if the g_fc proxy clusters near Delta* = 1.710 GeV.
+def validate_spectral_gap(measurements: list[SpectralGapMeasurement]) -> HybridVerificationResult:
+    """Verify if g_fc is consistent with Δ* = 1.710 GeV."""
+    mp.dps = 80
 
-    Conservative interpretation
-    ---------------------------
-    We do NOT claim g_fc directly equals Delta* in physical units.
-    The test checks whether the *dimensionless* g_fc values from
-    raumzeit K7 measurements cluster around the *numerical* value
-    1.710, which would constitute a [B]-level consistency signal.
-
-    Classification
-    --------------
-    PASS      |mean(g_fc) - 1.710| <= 0.015           -> [B]
-    NEAR      |mean(g_fc) - 1.710| <= 0.030           -> [B]
-    MARGINAL  |z-score| < 2.0                          -> [C]
-    FAIL      otherwise                                -> [D]
-    """
     valid_gaps = [m.g_fc for m in measurements if m.g_fc is not None]
-
     if len(valid_gaps) < 3:
         return HybridVerificationResult(
             gap_proxy_mean=None,
             gap_proxy_std=None,
             gap_proxy_z_score=None,
-            consistency="FAIL",
-            evidence_category="[E]",
+            proximity_label="INSUFFICIENT_DATA",
             n_measurements=len(valid_gaps),
             confidence=0.0,
         )
 
     mean_gap = statistics.mean(valid_gaps)
     std_gap = statistics.stdev(valid_gaps) if len(valid_gaps) > 1 else 0.0
-    z_score = (mean_gap - DELTA_STAR_GEV) / max(std_gap, 1e-6)
 
-    deviation = abs(mean_gap - DELTA_STAR_GEV)
+    mean_gap_mpf = mp.mpf(str(mean_gap))
+    std_gap_mpf = mp.mpf(str(std_gap)) if std_gap > 0 else mp.mpf("1e-6")
+
+    deviation = abs(mean_gap_mpf - DELTA_STAR_GEV)
+    z_score_mpf = (mean_gap_mpf - DELTA_STAR_GEV) / max(std_gap_mpf, mp.mpf("1e-6"))
+    z_score = float(z_score_mpf)
 
     if deviation <= DELTA_TOLERANCE:
-        return HybridVerificationResult(
-            mean_gap, std_gap, z_score,
-            "PASS", "[B]", len(valid_gaps), 0.85,
-        )
-    elif deviation <= 2 * DELTA_TOLERANCE:
-        return HybridVerificationResult(
-            mean_gap, std_gap, z_score,
-            "NEAR", "[B]", len(valid_gaps), 0.60,
-        )
-    elif abs(z_score) < 2.0:
-        return HybridVerificationResult(
-            mean_gap, std_gap, z_score,
-            "MARGINAL", "[C]", len(valid_gaps), 0.40,
-        )
+        proximity_label = "WITHIN_TOLERANCE"
+        confidence = 0.85
+    elif deviation <= mp.mpf("2") * DELTA_TOLERANCE:
+        proximity_label = "NEAR_TOLERANCE"
+        confidence = 0.60
+    elif abs(z_score_mpf) < mp.mpf("2.0"):
+        proximity_label = "MARGINAL"
+        confidence = 0.40
     else:
-        return HybridVerificationResult(
-            mean_gap, std_gap, z_score,
-            "FAIL", "[D]", len(valid_gaps), 0.10,
-        )
+        proximity_label = "OUTSIDE"
+        confidence = 0.10
+
+    return HybridVerificationResult(
+        gap_proxy_mean=mean_gap,
+        gap_proxy_std=std_gap,
+        gap_proxy_z_score=z_score,
+        proximity_label=proximity_label,
+        n_measurements=len(valid_gaps),
+        confidence=confidence,
+    )
 
 
 def _auxiliary_statistics(measurements: list[SpectralGapMeasurement]) -> str:
-    """Extra diagnostics for the report (ds_global, dv_global, iso_defect)."""
     lines = []
 
     ds_globals = [m.ds_global for m in measurements if m.ds_global is not None]
     if ds_globals:
-        lines.append(f"  ds_global    : {statistics.mean(ds_globals):.4f} "
-                      f"+/- {statistics.stdev(ds_globals):.4f}" if len(ds_globals) > 1
-                      else f"  ds_global    : {ds_globals[0]:.4f}")
+        if len(ds_globals) > 1:
+            lines.append(
+                f"  ds_global    : {statistics.mean(ds_globals):.4f} +/- {statistics.stdev(ds_globals):.4f}"
+            )
+        else:
+            lines.append(f"  ds_global    : {ds_globals[0]:.4f}")
 
     dv_globals = [m.dv_global for m in measurements if m.dv_global is not None]
     if dv_globals:
-        lines.append(f"  dv_global    : {statistics.mean(dv_globals):.4f} "
-                      f"+/- {statistics.stdev(dv_globals):.4f}" if len(dv_globals) > 1
-                      else f"  dv_global    : {dv_globals[0]:.4f}")
+        if len(dv_globals) > 1:
+            lines.append(
+                f"  dv_global    : {statistics.mean(dv_globals):.4f} +/- {statistics.stdev(dv_globals):.4f}"
+            )
+        else:
+            lines.append(f"  dv_global    : {dv_globals[0]:.4f}")
 
     iso_vals = [m.iso_defect for m in measurements if m.iso_defect is not None]
     if iso_vals:
-        lines.append(f"  iso_defect   : {statistics.mean(iso_vals):.4f} "
-                      f"+/- {statistics.stdev(iso_vals):.4f}" if len(iso_vals) > 1
-                      else f"  iso_defect   : {iso_vals[0]:.4f}")
+        if len(iso_vals) > 1:
+            lines.append(
+                f"  iso_defect   : {statistics.mean(iso_vals):.4f} +/- {statistics.stdev(iso_vals):.4f}"
+            )
+        else:
+            lines.append(f"  iso_defect   : {iso_vals[0]:.4f}")
 
     g_fm_vals = [m.g_fm for m in measurements if m.g_fm is not None]
     if g_fm_vals:
@@ -271,11 +233,35 @@ def report_verification(
     measurements: list[SpectralGapMeasurement] | None = None,
     output_file: Path | None = None,
 ) -> str:
-    """Generate a human-readable verification report."""
-
     mean_str = f"{result.gap_proxy_mean:.4f}" if result.gap_proxy_mean is not None else "N/A"
     std_str = f"{result.gap_proxy_std:.4f}" if result.gap_proxy_std is not None else "N/A"
     z_str = f"{result.gap_proxy_z_score:+.2f}" if result.gap_proxy_z_score is not None else "N/A"
+
+    if result.proximity_label == "WITHIN_TOLERANCE":
+        evidence_category = "[E]"
+        status = "WITHIN_TOLERANCE"
+        interpretation = "SPECULATIVE NUMERICAL COINCIDENCE — dimensional bridge unresolved."
+    elif result.proximity_label == "NEAR_TOLERANCE":
+        evidence_category = "[E]"
+        status = "NEAR_TOLERANCE"
+        interpretation = "NEAR match, but still speculative because no bridge equation exists."
+    elif result.proximity_label == "MARGINAL":
+        evidence_category = "[E]"
+        status = "MARGINAL"
+        interpretation = "Moderate numerical proximity only; no evidential upgrade permitted."
+    elif result.proximity_label == "INSUFFICIENT_DATA":
+        evidence_category = "[E]"
+        status = "INSUFFICIENT_DATA"
+        interpretation = "Too few valid K7 measurements for any statistical statement."
+    else:
+        evidence_category = "[E]"
+        status = "OUTSIDE"
+        interpretation = "No numerical proximity to Δ* observed in current run."
+
+    rg_lhs = mp.mpf("5") * KAPPA**2
+    rg_rhs = mp.mpf("3") * LAMBDA_S
+    rg_residual = abs(rg_lhs - rg_rhs)
+    rg_status = "PASS" if rg_residual < mp.mpf("1e-14") else "[RG_CONSTRAINT_FAIL]"
 
     report = f"""
 +================================================================+
@@ -283,7 +269,7 @@ def report_verification(
 +================================================================+
 
 CANONICAL TARGET:
-  Delta* = {DELTA_STAR_GEV} +/- {DELTA_TOLERANCE} GeV  [A]
+  Delta* = {mp.nstr(DELTA_STAR_GEV, 6)} +/- {mp.nstr(DELTA_TOLERANCE, 4)} GeV  [A]
   Source : UIDT v3.9 Banach Fixed-Point Proof (Theorem 1)
 
 EMERGENT PROXY (raumzeit):
@@ -298,9 +284,17 @@ MEASUREMENT SUMMARY:
   Valid samples  : {result.n_measurements}
 
 CONSISTENCY CHECK:
-  Status         : {result.consistency}
-  Evidence Cat.  : {result.evidence_category}
+  Status         : {status}
+  Evidence Cat.  : {evidence_category}
   Confidence     : {result.confidence:.1%}
+
+INTERPRETATION:
+  {interpretation}
+
+DIMENSIONAL BRIDGE STATUS:
+  TKT-FRG-BRIDGE-01 remains open.
+  g_fc is dimensionless; Delta* carries GeV units.
+  No category upgrade above [E] is permitted in this script.
 """
 
     if measurements:
@@ -308,78 +302,20 @@ CONSISTENCY CHECK:
         if aux:
             report += f"\nAUXILIARY DIAGNOSTICS:\n{aux}\n"
 
-    # Interpretation block
-    if result.consistency == "PASS":
-        report += """
-INTERPRETATION:
-  SPECTRAL GAP SIGNATURE DETECTED  [B]
-
-  The emergent dimension gap g_fc from causal-set K7 measurements
-  clusters within 1-sigma of UIDT's predicted mass gap
-  Delta* = 1.710 GeV.
-
-  This constitutes a [B]-level numerical robustness signal
-  supporting the vacuum information density postulate.
-  It does NOT constitute a proof (which requires [A]).
-
-  Limitation L4 remains: gamma = 16.339 is calibrated [A-],
-  not yet derived from RG first principles.
-"""
-    elif result.consistency == "NEAR":
-        report += f"""
-INTERPRETATION:
-  NEAR-CONSISTENT  (Delta = {abs(result.gap_proxy_mean - DELTA_STAR_GEV):.4f} from target)
-
-  Small deviation from canonical target.  Possible causes:
-  - Finite-size effects in causal-set simulation
-  - K7 anchor sampling variance
-  - RG-flow not fully converged at measured N
-
-  Recommendation: increase N or number of batch seeds.
-  Classification: [B] (marginal; needs replication).
-"""
-    elif result.consistency == "MARGINAL":
-        report += """
-INTERPRETATION:
-  MARGINAL CONSISTENCY  (Moderate scatter)
-
-  Gap proxy exhibits larger variance.  Actions:
-  - Replicate with different random seeds
-  - Increase K7 anchor count (num_anchors >= 16)
-  - Extend to larger N values (>= 5000 nodes)
-
-  Classification: [C] Calibrated Model (scenario-dependent).
-"""
-    else:
-        report += """
-INTERPRETATION:
-  NO SPECTRAL GAP SIGNATURE DETECTED  [D]
-
-  Emergent dimension gaps do NOT cluster near Delta* = 1.710.
-
-  Possible interpretations:
-  - g_fc does not map to the Yang-Mills spectral gap in this
-    configuration space (the mapping hypothesis fails)
-  - UIDT mass gap is not a universal emergent property
-  - Measurement methodology requires revision
-
-  Next: test alternative hypotheses (Path B, Path C).
-  Classification: [D] Prediction (possibly falsified).
-"""
-
     report += f"""
 REFERENCES:
   UIDT Theory : DOI 10.5281/zenodo.17835200
   External Ref : cblab/raumzeit (ID: 1207002944)
+  Config Pin   : commit 34c02567617b8aa0e3dcadbed57f3a16fe0c3cae
   K7 Diagnostic: diagnostics_k7.py :: measure_anchor()
   K2 Base      : diagnostics_k2.py :: _estimate_spectral_dimension()
   Config       : emergent-geometry-causal-graphs/configs/v9a_fast.yaml
 
 RG FIXED-POINT CONSTRAINT (read-only verification):
-  5*kappa^2          = {5 * KAPPA**2:.15f}
-  3*lambda_S         = {3 * LAMBDA_S:.15f}
-  Residual           = {abs(5 * KAPPA**2 - 3 * LAMBDA_S):.2e}
-  Status             = {"PASS" if abs(5 * KAPPA**2 - 3 * LAMBDA_S) < 1e-14 else "WARN"}
+  5*kappa^2          = {mp.nstr(rg_lhs, 20)}
+  3*lambda_S         = {mp.nstr(rg_rhs, 20)}
+  Residual           = {mp.nstr(rg_residual, 5)}
+  Status             = {rg_status}
 """
 
     if output_file:
@@ -395,8 +331,7 @@ RG FIXED-POINT CONSTRAINT (read-only verification):
 
 def main() -> int:
     if len(sys.argv) < 2:
-        print("Usage: python hybrid_uidt_raumzeit_spectral_gap.py "
-              "<results.json> [--output report.txt]")
+        print("Usage: python hybrid_uidt_raumzeit_spectral_gap.py <results.json> [--output report.txt]")
         return 1
 
     results_path = Path(sys.argv[1])
@@ -419,9 +354,9 @@ def main() -> int:
     report = report_verification(result, measurements, output_path)
     print(report)
 
-    if result.consistency == "PASS":
+    if result.proximity_label == "WITHIN_TOLERANCE":
         return 0
-    elif result.consistency in ("NEAR", "MARGINAL"):
+    elif result.proximity_label in ("NEAR_TOLERANCE", "MARGINAL"):
         return 1
     else:
         return 2
