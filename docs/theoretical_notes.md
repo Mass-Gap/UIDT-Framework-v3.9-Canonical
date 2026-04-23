@@ -281,7 +281,7 @@ Die **neuesten JWST-Daten der CCHP-Gruppe (Freedman)** stützen den UIDT-Wert vo
 
 ---
 
-## 9. QED Mass Correction for Down-Quark
+## 10. QED Mass Correction for Down-Quark
 
 **Status:** Formal Resolution of Isotopic Doubling
 **Classification:** **Category B** (Topology) / **Category D** (QED Correction)
@@ -299,12 +299,12 @@ $$ \Delta m_{EM} \approx -0.18 \text{ MeV} $$
 
 ### Result
 $$ m_d = 4.88 - 0.18 = 4.70 \text{ MeV} $$
-This creates exact agreement with the PDG consensus ($\sigma < 0.1$), eliminating the need for free Yukawa parameters for the down quark.
+The QED self-energy correction ($\Delta m_{EM} \approx -0.18$ MeV) is a Category D theoretical hypothesis. If valid, it suggests compatibility with the PDG value. The residual cannot be claimed as eliminated without an ab-initio derivation of $\Delta m_{EM}$ from the UIDT Lagrangian.
 
 
 ---
 
-## 10. The Geometrical Necessity of wa: From Bare Gamma to DESI-DR2 (PR #82)
+## 11. The Geometrical Necessity of wa: From Bare Gamma to DESI-DR2 (PR #82)
 
 **Status:** Theoretical Prediction
 **Classification:** **Category C** (L-dependent derivation, see S1-01), **Category C** (Observation Comparison)
@@ -414,7 +414,7 @@ This value is **proposed** as an alternative baseline, pending independent verif
 
 ---
 
-## 13. QED Mass Correction for Up-Quark (FLAG 2024 Alignment) (PR #61)
+## 14. QED Mass Correction for Up-Quark (FLAG 2024 Alignment) (PR #61)
 
 **Status:** Consistent [C] (0.75σ)
 **Classification:** **Category C** (Calibrated Observation)
@@ -488,7 +488,7 @@ This correlation is strictly classified as **Evidence Category D**. It represent
 
 ---
 
-## 14. Hubble-Patch Meta-Analysis
+## 15. Hubble-Patch Meta-Analysis
 
 **Status:** Under Active Review
 **Classification:** **Category C** (Calibrated Observation)
@@ -505,7 +505,7 @@ Therefore, UIDT does not *solve* the crisis in absolute terms; rather, it *offer
 
 **Falsification Warning:** This prediction crucially depends on forthcoming data from JWST DR3 (2027) and Euclid DR1. If these upcoming surveys conclusively drift away from the $70.4$ target (e.g., locking strictly to $\Lambda$CDM and late-universe deviations disappear), this would constitute a falsification of the UIDT late-universe topological projection. Future local distance ladder calibrations must be rigorously monitored.
 
-## 14. Topological Lepton Flavor Universality Violation (LFUV) Hypothesis
+## 16. Topological Lepton Flavor Universality Violation (LFUV) Hypothesis
 
 **Status:** Under Active Investigation
 **Classification:** **Category D** (Phenomenological Fit / Theoretical Hypothesis)

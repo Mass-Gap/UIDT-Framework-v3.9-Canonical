@@ -684,6 +684,12 @@ Thermodynamically, $E_T$ represents the entropic tension that stabilizes the dis
 \noindent\textbf{Physical Manifestation (The Up-Quark Identification):}
 Crucially, this torsion energy $E_T \approx 2.44\,\MeV$ corresponds phenomenologically to the \emph{bare up-quark mass} $m_u$. The Particle Data Group (2024) reports the up-quark mass at the scale $\mu = 2\,\GeV$ as $m_u = 2.16^{+0.49}_{-0.26}\,\MeV$~\cite{PDG2024}. The geometric torsion value $2.44\,\MeV$ lies centrally within this $1\sigma$ confidence interval ($1.90$--$2.65\,\MeV$). This suggests that the ``bare mass'' of the lightest quark species may physically originate from the lattice torsion energy required to stabilize the vacuum geometry against collapse \textcolor{catC}{\textbf{[Evidence Category C]}}. The geometric derivation of $E_T$ itself remains \textcolor{catB}{\textbf{[Evidence Category B]}}.
 
+Furthermore, this mechanism suggests a topological rationale for the $u$-$d$ quark mass hierarchy without invoking arbitrary Yukawa parameters. Through \textbf{Isotopic Torsion Doubling} \textcolor{catB}{\textbf{[Evidence Category B]}}, the topological doubling of the vacuum torsion energy yields the down-quark mass approximation:
+\begin{equation}
+    m_d \approx E_{T,iso} = 2 \times E_T \approx 4.88\,\MeV.
+\end{equation}
+The topological prediction leaves a $+0.18\,\MeV$ ($2.58\sigma$) residual compared to the PDG 2024 $\overline{MS}$ value at $\mu = 2\,\GeV$ ($m_d = 4.70 \pm 0.07\,\MeV$). The QED self-energy correction ($\Delta m_{EM} \approx -0.18\,\MeV$) is a \textcolor{catD}{\textbf{[Category D theoretical hypothesis]}}. If valid, it suggests compatibility with the PDG value, however the residual cannot be claimed as eliminated without an ab-initio derivation of $\Delta m_{EM}$ from the UIDT Lagrangian.
+
 \noindent\textbf{Code Audit Note:} This relation is audited by \texttt{modules/lattice\_topology.py} (\texttt{TorsionLattice.calculate\_vacuum\_frequency()}) [Data Repository].
 
 \section{Constructive Derivation of the Yang-Mills Mass Gap}
