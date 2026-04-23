@@ -4,6 +4,9 @@
 **Date:** 2026-02-24
 **Evidence Status:** Category C (Calibrated)
 
+> **ARCHIVED** — This document is superseded by `docs/cosmological_implications_v3.9.md` (canonical, 13 kB).
+> Retained for audit trail. Do not edit.
+
 ## Executive Summary
 
 This document summarizes the "Trilateral Cosmological Convergence" update to the UIDT v3.9 framework. It addresses the simultaneous resolution of:
