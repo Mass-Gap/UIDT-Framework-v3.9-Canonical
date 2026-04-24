@@ -119,7 +119,7 @@ graph LR
     RG["5κ² = 3λ_S [A]"]
     Res["Residuals < 1e-14 [A]"]
     Kappa["κ = 0.500 ± 0.008 [A]"]
-    LambdaS["λ_S = 0.417 ± 0.007 [A]"]
+    LambdaS["λ_S = 5κ²/3 ≈ 0.417 [A]"]
     VEV["v = 47.7 MeV [A]"]
     mS["m_S = 1.705 ± 0.015 GeV [B]"]
   end
@@ -170,8 +170,8 @@ graph LR
     GlueTensor["Glueball Tensor = 2.418 GeV [D]"]
   end
 
-  subgraph PILLAR_IV ["🏛 Pillar IV: Photonic Isomorphism [D+]"]
-    ncrit["n_critical = γ ≈ 16.339 [D+]"]
+  subgraph PILLAR_IV ["🏛 Pillar IV: Photonic Isomorphism [D]"]
+    ncrit["n_critical = γ ≈ 16.339 [D]"]
   end
 
   Kappa --> QFT_Core
