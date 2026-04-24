@@ -1,9 +1,0 @@
-[UIDT-v3.9] LEDGER: Schema compliance and registry harmonization
-
-Changes:
-- claims.schema.json: Added 'external' to status enum to pass validation (fixes F-003)
-- CLAIMS_ADDENDUM_C054_C056.md: Marked as SUPERSEDED to resolve ID collision (fixes F-006)
-- tickets_new.json: Closed all 7 stale tickets (fixes F-010)
-
-Quality Gate: F (Schema Validation), A (Canonical Integrity)
-DOI: 10.5281/zenodo.17835200

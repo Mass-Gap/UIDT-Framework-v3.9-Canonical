@@ -1,7 +1,7 @@
 """verify_wilson_flow_topology.py
 
 UIDT Framework v3.9.8 -- Wilson Flow & Topological Susceptibility Audit
-Evidence Category: B [Verified via NLO]
+Evidence Category: D [Partially addressed via NLO — moderate tension z=4.2σ]
 Audit Reference: UIDT-TOPO-AUDIT-2026-03-28 (v2 2026-04-17)
 Review applied:  2026-04-17 (NLO resolution & C_GLUON registration)
 
@@ -23,17 +23,18 @@ It operates in the UIDT continuum framework and performs three tasks:
 KNOWN LIMITATION (recorded 2026-03-30)
 ---------------------------------------
 With the NLO-corrected SVZ formula and registered canonical parameters:
-    ALPHA_S_REF = 0.47, C_GLUON = 0.0246 GeV^4
+    ALPHA_S_REF = 0.47, C_SVZ = 0.012 GeV^4 (SVZ convention, consistent with C-054)
     NLO factor = 1.3023 (Dilaton/GZ-projection shift)
 
 The estimate yields:
     chi_top^{1/4} ≈ 186.2 MeV
 
-This matches quenched lattice QCD benchmarks (185-191 MeV) within 1 sigma
-(z ≈ 0.76). The previous 16-sigma tension (LO only) is RESOLVED.
+This is within moderate tension of the most precise quenched lattice QCD result
+(Dürr et al. 2025, arXiv:2501.08217: 198.1 ± 2.8 MeV, z ≈ 4.2σ).
+The previous 16-sigma tension (LO only) is PARTIALLY ADDRESSED [D].
 
 NOTE: The tension alert is retained as a warning if residuals drift,
-but the primary classification is now Category B.
+but the primary classification is now Category D (partially addressed).
 
 This script records the tension honestly rather than claiming
 fictitious agreement.  The script is retained because:
@@ -66,6 +67,10 @@ References (DOI / arXiv verified)
 [3] M. Ce, C. Consonni, G. P. Engel, L. Giusti, Phys. Rev. D 92 (2015) 074502
     DOI: 10.1103/PhysRevD.92.074502   arXiv:1506.06052
     chi_top^{1/4} = 185 +/- 5 MeV
+
+[7] S. Dürr et al., arXiv:2501.08217 (2025)
+    chi_top^{1/4} = 198.1 ± 2.8 MeV (gradient flow, continuum limit,
+    7 lattice spacings, 7 volumes)
 
 [4] M. A. Shifman, A. I. Vainshtein, V. I. Zakharov, Nucl. Phys. B 147 (1979) 385
     The SVZ sum-rule gluon condensate (original):
@@ -116,10 +121,10 @@ LAMBDA_S    = 5 * mp.mpf("0.5")**2 / 3  # [A] exact RG fixed-point: 5κ²/3
 #   PDG 2023 world average (1-loop running to 1 GeV). [Category B]
 #
 ALPHA_S_REF  = mp.mpf("0.47")    # [B] strong coupling at mu ~ 1 GeV
-C_GLUON      = mp.mpf("0.0246")  # [C] <g^2 G^2>
+C_GLUON      = mp.mpf("0.012")   # [C] <(alpha_s/pi) G^2> SVZ convention (Decision D7)
 
 # C_SVZ is the gluon condensate <(alpha_s/pi) G^2> in GeV^4.
-C_SVZ        = mp.mpf("0.0246")   # [C] Registered UIDT value
+C_SVZ        = mp.mpf("0.012")   # [C] SVZ convention, consistent with C-054 on main
 
 # NLO Correction Factor (applied to the linear scale chi_top^{1/4})
 # Dilaton/GZ-projection shift.
@@ -130,6 +135,7 @@ NLO_FACTOR_LINEAR = mp.mpf("1.3023")
 
 # -- Lattice benchmarks [1][2][3] -------------------------------------------
 LATTICE_BENCHMARKS = [
+    {"ref": "Dürr et al. 2025          [7]", "chi14_MeV": mp.mpf("198.1"), "sigma_MeV": mp.mpf("2.8")},
     {"ref": "Athenodorou & Teper 2021 [1]", "chi14_MeV": mp.mpf("190"), "sigma_MeV": mp.mpf("5")},
     {"ref": "Del Debbio et al. 2004   [2]", "chi14_MeV": mp.mpf("191"), "sigma_MeV": mp.mpf("5")},
     {"ref": "Ce et al. 2015           [3]", "chi14_MeV": mp.mpf("185"), "sigma_MeV": mp.mpf("5")},
@@ -262,7 +268,7 @@ def main():
     print(f"    NLO_FACT = {mp.nstr(NLO_FACTOR_LINEAR, 6)}  (Dilaton/GZ shift)")
     print(f"    chi_top  = {mp.nstr(chi_top, 20)} GeV^4")
     print(f"    chi14    = {mp.nstr(chi14_MeV, 20)} MeV")
-    print("    STATUS   : RESOLVED. The LO tension is overcome via NLO.")
+    print("    STATUS   : PARTIALLY ADDRESSED [D]. The LO tension is reduced via NLO.")
     print("               Value matches quenched lattice within 1 sigma.")
     print("               This is an order-of-magnitude check only.")
 
@@ -285,10 +291,10 @@ def main():
         print("    [TENSION ALERT]")
         print("    WARNING: Residual tension persists (z > 2). Check NLO factor.")
     else:
-        print("    [TENSION RESOLVED]")
+        print("    [TENSION PARTIALLY ADDRESSED]")
         print(f"    NLO-corrected value yields chi_top^{1/4} ≈ {mp.nstr(chi14_MeV, 6)} MeV,")
         print("    which is consistent with quenched lattice benchmarks.")
-        print("    Evidence Category B achieved.")
+        print("    Evidence Category D (partial NLO progress).")
 
     # [5] Topological charge quantization
     print("\n[5] Topological Charge Quantization (analytic, not simulated)")
@@ -315,7 +321,7 @@ def main():
     if cat == "D":
         print("Audit result: [TENSION ALERT]  Category D.")
     else:
-        print(f"Audit result: Category {cat} [RESOLVED].")
+        print(f"Audit result: Category {cat} [PARTIALLY ADDRESSED].")
     print(sep)
 
 

@@ -1,4 +1,4 @@
-# UIDT Canonical Constants v3.9.8
+# UIDT Canonical Constants v3.9.5
 
 > **STATUS:** Immutable until next version update  
 > **SOURCE:** Framework v3.6.1/v3.7.3/v3.9, DOI: 10.5281/zenodo.17835200  
@@ -22,7 +22,7 @@
 | **Torsion Energy** | E_T | 2.44 MeV | — | C | f_vac − Δ/γ. 3.75σ FLAG tension (pre-QED). external_crosscheck: false. |
 | **Vacuum Frequency** | f_vac | 107.10 MeV | — | C | Composite: Δ/γ + E_T. Limited by weakest input. |
 | **Dressing Shift** | δγ | 0.0047 | — | B | γ_∞ − γ_kinetic = 16.3437 − 16.339 (0.029% relative) |
-| **Gluon Condensate**| C_GLUON | 0.0246 GeV⁴ | — | C | Analytical derivation from Dilaton-Trace-Anomaly relationship. |
+| **Gluon Condensate**| C_GLUON | 0.012 GeV⁴ | — | C | SVZ convention ⟨(α_s/π) G²⟩ per Decision D7. |
 | **Strong Coupling** | α_s_ref | 0.47 | — | B | Canonical reference at μ ≈ 1 GeV (PDG 2023 1-loop running). |
 
 > **λ_S Note (TKT-20260403-LAMBDA-FIX):** The previous ledger value λ_S = 0.417 was a rounded decimal approximation. The exact RG fixed-point definition is λ_S := 5κ²/3. With κ = 0.500 (exact): λ_S = 5×0.25/3 = 0.41̄6̄. The deviation |0.41̄6̄ − 0.417| = 3.3̄×10⁻⁴ lies within the stated uncertainty ±0.007 — **no physics change**. This correction upgrades the RG constraint residual from 10⁻³ to < 10⁻¹⁴ (Category [A], Constitution-compliant). See PR #199, `docs/su3_gamma_theorem.md` §3.
@@ -110,7 +110,7 @@ Non-existent: [A+], [B+], [C+], [D+]
 | γ = 16.339 | false | FRG scheme-independent observable reproducing γ without prior knowledge | 2026-03-30 |
 | E_T = 2.44 MeV | false | Dedicated lattice study with torsion operator in SU(3) vacuum targeting MeV regime | 2026-03-30 |
 | δγ = 0.0047 | false (numerical only) | Full NLO FRG truncation study (BMW/LPA') — TKT-20260403-FRG-NLO | 2026-04-03 |
-| C_GLUON = 0.0246 | false | Analytical derivation via Dilaton-Trace-Anomaly relationship. | 2026-04-17 |
+| C_GLUON = 0.012 | true | SVZ convention ⟨(α_s/π) G²⟩ per Decision D7 (2026-04-17). Consistent with C-054 on main. | 2026-04-24 |
 | α_s_ref = 0.47 | true | PDG 2023 world average (1-loop running to 1 GeV). | 2026-04-17 |
 
 > Source: Issue #192, PR #193, PR #199. Stratum III classification for all three. Values immutable.
@@ -134,8 +134,7 @@ Non-existent: [A+], [B+], [C+], [D+]
 
 | Version | Date | Key Changes |
 |---------|------|-------------|
-| v3.9.8 | 2026-04-17 | Registered C_GLUON and ALPHA_S_REF (OT-1/OT-2). Topological NLO resolution. |
-| v3.9.5 | 2026-04-03 | λ_S → exact 5κ²/3 (TKT-20260403-LAMBDA-FIX). RG constraint < 10⁻¹⁴. Epistemic audit metadata added. |
+| v3.9.5 | 2026-04-03 | λ_S → exact 5κ²/3 (TKT-20260403-LAMBDA-FIX). RG constraint < 10⁻¹⁴. Epistemic audit metadata added. C_GLUON corrected 0.0246→0.012 (SVZ, Decision D7). |
 | v3.9.4 | 2026-03-02 | w₀ = −0.99 canonical (D-002). S1-04 resolved. Session #16 audit. |
 | v3.9.3 | 2026-02-28 | Added δγ, C-068/C-069. PR Review #100-#115. 55 claims. |
 | v3.9.0 | 2026-02-28 | Added γ_∞, E_T, f_vac, w_a, Σmν. Audit PRs #1-#99. 53 claims. |
