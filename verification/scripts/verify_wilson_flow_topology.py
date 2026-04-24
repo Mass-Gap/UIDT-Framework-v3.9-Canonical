@@ -263,7 +263,7 @@ def main():
     print("\n[2] Topological Susceptibility chi_top (NLO Corrected)")
     print(f"    Formula  : {formula}")
     print(f"    b0       = {mp.nstr(b0, 6)}  (11 * N_c / 3, SU(3))")
-    print(f"    C_SVZ    = {mp.nstr(C_SVZ, 10)} GeV^4  [C] derived, Dilaton-TA")
+    print(f"    C_SVZ    = {mp.nstr(C_SVZ, 10)} GeV^4  [C] SVZ (D7)")
     print(f"    alpha_s  = {mp.nstr(ALPHA_S_REF, 6)}  [B] registered, PDG 2023")
     print(f"    NLO_FACT = {mp.nstr(NLO_FACTOR_LINEAR, 6)}  (Dilaton/GZ shift)")
     print(f"    chi_top  = {mp.nstr(chi_top, 20)} GeV^4")
