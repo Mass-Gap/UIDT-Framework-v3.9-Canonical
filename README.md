@@ -39,7 +39,7 @@
 - Glueball resonance at 1.705 ± 0.015 GeV (Category B: lattice-consistent)
 - Absence of Torsion Energy (E_T → 0) in precision hadron spectroscopy (Category A)
 - DESI dark energy evolution w₀ = −0.99 [C] (Canonical per Decision D-002, DESI-calibrated)
-- Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D+: analog verification)
+- Photonic isomorphism transition at n_critical = γ ≈ 16.339 (Category D: analog verification)
 
 ---
 
@@ -296,7 +296,7 @@ Three-Equation System Closure:
 * **Achievement:** A macroscopic analog test channel for UIDT scaling relations
 * **Prediction:** Critical transition at n_critical = γ ≈ 16.339
 * **Platform:** Nonlocal metamaterials ("photonic parallel spaces"; external platform)
-* **Status:** **Category D+ (Analog Verification; interpretation unverified)**
+* **Status:** **Category D (Analog Verification; interpretation unverified)**
 
 ---
 
