@@ -44,6 +44,7 @@ from typing import NamedTuple, Optional
 # =====================================================================
 
 import mpmath as mp
+mp.dps = 80  # Constitution §3: local precision — do NOT centralize
 
 DELTA_STAR_GEV = mp.mpf("1.710")      # +/- 0.015  [A]
 DELTA_TOLERANCE = mp.mpf("0.015")     # 1-sigma canonical tolerance

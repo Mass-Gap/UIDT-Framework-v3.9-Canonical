@@ -35,7 +35,7 @@ spectral gap of the theory.
 
 **Implementation**: `verification/scripts/hybrid_uidt_raumzeit_spectral_gap.py`
 
-**Evidence target**: [B] (Numerical robustness)
+**Evidence target**: [E] (Speculative — no dimensional bridge to GeV scale)
 
 **Status**: Implemented in this PR.
 
@@ -55,7 +55,7 @@ should converge to ≈ 16.339 in the large-N limit.
 
 **Key function**: `v9_ball_coherence_term()` (archive/reference-monolith)
 
-**Evidence target**: [B-] (Convergence test)
+**Evidence target**: [E] (Speculative — convergence test, no bridge equation)
 
 **Status**: Design phase.  Requires:
 1. Extracting sector-balance statistics from batch runs

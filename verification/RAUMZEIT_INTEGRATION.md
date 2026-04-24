@@ -130,10 +130,10 @@ matching UIDT's predicted Yang-Mills spectral gap Δ\* = 1.710 ± 0.015 GeV.
 
 | Result | Criterion | Evidence | Exit code |
 |--------|-----------|----------|-----------|
-| PASS | \|mean(g\_fc) − 1.710\| ≤ 0.015 | [B] | 0 |
-| NEAR | \|mean(g\_fc) − 1.710\| ≤ 0.030 | [B] | 1 |
-| MARGINAL | \|z-score\| < 2.0 | [C] | 1 |
-| FAIL | Otherwise | [D] | 2 |
+| PASS | \|mean(g\_fc) − 1.710\| ≤ 0.015 | [E] | 0 |
+| NEAR | \|mean(g\_fc) − 1.710\| ≤ 0.030 | [E] | 1 |
+| MARGINAL | \|z-score\| < 2.0 | [E] | 1 |
+| FAIL | Otherwise | [E] | 2 |
 
 ### Execution
 
@@ -182,7 +182,7 @@ Recommendations: N ≥ 2000, num\_anchors ≥ 8, multiple random seeds.
 ## 8. Governance
 
 - **Approval chain**: Code review → Guardian consensus → P. Rietz sign-off
-- **Evidence category**: [B] (numerical robustness vs. emergent framework)
+- **Evidence category**: [E] (speculative — no dimensional bridge, per Guardian review 2026-04-19)
 - **Protected constants**: All UIDT canonical values are read-only
 - **External reference**: Immutable (cblab/raumzeit, ID: 1207002944)
 - **Branch**: `TKT-20260419-hybrid-raumzeit-spectral-gap`
