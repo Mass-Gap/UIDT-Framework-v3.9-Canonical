@@ -292,7 +292,7 @@ def main():
         print("    WARNING: Residual tension persists (z > 2). Check NLO factor.")
     else:
         print("    [TENSION PARTIALLY ADDRESSED]")
-        print(f"    NLO-corrected value yields chi_top^{1/4} ≈ {mp.nstr(chi14_MeV, 6)} MeV,")
+        print(f"    NLO-corrected value yields chi_top^(1/4) ~= {mp.nstr(chi14_MeV, 6)} MeV,")
         print("    which is consistent with quenched lattice benchmarks.")
         print("    Evidence Category D (partial NLO progress).")
 
