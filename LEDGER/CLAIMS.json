@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "version": "3.9.7",
-    "last_updated": "2026-04-17",
+    "version": "3.9.8",
+    "last_updated": "2026-04-25",
     "doi": "10.5281/zenodo.17835200",
     "total_claims": 58,
-    "audit_note": "v3.9.7 (2026-04-17): C-056 notes extended with EFT/IR reframing context. Added UIDT-C-096 (NLO-RG conjecture for χ_top tension, [E]). Session audit 2026-04-16/17. | v3.9.8 (2026-04-19): Added UIDT-C-100 (raumzeit hybrid Path A spectral gap verification, [C])."
+    "audit_note": "v3.9.7 (2026-04-17): C-056 notes extended with EFT/IR reframing context. Added UIDT-C-096 (NLO-RG conjecture for χ_top tension, [E]). Session audit 2026-04-16/17. | v3.9.8a (2026-04-19): Added UIDT-C-100 (raumzeit hybrid Path A spectral gap verification, [E]). | v3.9.8b (2026-04-25): PI Decision D17 — pi_override mechanism added to schema. C-056 first applies the override (algorithmic B, PI-overridden D, rationale: Dürr et al. 2025 [arXiv:2501.08217] supersedes older Athenodorou 2021 estimate at z=4.25σ vs z=0.76σ)."
   },
   "claims": [
     {
@@ -615,6 +615,14 @@
       "dependencies": ["UIDT-C-054", "UIDT-C-055"],
       "since": "v3.9.6",
       "notes": "SVZ leading-order estimate. TENSION ALERT: z ≈ 19.7σ (LO), z ≈ 4.2σ (NLO×1.3023) vs quenched lattice (198.1 ± 2.8 MeV, Dürr et al. 2025, arXiv:2501.08217). NLO corrections expected +30–80%. Previous erroneous values: 55 MeV (wrong formula, PR #190), 107 MeV (partial). Corrected to 142.98 MeV via mpmath 80-dps verification (PR #213, chi_top_formula_audit.md). Under the IR/EFT reframing (v3.9.7), this tension is interpreted as evidence for missing NLO anomalous-dimension corrections in the SVZ operator and RG-flow truncation errors at scale μ ∼ Δ*. This does NOT affect the Category-A spectral gap Δ* or the Category-A- coupling γ. See UIDT-C-096 (NLO research programme). TENSION ALERT remains active until NLO result available.",
+      "pi_override": {
+        "evidence_override": "D",
+        "algorithmic_evidence": "B",
+        "rationale": "classify_evidence() returns B because Athenodorou 2021 (190±5 MeV) passes z=0.76σ. However Dürr et al. 2025 (arXiv:2501.08217), the most precise continuum-limit measurement using gradient flow on 7 lattice spacings and 7 volumes, fails at z=4.25σ. The 2025 result epistemologically supersedes the 2021 anisotropic-lattice estimate. PARTIALLY ADDRESSED [D] is the honest classification consistent with C-056 statement, the verify_wilson_flow_topology.py STATUS output, and CANONICAL/LIMITATIONS.md L6-FRG ACTIVE RESEARCH status.",
+        "decided_by": "Philipp Rietz (PI)",
+        "decided_date": "2026-04-25",
+        "pi_decision_ref": "D17"
+      },
       "falsification": "NLO-corrected value outside [140, 220] MeV refutes SVZ estimate applicability."
     },
     {
