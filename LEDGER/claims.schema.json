@@ -69,7 +69,32 @@
             "type": "string",
             "format": "date"
           },
-          "notes": {"type": "string"}
+          "notes": {"type": "string"},
+          "pi_override": {
+            "type": ["object", "null"],
+            "description": "PI-level override of algorithmic evidence classification (PI Decision D17, 2026-04-25). Used when a more rigorous external benchmark supersedes algorithmic averaging. NEVER use to upgrade evidence without new experimental data.",
+            "required": ["evidence_override", "algorithmic_evidence", "rationale", "decided_by", "decided_date", "pi_decision_ref"],
+            "properties": {
+              "evidence_override": {
+                "type": "string",
+                "enum": ["A", "A-", "B", "C", "D", "E"],
+                "description": "PI-decreed evidence category"
+              },
+              "algorithmic_evidence": {
+                "type": "string",
+                "enum": ["A", "A-", "B", "C", "D", "E"],
+                "description": "What the algorithm would return without override"
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 30,
+                "description": "Scientific justification for the override"
+              },
+              "decided_by": {"type": "string"},
+              "decided_date": {"type": "string", "format": "date"},
+              "pi_decision_ref": {"type": "string", "pattern": "^D\\d+$"}
+            }
+          }
         }
       }
     },
