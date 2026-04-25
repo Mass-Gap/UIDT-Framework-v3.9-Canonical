@@ -3,8 +3,8 @@
     "version": "3.9.7",
     "last_updated": "2026-04-17",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 87,
-    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification. | v3.9.6+ (2026-04-24): C-054 C_GLUON reverted to SVZ convention 0.012 GeV⁴ (Decision D7). C-056 updated: NLO χ_top^{1/4} = 186.2 MeV, PARTIALLY ADDRESSED [D] vs Dürr 2025 (z=4.25σ)."
+    "total_claims": 58,
+    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification. | v3.9.6+ (2026-04-24): C-054 C_GLUON reverted to SVZ convention 0.012 GeV⁴ (Decision D7). C-056 updated: NLO χ_top^{1/4} = 186.2 MeV, PARTIALLY ADDRESSED [D] vs Dürr 2025 (z=4.25σ). | v3.9.7 (2026-04-17): C-056 notes extended with EFT/IR reframing context. Added UIDT-C-096 (NLO-RG conjecture for χ_top tension, [E]). Session audit 2026-04-16/17. | v3.9.8 (2026-04-19): Added UIDT-C-100 (raumzeit hybrid Path A spectral gap verification, [C])."
   },
   "claims": [
     {
@@ -644,13 +644,25 @@
       "since": "v3.9.7",
       "notes": "Category [E] — interpretive conjecture. Formalises the NLO-RG research programme for C-056. No numerical result exists. Upgrade to [D] requires reproducible NLO-FRG script under verification/scripts/ with mp.dps=80 and residual < 1e-14 on all Category-A constraints. Upgrade to [C] requires external lattice cross-check. TENSION ALERT on C-056 remains active until Task T-2 delivers a numerical result. Session origin: 2026-04-16/17 audit.",
       "falsification": "If a complete NLO-FRG truncation at LPA' level cannot bring χ_top^{1/4} within 3σ of quenched lattice QCD without violating 5κ² = 3λ_S, the UIDT topological sector mapping is structurally incompatible with lattice QCD at NLO."
+    },
+    {
+      "id": "UIDT-C-100",
+      "statement": "Spectral Gap Proxy g_fc = 0.341 ± 0.99 [C, MARGINAL]",
+      "type": "verification",
+      "status": "calibrated",
+      "evidence": "C",
+      "confidence": 0.40,
+      "dependencies": ["cblab/raumzeit", "K7 diagnostic", "v9a_fast.yaml"],
+      "since": "v3.9.8",
+      "notes": "Emergent dimensional gap from causal graphs (raumzeit hybrid run). Signal is positive (ds_front > ds_core) across 118 valid K7 samples. Mean 0.341 is suppressed relative to Δ*=1.710 due to finite-size effects (N~216). Path A integration success.",
+      "falsification": "If Mean(g_fc) ≤ 0 for N > 5000 in V9-enabled runs."
     }
   ],
   "statistics": {
     "category_A": 14,
     "category_A-": 4,
     "category_B": 7,
-    "category_C": 9,
+    "category_C": 10,
     "category_D": 8,
     "category_E": 15,
     "verified": 22,

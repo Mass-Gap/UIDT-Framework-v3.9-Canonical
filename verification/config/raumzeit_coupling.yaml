@@ -1,0 +1,38 @@
+# UIDT-v3.9 Batch Configuration for raumzeit
+# Tuned for spectral gap validation (Path A)
+# DOI: 10.5281/zenodo.17835200
+
+experiment:
+  name: "UIDT-v3.9-Spectral-Gap-Validation"
+  description: "K7 fixed-anchor measurements for Δ* = 1.710 GeV proxy validation"
+
+model: "v9a_fast"
+
+# --- UIDT Force Overrides ---
+steps: 1200                     # Run long enough for K7
+fine_start: 400                 # Start K diagnostics early
+k7_every: 200                   # 5 samples (400, 600, 800, 1000, 1200)
+# ----------------------------
+
+# -------------------------------------------------------------------
+# K7 Fixed-Anchor Diagnostics  (PRIMARY for UIDT Path A)
+# -------------------------------------------------------------------
+num_anchors: 8                  # 8-16 anchors recommended for stability
+anchor_region_size: 1500        # BFS region size per anchor
+anchor_min_region: 100          # Minimum viable region
+
+external_reference:
+  framework: "cblab/raumzeit (emergent geometry causal graphs)"
+  repo_url: "https://github.com/cblab/raumzeit"
+  repo_id: 1207002944
+  config_source: "emergent-geometry-causal-graphs/configs/v9a_fast.yaml"
+  commit_sha: "34c02567617b8aa0e3dcadbed57f3a16fe0c3cae"
+  pinned_date: "2026-04-19"
+  immutability_note: "This SHA pins the exact configuration used for reproducibility."
+
+dynamics:
+  v9_alpha: 0.035
+  v9_w_sector: 0.90
+  v9_w_redundant: 0.60
+  v9_w_r2: 0.25
+  sector_balance_target: 16.339

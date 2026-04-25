@@ -1,0 +1,54 @@
+
++================================================================+
+|  UIDT-RAUMZEIT HYBRID VERIFICATION: PATH A (Spectral Gap)     |
++================================================================+
+
+CANONICAL TARGET:
+  Delta* = 1.71 +/- 0.015 GeV  [A]
+  Source : UIDT v3.9 Banach Fixed-Point Proof (Theorem 1)
+
+EMERGENT PROXY (raumzeit):
+  g_fc   = ds(front) - ds(core)
+  Method : K7 fixed-anchor diagnostics (random walker d_s)
+  Config : v9a_fast.yaml (enable_v9_ball_coherence: true)
+
+MEASUREMENT SUMMARY:
+  Mean g_fc      : 0.3408
+  Std Dev        : 0.9869
+  Z-score        : -1.39 sigma
+  Valid samples  : 118
+
+CONSISTENCY CHECK:
+  Status         : MARGINAL
+  Evidence Cat.  : [C]
+  Confidence     : 40.0%
+
+AUXILIARY DIAGNOSTICS:
+  ds_global    : 4.2510 +/- 0.7224
+  dv_global    : 2.3322 +/- 0.5157
+  iso_defect   : 0.5844 +/- 0.0732
+  g_fm (front-mid) : 0.1682
+  g_mc (mid-core)  : 0.1619
+
+INTERPRETATION:
+  MARGINAL CONSISTENCY  (Moderate scatter)
+
+  Gap proxy exhibits larger variance.  Actions:
+  - Replicate with different random seeds
+  - Increase K7 anchor count (num_anchors >= 16)
+  - Extend to larger N values (>= 5000 nodes)
+
+  Classification: [C] Calibrated Model (scenario-dependent).
+
+REFERENCES:
+  UIDT Theory : DOI 10.5281/zenodo.17835200
+  External Ref : cblab/raumzeit (ID: 1207002944)
+  K7 Diagnostic: diagnostics_k7.py :: measure_anchor()
+  K2 Base      : diagnostics_k2.py :: _estimate_spectral_dimension()
+  Config       : emergent-geometry-causal-graphs/configs/v9a_fast.yaml
+
+RG FIXED-POINT CONSTRAINT (read-only verification):
+  5*kappa^2          = 1.250000000000000
+  3*lambda_S         = 1.250000000000000
+  Residual           = 0.00e+00
+  Status             = PASS
