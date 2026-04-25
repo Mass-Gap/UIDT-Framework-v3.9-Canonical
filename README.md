@@ -89,7 +89,7 @@ Canonical parameters are derived self-consistently via the **Extended Functional
 | **Universal Gamma Invariant (γ)** | 16.339 (exact) | A− | Calibrated via Kinetic VEV |
 | **Lattice Torsion Binding Energy (E_T)** | 2.44 MeV | C | DESI-calibrated; L2 open |
 | **Holographic Length (λ)** | 0.66 nm | C | DESI-calibrated |
-| **Hubble Constant (H₀)** | 70.4 km/s/Mpc | C | Intermediate calibrated value; does **not** resolve the H₀ tension |
+| **Hubble Constant (H₀)** | 70.4 km/s/Mpc | C | Intermediate calibrated value; does **not** address the H₀ tension |
 | **Scalar Mass (mₛ)** | 1.705 ± 0.015 GeV | B | Self-consistent solution |
 | **Vacuum Expectation (v)** | **47.7 ± 0.5 MeV** | A | Clean State |
 
@@ -413,7 +413,7 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
 | Lattice Torsion Binding Energy (2.44 MeV) | Calibrated | C | "Missing Link" — DESI-anchored |
 | X17 Anomaly origin | Unverified prediction | D | Consistent with Thermodynamic Censorship at 17.10 MeV |
 | CSF-UIDT Unification | Covariant path defined | D | Formal synthesis in progress |
-| H₀ Tension | **Not resolved** | C | Intermediate calibrated value only |
+| H₀ Tension | **Open problem** | C | Intermediate calibrated value only |
 | Electron mass prediction | Open (23% residual) | — | L1 known limitation |
 | 10¹⁰ holographic scale factor | Open | — | L2 known limitation |
 | RG derivation of γ | Open (candidate identified) | — | L4 known limitation |
