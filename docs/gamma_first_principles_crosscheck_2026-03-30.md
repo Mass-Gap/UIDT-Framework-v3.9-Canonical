@@ -1,5 +1,5 @@
 # γ First-Principles External Crosscheck
-**Date:** 2026-03-30  
+**Date:** 2026-03-30 | **Updated:** 2026-04-26 (TKT-20260425-L1-L4-L5-first-principles)  
 **Branch:** research/first-principles-evidence-audit-2026-03-30  
 **Linked Claims:** UIDT-C-002, UIDT-C-016, UIDT-C-031, UIDT-C-040, UIDT-C-052  
 **Linked Issues:** #192  
@@ -107,18 +107,48 @@ The post-QED correction noted in UIDT-C-044 brings the tension to 0.75σ — wit
 
 ---
 
-## 6. Summary: Upgrade-Path Feasibility Assessment
+## 6. FSS Extrapolation: γ vs γ∞ (Update 2026-04-26)
 
-| Claim | Current Evidence | External Crosscheck Found | Feasibility to Upgrade to B | Blocking Issue |
-|---|---|---|---|---|
-| γ = 16.339 (UIDT-C-002) | A- | None (N_f=10 IRFP g²=15.0 is nearest but different theory) | **Low** | No pure YM dimensionless ratio ~16 exists in literature |
-| γ SU(3) conjecture 49/3 (UIDT-C-052) | E | Not found in standard SU(N) invariants | **Very Low** | Combination (2Nc+1)²/Nc has no known physical significance |
-| E_T = 2.44 MeV (UIDT-C-044) | D | No lattice MeV-scale torsion signal | **Low-Medium** | Requires dedicated lattice simulation; FLAG tension documented |
-| Δ* mechanistic support (UIDT-C-001) | A | ✓ Strong: Schwinger mechanism (arXiv:2501.01080, 2211.12594) | **Already B-level mechanistically** | Numerical calibration (1.710 GeV vs ~0.5–0.7 GeV) remains Stratum III |
+The finite-size scaling analysis documented in `docs/bare_gamma_theorem.md` provides the following UIDT-internal (Stratum III) extrapolation:
+
+| Quantity | Value | Evidence Category | Source |
+|---|---|---|---|
+| γ (dressed) | 16.339 | [A-] | Phenomenological fit — UIDT-internal |
+| γ∞ (bare, FSS) | 16.3437 ± 10⁻⁴ | [B] | Numerical FSS extrapolation — UIDT-internal |
+| δγ = γ∞ − γ | 0.0047 | [B/D] | Numerically derived; interpretation model-dependent |
+| δ = δγ/γ∞ | 2.8757 × 10⁻⁴ | [B] | Ratio of UIDT-internal quantities |
+
+**Critical constraint:** Both γ and γ∞ are UIDT-internal quantities. The FSS extrapolation does NOT constitute an external first-principles derivation. γ remains [A-] and must NOT be upgraded to [A]. γ∞ is [B] — lattice-compatible in methodology only, not externally verified.
+
+**L1 Blocking Point (open):** The holographic amplification factor L⁴ ≈ 4521 (L=8.2) mapping δ → w_a is UIDT-internal and has no external derivation. Any L-dependent cosmological result carries this unresolved uncertainty.
+
+**L4 Blocking Point (open):** γ = 16.339 [A-] is phenomenologically calibrated, not derived from RG flow equations from first principles. No external literature closes this gap.
 
 ---
 
-## 7. UIDT Constitution Compliance
+## 7. Summary: Upgrade-Path Feasibility Assessment
+
+| Claim | Current Evidence | External Crosscheck Found | Feasibility to Upgrade to B | Blocking Issue |
+|---|---|---|---|---|
+| γ = 16.339 (UIDT-C-002) | A- | None (N_f=10 IRFP g²=15.0 is nearest but different theory) | **Low** | L4: No pure YM dimensionless ratio ~16 in literature; no RG derivation |
+| γ SU(3) conjecture 49/3 (UIDT-C-052) | E | Not found in standard SU(N) invariants | **Very Low** | Combination (2Nc+1)²/Nc has no known physical significance |
+| E_T = 2.44 MeV (UIDT-C-044) | D | No lattice MeV-scale torsion signal | **Low-Medium** | Requires dedicated lattice simulation; FLAG tension documented |
+| Δ* mechanistic support (UIDT-C-001) | A | ✓ Strong: Schwinger mechanism (arXiv:2501.01080, 2211.12594) | **Already B-level mechanistically** | Numerical calibration (1.710 GeV vs ~0.5–0.7 GeV) remains Stratum III |
+| γ∞ FSS extrapolation | B | UIDT-internal only | **B confirmed (internal)** | L1: L⁴ holographic factor unexplained externally |
+
+---
+
+## 8. Open Limitations (L1 / L4 / L5)
+
+These limitations are formally registered and must appear in all downstream documents that derive quantities from γ, γ∞, or N=99:
+
+- **L1 (10¹⁰ Geometric Factor):** The holographic amplification L⁴ ≈ 4521–10¹⁰ between the UIDT theoretical scale and observed cosmological wavelengths remains **unexplained from first principles**. Any L-dependent cosmological result inherits this uncertainty. Evidence cap on derived quantities: [C] maximum.
+- **L4 (γ Not RG-Derived):** The dressed value γ = 16.339 [A-] is phenomenologically calibrated, not derived from RG flow equations. The FSS extrapolation γ∞ = 16.3437 [B] shares this foundational limitation. Evidence upgrade to [A] is blocked until an independent RG or lattice derivation is achieved.
+- **L5 (N=99 Unjustified):** The cascade step count N=99 appearing in vacuum energy calculations is empirically chosen. No first-principles derivation from Yang-Mills axioms exists. Downstream quantities using N=99 are capped at [D] evidence.
+
+---
+
+## 9. UIDT Constitution Compliance
 
 - No parameter values modified
 - No code in /core or /modules touched
@@ -129,5 +159,6 @@ The post-QED correction noted in UIDT-C-044 brings the tension to 0.75σ — wit
 
 ---
 
-*Audit date: 2026-03-30. Researcher: automated deep-search via Perplexity/GitHub MCP.*  
+*Original audit date: 2026-03-30. Updated: 2026-04-26 (TKT-20260425-L1-L4-L5-first-principles).*  
+*Researcher: automated deep-search via Perplexity/GitHub MCP.*  
 *Zero hallucinations: every cited paper verified for real existence before inclusion.*
