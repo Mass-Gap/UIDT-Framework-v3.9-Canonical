@@ -48,7 +48,7 @@ def propagate_errors():
     # Central values (v3.6.1 canonical)
     m_S_central = 1.705
     kappa_central = 0.500
-    lambda_S_central = 0.417
+    lambda_S_central = (5.0 / 3.0) * (kappa_central ** 2)
     C_central = 0.277
     Delta_central = 1.710
     

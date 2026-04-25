@@ -14,7 +14,7 @@ Evidence classification:
 Immutable ledger constants used (DO NOT MODIFY):
   Delta* = 1.710 +/- 0.015 GeV   [A]
   kappa  = 0.500 +/- 0.008        [A-]
-  lambda_S = 0.417 +/- 0.007      [A-]
+  lambda_S = 5k^2/3              [A-]
   v      = 47.7 +/- 0.5 MeV      [A]
   gamma  = 16.339                  [A-]
 

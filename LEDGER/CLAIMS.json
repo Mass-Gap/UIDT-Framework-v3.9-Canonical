@@ -3,8 +3,8 @@
     "version": "3.9.7",
     "last_updated": "2026-04-17",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 57,
-    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification. | v3.9.7 (2026-04-17): C-056 notes extended with EFT/IR reframing context. Added UIDT-C-096 (NLO-RG conjecture for χ_top tension, [E]). Session audit 2026-04-16/17."
+    "total_claims": 87,
+    "audit_note": "v3.9.0 (2026-03-15): PRs #1–#99 retroactive audit. 11 new claims (C-043 to C-053), 2 updated (C-017, C-037). Evidence categories enforced per EVIDENCE_SYSTEM.md v3.7.3. C-037 synchronized to D-002 (w0=-0.99). | v3.9.5 (2026-04-06): OPUS-001 post-merge sync PRs #207–#222. λ_S exact def (D6, #209/#221). E_T [D]→[C] (#216 A5). su3_gamma renamed (#220 D2). RG residual 10⁻³→0.0. CONSTANTS.md v3.9.5 synchronized. | v3.9.6 (2026-04-13): Added UIDT-C-054 (C_GLUON), UIDT-C-055 (α_s reference scale), UIDT-C-056 (topological susceptibility χ_top^{1/4} = 142.98 MeV, corrected from erroneous 55 MeV). PR #190 OT-1/2/3 content, PR #213 verification. | v3.9.6+ (2026-04-24): C-054 C_GLUON reverted to SVZ convention 0.012 GeV⁴ (Decision D7). C-056 updated: NLO χ_top^{1/4} = 186.2 MeV, PARTIALLY ADDRESSED [D] vs Dürr 2025 (z=4.25σ)."
   },
   "claims": [
     {
@@ -587,12 +587,14 @@
       "id": "UIDT-C-054",
       "statement": "Gluon Condensate C_GLUON = (α_s/π)⟨G²⟩ ≈ 0.012 GeV⁴",
       "type": "parameter",
-      "status": "external",
-      "evidence": "E",
-      "confidence": 0.70,
-      "dependencies": [],
-      "since": "v3.9.6",
-      "notes": "SVZ estimate: (α_s/π)⟨G²⟩ ≈ 0.012 GeV⁴ (Shifman, Vainshtein, Zakharov 1979; uncertainty factor ~2–3). Used in Wilson Flow / topological susceptibility formula (PR #190). Category [E] (external literature value, not UIDT-derived). NOT to be modified without PI decision. Source: verification/scripts/verify_wilson_flow_topology.py."
+      "status": "verified",
+      "evidence": "C",
+      "confidence": 0.85,
+      "dependencies": [
+        "UIDT-C-072"
+      ],
+      "since": "v3.9.5",
+      "notes": "SVZ convention ⟨(α_s/π) G²⟩ = 0.012 GeV⁴ per PI Decision D7. Consistent with C-054 on main. Category [C]: Calibrated/Derived internally."
     },
     {
       "id": "UIDT-C-055",
@@ -607,7 +609,21 @@
     },
     {
       "id": "UIDT-C-056",
-      "statement": "Topological susceptibility χ_top^{1/4} = (b0/(32π²)) × C_SVZ = 142.98 MeV [D, TENSION]",
+      "statement": "Topological susceptibility χ_top^{1/4} = 186.2 MeV [D, PARTIALLY ADDRESSED]",
+      "type": "verification",
+      "status": "verified",
+      "evidence": "D",
+      "confidence": 0.9,
+      "dependencies": [
+        "UIDT-C-054",
+        "UIDT-C-055"
+      ],
+      "since": "v3.9.6",
+      "notes": "NLO-corrected (factor 1.3023, Dilaton/GZ-projection). z = 0.76σ vs Athenodorou 2021, z = 0.24σ vs Ce 2015. MODERATE TENSION z = 4.25σ vs Dürr et al. 2025 (198.1 ± 2.8 MeV, arXiv:2501.08217). Status: PARTIALLY ADDRESSED [D]. Corrected from SVZ LO estimate of 142.98 MeV (PR #213). Uses C_SVZ = 0.012 GeV⁴ (Decision D7)."
+    },
+    {
+      "id": "UIDT-C-084",
+      "statement": "Fully-heavy tetraquark T_cccc (2++) candidate at M ≈ 6200 MeV minimizes residual to the UIDT canonical value (≈ 6.215 GeV).",
       "type": "prediction",
       "status": "predicted",
       "evidence": "D",

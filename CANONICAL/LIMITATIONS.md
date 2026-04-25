@@ -129,6 +129,12 @@ truncation with the following deliberate methodological compromises:
   It is a kinematic calibration, not derived from the FRG run.
 - The Yang-Mills spectral gap Δ* = 1.710 ± 0.015 GeV (Evidence A) is not affected.
 
+**NLO Progress Note (v3.9.8, 2026-04-24):**  
+An NLO correction factor (1.3023, Dilaton/GZ-projection shift) has been applied to the
+topological susceptibility estimate, reducing the LO tension from ~16σ to ~4.2σ
+(vs. Dürr et al. 2025). This represents partial progress but does NOT resolve L6-FRG.
+The truncation limitations above remain fully in effect. See C-056 status: PARTIALLY ADDRESSED [D].
+
 **Condition for Resolution:**  
 See clay-submission/GAP_ANALYSIS_CLAY.md → GAP-FRG-001 for the full solution path.
 Resolution requires a momentum-dependent vertex projection (∂_p²) and a
@@ -136,7 +142,33 @@ self-consistent Dyson resummation in the full (S, A) propagator matrix.
 
 ---
 
+### L7: Gribov Horizon Crossing
+**Status:** 🔬 ACTIVE RESEARCH [GRIBOV_HORIZON_CROSSING]
+
+**Description:**  
+Der analytische Fixpunkt des projizierten 2x2-Systems erzwingt \(\tilde{\kappa}^{2*} = \pi^2 \approx 9.87\). Dieser Wert liegt tief im Infraroten, jenseits des klassischen Gribov-Pols (\(\tilde{\kappa}^2 = 1.0\)). Der Vorhersagewert für \(\tilde{\lambda}_{SF}^* \approx 16.449\) ist streng auf Evidenz D limitiert, bis das System um einen dynamischen, selbstkonsistenten Gribov-Zwanziger-Limes erweitert wird.
+
+---
+
+### L8: X³ Mixing Omitted
+**Status:** 🔬 ACTIVE RESEARCH [X3_MIXING_OMITTED]
+
+**Description:**  
+Die Rückkopplung des Tripel-Gluon-Operators (X³-Einmischung) aus dem SMEFT-Sektor (\(+ \frac{1}{2} g_3^2 C_A C_G\)) wurde in der aktuellen Truncation vernachlässigt.
+
+---
+
+### L9: Z₂ Symmetry Collapse
+**Status:** 🔬 ACTIVE RESEARCH [Z2_SYMMETRY_COLLAPSE]
+
+**Description:**  
+Das minimale Skalar-Gauge-System kollabiert ohne explizite Symmetriebrechung deterministisch. Die Theorie stützt sich axiomatisch darauf, dass \(S\) an die Spuranomalie (Trace Anomaly) koppelt, um diesen Kollaps abzuwenden (siehe UIDT-C-072).
+
+---
+
 ## Resolved Limitations (Historical)
+
+---
 
 ### L6: Spectral Gap vs. Particle Mass [RESOLVED — superseded by L6-FRG above]
 **Status:** ✅ CLARIFIED (2025-12-25)
@@ -174,6 +206,9 @@ Corrected to v = 47.7 MeV. Old value was erroneous.
 | L4      | γ not from RG                        | γ remains [A-] not [A]        | 🔴 High     |
 | L5      | N=99 unjustified                     | RG cascade phenomenological   | 🟡 Medium   |
 | L6-FRG  | FRG minimal truncation (C-070)       | η_* Evidence D, not upgradable| 🔴 High     |
+| L7      | Gribov Horizon Crossing              | λ_SF* strictly Evidence D     | 🔴 High     |
+| L8      | X³ Mixing Omitted                    | Impacts truncation stability  | 🟡 Medium   |
+| L9      | Z₂ Symmetry Collapse                 | Axiomatic Trace Anomaly req.  | 🔴 High     |
 
 ---
 
