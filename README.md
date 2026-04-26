@@ -338,17 +338,32 @@ git clone https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical
 cd UIDT-Framework-v3.9-Canonical
 
 # Install dependencies
-pip install -r verification/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Verification Run
 
-**1. Primary Solver**
+**1. Full Test Suite (Recommended)**
+
+```bash
+python -m pytest verification/ -v --tb=short
+```
+
+**2. Primary Solver**
 Executes the Four-Pillar Verification Suite (v3.9).
 
 ```bash
 python verification/scripts/UIDT_Master_Verification.py
 ```
+
+**3. Docker (Isolated Environment)**
+
+```bash
+docker build -t uidt-verify .
+docker run --rm uidt-verify
+```
+
+See [`REPRODUCE.md`](./REPRODUCE.md) for the complete reproduction protocol.
 
 ---
 

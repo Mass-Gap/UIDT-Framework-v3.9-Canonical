@@ -11,7 +11,7 @@
 UIDT-OS/
 UIDT-OS.zip
 UIDT-OS*.zip
-UIDT-OS\LEDGER\CLAIMS.json (dont marge in main)
+# Note: CLAIMS.json merges to main only via Opus 4.7 Desktop
 # ============================================================================
 # LARGE ARCHIVES (Redundant - use GitHub Releases instead)
 # ============================================================================
@@ -66,7 +66,7 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
-verification\scripts\uidt_os_integration_check.py
+# (deduplicated — see line 156)
 # Virtual environments
 venv/
 ENV/
@@ -162,13 +162,15 @@ jules_api_provisioning.py
 # Frolic session backups (internal IDE state)
 .frolic-session.json
 .frolic-backup-*.json
+
+# Internal guardian logs (LOCAL/ directory stays in repo, logs are ephemeral)
+LOCAL/logs/*.json
 TODO
 
 # Local utility scripts (hardcoded paths)
 auto_update_repo.bat
 UIDT-OS/LEDGER/CLAIMS.json
 verification/scripts/cache_lookup.py
-.gitignore
 MCP_REPAIR_INSTRUCTIONS.md
 SYSTEM_VERIFICATION_REPORT_20260302.md
 PR_DRAFT_SYSTEM_VERIFICATION.md

@@ -8,7 +8,7 @@ Thank you for your interest in the Information-Geometric Constraint Framework (U
 ## 🧪 Scientific Integrity Policy
 
 **The Core Constants are Immutable:**
-The values for $\Delta$ (1.710 GeV) and $\gamma$ (16.339) are analytically derived from the theory's core Lagrangian. They **cannot be "tuned" or changed** via pull requests unless a mathematical error in the derivation itself is proven.
+The values for $\Delta$ (1.710 GeV) are analytically self-consistent within the framework (Category A: internal mathematical consistency). The value for $\gamma$ (16.339) is a calibrated phenomenological constant (Category C). These constants **cannot be "tuned" or changed** via pull requests unless a mathematical error in the derivation itself is proven.
 
 ### ✅ What We Accept
 * **Code Optimization:** Improvements to the Python simulation scripts (speed, memory usage) that *reproduce the exact same physics*.

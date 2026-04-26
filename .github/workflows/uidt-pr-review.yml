@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -50,7 +50,7 @@ jobs:
 
       - name: Comment PR - Format Check
         if: always()
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const checkResult = "${{ job.status }}" === "success" ? "✅ PASS" : "❌ FAIL";
@@ -75,7 +75,7 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Verify no protected paths modified
         run: |
@@ -126,7 +126,7 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
 
       - name: Comment PR - Protected Paths Check
         if: always()
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const checkResult = "${{ job.status }}" === "success" ? "✅ PASS" : "❌ FAIL";
@@ -154,10 +154,10 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -187,6 +187,13 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
           echo "exit_code=$?" >> $GITHUB_OUTPUT
         continue-on-error: true
 
+      - name: Run pytest verification suite
+        id: verify_pytest
+        run: |
+          python -m pytest verification/ -v --tb=short --cov=core --cov=modules --cov-report=term 2>&1 | tee pytest_results.log
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
       - name: Parse verification results
         id: parse_results
         run: |
@@ -207,7 +214,7 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
           fi
 
       - name: Comment PR - Verification Results
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const verificationStatus = "${{ steps.parse_results.outputs.verification_status }}";
@@ -265,7 +272,7 @@ ${residualsCSF}
           echo "verify_icon=$verify_icon" >> $GITHUB_OUTPUT
 
       - name: Final PR Comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const formatIcon = "${{ steps.summary.outputs.format_icon }}";
@@ -274,8 +281,8 @@ ${residualsCSF}
 
             const allPass = formatIcon === "✅" && pathsIcon === "✅" && verifyIcon === "✅";
             const decision = allPass
-              ? "🟢 **AWAITING CLAUDE REVIEW** (all checks pass)"
-              : "🔴 **BLOCKED** (fix issues above before Claude review)";
+              ? "🟢 **AWAITING PI REVIEW** (all checks pass)"
+              : "🔴 **BLOCKED** (fix issues above before PI review)";
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -294,7 +301,7 @@ ${residualsCSF}
 **Next Steps:**
 1. Review all checks above
 2. If blocked: fix issues and push to same branch
-3. If passing: Claude will perform scientific review and decide to approve/block
+3. If passing: Opus 4.7 Desktop will perform scientific review and decide to approve/block
 
 ---
 *Automated by UIDT-OS PR Review System*
