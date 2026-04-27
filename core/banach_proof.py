@@ -9,7 +9,7 @@ from mpmath import mp, mpf
 
 class BanachMassGap:
     def __init__(self):
-        # Precision is declared locally — RACE CONDITION LOCK (Directive v4.1)
+        # Precision declared locally -- RACE CONDITION LOCK (Directive v4.1)
         mp.dps = 80
 
         # Canonical Constants (Immutable Ledger §2)
@@ -26,7 +26,7 @@ class BanachMassGap:
         where alpha = kappa^2 * C / (4 * Lambda^2)
               beta  = 1 / (16 * pi^2)
         """
-        mp.dps = 80  # ensure local precision on each call
+        mp.dps = 80
         alpha = (self.Kappa**2 * self.C) / (4 * self.Lambda**2)
         beta  = mpf('1') / (16 * mp.pi**2)
         log_term = 2 * mp.log(self.Lambda / Delta)
@@ -60,3 +60,50 @@ class BanachMassGap:
         val_plus = self._map_T(Delta_star + epsilon)
         L = abs(val_plus - Delta_star) / epsilon
         return L
+
+
+def weyl_cancellation_lemma(sigma, r_u, r_v, theta):
+    """
+    Lemma II.2 (Rhythm 2026): sqrt(g) * C_g = sin^2(theta) * exp(2*sigma) * 2*r_u*r_v
+
+    Structural analogue of the UIDT Banach closure argument:
+    both are exact algebraic cancellation conditions -- not perturbative estimates.
+
+    Physical content:
+        The r^2-factors in sqrt(g) and C_g cancel identically in double-null
+        coordinates, rendering the product r-independent. This algebraic
+        identity is the core of the ghost-freedom proof in the Weyl-tidal
+        activation theory (Rhythm 2026).
+
+    Analogy to UIDT:
+        Just as 5*kappa^2 = 3*lambda_S is an exact constraint that eliminates
+        propagating ghost degrees of freedom at the RG fixed point, Lemma II.2
+        eliminates the conformal ghost via an exact determinant factorisation.
+        Both are constraint conditions, not approximations.
+
+    Evidence category: A (mathematically proven)
+
+    Parameters
+    ----------
+    sigma : mpmath.mpf
+        Conformal factor in double-null coordinates.
+    r_u : mpmath.mpf
+        Partial derivative of areal radius r w.r.t. retarded null coordinate u.
+    r_v : mpmath.mpf
+        Partial derivative of areal radius r w.r.t. advanced null coordinate v.
+    theta : mpmath.mpf
+        Angular coordinate (enters via the spherical volume element).
+
+    Returns
+    -------
+    mpmath.mpf
+        Value of sqrt(g)*C_g = sin^2(theta)*exp(2*sigma)*2*r_u*r_v.
+        r-independence of this expression is the key cancellation.
+
+    Notes
+    -----
+    Valid only under spherical symmetry. Kerr extension requires
+    covariant replacement C_g -> C^{muv}C_{muv} (see research/ notes).
+    """
+    mp.dps = 80
+    return mp.sin(theta)**2 * mp.exp(2 * sigma) * 2 * r_u * r_v
