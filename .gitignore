@@ -11,7 +11,7 @@
 UIDT-OS/
 UIDT-OS.zip
 UIDT-OS*.zip
-UIDT-OS\LEDGER\CLAIMS.json (dont marge in main)
+# Note: UIDT-OS/LEDGER/CLAIMS.json is local-only; main's LEDGER/CLAIMS.json is the SSOT
 # ============================================================================
 # LARGE ARCHIVES (Redundant - use GitHub Releases instead)
 # ============================================================================
@@ -166,11 +166,13 @@ TODO
 
 # Local utility scripts (hardcoded paths)
 auto_update_repo.bat
-UIDT-OS/LEDGER/CLAIMS.json
 verification/scripts/cache_lookup.py
-.gitignore
 MCP_REPAIR_INSTRUCTIONS.md
 SYSTEM_VERIFICATION_REPORT_20260302.md
 PR_DRAFT_SYSTEM_VERIFICATION.md
 verification/scripts/verify_template.py
 .cursorrules
+
+# Auto-generated verification reports (use GitHub Releases for archives)
+verification/data/Verification_Report_*.md
+Supplementary_Results/Verification_Report_*.md

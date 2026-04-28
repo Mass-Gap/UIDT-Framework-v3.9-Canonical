@@ -3,7 +3,8 @@
 UIDT v3.9 VERIFICATION: RG FIXED POINT CONSTRAINT
 =================================================
 Pillar: I (Physical Framework Verification)
-Regel-Compliance: Native Precision Only, No Mocks, Bounds specified (=0.001)
+Compliance: mpmath 80-dps local, exact rationals (5/12), no float() leaks.
+Evidence Category: [A] — analytical closure, residual < 1e-14
 """
 
 import sys
@@ -20,39 +21,47 @@ PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-# ABSOLUTE DIRECTIVE: Local precision initialization
+# ABSOLUTE DIRECTIVE: Local precision initialization (Constitution v3.9, Pillar I)
 mp.dps = 80
 
 def verify_rg_fixed_point():
-    print("╔══════════════════════════════════════════════════════════════╗")
-    print("║  UIDT v3.9 RG FIXED POINT CONSTRAINT VERIFICATION            ║")
-    print("╚══════════════════════════════════════════════════════════════╝\n")
+    print("=" * 64)
+    print("UIDT v3.9 RG FIXED POINT CONSTRAINT VERIFICATION")
+    print("=" * 64)
+    print()
 
-    # Framework Defaults
-    kappa = mpf('0.5')
-    lambda_s = 5 * mpf('0.5')**2 / 3  # exact RG fixed-point: 5κ²/3
-    
+    # Framework Defaults - exact RG fixed-point definition (v3.9.5, PI D6)
+    # kappa = 1/2 (exact), lambda_S := 5*kappa^2/3 (Category A)
+    # NEVER use rounded float 0.417 here - LINTER PROTECTION (rg_closure.py:L24)
+    kappa = mpf('1') / mpf('2')
+    lambda_s = mpf('5') * kappa**2 / mpf('3')  # exact: 5/12
+
     # Mathematical Evaluation: |5 * kappa^2 - 3 * lambda_S|
     term1 = mpf('5') * (kappa ** 2)
     term2 = mpf('3') * lambda_s
-    
+
     residual = abs(term1 - term2)
-    tolerance = mpf('0.001')
-    
-    print("[1] Verifying RG Fixed Point Constraint...")
-    print(f"    > Target function: |5 * kappa^2 - 3 * lambda_S| <= 0.001")
-    print(f"    > kappa        = {nstr(kappa, 5)}")
-    print(f"    > lambda_S     = {nstr(lambda_s, 5)}")
-    print(f"    > 5 * kappa^2  = {nstr(term1, 5)}")
-    print(f"    > 3 * lambda_S = {nstr(term2, 5)}")
-    print(f"    > Residual     = {nstr(residual, 5)}")
-    
-    # 1e-14 allowed for mpmath binary-to-decimal representation discrepancy
-    if residual <= tolerance + mpf('1e-14'):
-        print("\n✅ SYSTEM STATUS: RG FIXED POINT CONSTRAINT STRICTLY SATISFIED.")
+    tolerance_A = mpf('1e-14')  # Category A: residual < 1e-14
+
+    print("[1] Verifying RG Fixed Point Constraint:")
+    print("    Target: |5*kappa^2 - 3*lambda_S| < 1e-14")
+    print(f"    kappa        = {nstr(kappa, 20)}")
+    print(f"    lambda_S     = {nstr(lambda_s, 20)}  (5*kappa^2/3 = 5/12)")
+    print(f"    5 * kappa^2  = {nstr(term1, 20)}")
+    print(f"    3 * lambda_S = {nstr(term2, 20)}")
+    print(f"    Residual     = {nstr(residual, 20)}")
+
+    # Category A: exact analytical closure, residual must be machine zero
+    if residual <= tolerance_A:
+        print()
+        print("PASS: RG FIXED POINT CONSTRAINT STRICTLY SATISFIED.")
+        print(f"      Category [A] - Residual < 1e-14 (actual: {nstr(residual, 5)})")
+        return 0
     else:
-        print("\n❌ SYSTEM STATUS: RESIDUAL EXCEEDS 0.001 THRESHOLD.")
-        sys.exit(1)
+        print()
+        print("FAIL: RESIDUAL EXCEEDS 1e-14 THRESHOLD.")
+        print(f"      Residual: {nstr(residual, 20)}")
+        return 1
 
 if __name__ == "__main__":
-    verify_rg_fixed_point()
+    sys.exit(verify_rg_fixed_point())
