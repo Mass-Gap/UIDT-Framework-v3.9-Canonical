@@ -9,6 +9,7 @@ permissions:
   contents: read
   issues: write
   pull-requests: write
+  id-token: write # Required for secure OIDC authentication in scripts
 
 jobs:
   check-format:
