@@ -128,3 +128,20 @@ Reusable utilities and adapters:
   - Keep outputs reproducible; pin versions; avoid network access at runtime in tests
   - Tests must never reduce precision or mock mpmath
   - When adding modules, include local precision guard and invariant assertions for RG relations
+## Visualization Policy (Instructions for Jules)
+
+- **Elite Scientific Standards:** Whenever generating scientific visualizations, plots, or diagrams, act at the absolute top-tier, world-class level (Nature/Science publication standard).
+- **Epistemic Seriousness:** Visualizations must be highly evidential, strictly data-driven, and utterly serious. Avoid any decorative elements, 3D gimmicks, or visual clutter. Maximize information density (UIDT standard) and ensure perfect axes labeling, error bars, and methodological transparency.
+- **Strict Repository Placement (File System Laws):**
+  - Save raw plot data and verification visuals strictly in `verification/data/visualizations/` (never in `verification/scripts/` or root).
+  - Save publication-ready, finalized figures directly to `manuscript/figures/` or `docs/assets/`.
+  - **NEVER** save images or plots in the root directory, `UIDT-OS/**`, or any protected internal folders.
+
+## Visualization Policy (Instructions for Jules)
+
+- **Elite Scientific Standards:** Whenever generating scientific visualizations, plots, or diagrams, act at the absolute top-tier, world-class level (Nature/Science publication standard).
+- **Epistemic Seriousness:** Visualizations must be highly evidential, strictly data-driven, and utterly serious. Avoid any decorative elements, 3D gimmicks, or visual clutter. Maximize information density (UIDT standard) and ensure perfect axes labeling, error bars, and methodological transparency.
+- **Strict Repository Placement (File System Laws):**
+  - Save raw plot data and verification visuals strictly in `verification/data/visualizations/` (never in `verification/scripts/` or root).
+  - Save publication-ready, finalized figures directly to `manuscript/figures/` or `docs/assets/`.
+  - **NEVER** save images or plots in the root directory, `UIDT-OS/**`, or any protected internal folders.
