@@ -38,7 +38,7 @@ jobs:
           
       - name: Verify mpmath precision
         run: |
-          python -c "import mpmath as mp; mp.dps = 80; assert mp.dps == 80, 'Precision setup failed!'"
+          python -c "import mpmath as mp; mp.mp.dps = 80; assert mp.mp.dps == 80, 'Precision setup failed!'"
           
       - name: Run verification suite
         run: |
