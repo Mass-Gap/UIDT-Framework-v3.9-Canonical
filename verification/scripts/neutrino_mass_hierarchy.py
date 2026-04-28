@@ -1,8 +1,8 @@
 import mpmath
 from mpmath import mp
 
-# Set precision
-mp.dps = 50
+# Set precision (Elite Tier Standard)
+mp.dps = 80
 
 def calculate_neutrino_masses():
     # Constants (eV^2)

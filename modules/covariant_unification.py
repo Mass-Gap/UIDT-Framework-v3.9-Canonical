@@ -24,10 +24,10 @@ class CovariantUnification:
         SU(3) algebraic candidate: 49/3 = 16.333... (0.037% deviation, see UIDT-C-047)
         """
         self.GAMMA_UIDT = mpf(gamma_uidt)  # v3.9 canonical [A-]
-        self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5) [Category C: Phenomenological constraint UIDT-C-050]
-        # TODO [D]: Derive N=99 from N² cascade first principles
-        #           (SU(N) gluon DoF ∝ N²-1 gives scaling but not the fixed value N=99;
-        #            see UIDT-C-050, UIDT-C-017, UIDT-C-039, docs/limitations.md L5)
+        self.RG_STEPS = mpf('99') # N=99 Cascade (Leading Order [LO] baseline) [Category C]
+        self.NLO_STEPS = mpf('94.05') # N=94.05 Cascade (Next-to-Leading Order [NLO]) [Category D]
+        # NOTE: S1-02 resolved 2026-04-28. N=99 is LO; N=94.05 is NLO correction.
+        # See UIDT-C-065, UIDT-C-050, docs/limitations.md L5.
 
 
     def derive_csf_anomalous_dimension(self):
@@ -44,19 +44,33 @@ class CovariantUnification:
         gamma_csf = mpf('1') / denominator
         return gamma_csf
 
-    def check_information_saturation_bound(self, delta_mass_gap=mpf('1.710')):
+    def calculate_polarization_correction(self):
+        """
+        Computes the vacuum polarization correction factor [Category D].
+        Maps the discrete N=99 cascade to the effective N=94.05 NLO baseline.
+        """
+        return self.NLO_STEPS / self.RG_STEPS
+
+    def check_information_saturation_bound(self, delta_mass_gap=mpf('1.710'), mode='LO'):
         """
         Theorem 2: Information Saturation Bound.
         Berechnet die maximale Dichte (Planck-Singularitaets-Regularisierung).
-        Formel: rho_max = Delta^4 * gamma^99
+        Formel: rho_max = Delta^4 * gamma^N
+
+        Args:
+            delta_mass_gap: The mass gap Δ* [GeV]
+            mode: 'LO' (N=99) or 'NLO' (N=94.05)
         """
         delta = mpf(delta_mass_gap)
-        rho_max_qft = (delta ** 4) * (self.GAMMA_UIDT ** self.RG_STEPS)
+        n_steps = self.RG_STEPS if mode == 'LO' else self.NLO_STEPS
+        
+        rho_max_qft = (delta ** 4) * (self.GAMMA_UIDT ** n_steps)
         return rho_max_qft
 
-    def get_equation_of_state_asymptotic(self):
+    def derive_equation_of_state(self):
         """
         Asymptotic Equation of State Parameters.
+        Renamed to derive_equation_of_state to align with Master Verification Suite.
 
         Returns the DESI-calibrated EOS values [Category C].
         These are target values from observational cosmology,
