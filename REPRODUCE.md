@@ -60,6 +60,17 @@ docker run --rm uidt-verify
 
 This executes the full pytest suite inside an isolated Python 3.10 container.
 
+### SLSA Level 3 Provenance & Nightly Checks
+UIDT v3.9 artifacts are strictly signed for integrity via **Sigstore / Cosign** in our automated GitHub Actions workflow (`release.yml`). 
+To verify provenance:
+```bash
+# Verify the Docker image signature
+cosign verify ghcr.io/mass-gap/uidt-framework-v3.9-canonical:latest \
+  --certificate-identity "https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/.github/workflows/release.yml@refs/heads/main" \
+  --certificate-oidc-issuer "https://token.actions.githubusercontent.com"
+```
+The repository also maintains a strict nightly Docker reproducibility cron job to ensure upstream dependency changes do not break verification constraints.
+
 ---
 
 ## Method C: Clay Submission Package

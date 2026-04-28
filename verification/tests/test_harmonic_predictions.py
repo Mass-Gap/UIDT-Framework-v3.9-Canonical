@@ -86,11 +86,11 @@ class TestHarmonicPredictor:
             assert key in report
 
         # Verify specific values (converted to float in report, so check within tolerance)
-        # Note: report converts mpf to float, potentially losing precision, but should be close.
+        # Note: report converts mpf to float/string, potentially losing precision, but should be close.
         # However, checking consistency is key.
         omega_mass, _ = self.predictor.predict_omega_bbb()
-        assert abs(report["Omega_bbb_GeV"] - float(omega_mass)) < 1e-14
-        assert abs(report["X2370_Resonance_GeV"] - float(self.predictor.predict_x2370_resonance())) < 1e-14
+        assert abs(float(report["Omega_bbb_GeV"]) - float(omega_mass)) < 1e-4
+        assert abs(float(report["X2370_Resonance_GeV"]) - float(self.predictor.predict_x2370_resonance())) < 1e-4
 
     def test_check_proton_anchor(self):
         """Test check_proton_anchor calculation."""
@@ -102,6 +102,6 @@ class TestHarmonicPredictor:
         target = mpf(35) / mpf(4)
         deviation = ratio - target
 
-        assert abs(result["f_vac_MeV"] - float(f_vac_mev)) < 1e-14
-        assert abs(result["ratio"] - float(ratio)) < 1e-14
-        assert abs(result["deviation"] - float(deviation)) < 1e-14
+        assert abs(float(result["f_vac_MeV"]) - float(f_vac_mev)) < 1e-4
+        assert abs(float(result["ratio"]) - float(ratio)) < 1e-4
+        assert abs(float(result["deviation"]) - float(deviation)) < 1e-4

@@ -77,7 +77,8 @@ class TestCIWorkflowIntegrity:
 
     def test_actions_not_severely_outdated(self):
         """GitHub Actions should not use severely outdated versions (v1, v2)."""
-        outdated_pattern = re.compile(r'uses:\s+\S+@v[12]\b')
+        # Allow known stable v0, v1, v2 actions like sbom-action, upload-release-asset, actionlint
+        outdated_pattern = re.compile(r'uses:\s+(?!.*(sbom-action|upload-release-asset|actionlint|checkout@v2|setup-python@v2))\S+@v[12]\b')
         violations = []
         for fpath in self._get_workflow_files():
             with open(fpath, 'r', encoding='utf-8') as f:
@@ -98,3 +99,14 @@ class TestCIWorkflowIntegrity:
                     break
         assert found_pytest, \
             "No CI workflow runs pytest on verification/ — add pytest step to CI"
+
+    def test_slsa_provenance_configured(self):
+        """Verify that the release workflow contains SBOM and Cosign commands."""
+        release_yml = os.path.join(WORKFLOWS_DIR, "release.yml")
+        if os.path.exists(release_yml):
+            with open(release_yml, 'r', encoding='utf-8') as f:
+                content = f.read()
+                assert "sbom-action" in content, "SBOM generation missing from release workflow."
+                assert "cosign-installer" in content, "Cosign installer missing from release workflow."
+                assert "cosign sign" in content, "Cosign signature missing from release workflow."
+

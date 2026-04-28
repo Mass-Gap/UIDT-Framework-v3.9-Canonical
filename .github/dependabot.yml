@@ -1,0 +1,25 @@
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "[UIDT-v3.9] chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "actions"
+
+  # Maintain dependencies for Python pip
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "[UIDT-v3.9] chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "python"
