@@ -60,7 +60,7 @@ corrected_freq = base_freq + self.TORSION_ENERGY_GEV
 
 - **[Category C]:** E_T = 2.44 MeV is phenomenologically determined — it is the observed difference between the geometric frequency (Δ/γ ≈ 104.66 MeV) and the lattice resonance frequency (≈ 107.10 MeV).
 - **Not derived from first principles:** No analytic derivation from the torsion lattice Hamiltonian currently exists.
-- **Upgrade path:** A first-principles derivation from torsion lattice dynamics would upgrade E_T from [C] to [A-].
+- **Upgrade path:** A first-principles derivation from torsion lattice dynamics would provide theoretical backing, though E_T remains capped at [C].
 
 ---
 
