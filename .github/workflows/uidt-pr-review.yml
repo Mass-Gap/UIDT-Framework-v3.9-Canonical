@@ -59,21 +59,23 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const checkResult = "${{ job.status }}" === "success" ? "✅ PASS" : "❌ FAIL";
+            const checkResult = "${{ job.status }}" === "success" ? "PASS" : "FAIL";
+            const bodyText = [
+              `## UIDT Format Check - ${checkResult}`,
+              "",
+              "Commit message format must follow: `[UIDT] <component> <summary>`",
+              "",
+              "**Types:** fix, docs, test, check, classify, placeholder",
+              "**Evidence:** Include [A], [A-], [B], [C], [D], or [E]",
+              "**Example:** `[UIDT] docs update falsification criteria (Evidence [D])`",
+              "",
+              "---"
+            ].join("\n");
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## 🔍 UIDT Format Check: ${checkResult}
-
-Commit message format must follow: \`[UIDT] <type>: <summary>\`
-
-**Types:** fix, docs, test, check, classify, placeholder
-**Evidence:** Include [A], [A-], [B], [C], [D], or [E]
-**Example:** \`[UIDT] docs: update falsification criteria (Evidence: [D])\`
-
----
-`
+              body: bodyText
             });
 
   check-protected-paths:

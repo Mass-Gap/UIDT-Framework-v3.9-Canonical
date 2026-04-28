@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
         
       - name: Check branch protection rules
         run: |
@@ -37,15 +39,17 @@ jobs:
       - name: Check Protected Paths
         if: github.event_name == 'pull_request'
         run: |
-          # Fetch the changes
-          git fetch origin ${{ github.base_ref }}
-          changed_files=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          changed_files=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
           
-          # Check for forbidden modifications to protected files unless authorized
+          # Track forbidden modifications to protected files
           forbidden=0
           for file in $changed_files; do
             if [[ "$file" == "CANONICAL/"* ]] || [[ "$file" == "LEDGER/"* ]] || [[ "$file" == "SECURITY.md" ]]; then
-              echo "⚠️  Modification to protected path detected: $file"
-              echo "This requires explicit PI / Opus 4.7 authorization."
+              echo "::warning::Modification to protected path detected: $file — requires PI / Opus 4.7 authorization."
+              forbidden=$((forbidden + 1))
             fi
           done
+          
+          if [ "$forbidden" -gt 0 ]; then
+            echo "::notice::$forbidden protected path(s) modified. PI review required."
+          fi
