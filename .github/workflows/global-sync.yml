@@ -1,0 +1,84 @@
+name: Global SSoT Sync & Audit
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'LEDGER/CLAIMS.json'
+      - 'verification/scripts/sync_ledger.py'
+      - 'CANONICAL/**.md'
+  pull_request:
+    paths:
+      - 'LEDGER/CLAIMS.json'
+      - 'CANONICAL/**.md'
+
+jobs:
+  epistemic-lint:
+    name: Epistemic Hygiene Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Get changed markdown files
+        id: changed-files
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            FILES=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep '\.md$' || true)
+          else
+            FILES=$(git diff --name-only "${{ github.event.before }}...${{ github.sha }}" | grep '\.md$' || true)
+          fi
+          echo "files=$FILES" >> "$GITHUB_OUTPUT"
+      - name: Run Epistemic Linter
+        run: |
+          if [ -n "${{ steps.changed-files.outputs.files }}" ]; then
+            # Note: We quote the expansion to satisfy Rule 17. 
+            # If multiple files exist, they are passed as space-separated but within the shell expansion.
+            python verification/scripts/epistemic_linter.py "${{ steps.changed-files.outputs.files }}"
+          else
+            echo "No markdown files changed."
+          fi
+
+  sync-ledger:
+    name: Automated SSoT Sync
+    runs-on: ubuntu-latest
+    needs: epistemic-lint
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Run SSoT Sync Script
+        run: python verification/scripts/sync_ledger.py
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code || echo "changes=true" >> "$GITHUB_OUTPUT"
+      - name: Create Pull Request
+        if: steps.git-check.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: global ledger sync'
+          title: '[UIDT-v3.9] Chore: Global Ledger SSoT Sync'
+          body: |
+            ## Global Ledger Sync
+            Automated synchronization of Markdown documentation with the Single Source of Truth (`CLAIMS.json`).
+            
+            **Evidence category:** E
+            **Limitation impact:** none
+            **DOI:** 10.5281/zenodo.17835200
+          branch: auto-sync-ledger
+          base: main
+          labels: automated-sync

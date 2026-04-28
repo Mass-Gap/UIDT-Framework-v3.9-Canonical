@@ -23,10 +23,10 @@ class TestSolveExactCubicV(unittest.TestCase):
         mp.dps = 80
 
     def test_happy_path(self):
-        """Test with canonical parameters (m_S=1.705, kappa=0.500, lambda_S=0.417)"""
+        """Test with canonical parameters (m_S=1.705, kappa=0.500, lambda_S=5/12)"""
         m_S = 1.705
         kappa = 0.500
-        lambda_S = 0.417
+        lambda_S = 5/12
 
         v = solve_exact_cubic_v(m_S, lambda_S, kappa)
 
@@ -63,7 +63,7 @@ class TestSolveExactCubicV(unittest.TestCase):
     def test_kappa_zero(self):
         """Test edge case kappa = 0 (No gluon coupling)"""
         # If kappa is 0, v=0 should be a root
-        v = solve_exact_cubic_v(1.705, 0.417, 0.0)
+        v = solve_exact_cubic_v(1.705, 5/12, 0.0)
         self.assertEqual(v, 0.0)
 
     def test_numerical_stability_small_lambda(self):

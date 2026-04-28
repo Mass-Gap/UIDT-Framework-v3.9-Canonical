@@ -1,0 +1,24 @@
+name: Citation Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check-citation:
+    name: Check CITATION.cff
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate CITATION.cff
+        uses: citation-file-format/cffconvert-github-action@2.0.0
+        with:
+          args: "--validate"

@@ -124,7 +124,8 @@ def core_system_root(vars):
     return [eq1_val, eq2_val, eq3_val]
 
 # Initial Guess (Canonical Region)
-x0 = [1.705, 0.500, 0.417]
+# Exact rational lambda_S = 5/12 for elite precision
+x0 = [1.705, 0.500, 5/12]
 
 # Solve using Powell Hybrid Method
 log_print("  Solver: scipy.optimize.root (method='hybr')")

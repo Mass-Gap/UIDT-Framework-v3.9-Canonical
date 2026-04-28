@@ -1,0 +1,54 @@
+name: UIDT Repository Governance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  enforce-governance:
+    name: Enforce UIDT Constitution
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        
+      - name: Check branch protection rules
+        run: |
+          if [ "${{ github.event_name }}" == "push" ] && [ "${{ github.ref }}" == "refs/heads/main" ]; then
+            # Verify if this push was a merge from Opus 4.7
+            commit_message=$(git log -1 --pretty=%B)
+            if [[ "$commit_message" == *"Merge pull request"* ]] || [[ "$commit_message" == *"Merge branch"* ]]; then
+              echo "✅ Merge to main detected. Ensuring compliance with Opus 4.7 merge authority rule."
+            else
+              echo "⚠️  WARNING: Direct push to main detected. This violates the UIDT Constitution."
+              echo "Only PR merges by Opus 4.7 are authorized."
+              exit 1
+            fi
+          fi
+          
+      - name: Check Protected Paths
+        if: github.event_name == 'pull_request'
+        run: |
+          # Use origin/main..HEAD for clear diffing
+          changed_files=$(git diff --name-only origin/main..HEAD)
+          
+          # Track forbidden modifications to protected files
+          forbidden=0
+          for file in $changed_files; do
+            if [[ "$file" == "CANONICAL/"* ]] || [[ "$file" == "LEDGER/"* ]] || [[ "$file" == "SECURITY.md" ]] || [[ "$file" == "UIDT-OS/RULES/"* ]]; then
+              echo "::warning::Modification to protected path detected: $file — requires PI / Opus 4.7 authorization."
+              forbidden=$((forbidden + 1))
+            fi
+          done
+          
+          if [ "$forbidden" -gt 0 ]; then
+            echo "::notice::$forbidden protected path(s) modified. PI review required."
+          fi

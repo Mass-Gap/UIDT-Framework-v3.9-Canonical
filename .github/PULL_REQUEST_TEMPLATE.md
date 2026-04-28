@@ -14,12 +14,12 @@
 - [ ] Limitation impact documented if applicable: `L1`, `L2`, `L3`, `L4`, `L5`, `L6`, `L7`
 
 ### Code Changes
-- [ ] **No changes to core constants:** Δ (1.710 GeV), γ (16.339), κ (0.500), λ_S (0.417)
+- [ ] **Constants governed by SSoT:** All parameter changes must be made in `LEDGER/CLAIMS.json` via PR, never directly in markdown.
   - Exception: Only if mathematical error in derivation is proven in PR description
 - [ ] **mp.dps = 80** set in all modified modules (precision guard)
   - Never mocked, never centralised, always local
 - [ ] **No deletions > 10 lines** in `core/` or `modules/` directories
-- [ ] **Protected paths untouched:** `releases/`, `docs/`, `CANONICAL/` (read-only)
+- [ ] **Protected paths untouched:** `releases/`, `docs/`, `CANONICAL/` (read-only, updated via CI sync)
 
 ### Physics Claims
 - [ ] **New physics claims** documented in PR description with:

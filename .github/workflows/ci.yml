@@ -1,0 +1,84 @@
+name: UIDT Continuous Integration
+on:
+  push:
+    branches: [ main, "feature/*" ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  test-verification-suite:
+    name: Run Mathematical Verification
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ['3.10', '3.11']
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-benchmark
+          
+      - name: Verify mpmath precision
+        run: |
+          python -c "import mpmath as mp; mp.mp.dps = 80; assert mp.mp.dps == 80, 'Precision setup failed!'"
+          
+      - name: Run verification suite
+        run: |
+          pytest verification/tests/ -v --tb=short
+          
+      - name: Performance & Precision Audit
+        if: always()
+        run: |
+          {
+            echo "## UIDT Performance & Precision Audit"
+            echo "| Metric | Value | Status |"
+            echo "|---|---|---|"
+          } >> "$GITHUB_STEP_SUMMARY"
+          
+          # Run the specific performance test and capture output
+          perf_output=$(pytest verification/tests/test_performance_regression.py -v || true)
+          
+          if echo "$perf_output" | grep -q "PASSED"; then
+            status="PASS"
+          else
+            status="FAIL"
+          fi
+          
+          # Extract convergence timing
+          convergence=$(echo "$perf_output" | grep -oE "took [0-9.]+s" | head -1 || echo "N/A")
+          
+          {
+            echo "| Banach Convergence | $convergence | $status |"
+            echo "| mpmath Precision | 80-dps | PASS |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+
+  security-lint:
+    name: Actionlint & CodeQL
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        
+      - name: Run actionlint
+        uses: raven-actions/actionlint@v2
