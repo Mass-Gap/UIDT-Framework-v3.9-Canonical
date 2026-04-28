@@ -102,7 +102,6 @@ config.local.yaml
 .claude/
 .mcp.json
 settings.local.json
-SECURITY.md
 AGENTS.md
 .agents/
 # ============================================================================

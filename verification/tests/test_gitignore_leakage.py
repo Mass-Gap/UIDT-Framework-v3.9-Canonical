@@ -19,7 +19,6 @@ REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 MUST_NOT_BE_TRACKED = [
     'UIDT-OS/',
     'AGENTS.md',
-    'SECURITY.md',
     '.env',
     '.claude/',
     '.mcp.json',
@@ -61,10 +60,10 @@ class TestGitignoreLeakage:
         assert 'AGENTS.md' not in self.tracked, \
             "AGENTS.md is tracked — contains internal agent rules"
 
-    def test_security_md_not_tracked(self):
-        """Internal SECURITY.md must not be tracked."""
-        assert 'SECURITY.md' not in self.tracked, \
-            "SECURITY.md is tracked — contains internal governance rules"
+    def test_security_md_is_tracked(self):
+        """Public SECURITY.md (vulnerability disclosure) must be tracked."""
+        assert 'SECURITY.md' in self.tracked, \
+            "SECURITY.md (public vulnerability policy) must be tracked for GitHub Security tab"
 
     def test_no_env_files_tracked(self):
         """No .env files should be tracked."""
@@ -87,7 +86,7 @@ class TestGitignoreLeakage:
         with open(gitignore_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        critical_patterns = ['UIDT-OS/', 'AGENTS.md', 'SECURITY.md', '.env', '.claude/']
+        critical_patterns = ['UIDT-OS/', 'AGENTS.md', '.env', '.claude/']
         missing = [p for p in critical_patterns if p not in content]
         assert len(missing) == 0, \
             f"Critical patterns missing from .gitignore: {missing}"

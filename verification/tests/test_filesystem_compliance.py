@@ -31,7 +31,7 @@ APPROVED_ROOT_FILES = {
     'LICENSE.md',
     'README.md',
     'REPRODUCE.md',
-    'SECURITY_PUBLIC.md',
+    'SECURITY.md',
     'pyproject.toml',
     'requirements.txt',
 }
