@@ -1,0 +1,36 @@
+name: LaTeX Build Check
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  push:
+    paths:
+      - 'manuscript/**/*.tex'
+  pull_request:
+    paths:
+      - 'manuscript/**/*.tex'
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-extra texlive-science texlive-bibtex-extra texlive-fonts-recommended
+
+      - name: Compile CSF_UIDT_Unification.tex
+        working-directory: manuscript
+        run: |
+          pdflatex -interaction=nonstopmode -halt-on-error CSF_UIDT_Unification.tex
+          # Optionally run a second time for references
+          pdflatex -interaction=nonstopmode -halt-on-error CSF_UIDT_Unification.tex
+
+      - name: Compile topological_quantization.tex
+        working-directory: manuscript
+        run: |
+          pdflatex -interaction=nonstopmode -halt-on-error topological_quantization.tex
+          pdflatex -interaction=nonstopmode -halt-on-error topological_quantization.tex
