@@ -1,0 +1,8 @@
+{
+  "mean_final_active_edges": 105.0,
+  "mean_final_k1": 0.1013217379051603,
+  "mean_final_num_nodes": 35.2,
+  "model": "v8a_fast",
+  "run_count": 5,
+  "std_final_k1": 0.017414116524952644
+}
