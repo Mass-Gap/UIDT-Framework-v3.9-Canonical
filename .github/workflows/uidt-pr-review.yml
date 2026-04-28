@@ -28,7 +28,7 @@ jobs:
           failed=0
 
           for commit in $commits; do
-            msg=$(git log -1 --format=%B $commit)
+            msg=$(git log -1 --format=%B "$commit")
 
             # Check for [UIDT] prefix
             if ! echo "$msg" | grep -q '^\[UIDT\]'; then
@@ -44,7 +44,7 @@ jobs:
             fi
           done
 
-          if [ $failed -eq 1 ]; then
+          if [ "$failed" -eq 1 ]; then
             echo ""
             echo "Please fix commit messages and force-push:"
             echo "  git rebase -i origin/main"
@@ -84,6 +84,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Verify no protected paths modified
         run: |
@@ -94,8 +96,8 @@ jobs:
 
           for file in $files; do
             for protected in "${protected_paths[@]}"; do
-              if [[ $file == $protected* ]]; then
-                if [[ $protected == "docs/" ]]; then
+              if [[ "$file" == "$protected"* ]]; then
+                if [[ "$protected" == "docs/" ]]; then
                   # docs/ is protected in CI but readable elsewhere
                   echo "⚠️  WARN: Modified protected documentation: $file"
                 else
@@ -115,9 +117,9 @@ jobs:
 
           # Check for excessive deletions in core/modules
           for file in $files; do
-            if [[ $file == "core/"* ]] || [[ $file == "modules/"* ]]; then
+            if [[ "$file" == "core/"* ]] || [[ "$file" == "modules/"* ]]; then
               deletions=$(git diff origin/main..HEAD -- "$file" | grep '^-' | wc -l)
-              if [ $deletions -gt 10 ]; then
+              if [ "$deletions" -gt 10 ]; then
                 echo "❌ FAIL: Too many deletions in $file ($deletions lines)"
                 echo "   Maximum 10 lines per commit in core/ or modules/"
                 failed=1
@@ -125,7 +127,7 @@ jobs:
             fi
           done
 
-          if [ $failed -eq 1 ]; then
+          if [ "$failed" -eq 1 ]; then
             exit 1
           fi
 
@@ -138,23 +140,25 @@ jobs:
         with:
           script: |
             const checkResult = "${{ job.status }}" === "success" ? "✅ PASS" : "❌ FAIL";
+            const bodyText = [
+              `## 🔒 Protected Paths Check: ${checkResult}`,
+              "",
+              "**Protected (read-only) paths:**",
+              "- `core/` — Core QFT system, only bug fixes",
+              "- `releases/` — Artifact archive, CI-managed",
+              "- `CANONICAL/` — Immutable reference data",
+              "",
+              "**Numerical Constraints:**",
+              "- `mp.dps` must = 80 (never less, never mocked)",
+              "- Max 10 line deletions per commit in core/ or modules/",
+              "",
+              "---"
+            ].join("\n");
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## 🔒 Protected Paths Check: ${checkResult}
-
-**Protected (read-only) paths:**
-- \`core/\` — Core QFT system, only bug fixes
-- \`releases/\` — Artifact archive, CI-managed
-- \`CANONICAL/\` — Immutable reference data
-
-**Numerical Constraints:**
-- \`mp.dps\` must = 80 (never less, never mocked)
-- Max 10 line deletions per commit in core/ or modules/
-
----
-`
+              body: bodyText
             });
 
   run-verification:
@@ -163,6 +167,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -178,28 +184,28 @@ jobs:
         id: verify_36
         run: |
           python verification/scripts/UIDT-3.6.1-Verification.py 2>&1 | tee verification_36.log
-          echo "exit_code=$?" >> $GITHUB_OUTPUT
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
         continue-on-error: true
 
       - name: Run UIDT Master Verification (v3.9)
         id: verify_master
         run: |
           python verification/scripts/UIDT_Master_Verification.py 2>&1 | tee verification_master.log
-          echo "exit_code=$?" >> $GITHUB_OUTPUT
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
         continue-on-error: true
 
       - name: Run CSF-UIDT Unification Verification
         id: verify_csf
         run: |
           python verification/scripts/verify_csf_unification.py 2>&1 | tee verification_csf.log
-          echo "exit_code=$?" >> $GITHUB_OUTPUT
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
         continue-on-error: true
 
       - name: Run pytest verification suite
         id: verify_pytest
         run: |
           python -m pytest verification/ -v --tb=short --cov=core --cov=modules --cov-report=term 2>&1 | tee pytest_results.log
-          echo "exit_code=$?" >> $GITHUB_OUTPUT
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
         continue-on-error: true
 
       - name: Parse verification results
@@ -210,15 +216,17 @@ jobs:
           residuals_master=$(grep -i "residual" verification_master.log | head -1 || echo "N/A")
           residuals_csf=$(grep -i "residual" verification_csf.log | head -1 || echo "N/A")
 
-          echo "residuals_36=$residuals_36" >> $GITHUB_OUTPUT
-          echo "residuals_master=$residuals_master" >> $GITHUB_OUTPUT
-          echo "residuals_csf=$residuals_csf" >> $GITHUB_OUTPUT
+          echo "residuals_36=$residuals_36" >> "$GITHUB_OUTPUT"
+          echo "residuals_master=$residuals_master" >> "$GITHUB_OUTPUT"
+          echo "residuals_csf=$residuals_csf" >> "$GITHUB_OUTPUT"
 
           # Determine pass/fail
-          if [ "${{ steps.verify_36.outputs.exit_code }}" -eq 0 ] && [ "${{ steps.verify_master.outputs.exit_code }}" -eq 0 ] && [ "${{ steps.verify_csf.outputs.exit_code }}" -eq 0 ]; then
-            echo "verification_status=PASS" >> $GITHUB_OUTPUT
+          if [ "${{ steps.verify_36.outputs.exit_code }}" -eq 0 ] && \
+             [ "${{ steps.verify_master.outputs.exit_code }}" -eq 0 ] && \
+             [ "${{ steps.verify_csf.outputs.exit_code }}" -eq 0 ]; then
+            echo "verification_status=PASS" >> "$GITHUB_OUTPUT"
           else
-            echo "verification_status=FAIL" >> $GITHUB_OUTPUT
+            echo "verification_status=FAIL" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Comment PR - Verification Results
@@ -230,31 +238,34 @@ jobs:
             const residualsMaster = "${{ steps.parse_results.outputs.residuals_master }}";
             const residualsCSF = "${{ steps.parse_results.outputs.residuals_csf }}";
 
+            const bodyText = [
+              `## Verification Suite: ${verificationStatus}`,
+              "",
+              "**UIDT-3.6.1 Verification:**",
+              "```",
+              residuals36,
+              "```",
+              "",
+              "**UIDT Master (v3.9) Verification:**",
+              "```",
+              residualsMaster,
+              "```",
+              "",
+              "**CSF-UIDT Unification (Category C):**",
+              "```",
+              residualsCSF,
+              "```",
+              "",
+              "**Requirement:** All residuals < 10^-14 for Category A claims",
+              "",
+              "---"
+            ].join("\n");
+
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## Verification Suite: ${verificationStatus}
-
-**UIDT-3.6.1 Verification:**
-\`\`\`
-${residuals36}
-\`\`\`
-
-**UIDT Master (v3.9) Verification:**
-\`\`\`
-${residualsMaster}
-\`\`\`
-
-**CSF-UIDT Unification (Category C):**
-\`\`\`
-${residualsCSF}
-\`\`\`
-
-**Requirement:** All residuals < 10^-14 for Category A claims
-
----
-`
+              body: bodyText
             });
 
   pr-review-summary:
@@ -275,9 +286,9 @@ ${residualsCSF}
           paths_icon=$([ "$paths_status" = "success" ] && echo "✅" || echo "❌")
           verify_icon=$([ "$verify_status" = "success" ] && echo "✅" || echo "❌")
 
-          echo "format_icon=$format_icon" >> $GITHUB_OUTPUT
-          echo "paths_icon=$paths_icon" >> $GITHUB_OUTPUT
-          echo "verify_icon=$verify_icon" >> $GITHUB_OUTPUT
+          echo "format_icon=$format_icon" >> "$GITHUB_OUTPUT"
+          echo "paths_icon=$paths_icon" >> "$GITHUB_OUTPUT"
+          echo "verify_icon=$verify_icon" >> "$GITHUB_OUTPUT"
 
       - name: Final PR Comment
         uses: actions/github-script@v7
@@ -292,26 +303,29 @@ ${residualsCSF}
               ? "🟢 **AWAITING PI REVIEW** (all checks pass)"
               : "🔴 **BLOCKED** (fix issues above before PI review)";
 
+            const bodyText = [
+              "## 📊 UIDT PR Review Summary",
+              "",
+              "| Check | Result |",
+              "|---|---|",
+              `| Format | ${formatIcon} |`,
+              `| Protected Paths | ${pathsIcon} |`,
+              `| Verification | ${verifyIcon} |`,
+              "",
+              `### Decision: ${decision}`,
+              "",
+              "**Next Steps:**",
+              "1. Review all checks above",
+              "2. If blocked: fix issues and push to same branch",
+              "3. If passing: Opus 4.7 Desktop will perform scientific review and decide to approve/block",
+              "",
+              "---",
+              "*Automated by UIDT-OS PR Review System*"
+            ].join("\n");
+
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## 📊 UIDT PR Review Summary
-
-| Check | Result |
-|---|---|
-| Format | ${formatIcon} |
-| Protected Paths | ${pathsIcon} |
-| Verification | ${verifyIcon} |
-
-### Decision: ${decision}
-
-**Next Steps:**
-1. Review all checks above
-2. If blocked: fix issues and push to same branch
-3. If passing: Opus 4.7 Desktop will perform scientific review and decide to approve/block
-
----
-*Automated by UIDT-OS PR Review System*
-`
+              body: bodyText
             });

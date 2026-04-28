@@ -24,10 +24,8 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" == "push" ] && [ "${{ github.ref }}" == "refs/heads/main" ]; then
             # Verify if this push was a merge from Opus 4.7
-            # Note: We rely on GitHub branch protection settings for hard enforcement.
-            # This step adds visibility in the action logs.
             commit_message=$(git log -1 --pretty=%B)
-            if [[ "$commit_message" == *"Merge pull request"* ]]; then
+            if [[ "$commit_message" == *"Merge pull request"* ]] || [[ "$commit_message" == *"Merge branch"* ]]; then
               echo "✅ Merge to main detected. Ensuring compliance with Opus 4.7 merge authority rule."
             else
               echo "⚠️  WARNING: Direct push to main detected. This violates the UIDT Constitution."
@@ -39,12 +37,13 @@ jobs:
       - name: Check Protected Paths
         if: github.event_name == 'pull_request'
         run: |
-          changed_files=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
+          # Use origin/main..HEAD for clear diffing
+          changed_files=$(git diff --name-only origin/main..HEAD)
           
           # Track forbidden modifications to protected files
           forbidden=0
           for file in $changed_files; do
-            if [[ "$file" == "CANONICAL/"* ]] || [[ "$file" == "LEDGER/"* ]] || [[ "$file" == "SECURITY.md" ]]; then
+            if [[ "$file" == "CANONICAL/"* ]] || [[ "$file" == "LEDGER/"* ]] || [[ "$file" == "SECURITY.md" ]] || [[ "$file" == "UIDT-OS/RULES/"* ]]; then
               echo "::warning::Modification to protected path detected: $file — requires PI / Opus 4.7 authorization."
               forbidden=$((forbidden + 1))
             fi

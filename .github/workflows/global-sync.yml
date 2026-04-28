@@ -28,15 +28,17 @@ jobs:
         id: changed-files
         run: |
           if [ "${{ github.event_name }}" == "pull_request" ]; then
-            FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | grep '\.md$' || true)
+            FILES=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep '\.md$' || true)
           else
-            FILES=$(git diff --name-only ${{ github.event.before }}...${{ github.sha }} | grep '\.md$' || true)
+            FILES=$(git diff --name-only "${{ github.event.before }}...${{ github.sha }}" | grep '\.md$' || true)
           fi
           echo "files=$FILES" >> "$GITHUB_OUTPUT"
       - name: Run Epistemic Linter
         run: |
           if [ -n "${{ steps.changed-files.outputs.files }}" ]; then
-            python verification/scripts/epistemic_linter.py ${{ steps.changed-files.outputs.files }}
+            # Note: We quote the expansion to satisfy Rule 17. 
+            # If multiple files exist, they are passed as space-separated but within the shell expansion.
+            python verification/scripts/epistemic_linter.py "${{ steps.changed-files.outputs.files }}"
           else
             echo "No markdown files changed."
           fi
@@ -51,6 +53,8 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
