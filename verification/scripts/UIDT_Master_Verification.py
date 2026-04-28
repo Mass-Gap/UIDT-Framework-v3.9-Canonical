@@ -153,7 +153,9 @@ def run_master_verification():
     # STEP 1: Numerical Solution (Scipy)
     # ---------------------------------------------------------
     log_print("[1] RUNNING NUMERICAL SOLVER (System Consistency)...")
-    x0 = [1.705, 0.500, 0.417]
+    # Use exact 5/12 for lambda_S guess to satisfy elite precision standards (Issue #354)
+    lambda_s_exact = 5 * (0.5**2) / 3
+    x0 = [1.705, 0.500, float(lambda_s_exact)]
     sol = root(core_system_equations, x0, method='hybr', tol=1e-15)
     
     m_S, kappa, lambda_S = sol.x
@@ -166,11 +168,23 @@ def run_master_verification():
     log_print(f"   > Residuals: {[f'{r:.1e}' for r in residuals]}")
     log_print(f"   > System Status: {'✅ CLOSED' if closed else '❌ OPEN'}")
 
+    # Status Tracking (Issue #281 Fix: No more masking failures)
+    pillar_results = {
+        "Numerical Solver": closed,
+        "Mathematical Proof": False,
+        "Pillar II (Lattice)": False,
+        "Pillar III (Spectral)": False,
+        "Pillar IV (Photonics)": False,
+        "Pillar II-CSF (Synthesis)": False,
+        "Topological Observations": False
+    }
+
     proof_data_block = "Mathematical Proof not executed."
     pillar_ii_data_block = ""
     pillar_iii_data_block = ""
     pillar_iv_data_block = ""
     pillar_csf_data_block = ""
+    pillar_td_data_block = ""
 
     # ---------------------------------------------------------
     # STEP 2: Analytical Proof (Mpmath) - Only if Solver OK
@@ -187,6 +201,7 @@ def run_master_verification():
             
             if L_proof < 1:
                 log_print("   > THEOREM 3.4: ✅ PROVEN (Existence & Uniqueness)")
+                pillar_results["Mathematical Proof"] = True
             
             proof_data_block = f"""
 ### 🔬 High-Precision Proof Audit (mpmath 80-dps)
@@ -218,7 +233,8 @@ def run_master_verification():
 - Derived Vacuum Frequency (Resonance): `{mp.nstr(f_vac_val * 1000, 5)}` MeV
 - Thermodynamic Noise Floor (E_noise): `{mp.nstr(noise * 1000, 5)}` MeV
 """
-        except ImportError as e:
+            pillar_results["Pillar II (Lattice)"] = True
+        except Exception as e:
             log_print(f"   > ❌ PILLAR II ERROR: {e}")
             pillar_ii_data_block = f"\n### ⚠️ Pillar II Failed: {e}\n"
 
@@ -242,7 +258,8 @@ def run_master_verification():
 - Tensor Glueball (2++): `{mp.nstr(report['Glueball_2++_GeV'], 5)}` GeV
 - Pseudoscalar Glueball (0-+): `{mp.nstr(report['Glueball_0-+_GeV'], 5)}` GeV
 """
-        except ImportError as e:
+            pillar_results["Pillar III (Spectral)"] = True
+        except Exception as e:
             log_print(f"   > ❌ PILLAR III ERROR: {e}")
             pillar_iii_data_block = f"\n### ⚠️ Pillar III Failed: {e}\n"
 
@@ -279,6 +296,7 @@ def run_master_verification():
 - m_p / f_vac: `{mp.nstr(pchk['ratio'], 6)}` (target 35/4 = 8.75)
 - deviation: `{mp.nstr(pchk['deviation'], 6)}`
 """
+            pillar_results["Pillar IV (Photonics)"] = True
         except Exception as e:
             log_print(f"   > ❌ PILLAR IV ERROR: {e}")
             pillar_iv_data_block = f"\n### ⚠️ Pillar IV Failed: {e}\n"
@@ -290,18 +308,23 @@ def run_master_verification():
             gamma_csf = cu.derive_csf_anomalous_dimension()
             rho_max = cu.check_information_saturation_bound()
             eos = cu.derive_equation_of_state()
+            # N=94.05 NLO Integration (Issue #354)
+            n_eff = mp.mpf('94.05')
             log_print(f"   > gamma_CSF (anomalous dim): {gamma_csf}")
             log_print(f"   > rho_max (saturation):      {str(rho_max)[:20]}... GeV^4")
+            log_print(f"   > N_eff (NLO-Correction):    {n_eff} [Category E]")
             log_print(f"   > EoS w_0={eos['w_0']}, w_a={eos['w_a']} [C placeholder]")
             pillar_csf_data_block = f"""
 ### Pillar II-CSF: Covariant Scalar-Field Synthesis [Category C]
 > **CSF-UIDT Mapping:** Phenomenological (from calibrated [A-] gamma)
 - gamma_CSF (anomalous dimension): `{gamma_csf}`
 - rho_max (information saturation): `{str(rho_max)[:40]}...` GeV^4
+- N_eff (NLO-Correction): `{n_eff}` [Category E]
 - EoS w_0: `{eos['w_0']}` [C placeholder]
 - EoS w_a: `{eos['w_a']}` [C placeholder]
 - Limitations: L4 (gamma not RG-derived), L5 (N=94.05 empirical)
 """
+            pillar_results["Pillar II-CSF (Synthesis)"] = True
         except Exception as e:
             log_print(f"   > PILLAR II-CSF ERROR: {e}")
             pillar_csf_data_block = f"\n### Pillar II-CSF Failed: {e}\n"
@@ -340,6 +363,7 @@ def run_master_verification():
 - Identity: K_3 = 12 (3D Kissing Number)
 - Interpretation: 12-neighbor vacuum topological shielding
 """
+            pillar_results["Topological Observations"] = True
         except Exception as e:
             log_print(f"   > TOPOLOGICAL OBS ERROR: {e}")
             pillar_td_data_block = f"\n### Topological Observations Failed: {e}\n"
@@ -347,11 +371,12 @@ def run_master_verification():
     # ---------------------------------------------------------
     # STEP 3: Report Generation
     # ---------------------------------------------------------
-    # We use Delta_star from the proof if it exists, otherwise fall back to target
+    # Final Assessment (Issue #281 Resolution)
+    overall_passed = all(pillar_results.values())
     final_delta = delta_proof if 'delta_proof' in locals() else DELTA_TARGET
-    generate_final_report(closed, proof_data_block, pillar_ii_data_block, pillar_iii_data_block, pillar_iv_data_block, pillar_csf_data_block, pillar_td_data_block, m_S, v_final, final_delta)
+    generate_final_report(overall_passed, proof_data_block, pillar_ii_data_block, pillar_iii_data_block, pillar_iv_data_block, pillar_csf_data_block, pillar_td_data_block, m_S, v_final, final_delta, pillar_results)
 
-def generate_final_report(closed, proof_data, p_ii, p_iii, p_iv, p_csf, p_td, m_S, v_final, delta_val):
+def generate_final_report(overall_passed, proof_data, p_ii, p_iii, p_iv, p_csf, p_td, m_S, v_final, delta_val, pillar_results):
     timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     
     # Hash of the code for integrity
@@ -364,19 +389,23 @@ def generate_final_report(closed, proof_data, p_ii, p_iii, p_iv, p_csf, p_td, m_
     report = f"""---
 title: "UIDT Master Verification Report: v3.9 Constructive"
 date: "{timestamp}"
-status: "{"PASSED" if closed else "FAILED"}"
+status: "{"PASSED" if overall_passed else "FAILED"}"
 signature: "SHA256:{sig}"
 ---
 
 # 🛡️ UIDT v3.9 Master Verification Report
 
 ## 1. System Integrity Check
-| Component | Status |
-| :--- | :--- |
-| **Numerical Solver** | {"✅ Converged" if closed else "❌ Failed"} |
 | **Architecture** | Hybrid (Scipy + Mpmath) |
 | **Logic Core** | Pillars I - IV Fully Integrated |
+| **Total Status** | {"✅ PASSED" if overall_passed else "❌ FAILED"} |
 
+### Pillar Status Summary (Issue #281 Verification)
+"""
+    for pillar, status in pillar_results.items():
+        report += f"- **{pillar}:** {'✅ PASS' if status else '❌ FAIL'}\n"
+
+    report += f"""
 ---
 
 ## 2. Mathematical Proof (Core Engine)
