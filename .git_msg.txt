@@ -1,5 +1,38 @@
-[UIDT-v3.9] Compliance: Fix verification precision & cosmology Category C tags
+[UIDT-v3.9] BETA-W6: Full BRST/Kugo-Ojima Sector Audit
 
-Evidence category: A/C
-Limitation impact: none
-DOI: 10.5281/zenodo.17835200
+Task Reference:
+- Task ID: BETA-W6
+- Branch: research/TKT-20260428-BRST-KUGO-OJIMA
+
+Claims Table:
+| Claim ID | Claim | Evidence Category | Source (DOI/arXiv) |
+|----------|-------|-------------------|-------------------|
+| CL-BRST-01 | KO Criterion formal assumption matches theoretical | [D] | N/A |
+| CL-BRST-02 | Physical subspace ensures ghost/longitudinal decoupling | [A] | N/A |
+
+Affected Constants:
+| Constant | Previous Value | New Value | Evidence Change |
+|----------|---------------|-----------|----------------|
+| None | - | - | - |
+
+Reproduction Note:
+One-command verification:
+`python3 verification/scripts/verify_brst_kugo_ojima_audit.py`
+Expected output: Evaluates KO parameter vs theoretical limit and prints BRST coherence status.
+
+DOI/arXiv Verification:
+- [x] All cited papers have verified DOI or arXiv ID
+- [x] No [AUDIT_FAIL] papers cited
+
+Pre-flight Checklist:
+- [x] No float() introduced
+- [x] mp.dps = 80 local in all functions
+- [x] RG constraint maintained
+- [x] No deletion > 10 lines in /core or /modules
+- [x] Ledger constants unchanged
+- [x] λ_S = 5/12 (exact, not 0.417)
+
+Stratum Declaration:
+- Stratum I content: Lattice QCD u(0) measurements
+- Stratum II content: Theoretical KO & BRST quartet mechanism
+- Stratum III content: UIDT mapping to KO constraint and BRST decoupling.
