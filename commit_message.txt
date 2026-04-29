@@ -1,0 +1,8 @@
+[UIDT-v3.9] Monitoring: Add daily cosmology watch log for 2026-04-28
+Evidence category: [C]
+Limitation impact: none
+DOI: 10.5281/zenodo.17835200
+
+Added `monitoring/cosmology_watch_2026-04-28.md` tracking the latest DESI DR2 BAO measurements (arXiv:2503.14738) and w0 measurements (arXiv:2503.17659).
+Identified a 2.34σ tension in the H₀ value (68.53 vs UIDT 70.4) and issued a [TENSION ALERT].
+Confirmed w₀ (-1.01) is compatible within bounds (0.67σ from UIDT -0.99).
