@@ -37,7 +37,7 @@
       "evidence": "A-",
       "dependencies": ["UIDT_MonteCarlo_100k"],
       "since": "v3.7.1",
-      "notes": "Statistical mean from 100k Monte Carlo samples"
+      "notes": "Statistical mean from 100k Monte Carlo samples. NOTE: ± 1.005 represents the standard deviation (σ) of the sample distribution (the intrinsic width of the MC fluctuation), NOT the Standard Error of the Mean (SEM). For N=100,000, the SEM is approximately ± 0.00318 (verified via Jackknife/Bootstrap)."
     },
     {
       "id": "UIDT-C-004",
