@@ -178,7 +178,7 @@ log_print(f"  --> STATUS        : {status_icon}")
 log_print(f"\n[2] UNIVERSAL INVARIANT (The Unifier)")
 log_print(f"  Kinetic VEV       : {kinetic_vev:.9f} GeV^2")
 log_print(f"  GAMMA (derived)   : {gamma_derived:.9f}")
-log_print(f"  GAMMA (AXIOM)     : {gamma:.9f} (Used for calculation)")
+log_print(f"  GAMMA (AXIOM)     : {mp.nstr(gamma, 10)} (Used for calculation)")
 
 # ==============================================================================
 # 3. THE HOLOGRAPHIC VACUUM MECHANISM (10^120 RESOLUTION)
@@ -211,8 +211,8 @@ log_print(f"  D. EW Hierarchy   : {mp.nstr(rho_ew_hierarchy, 15)} GeV^4")
 log_print(f"  E. Holographic π⁻²: {mp.nstr(rho_uidt, 15)} GeV^4 (NEW: geometric correction)")
 log_print(f"  F. Observed DE    : {mp.nstr(RHO_OBSERVED, 15)} GeV^4")
 log_print(f"  ------------------------------------------------")
-log_print(f"  UIDT Prediction   : {rho_uidt:.2e} GeV^4")
-log_print(f"  Accuracy          : {accuracy_percent:.1f}% (3.3% discrepancy)")
+log_print(f"  UIDT Prediction   : {mp.nstr(rho_uidt, 3)} GeV^4")
+log_print(f"  Accuracy          : {mp.nstr(accuracy_percent, 3)}% (3.3% discrepancy)")
 log_print(f"  --> STATUS        : ✅ CATASTROPHE RESOLVED (10^120 → 3.3%)")
 
 # ==============================================================================
@@ -247,7 +247,7 @@ def gamma_z(z):
 z_vals = [0.0, 0.5, 1.0, 2.0]
 log_print(f"  Gamma Evolution γ(z) = γ₀(1 + 0.0003z - 0.0045z²):")
 for z in z_vals:
-    log_print(f"    z = {z:.1f} : γ(z) = {gamma_z(z):.4f}")
+    log_print(f"    z = {mp.nstr(z, 2)} : γ(z) = {mp.nstr(gamma_z(z), 6)}")
 
 log_print("\n===============================================================")
 if closed:
