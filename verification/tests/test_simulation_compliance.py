@@ -23,6 +23,6 @@ def test_su3_taylor_orders_are_at_least_40():
     hmc_372 = _read(repo_root, "clay-submission/05_LatticeSimulation/UIDTv3_7_2_HMC_Real.py")
     val_361 = _read(repo_root, "simulation/UIDTv3.6.1_Lattice_Validation.py")
 
-    assert re.search(r"order\s*=\s*40", hmc_372) is not None
-    assert re.search(r"order\s*=\s*40", val_361) is not None
+    assert re.search(r"order(?:\s*:\s*int)?\s*=\s*40", hmc_372) is not None
+    assert re.search(r"order(?:\s*:\s*int)?\s*=\s*40", val_361) is not None
 
