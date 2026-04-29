@@ -66,7 +66,7 @@ The universal scaling invariant **γ = 16.339** is phenomenologically determined
 - **Option B:** Derive γ from non-perturbative FRG with full propagator dressing
 - **Option C:** Accept γ as fundamental phenomenological constant (like α_EM)
 
-**Research Priority:** 🔴 **HIGH** — Resolving this would upgrade γ from [A-] to [A]
+**Research Priority:** 🔴 **HIGH** — Resolving this would provide a theoretical foundation, though γ remains [A-] as a phenomenological parameter.
 
 **Resolution Path:**
 - See [su3_gamma_theorem.md](su3_gamma_theorem.md) for the algebraic derivation candidate.
@@ -262,7 +262,7 @@ v = 0.854 MeV in Framework v3.2 was **erroneous** due to algebraic error.
 | **L4** | γ not from RG | γ_kinetic, γ_MC | γ: [A-] (cannot be [A]) | 🔴 **HIGH** |
 | **L5** | N=99 unjustified | Vacuum energy resolution | ρ_vac: [C] (phenomenological) | 🟡 **MEDIUM** |
 | **L2** | Electron mass 23% | Lepton mass formulas | m_e: [D] (approximate) | 🟡 **MEDIUM** |
-| **L3** | Vacuum factor 2.3 | Cosmological parameters | ✅ RESOLVED IN PRINCIPLE [B] | 🟢 **LOW** |
+| **L3** | Vacuum factor 2.3 | Cosmological parameters | ✅ CONSISTENT IN PRINCIPLE [C] | 🟢 **LOW** |
 | **L8** | Phase 3 Roadmap | Future topological integration | ⚠️ EXPLORATORY [E] | 🔵 **FUTURE** |
 
 ---
