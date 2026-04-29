@@ -63,7 +63,7 @@ class CovariantUnification:
         NOT derived from first principles within UIDT.
 
         Evidence: [C] Calibrated to DESI BAO data.
-        Upgrade path: Derive w_0, w_a from UIDT density functional -> [A-]
+        Upgrade path: Derive w_0, w_a from UIDT density functional -> [C] (cosmology cap)
         """
         w_0 = mpf('-0.99')   # DESI Year 1 central value [C]
         w_a = mpf('+0.03')   # DESI Year 1 central value [C]
