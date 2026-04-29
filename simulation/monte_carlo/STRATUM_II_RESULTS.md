@@ -1,11 +1,11 @@
 # Stratum II — Physical Interpretation Layer
 
-**Stratum II interprets the Stratum I numerical results in the context of
+**Stratum II interprets Stratum I numerical results in the context of
 established physics and UIDT framework concepts.**
 All claims carry explicit evidence-category labels.
 No cosmological conclusions are drawn in this file — see Stratum III.
 
-**Version:** 2026-04-29 (precision update)
+**Version:** 2026-04-29 — `[TENSION ALERT] r(Δ*,Π_S)` RESOLVED via raw-chain audit.
 
 ---
 
@@ -26,7 +26,7 @@ From MC γ-posterior (Stratum I):
 
 | Quantity | Value | Category |
 |---|---|---|
-| γ∞(MC-propagated) | 16.36925 ± 1.00513 | [B] |
+| γ∞ (MC-propagated) | 16.36925 ± 1.00513 | [B] |
 | 68 % CI | [15.364, 17.374] | [B] |
 | p-value vs canonical γ∞ = 16.3437 | 0.9797 | [A] |
 
@@ -39,64 +39,76 @@ and must **not** be added in quadrature.
 
 ## 2. Kinetic-VEV Anti-Correlation
 
-**Source:** `UIDT_MonteCarlo_correlation_matrix.csv`
+**Source:** `UIDT_MonteCarlo_correlation_matrix.csv` + raw-chain recomputation
 
-| Correlation | Value | Category |
-|---|---|---|
-| r(γ, kinetic_VEV) | −0.982130546 | [B] |
+| Correlation | Stored value | Raw-chain recomputed | Δ | Status |
+|---|---|---|---|---|
+| r(γ, kinetic_VEV) | −0.982130546 | **−0.985860** | 0.003729 | ✅ OK (< 0.05) |
 
-**Interpretation [B]:** The strong anti-correlation r ≈ −0.982 between γ and
-the kinetic vacuum expectation value is consistent with the anti-proportional
-coupling and with the 2.3-damping mapping documented in Appendix III of the
-manuscript (`clay_appendix_mc_evidence.tex` Section 5).
-This supports — but does not prove — the holographic damping picture.
+**Interpretation [B]:** The strong anti-correlation r ≈ −0.983…−0.986 between γ and
+the kinetic vacuum expectation value is consistent with anti-proportional coupling
+and with the 2.3-damping mapping (Appendix III, `clay_appendix_mc_evidence.tex` §5).
+The minor discrepancy between stored and recomputed values (|Δr| = 0.0037) is
+within the accepted tolerance and does not constitute a tension.
 
 ---
 
-## 3. [TENSION ALERT] — r(Δ*, Π_S)
+## 3. ~~[TENSION ALERT]~~ r(Δ*, Π_S) — **RESOLVED** ✅
 
-> **[TENSION ALERT]**
+> **RESOLVED 2026-04-29** via `verify_monte_carlo_research_notes.py`
 >
-> | Source | Value |
+> | Source | r(Δ*, Π_S) |
 > |---|---|
-> | Stored correlation matrix | r(Δ*, Π_S) = +0.720284420 |
-> | Raw-chain audit (MC session) | **not reproduced** |
-> | Δ | unresolved |
+> | Previously cited value | +0.720284420 |
+> | Raw-chain (`UIDT_MonteCarlo_samples_100k.csv`, N=100 000) | **+0.015798** |
+> | Δ | 0.704487 |
 >
-> **Hard conflict:** The stored `UIDT_MonteCarlo_correlation_matrix.csv` reports
-> r(Δ*, Π_S) = +0.720, but the raw-chain audit appendix explicitly states
-> that this value does not appear in the dataset under audit.
+> **Root cause:** The stored `UIDT_MonteCarlo_correlation_matrix.csv` does **not**
+> contain a `Pi_S` column. The value +0.720 was cited from an unidentified source and
+> erroneously attributed to the correlation matrix. It does not appear in the
+> raw chain.
 >
-> **Consequence:** This correlation must **not** be used as an evidence-upgrade
-> argument (A− → A) until a dedicated script recomputes r(Δ*, Π_S) directly
-> from `UIDT_MonteCarlo_samples_100k.csv` and resolves the provenance conflict
-> between the raw CSV, the summary file, and the stored correlation matrix.
+> **Consequence:** r(Δ*, Π_S) = **+0.0158** from the raw chain — Δ* and Π_S are
+> statistically **uncorrelated**. No evidence-upgrade conflict exists.
+> The previously planned A⁻ → A upgrade for this pair is **not warranted** by the data.
 
 ---
 
-## 4. κ–λ_S Correlation (RG Fixed-Point)
+## 4. Full 28-Pair Stored-Matrix Audit
 
-**Source:** `UIDT_MonteCarlo_correlation_matrix.csv`
+All 28 overlapping pairs (8-parameter stored matrix vs raw chain):
 
-| Correlation | Value | Category |
+- **0 TENSION ALERTS** — all pairs within |Δr| < 0.05
+- Maximum discrepancy: r(γ, kinetic_VEV), |Δr| = 0.0037
+
+Script: `verification/scripts/verify_monte_carlo_research_notes.py`
+Output: `verification_audit_report.json` (generated per run, not tracked in repo)
+
+---
+
+## 5. κ–λ_S Correlation (RG Fixed-Point)
+
+| Correlation | Raw-chain value | Category |
 |---|---|---|
-| r(κ, λ_S) | ~+0.99 | [A] |
+| r(κ, λ_S) | **+0.9994** | [A] |
 
-**Interpretation [A]:** The near-unity correlation is the direct algebraic consequence
-of the RG fixed-point 5κ² = 3λ_S. Parameters linked by an exact constraint must
-have r → 1 in a converged chain. This is a mathematical consistency check.
+**Interpretation [A]:** Near-unity correlation is the algebraic consequence of
+5κ² = 3λ_S. Parameters linked by an exact constraint must have r → 1 in a converged
+chain.
 
-> **Note:** The soft `[RG_CONSTRAINT_FAIL]` flagged in Stratum I § 5 applies to the
-> hp-mean residual, not to the posterior correlation. Both must be reported
-> transparently; neither may be suppressed.
+> ⚠️ **[RG_CONSTRAINT_FAIL] remains open** (Stratum I §5):
+> The hp-mean residual |5κ²(hp) − 3λ_S(MC)| ≈ 9.9 × 10⁻⁴ >> 1 × 10⁻¹⁴.
+> This flag does not contradict the posterior correlation but indicates the
+> hp-mean file requires an independent λ_S precision determination.
 
 ---
 
-## 5. Non-Gaussian Parameters (γ and Ψ)
+## 6. Non-Gaussian Parameters (γ and Ψ)
 
 **Evidence category: [A-] for γ, [B] for Ψ**
 
-γ shows asymmetric tails consistent with its phenomenological coupling role [A-].
-Ψ shows asymmetric tails whose physical origin is not yet analytically characterized.
-This is identified as a topic for the planned NLO extension work and must not be
-used as evidence for any current parameter-upgrade claim.
+γ shows asymmetric tails consistent with its phenomenological coupling role.
+Ψ shows asymmetric tails whose physical origin is not yet analytically characterised.
+Neither parameter is a candidate for an evidence-category upgrade based on shape
+alone. Both must be treated with a non-Gaussian posterior approximation in any
+future analytical propagation.
