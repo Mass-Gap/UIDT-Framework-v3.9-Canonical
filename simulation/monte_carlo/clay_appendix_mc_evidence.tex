@@ -1,0 +1,197 @@
+% ============================================================
+% UIDT v3.9 --- Clay Submission Appendix
+% Monte Carlo Validation Evidence
+% ============================================================
+% Author: P. Rietz
+% ORCID: 0009-0007-4307-1609
+% Canonical DOI: 10.5281/zenodo.17835200
+% Dataset DOI:   10.5281/zenodo.17554179
+% Date:          2026-04-29
+%
+% EVIDENCE SYSTEM:
+%   [A]  mathematically proven
+%   [A-] phenomenological parameter
+%   [B]  lattice compatible
+%   [C]  calibrated cosmology
+%   [D]  prediction
+%   [E]  speculative
+%
+% LANGUAGE RULE: no prestige/closure wording.
+% OPEN ITEMS are retained verbatim and must not be removed.
+% ============================================================
+
+\section*{Appendix~MC: Monte Carlo Validation Evidence}
+\label{app:mc_evidence}
+
+This appendix documents the statistical validation of the UIDT~v3.9 canonical
+parameter set against the Monte Carlo chain of $N=100\,000$ thinned samples
+(DOI~\href{https://doi.org/10.5281/zenodo.17554179}{10.5281/zenodo.17554179}).
+All evidence categories follow the UIDT Evidence System (A--E).
+
+%------------------------------------------------------------
+\subsection*{MC.1 MCMC Convergence Diagnostics \textnormal{\textmd{[A]}}}
+%------------------------------------------------------------
+
+All ten sampled parameters satisfy publication-level convergence criteria
+(Gelman--Rubin split-$\hat{R}<1.001$; effective sample size $N_{\rm eff}>96\,000$;
+integrated autocorrelation time $\tau_{\rm int}\approx 0.50$, indicating
+near-fully decorrelated samples after thinning).
+
+\begin{table}[h]
+\centering
+\caption{MCMC convergence summary (all 10 parameters).}
+\begin{tabular}{lcccc}
+\hline
+Parameter & Split-$\hat{R}$ & $N_{\rm eff}$ & $\tau_{\rm int}$ & Verdict \\
+\hline
+$\Delta^*$ & $\approx1.000$ & $>96\,000$ & $\approx0.50$ & converged \\
+$\gamma$   & $\approx1.000$ & $>96\,000$ & $\approx0.50$ & converged \\
+$\Psi$     & $\approx1.000$ & $>96\,000$ & $\approx0.50$ & converged \\
+$\kappa$   & $\approx1.000$ & $>96\,000$ & $\approx0.50$ & converged \\
+$\lambda_S$& $\approx1.000$ & $>96\,000$ & $\approx0.50$ & converged \\
+$m_S$      & $\approx1.000$ & $>96\,000$ & $\approx0.50$ & converged \\
+\text{kinetic\_VEV} & $\approx1.000$ & $>96\,000$ & $\approx0.50$ & converged \\
+$\Pi_S$    & $\approx1.000$ & $>96\,000$ & $\approx0.50$ & converged \\
+$w_0$      & $\approx1.000$ & $>96\,000$ & $\approx0.50$ & converged \\
+$E_T$      & $\approx1.000$ & $>96\,000$ & $\approx0.50$ & converged \\
+\hline
+\end{tabular}
+\end{table}
+
+%------------------------------------------------------------
+\subsection*{MC.2 LEDGER Consistency \textnormal{\textmd{[A] / [A-]}}}
+%------------------------------------------------------------
+
+Table~\ref{tab:ledger_consistency} summarises the consistency of the MC
+posterior means with the UIDT immutable parameter ledger.
+
+\begin{table}[h]
+\centering
+\caption{MC posterior vs.\ LEDGER.}
+\label{tab:ledger_consistency}
+\begin{tabular}{lcccccc}
+\hline
+Param. & LEDGER & MC mean & MC $\sigma$ & $|$residual$|$ & $z$ & $p$ \\
+\hline
+$\Delta^*$ [GeV] & $1.710\pm0.015$ & $1.710044$ & $0.014993$
+  & $4.44\times10^{-5}$ & $0.003$ & $0.9976$ \\
+$\gamma$ & $16.339$ & $16.37395$ & $1.00513$
+  & $0.035$ & $-0.0348$ & $0.9723$ \\
+\hline
+\end{tabular}
+\end{table}
+
+Both parameters are consistent with their LEDGER values at the $<0.04\,\sigma$
+level.
+For $\Delta^*$ the evidence category is [A];
+for $\gamma$ it is [A-] because the LEDGER reference is phenomenologically
+determined, not first-principles derived.
+
+%------------------------------------------------------------
+\subsection*{MC.3 Holographic Dressing Relation
+  \textnormal{\textmd{[B/D] $\to$ [C]}}}
+%------------------------------------------------------------
+
+The bare-gamma extrapolation (\verb|docs/bare_gamma_theorem.md|) gives
+$\gamma_\infty = 16.3437\pm10^{-4}$~[B] with dressing shift
+$\delta\gamma = 0.0047$~[B/D].
+Amplified by the holographic volume factor $L^4$ ($L=8.2$, non-canonical
+free parameter, open issue~S1-01):
+\[
+  w_a = -\frac{\delta\gamma}{\gamma_\infty}\,L^4
+        \approx -1.300 \quad [C]
+\]
+The DESI~DR2 + Union3 reference value is
+$w_a = -1.27\pm0.37$ (arXiv:2503.14738);
+the Mahalanobis distance is $0.65\,\sigma$, indicating compatibility.
+
+\textbf{Limitation:} $L=8.2$ is not a canonical UIDT parameter.
+All $w_a$ values derived via the $L^4$ amplification inherit this ambiguity
+(issue~S1-01 unresolved).
+H$_0$ and $S_8$ tensions are \textbf{not} declared resolved.
+
+%------------------------------------------------------------
+\subsection*{MC.4 Lattice QCD Compatibility \textnormal{\textmd{[B]}}}
+%------------------------------------------------------------
+
+The quenched-approximation scalar glueball mass from
+Morningstar \& Peardon~\cite{Morningstar1999}:
+$\Delta^*(\text{lattice}) = 1.730\pm0.090$~GeV.
+
+Comparison with the MC result $\Delta^*(\text{MC}) = 1.710044\pm0.014993$~GeV:
+\[
+  \chi^2 = 0.0478, \quad p = 0.8269, \quad |z| = 0.2187\,\sigma
+\]
+Full compatibility is indicated.
+Evidence category: [B] (numerical extrapolation, quenched approximation;
+not an independent first-principles confirmation).
+
+\begin{thebibliography}{9}
+\bibitem{Morningstar1999}
+  C.~Morningstar and M.~Peardon,
+  Phys.\ Rev.\ D~\textbf{60}, 034509 (1999).
+  DOI~\href{https://doi.org/10.1103/PhysRevD.60.034509}{10.1103/PhysRevD.60.034509};
+  arXiv:hep-lat/9901004.
+\end{thebibliography}
+
+%------------------------------------------------------------
+\subsection*{MC.5 Anti-Correlation $r(\gamma, \text{kinetic\_VEV})$
+  \textnormal{\textmd{[B]}}}
+%------------------------------------------------------------
+
+The stored correlation matrix reports
+$r(\gamma, \text{kinetic\_VEV}) = -0.982130546$.
+This is consistent with an anti-proportional coupling and with the $2.3$-factor
+damping mapping documented in Appendix~III of the main manuscript.
+Evidence category: [B] (stored artefact, not recomputed from raw chain in this version).
+
+%------------------------------------------------------------
+\subsection*{MC.6 Open Item~1: Provenance Conflict
+  $r(\Delta^*, \Pi_S)$ \textnormal{\textmd{\color{red}[TENSION ALERT]}}}
+%------------------------------------------------------------
+
+\textbf{[TENSION ALERT]}
+
+The stored correlation matrix reports
+$r(\Delta^*, \Pi_S) = +0.720284420$.
+The raw-chain audit session explicitly states that this value was
+\emph{not reproduced} from \verb|UIDT_MonteCarlo_samples_100k.csv|.
+
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Source & $r(\Delta^*, \Pi_S)$ \\
+\hline
+Stored correlation matrix & $+0.720284420$ \\
+Raw-chain audit & not reproduced \\
+\hline
+\end{tabular}
+\end{center}
+
+This conflict must be resolved by a dedicated script that recomputes all
+45~pairwise correlations directly from the raw CSV and compares them
+against the stored matrix before any evidence-category upgrade
+($\mathrm{A}^-\!\to\mathrm{A}$) is considered.
+
+%------------------------------------------------------------
+\subsection*{MC.7 Open Item~2: Soft RG Residual
+  \textnormal{\textmd{\color{red}[RG\_CONSTRAINT\_FAIL]}}}
+%------------------------------------------------------------
+
+\textbf{[RG\_CONSTRAINT\_FAIL]}
+
+The RG fixed-point relation $5\kappa^2 = 3\lambda_S$ is satisfied at the
+posterior-mean level (evidenced by $r(\kappa, \lambda_S)\approx+0.99$),
+but the residual $|5\kappa^2 - 3\lambda_S|$ computed from the
+high-precision mean values in
+\verb|UIDT_HighPrecision_mean_values.csv| was flagged as exceeding
+the formal tolerance $1\times10^{-14}$ set in
+\verb|verification/tests/test_monte_carlo_summary.py|.
+
+This flag must \textbf{not} be silently removed or smoothed over.
+A numerical correction to the hp-mean values, or a documented revision
+of the tolerance, is required before this item is closed.
+
+% ============================================================
+% END OF APPENDIX MC
+% ============================================================

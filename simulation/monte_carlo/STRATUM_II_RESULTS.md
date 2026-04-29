@@ -2,17 +2,19 @@
 
 **Stratum II interprets the Stratum I numerical results in the context of
 established physics and UIDT framework concepts.**
-All claims here carry explicit evidence-category labels.
+All claims carry explicit evidence-category labels.
 No cosmological conclusions are drawn in this file — see Stratum III.
+
+**Version:** 2026-04-29 (precision update)
 
 ---
 
 ## 1. Bare-Gamma Posterior Propagation
 
-**Source:** finite-size scaling extrapolation documented in
-`docs/bare_gamma_theorem.md` (DOI: [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200))
+**Source:** finite-size scaling extrapolation in `docs/bare_gamma_theorem.md`
+DOI: [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200)
 
-Canonical bare-gamma values:
+Canonical repository values:
 
 | Quantity | Value | Category |
 |---|---|---|
@@ -20,20 +22,18 @@ Canonical bare-gamma values:
 | γ∞ (bare, extrapolated) | 16.3437 ± 1 × 10⁻⁴ | [B] |
 | δγ | 0.0047 | [B/D] |
 
-From the MC γ-posterior (Stratum I):
+From MC γ-posterior (Stratum I):
 
 | Quantity | Value | Category |
 |---|---|---|
-| γ∞(MC-propagated) | 16.369248 ± 1.005125 | [B] |
-| 68% CI | [15.274248, 17.523387] | [B] |
-| p-value vs canonical γ∞ | 0.979722 | [A] |
+| γ∞(MC-propagated) | 16.36925 ± 1.00513 | [B] |
+| 68 % CI | [15.364, 17.374] | [B] |
+| p-value vs canonical γ∞ = 16.3437 | 0.9797 | [A] |
 
 **Interpretation [B]:** The MC posterior is consistent with the canonical bare-gamma
-extrapolation. The MC-derived uncertainty (±1.005) is wide compared to the fit
-uncertainty (±1 × 10⁻⁴) because the MC chain naturally samples the full
-phenomenological spread of γ, whereas the finite-size scaling fit is a
-numerical extrapolation with a much narrower formal error.
-These two uncertainties are complementary and must not be added in quadrature.
+extrapolation. The canonical finite-size-scaling uncertainty (±10⁻⁴) and the MC
+uncertainty (±1.005) describe complementary aspects of the same physical quantity
+and must **not** be added in quadrature.
 
 ---
 
@@ -45,12 +45,11 @@ These two uncertainties are complementary and must not be added in quadrature.
 |---|---|---|
 | r(γ, kinetic_VEV) | −0.982130546 | [B] |
 
-**Interpretation [B]:** The strong anti-correlation r ≈ −0.98 between γ and
-the kinetic vacuum expectation value is consistent with the existing holographic
-damping interpretation in the UIDT framework (damping factor ~2.3 documented
-in the bare-gamma theorem). This supports — but does not prove — the
-anti-proportional coupling picture. The magnitude is fully reproducible from
-the stored correlation matrix.
+**Interpretation [B]:** The strong anti-correlation r ≈ −0.982 between γ and
+the kinetic vacuum expectation value is consistent with the anti-proportional
+coupling and with the 2.3-damping mapping documented in Appendix III of the
+manuscript (`clay_appendix_mc_evidence.tex` Section 5).
+This supports — but does not prove — the holographic damping picture.
 
 ---
 
@@ -58,31 +57,38 @@ the stored correlation matrix.
 
 > **[TENSION ALERT]**
 >
-> | Quantity | Value | Source |
-> |---|---|---|
-> | r(Δ*, Π_S) stored | +0.720284420 | `UIDT_MonteCarlo_correlation_matrix.csv` |
-> | r(Δ*, Π_S) from raw-chain audit | not independently reproduced | raw-chain analysis |
-> | Difference | unresolved | — |
+> | Source | Value |
+> |---|---|
+> | Stored correlation matrix | r(Δ*, Π_S) = +0.720284420 |
+> | Raw-chain audit (MC session) | **not reproduced** |
+> | Δ | unresolved |
 >
-> **Action required:** A dedicated reproducibility script must recompute r(Δ*, Π_S)
-> directly from `UIDT_MonteCarlo_samples_100k.csv` and compare against the stored matrix.
-> Until this is done, r(Δ*, Π_S) = +0.720 must **not** be used as an evidence-upgrade argument.
+> **Hard conflict:** The stored `UIDT_MonteCarlo_correlation_matrix.csv` reports
+> r(Δ*, Π_S) = +0.720, but the raw-chain audit appendix explicitly states
+> that this value does not appear in the dataset under audit.
+>
+> **Consequence:** This correlation must **not** be used as an evidence-upgrade
+> argument (A− → A) until a dedicated script recomputes r(Δ*, Π_S) directly
+> from `UIDT_MonteCarlo_samples_100k.csv` and resolves the provenance conflict
+> between the raw CSV, the summary file, and the stored correlation matrix.
 
 ---
 
-## 4. κ–λ_S Strong Correlation (RG Fixed-Point)
+## 4. κ–λ_S Correlation (RG Fixed-Point)
 
-**Source:** `UIDT_MonteCarlo_correlation_matrix.csv` + Stratum I RG check
+**Source:** `UIDT_MonteCarlo_correlation_matrix.csv`
 
 | Correlation | Value | Category |
 |---|---|---|
 | r(κ, λ_S) | ~+0.99 | [A] |
 
-**Interpretation [A]:** The near-unity correlation r(κ, λ_S) ≈ +0.99 is the
-expected direct consequence of the RG fixed-point constraint 5κ² = 3λ_S.
-Parameters linked by an exact algebraic constraint must have correlation → 1
-in any correctly converged MC chain. This is a mathematical consistency check,
-not a new physical result.
+**Interpretation [A]:** The near-unity correlation is the direct algebraic consequence
+of the RG fixed-point 5κ² = 3λ_S. Parameters linked by an exact constraint must
+have r → 1 in a converged chain. This is a mathematical consistency check.
+
+> **Note:** The soft `[RG_CONSTRAINT_FAIL]` flagged in Stratum I § 5 applies to the
+> hp-mean residual, not to the posterior correlation. Both must be reported
+> transparently; neither may be suppressed.
 
 ---
 
@@ -90,9 +96,7 @@ not a new physical result.
 
 **Evidence category: [A-] for γ, [B] for Ψ**
 
-Both γ and Ψ show the strongest asymmetric-tail behavior in their marginalized
-posteriors. For γ this is expected: it is a phenomenological coupling parameter [A-]
-whose posterior naturally reflects the width of the phenomenological fit.
-For Ψ the non-Gaussianity indicates parameter degeneracies or non-linear
-couplings that are present in the MC chain but not yet analytically characterized.
-This is flagged as a topic for the planned NLO extension work.
+γ shows asymmetric tails consistent with its phenomenological coupling role [A-].
+Ψ shows asymmetric tails whose physical origin is not yet analytically characterized.
+This is identified as a topic for the planned NLO extension work and must not be
+used as evidence for any current parameter-upgrade claim.

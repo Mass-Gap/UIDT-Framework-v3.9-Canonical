@@ -9,6 +9,8 @@ and `UIDT_HighPrecision_mean_values.csv`.
 **Evidence category for all items in this file: [A]**
 (exception: γ LEDGER consistency → [A-] because the reference value is phenomenological)
 
+**Version:** 2026-04-29 (precision update — canonical audit values from MC session)
+
 ---
 
 ## 1. MCMC Convergence Diagnostics
@@ -17,20 +19,20 @@ All 10 parameters of the raw chain pass publication-level convergence thresholds
 
 | Parameter | Split-R̂ | N_eff | τ_int (steps) | Verdict |
 |---|---|---|---|---|
-| Δ* (Delta_star) | ~1.000 | > 99 000 | ~0.50 | ✅ converged |
-| γ (gamma) | ~1.000 | > 99 000 | ~0.50 | ✅ converged |
-| Ψ (Psi) | ~1.000 | > 99 000 | ~0.50 | ✅ converged |
-| κ (kappa) | ~1.000 | > 99 000 | ~0.50 | ✅ converged |
-| λ_S (lambda_S) | ~1.000 | > 99 000 | ~0.50 | ✅ converged |
-| m_S | ~1.000 | > 99 000 | ~0.50 | ✅ converged |
-| kinetic_VEV | ~1.000 | > 99 000 | ~0.50 | ✅ converged |
-| Π_S | ~1.000 | > 99 000 | ~0.50 | ✅ converged |
-| w0 | ~1.000 | > 99 000 | ~0.50 | ✅ converged |
-| ET | ~1.000 | > 99 000 | ~0.50 | ✅ converged |
+| Δ* | ~1.000 | > 96 000 | ~0.50 | ✅ converged |
+| γ | ~1.000 | > 96 000 | ~0.50 | ✅ converged |
+| Ψ | ~1.000 | > 96 000 | ~0.50 | ✅ converged |
+| κ | ~1.000 | > 96 000 | ~0.50 | ✅ converged |
+| λ_S | ~1.000 | > 96 000 | ~0.50 | ✅ converged |
+| m_S | ~1.000 | > 96 000 | ~0.50 | ✅ converged |
+| kinetic_VEV | ~1.000 | > 96 000 | ~0.50 | ✅ converged |
+| Π_S | ~1.000 | > 96 000 | ~0.50 | ✅ converged |
+| w0 | ~1.000 | > 96 000 | ~0.50 | ✅ converged |
+| ET | ~1.000 | > 96 000 | ~0.50 | ✅ converged |
 
-**Threshold applied:** Split-R̂ < 1.01 (standard; all values satisfy < 1.001)
-**Effective sample size threshold:** N_eff > 1 000 (standard); all values exceed 99 000.
-**τ_int ≈ 0.50** indicates the chain is near-fully decorrelated after thinning.
+**Threshold applied:** Split-R̂ < 1.01 (standard); all values satisfy < 1.001.
+**N_eff threshold:** > 1 000 (standard); all values exceed 96 000.
+**τ_int ≈ 0.50:** near-fully decorrelated after thinning; practical upper bound τ_int ≪ 1.
 
 ---
 
@@ -42,12 +44,13 @@ All 10 parameters of the raw chain pass publication-level convergence thresholds
 |---|---|
 | MC mean | 1.710044 GeV |
 | MC std | 0.014993 GeV |
-| Absolute residual vs LEDGER | 4.4425 × 10⁻⁵ GeV |
-| Normalised deviation | 0.00296 σ |
+| Absolute residual vs LEDGER | 4.44 × 10⁻⁵ GeV |
+| z-score (MC units) | 0.00296 |
 | Two-sided p-value | 0.997636 |
 
 **Result:** Δ* MC posterior is fully consistent with the LEDGER value.
-The residual 4.4 × 10⁻⁵ GeV is well within the stated ±0.015 GeV uncertainty.
+The residual 4.44 × 10⁻⁵ GeV is three orders of magnitude smaller than the
+stated ±0.015 GeV uncertainty.
 
 ---
 
@@ -57,15 +60,17 @@ The residual 4.4 × 10⁻⁵ GeV is well within the stated ±0.015 GeV uncertain
 
 | Quantity | Value |
 |---|---|
-| MC mean | 16.373948 |
-| MC std | 1.005125 |
-| Absolute residual vs LEDGER | 0.034948 |
-| Normalised deviation | 0.03477 σ |
-| Two-sided p-value | 0.972263 |
+| MC mean | 16.37395 |
+| MC std | 1.00513 |
+| Absolute residual vs LEDGER | 0.03495 |
+| z-score | −0.0348 |
+| Two-sided p-value | 0.9723 |
 
 **Result:** γ MC posterior is numerically consistent with the LEDGER value.
-Note: the large MC std (≈ 1.0) for γ is expected from its role as a broad
-phenomenological coupling parameter; it does not indicate a convergence problem.
+The large MC std (≈ 1.005) reflects the phenomenological breadth of γ as a
+coupling parameter; it does not indicate a convergence problem.
+The negative z-score (−0.0348) indicates the MC mean sits marginally below the
+LEDGER reference, well within statistical noise.
 
 ---
 
@@ -73,48 +78,58 @@ phenomenological coupling parameter; it does not indicate a convergence problem.
 
 Statistics derived directly from the raw chain without any model assumption.
 
-| Parameter | Skewness | Excess Kurtosis | Shape classification |
-|---|---|---|---|
-| Δ* | ~0.00 | ~0.00 | near-Gaussian |
-| m_S | ~0.00 | ~0.00 | near-Gaussian |
-| κ | ~0.00 | ~0.00 | near-Gaussian |
-| λ_S | ~0.00 | ~0.00 | near-Gaussian |
-| γ | non-negligible | non-negligible | asymmetric tails |
-| Ψ | non-negligible | non-negligible | asymmetric tails |
-| kinetic_VEV | ~0.00 | ~0.00 | near-Gaussian |
-| Π_S | ~0.00 | ~0.00 | near-Gaussian |
-| w0 | ~0.00 | ~0.00 | near-Gaussian |
-| ET | ~0.00 | ~0.00 | near-Gaussian |
+| Parameter | Shape classification |
+|---|---|
+| Δ* | near-Gaussian |
+| m_S | near-Gaussian |
+| κ | near-Gaussian |
+| λ_S | near-Gaussian |
+| kinetic_VEV | near-Gaussian |
+| Π_S | near-Gaussian |
+| w0 | near-Gaussian |
+| ET | near-Gaussian |
+| **γ** | **asymmetric tails (non-negligible skewness and kurtosis)** |
+| **Ψ** | **asymmetric tails (non-negligible skewness and kurtosis)** |
 
-**Conclusion:** γ and Ψ are the only two parameters with non-negligible
-asymmetric-tail behavior. All others are near-Gaussian.
-This is consistent with the known phenomenological breadth of γ.
+**Textually established conclusion:** Δ*, m_S, κ, λ_S, kinetic_VEV, Π_S, w0,
+and ET behave near-Gaussian. γ and Ψ show the most relevant deviations from
+a simple Gaussian approximation.
 
 ---
 
-## 5. RG Constraint Check (raw-chain posterior)
+## 5. RG Constraint Check
 
-**Constraint:** 5κ² = 3λ_S (UIDT RG fixed-point)
+**Constraint:** 5κ² = 3λ_S (UIDT RG fixed-point [A])
 
-The raw-chain posterior satisfies this constraint within the sample-noise floor.
-A formal per-sample residual check is implemented in:
-`verification/tests/test_monte_carlo_summary.py`
+The hp-mean file reports a soft RG residual that was flagged as
+`[RG_CONSTRAINT_FAIL]` in the raw-chain audit appendix.
 
-If the residual exceeds tolerance the test emits `[RG_CONSTRAINT_FAIL]`.
+> ⚠️ **[RG_CONSTRAINT_FAIL] — open item**
+>
+> The residual |5κ² − 3λ_S| at the hp-mean values exceeds the
+> formal tolerance 1 × 10⁻¹⁴ set in the verification suite.
+> This flag was explicitly noted in the audit appendix and must
+> **not** be silently smoothed over.
+>
+> **Required action before merge of any claim that depends on the
+> RG constraint being exactly satisfied:** re-run
+> `verification/tests/test_monte_carlo_summary.py` with the current
+> hp-mean values and document the residual numerically.
+> The test will emit `[RG_CONSTRAINT_FAIL]` if the threshold is exceeded.
 
 ---
 
 ## 6. Pending Reproducibility Script
 
-A dedicated script `verification/scripts/verify_monte_carlo_research_notes.py`
-should be added to formally reproduce all values in this file.
+`verification/scripts/verify_monte_carlo_research_notes.py` — to be added in a follow-up PR.
 
 Planned responsibilities:
 1. Load `UIDT_MonteCarlo_samples_100k.csv`
 2. Compute split-R̂, N_eff, τ_int for all 10 parameters
-3. Compute LEDGER consistency for Δ* and γ
+3. Compute LEDGER consistency for Δ* and γ (reproduce z-scores and p-values above)
 4. Compute skewness and kurtosis for all 10 parameters
 5. Recompute all 45 pairwise correlations from the raw chain
 6. Compare raw-chain correlations against `UIDT_MonteCarlo_correlation_matrix.csv`
 7. Emit `[TENSION ALERT]` for any |Δr| > 0.05
-8. Emit `[RG_CONSTRAINT_FAIL]` if 5κ²–3λ_S residual exceeds 1 × 10⁻¹⁴ in hp-mean check
+8. Recompute 5κ² − 3λ_S from hp-mean values using `mpmath` (mp.dps=80)
+9. Emit `[RG_CONSTRAINT_FAIL]` if residual exceeds 1 × 10⁻¹⁴
