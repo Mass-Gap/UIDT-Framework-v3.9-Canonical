@@ -124,7 +124,7 @@ def generate_reference(file_path, n_samples=100000):
     print(f"\nDone. Saved to {file_path}")
 
 if __name__ == "__main__":
-    output_path = os.path.join(os.getcwd(), "verification", "data", "UIDT_MonteCarlo_samples_100k_v361.csv")
+    output_path = os.path.join(os.getcwd(), "verification", "data", "UIDT_MonteCarlo_100k_v361_Error_Propagation.csv")
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     generate_reference(output_path)
 

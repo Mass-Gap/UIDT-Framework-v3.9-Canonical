@@ -65,5 +65,5 @@ def run_forensics(file_path):
         print("-> STATUS: PASSED (Natural asymmetry detected.)")
 
 if __name__ == "__main__":
-    path = r'verification/data/UIDT_MonteCarlo_samples_100k_v361.csv'
+    path = r'verification/data/UIDT_MonteCarlo_100k_v361_Error_Propagation.csv'
     run_forensics(path)
