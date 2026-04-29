@@ -8,6 +8,7 @@ This directory contains standalone simulation scripts for:
 - **Lattice QCD:** Hybrid Monte Carlo (HMC) simulations with SU(3) gauge group
 - **Cosmology:** ΛCDM parameter evolution and DESI alignment
 - **Validation:** Evidence analysis and lattice validation
+- **Monte Carlo Data:** Statistical validation dataset (v3.3) → see `monte_carlo/`
 
 All simulations use parameters from `CANONICAL/CONSTANTS.md` and are designed to validate claims in `LEDGER/CLAIMS.json`.
 
@@ -21,6 +22,33 @@ pip install mpmath==1.3.0 numpy==1.24.0 scipy==1.11.0 matplotlib==3.7.0
 ```bash
 pip install cupy-cuda11x  # For CUDA 11.x
 ```
+
+## Monte Carlo Validation Data
+
+The `monte_carlo/` subdirectory contains the complete statistical validation dataset
+for the UIDT Ω framework (v3.3):
+
+| File | Description |
+|:---|:---|
+| `monte_carlo/README.md` | Full dataset documentation |
+| `monte_carlo/UIDT_MonteCarlo_summary.csv` | Mean/std/CI for Δ, γ, Ψ (N=100k) |
+| `monte_carlo/UIDT_MonteCarlo_summary_table_short.csv` | Abbreviated summary |
+| `monte_carlo/UIDT_MonteCarlo_correlation_matrix.csv` | 8×8 Pearson-r matrix |
+| `monte_carlo/UIDT_MonteCarlo_summary_table.tex` | LaTeX publication table |
+| `monte_carlo/UIDT_HighPrecision_mean_values.csv` | mpmath 80-digit precision means |
+| `monte_carlo/PLOTS_REGISTRY.md` | Plot catalog + reproduction code |
+| `monte_carlo/DATA_NOTE.md` | Note: 19 MB raw CSV → Zenodo DOI 10.5281/zenodo.17554179 |
+
+**Raw 100k sample chain (19 MB):** archived at Zenodo  
+https://doi.org/10.5281/zenodo.17554179
+
+**Key results (N=100,000):**
+
+| Parameter | Mean | Std | LEDGER | Evidence |
+|:---|:---|:---|:---|:---|
+| Δ* (GeV) | 1.7100444 | 0.0149928 | 1.710 ± 0.015 | [A] |
+| γ | 16.373948 | 1.005125 | 16.339 | [A-] |
+| Ψ | 1291.759 | 159.125 | — | [A-] |
 
 ## Simulation Scripts
 
@@ -63,6 +91,9 @@ pip install cupy-cuda11x  # For CUDA 11.x
 For full validation pipeline:
 
 ```bash
+# 0. Monte Carlo baseline verification (fast)
+python -m pytest verification/tests/test_monte_carlo_summary.py -v
+
 # 1. Lattice Validation
 python simulation/uidt_v3_6_1_lattice_validation.py
 
@@ -94,7 +125,7 @@ Simulations import from:
 |-----------|-------|----------|--------|
 | Δ | 1.710 ± 0.015 GeV | [A] | `CANONICAL/CONSTANTS.md` |
 | κ | 0.500 ± 0.008 | [A] | `CANONICAL/CONSTANTS.md` |
-| λ_S | 5κ²/3 ≈ 0.41̄6̄ ± 0.007 | [A] | `CANONICAL/CONSTANTS.md` |
+| λ_S | 5κ²/3 ≈ 0.41̄ 6̄ ± 0.007 | [A] | `CANONICAL/CONSTANTS.md` |
 | γ | 16.339 | [A-] | `CANONICAL/CONSTANTS.md` |
 | v | 47.7 MeV | [A] | `CANONICAL/CONSTANTS.md` |
 | H₀ | 70.4 ± 0.16 km/s/Mpc | [C] | `CANONICAL/CONSTANTS.md` |
@@ -136,6 +167,7 @@ See `simulation/DATA_FORMAT.md` for detailed specification of:
 - FLAG 2024 Review: arXiv:2411.04268
 - ILDG Data Format: https://www.lqcd.org/ildg/
 - HMC Algorithm: Duane et al., Phys. Lett. B 195 (1987) 216
+- MC Validation Data: https://doi.org/10.5281/zenodo.17554179
 
 ## Contact
 
@@ -144,5 +176,5 @@ See `simulation/DATA_FORMAT.md` for detailed specification of:
 **ORCID:** 0009-0007-4307-1609
 
 ---
-**Last Updated:** 2026-04-07  
+**Last Updated:** 2026-04-29  
 **Framework Version:** 3.9
