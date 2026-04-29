@@ -87,7 +87,7 @@
       "evidence": "C",
       "dependencies": ["DESI_DR2"],
       "since": "v3.7.2",
-      "notes": "Calibrated to DESI, NOT independent prediction"
+      "notes": "Calibrated to DESI, NOT independent prediction. Consistent with CCHP (2025) but underlying Hubble tension remains unresolved."
     },
     {
       "id": "UIDT-C-009",
@@ -307,7 +307,7 @@
       "confidence": 0.9,
       "dependencies": [],
       "since": "v3.7.2",
-      "notes": "DESI DR2 calibrated"
+      "notes": "DESI DR2 calibrated. Hubble tension remains unresolved."
     },
     {
       "id": "UIDT-C-030",

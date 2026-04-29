@@ -216,7 +216,7 @@ If independent measurements converge to H₀ ≠ 70.4 km/s/Mpc at >3σ:
 - **H₀ = 73.0 ± 0.5 km/s/Mpc** (SH0ES confirmed) → **DESI CALIBRATION QUESTIONED**
 
 **Current Status:**
-⚠️ **UNCERTAIN** — JWST early results show 72.6 ± 2.0 km/s/Mpc (1.1σ from UIDT)
+⚠️ **UNCERTAIN** — The UIDT prediction of 70.4 km/s/Mpc is consistent with the latest CCHP measurements (2025). However, the underlying Hubble tension between Planck and SH0ES remains unresolved.
 
 **Timeline:**
 - **2025-2026:** JWST Cycle 3 Cepheid program
