@@ -20,7 +20,7 @@ The dataset includes the raw MC chain samples, high-precision mean values, param
 - **Correlation Analysis:** Full Pearson-r matrix (`UIDT_MonteCarlo_correlation_matrix.csv`)
 - **Summary Tables:** CSV and LaTeX publication tables
 - **Summary Tables:** CSV and LaTeX publication tables
-- **Plots:** Hexbin density, histograms, scatter (JPG) + Corner and Convergence plots (PNG) in `plots/`
+- **Plots:** Hexbin, histograms, scatter (JPG) + Corner, Marginal Posteriors, and Stratum II plots (PNG) in `figure/`
 
 ---
 
@@ -42,15 +42,16 @@ The dataset includes the raw MC chain samples, high-precision mean values, param
 | `UIDT_MonteCarlo_correlation_matrix.csv` | 8×8 Pearson-r matrix (m_S, κ, λ_S, C, α_s, Δ, γ, Ψ) |
 | `UIDT_MonteCarlo_summary_table.tex` | Publication-ready LaTeX table |
 
-### 2.3 Plots (in `plots/` directory)
+### 2.3 Plots (in `figure/` directory)
 
 | File | Description |
 |:---|:---|
 | `UIDT_joint_Delta_gamma_hexbin.jpg` | Hexbin density: Δ vs γ (100k samples) |
 | `UIDT_histograms_Delta_gamma_Psi.jpg` | 1D marginal distributions for Δ, γ, Ψ |
 | `UIDT_gamma_vs_Psi_scatter.jpg` | γ vs Ψ scatter (2000 random points) — confirms near-perfect linear correlation r=0.9995 |
-| `corner_plot_uidt_v33.png` | Full covariance matrix (corner plot) |
-| `convergence_diagnostics_uidt_v33.png` | MCMC convergence (trace, ACF, R-hat) |
+| `UIDT_v33_Corner_Plot.png` | Full covariance matrix (10x10 corner plot) |
+| `UIDT_v33_Marginal_Posteriors.png` | Marginal distribution KDEs for all 10 parameters |
+| `UIDT_v33_Stratum_II_Derivations.png` | Stratum II: Physical derivations (scaling, w_a, damping) |
 
 ---
 

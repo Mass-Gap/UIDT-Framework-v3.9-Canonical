@@ -10,15 +10,15 @@ Evidence tags: [A] proven | [A-] calibrated | [B] corroborated | [C] phenomenolo
 ## [v3.9.9] — 2026-04-29: Monte Carlo Validation Baseline Restore
 
 ### [DATA]
-- **Monte Carlo Restore (v3.2/v3.3):** Re-integration of the complete validation dataset (14 files) into `simulation/monte_carlo/`.
+- **Monte Carlo Restore (v3.2/v3.3):** Re-integration of the complete validation dataset (15 files) into `simulation/monte_carlo/`.
   - Artifacts: `UIDT_MonteCarlo_summary.csv`, `UIDT_MonteCarlo_samples_100k.csv` (19.3 MB raw samples), `UIDT_MonteCarlo_correlation_matrix.csv`, `UIDT_MonteCarlo_summary_table.tex`.
-  - Visuals: 5 diagnostic plots in `plots/` (Hexbin, Histograms, Scatter, Corner, Convergence).
+  - Visuals: 6 diagnostic plots in `figure/` (Hexbin, Histograms, Scatter, Corner, Marginal Posteriors, Stratum II).
   - Evidence: **[C]** (Calibrated validation baseline).
   - DOI: 10.5281/zenodo.17554179.
   - **Fazit**: Die Daten sind extrem wertvoll (Evidenz [A-]), um zu beweisen, dass das Framework in sich selbst mathematisch stabil ist. Sie dürfen aber niemals als "externer Beweis" (Stratum I) für die reale Existenz dieser Parameter in der Natur herangezogen werden.
 
 ### [FIX]
-- **Structure standardisation:** Migrated plots to `simulation/monte_carlo/plots/` and updated all internal references to match public archival structure.
+- **Structure standardisation:** Migrated plots to `simulation/monte_carlo/figure/` and updated all internal references to match public archival structure and high-res visuals.
 - **Path Cleanup:** Removed redundant/legacy README copies from target directory to maintain structural integrity.
 
 ### [VERIFY]
