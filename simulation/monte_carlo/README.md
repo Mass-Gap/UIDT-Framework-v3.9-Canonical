@@ -45,9 +45,9 @@ The dataset includes the raw MC chain samples, high-precision mean values, param
 
 | File | Description |
 |:---|:---|
-| `UIDT_joint_Delta_gamma_hexbin.jpg` | Hexbin density: Δ vs γ (100k samples) |
-| `UIDT_histograms_Delta_gamma_Psi.jpg` | 1D marginal distributions for Δ, γ, Ψ |
-| `UIDT_gamma_vs_Psi_scatter.jpg` | γ vs Ψ scatter (2000 random points) — confirms near-perfect linear correlation r=0.9995 |
+| `UIDT_joint_Delta_gamma_hexbin.png` | Hexbin density: Δ vs γ (100k samples) |
+| `UIDT_histograms_Delta_gamma_Psi.png` | 1D marginal distributions for Δ, γ, Ψ |
+| `UIDT_gamma_vs_Psi_scatter.png` | γ vs Ψ scatter (2000 random points) — confirms near-perfect linear correlation r=0.9995 |
 
 ---
 
