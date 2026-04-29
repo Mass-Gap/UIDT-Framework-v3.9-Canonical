@@ -39,6 +39,18 @@ jobs:
           echo "Verified artifacts" > dist/verified.txt
           # Additional build steps would go here
 
+      - name: Generate Subjects
+        id: subjects
+        run: |
+          cd dist
+          sha256sum * > ../subjects.txt
+          cd ..
+          BASE64_SUBJECTS=$(base64 -w0 subjects.txt)
+          echo "base64_subjects=$BASE64_SUBJECTS" >> $GITHUB_OUTPUT
+
+    outputs:
+      base64_subjects: ${{ steps.subjects.outputs.base64_subjects }}
+
   provenance:
     needs: [verify]
     name: Generate SLSA-3 Provenance
@@ -48,4 +60,4 @@ jobs:
       contents: write
     uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.0.0
     with:
-      base64-subjects: "ZGlzdC8qCg==" # Base64 of 'dist/*' as an example
+      base64-subjects: "${{ needs.verify.outputs.base64_subjects }}"
