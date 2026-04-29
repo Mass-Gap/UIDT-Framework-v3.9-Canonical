@@ -1,0 +1,73 @@
+modules/covariant_unification.py:27:        self.RG_STEPS = mpf('99') # N=99 Cascade (Limitation L5) [D] Lattice topology (UIDT-C-050)
+modules/covariant_unification.py:28:        # TODO [D]: Derive N from first principles. N=99 (UIDT-C-050 [D]) vs N=94.05 (UIDT-C-046 [E]) unresolved.
+modules/covariant_unification.py:29:        #           (SU(N) gluon DoF ∝ N²-1 gives scaling but not the fixed value N=99;
+modules/lattice_topology.py:16:- Drive Data: 'PROBLEM4_INITIAL_FINDINGS.json' (N=99 Cascade / Folding)
+modules/lattice_topology.py:72:        # Source: Miranda TLT & N=99 Cascade Analysis
+verification/scripts/verify_brst_dof_reduction.py:4:Target: Identify subtraction hypothesis leading to N=99 cascade steps.
+verification/scripts/verify_brst_dof_reduction.py:127:        print("Hypothesis Testing for N=99 Target:")
+verification/scripts/verify_L1_L4_L5_first_principles.py:25:  [L5] N=99 structural Nc²×b₀ ........... PASS  exact
+verification/scripts/verify_L1_L4_L5_first_principles.py:29:  [L5] Sensitivity: ρ(N=94.05)/ρ(N=99) .. INFO  ratio=~2.1e+93
+verification/scripts/verify_L1_L4_L5_first_principles.py:100:# CHECK L5 — N=99 Structural: Nc² × b₀^quenched = 99
+verification/scripts/verify_L1_L4_L5_first_principles.py:109:    _report('L5', 'N=99 structural Nc²×b₀^quenched', ok,
+verification/scripts/verify_L1_L4_L5_first_principles.py:175:    _info('L5', 'ρ(N=94.05)/ρ(N=99) sensitivity ratio',
+verification/scripts/verify_L1_L4_L5_first_principles.py:217:        print('  L5 OPEN: N=99 requires lattice verification for [C]')
+verification/scripts/verify_session_checks_v39.py:23:L5  N=99 RG steps remain empirically chosen (UIDT-C-017)
+verification/scripts/verify_session_checks_v39.py:210:    print("    L5  N=99 RG steps empirically chosen            [UIDT-C-017, E]")
+verification/scripts/verify_L1L4L5_phase2.py:82:    # Cascade product at N=99
+verification/scripts/verify_L1L4L5_phase2.py:100:    print(f"    Cascade product at N=99: {mp.nstr(cascade_99, 5)} ≈ 10^{mp.nstr(log_cascade, 4)}")
+verification/scripts/verify_L1L4L5_phase2.py:103:    print(f"    Conclusion: Cascade N=99 does NOT solve Λ-problem (gap: 10^20).")
+verification/scripts/verify_L1L4L5_phase2.py:127:    print(f"  C-05Z Banach N required: {r2['banach_N']} (vs cascade N=99)  [E-open]")
+verification/scripts/verify_phase7_lattice_N99_observable.py:52:    print('  UIDT v3.9 — Phase 7C: Lattice-compatible N=99 observable sketch')
+verification/scripts/verify_phase7_lattice_N99_observable.py:59:        print('  L5 OPEN: N=99 remains structurally well-defined but not yet tied to')
+verification/scripts/verify_L1L4L5_analysis.py:80:    L5: Test whether N=99 RG steps can be derived from SM g*(T).
+verification/scripts/verify_L1L4L5_analysis.py:99:    print("\n  [L5] SM g*(T) Scan for N=99:")
+verification/scripts/verify_L1L4L5_analysis.py:111:    print(f"    Evidence: E-open. N=99 NOT derivable from g*(T).")
+verification/data/Verification_Report_v3.9_2026-02-22_07-01-49_UTC.md:75:- Limitations: L4 (gamma not RG-derived), L5 (N=99 empirical)
+verification/data/Verification_Report_v3.9_2026-02-24_23-36-56_UTC.md:75:- Limitations: L4 (gamma not RG-derived), L5 (N=99 empirical)
+verification/data/Verification_Report_v3.9_2026-02-24_23-37-34_UTC.md:75:- Limitations: L4 (gamma not RG-derived), L5 (N=99 empirical)
+verification/audits/global_assessment_audit.py:78:        "risk": "N=99 RG steps empirical choice",
+verification/README.md:135:- **L5** N=99 RG steps: empirically chosen
+docs/PR_Review_Protocol_v2.0.md:67:- N (RG steps): CLAIMS.json says N=99 [E/open]. theoretical_notes §12 says N=94.05. Code uses N=99. → Any PR touching N MUST explicitly state which value and why.
+docs/PR_Review_Protocol_v2.0.md:287:| KI-02 | N=99 vs N=94.05 | limitations.md, covariant_unification.py, theoretical_notes.md | Reconcile or version |
+docs/state_of_UIDT_2026-04.md:26:| L5  | N = 99          | Algebraically clean; no lattice observable | D        |
+docs/state_of_UIDT_2026-04.md:163:### 3.4 L5 — N = 99: Open Limitation
+docs/state_of_UIDT_2026-04.md:183:**Epistemic status:** N = 99 [D] — algebraically exact, physically unverified.
+docs/bare_gamma_theorem.md:226:- **L5 (N=99 Unjustified):** The cascade step count N=99 appearing in vacuum energy calculations is empirically chosen. No first-principles derivation exists.
+docs/L1_L4_L5_research_summary_2026-04-28.md:25:| L5 | N = 99 physical justification | [D] prediction | [D] + structural Nc²×b₀ consistent | **No** |
+docs/L1_L4_L5_research_summary_2026-04-28.md:37:| N=99 = Nc²×b₀ | PASS structural |
+docs/L1_L4_L5_research_summary_2026-04-28.md:116:| 4 | Lattice N=99 verification | L5 [D] → [C] | Lattice data |
+docs/research/TKT-20260416-L1L4L5-analysis.md:107:## Problem L5 — Physical Justification of N = 99 RG Steps
+docs/research/TKT-20260416-L1L4L5-analysis.md:163:N = 99 cannot be derived from g*(T) in the Standard Model. No thermodynamic,
+docs/research/l5_n99_audit.md:4:- **N=99**: Used in production. Empirically chosen.
+docs/research/l5_n99_audit.md:8:- Compare observables with N=99 vs N=94.05.
+docs/research/TKT-20260416-Phase2-Egeo-Banach.md:125:N=99 Banach iterations are physically redundant by a factor of ~30.
+docs/research/TKT-20260416-Phase2-Egeo-Banach.md:147:N ≫ 10², far beyond N=99. This confirms that the cascade formula
+docs/research/TKT-20260416-Phase2-Egeo-Banach.md:149:with N=99 — the suppression factor is only ~10⁻²³, not 10⁻⁴⁴.
+docs/research/TKT-20260416-Phase2-Egeo-Banach.md:191:  "statement": "N_Banach (gap iteration) and N_Cascade (RG suppression) are conceptually distinct. Banach converges at N=3; Cascade N=99 is a separate phenomenological parameter.",
+docs/research/banach_gamma_derivation_roadmap_20260415.md:161:| N=99 self-contradiction (C-017 vs C-046) | Contaminates any N-dependent formula | HIGH |
+docs/research/banach_gamma_derivation_roadmap_20260415.md:171:> Option C: Resolve N=99 contradiction first (prerequisite for some paths)
+docs/theoretical_notes.md:394:**Status:** Contested / Under Investigation — N=99 (UIDT-C-050 [D]) vs N_eff=94.05 (UIDT-C-046 [E])
+docs/theoretical_notes.md:395:**Classification:** **Category E** (Conjectured — contradicts production code N=99, no independent verification)
+docs/theoretical_notes.md:410:This value is **proposed** as an alternative baseline, pending independent verification and code update. N=99 remains in production code (covariant_unification.py, verify_brst_dof_reduction.py). The integer proximity to $N=94$ suggests a discrete conformal scaling law rather than the previously assumed $N=99$ BRST symmetry breaking cascade.
+docs/theoretical_notes.md:412:**Action:** The N=99 vs N=94.05 discrepancy must be resolved before v3.10 release. Either update all code to N=94.05 with independent verification, or revert this section. Current status: **UNRESOLVED** (UIDT-C-046 [E] vs UIDT-C-050 [D]).cuum suppression from the $N \approx 94$ baseline.
+docs/L5_phase7_lattice_N99_observable_2026-04-28.md:1:# Phase 7C — Lattice-Compatible N=99 Observable Sketch (Conceptual)
+docs/L5_phase7_lattice_N99_observable_2026-04-28.md:9:> **Goal:** Outline how an N=99-type structure could, in principle, be tested
+docs/L5_phase7_lattice_N99_observable_2026-04-28.md:11:> already support or refute N=99.
+docs/L5_phase7_lattice_N99_observable_2026-04-28.md:59:A concrete test of N=99 would require:[E]
+docs/L5_phase7_lattice_N99_observable_2026-04-28.md:76:- L5 remains an open prediction: N=99 is structurally natural within UIDT
+docs/evidence-classification.md:158:| UIDT-C-017 | N=99 RG steps justification | **E-open** | Active research | Phenomenological, no theoretical derivation |
+docs/L1_L4_L5_first_principles_derivation_2026-04-28.md:22:| **L5** | N = 99 vacuum suppression exponent not derived | [D] structural conjecture |
+docs/L1_L4_L5_first_principles_derivation_2026-04-28.md:132:## Phase 5c — N = 99 Structural Derivation (L5)
+docs/L1_L4_L5_first_principles_derivation_2026-04-28.md:142:The vacuum suppression exponent N = 99 satisfies:
+docs/L1_L4_L5_first_principles_derivation_2026-04-28.md:164:ρ(N=94.05) / ρ(N=99) ≈ exp(+214.9) ≈ 2.1 × 10⁹³
+docs/L1_L4_L5_first_principles_derivation_2026-04-28.md:168:This extreme sensitivity confirms N = 99 is not a free parameter:
+docs/L1_L4_L5_first_principles_derivation_2026-04-28.md:194:| **L5** N = 99 | Nc²×b₀ = 99 strukturell konsistent | [D] → [C] möglich | Lattice-Verifikation ausstehend |
+docs/L1_L4_L5_first_principles_derivation_2026-04-28.md:243:N=99 structural: PASS (Nc²×11 = 99)
+docs/limitations.md:81:### L5: N=99 RG Steps Unjustified ⚠️ MEDIUM PRIORITY
+docs/limitations.md:88:- RG suppression: γ⁻¹² × π⁻² with **N=99 steps**
+docs/limitations.md:89:- **No explanation** for why exactly N=99
+docs/limitations.md:108:   - N=99 chosen to match ρ_vac = ρ_obs
+docs/limitations.md:117:- **⚠️ CONTRADICTION (S1-02):** theoretical_notes.md §12 proposes N=94.05 (UIDT-C-046 [E]) as replacement, declaring N=99 "falsified". However, N=99 remains in production code (covariant_unification.py:27, verify_brst_dof_reduction.py:86,140). Resolution required before v3.10.
+docs/limitations.md:121:Physical or mathematical derivation of N=99 from:
+docs/limitations.md:263:| **L5** | N=99 unjustified | Vacuum energy resolution | ρ_vac: [C] (phenomenological) | 🟡 **MEDIUM** |
+docs/limitations.md:303:3. **DO** challenge N=99 RG step justification (L5)
