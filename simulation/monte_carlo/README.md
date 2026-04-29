@@ -91,3 +91,9 @@ print(samples[['Delta','gamma','Psi']].describe())
 > Rietz, P. (2025). *Unified Information-Density Theory (UIDT) v3.2: Canonical Formulation,
 > Mathematical Consistency, and Empirical Testability*. Zenodo.
 > https://doi.org/10.5281/zenodo.17554179
+
+---
+
+## 6. Epistemic Warning / Fazit
+
+**Fazit: Die Daten sind extrem wertvoll (Evidenz [A-]), um zu beweisen, dass das Framework in sich selbst mathematisch stabil ist. Sie dürfen aber niemals als "externer Beweis" (Stratum I) für die reale Existenz dieser Parameter in der Natur herangezogen werden.**
