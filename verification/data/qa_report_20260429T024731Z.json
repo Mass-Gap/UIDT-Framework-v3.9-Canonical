@@ -1,0 +1,202 @@
+{
+  "timestamp": "2026-04-29T02:47:30.734168+00:00Z",
+  "repo_root": "/app",
+  "results": [
+    {
+      "check": "chk01_semantic",
+      "status": "FAIL",
+      "messages": [
+        "WARN: Multiple terms for spectral_gap in README.md: ['Lattice Torsion Binding Energy', 'Torsion Energy', 'mass gap', 'spectral gap']",
+        "WARN: Multiple terms for gamma in README.md: ['kinetic VEV', 'gamma invariant', 'γ']",
+        "WARN: Multiple terms for spectral_gap in CHANGELOG.md: ['mass gap', 'spectral gap']",
+        "WARN: Multiple terms for spectral_gap in FORMALISM.md: ['mass gap', 'spectral gap']",
+        "WARN: Multiple terms for gamma in FORMALISM.md: ['kinetic VEV', 'γ']",
+        "WARN: Multiple terms for rg_constraint in FORMALISM.md: ['RG fixed point', 'fixed-point condition']",
+        "WARN: Multiple terms for gamma in Verification_Report_v3.6.1.md: ['kinetic VEV', 'γ']",
+        "WARN: Multiple terms for gamma in Verification_Report_v3.6.1.md: ['kinetic VEV', 'γ']",
+        "WARN: Multiple terms for spectral_gap in gribov_cheeger_proof.md: ['mass gap', 'spectral gap']",
+        "FAIL: Forbidden association of Δ with 'particle mass' in PR_Review_Protocol_v2.0.md",
+        "WARN: Multiple terms for spectral_gap in lhcb_predictions_paper_draft.md: ['Lattice Torsion Binding Energy', 'mass gap']",
+        "WARN: Multiple terms for spectral_gap in schwinger_mechanism_deep_research_2026-03-30.md: ['mass gap', 'spectral gap']",
+        "WARN: Multiple terms for gamma in schwinger_mechanism_deep_research_2026-03-30.md: ['kinetic VEV', 'γ']",
+        "WARN: Multiple terms for rg_constraint in verification-guide.md: ['RG fixed point', 'renormalization group constraint']",
+        "FAIL: Forbidden association of Δ with 'particle mass' in glueball_spectrum_predictions.md",
+        "WARN: Multiple terms for gamma in mcmc_bayesian_calibration.md: ['kinetic VEV', 'γ']",
+        "WARN: Multiple terms for spectral_gap in limitations.md: ['mass gap', 'spectral gap']",
+        "WARN: Multiple terms for gamma in limitations.md: ['kinetic VEV', 'γ']",
+        "FAIL: Forbidden association of Δ with 'particle mass' in limitations.md",
+        "FAIL: Forbidden association of Δ with 'particle mass' in limitations.md",
+        "FAIL: Forbidden association of Δ with 'particle mass' in limitations.md",
+        "WARN: Multiple terms for gamma in su3_gamma_conjecture_audit.md: ['gamma invariant', 'γ']",
+        "WARN: Multiple terms for spectral_gap in theoretical_notes.md: ['Lattice Torsion Binding Energy', 'mass gap', 'spectral gap']",
+        "WARN: Multiple terms for gamma in theoretical_notes.md: ['kinetic VEV', 'gamma invariant', 'γ']",
+        "WARN: Multiple terms for gamma in gamma_first_principles_crosscheck_2026-03-30.md: ['kinetic VEV', 'γ']",
+        "FAIL: Forbidden association of Δ with 'particle mass' in cosmological_implications_v3.9.md",
+        "WARN: Multiple terms for spectral_gap in wilson_loop_string_tension.md: ['mass gap', 'spectral gap']",
+        "WARN: Multiple terms for spectral_gap in citation-guide.md: ['mass gap', 'spectral gap']",
+        "WARN: Multiple terms for spectral_gap in theory_comparison.md: ['mass gap', 'Yang-Mills gap']",
+        "WARN: Multiple terms for spectral_gap in schwinger_dyson_propagator.md: ['mass gap', 'spectral gap']",
+        "FAIL: Forbidden association of Δ with 'particle mass' in schwinger_dyson_propagator.md",
+        "WARN: Multiple terms for spectral_gap in falsification-criteria.md: ['mass gap', 'spectral gap']",
+        "WARN: Multiple terms for spectral_gap in spectral_function_positivity.md: ['mass gap', 'spectral gap']",
+        "WARN: Multiple terms for spectral_gap in first_principles_evidence_audit_2026-03-30.md: ['mass gap', 'spectral gap']",
+        "WARN: Multiple terms for spectral_gap in evidence-classification.md: ['mass gap', 'spectral gap']",
+        "WARN: Multiple terms for gamma in evidence-classification.md: ['kinetic VEV', 'gamma invariant', 'γ']",
+        "WARN: Multiple terms for spectral_gap in gamma12_torsion_bridge.md: ['Torsion Energy', 'mass gap']",
+        "WARN: Multiple terms for spectral_gap in FLAG_quality_mapping.md: ['Torsion Energy', 'mass gap', 'spectral gap']",
+        "WARN: Multiple terms for gamma in FLAG_quality_mapping.md: ['kinetic VEV', 'γ']",
+        "WARN: Multiple terms for gamma in gamma_derivation_whitepaper_v0.1.md: ['kinetic VEV', 'gamma invariant', 'γ']",
+        "WARN: Multiple terms for spectral_gap in CONSTANTS.md: ['Torsion Energy', 'mass gap', 'spectral gap']",
+        "WARN: Multiple terms for gamma in CONSTANTS.md: ['gamma invariant', 'γ']",
+        "WARN: Multiple terms for gamma in EVIDENCE.md: ['kinetic VEV', 'γ']",
+        "WARN: Multiple terms for gamma in EVIDENCE_SYSTEM.md: ['kinetic VEV', 'gamma invariant', 'γ']",
+        "WARN: Multiple terms for gamma in LIMITATIONS.md: ['kinetic VEV', 'γ']",
+        "FAIL: Forbidden association of Δ with 'particle mass' in LIMITATIONS.md",
+        "FAIL: Forbidden association of Δ with 'particle mass' in LIMITATIONS.md"
+      ]
+    },
+    {
+      "check": "chk02_glossary",
+      "status": "PASS",
+      "messages": []
+    },
+    {
+      "check": "chk03_notation",
+      "status": "FAIL",
+      "messages": [
+        "FAIL: Δ should be in GeV, not MeV in holographic_bh_ym_correspondence.md"
+      ]
+    },
+    {
+      "check": "chk04_evidence_tags",
+      "status": "FAIL",
+      "messages": [
+        "FAIL: γ MUST always be [A-], NEVER [A] - Found [E] for 'γ derivation from RG first principles'",
+        "FAIL: γ MUST always be [A-], NEVER [A] - Found [B] for 'Gamma consistency: γ_kinetic = 16.339 vs γ_MC = 16.374 ± 1.005 (within 1σ)'",
+        "FAIL: γ MUST always be [A-], NEVER [A] - Found [E] for 'γ derivation from RG first principles'",
+        "FAIL: γ MUST always be [A-], NEVER [A] - Found [B] for 'Bare Gamma γ_∞ = 16.3437 ± 0.0005 (L→∞ thermodynamic limit)'",
+        "FAIL: γ MUST always be [A-], NEVER [A] - Found [C] for 'Vacuum Frequency f_vac = 107.10 MeV (= Δ/γ + E_T)'",
+        "FAIL: Δ* ist [A] - Found [C] for 'Vacuum Frequency f_vac = 107.10 MeV (= Δ/γ + E_T)'",
+        "FAIL: γ MUST always be [A-], NEVER [A] - Found [E] for 'SU(3) Gamma Conjecture: γ_SU(3) = (2Nc+1)²/Nc |_{Nc=3} = 49/3 ≈ 16.333'",
+        "FAIL: Forbidden tag [A+] found in PR_Review_Protocol_v2.0.md",
+        "FAIL: Forbidden tag [A+] found in pr_evidence_review_all_prs_20260228.md",
+        "FAIL: Forbidden tag [A+] found in CONSTANTS.md"
+      ]
+    },
+    {
+      "check": "chk05_falsification",
+      "status": "PASS",
+      "messages": []
+    },
+    {
+      "check": "chk06_changelog",
+      "status": "PASS",
+      "messages": []
+    },
+    {
+      "check": "chk07_filesystem",
+      "status": "PASS",
+      "messages": []
+    },
+    {
+      "check": "chk08_numerics",
+      "status": "FAIL",
+      "messages": [
+        "FAIL: Divergent value for gamma in gamma_constraint_test.py: found 49, expected 16.339",
+        "FAIL: Divergent value for gamma in su3_gamma_proof_sketch.md: found 49, expected 16.339",
+        "FAIL: Divergent value for gamma in mcmc_bayesian_calibration.md: found 0.2778, expected 16.339",
+        "FAIL: Divergent value for gamma in limitations.md: found 49, expected 16.339",
+        "FAIL: Divergent value for gamma in su3_gamma_conjecture_audit.md: found 0.0047, expected 16.339",
+        "FAIL: Divergent value for gamma in gamma_first_principles_crosscheck_2026-03-30.md: found 49, expected 16.339",
+        "FAIL: Divergent value for gamma in bare_gamma_theorem.md: found 0.0047, expected 16.339",
+        "FAIL: Divergent value for gamma in rg_beta_derivation_gamma.md: found 49, expected 16.339",
+        "FAIL: Divergent value for gamma in rg_beta_derivation_gamma.md: found 49, expected 16.339",
+        "FAIL: Divergent value for gamma in rg_beta_derivation_gamma.md: found 49, expected 16.339",
+        "FAIL: Divergent value for gamma in rg_beta_derivation_gamma.md: found 49, expected 16.339",
+        "FAIL: Divergent value for gamma in TKT-20260403-audit-summary.md: found 0.0047, expected 16.339",
+        "FAIL: Divergent value for gamma in TKT-20260403-audit-summary.md: found 0.0047, expected 16.339",
+        "FAIL: Divergent value for gamma in TKT-20260403-audit-summary.md: found 49, expected 16.339",
+        "FAIL: Divergent value for gamma in gamma_derivation_whitepaper_v0.1.md: found 104.66, expected 16.339",
+        "FAIL: Divergent value for gamma in traceability.json: found 16.374, expected 16.339",
+        "FAIL: Divergent value for gamma in CONSTANTS.md: found 16.374, expected 16.339",
+        "FAIL: Divergent value for gamma in EVIDENCE.md: found 16.374, expected 16.339",
+        "FAIL: Divergent value for gamma in EVIDENCE_SYSTEM.md: found 16.374, expected 16.339",
+        "FAIL: Divergent value for gamma in LIMITATIONS.md: found 49, expected 16.339",
+        "FAIL: Divergent value for gamma in UIDTv3.6.1_Omelyna-Integrator2o.py: found 0.5, expected 16.339",
+        "FAIL: Divergent value for gamma in UIDTv3_6_1_HMC_Real.py: found 0.5, expected 16.339",
+        "FAIL: Divergent value for gamma in CLAIMS.json: found 16.374, expected 16.339",
+        "FAIL: Divergent value for gamma in CLAIMS.json: found 107.10, expected 16.339",
+        "FAIL: Divergent value for gamma in CLAIMS.json: found 104.66, expected 16.339",
+        "FAIL: Divergent value for gamma in external_contributions.md: found 104.66, expected 16.339"
+      ]
+    },
+    {
+      "check": "chk09_proof_refs",
+      "status": "FAIL",
+      "messages": [
+        "FAIL: Verifikationspfad fehlt in FORMALISM.md (kein Link zu verification/scripts/)"
+      ]
+    },
+    {
+      "check": "chk10_wording",
+      "status": "FAIL",
+      "messages": [
+        "FAIL: Wording issue in README.md - '\\bsolved\\b': Constitution: verboten ohne Beweis",
+        "FAIL: Wording issue in README.md - '\\bdefinitive\\b': Prestige language forbidden",
+        "WARN: Wording issue in README.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "WARN: Wording issue in CHANGELOG.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "FAIL: Wording issue in GLOSSARY.md - '\\bdefinitive\\b': Prestige language forbidden",
+        "FAIL: Wording issue in best_practices.md - '\\bdefinitive\\b': Prestige language forbidden",
+        "FAIL: Wording issue in best_practices.md - '\\bultimate\\b': Prestige language forbidden",
+        "FAIL: Wording issue in best_practices.md - '\\bholy grail\\b': Prestige language forbidden",
+        "WARN: Wording issue in best_practices.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "FAIL: Wording issue in Verification_Report_v3.6.1.md - 'A\\+\\+?': Nicht-existente Evidenzkategorie",
+        "FAIL: Wording issue in Verification_Report_v3.6.1.md - 'A\\+\\+?': Nicht-existente Evidenzkategorie",
+        "FAIL: Wording issue in PR_Review_Protocol_v2.0.md - '\\bdefinitive\\b': Prestige language forbidden",
+        "FAIL: Wording issue in PR_Review_Protocol_v2.0.md - '\\bultimate\\b': Prestige language forbidden",
+        "FAIL: Wording issue in PR_Review_Protocol_v2.0.md - '\\bholy grail\\b': Prestige language forbidden",
+        "FAIL: Wording issue in PR_Review_Protocol_v2.0.md - 'A\\+\\+?': Nicht-existente Evidenzkategorie",
+        "FAIL: Wording issue in PR_Review_Protocol_v2.0.md - '(?i)(?:solves|resolves)\\s+(?:the\\s+)?(?:Hubble|S8)\\s+tension': [TENSION ALERT] + FAIL",
+        "FAIL: Wording issue in lhcb_predictions_paper_draft.md - '\\bultimate\\b': Prestige language forbidden",
+        "WARN: Wording issue in DESI_DR2_alignment_report.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "WARN: Wording issue in theoretical_notes.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "FAIL: Wording issue in test_results_v3.9.0.md - 'A\\+\\+?': Nicht-existente Evidenzkategorie",
+        "WARN: Wording issue in falsification-criteria.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "FAIL: Wording issue in critical_review_2025.md - '\\bsolved\\b': Constitution: verboten ohne Beweis",
+        "FAIL: Wording issue in critical_review_2025.md - '\\bdefinitive\\b': Prestige language forbidden",
+        "FAIL: Wording issue in first_principles_evidence_audit_2026-03-30.md - '\\bsolved\\b': Constitution: verboten ohne Beweis",
+        "FAIL: Wording issue in first_principles_evidence_audit_2026-03-30.md - '\\bdefinitive\\b': Prestige language forbidden",
+        "FAIL: Wording issue in first_principles_evidence_audit_2026-03-30.md - '\\bultimate\\b': Prestige language forbidden",
+        "FAIL: Wording issue in first_principles_evidence_audit_2026-03-30.md - '\\bholy grail\\b': Prestige language forbidden",
+        "FAIL: Wording issue in evidence-classification.md - 'A\\+\\+?': Nicht-existente Evidenzkategorie",
+        "WARN: Wording issue in l5_n99_audit.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "WARN: Wording issue in chi_top_formula_audit.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "FAIL: Wording issue in quality_criteria_evidence_prs.md - '\\bdefinitive\\b': Prestige language forbidden",
+        "FAIL: Wording issue in quality_criteria_evidence_prs.md - '\\bultimate\\b': Prestige language forbidden",
+        "FAIL: Wording issue in quality_criteria_evidence_prs.md - '\\bholy grail\\b': Prestige language forbidden",
+        "WARN: Wording issue in quality_criteria_evidence_prs.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "FAIL: Wording issue in pr_evidence_review_h0_20260228.md - '\\bultimate\\b': Prestige language forbidden",
+        "FAIL: Wording issue in pr_evidence_review_h0_20260228.md - '\\bholy grail\\b': Prestige language forbidden",
+        "WARN: Wording issue in pr_evidence_review_h0_20260228.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "FAIL: Wording issue in pr_evidence_review_all_prs_20260228.md - '\\bultimate\\b': Prestige language forbidden",
+        "FAIL: Wording issue in pr_evidence_review_all_prs_20260228.md - '\\bholy grail\\b': Prestige language forbidden",
+        "FAIL: Wording issue in pr_evidence_review_all_prs_20260228.md - 'A\\+\\+?': Nicht-existente Evidenzkategorie",
+        "WARN: Wording issue in pr_evidence_review_all_prs_20260228.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "FAIL: Wording issue in CONSTANTS.md - 'A\\+\\+?': Nicht-existente Evidenzkategorie",
+        "WARN: Wording issue in CONSTANTS.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension",
+        "WARN: Wording issue in LIMITATIONS.md - '\\bresolved\\b': Gilt für H₀-/S₈-Tension"
+      ]
+    },
+    {
+      "check": "chk11_dependency",
+      "status": "PASS",
+      "messages": []
+    },
+    {
+      "check": "chk12_metadata",
+      "status": "PASS",
+      "messages": []
+    }
+  ],
+  "overall_status": "FAIL"
+}
