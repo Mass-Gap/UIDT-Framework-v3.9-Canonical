@@ -7,7 +7,28 @@ Evidence tags: [A] proven | [A-] calibrated | [B] corroborated | [C] phenomenolo
 
 ---
 
+## [v3.9.9] — 2026-04-29: Monte Carlo Validation Baseline Restore
+
+### [DATA]
+- **Monte Carlo Restore (v3.2/v3.3):** Re-integration of 11 primary validation datasets from internal storage into `simulation/monte_carlo/`.
+  - Files: `UIDT_MonteCarlo_summary.csv`, `UIDT_MonteCarlo_correlation_matrix.csv`, `UIDT_MC_Distribution_Plots.png`, etc.
+  - Evidence: [C] (Calibrated validation baseline).
+  - DOI: 10.5281/zenodo.17554179.
+
+### [FIX]
+- **README consistency:** Corrected plot file extensions in `simulation/monte_carlo/README.md` from `.jpg` to `.png` to match actual high-resolution artifacts.
+- **Path Cleanup:** Removed redundant/legacy README copies from target directory to maintain structural integrity.
+
+### [VERIFY]
+- **Baseline Audit:** Automated verification via `verification/tests/test_monte_carlo_summary.py`.
+  - Status: 10/10 PASSED.
+  - Results: Mean γ = 16.374 ± 1.005, Correlation r(γ, Ψ) > 0.999.
+  - Precision: Native mpmath 80-dps residual check < 10⁻¹⁴ vs. Ledger values.
+
+---
+
 ## [v3.9.5] — 2026-04-03: RG Precision Fix & Epistemic Audit Formalisation
+
 
 ### [FIX]
 - **TKT-20260403-LAMBDA-FIX:** `λ_S` corrected from rounded decimal 0.417 to exact RG fixed-point definition `5κ²/3 = 0.41̄6̄` in `CANONICAL/CONSTANTS.md`.
