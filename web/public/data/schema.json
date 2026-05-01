@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UIDT Claims Schema",
+  "description": "Validation schema for UIDT-OS CLAIMS.json",
+  "type": "object",
+  "required": ["metadata", "claims"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["version", "last_updated", "doi"],
+      "properties": {
+        "version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        "last_updated": {"type": "string", "format": "date"},
+        "doi": {"type": "string", "pattern": "^10\\.\\d+/.*$"},
+        "total_claims": {"type": "integer", "minimum": 0}
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "statement", "type", "status", "evidence"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^UIDT-C-\\d{3}$",
+            "description": "Unique claim identifier"
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 5,
+            "description": "The claim text"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["parameter", "prediction", "cosmology", "constraint", "verification", "derivation", "interpretation", "framework", "hypothesis"],
+            "description": "Claim category"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["verified", "calibrated", "predicted", "rectified", "open", "withdrawn", "conjectured"],
+            "description": "Current claim status"
+          },
+          "evidence": {
+            "type": "string",
+            "enum": ["A", "A-", "B", "C", "D", "E"],
+            "description": "Evidence category"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Quantitative confidence [0-1]"
+          },
+          "sigma": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Sigma-equivalent for statistical claims"
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "since": {
+            "type": "string",
+            "pattern": "^v\\d+\\.\\d+(\\.\\d+)?$"
+          },
+          "withdrawn_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "notes": {"type": "string"},
+          "pi_override": {
+            "type": ["object", "null"],
+            "description": "PI-level override of algorithmic evidence classification (PI Decision D17, 2026-04-25). Used when a more rigorous external benchmark supersedes algorithmic averaging. NEVER use to upgrade evidence without new experimental data.",
+            "required": ["evidence_override", "algorithmic_evidence", "rationale", "decided_by", "decided_date", "pi_decision_ref"],
+            "properties": {
+              "evidence_override": {
+                "type": "string",
+                "enum": ["A", "A-", "B", "C", "D", "E"],
+                "description": "PI-decreed evidence category"
+              },
+              "algorithmic_evidence": {
+                "type": "string",
+                "enum": ["A", "A-", "B", "C", "D", "E"],
+                "description": "What the algorithm would return without override"
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 30,
+                "description": "Scientific justification for the override"
+              },
+              "decided_by": {"type": "string"},
+              "decided_date": {"type": "string", "format": "date"},
+              "pi_decision_ref": {"type": "string", "pattern": "^D\\d+$"}
+            }
+          }
+        }
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "properties": {
+        "category_A": {"type": "integer"},
+        "category_A-": {"type": "integer"},
+        "category_B": {"type": "integer"},
+        "category_C": {"type": "integer"},
+        "category_D": {"type": "integer"},
+        "category_E": {"type": "integer"}
+      }
+    }
+  }
+}
