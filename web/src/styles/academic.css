@@ -1,0 +1,125 @@
+/* 
+   UIDT Elite Web Portal — Academic Brutalism v1.0
+   Design Tokens & Core Styles
+*/
+
+:root {
+  /* Colors */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0a0;
+  
+  /* Evidence Strata */
+  --stratum-1: #0f52ba; /* Sapphire Blue (Empirical) */
+  --stratum-2: #708090; /* Slate Grey (Consensus) */
+  --stratum-3: #4fa86a; /* UIDT Smaragd (Framework) */
+  
+  /* Status Colors */
+  --danger: #ff4d4d;
+  --warning: #ffcc00;
+  --success: var(--stratum-3);
+  
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-serif: 'Computer Modern Serif', 'Times New Roman', serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: 2rem;
+}
+
+/* Academic Headers */
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--stratum-3);
+  padding-left: 1rem;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; margin-top: 3rem; }
+
+/* Data Tables */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.data-card {
+  background: var(--bg-secondary);
+  border: 1px solid #333;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.data-card:hover {
+  border-color: var(--stratum-3);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Evidence Pills */
+.pill {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+
+.pill-a { background: var(--stratum-3); color: black; }
+.pill-b { background: var(--stratum-2); color: white; }
+.pill-c { border: 1px solid var(--stratum-2); color: var(--stratum-2); }
+
+/* Scientific Typography */
+.math {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+/* Verification Badge */
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--stratum-3);
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+}
+
+.verified-badge::before {
+  content: '✔';
+}

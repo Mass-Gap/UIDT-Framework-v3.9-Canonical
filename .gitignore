@@ -176,3 +176,23 @@ verification/scripts/verify_template.py
 # Auto-generated verification reports (use GitHub Releases for archives)
 verification/data/Verification_Report_*.md
 Supplementary_Results/Verification_Report_*.md
+
+# ============================================================================
+# ROOT TEMPORARY OUTPUTS (never track)
+# ============================================================================
+s2a_output.txt
+s2a_v2_output.txt
+commit_message.txt
+.git_msg.txt
+
+# ============================================================================
+# LOCAL/ INTERNAL-ONLY CONTENT (directory is public, content curated)
+# ============================================================================
+# Guardian consensus logs (internal agent protocol)
+LOCAL/logs/guardian_*.json
+# Integrity reports (internal audit artifacts)
+LOCAL/logs/integrity_reports/
+# Ephemeral run manifests
+LOCAL/logs/run_manifest.json
+LOCAL/logs/metrics.json
+LOCAL/logs/epistemic_risk_map.json
