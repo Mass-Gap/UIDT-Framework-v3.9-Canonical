@@ -153,7 +153,7 @@ def run_master_verification():
     # STEP 1: Numerical Solution (Scipy)
     # ---------------------------------------------------------
     log_print("[1] RUNNING NUMERICAL SOLVER (System Consistency)...")
-    x0 = [1.705, 0.500, 0.417]
+    x0 = [1.705, 0.500, float(mp.mpf('5') / mp.mpf('12'))]
     sol = root(core_system_equations, x0, method='hybr', tol=1e-15)
     
     m_S, kappa, lambda_S = sol.x
