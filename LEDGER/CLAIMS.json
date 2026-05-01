@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "version": "3.9.8",
-    "last_updated": "2026-04-25",
+    "version": "3.9.9",
+    "last_updated": "2026-05-01",
     "doi": "10.5281/zenodo.17835200",
-    "total_claims": 58,
-    "audit_note": "v3.9.7 (2026-04-17): C-056 notes extended with EFT/IR reframing context. Added UIDT-C-096 (NLO-RG conjecture for χ_top tension, [E]). Session audit 2026-04-16/17. | v3.9.8a (2026-04-19): Added UIDT-C-100 (raumzeit hybrid Path A spectral gap verification, [E]). | v3.9.8b (2026-04-25): PI Decision D17 — pi_override mechanism added to schema. C-056 first applies the override (algorithmic B, PI-overridden D, rationale: Dürr et al. 2025 [arXiv:2501.08217] supersedes older Athenodorou 2021 estimate at z=4.25σ vs z=0.76σ)."
+    "total_claims": 66,
+    "audit_note": "v3.9.9 (2026-05-01): Session 2 claims C-101–C-108 registered (γ_bare, γ_pred, k_crit, NO-GO-STEP5, DESI DR2 tension). λ_S 5/12 precision cleanup verified (78/78 tests pass). Previous: v3.9.8b (2026-04-25): PI Decision D17 pi_override."
   },
   "claims": [
     {
@@ -648,22 +648,119 @@
       "since": "v3.9.8",
       "notes": "Emergent dimensional gap from causal graphs (raumzeit hybrid run). Signal is positive (ds_front > ds_core) across 118 valid K7 samples. Mean 0.341 is suppressed relative to Δ*=1.710 due to finite-size effects (N~216). Path A integration success.",
       "falsification": "If Mean(g_fc) ≤ 0 for N > 5000 in V9-enabled runs."
+    },
+    {
+      "id": "UIDT-C-101",
+      "statement": "Bare Gamma Candidate γ_bare = (2N_c+1)²/N_c = 49/3 ≈ 16.333̄ for SU(3)",
+      "type": "hypothesis",
+      "status": "conjectured",
+      "evidence": "D",
+      "confidence": 0.60,
+      "dependencies": ["UIDT-C-002", "UIDT-C-052"],
+      "since": "v3.9.9",
+      "notes": "SU(3) color algebra candidate for bare gamma. Numerical match: |49/3 − 16.339| / 16.339 = 0.037% — excellent. No algebraic proof connecting kinetic VEV matching to this Casimir combination. Category [D]: numerical coincidence confirmed, physical derivation missing. Source: TKT-20260428-L4-FRG-gamma-derivation.md §3 Path B.",
+      "falsification": "If analytical derivation from UIDT Lagrangian yields γ_bare ≠ 49/3 for SU(3)."
+    },
+    {
+      "id": "UIDT-C-102",
+      "statement": "FRG Predicted Gamma γ_pred = 49/3 + Δγ_NP = 16.33896 (0.00023% match to γ_ledger)",
+      "type": "prediction",
+      "status": "predicted",
+      "evidence": "D",
+      "confidence": 0.55,
+      "dependencies": ["UIDT-C-101", "UIDT-C-001", "UIDT-C-004"],
+      "since": "v3.9.9",
+      "notes": "Full derivation chain: 5κ²=3λ_S [A] → FRG onset κ̃(t_crit)=0 [D] → k_crit ≈ E_T·4π [D*] → v = √(12/5)·k_crit ≈ 47.50 MeV [D*] → Δγ_NP = (N_c²−1)/(4π²)·v/Δ* [D] → γ_pred = 16.33896. Deviation from γ_ledger = 16.339 is 0.00023%. Source: S4-P1_tachyon_threshold_frg.md §6.",
+      "falsification": "If BMW FRG truncation yields γ_pred outside [16.334, 16.344]."
+    },
+    {
+      "id": "UIDT-C-103",
+      "statement": "Tachyonic Onset Scale k_crit ≈ E_T · 4π = 30.707 MeV (0.42% match to numerical 30.790 MeV)",
+      "type": "prediction",
+      "status": "predicted",
+      "evidence": "D",
+      "confidence": 0.60,
+      "dependencies": ["UIDT-C-044", "UIDT-C-001"],
+      "since": "v3.9.9",
+      "notes": "k_crit = E_T · (N_c²−1) · π/2 = E_T · 4π. Casimir-motivated formula. Numerical bisection yields k_crit = 30.790 MeV; ratio k_crit/E_T = 12.619 vs 4π = 12.566 (0.42% deviation). Within E_T uncertainty (±0.05 MeV → ±2%). Regulator-independent in deep IR (ω_A ≈ 3080 ≫ 1). Source: S4-P1_tachyon_onset_full_derivation.md §3–5.",
+      "falsification": "If non-perturbative α_s corrections shift k_crit/E_T outside [11.0, 14.0]."
+    },
+    {
+      "id": "UIDT-C-104",
+      "statement": "[NO-GO-STEP5] LPA' NLO η_φ flow cannot produce Z_φ(IR) = γ from physical λ₃(UV) = 0.0348",
+      "type": "verification",
+      "status": "verified",
+      "evidence": "D",
+      "confidence": 0.95,
+      "dependencies": ["UIDT-C-001", "UIDT-C-004", "UIDT-C-006"],
+      "since": "v3.9.9",
+      "notes": "Step 5 of the FRG/NLO pipeline: physical λ₃(UV) = 0.0348 derived from h = κ²·V_vac/Δ* gives Z_φ(IR) = 1.0000019, not 16.339. Required λ₃* ≈ 99.638 (2857× larger). LPA' anomalous dimension is perturbative correction, not non-perturbative mechanism. Formal no-go for LPA' truncation. Source: TKT-20260429-FRG-STEP5-lambda3-flow.md.",
+      "falsification": "If full BMW truncation achieves Z_φ(IR) = γ from physical λ₃, the LPA' no-go is superseded (not falsified)."
+    },
+    {
+      "id": "UIDT-C-105",
+      "statement": "FRG Shooting Solution λ₃* = 99.638 achieves Z_φ(IR) = 16.339 within δγ",
+      "type": "prediction",
+      "status": "predicted",
+      "evidence": "D",
+      "confidence": 0.50,
+      "dependencies": ["UIDT-C-104"],
+      "since": "v3.9.9",
+      "notes": "Bisection result: λ₃* = 99.638 → Z_φ(IR) = 16.3390 ± 6.3×10⁻⁸ < δγ = 0.0047. TENSION ALERT: λ₃*/λ₃_phys = 2857× — fundamental mismatch indicating missing non-perturbative physics in LPA'. Source: TKT-20260429-FRG-STEP5-lambda3-flow.md §5.",
+      "falsification": "Physical interpretation of λ₃* ≈ 100 as non-perturbative vacuum condensate is refuted if lattice QCD excludes condensate of this magnitude."
+    },
+    {
+      "id": "UIDT-C-106",
+      "statement": "Universal IR Attractor κ̃₀^attr = −0.01030923381 in FRG κ̃-flow",
+      "type": "prediction",
+      "status": "predicted",
+      "evidence": "D",
+      "confidence": 0.70,
+      "dependencies": ["UIDT-C-001", "UIDT-C-005"],
+      "since": "v3.9.9",
+      "notes": "From linearized FRG κ̃-flow equation ∂_t κ̃ = −2κ̃ + c_A(t): the attractor value is universal (independent of onset location). Computed at mp.dps=80. Source: S4-P1_tachyon_onset_full_derivation.md §3.",
+      "falsification": "If full non-linear flow changes sign of κ̃₀ or shifts magnitude by >50%."
+    },
+    {
+      "id": "UIDT-C-107",
+      "statement": "FRG Regulator Independence of tachyonic onset in deep IR (ω_A ≈ 3080 ≫ 1)",
+      "type": "verification",
+      "status": "verified",
+      "evidence": "D",
+      "confidence": 0.80,
+      "dependencies": ["UIDT-C-103"],
+      "since": "v3.9.9",
+      "notes": "Litim vs smooth-exponential regulator threshold functions converge in deep IR regime where ω_A = (Δ*/k_crit)² ≈ 3080. Both give identical c_A(t) up to sub-percent corrections. Physical onset is regulator-scheme independent. Source: S4-P1_tachyon_onset_full_derivation.md §P1c.",
+      "falsification": "If non-Litim regulator shifts onset by >5% at ω_A ≫ 1."
+    },
+    {
+      "id": "UIDT-C-108",
+      "statement": "DESI DR2 Tension: H₀ = 68.17 ± 0.28 (7.96σ vs UIDT 70.4), w₀ = −0.838 ± 0.055 (2.76σ vs UIDT −0.99)",
+      "type": "tension",
+      "status": "open",
+      "evidence": "C",
+      "confidence": 0.90,
+      "dependencies": ["UIDT-C-008", "UIDT-C-037"],
+      "since": "v3.9.9",
+      "notes": "DESI DR2 Results II (arXiv:2503.14738): H₀ = 68.17 ± 0.28 km/s/Mpc (DESI+CMB), w₀ = −0.838 ± 0.055 (DESI+CMB+Pantheon+). S₈ = 0.814 ± 0.009 consistent (0.00σ). UIDT canonical values NOT updated — recalibration requires PI decision. Values remain calibrated to pre-DR2 DESI baseline per Decision D-002. Source: beta_w10_DESI_DR_deep_audit_2026-W10.md.",
+      "falsification": "If independent H₀ measurement confirms 68.17 at >5σ tension with UIDT 70.4, formal recalibration is required."
     }
   ],
   "statistics": {
     "category_A": 14,
     "category_A-": 4,
     "category_B": 7,
-    "category_C": 10,
-    "category_D": 8,
+    "category_C": 11,
+    "category_D": 14,
     "category_E": 15,
-    "verified": 22,
+    "verified": 24,
     "calibrated": 8,
-    "predicted": 10,
-    "open": 6,
+    "predicted": 14,
+    "open": 7,
     "withdrawn": 2,
     "rectified": 1,
-    "conjectured": 4,
-    "external": 2
+    "conjectured": 5,
+    "external": 2,
+    "tension": 1
   }
 }

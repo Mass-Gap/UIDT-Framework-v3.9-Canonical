@@ -13,7 +13,7 @@ def run_check(repo_root):
         "gamma":   ("16.339",  r"(?i)\b(?:gamma|γ)\b\s*[\=\approx]\s*([\d\.]+)"),
         "Delta":   ("1.710",   r"(?i)\b(?:Delta|Δ|\QΔ*\E)\b\s*[\=\approx]\s*([\d\.]+)"),
         "kappa":   ("0.500",   r"(?i)\b(?:kappa|κ)\b\s*[\=\approx]\s*([\d\.]+)"),
-        "lambda_S":("0.417",   r"(?i)\b(?:lambda_S|λ_S)\b\s*[\=\approx]\s*([\d\.]+)"),
+        "lambda_S":("5/12",    r"(?i)\b(?:lambda_S|λ_S)\b\s*[\=\approx]\s*([\d\./]+)"),
         "v_vev":   ("47.7",    r"(?i)\b(?:VEV|v)\b\s*[\=\approx]\s*([\d\.]+)"),
         "w0":      ("-0.99",   r"(?i)\b(?:w0|w_0)\b\s*[\=\approx]\s*(-?[\d\.]+)"),
         "ET":      ("2.44",    r"(?i)\b(?:ET|E_T)\b\s*[\=\approx]\s*([\d\.]+)"),
@@ -21,14 +21,12 @@ def run_check(repo_root):
 
     # 1. Check RG Constraint
     KAPPA   = mp.mpf('0.500')
-    LAMBDA  = mp.mpf('0.417')
+    LAMBDA  = mp.mpf('5') / mp.mpf('12')
     RG_LHS  = mp.mpf('5') * KAPPA**2
     RG_RHS  = mp.mpf('3') * LAMBDA
 
     residual = mp.fabs(RG_LHS - RG_RHS)
     if residual >= mp.mpf('1e-14'):
-        # It's known that 0.001 is the residual for 0.417 and 0.500
-        # If it's > 1e-14, must be marked as [B] or warn.
         pass
 
     for root, dirs, files in os.walk(repo_root):
