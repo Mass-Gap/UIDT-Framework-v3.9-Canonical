@@ -10,22 +10,29 @@ on:
     paths:
       - 'manuscript/**/*.tex'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    timeout-minutes: 30
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install TeX Live
+        shell: bash
         run: |
           sudo apt-get update
           sudo apt-get install -y texlive-latex-extra texlive-science texlive-bibtex-extra texlive-fonts-recommended
 
       - name: Compile CSF_UIDT_Unification.tex
         working-directory: manuscript
+        shell: bash
         run: |
           pdflatex -interaction=nonstopmode -halt-on-error CSF_UIDT_Unification.tex
           # Optionally run a second time for references
@@ -33,6 +40,7 @@ jobs:
 
       - name: Compile topological_quantization.tex
         working-directory: manuscript
+        shell: bash
         run: |
           pdflatex -interaction=nonstopmode -halt-on-error topological_quantization.tex
           pdflatex -interaction=nonstopmode -halt-on-error topological_quantization.tex
