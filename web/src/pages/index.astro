@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TruthVerifier from '../components/TruthVerifier.jsx';
 ---
 
 <Layout title="Scientific Dashboard">
@@ -36,7 +37,10 @@ import Layout from '../layouts/Layout.astro';
 
     <section class="research-status">
       <h2>Active Research & Epistemic Audit</h2>
-      <div class="data-card">
+      
+      <TruthVerifier client:load />
+
+      <div class="data-card" style={{ marginTop: '2rem' }}>
         <span class="label">L6-FRG Topological Tension</span>
         <p>4.2&sigma; tension against D&uuml;rr et al. (2025). Status: <span style="color: var(--warning)">ACTIVE RESEARCH</span></p>
       </div>
