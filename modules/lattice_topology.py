@@ -80,8 +80,8 @@ class TorsionLattice:
         """
         Derives the 'Baddewithana Frequency' (107.1 MeV).
 
-        Formula (E_T > 0): f_vac = (Delta / gamma) + Sigma_T
-        Formula (E_T = 0): f_vac = Delta / gamma  [kill-switch active]
+        Formula (E_T > 0): f_vac = E_geo + Sigma_T
+        Formula (E_T = 0): f_vac = E_geo  [kill-switch active]
 
         Returns
         -------
@@ -90,15 +90,34 @@ class TorsionLattice:
         """
         mp.dps = 80
         # 1. Pure Geometry (Muon Resonance n=1)
-        base_freq = self.op.DELTA_GAP / self.op.GAMMA
+        E_geo = self.op.DELTA_GAP / self.op.GAMMA
 
         # 2. Add Torsion Correction – ONLY when kill-switch is inactive
         if not self.torsion_active:
             # Kill-switch active: Sigma_T = 0 exactly
-            return base_freq
+            return E_geo
 
-        corrected_freq = base_freq + self.Sigma_T
-        return corrected_freq
+        f_vac = E_geo + self.Sigma_T
+        return f_vac
+
+    def get_frequency_components(self):
+        """
+        Returns the decomposition of the vacuum frequency.
+        
+        Returns
+        -------
+        dict
+            Contains E_geo, Sigma_T, and f_vac in GeV.
+        """
+        mp.dps = 80
+        E_geo = self.op.DELTA_GAP / self.op.GAMMA
+        Sigma_T = self.Sigma_T if self.torsion_active else mpf('0')
+        f_vac = E_geo + Sigma_T
+        return {
+            "E_geo": E_geo,
+            "Sigma_T": Sigma_T,
+            "f_vac": f_vac
+        }
 
     def check_thermodynamic_limit(self):
         """

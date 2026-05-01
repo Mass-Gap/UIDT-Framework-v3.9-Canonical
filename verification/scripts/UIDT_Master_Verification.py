@@ -153,7 +153,7 @@ def run_master_verification():
     # STEP 1: Numerical Solution (Scipy)
     # ---------------------------------------------------------
     log_print("[1] RUNNING NUMERICAL SOLVER (System Consistency)...")
-    x0 = [1.705, 0.500, 0.417]
+    x0 = [1.705, 0.500, float(mp.mpf('5') / mp.mpf('12'))]
     sol = root(core_system_equations, x0, method='hybr', tol=1e-15)
     
     m_S, kappa, lambda_S = sol.x
@@ -208,13 +208,21 @@ def run_master_verification():
             from modules.geometric_operator import GeometricOperator
             op_instance = GeometricOperator()
             lat = TorsionLattice(op_instance)
-            f_vac_val = lat.calculate_vacuum_frequency()
+            
+            freq_comps = lat.get_frequency_components()
+            f_vac_val = freq_comps["f_vac"]
+            e_geo = freq_comps["E_geo"]
+            sigma_t = freq_comps["Sigma_T"]
             noise = lat.check_thermodynamic_limit()
-            log_print(f"   > Vacuum Frequency: {mp.nstr(f_vac_val * 1000, 5)} MeV")
+            
+            log_print(f"   > Missing Link Derivation:")
+            log_print(f"     Geometry: {mp.nstr(e_geo * 1000, 4)} | Torsion: {mp.nstr(sigma_t * 1000, 3)} | -> Result: {mp.nstr(f_vac_val * 1000, 4)} MeV")
             log_print(f"   > Thermodynamic Noise Floor: {mp.nstr(noise * 1000, 5)} MeV")
+            
             pillar_ii_data_block = f"""
 ### 🔗 Pillar II: Missing Link (Lattice Topology)
 > **Thermodynamic Censorship:** Stabilizes the Vacuum
+- **Derivation:** Geometry: `{mp.nstr(e_geo * 1000, 4)}` MeV | Torsion: `{mp.nstr(sigma_t * 1000, 3)}` MeV
 - Derived Vacuum Frequency (Resonance): `{mp.nstr(f_vac_val * 1000, 5)}` MeV
 - Thermodynamic Noise Floor (E_noise): `{mp.nstr(noise * 1000, 5)}` MeV
 """
@@ -227,20 +235,20 @@ def run_master_verification():
             from modules.harmonic_predictions import HarmonicPredictor
             predictor = HarmonicPredictor(f_vac_val, mp.mpf('1.710'))
             report = predictor.generate_report()
-            log_print(f"   > Omega_bbb: {mp.nstr(report['Omega_bbb_GeV'], 5)} GeV")
-            log_print(f"   > Tetraquark: {mp.nstr(report['Tetra_cccc_GeV'], 5)} GeV")
-            log_print(f"   > X17 Noise Floor: {mp.nstr(report['X17_NoiseFloor_MeV'], 5)} MeV")
-            log_print(f"   > X2370 Resonance: {mp.nstr(report['X2370_Resonance_GeV'], 5)} GeV")
-            log_print(f"   > Tensor Glueball: {mp.nstr(report['Glueball_2++_GeV'], 5)} GeV")
+            log_print(f"   > Omega_bbb: {mp.nstr(report['Omega_bbb_GeV'], 5)} GeV [D]")
+            log_print(f"   > Tetraquark: {mp.nstr(report['Tetra_cccc_GeV'], 5)} GeV [D]")
+            log_print(f"   > X17 Noise Floor: {mp.nstr(report['X17_NoiseFloor_MeV'], 5)} MeV [C]")
+            log_print(f"   > X2370 Resonance: {mp.nstr(report['X2370_Resonance_GeV'], 5)} GeV [D]")
+            log_print(f"   > Tensor Glueball: {mp.nstr(report['Glueball_2++_GeV'], 5)} GeV [D]")
             pillar_iii_data_block = f"""
 ### 📊 Pillar III: Spectral Expansion (Blind Predictions)
 > **Harmonic Resonance:** Vacuum Structural Scaling
-- Omega_bbb (Triple Bottom): `{mp.nstr(report['Omega_bbb_GeV'], 5)}` GeV
-- Tetraquark (cccc): `{mp.nstr(report['Tetra_cccc_GeV'], 5)}` GeV
-- X17 Anomaly (Noise Floor): `{mp.nstr(report['X17_NoiseFloor_MeV'], 5)}` MeV
-- X2370 Resonance: `{mp.nstr(report['X2370_Resonance_GeV'], 5)}` GeV
-- Tensor Glueball (2++): `{mp.nstr(report['Glueball_2++_GeV'], 5)}` GeV
-- Pseudoscalar Glueball (0-+): `{mp.nstr(report['Glueball_0-+_GeV'], 5)}` GeV
+- Omega_bbb (Triple Bottom): `{mp.nstr(report['Omega_bbb_GeV'], 5)}` GeV [D]
+- Tetraquark (cccc): `{mp.nstr(report['Tetra_cccc_GeV'], 5)}` GeV [D]
+- X17 Anomaly (Noise Floor): `{mp.nstr(report['X17_NoiseFloor_MeV'], 5)}` MeV [C]
+- X2370 Resonance: `{mp.nstr(report['X2370_Resonance_GeV'], 5)}` GeV [D]
+- Tensor Glueball (2++): `{mp.nstr(report['Glueball_2++_GeV'], 5)}` GeV [D]
+- Pseudoscalar Glueball (0-+): `{mp.nstr(report['Glueball_0-+_GeV'], 5)}` GeV [D]
 """
         except ImportError as e:
             log_print(f"   > ❌ PILLAR III ERROR: {e}")

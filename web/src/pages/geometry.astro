@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TorsionManifold from '../components/TorsionManifold.jsx';
+---
+
+<Layout title="Vacuum Geometry Explorer">
+  <main>
+    <section class="hero" style="margin-bottom: 2rem;">
+      <span class="label">Interactive Visualization [D]</span>
+      <h1>Vacuum Geometry Manifold</h1>
+      <p class="description">
+        Explore the geometric distortion of the vacuum space. The 3D grid represents the topological susceptibility and torsion effects ($\Sigma_T$) that generate the mass gap $\Delta^*$.
+      </p>
+    </section>
+
+    <TorsionManifold client:only="react" />
+
+    <section class="theory-notes" style="margin-top: 3rem; padding: 1.5rem; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); border-radius: 8px;">
+      <h2 style="font-size: 1.2rem; margin-top: 0;">Theoretical Context</h2>
+      <p>
+        The UIDT framework posits that information density functions as the fundamental geometric scalar. In this visualization:
+      </p>
+      <ul>
+        <li><strong>Base Curvature:</strong> Represents the standard metric expansion ($w_0 = -0.99$).</li>
+        <li><strong>High-Frequency Distortions:</strong> Emerge when the Lattice Torsion term ($\Sigma_T$) is active, mapping to the 2.44 MeV effective infrared binding energy.</li>
+        <li><strong>Coupling Sensitivity (κ):</strong> Deviating from the canonical $\kappa = 0.500$ violates the exact RG fixed-point constraint ($5\kappa^2 = 3\lambda_S$), represented visually by increasing structural tension (red shift).</li>
+      </ul>
+      <div class="alert" style="margin-top: 1rem; padding: 0.75rem; border-left: 4px solid var(--warning); background: rgba(255, 170, 0, 0.1);">
+        <strong>Note [L1 Limitation]:</strong> This is a Category [D] conceptual visualization. The exact mechanism connecting the 10¹⁰ geometric factor to the macroscopic scale remains an active area of investigation.
+      </div>
+    </section>
+  </main>
+</Layout>
