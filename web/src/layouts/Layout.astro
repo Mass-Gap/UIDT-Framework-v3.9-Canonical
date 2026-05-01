@@ -22,14 +22,12 @@ const { title } = Astro.props;
 	</head>
 	<body>
     <header>
-      <nav>
+      <nav class="site-nav">
         <div class="logo">UIDT // V3.9</div>
-        <ul>
-          <li><a href="/">Dashboard</a></li>
-          <li><a href="/claims">Claims</a></li>
-          <li><a href="/docs">Docs</a></li>
-          <li><a href="/roadmap">Roadmap</a></li>
-        </ul>
+        <a href="/UIDT-Framework-v3.9-Canonical/" class="nav-link">Compute Portal</a>
+        <a href="/UIDT-Framework-v3.9-Canonical/claims" class="nav-link">Claims Ledger</a>
+        <a href="/UIDT-Framework-v3.9-Canonical/geometry" class="nav-link">Geometry Manifold</a>
+        <a href="https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical" class="nav-link">GitHub Repository</a>
       </nav>
     </header>
 		<slot />
@@ -46,29 +44,26 @@ const { title } = Astro.props;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
   }
-  nav {
+  nav.site-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
   }
   .logo {
     font-family: var(--font-mono);
     font-weight: 800;
     color: var(--stratum-3);
+    margin-right: auto; /* pushes links to the right */
   }
-  ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-  }
-  a {
+  .nav-link {
     color: var(--text-primary);
     text-decoration: none;
     font-family: var(--font-mono);
     font-size: 0.9rem;
     text-transform: uppercase;
   }
-  a:hover {
+  .nav-link:hover {
     color: var(--stratum-3);
   }
   footer {
