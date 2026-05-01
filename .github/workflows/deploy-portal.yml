@@ -27,6 +27,21 @@ jobs:
         env:
           COSIGN_EXPERIMENTAL: 1
 
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          target: wasm32-unknown-unknown
+          override: true
+
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+      - name: Build WASM Kernel
+        run: wasm-pack build --target web --out-dir ../../../public/wasm
+        working-directory: ./web/src/lib/wasm
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
