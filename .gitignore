@@ -114,6 +114,9 @@ AGENTS.md
 .cache/
 tmp/
 temp/
+web/node_modules/
+web/.astro/
+verification/data/*.txt
 
 # ============================================================================
 # LARGE BINARY DATA (Use Git LFS or external storage)

@@ -31,7 +31,7 @@ python verification/scripts/UIDT_Master_Verification.py
     Executes the SciPy-based root solver for the coupled equations. Ensures $\Delta \approx 1.710$ GeV with zero residuals.
 2.  **PILLAR I (High-Precision Proof):**
     Activates the `mpmath` core (80 decimal digits) to prove the Banach Fixed Point (Theorem 3.4). Expected Lipschitz constant: $< 1$.
-3.  **PILLAR II (Missing Link & Topology):**
+3.  **PILLAR II (Lattice Torsion Integration & Topology):**
     Validates the Lattice Torsion Binding Energy ($E_T = 2.44$ MeV) and explicit calculation of the $107.10$ MeV geometric vacuum frequency.
 4.  **PILLAR III (Spectral Expansion):**
     Predicts the table-top/collider observables, specifically the thermodynamic noise floor ($17.10$ MeV, X17) and the geometric overtone resonance ($2.370$ GeV, X2370).

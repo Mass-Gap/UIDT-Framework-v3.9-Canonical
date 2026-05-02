@@ -284,7 +284,7 @@ Three-Equation System Closure:
   Lattice QCD agreement: z-score ≈ 0 (exact match with Chen et al. 2006)
 ```
 
-### Pillar II: Lattice Topology & The Missing Link
+### Pillar II: Lattice Topology & The Lattice Torsion Integration
 
 * **Achievement:** Replaces phenomenological vacuum-frequency constraints with thermodynamic derivations.
 * **Mechanism:** Derives the **Lattice Torsion Binding Energy (E_T = 2.44 MeV)**, mathematically bridging the purely geometric QFT resonance (104.7 MeV) to the observed stable vacuum frequency (107.1 MeV) required to prevent discrete lattice collapse.
@@ -390,7 +390,7 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
 
 ```bibtex
 @article{Rietz2026_UIDT_v39,
-  title       = {Vacuum Information Density as the Fundamental Geometric Scalar: The Geometric Operator and the Lattice Torsion Missing Link in the X17/X(2370) Energy Window (UIDT v3.9)},
+  title       = {Vacuum Information Density as the Fundamental Geometric Scalar: The Geometric Operator and the Lattice Torsion Lattice Torsion Integration in the X17/X(2370) Energy Window (UIDT v3.9)},
   author      = {Rietz, Philipp},
   year        = {2026},
   month       = {February},
@@ -413,7 +413,7 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
 | Component | Status | Evidence | Note |
 |---|---|---|---|
 | Yang-Mills Mass Gap derivation | Internal proof complete | A | Independent peer review and Clay evaluation pending |
-| Lattice Torsion Binding Energy (2.44 MeV) | Calibrated | C | "Missing Link" — DESI-anchored |
+| Lattice Torsion Binding Energy (2.44 MeV) | Calibrated | C | "Lattice Torsion Integration" — DESI-anchored |
 | X17 Anomaly origin | Unverified prediction | D | Consistent with Thermodynamic Censorship at 17.10 MeV |
 | CSF-UIDT Unification | Covariant path defined | D | Formal synthesis in progress |
 | H₀ Tension | **Open Question** | C | Intermediate calibrated value only |

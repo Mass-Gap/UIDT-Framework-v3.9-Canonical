@@ -50,10 +50,10 @@ If lattice continuum limit yields:
 
 ---
 
-### F2: Torsion Binding Energy (Missing Link) 🔴 HIGH PRIORITY
+### F2: Torsion Binding Energy (Lattice Torsion Integration) 🔴 HIGH PRIORITY
 
 **Prediction:**
-$E_T \approx 2.44\,\mathrm{MeV}$ (Missing Link)
+$E_T \approx 2.44\,\mathrm{MeV}$ (Lattice Torsion Integration)
 
 **Experimental Test:**
 Precision hadron spectroscopy / vacuum-scalar resonance calibration
@@ -61,7 +61,7 @@ Precision hadron spectroscopy / vacuum-scalar resonance calibration
 **Falsification Threshold:**
 If the observed vacuum resonance can be shown to satisfy
 $f_{vac} = \Delta/\gamma$ with no residual term (pure geometry), i.e.
-**$E_T \approx 0$ within experimental uncertainty** → **PILLAR II MISSING LINK REFUTED**
+**$E_T \approx 0$ within experimental uncertainty** → **PILLAR II Lattice Torsion Integration REFUTED**
 
 **Current Status:**
 ⚠️ **PENDING** — requires a dedicated precision determination of $f_{vac}$ and a consistent mapping to the mass-gap sector

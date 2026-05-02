@@ -2,7 +2,7 @@
 
 > **Evidence Category:** [C] — Phenomenological calibration  
 > **Value:** E_T = 2.44 MeV  
-> **Source:** v3.9 Constructive Synthesis (Missing Link Integration)  
+> **Source:** v3.9 Constructive Synthesis (Lattice Torsion Integration Integration)  
 > **Module:** [`lattice_topology.py`](../modules/lattice_topology.py)
 
 ---
