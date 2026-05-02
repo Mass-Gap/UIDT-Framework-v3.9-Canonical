@@ -1,7 +1,40 @@
 #!/usr/bin/env python3
 import sys
 import subprocess
+import shutil
 from pathlib import Path
+
+def regenerate_snapshots():
+    """
+    Regenerates the public read-only snapshots from the internal LEDGER and CANONICAL sources.
+    This ensures verification/data is always an exact, unedited copy.
+    """
+    print("\n--- Regenerating Public Snapshots ---")
+    data_dir = Path("verification/data")
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    src_claims = Path("LEDGER/CLAIMS.json")
+    dst_claims = data_dir / "CLAIMS_public.json"
+
+    src_constants = Path("CANONICAL/CONSTANTS.md")
+    dst_constants = data_dir / "CONSTANTS_public.md"
+
+    try:
+        if src_claims.exists():
+            shutil.copy2(src_claims, dst_claims)
+            print("✅ Regenerated CLAIMS_public.json from LEDGER/CLAIMS.json")
+        else:
+            print("⚠️ Source LEDGER/CLAIMS.json not found!")
+
+        if src_constants.exists():
+            shutil.copy2(src_constants, dst_constants)
+            print("✅ Regenerated CONSTANTS_public.md from CANONICAL/CONSTANTS.md")
+        else:
+            print("⚠️ Source CANONICAL/CONSTANTS.md not found!")
+    except Exception as e:
+        print(f"Error regenerating snapshots: {e}")
+        return False
+    return True
 
 def run_module(module_name):
     print(f"\n--- Running {module_name} ---")
@@ -28,6 +61,10 @@ def main():
     print("========================================")
     print(" UIDT QA Audit Master - Initialization")
     print("========================================\n")
+
+    if not regenerate_snapshots():
+        print("🛑 QA AUDIT ENCOUNTERED SYSTEM ERRORS REGOLATING SNAPSHOTS. EXIT CODE 2.")
+        sys.exit(2)
 
     modules = [
         "qa_wording",
