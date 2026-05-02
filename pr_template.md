@@ -1,4 +1,4 @@
-## PR Template: [UIDT-v3.9] Verification: ALPHA-01 Daily Verification Run
+## [DRAFT] PR Template: [UIDT-v3.9] Verification: ALPHA-01 Daily Verification Run
 
 ### Task Reference
 - Task ID: ALPHA-01
