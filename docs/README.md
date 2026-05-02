@@ -1,40 +1,45 @@
-# UIDT v3.9 Documentation
+# Documentation — UIDT Framework v3.9
 
-This directory contains supporting technical documentation, audits, and archival notes for the canonical UIDT v3.9 repository.
+> **DOI:** [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200)  
+> **Maintainer:** P. Rietz (ORCID: 0009-0007-4307-1609)
 
-## Canonical entry points
+## Directory Index
 
-- Root overview: [`../README.md`](../README.md)
-- Formal manuscript source of truth: `manuscript/`
-- Verification runners and scripts: `verification/`
-- Immutable parameter ledger: `LEDGER/`
-- Canonical formalism snapshot: `FORMALISM.md`
+| Directory | Description | Files | Evidence Range |
+|-----------|-------------|------:|---------------|
+| [`theory/`](theory/) | Core UIDT formalism: derivations, proofs, Lagrangian sectors | 20 | [A] — [A-] |
+| [`predictions/`](predictions/) | Experimental predictions: LHC, glueball spectrum, cosmology | 8 | [C] — [D] |
+| [`evidence/`](evidence/) | Evidence classification system, limitations L1–L6, falsification criteria | 8 | — |
+| [`research/`](research/) | Active research notes with session dates (FRG, gamma derivation, L1–L5) | 51 | [D] — [E] |
+| [`audits/`](audits/) | Epistemic audits, formal reviews, and self-consistency checks | 14 | — |
+| [`guides/`](guides/) | Verification guides, reproduction protocols, PR review workflow | 7 | — |
+| [`governance/`](governance/) | Quality gate mapping, branch protection policies | 1 | — |
+| [`qa/`](qa/) | PR evidence review history and quality criteria | 7 | — |
+| [`archive/`](archive/) | Historical documents and superseded analyses | 4 | — |
+| [`archival-notes/`](archival-notes/) | Archival clarifications and attribution records | 3 | — |
+| [`bugfix/`](bugfix/) | Bug analysis documentation | 1 | — |
+| [`reviewer_decisions/`](reviewer_decisions/) | External reviewer interaction records | 1 | — |
 
-## Recommended active documents
+## Quick Start
 
-### Core scientific status
-- [`bare_gamma_theorem.md`](./bare_gamma_theorem.md)
-- [`cosmological_implications_v3.9.md`](./cosmological_implications_v3.9.md)
-- [`falsification-criteria.md`](./falsification-criteria.md)
-- [`evidence-classification.md`](./evidence-classification.md)
-- [`experimental_roadmap.md`](./experimental_roadmap.md)
+- **New to UIDT?** Start with [`theory/theoretical_notes.md`](theory/theoretical_notes.md)
+- **Reproduce results:** See [`guides/reproduction-protocol.md`](guides/reproduction-protocol.md)
+- **Run verification:** See [`guides/verification-guide.md`](guides/verification-guide.md)
+- **Evidence system:** See [`evidence/evidence-classification.md`](evidence/evidence-classification.md)
+- **Known limitations:** See [`evidence/limitations.md`](evidence/limitations.md)
 
-### Governance and review
-- [`PR_Review_Protocol_v2.0.md`](./PR_Review_Protocol_v2.0.md)
-- [`citation-guide.md`](./citation-guide.md)
-- [`data-availability.md`](./data-availability.md)
+## Evidence Classification (Reference)
 
-### Audits and review history
-- [`critical_review_2025.md`](./critical_review_2025.md)
-- [`epistemic_audit_2026-03-30.md`](./epistemic_audit_2026-03-30.md)
-- [`first_principles_evidence_audit_2026-03-30.md`](./first_principles_evidence_audit_2026-03-30.md)
+| Tag | Category | Threshold | Example |
+|-----|----------|-----------|---------|
+| **[A]** | Mathematically Proven | residual < 10⁻¹⁴ | Δ* = 1.710 GeV |
+| **[A-]** | Phenomenologically Calibrated | permanent | 5κ² = 3λ_S |
+| **[B]** | Lattice QCD Consistent | z ≈ 0.37σ | Mass gap lattice |
+| **[C]** | Observationally Calibrated | DESI/JWST/ACT | H₀, w₀ |
+| **[D]** | Predicted (Unconfirmed) | — | m_S, Casimir |
+| **[E]** | Withdrawn / Speculative | — | f₀(1710) glueball |
 
-## Archived material
+---
 
-Superseded or historical notes are retained in:
-- [`archive/`](./archive/)
-- [`archival-notes/`](./archival-notes/)
-
-## Scope note
-
-This directory is subordinate to the root `README.md`. If any summary in `docs/` diverges from canonical claims in the manuscript, ledger, or root-level governance files, the root-level source prevails.
+*"Vacuum Information Density as the Fundamental Geometric Scalar"*  
+*CC BY 4.0 — P. Rietz*
