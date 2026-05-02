@@ -50,12 +50,30 @@ class LedgerSync:
         }
         return payload
 
+    def write_payload(self, output_path_str: str, payload: dict):
+        """Writes the payload, ensuring protected paths are not modified."""
+        output_path = Path(output_path_str)
+        # Security Guard Clause against overwriting SSoT data
+        if str(output_path).startswith("LEDGER/") or str(output_path).startswith("CANONICAL/"):
+            raise PermissionError("Cannot write to protected paths")
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2)
+
 def main():
     print("Running Global SSoT Sync...")
     syncer = LedgerSync()
     payload = syncer.generate_injection_payload()
     print(f"Generated Payload: {json.dumps(payload, indent=2)}")
-    print("SSoT Sync complete. Ready for metadata injection.")
+
+    # We write to verification/data/ssot_payload.json as a safe output location
+    output_location = "verification/data/ssot_payload.json"
+
+    import os
+    os.makedirs(os.path.dirname(output_location), exist_ok=True)
+    syncer.write_payload(output_location, payload)
+
+    print(f"SSoT Sync complete. Written payload to {output_location}. Ready for metadata injection.")
 
 if __name__ == "__main__":
     main()
