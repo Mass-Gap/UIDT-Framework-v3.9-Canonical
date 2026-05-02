@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ClaimsLedger from '../components/ClaimsLedger.jsx';
+---
+
+<Layout title="Canonical Claims Explorer">
+  <main>
+    <section class="hero">
+      <span class="label">Scientific Integrity</span>
+      <h1>Canonical Claims Ledger</h1>
+      <p class="description">
+        Direct interface to the cryptographically signed UIDT ledger. Every value is verified against the 2026 SLSA-Level 3 provenance chain.
+      </p>
+    </section>
+
+    <ClaimsLedger client:load />
+  </main>
+</Layout>
+
+<style>
+  .hero {
+    margin-bottom: 3rem;
+  }
+</style>

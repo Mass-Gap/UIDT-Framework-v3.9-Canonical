@@ -4,11 +4,14 @@
 
 | Badge | Details |
 | :--- | :--- |
+| [![CI Status](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/actions/workflows/uidt-pr-review.yml/badge.svg)](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/actions) | **CI:** UIDT PR Review (automated verification) |
 | [![Repository Badge](https://img.shields.io/badge/Repository-UIDT--Framework--v3.9--Canonical-blue.svg?style=for-the-badge&logo=github)](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical) | **Name:** UIDT-Framework-v3.9-Canonical |
 | [![Version Badge](https://img.shields.io/badge/Version-v3.9--Clean--State-green.svg?style=for-the-badge&logo=semver)](https://doi.org/10.5281/zenodo.17835200) | **Version:** v3.9 (Canonical Clean State) |
 | [![Status Badge](https://img.shields.io/badge/Status-Evidence--Classified--Active--Research-orange.svg?style=for-the-badge&logo=statuspage)](https://doi.org/10.5281/zenodo.17835200) | **Status:** 🔬 Evidence-Classified — Active Research |
+| [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) | **Requires:** Python 3.10+ with mpmath (80-digit precision) |
 | [![License Badge](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg?style=for-the-badge&logo=creativecommons)](https://creativecommons.org/licenses/by/4.0/) | **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [![DOI Badge](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17835200-blue.svg?style=for-the-badge&logo=zenodo)](https://doi.org/10.5281/zenodo.17835200) | **DOI:** [10.5281/zenodo.17835200](https://doi.org/10.5281/zenodo.17835200) |
+| [![Claims](https://img.shields.io/badge/Claims-66_registered-informational.svg?style=for-the-badge)](https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical/blob/main/LEDGER/CLAIMS.json) | **Ledger:** 66 evidence-classified claims (A/A-/B/C/D/E) |
 
 </div>
 
