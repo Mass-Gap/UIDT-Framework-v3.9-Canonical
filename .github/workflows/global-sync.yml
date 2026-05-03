@@ -1,0 +1,23 @@
+name: Global SSoT Sync
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'TKT-*'
+
+jobs:
+  sync_ledger:
+    name: Sync SSoT Ledger
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run Global SSoT Sync
+        run: python verification/scripts/sync_ledger.py
