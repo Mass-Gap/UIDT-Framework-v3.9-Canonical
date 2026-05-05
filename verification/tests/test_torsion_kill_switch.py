@@ -2,7 +2,7 @@ import pytest
 import mpmath as mp
 
 # Set precision locally
-mp.dps = 80
+mp.mp.dps = 80
 
 def test_torsion_kill_switch_invariant():
     """

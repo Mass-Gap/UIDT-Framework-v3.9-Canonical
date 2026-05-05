@@ -13,7 +13,7 @@ Reproduction:
     python verification/tests/test_l4_gamma_derivation.py
     # or: pytest verification/tests/test_l4_gamma_derivation.py -v
 
-RACE CONDITION LOCK: mp.dps = 80 declared locally in each function.
+RACE CONDITION LOCK: mp.mp.dps = 80 declared locally in each function.
 Never use float(), round(), or centralised precision control.
 """
 
@@ -22,7 +22,7 @@ import mpmath as mp
 
 def su3_constants():
     """Return SU(3) group constants as exact mpmath mpf objects."""
-    mp.dps = 80  # RACE CONDITION LOCK
+    mp.mp.dps = 80  # RACE CONDITION LOCK
     Nc = mp.mpf('3')
     return {
         'Nc':      Nc,
@@ -38,7 +38,7 @@ def su3_constants():
 
 def uidt_ledger():
     """Return UIDT ledger constants as exact mpmath mpf objects."""
-    mp.dps = 80  # RACE CONDITION LOCK
+    mp.mp.dps = 80  # RACE CONDITION LOCK
     return {
         'Delta_star':  mp.mpf('1710')  / mp.mpf('1000'),
         'v':           mp.mpf('477')   / mp.mpf('10000'),
@@ -52,7 +52,7 @@ def uidt_ledger():
 
 def test_rg_constraint():
     """5*kappa^2 = 3*lambda_S must hold with residual < 1e-14 (UIDT Constitution)."""
-    mp.dps = 80  # RACE CONDITION LOCK
+    mp.mp.dps = 80  # RACE CONDITION LOCK
     L = uidt_ledger()
     lhs = mp.mpf('5') * L['kappa'] ** 2
     rhs = mp.mpf('3') * L['lambda_S']
@@ -73,7 +73,7 @@ def test_49_over_3_is_nearest_group_factor():
     This test does NOT prove L4. It confirms the Path-A observation.
     Evidence: [E] — numerical coincidence only, no group-theoretic derivation.
     """
-    mp.dps = 80  # RACE CONDITION LOCK
+    mp.mp.dps = 80  # RACE CONDITION LOCK
     G = su3_constants()
     L = uidt_ledger()
 
@@ -98,7 +98,7 @@ def test_h4_n99_bridge():
     Closest L5-L4 cross-deficit candidate in the scan.
     Delta = 0.161 to gamma_ledger. Evidence: [E] speculative.
     """
-    mp.dps = 80  # RACE CONDITION LOCK
+    mp.mp.dps = 80  # RACE CONDITION LOCK
     G = su3_constants()
     L = uidt_ledger()
 
@@ -122,7 +122,7 @@ def test_b0_c2fund_lower_bound():
     Verify b0 * C2(fund) = 44/3 = 14.667 is the closest beta-cascade result
     (Path D), confirming the gap of > 1.5 to gamma_ledger.
     """
-    mp.dps = 80  # RACE CONDITION LOCK
+    mp.mp.dps = 80  # RACE CONDITION LOCK
     G = su3_constants()
     L = uidt_ledger()
 
@@ -146,7 +146,7 @@ def test_l4_status_unchanged():
     The best rational approximation 49/3 has delta > 0.005.
     L4 status must remain OPEN [D/E].
     """
-    mp.dps = 80  # RACE CONDITION LOCK
+    mp.mp.dps = 80  # RACE CONDITION LOCK
     L = uidt_ledger()
 
     best_candidate = mp.mpf('49') / mp.mpf('3')
