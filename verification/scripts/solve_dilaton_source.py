@@ -28,7 +28,7 @@ This script:
 
 Numerical Environment
 ---------------------
-- mpmath with mp.dps = 80 (LOCAL, never global)
+- mpmath with mp.mp.dps = 80 (LOCAL, never global)
 - Residual target: |beta_i| < 1e-70
 - RG constraint tolerance: |5*kappa^2 - 3*lambda_S| < 1e-14
 
@@ -67,7 +67,7 @@ _ET            = None   # Will be set to mp.mpf('2.44')   [C]  MeV
 
 def _init_ledger():
     """Initialise immutable ledger constants with local mp.dps=80."""
-    mp.dps = 80
+    mp.mp.dps = 80
     global _DELTA_STAR, _GAMMA, _GAMMA_INF, _DELTA_GAMMA, _V_EW, _W0, _ET
     _DELTA_STAR  = mp.mpf('1.710')
     _GAMMA       = mp.mpf('16.339')
@@ -88,7 +88,7 @@ def torsion_kill_switch(ET, Sigma_T):
         If ET = 0  =>  Sigma_T must be exactly 0.
     Returns True if constraint satisfied, False otherwise.
     """
-    mp.dps = 80
+    mp.mp.dps = 80
     ET      = mp.mpf(str(ET))
     Sigma_T = mp.mpf(str(Sigma_T))
     if ET == mp.mpf('0'):
@@ -119,7 +119,7 @@ class DilatonSourceSolver:
     """
 
     def __init__(self, J_sigma=None):
-        mp.dps = 80
+        mp.mp.dps = 80
         _init_ledger()
 
         # SU(3) group constants
@@ -145,17 +145,17 @@ class DilatonSourceSolver:
     # ------------------------------------------------------------------
 
     def _dilaton_shift_g2(self, g2, w_g=None):
-        mp.dps = 80
+        mp.mp.dps = 80
         w_g = mp.mpf('0') if w_g is None else mp.mpf(str(w_g))
         return -2 * g2 / (1 + w_g)
 
     def _dilaton_shift_lam(self, lam_S, w_S=None):
-        mp.dps = 80
+        mp.mp.dps = 80
         w_S = mp.mpf('0') if w_S is None else mp.mpf(str(w_S))
         return -2 * lam_S / (1 + w_S)
 
     def _dilaton_shift_kap(self, kappa2, w_g=None, w_S=None):
-        mp.dps = 80
+        mp.mp.dps = 80
         w_g = mp.mpf('0') if w_g is None else mp.mpf(str(w_g))
         w_S = mp.mpf('0') if w_S is None else mp.mpf(str(w_S))
         # Mixed field: average of gauge and scalar dilaton dimensions
@@ -166,14 +166,14 @@ class DilatonSourceSolver:
     # ------------------------------------------------------------------
 
     def beta_g2(self, g2, lam_S, kappa2):
-        mp.dps = 80
+        mp.mp.dps = 80
         g2     = mp.mpf(str(g2))
         kappa2 = mp.mpf(str(kappa2))
         beta0  = -self._B * g2**2 + self._A * g2 * kappa2
         return beta0 + self.J * self._dilaton_shift_g2(g2)
 
     def beta_lam(self, g2, lam_S, kappa2):
-        mp.dps = 80
+        mp.mp.dps = 80
         g2    = mp.mpf(str(g2))
         lam_S = mp.mpf(str(lam_S))
         beta0 = (-4 * lam_S
@@ -182,7 +182,7 @@ class DilatonSourceSolver:
         return beta0 + self.J * self._dilaton_shift_lam(lam_S)
 
     def beta_kap(self, g2, lam_S, kappa2):
-        mp.dps = 80
+        mp.mp.dps = 80
         g2     = mp.mpf(str(g2))
         lam_S  = mp.mpf(str(lam_S))
         kappa2 = mp.mpf(str(kappa2))
@@ -197,7 +197,7 @@ class DilatonSourceSolver:
         Finite-difference projection of partial_{p^2} beta_kap at p^2=0.
         delta_s = 1e-20 (well within 80-dps precision).
         """
-        mp.dps = 80
+        mp.mp.dps = 80
         delta_s = mp.mpf('1e-20')
         # Use s-derivative of the kappa^2 flow (simplified LPA+)
         # Full Gamma^(2) projection: d/ds beta_kap evaluated at s=0
@@ -212,7 +212,7 @@ class DilatonSourceSolver:
     # ------------------------------------------------------------------
 
     def residual(self, params):
-        mp.dps = 80
+        mp.mp.dps = 80
         g2, lam_S, kappa2, eta_S = [mp.mpf(str(x)) for x in params]
         r_g2  = self.beta_g2(g2, lam_S, kappa2)
         r_lam = self.beta_lam(g2, lam_S, kappa2)
@@ -230,7 +230,7 @@ class DilatonSourceSolver:
         start: [g2_0, lam_0, kap2_0, eta_0]
         Residual tolerance: 1e-70.
         """
-        mp.dps = 80
+        mp.mp.dps = 80
         if start is None:
             start = [
                 mp.mpf('3.94'),
@@ -258,7 +258,7 @@ class DilatonSourceSolver:
           3. eta_* vs phenomenological threshold 0.063
           4. Stability matrix eigenvalues
         """
-        mp.dps = 80
+        mp.mp.dps = 80
         g2, lam_S, kappa2, eta_S = [mp.mpf(str(x)) for x in sol]
         results = {}
 
@@ -304,7 +304,7 @@ def scan_dilaton_source(J_values, start=None):
     Scan the fixed point over a range of dilaton source values.
     Returns list of dicts with (J, eta_star, delta_eta, rg_status).
     """
-    mp.dps = 80
+    mp.mp.dps = 80
     records = []
     current_start = start
     for J in J_values:
@@ -335,7 +335,7 @@ def scan_dilaton_source(J_values, start=None):
 # ---------------------------------------------------------------------------
 
 def main():
-    mp.dps = 80
+    mp.mp.dps = 80
     _init_ledger()
 
     print("="*70)
