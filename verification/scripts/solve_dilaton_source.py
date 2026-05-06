@@ -46,7 +46,7 @@ Author:  UIDT Framework v3.9
 License: CC BY 4.0
 """
 
-import mpmath as mp
+import mpmath; from mpmath import mp
 import sys
 import os
 

@@ -16,7 +16,7 @@ UIDT Constitution compliance:
   - Residual checks use mp.mpf with |residual| < 1e-14 where applicable
 """
 
-import mpmath as mp
+import mpmath; from mpmath import mp
 mp.dps = 80  # RACE CONDITION LOCK: local, not centralized
 
 # ── Ledger constants (LINTER PROTECTION) ──

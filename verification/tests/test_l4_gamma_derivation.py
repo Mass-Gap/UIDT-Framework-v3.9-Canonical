@@ -17,7 +17,7 @@ RACE CONDITION LOCK: mp.dps = 80 declared locally in each function.
 Never use float(), round(), or centralised precision control.
 """
 
-import mpmath as mp
+import mpmath; from mpmath import mp
 
 
 def su3_constants():

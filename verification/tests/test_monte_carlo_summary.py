@@ -15,7 +15,7 @@ Evidence categories:
 """
 import os
 import csv
-import mpmath as mp
+import mpmath; from mpmath import mp
 
 mp.dps = 80
 

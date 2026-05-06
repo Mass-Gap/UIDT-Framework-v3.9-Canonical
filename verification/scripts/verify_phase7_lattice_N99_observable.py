@@ -13,7 +13,7 @@ UIDT Constitution:
   - No float(), no round()
 """
 
-import mpmath as mp
+import mpmath; from mpmath import mp
 mp.dps = 80
 
 # Ledger constants (LINTER PROTECTION)
