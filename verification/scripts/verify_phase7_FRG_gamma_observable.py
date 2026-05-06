@@ -17,7 +17,7 @@ UIDT Constitution:
   - No external data access
 """
 
-import mpmath as mp
+import mpmath; from mpmath import mp
 mp.dps = 80
 
 # Ledger constants (LINTER PROTECTION)

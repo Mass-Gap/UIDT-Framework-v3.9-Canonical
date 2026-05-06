@@ -34,7 +34,7 @@ Expected output (all PASS):
 import sys
 
 # ── Precision: LOCAL declaration, never centralised ──────────────────────────
-import mpmath as mp
+import mpmath; from mpmath import mp
 mp.dps = 80  # RACE-CONDITION LOCK: must remain here, not moved to config
 
 # ── Immutable Parameter Ledger ────────────────────────────────────────────────
