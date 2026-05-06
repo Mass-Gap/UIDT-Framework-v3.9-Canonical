@@ -66,7 +66,7 @@ The universal scaling invariant **γ = 16.339** is phenomenologically determined
 - **Option B:** Derive γ from non-perturbative FRG with full propagator dressing
 - **Option C:** Accept γ as fundamental phenomenological constant (like α_EM)
 
-**Research Priority:** 🔴 **HIGH** — Resolving this would provide a theoretical foundation, though γ remains [A-] as a phenomenological parameter.
+**Research Priority:** 🔴 **HIGH** — Resolving this would upgrade γ from [A-] to [A]
 
 **Resolution Path:**
 - See [su3_gamma_theorem.md](su3_gamma_theorem.md) for the algebraic derivation candidate.
@@ -189,6 +189,21 @@ Extensive validation across three independent methodologies (Gap Equation, Gluon
 
 ---
 
+### C2-DESI: Cosmological Equation of State ($w_a$) Tension
+
+**Status:** 🔴 CRITICAL - OPEN
+
+**Evidence Level of Limitation:** [C] (Cosmological Calibration)
+
+
+
+**Description:** The canonical UIDT baseline predicts a slightly positive dynamic dark energy parameter ($w_a \approx +0.03$). High-precision numerical Sandbox testing (mp.dps=80) confirmed that volumetric scaling to the infinite-volume limit ($\gamma_{bare} \approx 16.3437$) provides only a negligible logarithmic shift ($\delta w_a \approx -0.0035$). This completely fails to bridge the ~3.6σ gap to the recent DESI 2024 best-fit ($w_a \approx -1.05 \pm 0.3$).
+
+
+
+**Impact:** The framework currently lacks a physical mechanism within the bare Lagrangian to produce highly negative dynamic dark energy parameters. The tension to empirical BAO (Baryon Acoustic Oscillation) data remains fully unresolved.
+
+
 ## Topological Observations [Category D]
 
 The following represent exact or near-exact numerical scaling laws and algebraic facts that arise naturally within the UIDT computational framework. However, because they lack independent derivations bridging the microscopic vacuum geometry to specific Standard Model mechanisms, they are currently mapped as **Category D (Interpretive)**.
@@ -262,7 +277,7 @@ v = 0.854 MeV in Framework v3.2 was **erroneous** due to algebraic error.
 | **L4** | γ not from RG | γ_kinetic, γ_MC | γ: [A-] (cannot be [A]) | 🔴 **HIGH** |
 | **L5** | N=99 unjustified | Vacuum energy resolution | ρ_vac: [C] (phenomenological) | 🟡 **MEDIUM** |
 | **L2** | Electron mass 23% | Lepton mass formulas | m_e: [D] (approximate) | 🟡 **MEDIUM** |
-| **L3** | Vacuum factor 2.3 | Cosmological parameters | ✅ CONSISTENT IN PRINCIPLE [C] | 🟢 **LOW** |
+| **L3** | Vacuum factor 2.3 | Cosmological parameters | ✅ RESOLVED IN PRINCIPLE [B] | 🟢 **LOW** |
 | **L8** | Phase 3 Roadmap | Future topological integration | ⚠️ EXPLORATORY [E] | 🔵 **FUTURE** |
 
 ---
