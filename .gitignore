@@ -198,3 +198,4 @@ LOCAL/logs/integrity_reports/
 LOCAL/logs/run_manifest.json
 LOCAL/logs/metrics.json
 LOCAL/logs/epistemic_risk_map.json
+scratch/

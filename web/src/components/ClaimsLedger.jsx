@@ -41,11 +41,14 @@ const ClaimsLedger = () => {
               </span>
               {claim.verified && <span className="verified-badge">Provenance Verified</span>}
             </div>
-            <span className="label">{claim.id} — {claim.title}</span>
-            <div className="value">{claim.value} {claim.unit}</div>
+            <span className="label">{claim.id} — {claim.type.toUpperCase()}</span>
+            <div className="value" style={{ fontSize: '1.1rem', fontWeight: '500' }}>{claim.statement}</div>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
-              {claim.description}
+              {claim.notes || 'No supplemental notes available for this canonical record.'}
             </p>
+            <div style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>
+              Status: <span style={{ color: claim.status === 'verified' ? 'var(--smaragd)' : 'inherit' }}>{claim.status}</span>
+            </div>
           </div>
         ))}
       </div>
