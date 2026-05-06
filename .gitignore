@@ -157,7 +157,6 @@ clay-submission/CITATION.cff
 .cursor/rules/uidt-os-system.mdc
 .kilocode/skills/file-organizer/SKILL.md
 verification/scripts/uidt_os_integration_check.py
-arxiv_scan.py
 .kilocodemodes
 # UIDT-OS provisioning (local only)
 jules_api_provisioning.py
