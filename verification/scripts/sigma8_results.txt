@@ -1,0 +1,18 @@
+========================================================================
+UIDT Trilateral Cosmological Integration - Numerical Results (80-dps)
+========================================================================
+
+--- 1. Bare Factor & Dressed Vacuum Parameters ---
+gamma_infty (Bare Factor) [B] : 16.3437
+gamma_phys (Dressed)      [C] : 16.339
+delta_gamma                   : 0.0047000000000000000000000000000000000000000000000000000000000000000000000000000002
+
+--- 2. Analytical w_a Derivation [B] ---
+Formula: w_a(L) = - (delta_gamma / gamma_infty) * L^4
+w_a(L=8.15)                   : -1.2687554213167764949185312995221400294914860160184046452149758010731963998360225
+w_a(L=8.25)                   : -1.3321811070550120229813322564657941592173130931184493107435892729308540905670075
+
+--- 3. Sigma_8 Suppression Analysis [C] ---
+sigma_8 (Planck)              : 0.81
+sigma_8 (Euclid Q1)           : 0.79
+Suppression Ratio (D_UIDT/D_LCDM): 0.97530864197530864197530864197530864197530864197530864197530864197530864197530864
