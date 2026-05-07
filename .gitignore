@@ -176,3 +176,4 @@ verification/scripts/verify_template.py
 # Auto-generated verification reports (use GitHub Releases for archives)
 verification/data/Verification_Report_*.md
 Supplementary_Results/Verification_Report_*.md
+LOCAL/
