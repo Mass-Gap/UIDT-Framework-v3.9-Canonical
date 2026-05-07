@@ -8,7 +8,7 @@ Merged Logic: Scipy Solver (Speed) + Mpmath Prover (Precision)
 This master code combines:
 1. The numerical solver (v3.6.1 Verification)
 2. The high-precision mathematical core (uidt_proof_core)
-3. Torsion Lattice (Missing Link Integration)
+3. Torsion Lattice (Torsion Dynamics)
 4. Harmonic Predictions (X17, X2370, Spin States)
 5. Automatic report generation in the 'verification/data' folder.
 
@@ -201,7 +201,7 @@ def run_master_verification():
             log_print(f"   > ❌ PROOF ERROR: {e}")
             proof_data_block = f"\n### ⚠️ Mathematical Proof Failed: {e}\n"
 
-        log_print("\n[3] PILLAR II: DERIVING MISSING LINK (Lattice Topology)...")
+        log_print("\n[3] PILLAR II: DERIVING TORSION DYNAMICS (Lattice Topology)...")
         f_vac_val = mp.mpf('0.1071')
         try:
             from modules.lattice_topology import TorsionLattice
@@ -215,12 +215,12 @@ def run_master_verification():
             sigma_t = freq_comps["Sigma_T"]
             noise = lat.check_thermodynamic_limit()
             
-            log_print(f"   > Missing Link Derivation:")
+            log_print(f"   > Torsion Dynamics Derivation:")
             log_print(f"     Geometry: {mp.nstr(e_geo * 1000, 4)} | Torsion: {mp.nstr(sigma_t * 1000, 3)} | -> Result: {mp.nstr(f_vac_val * 1000, 4)} MeV")
             log_print(f"   > Thermodynamic Noise Floor: {mp.nstr(noise * 1000, 5)} MeV")
             
             pillar_ii_data_block = f"""
-### 🔗 Pillar II: Missing Link (Lattice Topology)
+### 🔗 Pillar II: Torsion Dynamics (Lattice Topology)
 > **Thermodynamic Censorship:** Stabilizes the Vacuum
 - **Derivation:** Geometry: `{mp.nstr(e_geo * 1000, 4)}` MeV | Torsion: `{mp.nstr(sigma_t * 1000, 3)}` MeV
 - Derived Vacuum Frequency (Resonance): `{mp.nstr(f_vac_val * 1000, 5)}` MeV
