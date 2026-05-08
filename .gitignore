@@ -112,6 +112,7 @@ AGENTS.md
 *.bak
 *.cache
 .cache/
+.archive/
 tmp/
 temp/
 
