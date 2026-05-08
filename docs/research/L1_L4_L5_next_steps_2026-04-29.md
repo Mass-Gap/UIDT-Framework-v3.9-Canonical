@@ -1,5 +1,9 @@
 # Nächste Schritte: L1/L4/L5 Forschungspfad (Stand: 2026-04-29)
 
+> [!WARNING]
+> **DEPRECATED:** This document contains conflated classifications of L1 and L4. It is preserved for historical context. 
+> For the authoritative, corrected roadmap, see `L1_L4_L5_roadmap_2026-05-08.md`.
+
 **Status nach Session 2**
 
 ---
