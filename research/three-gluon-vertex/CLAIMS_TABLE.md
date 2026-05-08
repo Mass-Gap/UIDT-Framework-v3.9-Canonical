@@ -12,42 +12,28 @@
 | C-3GV-06 | IR zero-crossing of Γ_sg (massless) at s_zero ≈ 0.058 GeV | A | Derived analytically | I |
 | C-3GV-07 | s_zero ≠ Δ* — IR zero-crossing of Γ_sg is NOT the Yang-Mills spectral gap | A | Distinct observables | I |
 | C-3GV-08 | UIDT Δ* = 1.710 GeV — Yang-Mills spectral gap (unchanged) | A | UIDT Ledger | I |
-| C-3GV-09 | α2 = c/4 · Z1_sym · F₀ = −0.041650... — log slope of Γ₂ˢʸᵐ(s²) | A | arXiv:2102.04959 Eq.(33) | I |
+| C-3GV-09 | α₂ = c/4 · Z1_sym · F₀ = −0.041650... — log slope of Γ₂ˢʸᵐ(s²) | A | arXiv:2102.04959 Eq.(33) | I |
 | C-3GV-10 | Γ₂_sat = −3/4·(α_sym + c/2 + d/3) = −0.005860... — IR saturation | A | arXiv:2102.04959 Eq.(33) | I |
 | C-3GV-11 | Γ₂ˢʸᵐ(µ²) = 0 — transverse renormalization condition | A | Standard MOM, arXiv:2102.04959 Sec.4 | I |
 | C-3GV-12 | Γ₂ˢʸᵐ monotone decreasing toward µ: Γ₂(0.3) > Γ₂(2.0) | A | Derived (c < 0, d < 0) | I |
 | C-3GV-13 | Γ₂ˢʸᵐ ~ O(0.1)·Γ₁ˢʸᵐ — subdominant; ~10% of leading form factor | B | arXiv:2208.01020 Sec.5, Fig.5 | I/II |
-| C-3GV-14 | Γ₃_asym(q²) = α3·ln(q²/µ²)+1, α3 = α_sg — same slope as Γ_sg | A | arXiv:2102.04959 Eq.(32) | I |
+| C-3GV-14 | Γ₃_asym(q²) = α₃·ln(q²/µ²)+1, α₃ = α_sg — same slope as Γ_sg | A | arXiv:2102.04959 Eq.(32) | I |
 | C-3GV-15 | Γ_sg_massive(s) = α_sg·[ln(s²+m_g²)−ln(µ²+m_g²)]+1 — IR-regulated; no zero-crossing | B | arXiv:2208.01020 Sec.6 | I/II |
 | C-3GV-16 | Γ_full(q,r,p) = w₁Γ₁ + w₂Γ₂ with w₁=1.0, w₂=0.1, w₃=0 (planar suppression) | B | arXiv:2208.01020 Eq.(19), Fig.5 | I/II |
+| C-3GV-17 | F_ghost(µ²) = 1 — ghost dressing normalization at MOM point | A | Standard MOM, Landau gauge | I |
+| C-3GV-18 | η_A^(gh) changes sign at k₀ ≈ 0.743 GeV: η_A^(gh) < 0 for k < k₀, > 0 for k > k₀ | D | arXiv:2102.04959 Fig.2 (consistent with) | III |
+| C-3GV-19 | η_A(k²) = η_A^(gh) + η_A^(3g) has zero crossing at k₀ ≈ 0.743 GeV; η_A(µ) ≈ 2.18 | D | Numerical SDE, arXiv:2102.04959 Sec.2 | III |
 
 ## Test Protocol
 
 ```bash
 cd research/three-gluon-vertex
-python etaA_lsg_fit.py
+python etaA_lsg_fit.py    # 15 checks
+python eta_A_3g.py        # 7 checks
+python eta_A_gh.py        # 7 checks
 ```
 
-**Expected output (15 checks, all residuals = 0.0 < 1e-14):**
-
-```
-[PASS]  Gamma_sg(mu) - 1
-[PASS]  Gamma1_sym(mu) - 1
-[PASS]  Gamma2_sym(mu)
-[PASS]  Gamma1_bisect(2,0)-Gamma_sg(2)
-[PASS]  Gamma2_sat < 0
-[PASS]  Gamma2_sym monotone
-[PASS]  Gamma3_asym(mu) - 1
-[PASS]  Gamma3_asym(q) == Gamma_sg(q)
-[PASS]  Gamma_sg_massive(mu) - 1
-[PASS]  Gamma_sg_massive(0.0001) finite
-[PASS]  Gamma_sg_massive > Gamma_sg at s=0.5
-[PASS]  Gamma_full(mu,mu,0) = w1*1 + w2*0
-[PASS]  Gamma_full symmetric in q,r
-[PASS]  Delta_star = 1.710
-[PASS]  gamma_val = 16.339
-Total: 15  |  PASS: 15  |  FAIL: 0
-```
+**Expected totals: 29 checks, FAIL: 0**
 
 ## DOI / arXiv Resolvability
 
@@ -69,25 +55,36 @@ Total: 15  |  PASS: 15  |  FAIL: 0
 | `m_gluon` | 0.350 GeV | B | Sec.6, Fig.7 [B] |
 | `w1, w2, w3` | 1.0, 0.1, 0.0 | B | Eq.(19), Fig.5 [B] |
 | `mu` | 4.3 GeV | A | Tab.1 [B] |
+| `nu_gh` | 0.5 | B | effective exponent |
+| `k_zero` | ≈ 0.743 GeV | D | numerical SDE |
 | `Delta*` | 1.710 GeV | A | UIDT Ledger |
 
-## Form Factor Inventory
+## Form Factor & SDE Inventory
 
-| Function | Evidence | Renorm. condition | Eq. |
+| Function | Evidence | Renorm. condition | Module |
 |---|---|---|---|
-| `Gamma_sg(s)` | A | Γ(µ)=1 | Eq.(32)[A], Eq.(21)[B] |
-| `Gamma_sg_massive(s)` | B | Γ(µ)=1 | Sec.6 [B] |
-| `Gamma1_sym(q)` | A | Γ(µ)=1 | Eq.(32)[A] |
-| `Gamma2_sym(s)` | A | Γ(µ)=0 | Eq.(33)[A] |
-| `Gamma3_asym(q)` | A | Γ(µ)=1 | Eq.(32)[A] |
-| `Gamma1_bisect(q,p)` | B | via Γ_sg | Eq.(28)[B] |
-| `Gamma_full(q,r,p)` | B | Γ(µ,µ,0)=1 | Eq.(19),(27)[B] |
+| `Gamma_sg(s)` | A | Γ(µ)=1 | etaA_lsg_fit.py |
+| `Gamma_sg_massive(s)` | B | Γ(µ)=1 | eta_A_3g.py |
+| `Gamma1_sym(q)` | A | Γ(µ)=1 | etaA_lsg_fit.py |
+| `Gamma2_sym(s)` | A | Γ(µ)=0 | etaA_lsg_fit.py |
+| `Gamma3_asym(q)` | A | Γ(µ)=1 | etaA_lsg_fit.py |
+| `Gamma1_bisect(q,p)` | B | via Γ_sg | etaA_lsg_fit.py |
+| `Gamma_full(q,r,p)` | B | Γ(µ,µ,0)=1 | etaA_lsg_fit.py |
+| `eta_A_3g(k²)` | D | — | eta_A_3g.py |
+| `eta_A_gh(k²)` | D | — | eta_A_gh.py |
+
+## Figures
+
+| File | Content | Evidence |
+|---|---|---|
+| `figures/eta_A_decomposition.png` | η_A^(gh), η_A^(3g), η_A total vs k [GeV] | D |
 
 ## Known Limitations
 
 - IR log fit assumes massless-ghost dominance; valid for s < 1 GeV.
 - `a = 0.046` is SDE-derived; lattice uncertainty not propagated here.
-- `Gamma_sg_massive` uses a single effective mass pole; more realistic: dispersive integral over spectral function.
-- `Gamma_full` uses fixed weights w1=1.0, w2=0.1; lattice data show mild q-dependence of weights (not implemented).
-- `Gamma3_asym` identical to `Gamma_sg` in IR limit; differs at UV (distinct tensor structure).
+- Ghost dressing: single-pole form F(q²) = F₀/(1+q²/µ²)^ν; full SDE self-consistency not imposed.
+- `nu_gh = 0.5`: effective; lattice value mildly scheme-dependent.
+- η_A^(4g) (four-gluon loop) NOT included.
+- `k_zero ≈ 0.743 GeV`: model-dependent; changes with nu_gh, alpha_s, Lambda.
 - Active research framework — not established physics.
