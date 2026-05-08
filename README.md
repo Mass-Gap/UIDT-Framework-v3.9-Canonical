@@ -422,13 +422,16 @@ UIDT v3.9 is strictly falsifiable. The theory is considered refuted if:
 
 ## 🔍 Known Limitations (Summary)
 
-| ID | Issue | Discrepancy | Status |
-| --- | --- | --- | --- |
-| L1 | Electron mass prediction | 23% | Open Question |
-| L2 | Holographic scale hierarchy | 10¹⁰ factor | Open Question |
-| L3 | Vacuum energy residual | Factor 2.3 | Under study |
-| L4 | RG gamma vs. kinetic VEV | Factor 3.4 | Candidate Solution Identified |
-| L5 | Casimir experimental status | No peer-reviewed data | Corrected / Category D |
+| ID | Issue | Discrepancy | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| L1 | 10¹⁰ geometric scale factor | ~10⁶·⁵ ill-defined | [D] | Open — N⁵≈10¹⁰ suggestive |
+| L2 | Electron mass prediction | 23% residual | — | Open Question |
+| L3 | Vacuum energy residual | Factor 2.3 | [C] | Accepted |
+| L4 | γ not derived from RG | γ_bare=49/3 proven [A], gap open | [A]/[D] | Active — BMW-FRG required |
+| L5 | N=99 RG steps unjustified | Empirical | [D] | Open — Kill-switch proven [A] |
+| L6-FRG | FRG minimal truncation | η*≈0.072 truncation-dependent | [D] | Active Research |
+
+> **Research Status (2026-05-08):** Color algebra identity γ_bare = 49/3 formally proven [A]. Kill-switch Σ_T(E_T=0)=0 formally proven [A]. 10/10 cross-constraints verified. See [`docs/research/L1_L4_L5_roadmap_2026-05-08.md`](./docs/research/L1_L4_L5_roadmap_2026-05-08.md) for the current master roadmap.
 
 ---
 
