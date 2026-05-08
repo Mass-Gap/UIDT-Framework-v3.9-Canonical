@@ -23,17 +23,28 @@
 | C-3GV-17 | F_ghost(µ²) = 1 — ghost dressing normalization at MOM point | A | Standard MOM, Landau gauge | I |
 | C-3GV-18 | η_A^(gh) changes sign at k₀ ≈ 0.743 GeV: η_A^(gh) < 0 for k < k₀, > 0 for k > k₀ | D | arXiv:2102.04959 Fig.2 (consistent with) | III |
 | C-3GV-19 | η_A(k²) = η_A^(gh) + η_A^(3g) has zero crossing at k₀ ≈ 0.743 GeV; η_A(µ) ≈ 2.18 | D | Numerical SDE, arXiv:2102.04959 Sec.2 | III |
+| C-3GV-20 | K_4g(k,0) = 3, K_4g(k,k) = 3.75, K_4g symmetric — four-gluon kernel limits | A | arXiv:2102.04959 Eq.(16), derived | I |
+| C-3GV-21 | η_A^(4g)(µ) ≈ 0.047; ratio η_A^(4g)/η_A^(3g) ≈ 0.18–0.25 (subdominant O(α_s²)) | D | Numerical SDE, 2-loop normalization | III |
+
+## Evidence Count
+
+| Category | Count | Description |
+|---|---|---|
+| A | 10 | Mathematically proven |
+| B | 7 | Lattice compatible |
+| D | 4 | Prediction / model-dependent |
 
 ## Test Protocol
 
 ```bash
 cd research/three-gluon-vertex
 python etaA_lsg_fit.py    # 15 checks
-python eta_A_3g.py        # 7 checks
-python eta_A_gh.py        # 7 checks
+python eta_A_3g.py        #  7 checks
+python eta_A_gh.py        #  7 checks
+python eta_A_4g.py        #  8 checks
 ```
 
-**Expected totals: 29 checks, FAIL: 0**
+**Expected totals: 37 checks, FAIL: 0**
 
 ## DOI / arXiv Resolvability
 
@@ -58,8 +69,9 @@ python eta_A_gh.py        # 7 checks
 | `nu_gh` | 0.5 | B | effective exponent |
 | `k_zero` | ≈ 0.743 GeV | D | numerical SDE |
 | `Delta*` | 1.710 GeV | A | UIDT Ledger |
+| `gamma_val` | 16.339 | A- | UIDT Ledger |
 
-## Form Factor & SDE Inventory
+## Form Factor & SDE Module Inventory
 
 | Function | Evidence | Renorm. condition | Module |
 |---|---|---|---|
@@ -72,6 +84,18 @@ python eta_A_gh.py        # 7 checks
 | `Gamma_full(q,r,p)` | B | Γ(µ,µ,0)=1 | etaA_lsg_fit.py |
 | `eta_A_3g(k²)` | D | — | eta_A_3g.py |
 | `eta_A_gh(k²)` | D | — | eta_A_gh.py |
+| `eta_A_4g(k²)` | D | — | eta_A_4g.py |
+
+## eta_A Full Decomposition at Selected Momenta
+
+| k [GeV] | η_A^(gh) | η_A^(3g) | η_A^(4g) | η_A total |
+|---|---|---|---|---|
+| 0.5 | −2.529 | +0.193 | +0.048 | −2.288 |
+| 1.0 | +0.724 | +0.219 | +0.050 | +0.993 |
+| 1.71 | +1.508 | +0.239 | +0.050 | +1.797 |
+| 4.3 (=µ) | +1.921 | +0.260 | +0.047 | +2.228 |
+
+*Evidence D, Stratum III. Not to be confused with Δ* = 1.710 GeV [Evidence A].*
 
 ## Figures
 
@@ -83,8 +107,9 @@ python eta_A_gh.py        # 7 checks
 
 - IR log fit assumes massless-ghost dominance; valid for s < 1 GeV.
 - `a = 0.046` is SDE-derived; lattice uncertainty not propagated here.
-- Ghost dressing: single-pole form F(q²) = F₀/(1+q²/µ²)^ν; full SDE self-consistency not imposed.
+- Ghost dressing: single-pole form; full SDE self-consistency not imposed.
 - `nu_gh = 0.5`: effective; lattice value mildly scheme-dependent.
-- η_A^(4g) (four-gluon loop) NOT included.
+- `K_4g`: tree-level vertex; without dressing eta_A^(4g) is an upper bound.
+- Tadpole contributions from four-gluon vertex not included.
 - `k_zero ≈ 0.743 GeV`: model-dependent; changes with nu_gh, alpha_s, Lambda.
 - Active research framework — not established physics.
