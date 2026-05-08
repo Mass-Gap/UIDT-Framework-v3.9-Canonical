@@ -2,7 +2,7 @@
 test_monte_carlo_summary.py
 
 Verification test for UIDT Monte Carlo baseline statistics.
-Must use real mpmath with mp.dps = 80 locally.
+Must use real mpmath with mp.mp.dps = 80 locally.
 No mocks, no float(), no round().
 
 Residual requirement: |expected - actual| < 1e-14 for mpmath values.
@@ -17,7 +17,7 @@ import os
 import csv
 import mpmath as mp
 
-mp.dps = 80
+mp.mp.dps = 80
 
 # -----------------------------------------------------------------------
 # IMMUTABLE LEDGER CONSTANTS (UIDT Constitution - do not modify)
@@ -194,7 +194,7 @@ def test_gamma_psi_correlation():
 # -----------------------------------------------------------------------
 def test_rg_constraint():
     """5*kappa^2 = 3*lambda_S must hold to 1e-14 [RG_CONSTRAINT_FAIL if not]."""
-    mp.dps = 80
+    mp.mp.dps = 80
     kappa    = mp.mpf("0.5")
     lambda_S = mp.mpf("5") * kappa**2 / mp.mpf("3")
     lhs = mp.mpf("5") * kappa**2
