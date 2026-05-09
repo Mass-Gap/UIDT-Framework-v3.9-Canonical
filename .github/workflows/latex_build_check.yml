@@ -22,7 +22,7 @@ jobs:
       - name: Install TeX Live
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-extra texlive-science texlive-bibtex-extra texlive-fonts-recommended
+          sudo apt-get install -y texlive-latex-extra texlive-science texlive-bibtex-extra texlive-fonts-recommended texlive-publishers
 
       - name: Compile CSF_UIDT_Unification.tex
         working-directory: manuscript
