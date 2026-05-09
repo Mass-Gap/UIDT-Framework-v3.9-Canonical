@@ -6,7 +6,7 @@ Branch: TKT-20260429-S4-P4-P5-P6-torsion-gluon-first-principles
 Herleitung: Selbstkonsistente Nullstelle von m^2_eff(k) = 0
 im gekoppelten YM+Skalaren FRG-Fluss.
 
-Ge-dockt in: research/TKT-FRG-TACHYON-S2-gamma-emergent-findings.md
+Ge-dockt in: docs/research/TKT-FRG-TACHYON-S2-gamma-emergent-findings.md
 
 UIDT-Constitution:
 - mp.dps = 80 (lokal)

@@ -108,6 +108,20 @@ value $\Delta^* = 1710 \pm 15$ MeV and reflects an earlier, superseded calibrati
 
 ---
 
+## Three-Gluon Vertex Input (Cross-Reference)
+
+For detailed lattice-constrained input on the three-gluon vertex structure,
+including the planar degeneracy approximation and the schematic SDE for
+η_A(k²) with explicit ghost, three-gluon, and four-gluon contributions, see:
+
+→ [L4: Three-Gluon Vertex Planar Degeneracy](research/L4_three_gluon_vertex_planar_degeneracy.md)
+
+Key result: The transverse form factors of the three-gluon vertex depend
+predominantly on s² = ½(q² + r² + p²) (planar degeneracy, Evidence [B]),
+simplifying the non-perturbative vertex input to a single function Γ_sg(s²).
+
+---
+
 ## Open Tasks
 
 - [ ] Derive the full UIDT-coupled SD system including the $S$-field dressing correction
