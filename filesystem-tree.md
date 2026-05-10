@@ -1,6 +1,6 @@
 # UIDT-Framework v3.9 — Canonical Filesystem Tree
 
-> **Last updated:** 2026-03-12 (v3.9 canonical state, post PR #180–183)
+> **Last updated:** 2026-05-10 (v3.9 governance stabilization)
 > **Status:** Authoritative reference for repository structure.
 > Agents must not create directories outside this tree without explicit approval.
 
@@ -12,23 +12,25 @@
 UIDT-Framework-v3.9-Canonical/
 ├── .editorconfig                     # Editor configuration
 ├── .gitattributes                    # Git attributes
-├── .gitignore                        # Git ignore rules
+├── .gitignore                        # Git ignore rules (hardened)
+├── AGENTS.md                         # Agent directives and constitution
 ├── CHANGELOG.md                      # Project change history
 ├── CITATION.cff                      # Citation information
 ├── CONTRIBUTING.md                   # Contribution guidelines
 ├── FORMALISM.md                      # Core equation reference (public)
 ├── GLOSSARY.md                       # Project glossary
 ├── LICENSE.md                        # License information
-├── metadata.xml                      # Project metadata (Zenodo/OSF)
 ├── README.md                         # Project README
 ├── SECURITY.md                       # Public security & disclosure policy
+├── STATUS.md                         # Project status and milestones
 ├── filesystem-tree.md                # This file — canonical structure reference
 ├── .github/                          # GitHub Actions, templates
+├── archives/                         # Legacy framework snapshots (zip)
 ├── CANONICAL/                        # Canonical constants and evidence system
 ├── clay-submission/                  # Clay Mathematics Institute submission
 ├── core/                             # Core UIDT proof engine (protected)
-├── docs/                             # Project documentation
-├── figures/                          # Visual figures
+├── docs/                             # Project documentation (taxonomy-based)
+├── figures/                          # Visual figures and plots
 ├── LEDGER/                           # Claims, changelog, traceability
 ├── LOCAL/                            # Local runtime artifacts (logs, scripts, DB)
 ├── manuscript/                       # Main theoretical manuscript
@@ -177,19 +179,22 @@ clay-submission/
 
 ## 5. Documentation (/docs/)
 
+Documentation is organized into a strictly enforced 6-tier taxonomy.
+
 ```
 docs/
-├── citation-guide.md
-├── data-availability.md
-├── evidence-classification.md
-├── falsification-criteria.md
-├── heavy_quark_predictions.md
-├── lhcb_predictions_paper_draft.md
-├── limitations.md
-├── su3_gamma_theorem.md
-├── verification-guide.md
-└── validation/
-    └── UIDT_v37-fin-max_Validation_Report.md
+├── archival-notes/                   # Historical development notes
+├── archive/                          # Retired documentation
+├── audits/                           # Security and scientific audits
+├── bugfix/                           # Bugfix documentation
+├── evidence/                         # Evidence classification and falsification
+├── governance/                       # Repository governance and rules
+├── guides/                           # User and developer guides
+├── predictions/                      # Theoretical predictions (Category D)
+├── qa/                               # Quality assurance protocols
+├── research/                         # Active research and exploration
+├── reviewer_decisions/               # Peer-review and PI decisions
+└── theory/                           # Core theoretical derivations
 ```
 
 ---
@@ -311,4 +316,5 @@ verification/
 | v3.7.2 | — | HMC real simulation, DESI DR2 |
 | v3.7.3 | — | Complete framework PDF |
 | v3.9.4 | 2026-03-02 | 55 claims, C-068/C-069 added |
-| **v3.9 canonical** | **2026-03-12** | **UIDT-OS restructured → CANONICAL/LEDGER/LOCAL. Root cleaned (PR #180–183).** |
+| v3.9 stabilization | 2026-03-12 | UIDT-OS restructured → CANONICAL/LEDGER/LOCAL. Root cleaned (PR #180–183). |
+| **v3.9 finalized** | **2026-05-10** | **Docs taxonomy migrated. Root sanitization complete. Path leakage remediated.** |
