@@ -54,20 +54,20 @@
 - [`verification/`](./verification) — reproducibility and verification scripts
 
 ### Recommended technical documents
-- [`docs/bare_gamma_theorem.md`](./docs/bare_gamma_theorem.md)
-- [`docs/cosmological_implications_v3.9.md`](./docs/cosmological_implications_v3.9.md)
-- [`docs/falsification-criteria.md`](./docs/falsification-criteria.md)
-- [`docs/evidence-classification.md`](./docs/evidence-classification.md)
-- [`docs/experimental_roadmap.md`](./docs/experimental_roadmap.md)
-- [`docs/PR_Review_Protocol_v2.0.md`](./docs/PR_Review_Protocol_v2.0.md)
-- [`docs/citation-guide.md`](./docs/citation-guide.md)
-- [`docs/data-availability.md`](./docs/data-availability.md)
+- [`docs/theory/bare_gamma_theorem.md`](./docs/theory/bare_gamma_theorem.md)
+- [`docs/theory/cosmological_implications_v3.9.md`](./docs/theory/cosmological_implications_v3.9.md)
+- [`docs/evidence/falsification-criteria.md`](./docs/evidence/falsification-criteria.md)
+- [`docs/evidence/evidence-classification.md`](./docs/evidence/evidence-classification.md)
+- [`docs/research/experimental_roadmap.md`](./docs/research/experimental_roadmap.md)
+- [`docs/governance/PR_Review_Protocol_v2.0.md`](./docs/governance/PR_Review_Protocol_v2.0.md)
+- [`docs/guides/citation-guide.md`](./docs/guides/citation-guide.md)
+- [`docs/guides/data-availability.md`](./docs/guides/data-availability.md)
 - [`docs/README.md`](./docs/README.md) — documentation landing page
 
 ### Audit trail
-- [`docs/critical_review_2025.md`](./docs/critical_review_2025.md)
-- [`docs/epistemic_audit_2026-03-30.md`](./docs/epistemic_audit_2026-03-30.md)
-- [`docs/first_principles_evidence_audit_2026-03-30.md`](./docs/first_principles_evidence_audit_2026-03-30.md)
+- [`docs/audits/critical_review_2025.md`](./docs/audits/critical_review_2025.md)
+- [`docs/audits/epistemic_audit_2026-03-30.md`](./docs/audits/epistemic_audit_2026-03-30.md)
+- [`docs/audits/first_principles_evidence_audit_2026-03-30.md`](./docs/audits/first_principles_evidence_audit_2026-03-30.md)
 - [`docs/archive/`](./docs/archive)
 - [`docs/archival-notes/`](./docs/archival-notes)
 
