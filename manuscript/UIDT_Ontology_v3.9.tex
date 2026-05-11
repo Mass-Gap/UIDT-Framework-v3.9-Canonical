@@ -941,12 +941,148 @@ open and represent the frontier of current research:
     cold dark matter particle halos.
 \end{itemize}
 
-\subsection{Research Program: Formal Derivation of the Born Rule}
+\subsection{Research Program: The Born Rule as Epistemic Projection of the Lattice Dynamics}
 \label{subsec:born-rule}
 
-A critical frontier in the \UIDT\ ontology is the formal derivation of the Born Rule. Rather than positing the probabilistic nature of quantum measurement as an independent axiom, this research program aims to derive the Born Rule directly from the \UIDT\ axioms. Specifically, it is conjectured that the probability measure $P \propto |\psi|^2$ emerges as a necessary geometric consequence of the information density $\Sx$ undergoing projection upon measurement. 
+A critical frontier in the \UIDT\ ontology is the formal status of the Born rule.
+Instead of postulating the probabilistic nature of quantum measurement as an
+independent axiom, this research program aims to derive the Born rule directly
+from the \UIDT\ axioms and the dynamics of the vacuum information density
+$S(x)$ on the Rietz Grid with lattice spacing $\lambda = 0.66\,\mathrm{nm}$.
 
-This requires solving the formal discretization of the field equations on the $0.66\,\mathrm{nm}$ lattice (the ``Messproblem'' or Measurement Problem). Successfully formalizing this derivation would establish the Born Rule not as an ad-hoc quantum postulate, but as a deterministic theorem of vacuum geometry, serving as the next foundational pillar of the \UIDT\ framework.
+\begin{theorem}[Born Rule from \UIDT, working formulation]
+\label{thm:born-rule-uidt}
+Consider a localised subsystem (``quantum object'') interacting with the
+Rietz Grid of spacing $\lambda = 0.66\,\mathrm{nm}$ and torsion binding
+energy $E_T = 2.44\,\MeV$, with dynamics governed by the \UIDT\ Lagrangian
+\eqref{eq:lagrangian} and coupling constant $\kappa = 0.5$. In an effective
+description, let the subsystem state be expanded in the eigenbasis
+$\{\ket{k}\}$ of a measured observable,
+\[
+  \ket{\psi} = \sum_k c_k \ket{k}, \qquad c_k = \braket{k}{\psi}.
+\]
+Then the conjectured theorem states that the probability distribution of
+irreversibly fixed lattice distinctions (``measurement outcomes'') follows
+the Born rule
+\[
+  P(k) = |c_k|^2,
+\]
+where the probability measure arises as an epistemic projection of the
+underlying deterministic lattice dynamics of $S(x)$.
+\end{theorem}
+
+The word ``theorem'' in Theorem~\ref{thm:born-rule-uidt} denotes the target
+status of this statement. At present it is a \emph{working formulation} of
+a conjecture, not a proven result. Its resolution would promote the quantum
+measurement sector of \UIDT\ from a consistent interpretation to a closed
+mathematical pillar.
+
+\paragraph{Constituent building blocks of the proof.}
+The intended proof strategy decomposes into five interlocking components:
+
+\begin{enumerate}
+  \item \textbf{The Rietz Grid as discrete state space.}
+  The lattice with spacing $\lambda = 0.66\,\mathrm{nm}$ defines the minimal
+  spatial distinguishability. For a binary measurement (``left'' vs.\ ``right'')
+  it suffices to consider a local cluster of lattice sites with two
+  torsion-stabilised states $\ket{0}$ and $\ket{1}$. Below the torsion
+  threshold $E_T = 2.44\,\MeV$ the dynamics remain effectively reversible
+  (unitary), above it they become irreversible.
+
+  \item \textbf{The information field $S(x)$ as continuous carrier.}
+  The subsystem is represented as a smooth excitation of $S(x)$ over the
+  grid. The local field amplitudes $S_i$ at lattice sites $x_i$ determine
+  an effective wavefunction $\psi(S_i)$, which is a function on the discrete
+  configuration space of the field.
+
+  \item \textbf{The coupling as norm preservation.}
+  The non-minimal interaction term
+  $\mathcal{L}_{\mathrm{int}} = \kappa S(x)\,\mathrm{Tr}(F_{\mu\nu}F^{\mu\nu})$
+  preserves the total information norm
+  $\int |S(x)|^2 \mathrm{d}^4x$, which plays the role of a probability norm
+  in the effective description. This mirrors the unitary norm conservation of
+  standard quantum mechanics.
+
+  \item \textbf{Fixation as norm projection.}
+  When the interaction energy exceeds $E_T$, the lattice dynamics force a
+  transition to one of the discrete torsion-stabilised states. On the level
+  of the effective description this corresponds to a projection
+  $\ket{\psi} \to \ket{k}$, accompanied by an irreversible loss of phase
+  information and thus of local coherence.
+
+  \item \textbf{Epistemic origin of the probability weights.}
+  A local observer, modelled as a coarse-grained lattice subsystem, does not
+  have access to the full configuration of $S(x)$ or to the exact torsion
+  microstate. The only invariant quantity available at the effective level
+  is the local information density, which is quadratic in the field amplitude.
+  This suggests that the probability weights must be functions of $|c_k|$,
+  with the simplest norm-preserving choice being $P(k) = |c_k|^2$.
+\end{enumerate}
+
+In this picture, the Born rule is not a fundamental stochastic postulate but
+the unique quadratic measure compatible with (i) information-norm preservation
+of $S(x)$, (ii) the discretised lattice state space, and (iii) the epistemic
+ignorance of a coarse-grained observer about the exact local phase structure.
+
+\paragraph{Required mathematical tools.}
+To elevate Theorem~\ref{thm:born-rule-uidt} from conjecture to proven result,
+three technical ingredients are required:
+
+\begin{itemize}
+  \item \textbf{(T1) Discretised \UIDT\ field equations.}
+  The continuum equations of motion derived from \eqref{eq:lagrangian} must be
+  consistently discretised on the Rietz Grid with spacing
+  $\lambda = 0.66\,\mathrm{nm}$. This yields modified propagators and
+  interaction kernels that encode the coupling between continuous $S(x)$ and
+  discrete torsion states.
+
+  \item \textbf{(T2) A decoherence functional $D[\psi,t]$.}
+  From the lattice-discretised action, one must construct a functional
+  $D[\psi,t]$ describing the time dependence (in the emergent temporal
+  parameter) of coherence loss due to lattice coupling. This is the
+  \UIDT\ analogue of the decoherence functionals in environment-induced
+  decoherence (Zeh, Zurek), but derived directly from the \UIDT\ axioms and
+  the coupling $\kappa$ and $E_T$.
+
+  \item \textbf{(T3) An ergodicity theorem for lattice ensembles.}
+  A measure-theoretic result is required which guarantees that, for an
+  ensemble of identically prepared subsystems, the relative frequencies of
+  lattice fixations in state $\ket{k}$ converge to the ensemble expectation
+  value defined by $|c_k|^2$. This is the \UIDT\ analogue of von Neumann's
+  quantum ergodic theorem.
+\end{itemize}
+
+Only after (T1)--(T3) have been established can one legitimately upgrade
+Theorem~\ref{thm:born-rule-uidt} to a category \catmark{A} or \catmark{A-}
+statement within the evidence classification system.
+
+\paragraph{Open subproblems.}
+The research program naturally decomposes into three precise open questions:
+
+\begin{enumerate}
+  \item \textbf{(O1) Lattice discretisation of the field equations.}
+  Construct and analyse the \UIDT\ field equations on the Rietz Grid with
+  spacing $\lambda = 0.66\,\mathrm{nm}$, including the back-reaction of
+  torsion states on $S(x)$.
+
+  \item \textbf{(O2) Decoherence rate from first principles.}
+  Derive an explicit expression for the decoherence rate as a functional
+  of $\kappa$, $E_T$ and the local configuration of $S(x)$, and show that
+  it reproduces the effective collapse phenomenology in standard quantum
+  experiments (e.g.\ the double-slit).
+
+  \item \textbf{(O3) Ergodicity and convergence to $|c_k|^2$.}
+  Prove that the lattice dynamics of $S(x)$ in the measurement regime are
+  ergodic with respect to the information-norm measure, such that the
+  empirical frequencies of outcomes converge to $P(k) = |c_k|^2$ in the
+  long-run ensemble limit.
+\end{enumerate}
+
+Resolving (O1)--(O3) would close the ``measurement flank'' of the \UIDT\
+framework and establish the Born rule as a derived theorem of vacuum geometry
+rather than an external axiom. Until then, the status of the Born rule within
+\UIDT\ remains that of a conjectured emergent law supported by structural
+arguments but awaiting full mathematical proof.
 
 %=============================================================================
 % SECTION 18 — CONCLUSION
