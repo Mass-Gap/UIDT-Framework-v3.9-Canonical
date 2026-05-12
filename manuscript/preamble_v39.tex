@@ -1,0 +1,301 @@
+% UIDT v3.9 — Canonical Preamble
+% TKT-2026-05-12-manuscript-elite-revision, Step 1/4
+% See CONSTANTS.md v3.9.5 for all ledger values.
+%
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{table,svgnames,dvipsnames}{xcolor}
+
+\documentclass[12pt,a4paper,twoside]{article}
+
+%-----------------------------------------------------------------------------
+% ENCODING & FONTS
+%-----------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[tracking=true,letterspace=20]{microtype}
+\usepackage{fix-cm}
+\usepackage{mathpazo}
+\usepackage{helvet}
+\usepackage{courier}
+
+%-----------------------------------------------------------------------------
+% LAYOUT & FORMATTING
+%-----------------------------------------------------------------------------
+\usepackage[a4paper, left=3.0cm, right=3.0cm, top=3.0cm, bottom=3.0cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{etoolbox}
+\usepackage{needspace}
+\usepackage{placeins}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+%-----------------------------------------------------------------------------
+% MATHEMATICS & PHYSICS
+%-----------------------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{siunitx}
+\sisetup{
+  separate-uncertainty = true,
+  multi-part-units     = repeat,
+  range-phrase         = { to },
+}
+
+%-----------------------------------------------------------------------------
+% GRAPHICS
+% NOTE: No [demo] flag. Real figures are rendered.
+% If a figure file is missing, compilation continues with a warning.
+%-----------------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+%-----------------------------------------------------------------------------
+% TikZ & tcolorbox
+%-----------------------------------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,shadows,calc}
+\usepackage{pgffor}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable,theorems}
+
+%-----------------------------------------------------------------------------
+% HYPERLINKS
+%-----------------------------------------------------------------------------
+\usepackage[pdftex]{hyperref}
+\usepackage{cleveref}
+
+%=============================================================================
+% HYPERREF METADATA  (clean — no invisible SEO injections)
+%=============================================================================
+\hypersetup{
+    pdftitle   = {Vacuum Information Density as the Fundamental Geometric
+                  Scalar (UIDT v3.9)},
+    pdfauthor  = {Philipp Rietz},
+    pdfsubject = {Unified Information-Density Theory (UIDT) v3.9},
+    pdfkeywords= {Yang--Mills mass gap; vacuum information density;
+                  gamma scaling; UIDT; holographic principle;
+                  photonic isomorphism; torsion binding energy;
+                  renormalization group},
+    pdfcreator = {LaTeX -- UIDT v3.9 TKT-2026-05-12},
+    colorlinks = true,
+    linkcolor  = {blue!55!black},
+    citecolor  = {blue!55!black},
+    urlcolor   = {blue!55!black},
+    pdfdisplaydoctitle = true,
+    pdflang    = {en-GB},
+}
+
+%=============================================================================
+% COLOR PALETTE
+%=============================================================================
+\definecolor{catA}     {RGB}{0,  110, 50}
+\definecolor{catAminus}{RGB}{0,   90,140}
+\definecolor{catB}     {RGB}{30,  50,150}
+\definecolor{catC}     {RGB}{160, 90,  0}
+\definecolor{catD}     {RGB}{150,  0,  0}
+\definecolor{catE}     {RGB}{100,  0,100}
+\definecolor{darkblue} {RGB}{  0,  0,120}
+\definecolor{alertred} {RGB}{180,  0,  0}
+\definecolor{dimgray}  {RGB}{105,105,105}
+\definecolor{linkblue} {RGB}{ 70,130,180}
+\definecolor{uidtgold} {RGB}{160,120,  0}
+
+%=============================================================================
+% PAGE SETUP
+%=============================================================================
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-2.5pt}
+\clubpenalty  = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+\raggedbottom
+
+%=============================================================================
+% CAPTION STYLE
+%=============================================================================
+\captionsetup{
+    font          = {small, sf, color = dimgray},
+    labelfont     = {bf, color = black!70},
+    justification = raggedright,
+    singlelinecheck = false,
+    skip          = 4pt,
+}
+\captionsetup[table]{position = above, skip = 4pt}
+
+%=============================================================================
+% SECTION TITLE FORMATTING
+%=============================================================================
+\titleformat{\section}
+  {\large\bfseries\scshape\color{black!85}}
+  {\thesection}{1em}{}[\vspace{-0.3em}\rule{\linewidth}{0.4pt}]
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{black!80}}
+  {\thesubsection}{0.8em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\itshape\color{black!70}}
+  {\thesubsubsection}{0.6em}{}
+
+%=============================================================================
+% HEADER / FOOTER
+% SECURITY NOTE: This footer contains ONLY legitimate copyright and DOI text.
+% No hidden, invisible, or machine-readable injection content is present.
+%=============================================================================
+\fancypagestyle{uidtsecure}{%
+  \fancyhf{}
+  \fancyhead[LE,RO]{\small\thepage}
+  \fancyhead[RE]{\small\textit{UIDT v3.9: Vacuum Information Density}}
+  \fancyhead[LO]{\small\textit{P.~Rietz}}
+  \fancyfoot[C]{%
+    \footnotesize\textcolor{dimgray}{%
+      \textcopyright{} 2026 P.~Rietz
+      $\cdot$ CC\,BY\,4.0
+      $\cdot$ \href{https://doi.org/10.5281/zenodo.17835200}%
+      {DOI:\,10.5281/zenodo.17835200}%
+    }%
+  }
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+\pagestyle{uidtsecure}
+
+%=============================================================================
+% CANONICAL NUMERICAL MACROS — aligned with CONSTANTS.md v3.9.5
+%
+% RULE: All ledger constants MUST be referenced via these macros.
+%       Never hard-code numerical values directly in the body text.
+%       To update a constant, change only this block and CONSTANTS.md.
+%
+% Evidence categories per UIDT Constitution:
+%   A   = mathematically proven
+%   A-  = phenomenological parameter
+%   B   = lattice-compatible, numerically verified
+%   C   = calibrated to cosmological data
+%   D   = prediction, unverified
+%=============================================================================
+
+% Spectral Gap [Evidence A]
+\newcommand{\DeltaGap}     {1.710}
+\newcommand{\DeltaGapUnc}  {0.015}
+\newcommand{\DeltaGapFull} {\ensuremath{(1.710 \pm 0.015)\,\si{\giga\electronvolt}}}
+
+% Gamma Invariant [Evidence A-]
+\newcommand{\GammaKin}     {16.339}
+\newcommand{\GammaBare}    {16.3437}
+\newcommand{\DeltaGammaVal}{0.0047}
+
+% Couplings [Evidence A]
+\newcommand{\Kappa}        {0.500}
+\newcommand{\KappaUnc}     {0.008}
+
+% VEV [Evidence A]
+\newcommand{\VEV}          {47.7}
+\newcommand{\VEVfull}      {\ensuremath{47.7\,\si{\mega\electronvolt}}}
+
+% Torsion Energy [Evidence C]
+\newcommand{\ETorsion}     {2.44}
+\newcommand{\ETorsionfull} {\ensuremath{(2.44)\,\si{\mega\electronvolt}}}
+
+% Dark Energy EOS [Evidence C]
+\newcommand{\wZero}        {-0.99}
+
+% Hubble Constant [Evidence C, DESI DR2 calibrated]
+\newcommand{\HubbleUIDT}   {70.4}
+\newcommand{\HubbleUIDTUnc}{0.16}
+
+% Derived: Geometric Energy [Evidence A-]
+\newcommand{\Egeo}         {104.66}
+
+% Unit shorthands
+\newcommand{\GeV}  {\,\si{\giga\electronvolt}}
+\newcommand{\MeV}  {\,\si{\mega\electronvolt}}
+\newcommand{\kms}  {\,\si{\km\per\s\per\mega\parsec}}
+
+% Framework name
+\newcommand{\UIDT}{\textsc{uidt}}
+
+%=============================================================================
+% THEOREM / DEFINITION ENVIRONMENTS
+%=============================================================================
+\BeforeBeginEnvironment{theorem}    {\par\nopagebreak\needspace{4\baselineskip}}
+\BeforeBeginEnvironment{proposition}{\par\nopagebreak\needspace{4\baselineskip}}
+\BeforeBeginEnvironment{definition} {\par\nopagebreak\needspace{4\baselineskip}}
+\BeforeBeginEnvironment{lemma}      {\par\nopagebreak\needspace{3\baselineskip}}
+\BeforeBeginEnvironment{corollary}  {\par\nopagebreak\needspace{3\baselineskip}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}    {Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}      [theorem]{Lemma}
+\newtheorem{corollary}  [theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}   [theorem]{Definition}
+\newtheorem{prediction}            {Testable Prediction}[section]
+\newtheorem{falsification}         {Falsification Criterion}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}     [theorem]{Remark}
+\newtheorem{limitation} [theorem]{Limitation}
+\newtheorem{openquestion}         {Open Question}[section]
+
+%=============================================================================
+% EVIDENCE-CATEGORY INLINE COMMANDS
+%=============================================================================
+\newcommand{\evA}      {\textcolor{catA}     {\textbf{[Ev.~A]}}}
+\newcommand{\evAminus} {\textcolor{catAminus}{\textbf{[Ev.~A$^-$]}}}
+\newcommand{\evB}      {\textcolor{catB}     {\textbf{[Ev.~B]}}}
+\newcommand{\evC}      {\textcolor{catC}     {\textbf{[Ev.~C]}}}
+\newcommand{\evD}      {\textcolor{catD}     {\textbf{[Ev.~D]}}}
+\newcommand{\evE}      {\textcolor{catE}     {\textbf{[Ev.~E]}}}
+
+%=============================================================================
+% TCOLORBOX STYLES
+%=============================================================================
+\tcbset{
+  uidt base/.style = {
+    enhanced, breakable,
+    colframe = black!30, colback = black!3,
+    boxrule = 0.5pt, arc = 3pt,
+    left = 8pt, right = 8pt, top = 6pt, bottom = 6pt,
+    fonttitle = \small\bfseries,
+  },
+  evidencebox/.style = {
+    uidt base,
+    title = {Evidence Summary},
+    colframe = catA!60, colback = catA!5,
+  },
+  killswitch/.style = {
+    uidt base,
+    title = {Kill-Switch Criterion},
+    colframe = alertred!70, colback = alertred!5,
+  },
+  openbox/.style = {
+    uidt base,
+    title = {Open Question},
+    colframe = catC!60, colback = catC!5,
+  },
+  pillarbox/.style = {
+    uidt base,
+    colframe = darkblue!50, colback = darkblue!4,
+  },
+}
+
+%=============================================================================
+% END OF PREAMBLE — TKT-2026-05-12-manuscript-elite-revision Step 1/4
+%=============================================================================
