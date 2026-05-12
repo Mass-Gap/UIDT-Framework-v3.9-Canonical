@@ -1,0 +1,68 @@
+%=============================================================================
+% MASS GAP DISPLAY BOX — UIDT v3.9, corrected
+%
+% CRITICAL FIX (TKT-2026-05-12):
+%   Previous versions displayed a fabricated 50-digit decimal expansion of
+%   Delta*. This is scientifically unjustifiable: the Banach fixed point is
+%   established by iterative mpmath computation at finite precision. No
+%   analytic closed-form expression exists that would yield 50 independently
+%   verifiable significant figures. The canonical ledger value with correct
+%   uncertainty is used exclusively.
+%
+% Affected constant: Delta* = 1.710 +/- 0.015 GeV [Evidence A]
+%   per CONSTANTS.md v3.9.5
+%=============================================================================
+\begin{tcolorbox}[
+  enhanced, breakable,
+  colback  = black!3,
+  colframe = uidtgold!70,
+  arc      = 4pt,
+  boxrule  = 0.8pt,
+  left     = 14pt, right = 14pt, top = 12pt, bottom = 12pt,
+  title    = {\small\scshape Yang--Mills Spectral Gap --- Canonical Ledger Value},
+  fonttitle = \small\bfseries,
+]
+
+\centering
+
+\bigskip
+
+\[
+  \Delta^*
+  \;=\;
+  \DeltaGapFull
+  \qquad \evA{}
+\]
+
+\medskip
+
+\begin{tabular}{@{}ll@{}}
+  \toprule
+  \textbf{Property} & \textbf{Value / Status} \\
+  \midrule
+  Central value              & $\DeltaGap\GeV$ \\
+  Uncertainty ($1\sigma$)    & $\pm\,\DeltaGapUnc\GeV$ \\
+  Derivation                 & Banach fixed-point, FRG, SU(3) Yang--Mills \\
+  Numerical closure residual & ${<}10^{-40}$ at \texttt{dps\,=\,60} \\
+  Evidence category          & A (within \textsc{uidt} axiom system) \\
+  External benchmark         & $z{=}0.00$ vs.\ Chen et al.\ (2006) \evB{} \\
+  Clay Millennium status     & \textbf{Not} addressed (Limitation~\ref{lim:clay}) \\
+  \bottomrule
+\end{tabular}
+
+\bigskip
+
+\begin{openbox}
+  \label{open:delta_analytic}
+  The value $\Delta^* \approx \DeltaGap\GeV$ is established to
+  $\mathcal{O}(10^{-40})$ via iterative \texttt{mpmath} computation.
+  An analytic closed-form expression for $\Delta^*$ in terms of
+  fundamental constants does \emph{not} yet exist within the \textsc{uidt}
+  framework.
+  Reporting further decimal places beyond the numerical residual would
+  constitute false precision and is explicitly prohibited by the
+  \textsc{uidt} epistemic constitution.
+  This remains a priority open question.
+\end{openbox}
+
+\end{tcolorbox}
