@@ -61,6 +61,9 @@
 \definecolor{darkblue}{RGB}{0,0,120}
 \definecolor{dimgray}{RGB}{105,105,105}
 
+%--- Ensure darkgray is defined regardless of xcolor option loading order ---%
+\providecolor{darkgray}{RGB}{64,64,64}
+
 %=============================================================================
 % PAGE SETUP
 %=============================================================================
@@ -134,6 +137,21 @@
 \newcommand{\catmark}[1]{\textsuperscript{\textsf{\textbf{[#1]}}}}
 \newcommand{\Sx}{S(x)}
 
+%===================================================================
+% UIDT IMMUTABLE PARAMETER LEDGER MACROS (v3.9, Evidence A / A-)
+% RACE CONDITION LOCK: do NOT move mp.dps = 80 to config.
+% These macros are LaTeX display aliases only; they carry no numerical
+% computation. The authoritative values live in LEDGER/CONSTANTS.md.
+%===================================================================
+\newcommand{\DeltaGap}{$1.710 \pm 0.015\GeV$}        % [A]
+\newcommand{\GammaGeom}{$16.339$}                     % [A-]
+\newcommand{\GammaInf}{$16.3437$}                     % [A-]
+\newcommand{\vVEV}{$47.7\MeV$}                        % [A]
+\newcommand{\ETorsion}{$2.44\MeV$}                    % [C]
+\newcommand{\LambdaGrid}{$0.66\,\mathrm{nm}$}         % [A]
+\newcommand{\KappaRG}{$0.500 \pm 0.008$}              % [A]
+%===================================================================
+
 %=============================================================================
 % TCOLORBOX ENVIRONMENTS
 %=============================================================================
@@ -194,13 +212,15 @@ This document establishes the ontological, epistemological, and axiological
 foundations of the Unified Information-Density Theory (\UIDT). Rather than
 postulating spacetime as a primordial arena, \UIDT\ identifies a single real
 scalar field --- the \emph{vacuum information density} $\Sx$ --- as the
-fundamental geometric degree of freedom from which spacetime, matter, and
-cosmological dynamics emerge through strict mathematical necessity.
+fundamental geometric degree of freedom. Spacetime geometry and the Yang--Mills mass gap emerge through mathematically
+necessary fixed-point dynamics~\catmark{A}, while cosmological parameters are
+calibrated to current observational data~\catmark{C} and remain subject to
+revision as precision surveys advance.
 
 The framework rests upon four explicit axioms and unfolds through a
 \emph{Four-Pillar Architecture}: (I)~quantum field-theoretic foundation,
 including a rigorous proof of the Yang--Mills mass gap
-$\Delta = 1.710 \pm 0.015\GeV$ \catmark{A} via Banach's fixed-point theorem;
+$\Delta = \DeltaGap \pm 0.015\GeV$ \catmark{A} via Banach's fixed-point theorem;
 (II)~cosmological harmony, with calibrated agreement to DESI, JWST, and ACT
 data \catmark{C}; (III)~laboratory-verifiable predictions, including a scalar
 resonance at $m_S = 1.705 \pm 0.015\GeV$ \catmark{D} and a Casimir force
@@ -241,9 +261,17 @@ radical and, in a precise mathematical sense, minimal. It posits a single real
 scalar field $\Sx$ --- the \emph{vacuum information density} --- as the sole
 fundamental degree of freedom. Spacetime geometry, the Yang--Mills mass gap, the
 hierarchy of vacuum energy scales, and the late-time acceleration of the
-universe all emerge as consequences of the self-interaction of this field,
 governed by a Lagrangian whose structure is fixed by gauge invariance, vacuum
 stability, and renormalisability.
+
+In philosophical terms, \UIDT\ can be classified as a form of \emph{dynamic,
+relational Ontic Structural Realism} (OSR). Unlike traditional structuralism,
+which often focuses on static relations between nodes, \UIDT\ aligns with what
+has recently been termed \emph{structural actualism} (cf.\ Tomaz et al.\
+2025~\cite{Tomaz2025})---an ontology where the identity of physical entities
+is not prior to, but is continuously individuated by, the dynamic relations
+of the underlying information manifold $S(x)$. Reality is not a collection of
+things, but a process of structural individuation.
 
 The present document does not repeat the technical derivations given in the
 companion manuscript~\cite{Rietz2026_Framework}. Its purpose is ontological: to
@@ -379,7 +407,7 @@ meta-theoretical commitment to epistemic honesty.
 \label{sec:architecture}
 
 The ontological structure of \UIDT\ is hierarchical: each level emerges from
-the preceding one through mathematical necessity, not by fiat or fine-tuning.
+the preceding one through mathematical consistency, not by fiat or fine-tuning.
 The hierarchy is:
 \begin{enumerate}
   \item \textbf{Logical Substratum.} The laws of formal logic (identity,
@@ -430,7 +458,7 @@ $\Sx$ has been determined.
 The vacuum information density $\Sx$ is a real scalar field of canonical mass
 dimension $[\Sx] = 1$, transforming as a singlet under $\mathrm{SU}(3)$ gauge
 transformations. Its dynamics are governed by the Lagrangian~\eqref{eq:lagrangian},
-and its vacuum expectation value is $v = \langle \Sx \rangle = 47.7\MeV$
+and its vacuum expectation value is $v = \langle \Sx \rangle = \vVEV\MeV$
 \catmark{A}.
 \end{definition}
 
@@ -505,7 +533,7 @@ curves spacetime in general relativity, now derived from first principles
 rather than postulated.
 
 \begin{remark}[Dimensional transmutation]
-The vacuum expectation value $v = 47.7\MeV$ \catmark{A} sets the fundamental
+The vacuum expectation value $v = \vVEV\MeV$ \catmark{A} sets the fundamental
 energy scale of the theory. All dimensionful quantities --- the mass gap $\Delta$,
 the scalar mass $m_S$, the vacuum energy density --- are determined by $v$ and
 the dimensionless couplings $\kappa$, $\lambda_S$, and $\gamma$. This is
@@ -528,13 +556,13 @@ Let $\mathcal{T}: \mathcal{B} \to \mathcal{B}$ be the geometric operator
 defined on the Banach space of gauge-invariant vacuum configurations, with
 contraction constant $q < 1$ determined by the couplings $\kappa$ and
 $\lambda_S$. Then $\mathcal{T}$ possesses a unique fixed point
-$\Delta^* = 1.710 \pm 0.015\GeV$ \catmark{A}, which is the spectral gap of
+$\Delta^* = \DeltaGap \pm 0.015\GeV$ \catmark{A}, which is the spectral gap of
 the Yang--Mills Hamiltonian.
 \end{theorem}
 
 \begin{evidencebox}[Evidence Classification]{catA}
 \textbf{Category A --- Mathematically Proven.}
-The mass gap $\Delta = 1.710 \pm 0.015\GeV$ is derived analytically via
+The mass gap $\Delta = \DeltaGap \pm 0.015\GeV$ is derived analytically via
 Banach's fixed-point theorem with numerical residuals $< 10^{-14}$.
 Independent lattice QCD verification: $z = 0.37\sigma$ (Chen et al.\
 2006~\cite{Chen2006}). This is the \emph{spectral gap} of the Yang--Mills
@@ -551,7 +579,7 @@ vacuum expectation value:
   \gamma \equiv \frac{\Delta}{\sqrt{K_S}}, \qquad
   K_S \equiv \langle \partial_\mu \Sx\, \partial^\mu \Sx \rangle_\Omega.
 \end{equation}
-The canonical value is $\gamma = 16.339$ \catmark{A-}, determined
+The canonical value is $\gamma = \GammaGeom$ \catmark{A-}, determined
 phenomenologically from kinetic VEV matching. This value is \textbf{not}
 derived from renormalisation group first principles (Limitation L4).
 
@@ -567,7 +595,7 @@ classified \catmark{D} --- not \catmark{A}.
 
 \begin{evidencebox}[Evidence Classification]{catAminus}
 \textbf{Category A- --- Phenomenologically Determined.}
-$\gamma = 16.339$ is determined from high-precision kinetic VEV matching.
+$\gamma = \GammaGeom$ is determined from high-precision kinetic VEV matching.
 It is \textbf{not} derived from RG first principles. The perturbative RG
 yields $\gamma^* \approx 55.8$ (factor 3.4 discrepancy), confirming that
 $\gamma$ operates in the non-perturbative regime.
@@ -576,7 +604,7 @@ Bare extrapolation: $\gamma_\infty = 16.3437 \pm 0.0005$ \catmark{B}.
 \end{evidencebox}
 
 \begin{openquestion}
-\textbf{L4 --- Gamma Derivation.} Can $\gamma = 16.339$ be derived from
+\textbf{L4 --- Gamma Derivation.} Can $\gamma = \GammaGeom$ be derived from
 non-perturbative RG flow (functional renormalisation group, BMW truncation)
 or from the SU(3) colour algebra candidate $\gamma_{\mathrm{bare}} = 49/3$?
 Resolution would upgrade $\gamma$ from \catmark{A-} to \catmark{A}.
@@ -622,7 +650,7 @@ converges to a unique solution --- the physical vacuum.
 \section{Cosmological Harmony: The Gamma-Scaled Universe}
 \label{sec:cosmology}
 
-The gamma invariant $\gamma = 16.339$ \catmark{A-} provides a bridge between
+The gamma invariant $\gamma = \GammaGeom$ \catmark{A-} provides a bridge between
 quantum vacuum structure and cosmological observables. Through hierarchical
 $\gamma$-scaling, the vacuum energy density is suppressed from its na\"ive
 quantum field-theoretic value by a factor of $\gamma^{12} \approx
@@ -679,9 +707,11 @@ has been identified as a holographic coupling ratio \catmark{B}
 
 \begin{openquestion}
 \textbf{L5 --- $N = 99$ Steps.} The cascade step count $N = 99$ is
-empirically chosen. No first-principles derivation from Standard Model
-particle content, holographic duality, or non-perturbative vacuum structure
-exists. Resolution would upgrade the vacuum energy mechanism from \catmark{C}
+empirically chosen. While some internal audits (UIDT-C-046/050) explore an
+alternative value of $N = 94.05$ based on higher-order holographic
+corrections, this remains in Category~E. No first-principles derivation
+from Standard Model particle content or non-perturbative vacuum structure
+currently exists. Resolution would upgrade the mechanism from \catmark{C}
 to \catmark{A-}.
 \end{openquestion}
 
@@ -697,7 +727,7 @@ of which six are critical:
 
 \begin{killswitch}
 \textbf{F1 --- Lattice QCD Continuum Limit.}
-If continuum-extrapolated lattice QCD excludes $\Delta = 1.710\GeV$ at
+If continuum-extrapolated lattice QCD excludes $\Delta = \DeltaGap\GeV$ at
 $> 3\sigma$, the mass gap proof is refuted. \emph{Current status:}
 $z = 0.37\sigma$ --- \textbf{passed}.
 \end{killswitch}
@@ -719,7 +749,7 @@ supports dynamic $w$.
 \begin{killswitch}
 \textbf{F4 --- Photonic Isomorphism.}
 If the critical refractive index transition does not occur at
-$n_{\mathrm{crit}} = 16.339 \pm 0.1$, Pillar~IV is refuted. \emph{Current
+$n_{\mathrm{crit}} = \GammaGeom \pm 0.1$, Pillar~IV is refuted. \emph{Current
 status:} pending.
 \end{killswitch}
 
@@ -757,10 +787,13 @@ assert that all mathematical structures are physically real (this would be
 Tegmark's Level~IV multiverse~\cite{Tegmark2008}). It asserts that
 \emph{one specific} structure --- the self-interacting vacuum information
 density governed by~\eqref{eq:lagrangian} --- generates what we call physical
-reality. The selection principle is not anthropic but structural: the
-Lagrangian is the \emph{unique} renormalisable, gauge-invariant,
-vacuum-stable self-interaction of a real scalar field non-minimally coupled to
-$\mathrm{SU}(3)$ gauge fields.
+reality. The selection principle is not anthropic but structural: the Lagrangian is the minimal renormalisable, gauge-invariant, vacuum-stable
+self-interaction of a real scalar field non-minimally coupled to $\mathrm{SU}(3)$
+gauge fields in $3+1$ spacetime dimensions.  Higher-dimensional operators
+(e.g.\ $\lambda' S^6$ or $\kappa' S^2 F^{\mu\nu}F_{\mu\nu}$) are technically
+renormalisable only in lower dimensions or require an additional symmetry
+argument to exclude; the present claim of minimality does not depend on their
+absence.
 
 This is mathematical realism, but it is not mathematical omniscience. \UIDT\
 acknowledges that its own formal system is subject to G\"odel's incompleteness
@@ -806,7 +839,7 @@ the vacuum information density. The quantisation is topological (the mass
 gap), not geometric.
 
 \paragraph{The Epistemic Razor.}
-\UIDT\ employs a ruthless epistemic razor: it admits no unobservable extra
+\UIDT\ employs a rigorous epistemic razor: it admits no unobservable extra
 dimensions, no fundamental supersymmetry, and no infinite landscapes. Its
 predictions are rigidly constrained by the canonical parameters $\kappa$,
 $\lambda_S$, and $v$. If these constraints fail to describe reality
@@ -827,13 +860,21 @@ not merely a descriptive language but the ontological substance itself.
 
 However, \UIDT\ shifts the philosophical emphasis from effectiveness to
 \emph{inevitability}. The structure of the vacuum is not arbitrary. Given the
-requirement of gauge invariance and renormalisability in $3+1$ dimensions, the
-$\mathrm{SU}(3)$ Lagrangian~\eqref{eq:lagrangian} with the self-interacting
-density $\Sx$ represents a unique fixed point of logical consistency.
+requirement of gauge invariance and renormalisability in $3+1$ dimensions, the $\mathrm{SU}(3)$ Lagrangian~\eqref{eq:lagrangian} with the self-interacting
+density $\Sx$ represents, within the constraints of gauge
+invariance, renormalisability, and vacuum stability in $3+1$ dimensions, the
+minimal self-interacting structure admissible under the \UIDT\ axioms.  Other
+gauge theories---including the full electroweak sector---are logically
+consistent in a broader sense; the present statement concerns minimality within
+the non-Abelian pure gauge sector at scales above the electroweak threshold.
 
-This implies a universe that is strictly necessitarian at its foundation. The
-value of the mass gap $\Delta = 1.710\GeV$ is not a historical accident of the
-Big Bang; it is a mathematical necessity, as immutable as the digits of $\pi$.
+This implies a universe that is strictly necessitarian at its foundation. The value of the mass gap $\Delta^{*} = 1.710 \pm 0.015\GeV$~\catmark{A} is
+not a historical accident of the Big Bang; within the \UIDT\ axiom system, it
+is structurally determined as the unique fixed point of the Banach contraction
+on the $\mathrm{SU}(3)$ vacuum lattice---as non-arbitrary as the structure
+constants of the gauge algebra that generate it.  The numerical uncertainty of
+$\pm 0.015\GeV$ reflects the finite lattice spacing employed in current
+calibration runs; it does not affect the existence of the fixed point.
 The phenomenological freedom of the universe --- the complexity of chemistry,
 biology, and consciousness --- emerges strictly within the energetic boundaries
 set by this rigid foundational gap.
@@ -892,7 +933,7 @@ meets the unknown.
     analytic derivation is pending.
 
   \item \textbf{Gamma Invariant Origin (\catmark{A-}).}
-    The dimensionless coupling $\gamma = 16.339$ is calibrated phenomenologically.
+    The dimensionless coupling $\gamma = \GammaGeom$ is calibrated phenomenologically.
     The candidate algebraic derivation ($\gamma_{\mathrm{bare}} = 49/3$) shows a
     $0.037\%$ match, but the proof linking this $\mathrm{SU}(3)$ Casimir structure
     to the physical kinetic VEV is incomplete.
@@ -904,7 +945,7 @@ meets the unknown.
 
   \item \textbf{Glueball $f_0(1710)$ Retraction (\catmark{E}).}
     Earlier versions of \UIDT\ mistakenly conflated the spectral mass gap
-    $\Delta = 1.710\GeV$ with the physical mass of the $f_0(1710)$ scalar
+    $\Delta = \DeltaGap\GeV$ with the physical mass of the $f_0(1710)$ scalar
     meson. This has been formally retracted (Decision D-001). The mass gap
     is purely spectral; it is not a particle mass.
 \end{enumerate}
@@ -941,6 +982,15 @@ open and represent the frontier of current research:
     cold dark matter particle halos.
 \end{itemize}
 
+The emergence of classicality from the underlying $S(x)$ field dynamics
+represents a critical junction in the ontology. \UIDT\ adopts a
+\emph{deterministic, epistemic interpretation with an ontic information field}.
+This position shares conceptual heritage with relational quantum mechanics and
+deterministic variants of QBism, but introduces a concrete physical mechanism
+via the discrete lattice dynamics of the Rietz Grid. The ``measurement problem''
+is thus reframed as the structural transition from continuous field amplitudes
+to discrete, irreversible lattice distinctions.
+
 \subsection{Research Program: The Born Rule as Epistemic Projection of the Lattice Dynamics}
 \label{subsec:born-rule}
 
@@ -954,8 +1004,8 @@ $S(x)$ on the Rietz Grid with lattice spacing $\lambda = 0.66\,\mathrm{nm}$.
 \label{thm:born-rule-uidt}
 Consider a localised subsystem (``quantum object'') interacting with the
 Rietz Grid of spacing $\lambda = 0.66\,\mathrm{nm}$ and torsion binding
-energy $E_T = 2.44\,\MeV$, with dynamics governed by the \UIDT\ Lagrangian
-\eqref{eq:lagrangian} and coupling constant $\kappa = 0.5$. In an effective
+energy $E_T = \ETorsion\,\MeV$, with dynamics governed by the \UIDT\ Lagrangian
+\eqref{eq:lagrangian} and coupling constant $\kappa = \kappaVal$. In an effective
 description, let the subsystem state be expanded in the eigenbasis
 $\{\ket{k}\}$ of a measured observable,
 \[
@@ -986,7 +1036,7 @@ The intended proof strategy decomposes into five interlocking components:
   spatial distinguishability. For a binary measurement (``left'' vs.\ ``right'')
   it suffices to consider a local cluster of lattice sites with two
   torsion-stabilised states $\ket{0}$ and $\ket{1}$. Below the torsion
-  threshold $E_T = 2.44\,\MeV$ the dynamics remain effectively reversible
+  threshold $E_T = \ETorsion\,\MeV$ the dynamics remain effectively reversible
   (unitary), above it they become irreversible.
 
   \item \textbf{The information field $S(x)$ as continuous carrier.}
@@ -1097,7 +1147,7 @@ to the primary ontological primitive, the framework successfully derives the
 mass gap, the emergent spacetime metric, and the cosmological energy hierarchy
 without invoking new fundamental particles or unobservable dimensions.
 
-This is an ontology of profound austerity. It demands that we abandon the
+This is an ontology of fundamental austerity. It demands that we abandon the
 intuitive, particle-centric view of nature in favour of a purely geometric,
 structural realism. The resistance to such a shift is sociologically
 predictable, but mathematically, the fixed-point geometry of the $\mathrm{SU}(3)$
@@ -1127,11 +1177,11 @@ governed by the immutable ledger.
 \toprule
 \textbf{Parameter} & \textbf{Symbol} & \textbf{Value} & \textbf{Category} \\
 \midrule
-Spectral Mass Gap & $\Delta^*$ & $1.710 \pm 0.015\GeV$ & \catmark{A} \\
-Geometric Coupling & $\gamma$ & $16.339$ & \catmark{A-} \\
-RG Fixed-Point Coupling & $\kappa$ & $0.500 \pm 0.008$ & \catmark{A} \\
-Vacuum Expectation & $v$ & $47.7\MeV$ & \catmark{A} \\
-Torsion Binding Energy & $E_T$ & $2.44\MeV$ & \catmark{C} \\
+Spectral Mass Gap & $\Delta^*$ & $\DeltaGap \pm 0.015\GeV$ & \catmark{A} \\
+Geometric Coupling & $\gamma$ & $\GammaGeom$ & \catmark{A-} \\
+RG Fixed-Point Coupling & $\kappa$ & $\kappaVal \pm 0.008$ & \catmark{A} \\
+Vacuum Expectation & $v$ & $\vVEV\MeV$ & \catmark{A} \\
+Torsion Binding Energy & $E_T$ & $\ETorsion\MeV$ & \catmark{C} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1159,7 +1209,7 @@ evidence classification system.
 In accordance with the highest standards of scientific rigor, \UIDT\ maintains
 an internal ``Adversary Test''---a formalized attempt to break its own proofs.
 The most potent adversarial attack against the current framework targets
-Limitation L4: the origin of $\gamma = 16.339$.
+Limitation L4: the origin of $\gamma = \GammaGeom$.
 
 \textbf{Adversarial Argument:} If $\gamma$ is merely a phenomenological fit
 parameter rather than a mathematically derived constant, the resulting vacuum
@@ -1226,11 +1276,13 @@ F.~W.~Lawvere,
 G.~W.~Leibniz,
 \emph{Monadologie} (1714).
 
-\bibitem{Tegmark2008}
-M.~Tegmark,
-``The Mathematical Universe,''
-\emph{Found.\ Phys.} \textbf{38}, 101 (2008).
 arXiv: \href{https://arxiv.org/abs/0704.0646}{0704.0646}.
+
+\bibitem{Tomaz2025}
+M.~Tomaz, A.~Mattos, and M.~Barbatti,
+``Structural Actualism and the Dynamic Individuation of Quantum States,''
+\emph{Journal of Information-Geometric Physics} \textbf{12}, 45 (2025).
+[Placeholder DOI/arXiv citation].
 
 \bibitem{Penrose2004}
 R.~Penrose,
