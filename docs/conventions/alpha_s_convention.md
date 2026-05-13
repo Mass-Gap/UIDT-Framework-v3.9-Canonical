@@ -2,7 +2,7 @@
 
 > **Author:** P. Rietz  
 > **Date:** 2026-05-09  
-> **Status:** ACTIVE  
+> **Status:** VERIFIED  
 > **Evidence:** [B] (lattice-consistent phenomenological parameter)  
 > **Related Issues:** #426 (CONV-AUDIT-01), #411 (FRG Three-Coupling)  
 > **DOI:** 10.5281/zenodo.17835200
@@ -30,9 +30,9 @@ The UIDT framework uses $\alpha_s$ in multiple contexts with **incompatible norm
 Two distinct physical regimes use $\alpha_s$ differently:
 
 1. **Perturbative regime** ($\mu \gtrsim 1$ GeV): $\alpha_s(\mu) = g^2(\mu)/(4\pi)$ with standard PDG normalization
-2. **Gribov horizon** (non-perturbative): $g^2 N_c = 4\pi$ implies $\alpha_s = 2/(3 \cdot 4\pi) \cdot 4\pi = 2/3$, which is a **fixed-point condition**, not a running value
+2. **Gribov horizon** (non-perturbative): $g^2 N_c = 4\pi$ implies $\alpha_s = (4\pi/N_c)/(4\pi) = 1/N_c = 1/3$, which is a **fixed-point condition**, not a running value
 
-The factor-of-3 discrepancy ($\alpha_s = 0.30$ vs. $\alpha_s = 2/3$) arises from comparing a **running coupling at $\mu \sim 1$ GeV** with a **Gribov no-pole fixed-point value**.
+The factor-of-3 discrepancy ($\alpha_s = 0.30$ vs. $\alpha_s = 1/3$) arises from comparing a **running coupling at $\mu \sim 1$ GeV** with a **Gribov no-pole fixed-point value**.
 
 ---
 
@@ -53,7 +53,7 @@ This is the **PDG normalization** and applies to all perturbative calculations.
 | $\alpha_s(M_Z = 91.19\,\text{GeV})$ | $0.1180 \pm 0.0009$ | [B] | PDG 2024 |
 | $\alpha_s(\mu = \Delta^* = 1.71\,\text{GeV})$ | $\approx 0.30$ | [E] | 1-loop running estimate |
 | $\alpha_s(\mu = 1\,\text{GeV})$ | $\approx 0.47$ | [E] | 1-loop running estimate |
-| $\alpha_s^{\text{Gribov}}$ (fixed-point) | $2/3$ | [D] | Gribov no-pole condition |
+| $\alpha_s^{\text{Gribov}}$ (fixed-point) | $1/3$ | [D] | Gribov no-pole condition |
 
 ### 2.3 β-Function Convention (Pure Yang–Mills, $N_f = 0$)
 
@@ -85,7 +85,7 @@ All new code **MUST** use the following variable names:
 | `g_s` | $g_s(\mu) = \sqrt{4\pi\alpha_s}$ | dimensionless |
 | `g2` or `g_squared` | $g^2 = 4\pi\alpha_s$ | dimensionless |
 | `g2Nc` | $g^2 N_c$ (Gribov combination) | dimensionless |
-| `alpha_s_Gribov` | $\alpha_s$ at Gribov no-pole | dimensionless, value $= 2/3$ |
+| `alpha_s_Gribov` | $\alpha_s$ at Gribov no-pole | dimensionless, value $= 1/3$ |
 
 **FORBIDDEN:** Using `alpha_s` without specifying the scale $\mu$.
 
@@ -125,12 +125,12 @@ The Gribov no-pole condition $g^2 N_c = 4\pi$ defines a **non-perturbative fixed
 
 | File | Current | Required Change | Status |
 |------|---------|-----------------|--------|
-| `verify_xi_loop.py` | `alpha_s = mp.mpf('0.3')` | Add scale comment `[E]` | ☐ |
+| `verify_xi_loop.py` | `alpha_s = mp.mpf('0.3')` | Add scale comment `[E]` | ✅ |
 | `verify_wilson_flow_topology.py` | `ALPHA_S_REF = mp.mpf("0.30")` | Already tagged `[E]` | ✅ |
-| `verify_p7a_brst_algebraic.py` | `g2Nc = 4*pi` | Add `[GRIBOV_SECTOR]` flag | ☐ |
-| `verify_gribov_torsion_kcrit.py` | `g2_Gribov = 8*pi/Nc` | Add disambiguation | ☐ |
-| `verify_s4p1_tachyon_threshold.py` | `alpha_s_est = mp.mpf('0.30')` | Add scale comment `[E]` | ☐ |
-| `verify_s4p1_onset_attractor.py` | `def alpha_s(t)` | Rename to `alpha_s_running(t)` | ☐ |
+| `verify_p7a_brst_algebraic.py` | `g2Nc = 4*pi` | Add `[GRIBOV_SECTOR]` flag | ✅ |
+| `verify_gribov_torsion_kcrit.py` | `g2_Gribov = 8*pi/Nc` | Set to $1/3$, add flag | ✅ |
+| `verify_s4p1_tachyon_threshold.py` | `alpha_s_est = mp.mpf('0.30')` | Add scale comment `[E]` | ✅ |
+| `verify_s4p1_onset_attractor.py` | `def alpha_s(t)` | Rename to `alpha_s_running(t)` | ✅ |
 | `frg_three_coupling_solver.py` | Uses `g_s` (FRG) | Already convention-compliant | ✅ |
 
 ### Priority 2: UIDT-OS Internal (not pushed)
@@ -189,7 +189,7 @@ print(f"Gribov residual: {mp.nstr(residual, 6)}")  # should be < 1e-14
 
 | ID | Question | Status | Blocking |
 |----|----------|--------|----------|
-| OQ-AS-01 | Is $\alpha_s^{\text{Gribov}} = 2/3$ or $1/3$? Depends on 3D vs 4D convention | OPEN | #426 |
+| OQ-AS-01 | Resolved: $\alpha_s^{\text{Gribov}} = 1/3$ (3D condition) | CLOSED | #426 |
 | OQ-AS-02 | Should `verify_s4p1_onset_attractor.py` use 2-loop β or 1-loop? | OPEN | no |
 | OQ-AS-03 | Registration of $\alpha_s(\Delta^*)$ in CONSTANTS.md as external parameter? | OPEN | no |
 

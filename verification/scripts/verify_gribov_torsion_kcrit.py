@@ -54,18 +54,18 @@ def run_gribov_torsion_verification():
     # ============================================================
     # GRIBOV-KOPPLUNG AM HORIZONT
     # ============================================================
-    # No-pole-Bedingung (4D, SU(N_c)): g^2 = 8*pi/N_c
-    g2_Gribov  = 8 * pi / Nc
-    alpha_s_G  = g2_Gribov / (4 * pi)   # = 2/3
+    # No-pole-Bedingung (3D Gribov sector): g^2*Nc = 4*pi [GRIBOV_SECTOR]
+    g2_Gribov  = 4 * pi / Nc
+    alpha_s_G  = g2_Gribov / (4 * pi)   # = 1/Nc = 1/3
 
     print(f"\nGRIBOV-HORIZONT-KOPPLUNG:")
-    print(f"g²_G = 8π/N_c = {mp.nstr(g2_Gribov, 15)}")
-    print(f"α_s(Horizont) = 2/3 = {mp.nstr(alpha_s_G, 15)}")
+    print(f"g²_G = 4π/N_c = {mp.nstr(g2_Gribov, 15)}")
+    print(f"α_s(Horizont) = 1/3 = {mp.nstr(alpha_s_G, 15)}")
 
-    # Residual-Check: alpha_s = 2/3 exakt
-    alpha_s_exact = mp.mpf('2') / mp.mpf('3')
+    # Residual-Check: alpha_s = 1/3 exakt
+    alpha_s_exact = mp.mpf('1') / mp.mpf('3')
     residual_alpha = abs(alpha_s_G - alpha_s_exact)
-    print(f"Residual |α_s - 2/3| = {mp.nstr(residual_alpha, 5)}")
+    print(f"Residual |α_s - 1/3| = {mp.nstr(residual_alpha, 5)}")
     if residual_alpha < mp.mpf('1e-14'):
         print("  PASS: Residual < 1e-14")
     else:

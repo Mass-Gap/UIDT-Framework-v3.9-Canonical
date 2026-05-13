@@ -71,7 +71,7 @@ def verify_xi_loop():
 
     print()
     print("--- YM sector dominance over xi-loop ---")
-    alpha_s = mp.mpf('0.3')
+    alpha_s = mp.mpf('0.3')  # mu = Delta* = 1.710 GeV [E]
     g2_UV   = 4 * mp.pi * alpha_s
     eta_A_YM = b0 * g2_UV / (16 * mp.pi**2)
     dominance = eta_A_YM / eta_A_xi_UV
