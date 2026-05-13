@@ -66,3 +66,27 @@ LICENSE.md @badbugs.arts
 # === GITLAB CONFIGURATION ===
 /.gitlab/ @badbugs.arts
 CODEOWNERS @badbugs.arts
+
+# ===========================================================================
+# RESEARCH-GRADE GOVERNANCE LAYER - TKT-2026-05-13-research-grade-governance-1
+# ===========================================================================
+# ROLE DEFINITIONS:
+#   Maintainer:           Final merge authority (P. Rietz @badbugs.arts)
+#   Verification Reviewer: Numerical determinism, residual audits, hash checks
+#   Scientific Reviewer:  Physics consistency, symbolic verification, citations
+#   Security Reviewer:    Supply-chain integrity, SBOM, secret auditing
+#
+# MANDATORY TIERS:
+#   core/ changes -> Scientific Reviewer + Verification Reviewer approval
+#   CANONICAL/ changes -> Maintainer (PI) sign-off only
+#   scripts/ changes -> Maintainer approval
+# ===========================================================================
+
+# === NEW GOVERNANCE SCRIPTS (TKT-2026-05-13) ===
+/scripts/ @badbugs.arts
+
+# === DRIFT FORENSICS SCRIPT ===
+/verification/scripts/drift_analysis.py @badbugs.arts
+
+# === AUDIT TRAIL (CI-generated, PI-reviewed before archive) ===
+/AUDIT_TRAIL/ @badbugs.arts
