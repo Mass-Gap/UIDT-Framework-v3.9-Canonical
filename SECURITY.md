@@ -1,48 +1,50 @@
-# Security Policy
+# Security Policy - UIDT Framework v3.9
+
+## Reporting Security Issues
+
+To report a security vulnerability, please contact the maintainer:
+
+- **Maintainer**: P. Rietz (@badbugs.arts)
+- **Method**: Open a confidential issue in this project
+
+Do NOT create a public issue for security vulnerabilities.
 
 ## Supported Versions
 
 | Version | Supported |
-|---------|----------|
-| v3.9.x  | ✅ Active |
-| v3.7.x  | ⚠️ Critical fixes only |
-| < v3.7  | ❌ End of life |
+|---|---|
+| v3.9.x | Yes (current) |
+| < v3.9 | No |
 
-## Reporting a Vulnerability
+## Security Principles
 
-If you discover a security vulnerability, a data integrity issue, or a scientific
-error with security implications in this repository, please report it responsibly.
+### Data Integrity
+- Canonical constants are read-only in CI/CD scope
+- Changes to CANONICAL/ and LEDGER/ require PI approval
+- Commits tracked with SHA256 manifests in audit trail
 
-**Contact:** badbugs.arts@gmail.com  
-**Subject format:** `[SECURITY] UIDT v3.9 - <Brief Description>`
+### Access Control
+- Branch main: protected, no direct push, no self-merge
+- Release tags v3.9.*: Maintainers only
+- CODEOWNERS routes all approvals to @badbugs.arts
 
-**Response timeline:**
-- Acknowledgment: within 48 hours
-- Initial assessment: within 7 days
-- Resolution or public disclosure decision: within 30 days
+### CI/CD Security
+- All secrets stored as masked CI/CD variables (never in files)
+- GH_TOKEN is masked and protected
+- Deploy tokens are read-only
+- Sub-agents have no git commit access
 
-## Scope
+### AI Agent Security
+- AI agents operate under scope limitations (see AGENTS.md)
+- Sub-agents may not commit to any git branch directly
+- Jules Junior Lead scope is limited to non-protected paths
+- Agent outputs go to agent-output/ or reports/ directories
 
-This policy covers:
-- Verification scripts (`verification/scripts/`)
-- Core proof engine (`core/`)
-- Physical modules (`modules/`)
-- Canonical parameter files (`CANONICAL/`)
-- Ledger and claims database (`LEDGER/`)
+## Responsible Disclosure
 
-## Out of Scope
+Security researchers who report valid vulnerabilities will be credited (with permission) in the CHANGELOG.
 
-- Theoretical disputes about the UIDT framework (use GitHub Issues instead)
-- Minor documentation typos
+## Known Constraints
 
-## Dependencies
-
-Security-relevant dependencies are pinned to standard scientific computing libraries:
-`numpy`, `scipy`, `mpmath`, `matplotlib`. No network-facing services are included.
-
-## Docker
-
-Docker environments in `verification/docker/` run without root privileges
-and use a minimal attack surface.
-
-**License:** CC BY 4.0 — P. Rietz (ORCID: 0009-0007-4307-1609)
+- This is a research repository; security model is academic/collaborative
+- Internal governance documents (UIDT-OS, local configs) must never be committed
