@@ -1,68 +1,34 @@
-# =============================================================
-# CODEOWNERS — UIDT Framework v3.9 Governance
-# Maintainer: P. Rietz (@badbugs.arts)
-# All PRs require approval from the designated codeowner(s).
-# Branch main is protected — no direct push, no self-merge.
-# =============================================================
+# UIDT Framework Code Owners
+# Defines who must review and approve changes to specific paths
 
-# === DEFAULT (catch-all) ===
-* @badbugs.arts
+# Default owner for everything
+* @Mass-Gap/P-Rietz
 
-# === PROTECTED CORE MATHEMATICS ===
-# Dual codeowner approval required — never modify without PI sign-off
-/core/ @badbugs.arts
-/modules/ @badbugs.arts
+# Protected Core Mathematics (Dual Approval Required)
+/core/ @Mass-Gap/P-Rietz
+/modules/ @Mass-Gap/P-Rietz
 
-# === CANONICAL CONSTANTS & LEDGER ===
-# gamma=16.339 is A- calibrated, read-only without PI-approval
-/CANONICAL/ @badbugs.arts
-/LEDGER/ @badbugs.arts
-/LEDGER/CLAIMS.json @badbugs.arts
+# Canonical Constants & Claims (Dual Approval Required)
+/CANONICAL/ @Mass-Gap/P-Rietz
+/LEDGER/CLAIMS.json @Mass-Gap/P-Rietz
 
-# === VERIFICATION SUITE ===
-/verification/ @badbugs.arts
+# Verification Suite (Single Approval)
+/verification/ @Mass-Gap/P-Rietz
 
-# === CLAY SUBMISSION PACKAGE ===
-# Dual approval: PI + second maintainer
-/clay-submission/ @badbugs.arts
+# Documentation (Single Approval)
+/docs/ @Mass-Gap/P-Rietz
 
-# === MANUSCRIPT / DOCS ===
-/manuscript/ @badbugs.arts
-/docs/ @badbugs.arts
+# Clay Submission Package (Dual Approval Required)
+/clay-submission/ @Mass-Gap/P-Rietz
 
-# === SECURITY & GOVERNANCE FILES ===
-# NEVER commit UIDT-OS, SECURITY.md internal details, AGENTS.md
-SECURITY.md @badbugs.arts
-README.md @badbugs.arts
-CHANGELOG.md @badbugs.arts
-LICENSE.md @badbugs.arts
+# Manuscript (Single Approval)
+/manuscript/ @Mass-Gap/P-Rietz
 
-# === CI/CD CONFIGURATION ===
-.gitlab-ci.yml @badbugs.arts
+# Simulation Scripts (Single Approval)
+/simulation/ @Mass-Gap/P-Rietz
 
-# === RELEASE TAGS (v3.9.* protected, Maintainers only) ===
-# Enforced via: Settings -> Repository -> Protected Tags
-# -> v3.9.* -> Maintainers
-
-# === JULES JUNIOR LEAD SCOPE ===
-# Jules MAY modify (within constraints from AGENTS-13.md)
-# - classification labels in comments/docstrings
-# - documentation, docstrings, README sections
-# - verification/tests (add only, never delete >10 lines)
-# Jules MUST NOT modify:
-# - core/, modules/, CANONICAL/, LEDGER/
-# - Any file tagged [PROTECTED] or [CANONICAL]
-# - Self-merge or approve own PRs
-
-# === STRATUM EVIDENCE FILES ===
-/evidence/ @badbugs.arts
-/stratum/ @badbugs.arts
-
-# === AGENT OUTPUT DIRECTORIES (read/write for CI agents) ===
-# Sub-agents write here; PI reviews before merge
-/agent-output/ @badbugs.arts
-/reports/ @badbugs.arts
-
-# === GITLAB CONFIGURATION ===
-/.gitlab/ @badbugs.arts
-CODEOWNERS @badbugs.arts
+# Metadata & Governance (Single Approval)
+/metadata/ @Mass-Gap/P-Rietz
+/.github/ @Mass-Gap/P-Rietz
+/CONTRIBUTING.md @Mass-Gap/P-Rietz
+/SECURITY.md @Mass-Gap/P-Rietz
