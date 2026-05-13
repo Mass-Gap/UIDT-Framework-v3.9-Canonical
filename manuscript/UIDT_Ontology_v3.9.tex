@@ -142,18 +142,21 @@
 \newcommand{\Sx}{S(x)}
 
 %===================================================================
-% UIDT IMMUTABLE PARAMETER LEDGER MACROS (v3.9.5, Evidence A / A-)
+% UIDT IMMUTABLE PARAMETER LEDGER MACROS (v3.9.5, synced 2026-05-13)
+% Source: CANONICAL/CONSTANTS.md v3.9.5 (TKT-20260403-LAMBDA-FIX)
 %===================================================================
 \newcommand{\DeltaGap}{\ensuremath{1.710 \pm 0.015\GeV}}        % [A]
-\newcommand{\GammaGeom}{\ensuremath{16.339}}                     % [A-]
-\newcommand{\GammaInf}{\ensuremath{16.3437 \pm 0.0005}}          % [B]  FSS thermodynamic limit
+\newcommand{\GammaGeom}{\ensuremath{16.339}}                     % [A-]  ALWAYS A-; L4 open
+\newcommand{\GammaInf}{\ensuremath{16.3437 \pm 0.0005}}          % [B]   FSS thermodynamic limit (L->inf)
 \newcommand{\vVEV}{\ensuremath{47.7\MeV}}                        % [A]
-\newcommand{\ETorsion}{\ensuremath{2.44 \pm 0.08\MeV}}           % [C]  3.75sigma FLAG tension; no ext. crosscheck
-\newcommand{\LambdaGrid}{\ensuremath{0.660 \pm 0.005\,\mathrm{nm}}}% [A]
+\newcommand{\ETorsion}{\ensuremath{2.44 \pm 0.08\MeV}}           % [C]   3.75sigma FLAG tension; no ext. crosscheck
+\newcommand{\LambdaGrid}{\ensuremath{0.660 \pm 0.005\,\mathrm{nm}}}% [C]
 \newcommand{\KappaRG}{\ensuremath{0.500 \pm 0.008}}              % [A]
-\newcommand{\LambdaS}{\ensuremath{0.416 \pm 0.007}}              % [A] exact: 5/12 = 5kappa^2/3 (TKT-20260403-LAMBDA-FIX)
-\newcommand{\deltaGamma}{\ensuremath{0.0047}}                    % [B]  FSS value; physical interpretation [D]
-\newcommand{\wZero}{\ensuremath{-0.99}}                          % [C]  Decision D-002
+% λ_S: exact RG fixed-point definition 5κ²/3 = 5/12 = 0.41̄6̄  [A]
+% TKT-20260403-LAMBDA-FIX: old value 0.417 was rounded; exact is 5/12
+\newcommand{\LambdaS}{\ensuremath{\tfrac{5}{12} \approx 0.41\overline{6} \pm 0.007}} % [A] exact: 5kappa^2/3
+\newcommand{\deltaGamma}{\ensuremath{0.0047}}                    % [B]   FSS value (CONSTANTS.md v3.9.5); physical interpretation [D]
+\newcommand{\wZero}{\ensuremath{-0.99}}                          % [C]   Decision D-002
 
 %=============================================================================
 % TCOLORBOX ENVIRONMENTS
@@ -513,10 +516,10 @@ The dimensionless geometric coupling $\gamma \equiv \Delta / \sqrt{K_S}$ (where 
 
 \begin{evidencebox}[RG Fixed-Point Constraint]{catA}
 \textbf{Category A: Mathematically Proven.}
-The scalar self-coupling $\lambda_S$ and gauge coupling $\kappa$ are mathematically bound by the fundamental constraint $5\kappa^2 = 3\lambda_S$. With canonical $\kappa = \KappaRG$, the resulting $\lambda_S = \LambdaS$ (exact value: $5/12$) identically satisfies this fixed-point condition with numerical residuals $< 10^{-14}$ under 80-digit mpmath precision (mp.dps=80, local scope per UIDT Constitution).
+The scalar self-coupling $\lambda_S$ and gauge coupling $\kappa$ are mathematically bound by the fundamental constraint $5\kappa^2 = 3\lambda_S$. With canonical $\kappa = \KappaRG$, the resulting $\lambda_S = \LambdaS$ (exact value: $5/12$, per TKT-20260403-LAMBDA-FIX) identically satisfies this fixed-point condition with numerical residuals $< 10^{-14}$ under 80-digit mpmath precision (mp.dps=80, local scope per UIDT Constitution).
 \end{evidencebox}
 
-\textbf{Working Hypothesis on Scalar Mass:} The prediction of a scalar resonance at $m_S = 1.705 \pm 0.015\GeV$~\catmark{D} relies on the working hypothesis $m_S \approx \Delta^*$. We explicitly note that the lowest-order perturbative derivation ($m_S^2 = 2\lambda_S v^2$) yields $\approx 43.5\MeV$, exposing a critical gap in the mass generation mechanism that remains open research (Issue \#413).
+\textbf{Working Hypothesis on Scalar Mass:} The prediction of a scalar resonance at $m_S = 1.705 \pm 0.015\GeV$~\catmark{D} relies on the working hypothesis $m_S \approx \Delta^*$. We explicitly note that the lowest-order perturbative derivation ($m_S^2 = 2\lambda_S v^2$) yields $\approx 43.5\MeV$, exposing a critical gap in the mass generation mechanism that remains open research (Issue \#413). This discrepancy does not affect the RG fixed-point proof \catmark{A} but must be resolved before $m_S$ can be elevated beyond \catmark{D}.
 
 %=============================================================================
 % SECTION 9 -- CONSCIOUSNESS & ATTENTION
@@ -778,7 +781,7 @@ It is an ontology of absolute austerity. The predictive power rests on its kill-
 Spectral Mass Gap & $\Delta^*$ & $\DeltaGap$ & \catmark{A} & Analytical proof \\
 Geometric Coupling & $\gamma$ & $\GammaGeom$ & \catmark{A-} & Kinetic matching \\
 RG Fixed-Point Coupling & $\kappa$ & $\KappaRG$ & \catmark{A} & \\
-Scalar Self-Coupling & $\lambda_S$ & $\LambdaS$ & \catmark{A} & $5\kappa^2/3 \equiv 5/12$ (exact) \\
+Scalar Self-Coupling & $\lambda_S$ & $\LambdaS$ & \catmark{A} & $5\kappa^2/3 \equiv 5/12$ (exact, TKT-20260403-LAMBDA-FIX) \\
 Vacuum Expectation & $v$ & $\vVEV$ & \catmark{A} & \\
 Torsion Binding Energy & $E_T$ & $\ETorsion$ & \catmark{C} & $3.75\sigma$ FLAG tension; no ext.\ crosscheck \\
 \bottomrule
