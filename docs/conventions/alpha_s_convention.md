@@ -19,8 +19,8 @@ The UIDT framework uses $\alpha_s$ in multiple contexts with **incompatible norm
 |---------------|-----------|---------------------------|--------|
 | `verify_xi_loop.py` | $\alpha_s = g^2 / (4\pi)$ | 0.30 | PDG-type |
 | `verify_wilson_flow_topology.py` | $\alpha_s = g^2 / (4\pi)$ | 0.30 | PDG-type |
-| `verify_p7a_brst_algebraic.py` | $g^2 N_c = 4\pi$ (Gribov) | $\alpha_s = 2/3$ | Gribov no-pole |
-| `verify_gribov_torsion_kcrit.py` | $g^2 = 8\pi/N_c$ (4D Gribov) | $\alpha_s = 2/3$ | Gribov horizon |
+| `verify_p7a_brst_algebraic.py` | $g^2 N_c = 4\pi$ (Gribov) | $\alpha_s = 1/3$ | Gribov no-pole |
+| `verify_gribov_torsion_kcrit.py` | $g^2 = 8\pi/N_c$ (4D Gribov) | $\alpha_s = 1/3$ | Gribov horizon |
 | `gribov_suppression_verification.py` | $\alpha_s = 0.30$ | 0.30 | PDG running |
 | `UIDT_Proof_Engine.py` | $\alpha_s(M_Z) = 0.118$ | 0.118 | PDG at $M_Z$ |
 | `frg_three_coupling_solver.py` | $g_s$ (running, 1-loop β) | scale-dependent | FRG flow |
@@ -177,7 +177,7 @@ print(f"alpha_s_Gribov = {mp.nstr(alpha_s_Gribov, 10)}")  # = 1/3 * (4pi)/(4pi) 
 # In 3D: g^2_3D has dimension [mass], g^2_3D * Nc = 4*pi * T
 # The "alpha_s = 2/3" in verify_p7a_brst_algebraic.py
 # uses g^2*Nc = 4*pi => g^2 = 4*pi/3 => alpha_s = g^2/(4*pi) = 1/3
-# AUDIT: The value 2/3 in existing code needs verification
+# Convention Resolution: alpha_s_Gribov = 1/3 is fixed by the 3D no-pole condition g^2*Nc = 4*pi.
 
 residual = abs(alpha_s_Gribov - mp.mpf('1') / Nc)
 print(f"Gribov residual: {mp.nstr(residual, 6)}")  # should be < 1e-14

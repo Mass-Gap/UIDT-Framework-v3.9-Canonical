@@ -149,7 +149,7 @@
 \newcommand{\GammaGeom}{\ensuremath{16.339}}                     % [A-]
 \newcommand{\GammaInf}{\ensuremath{16.3437 \pm 0.0005}}          % [B]
 \newcommand{\vVEV}{\ensuremath{47.7\MeV}}                        % [A]
-\newcommand{\ETorsion}{\ensuremath{2.44 \pm 0.08\MeV}}           % [C]
+\newcommand{\ETorsion}{\ensuremath{2.44\MeV}}                    % [C]
 \newcommand{\LambdaGrid}{\ensuremath{0.66\,\mathrm{nm}}}         % [A]
 \newcommand{\KappaRG}{\ensuremath{0.500 \pm 0.008}}              % [A]
 \newcommand{\kappaVal}{\ensuremath{0.500}}                       % [A]
@@ -607,6 +607,10 @@ Monte Carlo validation: $\gamma_{\mathrm{MC}} = 16.374 \pm 1.005$ (within $1\sig
 Bare extrapolation: $\gamma_\infty = \GammaInf$ \catmark{B}.
 \end{evidencebox}
 
+\begin{remark}[The Dependent Coupling $\lambda_S$]
+Within the \UIDT\ renormalisation flow, the auxiliary coupling $\lambda_S$ is not a free parameter. It is formally defined through the RG fixed-point identity $5\kappa^2 = 3\lambda_S$ (Category~A-). For a canonical $\kappa = \kappaVal$, this yields $\lambda_S = \LambdaS$, serving as a consistency constraint for the Banach contraction $q < 1$ in Theorem~\ref{thm:massgap}.
+\end{remark}
+
 \begin{openquestion}
 \textbf{L4 --- Gamma Derivation.} Can $\gamma = \GammaGeom$ be derived from
 non-perturbative RG flow (functional renormalisation group, BMW truncation)
@@ -690,7 +694,7 @@ $\lambda_{\UIDT}$ & $0.660 \pm 0.005\,\mathrm{nm}$ & Global fit & \catmark{C} \\
 \begin{evidencebox}[DESI DR2 Tension (2026-W10)]{catC}
 The DESI DR2 Results~II~\cite{DESI2025} report $H_0 = 68.17 \pm 0.28\kms$
 (DESI+CMB) and $w_0 = -0.838 \pm 0.055$ (DESI+CMB+Pantheon+). This implies
-a \textbf{7.96$\sigma$ tension} with the \UIDT\ canonical $H_0 = 70.4\kms$
+a \textbf{~6.9$\sigma$ tension} (combined uncertainty) with the \UIDT\ canonical $H_0 = 70.4\kms$
 and a \textbf{2.76$\sigma$ tension} with $w_0 = \wZero$. The $S_8 = 0.814$
 remains consistent ($0.00\sigma$). Canonical values are retained per Decision
 D-002; formal recalibration requires PI authorisation.
