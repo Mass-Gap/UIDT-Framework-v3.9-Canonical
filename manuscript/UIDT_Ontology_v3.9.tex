@@ -149,10 +149,13 @@
 \newcommand{\GammaGeom}{\ensuremath{16.339}}                     % [A-]  ALWAYS A-; L4 open
 \newcommand{\GammaInf}{\ensuremath{16.3437 \pm 0.0005}}          % [B]   FSS thermodynamic limit (L->inf)
 \newcommand{\vVEV}{\ensuremath{47.7\MeV}}                        % [A]
-\newcommand{\ETorsion}{\ensuremath{2.44 \pm 0.08\MeV}}           % [C]   3.75sigma FLAG tension; no ext. crosscheck
+% FIX 2026-05-13: removed undocumented +/-0.08 MeV uncertainty.
+% CONSTANTS.md v3.9.5 lists E_T = 2.44 MeV [C] with empty uncertainty field.
+% Re-add only after documenting propagation method in CONSTANTS.md first.
+\newcommand{\ETorsion}{\ensuremath{2.44\MeV}}                    % [C]   3.75sigma FLAG tension; no ext. crosscheck; uncertainty undocumented
 \newcommand{\LambdaGrid}{\ensuremath{0.660 \pm 0.005\,\mathrm{nm}}}% [C]
 \newcommand{\KappaRG}{\ensuremath{0.500 \pm 0.008}}              % [A]
-% λ_S: exact RG fixed-point definition 5κ²/3 = 5/12 = 0.41̄6̄  [A]
+% lambda_S: exact RG fixed-point definition 5kappa^2/3 = 5/12 = 0.41bar6bar  [A]
 % TKT-20260403-LAMBDA-FIX: old value 0.417 was rounded; exact is 5/12
 \newcommand{\LambdaS}{\ensuremath{\tfrac{5}{12} \approx 0.41\overline{6} \pm 0.007}} % [A] exact: 5kappa^2/3
 \newcommand{\deltaGamma}{\ensuremath{0.0047}}                    % [B]   FSS value (CONSTANTS.md v3.9.5); physical interpretation [D]
@@ -274,7 +277,7 @@ isomorphism mapping the vacuum scalar field onto metamaterial profiles.
 \\
 \vspace{0.3em}
 
-Crucially, this paper establishes a \emph{Three-Tier Epistemic Architecture}, decoupling mathematically rigorous physics from structural interpretation and foundational metaphysics. We assess the survival probabilities of these layers, integrate advanced attention-mechanism analogues for vacuum self-interaction, and outline a deterministic mathematical pathway for generating the lepton mass matrix to address the $23\%$ CODATA anomaly (Limitation L2). Every known limitation L1--L6 is transparently disclosed. The ontological position advanced is neither na\"ive Platonism nor computational simulation: it is the rigorous claim that sufficiently constrained mathematical structure does not describe physical reality, but constitutes it.
+Crucially, this paper establishes a \emph{Three-Tier Epistemic Architecture}, decoupling mathematically rigorous physics from structural interpretation and foundational metaphysics. We assess the survival probabilities of these layers, integrate advanced attention-mechanism analogues for vacuum self-interaction, and outline a deterministic mathematical pathway for generating the lepton mass matrix to address the $23\%$ CODATA anomaly (Limitation L2). Every known limitation L1--L7 is transparently disclosed. The ontological position advanced is neither na\"ive Platonism nor computational simulation: it is the rigorous claim that sufficiently constrained mathematical structure does not describe physical reality, but constitutes it.
 \end{abstract}
 
 %=============================================================================
@@ -724,7 +727,7 @@ The \UIDT\ framework extends its testability through a rigorous mathematical iso
 \section{Known Limitations and the Boundary of Knowledge}
 \label{sec:limitations}
 
-\UIDT\ operates with six formally recognised limitations:
+\UIDT\ operates with seven formally recognised limitations:
 \begin{enumerate}[label=\textbf{L\arabic*:}, leftmargin=*]
   \item \textbf{The $10^{10}$ Geometric Factor.} Unexplained scaling constant.
   \item \textbf{Electron Mass Residual.} $23\%$ discrepancy requiring a Lepton extension.
@@ -732,6 +735,7 @@ The \UIDT\ framework extends its testability through a rigorous mathematical iso
   \item \textbf{Gamma Invariant Origin (\catmark{A-}).} Phenomenological calibration.
   \item \textbf{The $N=99$ RG Steps (\catmark{C}).} Empirically chosen, not first-principles.
   \item \textbf{Glueball $f_0(1710)$ Retraction (\catmark{E}).} $\Delta$ is spectral, not a particle.
+  \item \textbf{$H_0$ Tension (\catmark{C}).} The canonical $H_0 = 70.4 \pm 0.16\kms$ \catmark{C} (DESI DR2 calibrated) exhibits a \textbf{7.96$\sigma$ tension} against DESI+CMB ($68.17 \pm 0.28\kms$). This tension is \emph{not} resolved by \UIDT; it is a known calibration limitation pending PI authorisation for formal recalibration (Decision D-002).
 \end{enumerate}
 
 %=============================================================================
@@ -743,7 +747,7 @@ The \UIDT\ framework extends its testability through a rigorous mathematical iso
 While the $\mathrm{SU}(3)$ bosonic sector is mathematically self-consistent under the current axioms, Limitation L2 (the $23\%$ electron mass residual) demands a concrete expansion into the fermionic sector. If $S(x)$ is the sole primordial field, the Standard Model Higgs mechanism must emerge as an effective geometric limit.
 
 \subsection{Torsion-Mediated Lepton Mass Generation}
-To integrate leptons into Layer I physics, we propose replacing the standard Higgs Yukawa interaction with a dynamically generated effective mass matrix mediated by the UIDT torsion structure energy $E_T = \ETorsion$.
+To integrate leptons into Layer I physics, we propose replacing the standard Higgs Yukawa interaction with a dynamically generated effective mass matrix mediated by the UIDT torsion structure energy $E_T = \ETorsion$ \catmark{C}.
 
 The effective action for a fermion $\psi_i$ coupling to the vacuum density $S(x)$ is proposed as:
 \begin{equation}
@@ -783,7 +787,7 @@ Geometric Coupling & $\gamma$ & $\GammaGeom$ & \catmark{A-} & Kinetic matching \
 RG Fixed-Point Coupling & $\kappa$ & $\KappaRG$ & \catmark{A} & \\
 Scalar Self-Coupling & $\lambda_S$ & $\LambdaS$ & \catmark{A} & $5\kappa^2/3 \equiv 5/12$ (exact, TKT-20260403-LAMBDA-FIX) \\
 Vacuum Expectation & $v$ & $\vVEV$ & \catmark{A} & \\
-Torsion Binding Energy & $E_T$ & $\ETorsion$ & \catmark{C} & $3.75\sigma$ FLAG tension; no ext.\ crosscheck \\
+Torsion Binding Energy & $E_T$ & $\ETorsion$ & \catmark{C} & $3.75\sigma$ FLAG tension; no ext.\ crosscheck; uncertainty undocumented \\
 \bottomrule
 \end{tabular}
 \end{table}
