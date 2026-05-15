@@ -21,7 +21,7 @@ CA        = Nc
 b0        = 11 * CA / (12 * mp.pi)
 
 
-def alpha_s(t: mp.mpf) -> mp.mpf:
+def alpha_s_running(t: mp.mpf) -> mp.mpf:
     """1-Loop laufendes α_s, t = ln(k/Λ)."""
     denom = 1 + b0 * ALPHA_UV * (-t)
     if denom < mp.mpf('0.05'):
@@ -32,7 +32,7 @@ def alpha_s(t: mp.mpf) -> mp.mpf:
 def c_A_integrand(s: mp.mpf) -> mp.mpf:
     """e^{2s} · c_A(s) für den Attractor-Integral."""
     omega_A = mp.exp(-2 * s)
-    g = alpha_s(s)
+    g = alpha_s_running(s)
     c_A = (Nc**2 - 1) * g / (4 * mp.pi * (1 + omega_A)**2)
     return mp.exp(2 * s) * c_A
 
@@ -55,7 +55,7 @@ def verify_regulator_independence() -> bool:
     """C-S4P1-04: Regulator-Unabhängigkeit bei ω_A >> 1."""
     k_crit = mp.mpf('30.79e-3')  # MeV
     omega_A = (DELTA / k_crit)**2
-    g = alpha_s(mp.log(k_crit / DELTA))
+    g = alpha_s_running(mp.log(k_crit / DELTA))
 
     # Litim
     c_litim = (Nc**2 - 1) * g / (4 * mp.pi * (1 + omega_A)**2)

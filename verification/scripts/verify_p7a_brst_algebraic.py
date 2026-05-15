@@ -4,7 +4,7 @@ S4-P7a: BRST-Algebraischer Beweis k_stop = ET*4*pi
 Branch: TKT-20260429-S4-P4-P5-P6-torsion-gluon-first-principles
 
 Hauptergebnis:
-  Unter der Bedingung g^2*Nc = 4*pi (3D Gribov no-pole)
+  Unter der Bedingung g^2*Nc = 4*pi (3D Gribov no-pole) [GRIBOV_SECTOR]
   folgt k_stop = ET*4*pi algebraisch exakt aus
   lambda_min(M_FP^UIDT) = 0.
 
@@ -59,7 +59,7 @@ def run_p7a_brst_algebraic():
     # ============================================================
     print("\nSCHRITT 3: GRIBOV NO-POLE BEDINGUNG")
     g2Nc_val = mp.mpf('4') * pi
-    print(f"  3D Gribov no-pole: g^2*Nc = 4*pi = {mp.nstr(g2Nc_val, 20)}")
+    print(f"  3D Gribov no-pole: g^2*Nc = 4*pi = {mp.nstr(g2Nc_val, 20)} [GRIBOV_SECTOR]")
     print(f"  Evidenz: [D] (Annahme, nicht rigoros hergeleitet)")
 
     # ============================================================
@@ -134,7 +134,7 @@ def run_p7a_brst_algebraic():
     print("=" * 70)
     print(f"  k_stop = ET*4*pi = {mp.nstr(k_stop, 15)} MeV")
     print(f"  Evidence: [D->C-Kandidat]")
-    print(f"  Bedingung: g^2*Nc = 4*pi  (Gribov no-pole, 3D)")
+    print(f"  Bedingung: g^2*Nc = 4*pi  (Gribov no-pole, 3D) [GRIBOV_SECTOR]")
     print(f"  Ratio k_geo/k_stop = {mp.nstr(ratio, 10)}")
     print(f"           ~ sqrt(35/3) = {mp.nstr(ratio_candidate, 10)} (0.07% Abw.)")
     print(f"  Naechster Schritt: g^2*Nc = 4*pi aus BRST-Fixpunkt herleiten  -> [A]")
