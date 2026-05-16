@@ -192,7 +192,7 @@ for Information-Geometric Physics}\\[3em]
 {\small Independent Researcher}\\[3em]
 {\normalsize UIDT Framework v3.9}\\[0.5em]
 {\small DOI: \href{https://doi.org/10.5281/zenodo.17835200}{10.5281/zenodo.17835200}}\\[0.5em]
-{\small 14~May~2026}\\[4em]
+{\small Last updated: 16~May~2026}\\[4em]
 \rule{0.6\textwidth}{0.4pt}\\[1em]
 {\small\itshape ``The universe does not merely contain information ---\\
 it \emph{is} information, reading itself into geometric existence.''}
@@ -231,7 +231,7 @@ profiles.
 
 Every quantitative claim carries an explicit evidence classification (A through
 E), every prediction is accompanied by a falsification criterion, and every
-known limitation (L1--L10) is transparently disclosed. The ontological position
+known limitation (L1--L12) is transparently disclosed. The ontological position
 advanced here is neither na\"ive Platonism nor computational simulation: it is
 the claim that mathematical structure, when sufficiently constrained, does not
 \emph{describe} physical reality but \emph{constitutes} it.
@@ -262,8 +262,9 @@ radical and, in a precise mathematical sense, minimal. It posits a single real
 scalar field $\Sx$ --- the \emph{vacuum information density} --- as the sole
 fundamental degree of freedom. Spacetime geometry, the Yang--Mills mass gap, the
 hierarchy of vacuum energy scales, and the late-time acceleration of the
+universe are all derived from $\Sx$ alone, whose dynamics are
 governed by a Lagrangian whose structure is fixed by gauge invariance, vacuum
-stability, and renormalisability.
+stability, and effective field-theoretic admissibility.
 
 In philosophical terms, \UIDT\ can be classified as a form of \emph{dynamic,
 relational Ontic Structural Realism} (OSR). Unlike traditional structuralism,
@@ -273,6 +274,21 @@ has recently been termed \emph{structural actualism} (cf.\ Tomaz et al.\
 is not prior to, but is continuously individuated by, the dynamic relations
 of the underlying information manifold $S(x)$. Reality is not a collection of
 things, but a process of structural individuation.
+
+This classification must be precisely located within the contemporary
+OSR landscape. \UIDT\ requires neither Esfeld's point-particles with
+purely relational properties (Minimalist Ontology) nor French's eliminative
+dissolution of objects into abstract mathematical structure. Instead, the
+ontically real scalar field $S(x)$ provides the continuous, physical carrier
+from which relational nodes (particles, masses) condense through topological
+discretisation on the Rietz Grid. Furthermore, \UIDT\ sharply diverges from
+Wallace's wavefunction realism, which is typically coupled to the Everett
+multiverse: \UIDT\ is a single-world theory with a deterministic,
+epistemically bounded interpretation of quantum mechanics
+(Section~\ref{subsec:measurement-interpretation}). The field $S(x)$ is thus a
+field-theoretic instantiation of structural realism that preserves the
+epistemological strengths of OSR---the primacy of relations over
+relata---without committing to its ontological extremes.
 
 The present document does not repeat the technical derivations given in the
 companion manuscript~\cite{Rietz2026_Framework}. Its purpose is ontological: to
@@ -336,7 +352,7 @@ physically real (Tegmark), nor that the world consists of monads with
 pre-established harmony (Leibniz). It asserts that \emph{one specific}
 mathematical structure --- the self-interacting vacuum information density ---
 generates what we call physical reality, and that this structure is selected by
-the conjunction of gauge invariance, vacuum stability, and renormalisability.
+the conjunction of gauge invariance, vacuum stability, and effective field-theoretic admissibility.
 
 %--- UPGRADE: Historical embedding of UIDT in pregeometric tradition (Zusammenfassung paper) ---%
 \subsection{Pregeometric Lineage and the Specificity of UIDT}
@@ -361,7 +377,7 @@ a relational graph of interacting constituents.
 not quantise geometry, nor does it discretise spacetime a priori. Instead, it
 derives the \emph{continuum} effective metric $g_{\mu\nu}^{\mathrm{eff}}$ from
 the vacuum configuration of a single scalar field $S(x)$, whose dynamics are
-fixed uniquely by gauge invariance, vacuum stability, and renormalisability.
+fixed uniquely by gauge invariance, vacuum stability, and effective field-theoretic admissibility.
 The quantisation is topological (the mass gap $\Delta$), not geometric. The
 result is an ontology of strict finitude: there is no multiverse of vacua
 (String Theory), no ambiguously defined continuum limit (Causal Sets), and no
@@ -424,11 +440,13 @@ structures are emergent consequences of the dynamics of~$\Sx$.
 \label{ax:gauge}
 The dynamics of $\Sx$ are governed by a Lagrangian density $\mathcal{L}_{\UIDT}$
 that is invariant under $\mathrm{SU}(3)$ gauge transformations and respects vacuum
-stability ($V''(v) > 0$). At the energy scales accessible to current experiments,
-$\mathcal{L}_{\UIDT}$ is renormalisable by power counting and behaves as a
-well-defined effective field theory (EFT). A full UV completion remains an open
-research question (see Limitation~L7); Axiom~\ref{ax:gauge} therefore makes a
-claim about effective renormalisability, not about ultraviolet completeness.
+stability ($V''(v) > 0$). It is formulated as an effective field theory (EFT)
+valid below a UV cutoff $\Lambda_{\UIDT}$. The non-minimal coupling
+$\kappa\, S\, F_{\mu\nu}^a F^{a\mu\nu}$ has mass dimension~5 and is therefore
+\emph{not} renormalisable by strict power counting; its validity is restricted
+to the EFT domain specified by the torsion scale $E_T$
+(see Limitation~L7). A full non-perturbative UV completion remains an open
+research question.
 The minimal realisation satisfying these constraints is:
 \begin{equation}
   \mathcal{L}_{\UIDT} = -\frac{1}{4}F_{\mu\nu}^a F^{a\mu\nu}
@@ -732,6 +750,26 @@ infinite-volume limit. The present result is \emph{local} and
 open mathematical problem (Limitation~L8).
 \end{remark}
 
+\paragraph{Methodological Call to the Lattice Community.}
+The UIDT prediction of a spectral pole at exactly $\Delta = \DeltaGap$ demands
+a dedicated extraction of the Yang--Mills Hamiltonian spectrum in the
+continuum limit. Current state-of-the-art simulations (Athenodorou and
+Teper~\cite{Athenodorou2021}; Morningstar and Peardon~\cite{Morningstar1999})
+achieve excellent control over glueball masses but are subject to
+systematic uncertainties from discretisation effects, finite-volume
+corrections, and topological freezing at fine lattice spacings.
+The UIDT programme calls for: (i)~anisotropic lattice simulations with
+$a < 0.05\,\mathrm{fm}$ and $L > 3\,\mathrm{fm}$ to isolate the spectral
+pole from mixing with multi-gluon continuum states;
+(ii)~the use of parallel-tempering algorithms (as demonstrated by
+Vadacchino at LATTICE2024) to overcome topological freezing at fine
+lattice spacings; and (iii)~a direct extraction of the
+$\mathrm{SU}(3)$ Hamiltonian spectrum, rather than the conventional
+asymptotic correlation-function fits, to distinguish the spectral
+gap from the lowest glueball resonance mass.
+A lattice result excluding $\Delta = 1.710 \pm 0.015\GeV$ at $> 3\sigma$
+would trigger Kill-Switch F1.
+
 \subsection{The Gamma Invariant: \texorpdfstring{$\gamma_{\mathrm{bare}}$}{γ\_bare} versus \texorpdfstring{$\gamma$}{γ}}
 \label{subsec:gamma}
 
@@ -925,7 +963,11 @@ suppression mechanism} that reduces the discrepancy by 117 orders of magnitude:
 \end{equation}
 This achieves 96.7\% phenomenological suppression of the hierarchy. The remaining factor 2.3
 has been identified as a holographic coupling ratio \catmark{B}
-(see Limitation~L3).
+(see Limitation~L3). The holographic factor $\pi^{-2}$ arises from the
+topological transition $S^3 \to S^2$ in the coset structure of the vacuum
+manifold, consistent with the Ryu--Takayanagi formula for holographic
+entanglement entropy~\cite{RyuTakayanagi2006} and with Bekenstein's bound
+on information density~\cite{Bekenstein1973}.
 
 \begin{openquestion}
 \textbf{L5 --- $N = 99$ Steps.} The cascade step count $N = 99$ is
@@ -944,8 +986,28 @@ to \catmark{A-}.
 The above cosmological framework is not merely an effective parameterisation; it
 encodes a specific cosmogonic narrative derived from the first-principles
 dynamics of $S(x)$. The early universe in \UIDT\ is not a spacetime singularity
-but a phase transition of information density. This transition proceeds through
-four distinct phases:
+but a phase transition of information density.
+
+\paragraph{The Two-Phase Architecture.}
+\UIDT\ distinguishes two ontologically distinct phases of cosmic origin:
+\textbf{Phase~A --- Information Inflation:} A logical (not chronological)
+event in which the first distinction $S(x) \neq 0$ generates an explosion
+of relational degrees of freedom. The number of accessible states grows
+as $N_{\text{states}} \sim \exp(\alpha\, t)$ until the Banach fixed point
+at $\Delta = \DeltaGap$ is reached. This phase operates at the level of
+pure relational structure, without metric or temporal coordinate.
+\textbf{Phase~B --- Metric Expansion:} Once the local information density
+exceeds the critical threshold $\rho_{\text{crit}} \sim 10^{93}\;\text{bits/m}^3$,
+the Landauer principle enforces decoherence into a classical, macroscopic
+spacetime. The effective metric $g_{\mu\nu}^{\text{eff}}$ condenses, and
+the subsequent expansion follows the 99-step RG cascade, producing
+$N_{\text{fold}} \approx 34.58$ e-folds of inflationary expansion.
+This two-phase architecture replaces both (i)~the inflaton field of
+standard slow-roll inflation and (ii)~the singular initial condition
+of classical FRW cosmology.
+
+\vspace{0.3em}
+This transition proceeds through four distinct phases:
 
 \begin{enumerate}
   \item \textbf{The First Distinction.} The logical act $S(x) \neq 0$ establishes
@@ -975,6 +1037,19 @@ four distinct phases:
     falsification lever: the confirmed laboratory detection of a fundamental
     dark matter particle would severely strain or refute the \UIDT\ framework.
 \end{enumerate}
+
+\begin{remark}[Thermodynamic consistency of macroscopic $S(x)$ subsystems]
+Both observers (Section~\ref{sec:consciousness}) and SMDS dark matter
+relics are macroscopic configurations of $S(x)$. Their distinction is
+thermodynamic: an observer is a subsystem whose internal complexity
+supports recursive self-modelling above the torsion threshold $E_T$,
+whereas an SMDS halo is a relic configuration whose internal gradients
+remain \emph{below} $E_T$, precluding irreversible lattice fixations.
+Both obey the same entropy gradient of the RG cascade
+(Section~\ref{subsec:time-emergence}); neither violates the second law.
+The capacity for information processing (and hence observation) is a
+threshold property of the lattice dynamics, not a matter of degree.
+\end{remark}
 
 In this narrative, inflation is not a separate phase driven by an inflaton
 field, but the direct consequence of the relaxation of the vacuum information
@@ -1060,19 +1135,19 @@ assert that all mathematical structures are physically real (this would be
 Tegmark's Level~IV multiverse~\cite{Tegmark2008}). It asserts that
 \emph{one specific} structure --- the self-interacting vacuum information
 density governed by~\eqref{eq:lagrangian} --- generates what we call physical
-reality. The selection principle is not anthropic but structural: the Lagrangian is the minimal renormalisable, gauge-invariant, vacuum-stable
+reality. The selection principle is not anthropic but structural: the Lagrangian is the minimal gauge-invariant, vacuum-stable, EFT-admissible
 self-interaction of a real scalar field non-minimally coupled to $\mathrm{SU}(3)$
 gauge fields in $3+1$ spacetime dimensions.  Higher-dimensional operators
-(e.g.\ $\lambda' S^6$ or $\kappa' S^2 F^{\mu\nu}F_{\mu\nu}$) are technically
-renormalisable only in lower dimensions or require an additional symmetry
-argument to exclude; the present claim of minimality does not depend on their
-absence.
+(e.g.\ $\lambda' S^6$ or $\kappa' S^2 F^{\mu\nu}F_{\mu\nu}$) are suppressed
+by the EFT cutoff $\Lambda_{\UIDT}$ and excluded by the requirement of
+minimal operator content; the present claim of minimality does not depend on
+their absence.
 
 This is mathematical realism, but it is not mathematical omniscience. \UIDT\
 acknowledges that its own formal system is subject to G\"odel's incompleteness
 theorems~\cite{Goedel1931}: there may exist true statements about the vacuum
 information density that cannot be derived within the framework. Limitations
-L1--L10 are, in a sense, concrete manifestations of this incompleteness.
+L1--L12 are, in a sense, concrete manifestations of this incompleteness.
 
 The distinction from Bostrom's Simulation Hypothesis~\cite{Bostrom2003} is
 decisive. \UIDT\ does not posit an external simulator or a computational
@@ -1103,7 +1178,8 @@ the $\mathrm{SU}(3)$ dynamics. It is an ontology of strict finitude and
 mathematical determinism.
 
 \paragraph{Versus Entropic Gravity.}
-Verlinde's entropic gravity~\cite{Verlinde2011} derives Newton's laws and general relativity from the thermodynamic tendency of systems to maximise entropy on holographic screens. \UIDT\ shares this core intuition---that gravity is an emergent entropic force driven by information gradients---but advances the programme from a generic thermodynamic postulate to a specific microscopic field theory. Where Verlinde postulates an unspecified entropy functional on holographic surfaces, \UIDT\ identifies the exact scalar field $S(x)$ whose action principle generates these gradients.
+Verlinde's entropic gravity~\cite{Verlinde2011} and Padmanabhan's thermodynamic
+programme~\cite{Padmanabhan2010} derive Newton's laws and general relativity from the thermodynamic tendency of systems to maximise entropy on holographic screens. \UIDT\ shares this core intuition---that gravity is an emergent entropic force driven by information gradients---but advances the programme from a generic thermodynamic postulate to a specific microscopic field theory. Where Verlinde postulates an unspecified entropy functional on holographic surfaces, \UIDT\ identifies the exact scalar field $S(x)$ whose action principle generates these gradients.
 
 \paragraph{Versus Loop Quantum Gravity.}
 LQG shares with \UIDT\ the ambition of background independence. It posits an
@@ -1202,13 +1278,14 @@ not merely a descriptive language but the ontological substance itself.
 
 However, \UIDT\ shifts the philosophical emphasis from effectiveness to
 \emph{inevitability}. The structure of the vacuum is not arbitrary. Given the
-requirement of gauge invariance and renormalisability in $3+1$ dimensions, the $\mathrm{SU}(3)$ Lagrangian~\eqref{eq:lagrangian} with the self-interacting
+requirement of gauge invariance and EFT admissibility in $3+1$ dimensions, the $\mathrm{SU}(3)$ Lagrangian~\eqref{eq:lagrangian} with the self-interacting
 density $\Sx$ represents, within the constraints of gauge
-invariance, renormalisability, and vacuum stability in $3+1$ dimensions, the
-minimal self-interacting structure admissible under the \UIDT\ axioms.  Other
-gauge theories---including the full electroweak sector---are logically
-consistent in a broader sense; the present statement concerns minimality within
-the non-Abelian pure gauge sector at scales above the electroweak threshold.
+invariance, effective field-theoretic consistency, and vacuum stability in $3+1$
+dimensions, the minimal self-interacting structure admissible under the \UIDT\
+axioms.  Other gauge theories---including the full electroweak sector---are
+logically consistent in a broader sense; the present statement concerns
+minimality within the non-Abelian pure gauge sector at scales above the
+electroweak threshold.
 
 This implies a universe that is strictly necessitarian at its foundation. The value of the mass gap $\Delta^{*} = \DeltaGap$~\catmark{A-} is
 not a historical accident of the Big Bang; within the \UIDT\ axiom system, it
@@ -1231,7 +1308,8 @@ absolute modal necessity, but by identifying a principle of \emph{structural
 minimality} that selects the realised vacuum from the space of logical
 possibilities. In $3+1$ dimensions, the $\mathrm{SU}(3)$ gauge theory with a
 non-minimally coupled scalar singlet is the minimal structure compatible with
-asymptotic freedom, vacuum stability, and renormalisability---three
+asymptotic freedom, vacuum stability, and effective field-theoretic
+consistency---three
 mathematical conditions without which a universe containing stable matter and
 observers cannot be formulated. This is not an anthropic selection among
 actualised worlds, but a structural selection among possible theories.
@@ -1321,7 +1399,7 @@ late-time acceleration from a single self-consistent field.
 \label{sec:limitations}
 
 Epistemic honesty requires the explicit demarcation of a theory's boundaries.
-\UIDT\ operates with eleven formally recognised limitations. They do not
+\UIDT\ operates with twelve formally recognised limitations. They do not
 invalidate the core proofs, but they delineate the perimeter where the theory
 meets the unknown.
 
@@ -1368,7 +1446,10 @@ meets the unknown.
     approximation. The perturbative series is not Borel-summable, indicating
     that the theory is non-renormalisable in the strict power-counting sense
     \catmark{D}. Whether the Banach fixed point at the non-perturbative level
-    provides a UV completion is an open question.
+    provides a UV completion---in the sense of asymptotic safety, where the
+    non-perturbative RG flow converges to a non-trivial UV fixed point---is
+    an open question. No evidence for or against asymptotic safety has been
+    established within the current framework.
 
   \item \textbf{Banach Fixed Point: Local, Not Global.}
     The Banach fixed-point theorem guarantees a unique solution within the
@@ -1406,6 +1487,15 @@ meets the unknown.
     A rigorous derivation of signature emergence---including the uniqueness
     of the $(3{+}1)$-dimensional split---remains an open question and is
     classified as \catmark{B} (partially established, derivation incomplete).
+
+  \item \textbf{Two-Phase Cosmogony Formalism (L12) (\catmark{D}).}
+    The conceptual separation between Information Inflation (Phase~A) and
+    Metric Expansion (Phase~B) in Section~\ref{subsec:cosmogony} is
+    architecturally clear but mathematically not formalised as an
+    order-parameter theory with a well-defined critical exponent or
+    Ginzburg--Landau potential. The derivation of the phase boundary
+    $\rho_{\text{crit}} \sim 10^{93}\;\text{bits/m}^3$ from first
+    principles remains open.
 \end{enumerate}
 
 These limitations define the immediate research programme for the \UIDT\
@@ -2021,6 +2111,36 @@ J.~Ladyman and D.~Ross,
 S.~Gudder,
 ``Discrete Quantum Gravity,''
 arXiv: \href{https://arxiv.org/abs/1507.01281}{1507.01281} (2015).
+
+\bibitem{Bekenstein1973}
+J.~D.~Bekenstein,
+``Black Holes and Entropy,''
+\emph{Phys.\ Rev.\ D} \textbf{7}, 2333 (1973).
+
+\bibitem{Padmanabhan2010}
+T.~Padmanabhan,
+``Thermodynamical Aspects of Gravity: New Insights,''
+\emph{Rep.\ Prog.\ Phys.} \textbf{73}, 046901 (2010).
+arXiv: \href{https://arxiv.org/abs/0911.5004}{0911.5004}.
+
+\bibitem{Athenodorou2021}
+A.~Athenodorou and M.~Teper,
+``The glueball spectrum of SU(3) gauge theory in 3+1 dimensions,''
+\emph{JHEP} \textbf{2021}, 172 (2021).
+arXiv: \href{https://arxiv.org/abs/2007.06422}{2007.06422}.
+
+\bibitem{Morningstar1999}
+C.~Morningstar and M.~Peardon,
+``The glueball spectrum from an anisotropic lattice study,''
+\emph{Phys.\ Rev.\ D} \textbf{60}, 034509 (1999).
+arXiv: \href{https://arxiv.org/abs/hep-lat/9901004}{hep-lat/9901004}.
+
+\bibitem{RyuTakayanagi2006}
+S.~Ryu and T.~Takayanagi,
+``Holographic Derivation of Entanglement Entropy from the anti-de Sitter
+Space/Conformal Field Theory Correspondence,''
+\emph{Phys.\ Rev.\ Lett.} \textbf{96}, 181602 (2006).
+arXiv: \href{https://arxiv.org/abs/hep-th/0603001}{hep-th/0603001}.
 
 \end{thebibliography}
 
