@@ -104,7 +104,7 @@
         "DESI_DR2"
       ],
       "since": "v3.7.2",
-      "notes": "Calibrated to DESI, NOT independent prediction"
+      "notes": "Calibrated to DESI, NOT independent prediction. CCHP 2025 (Freedman et al., ApJ 985:203): H₀(JWST-only) = 69.03 ± 1.75, σ = 0.78. H₀(JWST+HST) = 70.4 ± ~2.1, σ = 0.00. Hubble tension remains unresolved (SH0ES: 73.17±0.86 → 3.22σ from UIDT-C-008, Planck: 67.4±0.5 → 6.0σ from UIDT-C-008). Overlap with CCHP is calibrated coincidence, NOT independent validation. [C]"
     },
     {
       "id": "UIDT-C-009",
@@ -343,7 +343,7 @@
       "confidence": 0.9,
       "dependencies": [],
       "since": "v3.7.2",
-      "notes": "DESI DR2 calibrated"
+      "notes": "DESI DR2 calibrated. CCHP 2025 (Freedman et al., ApJ 985:203): H₀(JWST-only) = 69.03 ± 1.75, σ = 0.78. H₀(JWST+HST) = 70.4 ± ~2.1, σ = 0.00. Hubble tension remains unresolved (SH0ES: 73.17±0.86 → 3.22σ from UIDT-C-008, Planck: 67.4±0.5 → 6.0σ from UIDT-C-008). Overlap with CCHP is calibrated coincidence, NOT independent validation. [C]"
     },
     {
       "id": "UIDT-C-030",
