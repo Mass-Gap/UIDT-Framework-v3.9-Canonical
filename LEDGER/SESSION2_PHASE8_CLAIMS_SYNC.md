@@ -4,7 +4,8 @@
 > **Branch:** `TKT-2026-05-17-session2-ledger-sync-phase8`  
 > **Date:** 2026-05-17  
 > **DOI:** `10.5281/zenodo.17835200`  
-> **Status:** Ledger-sync staging document. This file does **not** promote evidence categories and does **not** close L1/L4/L5.
+> **Status:** Ledger-sync staging document. This file does **not** promote evidence categories and does **not** close L1/L4/L5.  
+> **Guardian status:** `GUARDIAN_REVIEW_REQUIRED` because this document stages claims under `LEDGER/`; no direct `CLAIMS.json` mutation is performed.
 
 ---
 
@@ -18,6 +19,20 @@ The changes are append-only at the claim level:
 2. Recompute `k_crit = 4πE_T` using the canonical `E_T = 2.44 MeV`.
 3. Register the S4-P1 gamma-chain as [D] / Stratum III only.
 4. Register `[NO-GO-STEP5]` as a documented limitation of the LPA' NLO path.
+
+---
+
+## Guardian / SSOT Gate
+
+This file is intentionally a staging document rather than a direct edit of `LEDGER/CLAIMS.json`.
+
+| Gate | Status | Rationale |
+|---|---|---|
+| Reviewer | Required | The staged claims touch the evidence ledger surface. |
+| Regressor | Required | `python verification/scripts/verify_session2_phase8_sync.py` must pass before any claim migration. |
+| Auditor | Required | Evidence tags must remain [D] / Stratum III; no [A], [B], or [C] promotion is requested. |
+
+**Merge condition:** Before any migration into `LEDGER/CLAIMS.json`, the Guardian chain must explicitly return PASS for Reviewer, Regressor, and Auditor. A single failure blocks migration.
 
 ---
 
@@ -186,12 +201,12 @@ python verification/scripts/verify_session2_phase8_sync.py
 Expected result:
 
 ```text
-[PASS] gamma_bare formula corrected: 49/3
-[PASS] rejected wrong denominator: 49/9
-[PASS] Delta_gamma_required = 17/3000
-[PASS] k_crit = 4*pi*E_T for E_T=2.44 MeV
-[PASS] gamma_pred chain = 16.338962439648224...
-[PASS] RG constraint residual = 0
+[PASS] gamma_bare formula corrected residual: < 1e-70
+[PASS] wrong denominator rejected as 49/9 residual: < 1e-70
+[PASS] Delta_gamma_required = 17/3000 residual: < 1e-70
+[PASS] k_crit = 4*pi*E_T for E_T=2.44 MeV residual: < 1e-70
+[PASS] gamma_pred chain residual: < 1e-70
+[PASS] RG constraint residual: 0.0
 ALL SESSION-2 PHASE-8 SYNC CHECKS PASSED
 ```
 
