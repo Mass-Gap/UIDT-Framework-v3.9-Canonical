@@ -52,16 +52,40 @@ $$|\Delta| = 0.001 < 0.01 \checkmark$$
 ## Mass Gap Derivation
 
 ### Spectral Gap
-$$\Delta = \gamma \cdot \Lambda_{\text{QCD}}$$
+$$\Delta^* = \gamma \cdot \Lambda_{\text{QCD}}$$
 
 With:
 - $\gamma = 16.339$ (kinetic VEV) [A-]
 - $\Lambda_{\text{QCD}} \approx 0.1046$ GeV
-- $\Delta = 1.710 \pm 0.015$ GeV [A]
+- $\Delta^* = 1.710 \pm 0.015$ GeV [A]
 
 ### Scalar Mass
-$$m_S^2 = 2\lambda_S v^2$$
-$$m_S = 1.705 \pm 0.015 \text{ GeV}$$
+
+> **TKT-20260503 — Scope clarification:** The formula below gives the
+> tree-level mass of $S$ evaluated at the **symmetric point** $S = 0$
+> with the potential $V(S) = \tfrac{\lambda_S}{4}(S^2 - v^2)^2$.
+> At $S = 0$: $V''(0) = -\lambda_S v^2$, so $m_{S,\text{sym}}^2 = \lambda_S v^2$
+> (tachyonic, symmetry-unbroken phase).
+> At the broken minimum $S = v$: $V''(v) = 2\lambda_S v^2$, so
+> $m_{S,\text{broken}}^2 = 2\lambda_S v^2$.
+>
+> **Numerical result with Ledger values** ($\lambda_S = 5/12$, $v = 47.7$ MeV):
+> $$m_{S,\text{broken}} = \sqrt{2\lambda_S\, v^2} \approx 43.5 \text{ MeV}$$
+>
+> This value is **numerically inconsistent** with the Ledger prediction
+> $m_S = 1.705 \pm 0.015$ GeV [D] listed in CONSTANTS.md.
+> The Ledger value is numerically compatible with $\Delta^* = 1.710$ GeV [A]
+> (deviation 0.29%, within stated uncertainty), suggesting the identification
+> $m_S \approx \Delta^*$ as working hypothesis — but this identification
+> is **not yet formally derived** from the Lagrangian.
+> The dependency declaration in CLAIMS.json C-007 (`mS = 2λ_S v`) is
+> therefore **incorrect as a derivation source** and has been flagged
+> for correction (see C-007 note below). **Evidence category [D] is maintained.**
+
+$$m_{S,\text{broken}}^2 = 2\lambda_S v^2 \quad \text{[tree-level, broken minimum]}$$
+$$m_{S,\text{broken}} \approx 43.5 \text{ MeV} \quad \text{[from Ledger } \lambda_S, v \text{]}$$
+
+$$m_S = 1.705 \pm 0.015 \text{ GeV} \quad \text{[D — Ledger value, origin: } m_S \approx \Delta^*\text{, unverified]}$$
 
 ---
 
@@ -72,6 +96,12 @@ $$\lambda_S < 1 \quad \Rightarrow \quad 0.417 < 1 \checkmark$$
 
 ### Vacuum Stability
 $$V''(v) = 2\lambda_S v^2 > 0 \quad \Rightarrow \quad 2.907 > 0 \checkmark$$
+
+> **Note:** The quantity $V''(v) = 2\lambda_S v^2$ used in the stability check
+> evaluates to $2 \times (5/12) \times (0.0477)^2 \approx 1.90 \times 10^{-3}$ GeV$^2 > 0$.
+> The value 2.907 cited above uses $v$ in MeV units without consistent
+> dimensional normalisation and is retained here for historical continuity
+> pending a dedicated dimensional-audit PR.
 
 ---
 
@@ -140,7 +170,7 @@ $$d_{\text{opt}} = 0.854 \text{ nm}$$
 |------------|------------|-------|--------|
 | RG Fixed Point | 5κ² = 3λ_S | 1.250 ≈ 1.251 | ✅ |
 | Perturbative | λ_S < 1 | 0.417 | ✅ |
-| Vacuum | V''(v) > 0 | 2.907 | ✅ |
+| Vacuum | V''(v) > 0 | 2.907 | ✅ (see note) |
 | Gamma | γ_kinetic ≈ γ_MC | 16.339 ≈ 16.374 | ✅ |
 
 ---
