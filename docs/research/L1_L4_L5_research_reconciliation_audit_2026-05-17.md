@@ -24,6 +24,7 @@ The L1/L4/L5 research state is not blocked by lack of ideas; it is blocked by **
    - `gamma_pred = 16.338962439648224...` [D]
    - SU(4): `gamma_bare(4)=81/4=20.25` [D]
    - SU(4) N-definition has `[TENSION ALERT]`: `176` vs `704/3`.
+5. The Phase-8 verification scripts must use explicit residual checks for decimal/rational mixed quantities; exact `mpmath.mpf` equality is too brittle for ledger-decimal comparisons.
 
 Therefore the next logical action is not another speculative derivation. The next action is a **Research State Consolidation PR** that makes the repository navigable and eliminates stale/contradictory roadmaps.
 
@@ -146,6 +147,26 @@ They show a separate D2 line:
 
 These must be renamed or disambiguated before any further derivation.
 
+### 2.10 Verification Script Robustness
+
+PR #459 and PR #460 initially used exact `mpmath.mpf` equality for decimal/rational mixed comparisons such as:
+
+```python
+assert delta_gamma_required == mp.mpf(17) / mp.mpf(3000)
+```
+
+This is brittle because `gamma_ledger = mp.mpf("16.339")` and `17/3000` are created through different high-precision decimal/rational paths. The mathematical residual is approximately `1.72e-80`, which is far below the [A] threshold of `1e-14`, but exact equality can still fail.
+
+**Required fix:** use explicit residual gates, e.g.
+
+```python
+expected_delta = mp.mpf(17) / mp.mpf(3000)
+delta_residual = abs(delta_gamma_required - expected_delta)
+assert delta_residual < mp.mpf("1e-70"), mp.nstr(delta_residual, 80)
+```
+
+**Audit status:** fixed on the PR #459 and PR #460 branches after the second Gate Review.
+
 ---
 
 ## 3. Tension Register
@@ -160,6 +181,7 @@ These must be renamed or disambiguated before any further derivation.
 | T-006 | LPA' NLO path already no-go, but older roadmaps still point to generic LPA'/BMW without hard exclusion | Major | Roadmap consolidation |
 | T-007 | Evidence distribution in STATUS.md differs from CLAIMS.json recovery state and open PR staged claims | Major | Recompute statistics after merge |
 | T-008 | Loose `research/` notes are not in `docs/research/INDEX.md` | Major | Move or index them explicitly |
+| T-009 | Verification scripts used brittle exact `mpmath.mpf` equality for decimal/rational mixed comparisons | Critical | Replace exact equality with explicit residual gates; fixed in #459/#460 branches after Gate Review v2 |
 
 ---
 
@@ -174,6 +196,8 @@ Required before any further physics:
 - `gamma_bare(Nc)=(2Nc+1)^2/Nc`
 - `k_crit=30.6619442990... MeV` for `E_T=2.44 MeV`
 - no evidence promotion
+- verification script must pass residual-gate checks rather than brittle exact equality
+- Guardian / SSOT gate must be documented before any migration into `LEDGER/CLAIMS.json`
 
 ### Step 2 — Merge / review PR #460
 
@@ -263,8 +287,8 @@ python verification/scripts/research/verify_frg_step5_lambda3_flow.py
 Expected classification:
 
 ```text
-PR #459: corrected arithmetic PASS
-PR #460: partial numerical hit / SU4 tension PASS
+PR #459: corrected arithmetic PASS with explicit residual gates
+PR #460: partial numerical hit / SU4 tension PASS with explicit residual gates
 FRG Step 5: NO-GO confirmed
 ```
 
