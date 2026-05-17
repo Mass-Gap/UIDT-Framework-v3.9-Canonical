@@ -157,7 +157,7 @@
 % computation. The authoritative values live in LEDGER/CONSTANTS.md.
 %===================================================================
 \newcommand{\DeltaGap}{1.710 \pm 0.015\GeV}        % [A-] local UIDT spectral-gap mapping
-\newcommand{\kappaVal}{0.500}                      % [A]
+\newcommand{\kappaVal}{0.500}                      % [A] dimensionless EFT-normalised coefficient
 \newcommand{\GammaGeom}{16.339}                     % [A-]
 \newcommand{\GammaInf}{16.3437 \pm 0.0005}          % [A-]
 \newcommand{\vVEV}{47.7\MeV}                        % [A]
@@ -460,7 +460,7 @@ result is an ontology of strict finitude: there is no multiverse of vacua
 (String Theory), no ambiguously defined continuum limit (Causal Sets), and no
 need for a background time parameter (GFT). \UIDT\ occupies a logically minimal
 realisation of the pregeometric tradition: a constrained structural theory that
-recovers general relativity, the Standard Model mass spectrum, and late-time
+aims to reproduce general relativity, the Standard Model mass spectrum, and late-time
 acceleration with a highly constrained parameter economy.
 
 % UPGRADE: The nature of Nothingness and the First Distinction (Desiderat 4)
@@ -536,7 +536,10 @@ The minimal realisation satisfying these constraints is:
   \label{eq:lagrangian}
 \end{equation}
 where $\kappa$ is the non-minimal gauge--scalar coupling and $\lambda_S$ the
-scalar self-coupling.
+scalar self-coupling. In this notation the ledger value $\kappa=\kappaVal$
+denotes the dimensionless EFT-normalised coefficient $\bar{\kappa}$; the
+dimensionful coupling entering the dimension-5 operator is
+$\bar{\kappa}/\Lambda_{\UIDT}$.
 \end{axiom}
 
 \begin{table}[H]
@@ -564,7 +567,7 @@ Relevant scalar mass operator & \catmark{A} \\
 $\lambda_S S^4$ & $4$ & dimensionless &
 Power-counting renormalisable self-interaction & \catmark{A} \\
 \midrule
-$\kappa S F_{\mu\nu}^aF^{a\mu\nu}$ & $5$ & $-1$ &
+$({\bar{\kappa}}/{\Lambda_{\UIDT}}) S F_{\mu\nu}^aF^{a\mu\nu}$ & $5$ & $-1$ &
 Non-renormalisable by strict power counting; EFT-only below
 $\Lambda_{\UIDT}$ & \catmark{A} \\
 \bottomrule
@@ -857,7 +860,8 @@ entropic gravity programme.
 The vacuum expectation value $v = \vVEV$ \catmark{A} sets the fundamental
 energy scale of the theory. All dimensionful quantities (the mass gap $\Delta$,
 the scalar mass $m_S$, and the vacuum energy density) are determined by $v$ and
-the dimensionless couplings $\kappa$, $\lambda_S$, and $\gamma$. This is
+the ledger coefficients $\bar{\kappa}$, $\lambda_S$, and $\gamma$, with the
+dimensionful EFT coupling $\bar{\kappa}/\Lambda_{\UIDT}$. This is
 dimensional transmutation in its most radical form: a single dimensionful
 parameter generates the entire energetic hierarchy.
 \end{remark}
@@ -1079,9 +1083,8 @@ meets first-person experience.
 
 The gamma invariant $\gamma = \GammaGeom$ \catmark{A-} provides a bridge between
 quantum vacuum structure and cosmological observables. Through hierarchical
-$\gamma$-scaling, the vacuum energy density is suppressed from its na\"ive
-quantum field-theoretic value by a factor of $\gamma^{12} \approx
-1.8 \times 10^{14}$:
+$\gamma$-scaling, the vacuum-energy ansatz contains a suppression factor
+$\gamma^{12} \approx 3.62 \times 10^{14}$ for $\gamma=\GammaGeom$:
 \begin{equation}
   \rho_{\mathrm{vac}}^{\UIDT} = \frac{\Delta^4}{\gamma^{12}}\,F_{\mathrm{EW}},
   \label{eq:rho-vac}
@@ -1125,9 +1128,12 @@ calibration is stress-tested.
 The DESI DR2 Results~II~\cite{DESI2025} report $H_0 = 68.17 \pm 0.28\kms$
 (DESI+CMB) and $w_0 = -0.838 \pm 0.055$ (DESI+CMB+Pantheon+). This implies
 a \textbf{7.96$\sigma$ tension} with the \UIDT\ canonical $H_0 = 70.4\kms$
-and a \textbf{2.76$\sigma$ tension} with $w_0 = -0.99$. The $S_8 = 0.814$
-remains consistent ($0.00\sigma$). Canonical values are retained per Decision
-D-002; formal recalibration requires PI authorisation. This is a
+if only the quoted DESI uncertainty is used, or \textbf{6.91$\sigma$} when
+the UIDT ledger uncertainty $0.16\kms$ is combined in quadrature. The
+$w_0=-0.99$ calibration remains in \textbf{2.76$\sigma$ tension} with DESI
+DR2, while $S_8 = 0.814$ remains consistent ($0.00\sigma$). Canonical values
+are retained per Decision D-002; formal recalibration requires PI
+authorisation. This is a
 Pillar~II cosmology-calibration limitation, not a reclassification of L2, which
 remains the electron-mass residual. The $H_0$ discrepancy is therefore a
 potential Pillar~II kill-switch exposure, pending a formal recalibration
@@ -1139,15 +1145,18 @@ decision after DESI Year~5 or an equivalent precision survey.
 The cosmological constant problem (the $10^{120}$ discrepancy between
 quantum field-theoretic and observed vacuum energy) is addressed through the
 $N$-step RG cascade with $N = 99$ steps \catmark{C}. This \textbf{does not}
-constitute a first-principles solution, but a \emph{phenomenological
-suppression mechanism} that reduces the discrepancy by 117 orders of magnitude:
+constitute a first-principles solution. The compact factor is retained as a
+calibrated phenomenological ansatz, not as a first-principles 117-order
+solution:
 \begin{equation}
-  \rho_{\UIDT} = \rho_{\mathrm{QFT}} \cdot \gamma^{-12} \cdot \pi^{-2}
-  \cdot N^{-2} \approx 0.967\,\rho_{\mathrm{obs}}.
+  \rho_{\UIDT}=\rho_{\mathrm{QFT}}\mathcal{C}_{99},\qquad
+  \mathcal{C}_{99}\equiv\gamma^{-12}\pi^{-2}N^{-2}
+  \simeq2.86\times10^{-20}.
 \end{equation}
-This achieves 96.7\% phenomenological suppression of the hierarchy. The remaining factor 2.3
-has been identified as a holographic coupling ratio \catmark{B}
-(see Limitation~L3). The holographic factor $\pi^{-2}$ arises from the
+The mapping from this compact suppression factor to the observed vacuum energy
+remains calibrated \catmark{C} and is covered by the open $N=99$ and residual
+vacuum-energy limitations (L5 and L3). The remaining factor 2.3 is modelled as
+a holographic coupling ratio \catmark{B}. The holographic factor $\pi^{-2}$ arises from the
 topological transition $S^3 \to S^2$ in the coset structure of the vacuum
 manifold, consistent with the Ryu--Takayanagi formula for holographic
 entanglement entropy~\cite{RyuTakayanagi2006} and with Bekenstein's bound
@@ -1168,8 +1177,8 @@ to \catmark{A-}.
 \label{subsec:cosmogony}
 
 The above cosmological framework is not merely an effective parameterisation; it
-encodes a specific cosmogonic narrative derived from the first-principles
-dynamics of $S(x)$. The early universe in \UIDT\ is not a spacetime singularity
+encodes a specific cosmogonic narrative motivated by UIDT field dynamics.
+The early universe in \UIDT\ is not a spacetime singularity
 but a phase transition of information density.
 \vspace{-0.6em}
 \paragraph{The Two-Phase Architecture.}
@@ -1437,7 +1446,7 @@ programme~\cite{Padmanabhan2010} derive Newton's laws and general relativity fro
 LQG shares with \UIDT\ the ambition of background independence. It posits an
 ontology of discrete, quantised geometric structures (spin networks). However,
 LQG struggles to recover smooth macroscopic spacetime and the particle content
-of the Standard Model. \UIDT\ achieves background independence not by
+of the Standard Model. \UIDT\ models background independence not by
 quantising geometry, but by generating geometry from the continuum dynamics of
 the vacuum information density. The quantisation is topological (the mass
 gap), not geometric.
@@ -1463,9 +1472,9 @@ suppression mechanism or sharply formulates as an open question:
 
 \begin{enumerate}
   \item \textbf{De Sitter Phase.} None of the examined frameworks derives the
-    quasi-de Sitter inflationary phase from the first-principles dynamics of
+    quasi-de Sitter inflationary phase from the internal dynamics of
     their fundamental field without introducing a separate inflaton. \UIDT\
-    achieves this via the 99-step RG cascade of $S(x)$ (Section~\ref{subsec:cosmogony}),
+    parameterises this via the 99-step RG cascade of $S(x)$ (Section~\ref{subsec:cosmogony}),
     though a fully rigorous derivation of the primordial power spectrum
     directly from the cascade dynamics remains an open task.
   \item \textbf{Metric Derivation.} Yang's formalism postulates non-commutative
@@ -1644,7 +1653,7 @@ transforms the theory from a philosophical position into an empirically
 vulnerable scientific framework. These four features collectively justify the
 claim that \UIDT\ is not merely another entry in the catalogue of pregeometric
 approaches, but a logically minimal realisation of the programme: the structure
-that recovers general relativity, the Standard Model mass spectrum, and
+that aims to reproduce general relativity, the Standard Model mass spectrum, and
 late-time acceleration from a single self-consistent field.
 
 %=============================================================================
@@ -1674,8 +1683,9 @@ theory meets the unknown.
     the $\mathrm{SU}(3)$ vacuum density. It is an active area of investigation.
 
   \item \textbf{Vacuum Energy Factor 2.3.}
-    While the $N=99$ step RG cascade provides phenomenological suppression of $96.7\%$ of the cosmological
-    constant discrepancy, a residual factor of $\approx 2.3$ remains. It is currently
+    While the $N=99$ step RG cascade provides a calibrated phenomenological
+    suppression ansatz for the cosmological constant discrepancy, a residual
+    factor of $\approx 2.3$ remains. It is currently
     modelled as a holographic coupling ratio \catmark{B}, but a rigorous
     analytic derivation is pending.
 
@@ -1700,10 +1710,11 @@ theory meets the unknown.
     \UIDT\ is formulated as an effective field theory below the torsion scale
     $E_T$. It is not known whether the theory possesses a non-perturbatively
     renormalisable UV completion or remains valid only as a low-energy
-    approximation. The Lagrangian contains a dimension-5 operator $\kappa S F^2$
+    approximation. The Lagrangian contains a dimension-5 operator
+    $(\bar{\kappa}/\Lambda_{\UIDT})S F^2$
     and is therefore non-renormalisable by strict power counting (a consequence
     solely of dimensional analysis, not of the perturbative expansion
-    \cite{Weinberg1995}.
+    \cite{Weinberg1995}).
     Additionally, the perturbative series is not expected to be Borel-summable
     in the EFT regime, consistent with the non-perturbative character of the
     vacuum dynamics \catmark{D}. This does not alter the EFT validity of the
@@ -1868,22 +1879,23 @@ because those subsystems are constituted by it.
 
 A critical frontier in the \UIDT\ ontology is the formal status of the Born rule.
 Instead of postulating the probabilistic nature of quantum measurement as an
-independent axiom, this research program aims to derive the Born rule directly
-from the \UIDT\ axioms and the dynamics of the vacuum information density
-$S(x)$ on the Rietz Grid with lattice spacing $\lambda = 0.66\,\mathrm{nm}$.
+independent axiom, this research program aims to formulate the Born rule as a
+conjectural consequence of the \UIDT\ axioms and the dynamics of the vacuum
+information density $S(x)$ on the Rietz Grid with lattice spacing
+$\lambda = 0.66\,\mathrm{nm}$.
 
-\begin{theorem}[Born Rule from \UIDT, working formulation]
+\begin{proposition}[Born Rule from UIDT, conjectural working formulation]
 \label{thm:born-rule-uidt}
 Consider a localised subsystem (``quantum object'') interacting with the
 Rietz Grid of spacing $\lambda = 0.66\,\mathrm{nm}$ and torsion binding
-energy $E_T = \ETorsion$, with dynamics governed by the \UIDT\ Lagrangian
+energy $E_T = \ETorsion$, with dynamics governed by the UIDT Lagrangian
 \eqref{eq:lagrangian} and coupling constant $\kappa = \kappaVal$. In an effective
 description, let the subsystem state be expanded in the eigenbasis
 $\{\ket{k}\}$ of a measured observable,
 \[
   \ket{\psi} = \sum_k c_k \ket{k}, \qquad c_k = \braket{k}{\psi}.
 \]
-Then the conjectured theorem states that the probability distribution of
+Then the conjectural proposition states that the probability distribution of
 irreversibly fixed lattice distinctions (``measurement outcomes'') follows
 the Born rule
 \[
@@ -1891,11 +1903,10 @@ the Born rule
 \]
 where the probability measure arises as an epistemic projection of the
 underlying deterministic lattice dynamics of $S(x)$.
-\end{theorem}
+\end{proposition}
 
-The word ``theorem'' in Theorem~\ref{thm:born-rule-uidt} denotes the target
-status of this statement. At present it is a \emph{working formulation} of
-a conjecture, not a proven result. Its resolution would promote the quantum
+Proposition~\ref{thm:born-rule-uidt} is a \emph{working formulation} of a
+conjecture, not a proven result. Its resolution would promote the quantum
 measurement sector of \UIDT\ from a consistent interpretation to a closed
 mathematical pillar.
 
@@ -1919,11 +1930,15 @@ The intended proof strategy decomposes into five interlocking components:
 
   \item \textbf{The coupling as norm preservation.}
   The non-minimal interaction term
-  $\mathcal{L}_{\mathrm{int}} = \kappa S(x)\,\mathrm{Tr}(F_{\mu\nu}F^{\mu\nu})$
-  preserves the total information norm
+  \[
+    \mathcal{L}_{\mathrm{int}}
+    = \frac{\bar{\kappa}}{\Lambda_{\UIDT}}\Sx\,
+      \mathrm{Tr}(F_{\mu\nu}F^{\mu\nu})
+  \]
+  is conjectured to induce an effective information-norm structure
   $\int |S(x)|^2 \mathrm{d}^4x$, which plays the role of a probability norm
-  in the effective description. This mirrors the unitary norm conservation of
-  standard quantum mechanics.
+  in the effective description. A proof would have to show how this mirrors
+  the unitary norm conservation of standard quantum mechanics.
 
   \item \textbf{Fixation as norm projection.}
   When the interaction energy exceeds $E_T$, the lattice dynamics force a
@@ -1947,7 +1962,7 @@ of $S(x)$, (ii) the discretised lattice state space, and (iii) the epistemic
 ignorance of a coarse-grained observer about the exact local phase structure.
 
 \paragraph{Required mathematical tools.}
-To elevate Theorem~\ref{thm:born-rule-uidt} from conjecture to proven result,
+To elevate Proposition~\ref{thm:born-rule-uidt} from conjecture to proven result,
 three technical ingredients are required:
 
 \begin{itemize}
@@ -1963,8 +1978,8 @@ three technical ingredients are required:
   $D[\psi,t]$ describing the time dependence (in the emergent temporal
   parameter) of coherence loss due to lattice coupling. This is the
   \UIDT\ analogue of the decoherence functionals in environment-induced
-  decoherence (Zeh, Zurek), but derived directly from the \UIDT\ axioms and
-  the coupling $\kappa$ and $E_T$.
+  decoherence (Zeh, Zurek), but constructed within the \UIDT\ axiom system
+  from the coupling $\kappa$ and $E_T$.
 
   \item \textbf{(T3) An ergodicity theorem for lattice ensembles.}
   A measure-theoretic result is required which guarantees that, for an
@@ -1975,7 +1990,7 @@ three technical ingredients are required:
 \end{itemize}
 
 Only after (T1)--(T3) have been established can one legitimately upgrade
-Theorem~\ref{thm:born-rule-uidt} to a category \catmark{A} or \catmark{A-}
+Proposition~\ref{thm:born-rule-uidt} to a category \catmark{A} or \catmark{A-}
 statement within the evidence classification system.
 \clearpage
 \paragraph{Open subproblems.}
@@ -2001,7 +2016,7 @@ The research program naturally decomposes into three precise open questions:
 \end{enumerate}
 
 Resolving (O1)--(O3) would close the ``measurement flank'' of the \UIDT\
-framework and establish the Born rule as a derived theorem of vacuum geometry
+framework and establish the Born rule as a derived result of vacuum geometry
 rather than an external axiom. Until then, the status of the Born rule within
 \UIDT\ remains that of a conjectured emergent law supported by structural
 arguments but awaiting full mathematical proof.
@@ -2155,7 +2170,7 @@ canonical UIDT ledger in this manuscript.
 \section{UEIP v1.0 Compliance Statement}
 \label{sec:ueip}
 
-Every quantitative claim, categorical classification, and cosmological parameter has been cross-referenced against the immutable `CANONICAL/CONSTANTS.md` (v3.9.6) and `LEDGER/CLAIMS.json` from \href{https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical}{UIDT v3.9 repository}. The document explicitly acknowledges tensions with recent external data (e.g., DESI DR2) and enforces the epistemological boundaries of the \catmark{A}--\catmark{E} evidence classification system.
+Every quantitative claim, categorical classification, and cosmological parameter has been cross-referenced against the immutable \texttt{CANONICAL/CONSTANTS.md} (v3.9.6) and \texttt{LEDGER/CLAIMS.json} from \href{https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical}{UIDT v3.9 repository}. The document explicitly acknowledges tensions with recent external data (e.g., DESI DR2) and enforces the epistemological boundaries of the \catmark{A}--\catmark{E} evidence classification system.
 
 %=============================================================================
 % SECTION 21 — THE ADVERSARY TEST: A SELF-AUDIT
@@ -2651,7 +2666,7 @@ arXiv: \href{https://arxiv.org/abs/2503.14738}{2503.14738} (2025).
 
 \bibitem{Planck2018}
 Planck Collaboration,
-``Planck 2018 results. VI. Cosmological parameters,''
+``Planck 2018 results. VI.\ Cosmological parameters,''
 \emph{Astron.\ Astrophys.} \textbf{641}, A6 (2020).
 arXiv: \href{https://arxiv.org/abs/1807.06209}{1807.06209}.
 
