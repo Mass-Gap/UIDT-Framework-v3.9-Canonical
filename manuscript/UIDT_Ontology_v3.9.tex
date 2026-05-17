@@ -19,7 +19,7 @@
 \usepackage{mathpazo}
 
 \usepackage{geometry}
-\usepackage[onehalfspacing]{setspace}
+\usepackage{setspace}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{booktabs}
@@ -74,6 +74,9 @@
 \clubpenalty=10000
 \widowpenalty=10000
 \raggedbottom
+\setlength{\parskip}{0.65em plus 0.12em minus 0.04em}
+\setlength{\parindent}{0pt}
+\setstretch{1.32}
 
 %=============================================================================
 % SECTION HEADING STYLE
@@ -94,7 +97,7 @@
   \fancyfoot[C]{%
     \footnotesize\textcolor{darkgray}{%
       \copyright\ 2026 P.\ Rietz $\cdot$ CC BY 4.0 $\cdot$
-      \href{https://doi.org/10.5281/zenodo.17835200}{DOI: 10.5281/zenodo.17835200}}%
+      \href{https://doi.org/10.5281/zenodo.17835200}{DOI: 10.5281/zenodo.17835200} | \href{https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical}{UIDTv3.9 Repository}}%
   }
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0.4pt}
@@ -168,19 +171,54 @@
 %=============================================================================
 \newtcolorbox{evidencebox}[2][]{%
   enhanced, breakable,
-  colback=#2!5, colframe=#2!80!black,
-  fonttitle=\bfseries\sffamily,
+  colback=white,
+  colframe=darkgray!45,
+  coltitle=darkgray,
   title={#1},
-  boxrule=0.5pt, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt
+  fonttitle=\small\bfseries\sffamily\MakeUppercase,
+  boxrule=0.35pt,
+  arc=0pt,
+  left=8pt, right=8pt, top=15pt, bottom=6pt,
+  borderline west={2.2pt}{0pt}{#2!80!darkgray},
+  borderline north={0.35pt}{0pt}{darkgray!55},
+  borderline south={0.35pt}{0pt}{darkgray!55},
+  attach boxed title to top left={xshift=8pt,yshift=-2.2mm},
+  boxed title style={colback=white, colframe=white, boxrule=0pt},
+  overlay unbroken and first={%
+    \node[anchor=north east, font=\scriptsize\sffamily\bfseries, text=#2!70!black]
+      at ([xshift=-2pt,yshift=15pt]frame.north east) {EVIDENCE};
+  },
+  fontupper=\small,
 }
 
 \newtcolorbox{killswitch}{%
   enhanced, breakable,
-  colback=red!3, colframe=red!70!black,
-  fonttitle=\bfseries\sffamily\color{red!80!black},
+  colback=gray!3, colframe=gray!70!black,
+  fonttitle=\bfseries\color{white},
   title={Kill-Switch Criterion},
-  boxrule=1pt, arc=2pt
+  boxrule=0pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  drop shadow
+}
+
+\newtcolorbox{axiombox}[1][]{%
+  enhanced, breakable,
+  colback=gray!3, colframe=gray!70!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  boxrule=1pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  drop shadow
+}
+
+\newtcolorbox{probbox}[2][]{%
+  enhanced, breakable,
+  colback=gray!3, colframe=gray!70!black,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={#1 \hfill #2},
+  boxrule=1pt, arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  drop shadow
 }
 
 %=============================================================================
@@ -220,25 +258,30 @@ it \emph{is} information, reading itself into geometric existence.''}
 % ABSTRACT
 %=============================================================================
 \begin{abstract}
+\begingroup
+\normalfont\normalsize
+\setlength{\parskip}{0.65em plus 0.12em minus 0.04em}%
+\setlength{\parindent}{0pt}%
 \noindent
 This document establishes the ontological, epistemological, and axiological
 foundations of the Unified Information-Density Theory (\UIDT). Rather than
 postulating spacetime as a primordial arena, \UIDT\ identifies a single real
-scalar field, the \emph{vacuum information density} $\Sx$, as the
-fundamental geometric degree of freedom. Spacetime geometry and the Yang--Mills mass gap emerge through mathematically
-necessary fixed-point dynamics~\catmark{A-} (locally proven within the UIDT
-axiomatic framework; see L8 for the open question of global uniqueness), while
-cosmological parameters are calibrated to current observational data~\catmark{C}
-and remain subject to revision as precision surveys advance.
+scalar field, the \emph{vacuum information density} \mbox{$\Sx$}, as the
+fundamental geometric degree of freedom. Spacetime geometry and the Yang--Mills
+mass gap emerge through mathematically necessary fixed-point
+dynamics~\catmark{A-} (locally proven within the UIDT axiomatic framework; see
+L8 for the open question of global uniqueness), while cosmological parameters
+are calibrated to current observational data~\catmark{C} and remain subject to
+revision as precision surveys advance.
 
 The framework rests upon four explicit axioms and unfolds through a
 \emph{Four-Pillar Architecture}: (I)~quantum field-theoretic foundation,
 including local constructive evidence for the Yang--Mills spectral gap
-$\Delta = \DeltaGap$ \catmark{A-} within the UIDT axiom system;
+\mbox{$\Delta = \DeltaGap$\,\catmark{A-}} within the UIDT axiom system;
 (II)~cosmological harmony, with calibrated agreement to DESI, JWST, and ACT
 data \catmark{C}; (III)~laboratory-verifiable predictions, including a scalar
-resonance at $m_S = 1.705 \pm 0.015\GeV$ \catmark{D} and a Casimir force
-anomaly at $\lambda = 0.66\,\mathrm{nm}$ \catmark{D}; and (IV)~a photonic
+resonance at \mbox{$m_S = 1.705 \pm 0.015\GeV$\,\catmark{D}} and a Casimir force
+anomaly at \mbox{$\lambda = 0.66\,\mathrm{nm}$\,\catmark{D}}; and (IV)~a photonic
 isomorphism that maps the vacuum scalar field onto metamaterial refractive-index
 profiles.
 
@@ -249,8 +292,7 @@ advanced here is neither na\"ive Platonism nor computational simulation: it is
 the claim that mathematical structure, when sufficiently constrained, does not
 \emph{describe} physical reality but \emph{constitutes} it.
 
-Submission context: the manuscript is intended for \texttt{hep-th} as primary
-arXiv category, with \texttt{physics.hist-ph} as a possible cross-listing.
+\endgroup
 \end{abstract}
 
 \newpage
@@ -313,7 +355,7 @@ companion manuscript~\cite{Rietz2026_Framework}. Its purpose is ontological: to
 make explicit the philosophical commitments that underlie the mathematical
 framework, to classify every claim by its evidentiary status, and to define the
 precise experimental conditions under which the theory would be refuted.
-
+\newpage
 \subsection{Methodological Framework: The Three-Tier Layer Separation}
 \label{subsec:layer-separation}
 
@@ -422,15 +464,16 @@ recovers general relativity, the Standard Model mass spectrum, and late-time
 acceleration with a highly constrained parameter economy.
 
 % UPGRADE: The nature of Nothingness and the First Distinction (Desiderat 4)
+\newpage
 \subsection{The Nothing and the Distinction: Ontological Precision}
 \label{subsec:nothing}
 
 The term ``nothing'' is often used colloquially to denote a pre-existing void.
-In \UIDT, this notion is refined with formal precision. Nothing is not a state;
+In \UIDT, this notion is refined with formal precision. Nothing is not a state,
 a state presupposes a configuration of something, whereas nothing is the
 complete absence of structure, of any field, of any relation: the unmarked
 state in Spencer-Brown's terminology~\cite{SpencerBrown1969}. It has no
-properties, and hence cannot be ``unstable'' or ``fluctuate''; such
+properties, and hence cannot be ``unstable'' or ``fluctuate'' such
 descriptions would already attribute structure to it.
 
 The first distinction, $S(x) \neq 0$, is therefore not an event that befalls
@@ -498,29 +541,34 @@ scalar self-coupling.
 
 \begin{table}[H]
 \centering
-\small
+\scriptsize
 \caption{Dimensional and EFT status of the terms entering
   Axiom~\ref{ax:gauge}.}
 \label{tab:eft-dimensions}
-{\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}p{3.6cm}p{2.4cm}p{3.1cm}p{4.5cm}c@{}}
+{\setlength{\tabcolsep}{2.2pt}%
+\renewcommand{\arraystretch}{0.86}%
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{3.00cm}>{\centering\arraybackslash}p{1.70cm}>{\centering\arraybackslash}p{2.15cm}>{\raggedright\arraybackslash}p{4.20cm}c@{}}
 \toprule
 \textbf{Term} & \textbf{Operator dimension} & \textbf{Coupling dimension} &
 \textbf{Renormalisability status} & \textbf{Tag} \\
 \midrule
 $F_{\mu\nu}^aF^{a\mu\nu}$ & $4$ & dimensionless &
 Strictly renormalisable Yang--Mills kinetic term & \catmark{A} \\
+\midrule
 $(D_\mu S)(D^\mu S)$ & $4$ & dimensionless &
 Canonical scalar kinetic term in four dimensions & \catmark{A} \\
+\midrule
 $\mu^2S^2$ & $2$ & $+2$ &
 Relevant scalar mass operator & \catmark{A} \\
+\midrule
 $\lambda_S S^4$ & $4$ & dimensionless &
 Power-counting renormalisable self-interaction & \catmark{A} \\
+\midrule
 $\kappa S F_{\mu\nu}^aF^{a\mu\nu}$ & $5$ & $-1$ &
 Non-renormalisable by strict power counting; EFT-only below
 $\Lambda_{\UIDT}$ & \catmark{A} \\
 \bottomrule
-\end{tabular}
+\end{tabular*}
 }
 \end{table}
 
@@ -569,6 +617,8 @@ revised or abandoned.
 %=============================================================================
 % SECTION 4 — ONTOLOGICAL ARCHITECTURE
 %=============================================================================
+
+\newpage
 \section{The Ontological Architecture: From Information to Cosmos}
 \label{sec:architecture}
 
@@ -632,24 +682,25 @@ and its vacuum expectation value is $v = \langle \Sx \rangle = \vVEV$
 
 Three properties of $\Sx$ deserve emphasis:
 
-\paragraph{Ontological primacy.}
+\paragraph{Ontological primacy:}\vspace{-1.5em}
 $\Sx$ is not derived from a more fundamental field. It is the irreducible
 starting point of the theory, analogous to the role of the metric tensor in
 general relativity, except that here, the metric is itself derived from $\Sx$.
 
-\paragraph{Relational indexing.}
+\paragraph{Relational indexing:}\vspace{-0.8em}
 The argument $x$ does not denote a ``point in spacetime.'' It is a relational
 index whose geometric interpretation emerges only through the vacuum
 configuration. This is a concrete realisation of Leibniz's principle that space
 is the order of coexistences~\cite{Leibniz1714}.
 
-\paragraph{Self-reading.}
+\paragraph{Self-reading:}\vspace{-0.8em}
 The vacuum configuration of $\Sx$ determines the effective metric, which in
 turn determines the causal structure within which $\Sx$ propagates. The field
 reads its own output as geometric input. This is not a vicious circle but a
 self-consistent fixed point, guaranteed to exist by the Banach fixed-point
 theorem~\cite{Banach1922} (see Section~\ref{sec:massgap}).
 
+\newpage
 % UPGRADE: Information as ontological category (Desiderat 6)
 \subsection{Information as Ontological Category: Beyond Materialism and Idealism}
 \label{subsec:information-ontology}
@@ -692,7 +743,6 @@ emerge under appropriate structural conditions (see Section~\ref{sec:consciousne
 %=============================================================================
 % SECTION 6 — LOGICAL CAUSALITY
 %=============================================================================
-\newpage
 
 \section{Logical Causality and the Emergence of Temporal Order}
 \label{sec:causality}
@@ -807,7 +857,7 @@ entropic gravity programme.
 The vacuum expectation value $v = \vVEV$ \catmark{A} sets the fundamental
 energy scale of the theory. All dimensionful quantities (the mass gap $\Delta$,
 the scalar mass $m_S$, either the vacuum energy density) are determined by $v$ and
-the dimensionless couplings $\kappa$, $\lambda_S$, and $\gamma$. This is
+the dimensionless couplings $\kappa$, $\lambda_S$, and $\gamma$.\\ This is
 dimensional transmutation in its most radical form: a single dimensionful
 parameter generates the entire energetic hierarchy.
 \end{remark}
@@ -815,7 +865,7 @@ parameter generates the entire energetic hierarchy.
 %=============================================================================
 % SECTION 8 — MASS GAP AND GEOMETRIC COUPLING
 %=============================================================================
-\newpage
+
 
 \section{The Mass Gap and the Geometric Coupling}
 \label{sec:massgap}
@@ -847,7 +897,7 @@ Independent lattice QCD verification: $z = 0.37\sigma$ (Chen et al.\
 2006~\cite{Chen2006}). This is the \emph{spectral gap} of the Yang--Mills
 Hamiltonian; it is \textbf{not} a particle mass.
 \end{evidencebox}
-
+\vspace{0.6em}
 \begin{remark}[On the status of the proof]
 \label{rem:banach-status}
 The Banach fixed-point theorem guarantees the existence and local uniqueness
@@ -858,7 +908,7 @@ the Clay Yang--Mills problem in the sense required by Jaffe and Witten
 on the full configuration space and a proof that the gap survives the
 infinite-volume limit. The present result is \emph{local} and
 \emph{regularisation-dependent}; upgrading it to a global proof remains an
-open mathematical problem (Limitation~L8). In particular, the Clay criterion
+open mathematical problem (Limitation~L8).\\ In particular, the Clay criterion
 requires an Osterwalder--Schrader type constructive QFT framework on Euclidean
 space, including reflection positivity and a controlled infinite-volume limit.
 The Banach fixed-point approach operates in a different mathematical setting
@@ -920,7 +970,7 @@ $\gamma$ operates in the non-perturbative regime.
 Monte Carlo validation: $\gamma_{\mathrm{MC}} = 16.374 \pm 1.005$ (within $1\sigma$).
 Bare extrapolation: $\gamma_\infty = 16.3437 \pm 0.0005$ \catmark{B}.
 \end{evidencebox}
-
+\vspace{0.6em}
 \begin{openquestion}
 \textbf{L4: Gamma Derivation.} Can $\gamma = \GammaGeom$ be derived from
 non-perturbative RG flow (functional renormalisation group, BMW truncation)
@@ -1047,7 +1097,12 @@ they are \textbf{not} independent predictions:
 \centering
 \caption{UIDT cosmological parameters. All classified \catmark{C} (calibrated).}
 \label{tab:cosmo}
-\begin{tabular}{llll}
+\small
+\setlength{\tabcolsep}{4pt}%
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.2cm}
+                >{\raggedright\arraybackslash}p{3.2cm}
+                >{\raggedright\arraybackslash}p{5.0cm}
+                >{\centering\arraybackslash}p{1.7cm}@{}}
 \toprule
 \textbf{Parameter} & \textbf{Value} & \textbf{Source} & \textbf{Category} \\
 \midrule
@@ -1065,7 +1120,7 @@ values, not as replacements for external cosmological fits. Planck~2018
 \cite{Planck2018} and DESI~DR2~\cite{DESI2025} provide the external
 $\Lambda\mathrm{CDM}$ and BAO comparison baselines against which the
 calibration is stress-tested.
-
+\clearpage
 \begin{evidencebox}[DESI DR2 Tension (2026-W10)]{catC}
 The DESI DR2 Results~II~\cite{DESI2025} report $H_0 = 68.17 \pm 0.28\kms$
 (DESI+CMB) and $w_0 = -0.838 \pm 0.055$ (DESI+CMB+Pantheon+). This implies
@@ -1116,7 +1171,7 @@ The above cosmological framework is not merely an effective parameterisation; it
 encodes a specific cosmogonic narrative derived from the first-principles
 dynamics of $S(x)$. The early universe in \UIDT\ is not a spacetime singularity
 but a phase transition of information density.
-
+\vspace{-0.6em}
 \paragraph{The Two-Phase Architecture.}
 \UIDT\ distinguishes two ontologically distinct phases of cosmic origin:
 \textbf{Phase~A (Information Inflation):} A logical (not chronological)
@@ -1215,14 +1270,14 @@ $> 3\sigma$, the UIDT-internal spectral-gap mapping is refuted. This is not a
 claim to have solved the Clay Yang--Mills problem. \emph{Current status:}
 $z = 0.37\sigma$ (\textbf{passed}).
 \end{killswitch}
-
+\vspace{0.5em}
 \begin{killswitch}
 \textbf{F2: Torsion Binding Energy.}
 If $E_T \approx 0$ within experimental uncertainty (pure geometry, no torsion
 residual), the missing-link hypothesis is refuted. \emph{Current status:}
 pending.
 \end{killswitch}
-
+\vspace{0.5em}
 \begin{killswitch}
 \textbf{F3: DESI Year~5 Dark Energy.}
 If $w(z) = -1.000 \pm 0.005$ at all redshifts (pure $\Lambda$), the dynamical
@@ -1231,14 +1286,14 @@ $w_0 > -0.90$ at $>3\sigma$ would constitute a second falsification channel
 for the \UIDT\ dark-energy calibration. \emph{Current status:} DESI~Y1
 supports dynamic $w$ but leaves the \UIDT\ calibration under active tension.
 \end{killswitch}
-
+\vspace{0.5em}
 \begin{killswitch}
 \textbf{F4: Photonic Isomorphism.}
 If the critical refractive index transition does not occur at
 $n_{\mathrm{crit}} = \GammaGeom \pm 0.1$, Pillar~IV is refuted. \emph{Current
 status:} pending.
 \end{killswitch}
-
+\vspace{0.5em}
 \begin{killswitch}
 \textbf{F5: LHC Scalar Resonance (Run~4).}
 If a $> 5\sigma$ exclusion of any $0^{++}$ resonance in the 1.5--1.9$\GeV$
@@ -1247,7 +1302,7 @@ window is obtained, the scalar resonance prediction $m_S = 1.705 \pm 0.015\GeV$
 \textbf{not} falsify the underlying purely spectral mass gap $\Delta$.
 \emph{Current status:} no dedicated search exists.
 \end{killswitch}
-
+\vspace{0.5em}
 \begin{killswitch}
 \textbf{F6: Proton Anchor Ratio.}
 If $m_p / f_{\mathrm{vac}}$ deviates from $8.75$ at $> 3\sigma$, Pillar~III
@@ -1261,7 +1316,10 @@ categories.
 
 %=============================================================================
 % SECTION 12 — EPISTEMOLOGICAL POSITION
+
+
 %=============================================================================
+\newpage
 \subsection{Claim-to-Evidence Matrix}
 \label{subsec:claim-evidence-matrix}
 
@@ -1275,8 +1333,9 @@ falsification exposure.
 \scriptsize
 \caption{Claim-to-evidence matrix for the UIDT Ontology manuscript.}
 \label{tab:claim_evidence_matrix}
-{\setlength{\tabcolsep}{2pt}
-\begin{tabular}{@{}p{1.1cm}p{3.0cm}p{2.1cm}p{1.2cm}p{1.1cm}p{2.7cm}p{1.4cm}p{2.2cm}@{}}
+{\setlength{\tabcolsep}{1.35pt}%
+\renewcommand{\arraystretch}{0.76}%
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{0.50cm}>{\raggedright\arraybackslash}p{2.35cm}>{\raggedright\arraybackslash}p{2.05cm}>{\centering\arraybackslash}p{0.70cm}>{\centering\arraybackslash}p{0.70cm}>{\raggedright\arraybackslash}p{2.50cm}>{\raggedright\arraybackslash}p{1.05cm}>{\raggedright\arraybackslash}p{1.55cm}@{}}
 \toprule
 \textbf{ID} & \textbf{Claim} & \textbf{Value} & \textbf{Tag} &
 \textbf{Str.} & \textbf{Source / basis} & \textbf{Limit.} &
@@ -1285,30 +1344,41 @@ falsification exposure.
 C1 & Spectral-gap mapping & $\Delta^*=\DeltaGap$ & \catmark{A-} &
 I/III & Theorem~\ref{thm:massgap}; Chen et al. lattice comparison &
 L6, L8 & F1 \\
+\midrule
 C2 & Geometric coupling & $\gamma=\GammaGeom$ & \catmark{A-} &
 III & Kinetic-VEV matching; $\gamma_\infty$ cross-check & L4 & F4 / L4 \\
+\midrule
 C3 & RG coupling & $\kappa=\kappaVal\pm0.008$ & \catmark{A} &
 I/III & RG fixed-point relation & L7 & RG residual \\
+\midrule
 C4 & Scalar self-coupling & $\lambda_S\simeq\lambdaS$ & \catmark{A} &
 III & $5\kappa^2=3\lambda_S$ & L7 & RG residual \\
+\midrule
 C5 & Vacuum scale & $v=\vVEV$ & \catmark{A} &
 III & Canonical UIDT ledger & L1, L4 & Ledger audit \\
+\midrule
 C6 & Cosmology calibration & $H_0=70.4\pm0.16\kms$, $w_0=-0.99$ &
 \catmark{C} & I/III & UIDT calibration; Planck/DESI baseline tension &
 L1 & F3 \\
+\midrule
 C7 & Casimir anomaly & $+0.59\%$ at $\LambdaGrid$ & \catmark{D} &
 III & Laboratory prediction & L5 & Laboratory null \\
+\midrule
 C8 & Scalar resonance & $m_S=1.705\pm0.015\GeV$ & \catmark{D} &
 III & Particle-channel prediction above spectral gap & L6 & F5 \\
+\midrule
 C9 & Born-rule program & Quadratic measure from lattice amplitudes &
 \catmark{E} & III & Theorem-target program, not proof closure & L11 & T1--T3 \\
+\midrule
 C10 & Clay/OS status & Not a Clay-level solution & \catmark{E} &
 II/III & Jaffe--Witten; OS constructive-QFT requirements & L8 & OS proof gap \\
 \bottomrule
-\end{tabular}
+\end{tabular*}
 }
 \end{table}
 
+
+\newpage
 \section{Epistemological Position: Mathematical Realism Without Omniscience}
 \label{sec:epistemology}
 
@@ -1354,23 +1424,16 @@ mathematical structure requires nothing but its own consistency.
 It is illuminating to contrast the ontological commitments of \UIDT\ with those
 of contemporary programmes in fundamental physics, particularly String Theory
 and Loop Quantum Gravity (LQG).
-
-\paragraph{Versus String Theory.}
-String Theory posits an ontology of extended one-dimensional objects
-propagating in a pre-existing (typically 10- or 11-dimensional) background. It
-is a framework of profound mathematical richness but immense ontological
-profligacy. The landscape of $10^{500}$ vacuum states reflects a structural
-underdetermination: the theory cannot uniquely specify the universe we inhabit.
-\UIDT, conversely, operates in $3+1$ dimensions and requires no background
-metric. The vacuum configuration is locally fixed by the Banach contraction of
-the $\mathrm{SU}(3)$ dynamics. It is an ontology of strict finitude and
-mathematical determinism.
-
-\paragraph{Versus Entropic Gravity.}
+\vspace{-0.3em}
+\paragraph{Versus String Theory:}
+String Theory posits an ontology of extended one-dimensi-
+onal objects propagating in a pre-existing (typically 10- or 11-dimensional) background. It is a framework of profound mathematical richness but immense ontological profligacy. The landscape of $10^{500}$ vacuum states reflects a structural underdetermination: the theory cannot uniquely specify the universe we inhabit. \UIDT, conversely, operates in $3+1$ dimensions and requires no background metric. The vacuum configuration is locally fixed by the Banach contraction of the $\mathrm{SU}(3)$ dynamics. It is an ontology of strict finitude and mathematical determinism.
+\vspace{-0.9em}
+\paragraph{Versus Entropic Gravity:}
 Verlinde's entropic gravity~\cite{Verlinde2011} and Padmanabhan's thermodynamic
 programme~\cite{Padmanabhan2010} derive Newton's laws and general relativity from the thermodynamic tendency of systems to maximise entropy on holographic screens. \UIDT\ shares this core intuition (that gravity is an emergent entropic force driven by information gradients) but advances the programme from a generic thermodynamic postulate to a specified microscopic field theory. Where Verlinde postulates an unspecified entropy functional on holographic surfaces, \UIDT\ identifies the scalar field $\Sx$ whose action principle generates these gradients.
-
-\paragraph{Versus Loop Quantum Gravity.}
+\vspace{-0.9em}
+\paragraph{Versus Loop Quantum Gravity:}
 LQG shares with \UIDT\ the ambition of background independence. It posits an
 ontology of discrete, quantised geometric structures (spin networks). However,
 LQG struggles to recover smooth macroscopic spacetime and the particle content
@@ -1378,8 +1441,8 @@ of the Standard Model. \UIDT\ achieves background independence not by
 quantising geometry, but by generating geometry from the continuum dynamics of
 the vacuum information density. The quantisation is topological (the mass
 gap), not geometric.
-
-\paragraph{The Epistemic Razor.}
+\vspace{-0.9em}
+\paragraph{The Epistemic Razor:}
 \UIDT\ employs a rigorous epistemic razor: it admits no unobservable extra
 dimensions, no fundamental supersymmetry, and no infinite landscapes. Its
 predictions are rigidly constrained by the canonical parameters $\kappa$,
@@ -1431,22 +1494,25 @@ To synthesise these findings, Table~\ref{tab:pregeometric_comparison} provides a
 
 \begin{table}[h]
 \centering
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{@{}l|ccccc@{}}
+\small
+\caption{Systematic comparison of pregeometric frameworks against the \UIDT\ architecture.}
+\label{tab:pregeometric_comparison}
+{\setlength{\tabcolsep}{2.2pt}%
+\renewcommand{\arraystretch}{1.08}%
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{1.80cm}>{\centering\arraybackslash}p{1.75cm}>{\raggedright\arraybackslash}p{2.35cm}>{\raggedright\arraybackslash}p{1.85cm}>{\raggedright\arraybackslash}p{2.20cm}>{\raggedright\arraybackslash}p{2.15cm}@{}}
 \toprule
 \textbf{Framework} & \textbf{Bckgrnd. Indep.} & \textbf{Metric Source} & \textbf{Inflation} & \textbf{Dim. Selection} & \textbf{Spectral Gap} \\
 \midrule
-\textbf{Yang}     & Yes & Non-comm. coords & Unclear & Unclear & Postulated \\
+\textbf{Yang} & Yes & Non-comm. coords & Unclear & Unclear & Postulated \\
 \textbf{Meluccio} & Partial & Phase transition & Parametric & By hand ($3+1$) & N/A \\
 \textbf{GFT \cite{Gudder2015}} & Yes & Graph condensation & Unclear & Difficult & N/A \\
-\textbf{CST}      & Yes & Causal order & Unclear & Difficult & N/A \\
-\textbf{D0-branes}& Yes & Matrix geometry & Ad-hoc & String-driven ($10$) & Yes \\
+\textbf{CST} & Yes & Causal order & Unclear & Difficult & N/A \\
+\textbf{D0-branes} & Yes & Matrix geometry & Ad-hoc & String-driven ($10$) & Yes \\
 \midrule
-\textbf{UIDT}     & \textbf{Yes} & \textbf{Axiom~\ref{ax:emergence} $S(x)$} & \textbf{99-step RG flow} & \textbf{Fisher signature} & \textbf{Banach F.P. \catmark{A-}} \\
+\textbf{UIDT} & \textbf{Yes} & \textbf{Axiom~\ref{ax:emergence} $S(x)$} & \textbf{99-step RG flow} & \textbf{Fisher signature} & \textbf{Banach F.P. \catmark{A-}} \\
 \bottomrule
-\end{tabular}
-\caption{Systematic comparison of pregeometric frameworks against the \UIDT\ architecture.}
-\label{tab:pregeometric_comparison}
+\end{tabular*}
+}
 \end{table}
 
 These four identified gaps translate directly into Open Question 4
@@ -1629,7 +1695,7 @@ theory meets the unknown.
     $\Delta = \DeltaGap$ with the physical mass of the $f_0(1710)$ scalar
     meson. This has been formally retracted (Decision D-001). The mass gap
     is purely spectral; it is not a particle mass.
-
+\clearpage
   \item \textbf{EFT Status and UV Completion.}
     \UIDT\ is formulated as an effective field theory below the torsion scale
     $E_T$. It is not known whether the theory possesses a non-perturbatively
@@ -1668,7 +1734,7 @@ theory meets the unknown.
     background. Full background independence (the formulation of the theory
     without any reliance on a fixed metric even at intermediate steps of
     the calculation) has not been rigorously established.
-
+ \newpage
   \item \textbf{Born Rule Conjectural (\catmark{E}).}
     The derivation of the Born rule from the lattice dynamics of $S(x)$
     (Section~\ref{subsec:born-rule}) is a research programme, not a
@@ -1741,7 +1807,7 @@ open and represent the frontier of current research:
     ratio $r$ directly from $S(x)$ fluctuations is required to compete with
     established cosmological models.
 \end{itemize}
-
+\clearpage
 The emergence of classicality from the underlying $S(x)$ field dynamics
 represents a critical junction in the ontology. \UIDT\ adopts a
 \emph{deterministic, epistemic interpretation with an ontic information field}.
@@ -1789,7 +1855,9 @@ The UIDT interpretation is \emph{minimal} in the sense that it introduces no
 additional metaphysics beyond the ontic field $S(x)$ and its Lagrangian
 dynamics. The statistical character of quantum measurements is a consequence
 of the epistemic boundedness of embedded observers, not of fundamental
-indeterminism. This makes UIDT formally closer to Bohmian mechanics than to
+indeterminism.\\
+\clearpage
+This makes UIDT formally closer to Bohmian mechanics than to
 Copenhagen, but with the crucial ontological simplification that the
 ``hidden variables'' are not hidden at all: they are the field $S(x)$,
 whose complete configuration is inaccessible to local subsystems precisely
@@ -1909,7 +1977,7 @@ three technical ingredients are required:
 Only after (T1)--(T3) have been established can one legitimately upgrade
 Theorem~\ref{thm:born-rule-uidt} to a category \catmark{A} or \catmark{A-}
 statement within the evidence classification system.
-
+\clearpage
 \paragraph{Open subproblems.}
 The research program naturally decomposes into three precise open questions:
 
@@ -1939,6 +2007,7 @@ rather than an external axiom. Until then, the status of the Born rule within
 arguments but awaiting full mathematical proof.
 
 % UPGRADE: Open Question 4 (Deep Scan)
+\newpage
 \subsection{Open Question 4: Pregeometric Comparison and the Mathematical Frontier}
 \label{subsec:open-question-4}
 
@@ -2031,35 +2100,44 @@ Torsion Binding Energy & $E_T$ & $\ETorsion$ & \catmark{C} \\
 %=============================================================================
 \begin{table}[H]
 \centering
-\small
+\scriptsize
 \caption{Symbol and evidence ledger for frequently used UIDT quantities.}
 \label{tab:symbol_evidence_ledger}
-{\setlength{\tabcolsep}{2pt}
-\begin{tabular}{@{}p{2.0cm}p{4.4cm}p{2.5cm}p{1.3cm}p{1.5cm}p{3.4cm}@{}}
+{\setlength{\tabcolsep}{1.7pt}%
+\renewcommand{\arraystretch}{0.82}%
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{1.55cm}>{\raggedright\arraybackslash}p{3.55cm}>{\raggedright\arraybackslash}p{2.25cm}>{\centering\arraybackslash}p{0.80cm}>{\centering\arraybackslash}p{1.00cm}>{\raggedright\arraybackslash}p{3.00cm}@{}}
 \toprule
 \textbf{Symbol} & \textbf{Meaning} & \textbf{Ledger value} &
 \textbf{Tag} & \textbf{Stratum} & \textbf{Status / limitation} \\
 \midrule
 $\Sx$ & Vacuum information density & field variable & \catmark{A} &
 III & Ontological primitive of the formalism \\
+\midrule
 $\Delta^*$ & Yang--Mills spectral gap mapping & $\DeltaGap$ &
 \catmark{A-} & I/III & Local UIDT result; L6/L8 visible \\
+\midrule
 $\gamma$ & Geometric coupling & $\GammaGeom$ & \catmark{A-} &
 III & Calibrated; origin remains L4 \\
+\midrule
 $\gamma_\infty$ & Bare extrapolation cross-check & $\GammaInf$ &
 \catmark{B} & I/II & Lattice-compatible extrapolative context \\
+\midrule
 $\kappa$ & Gauge--scalar coupling & $\kappaVal$ & \catmark{A} &
 III & Enters RG relation with $\lambda_S$ \\
+\midrule
 $\lambda_S$ & Scalar self-coupling & $\lambdaS$ & \catmark{A} &
 III & Display value for $5\kappa^2/3$ \\
+\midrule
 $v$ & Vacuum expectation scale & $\vVEV$ & \catmark{A} &
 III & Canonical UIDT scale parameter \\
+\midrule
 $E_T$ & Torsion binding energy & $\ETorsion$ & \catmark{C} &
 III & Calibrated; tied to torsion tests \\
+\midrule
 $\lambda_{\UIDT}$ & UIDT lattice scale & $\LambdaGrid$ & \catmark{C} &
 III & Calibrated grid scale, not an external constant \\
 \bottomrule
-\end{tabular}
+\end{tabular*}
 }
 \end{table}
 
@@ -2077,13 +2155,7 @@ canonical UIDT ledger in this manuscript.
 \section{UEIP v1.0 Compliance Statement}
 \label{sec:ueip}
 
-This manuscript has been generated and audited in strict accordance with the
-\textbf{UIDT Editorial Integrity Protocol (UEIP v1.0)}. Every quantitative
-claim, categorical classification, and cosmological parameter has been cross-referenced
-against the immutable `CANONICAL/CONSTANTS.md` (v3.9.6) and `LEDGER/CLAIMS.json`.
-The document explicitly acknowledges tensions with recent external data (e.g.,
-DESI DR2) and enforces the epistemological boundaries of the \catmark{A}--\catmark{E}
-evidence classification system.
+Every quantitative claim, categorical classification, and cosmological parameter has been cross-referenced against the immutable `CANONICAL/CONSTANTS.md` (v3.9.6) and `LEDGER/CLAIMS.json` from \href{https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical}{UIDT v3.9 repository}. The document explicitly acknowledges tensions with recent external data (e.g., DESI DR2) and enforces the epistemological boundaries of the \catmark{A}--\catmark{E} evidence classification system.
 
 %=============================================================================
 % SECTION 21 — THE ADVERSARY TEST: A SELF-AUDIT
@@ -2168,26 +2240,36 @@ It is not a falsifiable component of the physical theory.
 
 The evidence labels used throughout this manuscript are internal UIDT audit
 classes. They are not substitutes for external peer review; they record the
-status of each claim inside the UIDT v3.9 repository governance model.
+status of each claim inside the \href{https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical}{UIDT v3.9 repository} governance model.
 
 \begin{table}[H]
 \centering
 \caption{UIDT evidence classes used in this manuscript.}
 \label{tab:evidence_classes}
-\begin{tabular}{lll}
+\small
+\setlength{\tabcolsep}{4pt}%
+\renewcommand{\arraystretch}{1.18}%
+\begin{tabular}{@{}>{\centering\arraybackslash}p{1.8cm}
+                >{\raggedright\arraybackslash}p{6.0cm}
+                >{\raggedright\arraybackslash}p{4.7cm}@{}}
 \toprule
 \textbf{Class} & \textbf{Meaning} & \textbf{External status} \\
 \midrule
 \catmark{A} & Exact mathematical closure inside UIDT & Requires reproducible proof artefact \\
+\midrule
 \catmark{A-} & Calibrated or local constructive evidence & Not Clay-level proof \\
+\midrule
 \catmark{B} & Lattice-compatible or literature-compatible value & Requires cited external comparison \\
+\midrule
 \catmark{C} & Calibrated phenomenology or cosmology & Subject to survey revision \\
+\midrule
 \catmark{D} & Falsifiable prediction & Awaiting independent test \\
+\midrule
 \catmark{E} & Speculative, withdrawn, or interpretive claim & Not promoted as evidence \\
 \bottomrule
 \end{tabular}
 \end{table}
-
+\vspace{-0.5em}
 \begin{table}[H]
 \centering
 \caption{Stratum discipline for mixed physical and ontological claims.}
@@ -2202,13 +2284,13 @@ III & UIDT mappings, predictions, and ontological interpretations \\
 \bottomrule
 \end{tabular}
 \end{table}
-
+\vspace{-0.5em}
 Internal references such as D-001, D-002, and UIDT-C-046/050 denote repository
 audit decisions or calibration notes. They identify provenance inside the
 project but do not function as independent external evidence. Decision D-001
 records the retraction of the earlier glueball-particle identification.
 Decision D-002 records retention of the canonical cosmological calibration
-pending PI-authorised recalibration. UIDT-C-046/050 denotes internal exploratory
+pending recalibration.\\ UIDT-C-046/050 denotes internal exploratory
 work on the $N=99$ cascade and is treated as audit context only.
 
 \subsection*{Mathematical Assumptions and Scope}
@@ -2221,27 +2303,33 @@ global Yang--Mills existence.
 
 \begin{table}[H]
 \centering
-\small
 \caption{Mathematical scope assumptions for the local Banach fixed-point result.}
 \label{tab:math_scope}
-{\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}p{4.1cm}p{7.2cm}p{3.0cm}@{}}
+{\setlength{\tabcolsep}{5pt}%
+\renewcommand{\arraystretch}{1.28}%
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.5cm}
+                >{\raggedright\arraybackslash}p{7.3cm}
+                >{\raggedright\arraybackslash}p{3.1cm}@{}}
 \toprule
 \textbf{Assumption} & \textbf{Meaning in this manuscript} & \textbf{Status} \\
 \midrule
 Banach space selection & The contraction is defined on a specified space of
-gauge-invariant vacuum configurations, not on the full unconstrained field
-configuration space. & Local UIDT scope \\
+ gauge-invariant vacuum configurations, not on the full unconstrained field
+ configuration space. & Local UIDT scope \\
+\midrule
 Contraction condition & The fixed-point map is assumed to satisfy $L<1$ in
-the stated norm and regularisation domain. & \catmark{A-} conditional \\
+ the stated norm and regularisation domain. & \catmark{A-} conditional \\
+\midrule
 Regularisation domain & The result is formulated before a full constructive
-QFT infinite-volume limit has been supplied. & L8 open \\
+ QFT infinite-volume limit has been supplied. & L8 open \\
+\midrule
 Gauge invariance & The admissible configurations respect the
-$\mathrm{SU}(3)$ gauge symmetry stated in Axiom~\ref{ax:gauge}. & Internal
-consistency condition \\
+ $\mathrm{SU}(3)$ gauge symmetry stated in Axiom~\ref{ax:gauge}. & Internal
+ consistency condition \\
+\midrule
 Osterwalder--Schrader measure & No Euclidean constructive-QFT measure,
-reflection-positivity proof, or Clay-level existence theorem is claimed. &
-Explicit non-claim \\
+ reflection-positivity proof, or Clay-level existence theorem is claimed. &
+ Explicit non-claim \\
 \bottomrule
 \end{tabular}
 }
@@ -2258,11 +2346,15 @@ weakness column remains binding.
 
 \begin{table}[H]
 \centering
-\scriptsize
+\footnotesize
 \caption{Reviewer attack surface and remaining weaknesses.}
 \label{tab:reviewer_attack_surface}
-{\setlength{\tabcolsep}{2pt}
-\begin{tabular}{@{}p{3.0cm}p{4.8cm}p{4.6cm}p{1.9cm}@{}}
+{\setlength{\tabcolsep}{3pt}%
+\renewcommand{\arraystretch}{1.12}%
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.8cm}
+                >{\raggedright\arraybackslash}p{4.7cm}
+                >{\raggedright\arraybackslash}p{4.6cm}
+                >{\raggedright\arraybackslash}p{1.6cm}@{}}
 \toprule
 \textbf{Objection} & \textbf{UIDT response} & \textbf{Remaining weakness} &
 \textbf{Status} \\
@@ -2270,19 +2362,25 @@ weakness column remains binding.
 Clay mass-gap problem & The manuscript claims local constructive evidence
 inside UIDT, not a Jaffe--Witten solution. & OS measure construction,
 reflection positivity, and infinite-volume control remain open. & \catmark{A-}/L8 \\
-EFT non-renormalisability & The dimension-5 operator is explicitly treated as
+\midrule
+EFT non-renorm. & The dimension-5 operator is explicitly treated as
 EFT-only below $\Lambda_{\UIDT}$. & A UV completion or asymptotic-safety
 argument is not supplied. & L7 \\
+\midrule
 Origin of $\gamma$ & $\gamma=\GammaGeom$ is canonical and constrained by
 matching, not promoted to first-principles closure. & Non-perturbative RG
 derivation remains missing. & \catmark{A-}/L4 \\
+\midrule
 $N=99$ cascade & The cascade is a calibrated cosmological mapping. & It is
 not derived from the Banach fixed point. & \catmark{C}/L5 \\
+\midrule
 DESI tension & DESI DR2 is disclosed as external pressure on the calibration. &
 Canonical UIDT values require PI-authorised recalibration if Y5 sharpens the
 tension. & \catmark{C}/F3 \\
+\midrule
 Born rule & The theorem is explicitly a working formulation of a research
 program. & T1--T3 and O1--O3 remain unproven. & \catmark{E}/L11 \\
+\midrule
 Scalar resonance vs. spectral gap & F5 targets the scalar excitation, not the
 spectral gap itself. & Dedicated experimental search channel remains absent. &
 \catmark{D}/F5 \\
@@ -2296,7 +2394,7 @@ spectral gap itself. & Dedicated experimental search channel remains absent. &
 %=============================================================================
 % APPENDIX C: UIDT IN THE LANDSCAPE OF STRUCTURAL REALISM
 %=============================================================================
-\newpage
+
 
 \section*{Appendix C: UIDT in the Landscape of Structural Realism}
 \addcontentsline{toc}{section}{Appendix C: UIDT in the Landscape of Structural Realism}
@@ -2309,11 +2407,13 @@ a Layer~III map; it is not part of the falsifiable physical core.
 
 \begin{table}[H]
 \centering
-{\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.2cm}
-                >{\raggedright\arraybackslash}p{3.7cm}
-                >{\raggedright\arraybackslash}p{3.7cm}
-                >{\raggedright\arraybackslash}p{4.4cm}@{}}
+\footnotesize
+{\setlength{\tabcolsep}{2.5pt}%
+\renewcommand{\arraystretch}{1.08}%
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.0cm}
+                >{\raggedright\arraybackslash}p{3.45cm}
+                >{\raggedright\arraybackslash}p{3.35cm}
+                >{\raggedright\arraybackslash}p{4.25cm}@{}}
 \toprule
 \textbf{Position} & \textbf{Core claim} & \textbf{Strength} & \textbf{UIDT integration or boundary} \\
 \midrule
@@ -2321,21 +2421,21 @@ Epistemic structuralism & Only the structure of the world is knowable. &
 Explains the success of science without heavy metaphysical commitment. &
 \UIDT\ accepts the importance of structure but rejects purely epistemic restraint:
 structure is real, not merely known. \\
-\addlinespace
+\midrule
 Ontic structural realism & Structure is ontologically primary; objects are not
 fundamental. & Fits relational features of quantum theory. &
 \UIDT\ gives OSR a concrete physical carrier through the field $\Sx$. \\
-\addlinespace
+\midrule
 Informational structural realism & Reality is analysed through informational
 objects and relational structures. & Connects ontology with information theory. &
 \UIDT\ treats $\Sx$ as a dynamic information-density primitive, not as a digital
 object or computational substrate. \\
-\addlinespace
+\midrule
 Strong emergentism & Higher-level phenomena have irreducible causal powers. &
 Captures the apparent novelty of life, mind, and agency. &
 \UIDT\ rejects strong emergence; complex phenomena are weakly emergent patterns
 inside the causal dynamics of $\Sx$. \\
-\addlinespace
+\midrule
 Physicalism or materialism & The physical is fundamental. & Provides continuity
 with the natural sciences. & \UIDT\ is an informational physicalism: matter is
 derived, while the physically realised primitive is $\Sx$. \\
@@ -2344,9 +2444,29 @@ derived, while the physically realised primitive is $\Sx$. \\
 \caption{Philosophical positions in relation to UIDT.}
 \label{tab:phil-comparison}
 \end{table}
-
+\newpage
 %=============================================================================
-
+\thispagestyle{uidtontology}
+\vspace*{\fill}
+\begin{center}
+\begin{minipage}{0.72\textwidth}
+\centering
+{\color{darkgray!70}\rule{0.42\textwidth}{0.35pt}}\\[2.2em]
+{\Large\itshape
+As soon as there is distinction, there is being.\\[0.35em]
+As soon as being is sufficiently complex, there is thought.\par}
+\vspace{2.2em}
+{\color{darkgray!45}\rule{0.18\textwidth}{0.3pt}}\\[1.6em]
+{\footnotesize\scshape Original German}\\[0.7em]
+{\normalsize\itshape
+Sobald Unterscheidung ist, ist Sein.\\[0.25em]
+Sobald Sein hinreichend komplex ist, ist Denken.\par}
+\vspace{2.2em}
+{\color{darkgray!70}\rule{0.42\textwidth}{0.35pt}}
+\end{minipage}
+\end{center}
+\vspace*{\fill}
+\newpage
 %=============================================================================
 % BIBLIOGRAPHY (Erweitert – integriert Research-Papiere und Desiderate)
 %=============================================================================
@@ -2649,15 +2769,7 @@ arXiv: \href{https://arxiv.org/abs/2411.00620}{2411.00620}.
 \end{thebibliography}
 
 %=============================================================================
-\vspace{2cm}
-\begin{center}
-\itshape
-As soon as there is distinction, there is being.\\
-As soon as being is sufficiently complex, there is thought.\\[1em]
-{\small Original German:}\\
-{\small Sobald Unterscheidung ist, ist Sein.\\
-Sobald Sein hinreichend komplex ist, ist Denken.}
-\end{center}
+
 %=============================================================================
 
 %=============================================================================
