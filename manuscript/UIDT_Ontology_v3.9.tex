@@ -26,6 +26,7 @@
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{multirow}
+\usepackage{enumitem}
 \usepackage{float}
 \usepackage{caption}
 \usepackage[numbers,sort&compress]{natbib}
@@ -136,6 +137,7 @@
 \newcommand{\kms}{\,\mathrm{km\,s}^{-1}\,\mathrm{Mpc}^{-1}}
 \newcommand{\catmark}[1]{\textsuperscript{\textsf{\textbf{[#1]}}}}
 \newcommand{\Sx}{S(x)}
+\newcommand{\lambdaS}{0.4167} % [A] display alias; exact RG value is 5\kappa^2/3.
 
 %===================================================================
 % UIDT IMMUTABLE PARAMETER LEDGER MACROS (v3.9, Evidence A / A-)
@@ -235,6 +237,9 @@ known limitation (L1--L12) is transparently disclosed. The ontological position
 advanced here is neither na\"ive Platonism nor computational simulation: it is
 the claim that mathematical structure, when sufficiently constrained, does not
 \emph{describe} physical reality but \emph{constitutes} it.
+
+Submission context: the manuscript is intended for \texttt{hep-th} as primary
+arXiv category, with \texttt{physics.hist-ph} as a possible cross-listing.
 \end{abstract}
 
 %=============================================================================
@@ -376,15 +381,15 @@ a relational graph of interacting constituents.
 \UIDT\ differs from each of these programmes in one decisive respect: it does
 not quantise geometry, nor does it discretise spacetime a priori. Instead, it
 derives the \emph{continuum} effective metric $g_{\mu\nu}^{\mathrm{eff}}$ from
-the vacuum configuration of a single scalar field $S(x)$, whose dynamics are
+the vacuum configuration of a single scalar field $\Sx$, whose dynamics are
 fixed uniquely by gauge invariance, vacuum stability, and effective field-theoretic admissibility.
 The quantisation is topological (the mass gap $\Delta$), not geometric. The
 result is an ontology of strict finitude: there is no multiverse of vacua
 (String Theory), no ambiguously defined continuum limit (Causal Sets), and no
-need for a background time parameter (GFT). \UIDT\ occupies the logical
-endpoint of the pregeometric tradition: the minimal structural theory that
+need for a background time parameter (GFT). \UIDT\ occupies a logically minimal
+realisation of the pregeometric tradition: a constrained structural theory that
 recovers general relativity, the Standard Model mass spectrum, and late-time
-acceleration without free parameters.
+acceleration with a highly constrained parameter economy.
 
 %--- UPGRADE: The nature of Nothingness and the First Distinction (Desiderat 4) ---%
 \subsection{The Nothing and the Distinction: Ontological Precision}
@@ -719,7 +724,9 @@ gap through a geometric fixed-point construction.
 Let $\mathcal{T}: \mathcal{B} \to \mathcal{B}$ be the geometric operator
 defined on the Banach space of gauge-invariant vacuum configurations, with
 contraction constant $q < 1$ determined by the couplings $\kappa$ and
-$\lambda_S$. Then, within the axiomatic framework of UIDT (Axioms I--IV), the $\mathrm{SU}(3)$ information-
+$\lambda_S$, where the display value $\lambda_S \simeq \lambdaS$ represents the
+exact RG relation $\lambda_S=5\kappa^2/3$ and hence
+$|5\kappa^2 - 3\lambda_S| < 10^{-14}$. Then, within the axiomatic framework of UIDT (Axioms I--IV), the $\mathrm{SU}(3)$ information-
 density dynamics admit a unique Banach fixed point yielding a spectral mass gap
 $\Delta^* = \DeltaGap$ \catmark{A-}, conditional on (i)~local existence proven within the
 adopted regularisation scheme, and (ii)~the EFT validity domain of Axiom~\ref{ax:gauge}.
@@ -747,7 +754,11 @@ the Clay Yang--Mills problem in the sense required by Jaffe and Witten
 on the full configuration space and a proof that the gap survives the
 infinite-volume limit. The present result is \emph{local} and
 \emph{regularisation-dependent}; upgrading it to a global proof remains an
-open mathematical problem (Limitation~L8).
+open mathematical problem (Limitation~L8). In particular, the Clay criterion
+requires an Osterwalder--Schrader type constructive QFT framework on Euclidean
+space, including reflection positivity and a controlled infinite-volume limit.
+The Banach fixed-point approach operates in a different mathematical setting
+and does not by itself supply that measure-theoretic construction.
 \end{remark}
 
 \paragraph{Methodological Call to the Lattice Community.}
@@ -761,9 +772,10 @@ corrections, and topological freezing at fine lattice spacings.
 The UIDT programme calls for: (i)~anisotropic lattice simulations with
 $a < 0.05\,\mathrm{fm}$ and $L > 3\,\mathrm{fm}$ to isolate the spectral
 pole from mixing with multi-gluon continuum states;
-(ii)~the use of parallel-tempering algorithms (as demonstrated by
-Vadacchino at LATTICE2024) to overcome topological freezing at fine
-lattice spacings; and (iii)~a direct extraction of the
+(ii)~algorithmic control of topological freezing at fine lattice spacings,
+including out-of-equilibrium approaches benchmarked against parallel tempering
+with boundary conditions in recent LATTICE proceedings~\cite{Vadacchino2024};
+and (iii)~a direct extraction of the
 $\mathrm{SU}(3)$ Hamiltonian spectrum, rather than the conventional
 asymptotic correlation-function fits, to distinguish the spectral
 gap from the lowest glueball resonance mass.
@@ -947,7 +959,9 @@ The DESI DR2 Results~II~\cite{DESI2025} report $H_0 = 68.17 \pm 0.28\kms$
 a \textbf{7.96$\sigma$ tension} with the \UIDT\ canonical $H_0 = 70.4\kms$
 and a \textbf{2.76$\sigma$ tension} with $w_0 = -0.99$. The $S_8 = 0.814$
 remains consistent ($0.00\sigma$). Canonical values are retained per Decision
-D-002; formal recalibration requires PI authorisation.
+D-002; formal recalibration requires PI authorisation. The $H_0$ discrepancy
+is therefore a potential Pillar~II kill-switch exposure, pending a formal
+recalibration decision after DESI Year~5 or an equivalent precision survey.
 \end{evidencebox}
 
 \subsection{The Vacuum Energy Suppression Mechanism}
@@ -1090,8 +1104,10 @@ pending.
 \begin{killswitch}
 \textbf{F3 --- DESI Year~5 Dark Energy.}
 If $w(z) = -1.000 \pm 0.005$ at all redshifts (pure $\Lambda$), the dynamical
-dark energy calibration is invalidated. \emph{Current status:} DESI~Y1
-supports dynamic $w$.
+dark energy calibration is invalidated. A DESI Year~5 measurement of
+$w_0 > -0.90$ at $>3\sigma$ would constitute a second falsification channel
+for the \UIDT\ dark-energy calibration. \emph{Current status:} DESI~Y1
+supports dynamic $w$ but leaves the \UIDT\ calibration under active tension.
 \end{killswitch}
 
 \begin{killswitch}
@@ -1104,8 +1120,10 @@ status:} pending.
 \begin{killswitch}
 \textbf{F5 --- LHC Scalar Resonance (Run~4).}
 If a $> 5\sigma$ exclusion of any $0^{++}$ resonance in the 1.5--1.9$\GeV$
-window is obtained, the scalar mass prediction $m_S = 1.705 \pm 0.015\GeV$
-\catmark{D} is refuted. \emph{Current status:} no dedicated search exists.
+window is obtained, the scalar resonance prediction $m_S = 1.705 \pm 0.015\GeV$
+\catmark{D} is refuted. This falsifies the physical particle prediction, but does
+\textbf{not} falsify the underlying purely spectral mass gap $\Delta$.
+\emph{Current status:} no dedicated search exists.
 \end{killswitch}
 
 \begin{killswitch}
@@ -1388,7 +1406,7 @@ hierarchical kill-switches F1--F6 and explicit $> 3\sigma$ thresholds
 transforms the theory from a philosophical position into an empirically
 vulnerable scientific framework. These four features collectively justify the
 claim that \UIDT\ is not merely another entry in the catalogue of pregeometric
-approaches, but the logical endpoint of the programme: the minimal structure
+approaches, but a logically minimal realisation of the programme: the structure
 that recovers general relativity, the Standard Model mass spectrum, and
 late-time acceleration from a single self-consistent field.
 
@@ -1443,9 +1461,13 @@ meets the unknown.
     \UIDT\ is formulated as an effective field theory below the torsion scale
     $E_T$. It is not known whether the theory possesses a non-perturbatively
     renormalisable UV completion or remains valid only as a low-energy
-    approximation. The perturbative series is not Borel-summable, indicating
-    that the theory is non-renormalisable in the strict power-counting sense
-    \catmark{D}. Whether the Banach fixed point at the non-perturbative level
+    approximation. The Lagrangian contains a dimension-5 operator $\kappa S F^2$
+    and is therefore non-renormalisable by strict power counting---a consequence
+    solely of dimensional analysis, not of the perturbative expansion.
+    Additionally, the perturbative series is not expected to be Borel-summable
+    in the EFT regime, consistent with the non-perturbative character of the
+    vacuum dynamics \catmark{D}. This does not alter the EFT validity of the
+    theory below $\Lambda_{\mathrm{UIDT}}$. Whether the Banach fixed point at the non-perturbative level
     provides a UV completion---in the sense of asymptotic safety, where the
     non-perturbative RG flow converges to a non-trivial UV fixed point---is
     an open question. No evidence for or against asymptotic safety has been
@@ -1459,7 +1481,10 @@ meets the unknown.
     gauge-invariant functionals---remains outstanding. This corresponds to
     the Clay Millennium Problem criterion of a complete, non-perturbative
     solution to the Yang--Mills mass gap. \UIDT\ does not claim to have
-    satisfied this criterion fully.
+    satisfied this criterion fully. In particular, compliance with the
+    Osterwalder--Schrader axioms---especially reflection positivity---has not
+    been verified for the UIDT Banach fixed point and remains a prerequisite
+    for a rigorous constructive QFT interpretation.
 
   \item \textbf{Background Independence Not Fully Demonstrated.}
     Although Axiom~\ref{ax:emergence} and the Lagrangian~\eqref{eq:lagrangian}
@@ -1785,7 +1810,7 @@ This is an ontology of fundamental austerity. It demands that we abandon the
 intuitive, particle-centric view of nature in favour of a purely geometric,
 structural realism. The resistance to such a shift is sociologically
 predictable, but mathematically, the fixed-point geometry of the $\mathrm{SU}(3)$
-vacuum offers a compellingly rigid architecture for reality.
+vacuum offers a mathematically constrained architecture for reality.
 
 The predictive power of \UIDT\ now rests on its kill-switches
 (Section~\ref{sec:falsification}). It stands exposed to empirical falsification
@@ -2153,12 +2178,21 @@ Space/Conformal Field Theory Correspondence,''
 \emph{Phys.\ Rev.\ Lett.} \textbf{96}, 181602 (2006).
 arXiv: \href{https://arxiv.org/abs/hep-th/0603001}{hep-th/0603001}.
 
+\bibitem{Vadacchino2024}
+D.~Vadacchino, A.~Nada, and C.~Bonanno,
+``Topological susceptibility of SU(3) pure-gauge theory from out-of-equilibrium simulations,''
+\emph{PoS} \textbf{LATTICE2024}, 415 (2024).
+doi: \href{https://doi.org/10.22323/1.466.0415}{10.22323/1.466.0415};
+arXiv: \href{https://arxiv.org/abs/2411.00620}{2411.00620}.
+
 \end{thebibliography}
 
 %=============================================================================
 \vspace{2cm}
 \begin{center}
 \itshape
+As soon as there is distinction, there is being.\\
+As soon as being is sufficiently complex, there is thought.\\[1em]
 Sobald Unterscheidung ist, ist Sein.\\
 Sobald Sein hinreichend komplex ist, ist Denken.
 \end{center}
