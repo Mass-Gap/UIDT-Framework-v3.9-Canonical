@@ -1,0 +1,8 @@
+[
+  {
+    "timestamp": "2026-05-17T15:00:00Z",
+    "action": "Updated CLAIMS.json filepath from data/ledger/ to LEDGER/",
+    "files_modified": ["verification/scripts/audit_graph.py", "verification/scripts/daily_audit.py"],
+    "justification": "Alignment with Canonical V3.9 immutable ledger path. Fixed missing ledger error in Phase 2 Deep Epistemic Audit."
+  }
+]
