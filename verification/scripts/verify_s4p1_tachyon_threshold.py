@@ -84,7 +84,7 @@ print(f"  γ_ledger            = {mp.nstr(gamma_led, 8)}")
 print(f"  Abw. γ              = {mp.nstr(abs(gamma_cand / gamma_led - 1) * 100, 8)} %")
 
 # --- NLO-Abschätzung ---
-alpha_s_est = mp.mpf('0.30')
+alpha_s_est = mp.mpf('0.30')  # mu = Delta* = 1.710 GeV [E]
 delta_nlo   = alpha_s_est * Nc / (4 * mp.pi * mp.mpf('17'))
 k_nlo       = k_crit_cand * (1 + delta_nlo)
 print(f"\n[NLO-KORREKTUREN]")

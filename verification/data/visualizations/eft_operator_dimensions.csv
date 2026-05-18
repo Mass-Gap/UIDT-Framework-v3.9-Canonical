@@ -1,0 +1,6 @@
+term,operator_dimension,coupling_dimension,status,evidence_tag
+Yang-Mills kinetic F^2,4,0,strictly renormalisable,[A]
+Scalar kinetic (D S)^2,4,0,canonical kinetic term,[A]
+Scalar mass mu^2 S^2,2,2,relevant operator,[A]
+Scalar self-interaction lambda_S S^4,4,0,power-counting renormalisable,[A]
+EFT interaction (kappa_bar/Lambda_UIDT) S F^2,5,-1,EFT-only dimension-5 operator,[A]
