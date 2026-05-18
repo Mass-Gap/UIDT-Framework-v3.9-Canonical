@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
         with:
           fetch-depth: 0
 
@@ -51,7 +51,7 @@ jobs:
 
       - name: Comment PR - Format Check
         if: always()
-        uses: actions/github-script@v6
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410
         with:
           script: |
             const checkResult = "${{ job.status }}" === "success" ? "✅ PASS" : "❌ FAIL";
@@ -76,7 +76,7 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
 
       - name: Verify no protected paths modified
         shell: bash
@@ -128,7 +128,7 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
 
       - name: Comment PR - Protected Paths Check
         if: always()
-        uses: actions/github-script@v6
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410
         with:
           script: |
             const checkResult = "${{ job.status }}" === "success" ? "✅ PASS" : "❌ FAIL";
@@ -156,7 +156,7 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -214,7 +214,7 @@ Commit message format must follow: \`[UIDT] <type>: <summary>\`
           fi
 
       - name: Comment PR - Verification Results
-        uses: actions/github-script@v6
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410
         with:
           script: |
             const verificationStatus = "${{ steps.parse_results.outputs.verification_status }}";
@@ -273,7 +273,7 @@ ${residualsCSF}
           echo "verify_icon=$verify_icon" >> $GITHUB_OUTPUT
 
       - name: Final PR Comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410
         with:
           script: |
             const formatIcon = "${{ steps.summary.outputs.format_icon }}";
