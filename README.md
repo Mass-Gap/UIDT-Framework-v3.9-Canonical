@@ -293,7 +293,7 @@ Three-Equation System Closure:
 * **Achievement:** Falsifiable predictions for precision and collider experiments.
 * **Predictions:**
 * **Thermodynamic Censorship (Wolpert Limit):** Formalizes the fundamental noise floor at **17.10 MeV**, providing an analytical origin for the **X17 anomaly**.
-* **Blind Resonances:** Predicts the BESIII **X2370 resonance** as a harmonic overtone, alongside higher glueball states (Tensor at 2.418 GeV).
+* **Blind Resonances:** Predicts the BESIII **X2370 resonance** as a harmonic overtone, alongside higher scalar resonance states (Tensor at 2.418 GeV).
 * **Casimir Anomaly:** +0.59% deviation at 0.66 nm (**Category D**).
 * **Status:** **Category D (Prediction Awaiting Verification)**
 
