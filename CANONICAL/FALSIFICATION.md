@@ -15,6 +15,21 @@ The UIDT framework makes **testable predictions** across quantum field theory, l
 
 ---
 
+
+## AUTONOMOUS AGENT PROTOCOLS
+
+### OPUS 4.7 DELEGATION TRIGGER (Rule 3D)
+**Trigger:** Agents (e.g., Jules) detect a peer-reviewed paper that hits a known Falsification Trigger from `FALSIFICATION.md` or severely impacts `LIMITATIONS.md` (e.g., L1, L4, L5).
+**Action:** Jules is FORBIDDEN from downgrading Category [A] claims autonomously. Jules must generate an Emergency Epistemic Report for @Opus-4.7:
+> "🚨 **FALSIFICATION TRIGGER DETECTED:** ArXiv scan identified paper [DOI/arXiv]. Data implies [Threshold]. This challenges [Claim/Mechanism]. Requesting immediate Opus 4.7 evaluation for potential downgrade of Claim [X] to Category [E-withdrawn]."
+
+### THE AUDIT LOOP (Rule 4.1 & 4.2)
+- **Rule 4.1 (ArXiv Monitor):** Execute `LOCAL/scripts/arxiv_scan.py` weekly (Monday 06:00 UTC) to search for new papers related to:
+  - "Lattice QCD glueball spectrum continuum limit"
+  - "DESI dark energy equation of state"
+  - "Casimir effect anomaly precision measurement"
+- **Rule 4.2 (Data Parsing & CoVe):** Extract numerical findings from abstracts. If thresholds are met, generate the Opus 4.7 Emergency Epistemic Report.
+
 ## CRITICAL TESTS (Theory-Killing)
 
 ### F1: Lattice QCD Continuum Limit 🔴 HIGHEST PRIORITY

@@ -1,0 +1,17 @@
+{
+  "TKT-2026-05-18-ARXIV-SCAN-01": {
+    "files": [
+      "CANONICAL/FALSIFICATION.md",
+      "CANONICAL/LIMITATIONS.md",
+      "LOCAL/scripts/arxiv_scan.py"
+    ],
+    "tests": [],
+    "docs": [
+      "FALSIFICATION.md updated with Opus-4.7 trigger",
+      "LIMITATIONS.md falsification trigger updated to reference arxiv scan"
+    ],
+    "status": "implemented",
+    "timestamp": 1779116412,
+    "author": "P. Rietz"
+  }
+}
