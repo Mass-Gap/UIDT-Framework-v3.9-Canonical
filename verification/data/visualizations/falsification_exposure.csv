@@ -1,0 +1,7 @@
+kill_switch,target,evidence_tag,current_status,level,threshold
+F1,spectral-gap mapping,[A-]/[B],active,theory-level,lattice excludes Delta at >3 sigma
+F2,torsion sector,[C]/[D],pending,pillar-level,E_T -> 0 requires Sigma_T = 0
+F3,dark-energy calibration,[C],active tension,pillar-level,w = -1.000 +/- 0.005 or w0 > -0.90 at >3 sigma
+F4,photonic index,[D],pending,pillar-level,n_crit differs from gamma
+F5,scalar resonance,[D],pending,prediction-level,no 1.5-1.9 GeV scalar signal
+F6,proton anchor ratio,[D],pending,prediction-level,ratio deviates at >3 sigma

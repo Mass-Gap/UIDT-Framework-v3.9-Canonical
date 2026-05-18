@@ -1,0 +1,5 @@
+observable,source,value,uncertainty,evidence_tag,status
+H0,UIDT ledger,70.4,0.16,[C],internal calibration
+H0,DESI DR2,68.17,0.28,[C],external baseline
+w0,UIDT ledger,-0.99,0.0,[C],internal calibration
+w0,DESI DR2,-0.838,0.055,[C],external baseline
