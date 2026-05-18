@@ -186,7 +186,9 @@ If any of these occur, UIDT requires major revision:
 3. **DESI:** w = -1.00 ± 0.01 exactly (pure ΛCDM)
 4. **LHC:** Scalar excluded in 1.5-1.9 GeV window
 
-See `LEDGER/FALSIFICATION.md` for details.
+*Note: These triggers are continuously monitored via the autonomous execution of `LOCAL/scripts/arxiv_scan.py` (Rule 4.1). If an agent (e.g., Jules) detects a trigger, they are strictly forbidden from autonomously downgrading Category [A] claims. They must instead generate an Emergency Epistemic Report for @Opus-4.7 following Rule 3D.*
+
+See `CANONICAL/FALSIFICATION.md` for details.
 
 ---
 
