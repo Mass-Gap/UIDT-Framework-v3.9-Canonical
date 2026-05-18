@@ -1,5 +1,5 @@
 %=============================================================================
-% UIDT Ontology v3.9 — Vacuum Information Density as an Ontological Primitive
+% UIDT Ontology v3.9 — Vacuum Information Density as the Fundamental Geometric Scalar
 % Author: Philipp Rietz (ORCID: 0009-0007-4307-1609)
 % DOI: 10.5281/zenodo.17835200
 % License: CC BY 4.0
@@ -107,7 +107,7 @@
 % METADATA
 %=============================================================================
 \hypersetup{
-    pdftitle={Vacuum Information Density as an Ontological Primitive (UIDT v3.9)},
+    pdftitle={Vacuum Information Density as the Fundamental Geometric Scalar (UIDT v3.9)},
     pdfauthor={Philipp Rietz},
     pdfsubject={Structural-realist ontology of information-geometric physics},
     pdfkeywords={Ontology, Information Density, Yang-Mills, Mass Gap, Vacuum Geometry, UIDT},
@@ -148,7 +148,7 @@
 \newcommand{\kms}{\,\mathrm{km\,s}^{-1}\,\mathrm{Mpc}^{-1}}
 \newcommand{\catmark}[1]{\textsuperscript{\textsf{\textbf{[#1]}}}}
 \newcommand{\Sx}{S(x)}
-\newcommand{\lambdaS}{0.4167} % [A] display alias; exact RG value is 5\kappa^2/3.
+\newcommand{\lambdaS}{5/12 \approx 0.4167} % [A] display alias for exact RG value 5\kappa^2/3.
 
 %===================================================================
 % UIDT IMMUTABLE PARAMETER LEDGER MACROS (v3.9, Evidence A / A- / C)
@@ -232,8 +232,8 @@
 \vspace*{2cm}
 \begin{center}
 {\LARGE\bfseries Vacuum Information Density\\[0.25em]
-as an Ontological Primitive}\\[0.9em]
-{\small\bfseries A Structural-Realist Account of\\[0.25em]
+as the Fundamental Geometric Scalar}\\[0.9em]
+{\small\bfseries A Structural-Realist Account of \(S(x)\) as an Ontological Primitive,\\[0.25em]
 the Yang--Mills Spectral Gap, Emergent Spacetime,\\[0.25em]
 and the Cosmological Hierarchy}\\[1.5em]
 {\large\itshape Unified Information-Density Theory (UIDT) v3.9\\[0.25em]
@@ -462,6 +462,15 @@ need for a background time parameter (GFT). \UIDT\ occupies a logically minimal
 realisation of the pregeometric tradition: a constrained structural theory that
 aims to reproduce general relativity, the Standard Model mass spectrum, and late-time
 acceleration with a highly constrained parameter economy.
+
+The local philosophical corpus also records research-mode comparisons with
+external emergent-spacetime programmes, including Nathen C.~G.~Miranda's
+reported work on emergent spacetime, matter, and gauge fields. In the absence
+of an independently verified DOI, journal record, or arXiv identifier in the
+current manuscript audit, this comparison is treated only as contextual
+\catmark{E} material: it may guide future mapping between discrete causal
+structures and the continuous information manifold $\Sx$, but it is not used
+as evidence for any UIDT claim.
 
 % UPGRADE: The nature of Nothingness and the First Distinction (Desiderat 4)
 \newpage
@@ -882,8 +891,8 @@ the Yang--Mills spectral gap through a geometric fixed-point construction.
 Let $\mathcal{T}: \mathcal{B} \to \mathcal{B}$ be the geometric operator
 defined on the Banach space of gauge-invariant vacuum configurations, with
 contraction constant $q < 1$ determined by the couplings $\kappa$ and
-$\lambda_S$, where the display value $\lambda_S \simeq \lambdaS$ represents the
-exact RG relation $\lambda_S=5\kappa^2/3$ and hence
+$\lambda_S$, where $\lambda_S \equiv 5\kappa^2/3=5/12\approx0.4167$ is the
+exact RG relation written with its decimal display value, and hence
 $|5\kappa^2 - 3\lambda_S| < 10^{-14}$. Then, within the axiomatic framework of UIDT (Axioms I--IV), the $\mathrm{SU}(3)$ information-
 density dynamics admit a unique Banach fixed point yielding a spectral mass gap
 $\Delta^* = \DeltaGap$ \catmark{A-}, conditional on (i)~local existence established within the
@@ -974,6 +983,16 @@ $\gamma$ operates in the non-perturbative regime.
 Monte Carlo validation: $\gamma_{\mathrm{MC}} = 16.374 \pm 1.005$ (within $1\sigma$).
 Bare extrapolation: $\gamma_\infty = 16.3437 \pm 0.0005$ \catmark{B}.
 \end{evidencebox}
+\begin{remark}[Research-mode holographic/Shannon hypothesis]
+\label{rem:gamma-shannon}
+The local corpus also records an exploratory hypothesis in which
+$\gamma=\GammaGeom$ functions as a holographic packing factor, relating
+proton-internal Shannon information density to a Bekenstein--Hawking-like
+horizon projection. This is not part of the evidential basis of the present
+manuscript. Until a non-perturbative derivation connects the hypothesis to the
+kinetic VEV matching with reproducible residual control, it remains a
+quarantined research-mode interpretation \catmark{E} under Limitation~L4.
+\end{remark}
 \vspace{0.6em}
 \begin{openquestion}
 \textbf{L4: Gamma Derivation.} Can $\gamma = \GammaGeom$ be derived from
@@ -1283,7 +1302,13 @@ $z = 0.37\sigma$ (\textbf{passed}).
 \begin{killswitch}
 \textbf{F2: Torsion Binding Energy.}
 If $E_T \approx 0$ within experimental uncertainty (pure geometry, no torsion
-residual), the missing-link hypothesis is refuted. \emph{Current status:}
+residual), the missing-link hypothesis is refuted. In the formal lattice
+limit, the torsion self-energy must obey the exact implication
+\[
+  E_T \to 0 \quad \Longrightarrow \quad \Sigma_T = 0 .
+\]
+Any implementation or phenomenological model with $E_T=0$ but
+$\Sigma_T\ne0$ fails the torsion consistency condition. \emph{Current status:}
 pending.
 \end{killswitch}
 \vspace{0.5em}
@@ -1360,7 +1385,7 @@ III & Kinetic-VEV matching; $\gamma_\infty$ cross-check & L4 & F4 / L4 \\
 C3 & RG coupling & $\kappa=\kappaVal\pm0.008$ & \catmark{A} &
 I/III & RG fixed-point relation & L7 & RG residual \\
 \midrule
-C4 & Scalar self-coupling & $\lambda_S\simeq\lambdaS$ & \catmark{A} &
+C4 & Scalar self-coupling & $\lambda_S\equiv5\kappa^2/3=5/12$ & \catmark{A} &
 III & $5\kappa^2=3\lambda_S$ & L7 & RG residual \\
 \midrule
 C5 & Vacuum scale & $v=\vVEV$ & \catmark{A} &
@@ -1665,7 +1690,7 @@ late-time acceleration from a single self-consistent field.
 \label{sec:limitations}
 
 Epistemic honesty requires the explicit demarcation of a theory's boundaries.
-\UIDT\ operates with twelve formally recognised limitations. They do not
+\UIDT\ operates with thirteen formally recognised limitations. They do not
 invalidate the stated derivations, but they delineate the perimeter where the
 theory meets the unknown.
 
@@ -1694,6 +1719,17 @@ theory meets the unknown.
     The candidate algebraic derivation ($\gamma_{\mathrm{bare}} = 49/3$) shows a
     $0.037\%$ match, but the proof linking this $\mathrm{SU}(3)$ Casimir structure
     to the physical kinetic VEV is incomplete.
+
+  \item \textbf{Topological Susceptibility Tension (\catmark{D}/\catmark{E}).}
+    The UIDT-SVZ estimate for the fourth root of the topological susceptibility,
+    $\chi_{\mathrm{top}}^{1/4}=142.98\,\mathrm{MeV}$ \catmark{D}, is in active
+    tension with recent continuum SU(3) Yang--Mills lattice data
+    \cite{DurrFuwa2025}, which report approximately
+    $\chi_{\mathrm{top}}^{1/4}=197.8\,\mathrm{MeV}$ with few-MeV combined
+    uncertainty. The current ledger classifies this as UIDT-C-056 with an
+    unresolved NLO-RG research programme UIDT-C-096 \catmark{E}; it does not
+    modify the spectral-gap status or the $\gamma$ sector. This is a genuine
+    topological-sector attack surface, not a solved discrepancy.
 
   \item \textbf{The $N=99$ RG Steps (\catmark{C}).}
     The cascade step count $N=99$ is chosen empirically to match cosmological
@@ -1812,6 +1848,13 @@ open and represent the frontier of current research:
     directly from the $S(x)$ Lagrangian. The translation of the non-perturbative
     Banach fixed-point formalism into explicit Feynman rules or Bootstrap
     equations represents a critical next step.
+  \item \textbf{Topological Susceptibility NLO Flow.} The active C-056/C-096
+    programme must determine whether NLO anomalous-dimension corrections and
+    RG-flow truncation effects near $\mu\sim\Delta^*$ can reconcile the
+    UIDT-SVZ estimate of $\chi_{\mathrm{top}}^{1/4}$ with the continuum
+    lattice baseline of D\"urr and Fuwa~\cite{DurrFuwa2025}. Until such a
+    calculation exists, the topological susceptibility mapping remains
+    \catmark{D}/\catmark{E}.
   \item \textbf{Primordial Power Spectrum ($n_s$ and $r$).} While the
     99-step RG cascade provides a qualitative mechanism for inflation, a rigorous
     quantitative derivation of the spectral index $n_s$ and the tensor-to-scalar
@@ -2140,8 +2183,8 @@ $\gamma_\infty$ & Bare extrapolation cross-check & $\GammaInf$ &
 $\kappa$ & Gauge--scalar coupling & $\kappaVal$ & \catmark{A} &
 III & Enters RG relation with $\lambda_S$ \\
 \midrule
-$\lambda_S$ & Scalar self-coupling & $\lambdaS$ & \catmark{A} &
-III & Display value for $5\kappa^2/3$ \\
+$\lambda_S$ & Scalar self-coupling & $5\kappa^2/3=5/12\approx0.4167$ & \catmark{A} &
+III & Exact RG relation; decimal is display only \\
 \midrule
 $v$ & Vacuum expectation scale & $\vVEV$ & \catmark{A} &
 III & Canonical UIDT scale parameter \\
@@ -2156,10 +2199,42 @@ III & Calibrated grid scale, not an external constant \\
 }
 \end{table}
 
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{Ledger exposure items not used as premises in the ontology argument.}
+\label{tab:ledger_exposure}
+{\setlength{\tabcolsep}{1.6pt}%
+\renewcommand{\arraystretch}{0.86}%
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{2.65cm}>{\raggedright\arraybackslash}p{3.05cm}>{\centering\arraybackslash}p{0.95cm}>{\raggedright\arraybackslash}p{3.25cm}>{\raggedright\arraybackslash}p{3.10cm}@{}}
+\toprule
+\textbf{Ledger item} & \textbf{Value / exposure} & \textbf{Tag} &
+\textbf{Status} & \textbf{Falsification exposure} \\
+\midrule
+Topological susceptibility & $\chi_{\mathrm{top}}^{1/4}=142.98\,\mathrm{MeV}$ vs. lattice $\approx197.8\,\mathrm{MeV}$ & \catmark{D}/\catmark{E} &
+UIDT-C-056 tension; C-096 NLO-RG programme open & NLO-corrected value fails to approach continuum lattice within stated tolerance \\
+\midrule
+Quark mass hierarchy & $M(u)\!\approx\!2.44$, $M(d)\!\approx\!4.88$, $M(s)\!\approx\!93.81\,\mathrm{MeV}$, etc. & \catmark{D} &
+UIDT-C-049 prediction; $m_u$ has reported pre-QED tension & Multiplicative hierarchy fails PDG/lattice constraints beyond stated thresholds \\
+\midrule
+Neutrino mass sum & $\Sigma m_\nu \le 0.16\,\mathrm{eV}$ from $v/\gamma^7\approx0.15\,\mathrm{eV}$ & \catmark{D} &
+UIDT-C-047 cosmological prediction, not a ledger calibration & Cosmology-independent measurement gives $\Sigma m_\nu>0.25\,\mathrm{eV}$ or exactly zero \\
+\midrule
+Heavy exotic hadrons & $M(\Omega_{bbb})=14.4585\pm0.07\GeV$; $M(T_{cccc})=4.4982\pm0.02\GeV$ & \catmark{D}/\catmark{E} &
+UIDT-C-053; tetraquark value remains high-risk analytic projection & LHCb/lattice excludes $\Omega_{bbb}$ window or finds $T_{cccc}>5.0\GeV$ \\
+\midrule
+Causal-graph spectral proxy & $g_{fc}=0.341\pm0.99$ & \catmark{C} &
+UIDT-C-100 marginal finite-size signal at $N\sim216$ & Mean proxy fails to stay positive in large-$N$ V9-enabled runs \\
+\bottomrule
+\end{tabular*}
+}
+\end{table}
+
 \paragraph{External baseline note.}
-The lattice-related entries in Tables~\ref{tab:claim_evidence_matrix}
-and~\ref{tab:symbol_evidence_ledger} are benchmarked against the cited lattice
-literature and remain distinct from direct particle-observation claims. The
+The lattice-related entries in Tables~\ref{tab:claim_evidence_matrix},
+\ref{tab:symbol_evidence_ledger}, and~\ref{tab:ledger_exposure} are benchmarked
+against the cited lattice literature and remain distinct from direct
+particle-observation claims. The
 cosmological entries are UIDT calibration values \catmark{C}; Planck~2018 and
 DESI~DR2 supply external baselines and tensions, but do not overwrite the
 canonical UIDT ledger in this manuscript.
@@ -2760,6 +2835,12 @@ A.~Athenodorou and M.~Teper,
 ``The glueball spectrum of SU(3) gauge theory in 3+1 dimensions,''
 \emph{JHEP} \textbf{2021}, 172 (2021).
 arXiv: \href{https://arxiv.org/abs/2007.06422}{2007.06422}.
+
+\bibitem{DurrFuwa2025}
+S.~D\"urr and G.~Fuwa,
+``The topological susceptibility and excess kurtosis in SU(3) Yang--Mills
+theory,''
+arXiv: \href{https://arxiv.org/abs/2501.08217}{2501.08217} (2025).
 
 \bibitem{Morningstar1999}
 C.~Morningstar and M.~Peardon,
