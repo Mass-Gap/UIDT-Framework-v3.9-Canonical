@@ -1,9 +1,9 @@
-# UIDT Canonical Constants v3.9.5
+# UIDT Canonical Constants v3.9.10
 
 > **STATUS:** Immutable until next version update  
 > **SOURCE:** Framework v3.6.1/v3.7.3/v3.9, DOI: 10.5281/zenodo.17835200  
-> **LAST VERIFIED:** 2026-04-03  
-> **AUDIT:** RG fixed-point precision correction (TKT-20260403-LAMBDA-FIX). PR #199 audit. Session 2026-04-03.
+> **LAST VERIFIED:** 2026-05-17  
+> **AUDIT:** RG fixed-point precision correction (TKT-20260403-LAMBDA-FIX) plus Session-2 Phase-8 intake sync (TKT-2026-05-17-session2-ledger-sync-phase8). No canonical evidence-category promotion.
 
 ---
 
@@ -55,6 +55,22 @@
 
 ---
 
+## Session-2 / Phase-8 Research Addendum
+
+> **Status:** Research addendum only. These quantities document Session-2 Phase-8 inputs and do **not** promote γ beyond [A-], do **not** alter Δ*, κ, λ_S, v, or E_T, and do **not** close L1/L4/L5.
+
+| Quantity | Symbol | Value | Category | Stratum | Notes |
+|----------|--------|-------|----------|---------|-------|
+| Bare-gamma conjecture | γ_bare | 49/3 = 16.333333333333333333333333333333333333333333333333333333333333333333333333333333 | D | III | Correct formula: γ_bare(Nc) = (2Nc+1)^2/Nc. The denominator is Nc, not Nc^2. |
+| Required correction | Δγ_required | 17/3000 = 0.0056666666666666666666666666666666666666666666666666666666666666666666666666666667 | D | III | γ − γ_bare using γ = 16.339 [A-]. Positive 1-loop/non-perturbative correction remains open. |
+| Tachyon threshold scale | k_crit | 4πE_T = 30.6619442990363820073953994208079481497643733379010328127154592209242881253534 MeV | D | III | Computed with E_T = 2.44 MeV [C]. The historical 30.707 MeV value implies E_T ≈ 2.443585 MeV and is not exact for E_T = 2.44 MeV. |
+| S4-P1 induced VEV | v_S4P1 | sqrt(12/5)·k_crit = 47.501279853002942537113076541729462153073066147889843469285377735931108003048118 MeV | D | III | Research-chain value; canonical v = 47.7 MeV [A] remains unchanged. |
+| Non-perturbative gamma shift | Δγ_NP | (Nc^2−1)/(4π^2)·v_S4P1/Δ* = 0.0056291063148914508559664078229635937676831402645376636439130762614790187510676005 | D | III | Uses Nc = 3, Δ* = 1.710 GeV [A], and v_S4P1 in MeV. |
+| S4-P1 gamma prediction | γ_pred | 16.338962439648224784189299741156296927101016473597870996977246409594812352084401 | D | III | Suggestive numerical chain only; |γ_pred − γ| = 0.000037560351775215810700258843703072898983526402129003022753590405187647915599066151. |
+| LPA' NLO Step-5 result | NO-GO-STEP5 | Z_phi(IR, λ3_phys) = 1.0000019 ≠ γ | D | III | LPA' NLO alone cannot derive γ from physical λ3(UV)=0.034823. Shooting λ3*≈99.638 is not physical. |
+
+---
+
 ## Constraint Equations
 
 ### Primary Constraint (v3.9.5 — exact)
@@ -84,6 +100,17 @@ $$\gamma_{\infty} = 16.3437 \quad \text{vs} \quad \gamma_{\text{kinetic}} = 16.3
 
 Deviation δγ ≈ 0.0047 (0.029%) — finite-size effect.
 
+### Session-2 Bare-Gamma Conjecture
+$$\gamma_{\mathrm{bare}}(N_c)=\frac{(2N_c+1)^2}{N_c},\qquad \gamma_{\mathrm{bare}}(3)=\frac{49}{3}.$$
+
+The expression $\frac{(2N_c+1)^2}{N_c^2}$ gives $49/9$ at $N_c=3$ and is therefore rejected for the Session-2 conjecture.
+
+### Session-2 Tachyon Threshold
+$$k_{\mathrm{crit}}=4\pi E_T.$$
+
+For $E_T=2.44\,\mathrm{MeV}$:
+$$k_{\mathrm{crit}}=30.6619442990363820073953994208079481497643733379010328127154592209242881253534\,\mathrm{MeV}.$$
+
 ---
 
 ## Evidence Category Rules (Quick Reference)
@@ -101,25 +128,29 @@ Non-existent: [A+], [B+], [C+], [D+]
 
 ---
 
-## Epistemic Audit Metadata (2026-03-30 / 2026-04-03)
+## Epistemic Audit Metadata (2026-03-30 / 2026-04-03 / 2026-05-17)
 
 | Parameter | external_crosscheck | upgrade_path | audit_date |
 |-----------|---------------------|--------------|------------|
 | γ = 16.339 | false | FRG scheme-independent observable reproducing γ without prior knowledge | 2026-03-30 |
 | E_T = 2.44 MeV | false | Dedicated lattice study with torsion operator in SU(3) vacuum targeting MeV regime | 2026-03-30 |
 | δγ = 0.0047 | false (numerical only) | Full NLO FRG truncation study (BMW/LPA') — TKT-20260403-FRG-NLO | 2026-04-03 |
+| γ_bare = 49/3 | false | Positive Δγ computation from first-principles 1-loop or non-perturbative FRG path | 2026-05-17 |
+| γ_pred = 16.338962439648... | false | Regulator-independent Wetterich-flow derivation plus external validation | 2026-05-17 |
 
-> Source: Issue #192, PR #193, PR #199. Stratum III classification for all three. Values immutable.
+> Source: Issue #192, PR #193, PR #199, PR #357, PR #362, PR #367, PR #369, PR #358. Stratum III classification for Session-2 quantities. Values are research addenda, not canonical promotions.
 
 ---
 
-## Open Issues (from Audit 2026-02-28 / 2026-03-30 / 2026-04-03)
+## Open Issues (from Audit 2026-02-28 / 2026-03-30 / 2026-04-03 / 2026-05-17)
 
 - **S1-01:** w_a L-dependence — holographic length L not canonical
 - **S1-02:** N=99 vs N=94.05 contradiction in code vs docs
 - **S1-04:** ~~w₀ triple inconsistency~~ → **RESOLVED** 2026-03-02. Canonical w₀ = −0.99 per Decision D-002.
 - **L1:** 10¹⁰ geometric factor UNEXPLAINED
+- **L1-S2:** γ_bare = 49/3 remains a conjecture. Required Δγ = +17/3000 has not been derived.
 - **L4:** γ NOT derived from RG first principles — algebraic closed-form yields γ ≈ 1.908, not 16.33 (PR #199, §1.4)
+- **L4-S5:** [NO-GO-STEP5] LPA' NLO with physical λ3 does not generate γ.
 - **L5:** N=99 steps unjustified
 - **TKT-20260403-FRG-NLO:** Full NLO FRG truncation study required before δγ = δ_NLO assessment
 - **TKT-20260403-TOPO-CLAIMS:** UIDT-C-TOPO-01/02/03 registration in CLAIMS.json pending (PR #190 OT-3)
@@ -130,6 +161,7 @@ Non-existent: [A+], [B+], [C+], [D+]
 
 | Version | Date | Key Changes |
 |---------|------|-------------|
+| v3.9.10 | 2026-05-17 | Session-2 Phase-8 research addendum: γ_bare formula correction, k_crit recalculation for E_T=2.44 MeV, γ_pred chain documented as [D] Stratum III only. No evidence-category promotion. |
 | v3.9.5 | 2026-04-03 | λ_S → exact 5κ²/3 (TKT-20260403-LAMBDA-FIX). RG constraint < 10⁻¹⁴. Epistemic audit metadata added. |
 | v3.9.4 | 2026-03-02 | w₀ = −0.99 canonical (D-002). S1-04 resolved. Session #16 audit. |
 | v3.9.3 | 2026-02-28 | Added δγ, C-068/C-069. PR Review #100-#115. 55 claims. |
@@ -160,6 +192,13 @@ w₀ = -0.99               [C]  Dark energy EOS (Decision D-002)
 w_a = L-dependent         [C]  Holographic DE evolution
 Σmν ≤ 0.16 eV            [D]  Neutrino mass sum
 δγ = 0.0047              [B]  Vacuum dressing shift (FSS)
+
+Session-2 / Phase-8 research addendum, not canonical promotion:
+γ_bare = 49/3            [D]  Conjecture: (2Nc+1)^2/Nc at Nc=3
+Δγ_required = 17/3000    [D]  Required positive correction to γ=16.339
+k_crit = 4πE_T = 30.661944299036382... MeV [D] for E_T=2.44 MeV
+γ_pred = 16.338962439648224... [D] S4-P1 numerical chain
+NO-GO-STEP5              [D]  LPA' NLO with physical λ3 does not derive γ
 ```
 
 ---
