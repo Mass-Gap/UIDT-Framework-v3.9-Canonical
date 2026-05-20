@@ -1,182 +1,202 @@
-# S4-P1: Tachyonischer Übergang im YM+Scalar FRG — Analytische Herleitung
+# S4-P1: Torsion-Threshold Chain in YM+Scalar FRG
 
-**Branch:** TKT-20260429-S4P1-tachyon-threshold-frg
-**Datum:** 2026-04-29
-**Status:** Forschungsnotiz — Evidenz [D*]
-**Autor:** UIDT-Research-Session (P. Rietz)
-
----
-
-## 1. Problemstellung
-
-Aus Session-2 (TKT-20260429-L1-L4-L5) ergab sich die VEV-Bedingung:
-
-```
-v = sqrt(2κ/λ_S) · k_crit
-```
-
-wobei `k_crit` die Skala ist, bei der `m²_eff(k_crit) = 0`
-(tachyonischer Vorzeichenwechsel). Numerisch benötigt `v = 47.7 MeV`:
-
-```
-k_crit = 30.790 MeV
-k_crit / E_T = 12.619
-```
-
-Der beste analytische Kandidat war:
-
-```
-k_crit = E_T · (N_c² - 1) · π/2 = E_T · 4π ≈ 12.566  (0.42% Abw.)
-```
-
-**Forschungsfrage S4-P1:** Ist diese Relation exakt? Wenn nicht — was ist
-die systematische Abweichung und was bestimmt sie?
+> **Original date:** 2026-04-29  
+> **Cleanup erratum:** 2026-05-20  
+> **Original branch:** TKT-20260429-S4P1-tachyon-threshold-frg  
+> **Status:** Research note with erratum. Evidence [D]. No canonical promotion.
 
 ---
 
-## 2. FRG-Flow-Gleichungen (Wetterich-Framework, Litim-Regulator)
+## 0. Cleanup Erratum — 2026-05-20
 
-### 2.1 Regulator
+The original note used the legacy symbol `k_crit` for the S4-P1 torsion threshold and quoted a historical value near `30.707 MeV`. Later Phase-8 reconciliation requires the following corrections.
 
-Litim-Regulator für Skalare und Gluonen:
+### Corrected symbol
 
-```
-R_k^S(q²) = (k² - q²) · Θ(k² - q²)
-R_k^A(q²) = Z_A(k) · (k² - q²) · Θ(k² - q²)
-```
+Use:
 
-### 2.2 Effective Potential Flow (Scalar Sektor)
-
-Wetterich-Gleichung für das Skalarpotential U_k(ρ), ρ = φ²/2:
-
-```
-∂_t U_k = (1/2) · k⁵ / (6π²) · [
-    3 / (k² + U'_k + 2ρ·U''_k)     ← Radialmode (σ)
-  + (N_f²-1) / (k² + U'_k)          ← Goldstone-Moden
-]
+```text
+k_T = 4*pi*E_T
 ```
 
-mit `t = ln(k/Λ)`, `U'_k = dU/dρ`, `U''_k = d²U/dρ²`.
+for the S4-P1 torsion-threshold scale.
 
-### 2.3 Dimensionslose laufende Parameter
+Do not use unqualified `k_crit`, because the repository also contains a distinct D2 gamma-emergent scale near `Delta*/gamma ≈ 104.66 MeV`.
 
-Mit dimensionslosen Variablen `κ̃(t) = κ_phys(k)/k²` und `λ̃(t)`:
+### Corrected value for canonical E_T
 
+For canonical `E_T = 2.44 MeV` [C]:
+
+```text
+k_T = 4*pi*E_T
+    = 30.6619442990363820073953994208079481497643733379010328127154592209242881253534 MeV
 ```
-∂_t κ̃ = -2κ̃ + A_Φ(κ̃, λ̃) + A_A(κ̃)
-∂_t λ̃ = -2λ̃ + B(κ̃, λ̃)
-```
 
-wobei `A_A` den Gluon-Threshold-Beitrag trägt.
+The historical value `30.707 MeV` is not exact for `E_T = 2.44 MeV`; it implies an effective `E_T ≈ 2.443585 MeV`.
+
+### Evidence status
+
+The S4-P1 chain remains [D]. It is a partial numerical hit, not an [A] derivation.
 
 ---
 
-## 3. Bedingung für k_crit
+## 1. Research Question
 
-### 3.1 Onset-Bedingung (nicht-tautologisch)
+Given the UIDT scalar-sector relation:
 
-Startend von `κ̃(Λ) < 0` (symmetrisch, UV) fließt `κ̃(t)` im IR
-durch Null. Der physikalische Übergang liegt bei:
-
-```
-κ̃(t_crit) = 0
+```text
+v_S4P1 = sqrt(2*kappa/lambda_S) * k_T
 ```
 
-Dies ist die Symmetriebrecher-Onset-Bedingung. Die naive Definition
-`m²_eff = 0` ist im laufenden Potential tautologisch — die Onset-
-Bedingung ist das korrekte Kriterium.
+and the exact RG relation:
 
-### 3.2 Analytische Näherung (linearisierter Flow)
-
-Für den linearisierten Flow nahe `κ̃ = 0`:
-
-```
-∂_t κ̃ ≈ (-2 + η_Φ) · κ̃ + c_A · (g²·C_A) / (1 + ω)²
+```text
+lambda_S = 5*kappa^2/3,  kappa = 1/2
 ```
 
-mit:
-- `η_Φ` = anomale Dimension des Skalarfeldes
-- `c_A` = dimensionsloser Gluon-Threshold-Koeffizient
-- `ω = m²_A/k²` = dimensionslose Gluonmasse
-- `g²·C_A` = Gluon-Loop-Stärke
+one obtains:
+
+```text
+sqrt(2*kappa/lambda_S) = sqrt(12/5)
+```
+
+The research question is whether the torsion threshold:
+
+```text
+k_T = 4*pi*E_T
+```
+
+can be derived from the Wetterich trace and whether it is regulator-independent.
 
 ---
 
-## 4. Kandidat-Relation k_crit = E_T · 4π
+## 2. Corrected Numerical Chain
 
-### 4.1 Casimir-Struktur
+Using `E_T = 2.44 MeV` [C]:
 
-Die Gluon-Loop-Beiträge tragen mit dem Casimir-Faktor C_A = N_c.
-Der Faktor `(N_c²-1)·π/2 = 4π` erscheint aus:
-- `(N_c²-1)` = Anzahl adjungierter Freiheitsgrade
-- `π/2` = Litim-Threshold-Integral (arctan-Typ)
+```text
+k_T = 4*pi*E_T = 30.661944299036382... MeV
+```
 
-### 4.2 Numerische Überprüfung
+Then:
 
-| Größe | Wert | Quelle |
-|-------|------|--------|
-| k_crit (benötigt) | 30.790 MeV | v_led = 47.7 MeV |
-| E_T · 4π | 30.707 MeV | Analytischer Kandidat |
-| Abweichung | 0.270% | — |
-| k_crit/E_T | 12.619 | Numerisch exakt |
-| 4π | 12.566 | Kandidat |
+```text
+v_S4P1 = sqrt(12/5) * k_T
+        = 47.501279853002942... MeV
+```
+
+With `N_c = 3` and `Delta* = 1710 MeV` [A]:
+
+```text
+Delta_gamma_NP = (N_c^2 - 1)/(4*pi^2) * v_S4P1/Delta*
+               = 0.005629106314891450...
+```
+
+Therefore:
+
+```text
+gamma_pred = 49/3 + Delta_gamma_NP
+           = 16.338962439648224...
+```
+
+Residual to the calibrated value `gamma = 16.339` [A-]:
+
+```text
+|gamma_pred - gamma| = 0.0000375603517752158...
+```
+
+This residual is below `1e-3` but above `1e-14`. Therefore the chain is retained as [D] but cannot be promoted to [A].
 
 ---
 
-## 5. Quantifizierung der systematischen Abweichung
+## 3. FRG Framework
 
-### 5.1 Quellen
+The S4-P1 line is motivated by the Wetterich equation:
 
-**Quelle A: NLO-Korrekturen**
-```
-δ_NLO ≈ α_s(k_crit) · C_A / (4π · N_eff) ≈ 0.42%   [D]
-```
-Diese Korrektur ist dieselbe Größenordnung wie die beobachtete Abweichung.
-
-**Quelle B: E_T-Unsicherheit**
-```
-δE_T = ±0.05 MeV  →  δk_crit = ±0.628 MeV  (±2%)
-```
-Die 0.083 MeV Abweichung liegt **innerhalb** dieser Unsicherheit.
-
-### 5.2 Schlussbewertung
-
-```
-k_crit = E_T · 4π · (1 + δ_sys)
-δ_sys = 0.0042 ± 0.020
+```text
+partial_t Gamma_k = 1/2 STr[(Gamma_k^(2) + R_k)^(-1) partial_t R_k]
 ```
 
-**Konsistent innerhalb der Parameterunsicherheiten — nicht algebraisch-exakt.**
+with Litim-type threshold structures. The original note argued that the factor `4*pi` may arise from adjoint degeneracy and threshold-integration structure.
+
+This remains a conjectural interpretation [D]. The algebraic equality:
+
+```text
+k_T = 4*pi*E_T
+```
+
+is not yet proven from the Wetterich trace.
 
 ---
 
-## 6. Vollständige γ-unabhängige Kette (Stand 2026-04-29)
+## 4. Required Regulator-Independence Tests
 
+To move beyond [D], repeat the threshold calculation under at least:
+
+| Regulator | Required output |
+|---|---|
+| Litim | baseline S4-P1 chain |
+| smooth exponential | threshold shift and residual |
+| sharp cutoff | threshold shift and residual |
+| Polchinski-type | threshold shift and residual |
+
+If the threshold is regulator-sensitive beyond the accepted uncertainty band, S4-P1 remains [D] or drops toward [E].
+
+---
+
+## 5. Relation to D2 Gamma-Scale Research
+
+Do not conflate:
+
+| Symbol | Scale | Meaning |
+|---|---:|---|
+| `k_T` | `30.661944... MeV` | S4-P1 torsion threshold `4*pi*E_T`. |
+| `k_gamma` | `~104.66 MeV` | D2 gamma-emergent inverse scale near `Delta*/gamma`. |
+
+Both are [D] research quantities. Neither derives `gamma = 16.339` [A-] from first principles.
+
+---
+
+## 6. Reproduction Snippet
+
+```python
+from mpmath import mp
+mp.dps = 80
+N_c = mp.mpf(3)
+E_T = mp.mpf("2.44")
+Delta_star_mev = mp.mpf("1710")
+gamma_bare = mp.mpf(49) / mp.mpf(3)
+k_T = 4 * mp.pi * E_T
+v_S4P1 = mp.sqrt(mp.mpf(12) / mp.mpf(5)) * k_T
+Delta_gamma_NP = (N_c**2 - 1) / (4 * mp.pi**2) * (v_S4P1 / Delta_star_mev)
+gamma_pred = gamma_bare + Delta_gamma_NP
+print(mp.nstr(k_T, 80))
+print(mp.nstr(gamma_pred, 80))
 ```
-RG-Constraint      5κ² = 3λ_S              [A]
-         ↓
-FRG-Onset          κ̃(t_crit) = 0          [D]
-         ↓
-k_crit ≈ E_T·4π                            [D*] (0.42% Abw.)
-         ↓
-v = √(12/5)·k_crit ≈ 47.50 MeV            [D*]
-         ↓
-Δγ_NP = (N_c²-1)/(4π²)·v/Δ*              [D]
-         ↓
-γ_pred = 49/3 + Δγ_NP = 16.33896          [D*]
-         ↓
-γ_ledger = 16.339  [A-]   (Abweichung: 0.00023%)
+
+Expected classification:
+
+```text
+k_T arithmetic chain: reproducible [D]
+gamma_pred: partial numerical hit [D]
+No evidence promotion.
 ```
 
 ---
 
-## 7. Offene Forschungsaufgaben
+## 7. Open Tasks
 
-- **S4-P1a:** FRG-Simulation mit k_IR = E_T als hartem Cutoff
-- **S4-P1b:** Analytischer Onset-Beweis via Wetterich-Trace
-- **S4-P1c:** Regulator-Unabhängigkeitscheck
-- **S4-P1d:** Evidenz-Upgrade [D*] → [C] nach S4-P1a
+| Task | Purpose | Status |
+|---|---|---|
+| S4-P1a | Hard-cutoff test with `k_IR = E_T` | open |
+| S4-P1b | Algebraic Wetterich-trace proof of `k_T = 4*pi*E_T` | open |
+| S4-P1c | Regulator-independence check | open |
+| S4-P1d | Decide whether [D] remains justified after regulator tests | open |
 
 ---
 
-*Dokument folgt UIDT-Constitution v4.1. Numerik: mp.dps=80.*
+## 8. Acceptance Status
+
+`RESEARCH ACTIVE / NO CANONICAL PROMOTION`
+
+S4-P1 remains a structured [D] research vector. It is not a proof, not a claim promotion, and not a closure of L4.
