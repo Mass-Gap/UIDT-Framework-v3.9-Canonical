@@ -1,199 +1,211 @@
-# S4-P1 Vollständige Herleitung: Tachyonischer Onset im FRG-System
+# S4-P1: Torsion-Threshold Onset in the YM+Scalar FRG System
 
-**Datum:** 2026-04-29  
-**Branch:** `TKT-20260429-S4P1-tachyon-threshold-frg`  
-**Bearbeiter:** UIDT Research Session  
-**Status:** Evidenz [D*] — Upgrade-Pfad nach [C] definiert
-
----
-
-## Ziel
-
-Zeige analytisch, dass der tachyonische Übergang im gekoppelten YM+Scalar FRG-System
-exakt bei
-
-$$k_{\mathrm{crit}} = E_T \cdot (N_c^2-1)\frac{\pi}{2}$$
-
-liegt — oder quantifiziere die systematische Abweichung.
+> **Original date:** 2026-04-29  
+> **Cleanup erratum:** 2026-05-20  
+> **Original branch:** `TKT-20260429-S4P1-tachyon-threshold-frg`  
+> **Status:** Research note with erratum. Evidence [D]. No evidence-category promotion.
 
 ---
 
-## S4-P1a: FRG-Simulation mit hartem IR-Cutoff k_IR = E_T
+## 0. Cleanup Erratum — 2026-05-20
 
-### Setup
+This file is retained as a historical S4-P1 onset analysis. It must be read through the Phase-8 cleanup policy.
 
-- UV-Startskala: Λ = Δ* = 1710 MeV
-- IR-Cutoff: k_IR = E_T = 2.44 MeV
-- Litim-Regulator: R_k(q²) = (k²−q²)·θ(k²−q²)
-- Fluss: t = ln(k/Λ) ∈ [−6.5523, 0]
-- Ledger-Konstanten: Δ*=1.710 GeV [A], v=47.7 MeV [A], E_T=2.44 MeV [C]
+Mandatory corrections:
 
-### Hauptbefund: κ̃₀ ist universeller IR-Attractor
+1. Replace the ambiguous legacy symbol `k_crit` with `k_T` when referring to the S4-P1 torsion-threshold scale.
+2. Use the corrected canonical value:
 
-Im linearisierten FRG-System (κ̃-Flow-Gleichung):
+```text
+k_T = 4*pi*E_T = 30.661944299036382... MeV
+```
 
-$$\partial_t \tilde{\kappa} = -2\tilde{\kappa} + c_A(t)$$
+for `E_T = 2.44 MeV` [C].
 
-wobei c_A(t) die Gluon-Threshold-Funktion ist:
-
-$$c_A(t) = (N_c^2-1) \cdot \frac{\alpha_s(k)}{4\pi} \cdot \frac{1}{(1+\omega_A(t))^2}$$
-
-mit ω_A(t) = (Δ*/k)² = exp(−2t).
-
-Die allgemeine Lösung lautet:
-
-$$\tilde{\kappa}(t) = \tilde{\kappa}_0 \cdot e^{-2t} + e^{-2t} \int_0^t e^{2s} c_A(s)\, ds$$
-
-Der **Attractor-Wert** ergibt sich aus dem vollständigen Integral:
-
-$$\tilde{\kappa}_0^{\mathrm{attr}} = -\int_{-\infty}^{0} e^{2s} c_A(s)\, ds = -0.01030923381\;\text{[D]}$$
-
-Dieser Wert ist **universell**: unabhängig davon, wo der Onset t_crit liegt,
-konvergiert das System stets zu demselben UV-Startwert.
+3. The historical `30.707 MeV` and `30.790 MeV` values remain historical numerical-context values only. They are not exact consequences of `E_T = 2.44 MeV`.
+4. Regulator independence is not proven. It remains a required test.
+5. No upgrade to [C] is made by this note.
 
 ---
 
-## S4-P1b: Analytischer Onset-Beweis via Wetterich-Trace
+## 1. Research Goal
 
-### Wetterich-Gleichung
+The original S4-P1 goal was to test whether the torsion-threshold scale in the coupled YM+Scalar FRG system can be approximated by:
 
-$$\partial_t \Gamma_k = \frac{1}{2} \mathrm{Tr}\left[(\Gamma_k^{(2)} + R_k)^{-1} \cdot \partial_t R_k\right]$$
+```text
+k_T = E_T * (N_c^2 - 1) * pi/2
+```
 
-### Onset-Bedingung
+For `N_c = 3`, this becomes:
 
-Der tachyonische Onset tritt bei t_crit auf, wenn:
+```text
+k_T = 4*pi*E_T
+```
 
-$$\partial_t \tilde{\kappa}\big|_{\tilde{\kappa}=0} = c_A(t_{\mathrm{crit}}) = 2|\tilde{\kappa}_0^{\mathrm{attr}}|$$
-
-Das ergibt:
-
-$$\frac{(N_c^2-1)\alpha_s}{4\pi(1+\omega_A^{\mathrm{crit}})^2} = 2|\tilde{\kappa}_0^{\mathrm{attr}}|$$
-
-Auflösen nach ω_A^crit:
-
-$$(1+\omega_A^{\mathrm{crit}})^2 = \frac{(N_c^2-1)\alpha_s}{8\pi|\tilde{\kappa}_0^{\mathrm{attr}}|}$$
-
-### LO-Ergebnis (α_s = const = 0.30)
-
-Mit den Ledger-Werten:
-
-- N_c = 3, α_s(Δ*) = 0.30
-- |κ̃₀^attr| = 0.01030923381
-
-ergibt sich:
-
-$$k_{\mathrm{crit}}^{(\mathrm{LO})} = 1196\;\mathrm{MeV}$$
-
-**Diese starke Abweichung vom Casimir-Kandidaten (30.66 MeV) zeigt, dass
-die LO-Näherung α_s = const im UV unzulässig ist.** Der physikalische
-Onset liegt im tiefen IR (k ≈ 30 MeV), wo α_s stark angewachsen ist.
-
-### Schlussfolgerung: Richtige Onset-Bedingung
-
-Der physikalisch relevante Onset liegt im IR-Bereich, wo ω_A >> 1.
-In diesem Regime gilt:
-
-$$c_A(t) \approx (N_c^2-1) \cdot \frac{\alpha_s(k)}{4\pi\omega_A^2} = (N_c^2-1) \cdot \frac{\alpha_s(k)}{4\pi} \cdot \frac{k^4}{\Delta^{*4}}$$
-
-Der Onset wird dominiert durch den **nicht-perturbativen** α_s(k) im IR —
-dieser ist nicht durch 1-Loop bestimmbar.
+The corrected question is not whether this is already exact, but whether it can be derived from the Wetterich trace and shown to be regulator-independent.
 
 ---
 
-## Abweichungsanalyse: k_crit = E_T·(N_c²-1)·π/2?
+## 2. Setup
 
-| Quelle | k_crit [MeV] | k/E_T | Status |
+| Quantity | Value | Evidence |
+|---|---:|---|
+| `Delta*` | `1710 MeV` | [A] |
+| `E_T` | `2.44 MeV` | [C] |
+| `v` | `47.7 MeV` | [A] |
+| `kappa` | `1/2` | [A] |
+| `lambda_S` | `5/12` | [A] |
+
+The exact RG relation gives:
+
+```text
+sqrt(2*kappa/lambda_S) = sqrt(12/5)
+```
+
+---
+
+## 3. Corrected S4-P1 Chain
+
+Using canonical `E_T = 2.44 MeV`:
+
+```text
+k_T = 4*pi*E_T
+    = 30.6619442990363820073953994208079481497643733379010328127154592209242881253534 MeV
+```
+
+Then:
+
+```text
+v_S4P1 = sqrt(12/5) * k_T
+        = 47.501279853002942... MeV
+```
+
+and:
+
+```text
+Delta_gamma_NP = (N_c^2 - 1)/(4*pi^2) * v_S4P1/Delta*
+               = 0.005629106314891450...
+```
+
+Therefore:
+
+```text
+gamma_pred = 49/3 + Delta_gamma_NP
+           = 16.338962439648224...
+```
+
+Residual:
+
+```text
+|gamma_pred - 16.339| = 3.7560e-5
+```
+
+Status: partial numerical hit [D], not [A].
+
+---
+
+## 4. Wetterich-Trace Context
+
+The relevant formal object is:
+
+```text
+partial_t Gamma_k = 1/2 Tr[(Gamma_k^(2) + R_k)^(-1) partial_t R_k]
+```
+
+The original note explored whether threshold factors in a Litim-type regulator could generate the `4*pi` structure. This remains a conjectural interpretation.
+
+The LO approximation with constant `alpha_s` is insufficient. The deep-IR threshold is non-perturbative and cannot be closed by a one-loop constant-coupling analysis.
+
+---
+
+## 5. Regulator-Independence Status
+
+Earlier text described regulator independence as confirmed. Under the current evidence rules this is too strong.
+
+Correct status:
+
+```text
+Regulator independence: OPEN
+Evidence: [D]
+Required: explicit multi-regulator comparison with residual table
+```
+
+Required regulators:
+
+| Regulator | Required output |
+|---|---|
+| Litim | baseline threshold and residual |
+| smooth exponential | threshold and residual |
+| sharp cutoff | threshold and residual |
+| Polchinski-type | threshold and residual |
+
+No [C] upgrade is possible before this is done and externally reviewed.
+
+---
+
+## 6. Relation to D2 Gamma-Emergent Scale
+
+Do not conflate:
+
+| Symbol | Scale | Meaning |
+|---|---:|---|
+| `k_T` | `30.661944... MeV` | S4-P1 torsion threshold `4*pi*E_T`. |
+| `k_gamma` | `~104.66 MeV` | D2 gamma-emergent inverse scale near `Delta*/gamma`. |
+
+Both are [D] research quantities. Neither derives `gamma = 16.339` [A-].
+
+---
+
+## 7. Claims Table
+
+| ID | Claim | Evidence | Status |
 |---|---|---|---|
-| Casimir-Formel: E_T·(N_c²-1)π/2 | 30.662 | 12.566 | [D*] |
-| Numerisch (Session-2, Bisection) | 30.790 | 12.619 | [D] |
-| LO FRG, α_s=const | 1196.2 | 490.3 | UNGÜLTIG |
-| Abweichung Casimir vs. Num. | — | Δ=0.053 | 5.25% von E_T |
-
-Die Casimir-Formel **k_crit = E_T·4π** ist konsistent mit dem numerischen
-Ergebnis auf dem Niveau **δ = 5.25% von E_T = 0.13 MeV**.
-
-### Systematische Korrekturen
-
-| Korrekturquelle | Beitrag | Überdeckung |
-|---|---|---|
-| δE_T = ±0.05 MeV [C] | ±2% auf k_crit | Vollständig |
-| NLO laufendes α_s | δ_NLO ≈ 0.51% | Qualitativ |
-| Nichtlineare κ̃-Terme | ~1% (abgeschätzt) | Offen |
-
-**Konklusion:** Die Casimir-Formel ist *numerisch konsistent*, aber nicht
-algebraisch bewiesen. Evidenz: **[D*]**.
+| C-S4P1-01 | A torsion-threshold scale `k_T = 4*pi*E_T` is numerically suggestive for S4-P1. | [D] | open |
+| C-S4P1-02 | Corrected `k_T` for `E_T=2.44 MeV` is `30.6619442990... MeV`. | [D] | arithmetic chain, no promotion |
+| C-S4P1-03 | The corrected S4-P1 gamma chain gives `gamma_pred=16.338962439648224...`. | [D] | partial hit |
+| C-S4P1-04 | Regulator independence is established. | not supported | open |
+| C-S4P1-05 | S4-P1 derives `gamma=16.339`. | not supported | false |
 
 ---
 
-## S4-P1c: Regulator-Unabhängigkeit
+## 8. Required Next Steps
 
-**Litim-Regulator:** R_k(q²) = (k²−q²)·θ(k²−q²)  
-Threshold: l^4_n(ω) = 1/(1+ω)^n
-
-**Smooth-Exponential-Regulator:** R_k(q²) = q²/(e^{q²/k²}−1)  
-Threshold: l^4_n(ω) ≈ (1/n)·1/(1+ω)^{n−1}
-
-Bei k_crit ≈ 30.79 MeV:
-
-$$\omega_A = (\Delta^*/k_{\mathrm{crit}})^2 = (1710/30.79)^2 \approx 3080 \gg 1$$
-
-In diesem Regime konvergieren beide Regulatoren:
-
-$$c_A^{\mathrm{Litim}} \approx c_A^{\mathrm{Smooth}} \approx \frac{(N_c^2-1)\alpha_s}{4\pi\omega_A^2}$$
-
-**Regulator-Unabhängigkeit des Onsets im tiefen IR: BESTÄTIGT [D]**
+1. Re-run S4-P1 using corrected `k_T` nomenclature.
+2. Perform multi-regulator threshold comparison.
+3. Quantify NLO and nonlinear flow corrections.
+4. Keep S4-P1 at [D] unless the regulator and derivation gates pass.
 
 ---
 
-## S4-P1d: Evidenz-Upgrade-Assessment
+## 9. Reproduction Snippet
 
-### Checkliste [D*] → [C]
+```python
+from mpmath import mp
+mp.dps = 80
+N_c = mp.mpf(3)
+E_T = mp.mpf("2.44")
+Delta_star_mev = mp.mpf("1710")
+gamma_bare = mp.mpf(49) / mp.mpf(3)
+k_T = 4 * mp.pi * E_T
+v_S4P1 = mp.sqrt(mp.mpf(12) / mp.mpf(5)) * k_T
+Delta_gamma_NP = (N_c**2 - 1) / (4 * mp.pi**2) * (v_S4P1 / Delta_star_mev)
+gamma_pred = gamma_bare + Delta_gamma_NP
+print(mp.nstr(k_T, 80))
+print(mp.nstr(gamma_pred, 80))
+```
 
-| Bedingung | Status | Aktion |
-|---|---|---|
-| 1. Analytische lineare ODE-Lösung | ✓ DONE | — |
-| 2. Attractor-Wert κ̃₀=-0.01031 | ✓ DONE | — |
-| 3. Regulator-Unabhängigkeit im IR | ✓ DONE | — |
-| 4. NLO-Korrektur formal hergeleitet | ✗ OFFEN | S4-P2 |
-| 5. Nichtlineare Flow-Terme validiert | ✗ OFFEN | S4-P3 |
-| 6. Gitter-QCD-Bestätigung k_crit | ? EXTERN | Lattice-Kolab. |
+Expected classification:
 
-**Aktueller Status: [D*]**  
-Upgrade auf [C] erfordert: S4-P2 (NLO) ODER Lattice-Bestätigung.
-
----
-
-## Physikalische Interpretation
-
-Das Scheitern der LO-Approximation zeigt, dass der tachyonische Onset
-**nicht-perturbativer Natur** ist. Die Casimir-Struktur
-k_crit = E_T·(N_c²-1)·π/2 spiegelt den nicht-perturbativen Charakter von
-E_T = 2.44 MeV [C] als IR-Skala des Torsions-Gitters wider.
-
-Das System verhält sich wie ein **IR-Attractor**: Der Onset findet universell
-bei derselben Skala statt, unabhängig von kleinen Variationen des UV-Startwerts.
-Dies gibt der Casimir-Formel geometrische Plausibilität über den formalen Beweis hinaus.
+```text
+k_T arithmetic chain: reproducible [D]
+gamma_pred: partial numerical hit [D]
+No evidence promotion.
+```
 
 ---
 
-## Nächste Schritte (S4-P2, S4-P3)
+## Acceptance Status
 
-- **S4-P2:** Formale NLO-Berechnung des laufenden α_s-Beitrags zur Onset-Skala
-- **S4-P3:** Validierung der nichtlinearen κ̃³-Terme im FRG-Flow
-- **S4-P4:** Lattice-QCD-Vergleich von k_crit ≈ 30.79 MeV als IR-Skala
+`S4-P1 RETAINED AS [D] RESEARCH VECTOR / NO CANONICAL PROMOTION`
 
----
-
-## Claims-Tabelle S4-P1
-
-| ID | Behauptung | Evidenz | Quelle |
-|---|---|---|---|
-| C-S4P1-01 | κ̃₀^attr = -0.01030923381 (universeller IR-Attractor) | [D] | Integral, mp.dps=80 |
-| C-S4P1-02 | Onset ist IR-Attractor (nicht durch κ̃₀ allein bestimmbar) | [D] | ODE-Analyse |
-| C-S4P1-03 | k_crit = E_T·4π numerisch konsistent (δ<0.13 MeV) | [D*] | Session-2 Bisection |
-| C-S4P1-04 | Regulator-Unabhängigkeit bei ω_A≈3080>>1 | [D] | Threshold-Analysis |
-| C-S4P1-05 | LO-Approximation α_s=const im UV unzulässig für k_crit | [D] | FRG-Simulation |
-
----
-
-*Evidenz-Kategorien: [A] mathematisch bewiesen, [D] Vorhersage, [D*] begründete Spekulation*
+This file does not close L4 and does not authorize a claim upgrade.

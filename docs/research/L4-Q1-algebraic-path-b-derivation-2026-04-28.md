@@ -1,168 +1,224 @@
-# L4-Q1: Algebraischer Beweis Pfad B — Herleitung γ = 49/3
+# L4-Q1: Algebraic Path B — Bare-Gamma Structure Audit
 
-**UIDT Framework v3.9 Canonical**  
-**Ticket:** TKT-20260428-L4-FRG-gamma-derivation  
-**Datum:** 2026-04-28  
-**Stratum:** III (UIDT-intern)  
-**Evidence:** Siehe Sektion 4  
-**Autor:** UIDT Research Assistant (mpmath 80-stellig verifiziert)
-
-> ⚠️ **Status: OFFEN** — Ein neues algebraisches Strukturresultat wurde
-> gefunden (N_c=3-Identität, Evidence B). Der vollständige dynamische Beweis
-> bleibt offen (Gap G3 aus `rg_beta_derivation_gamma.md`). Kein Evidence-Upgrade.
+> **Original date:** 2026-04-28  
+> **Cleanup erratum:** 2026-05-20  
+> **Ticket:** TKT-20260428-L4-FRG-gamma-derivation  
+> **Stratum:** III — UIDT-internal research  
+> **Status:** Historical research note with erratum. No evidence-category promotion.
 
 ---
 
-## 1. Ausgangslage und Problemstellung
+## 0. Cleanup Erratum — 2026-05-20
 
-Das Dokument `rg_beta_derivation_gamma.md` identifiziert fünf offene Lücken
-(G1–G5). Diese Analyse adressiert G3:
+This document is retained as a historical algebraic-path audit. It must be read through the Phase-8 cleanup policy.
 
-> **G3:** `(2N_c+1)²/N_c` hat keine bekannte gruppentheoretische Herleitung.
+Mandatory corrections for all later use:
 
-Ziel: Ableitung von γ = 49/3 aus SU(3)-Gruppenstruktur und UIDT-Fixpunkt-
-bedingungen aus ersten Prinzipien (mp.dps = 80).
+1. The arithmetic identities at fixed `N_c = 3` are exact, but the physical UIDT identification of `gamma_bare = 49/3` remains [D], Stratum III.
+2. No statement in this document derives `gamma = 16.339` [A-] from first principles.
+3. Earlier wording such as `Evidence B` for the lie-algebraic interpretation is downgraded to `B-context / D-interpretation` unless a verified external source is cited for the specific mapping.
+4. The SU(4) extrapolation must use the Phase-8 convention check. The currently active bare-gamma conjecture is:
+
+```text
+gamma_bare(N_c) = (2*N_c + 1)^2 / N_c
+```
+
+Thus:
+
+```text
+gamma_bare(3) = 49/3
+gamma_bare(4) = 81/4 = 20.25
+```
+
+The older candidate `(N_c^2 - N_c + 1)^2 / N_c` gives `169/4 = 42.25` for SU(4). It is not the current Phase-8 scaling rule and must be treated as a superseded alternative [E/D-historical].
 
 ---
 
-## 2. SU(N_c)-Grundgrößen
+## 1. Problem Statement
 
-| Größe | Formel | SU(3)-Wert |
-|-------|--------|------------|
-| dim(adj) | N_c² − 1 | 8 |
-| Rang r | N_c − 1 | 2 |
-| C₂(adj) | N_c | 3 |
-| C₂(fund) | (N_c²−1)/(2N_c) | 4/3 |
-| b₀ | 11N_c/3 | 11 |
-| κ\* | 1/2 | 1/2 |
-| λ_S\* | 5/12 | 5/12 (exakt) |
+Earlier L4 work asked whether `49/3` could be obtained from SU(3) algebraic structure rather than inserted as a numerical target.
+
+The corrected current question is narrower:
+
+```text
+Can an exact SU(3) arithmetic structure motivate gamma_bare = 49/3 [D],
+and can a first-principles correction produce Delta_gamma_required = 17/3000 [D]?
+```
+
+This document addresses only the first part. It does not compute the correction.
 
 ---
 
-## 3. Neues Ergebnis: N_c=3-Algebraische Identität
+## 2. SU(N_c) Basic Quantities
 
-### 3.1 Befund [Evidence A]
-
-Für N_c = 3 gilt die algebraische Identität:
-
-```
-2N_c + 1 = N_c² − N_c + 1
-```
-
-Beweis: Die Differenz beträgt `(2N_c+1) − (N_c²−N_c+1) = N_c(3−N_c)`,
-die **ausschließlich für N_c = 3** verschwindet. [Evidence A]
-
-### 3.2 Liealgebraische Bedeutung von N_c²−N_c+1 [Evidence B]
-
-Die Zahl `N_c²−N_c+1` lässt sich schreiben als:
-
-```
-N_c²−N_c+1 = dim(adj(SU(N_c))) − Rang(SU(N_c)) + 1
-           = (N_c²−1) − (N_c−1) + 1
-```
-
-Physikalische Interpretation:
-- `dim(adj) = N_c²−1`: Gesamtzahl der Gluon-Farbkanäle
-- `Rang = N_c−1`: Anzahl diagonaler Cartan-Generatoren (massenlos, tragen nicht zur Vakuumskalierung bei)
-- `+1`: Ein S-Feld-Kanal (BRST-invariant: sS = 0, physikalisch)
-
-**Effektive massentragende Kanäle** = dim(adj) − Rang + 1 = N_c²−N_c+1
-
-Für N_c = 3: `8 − 2 + 1 = 7` [Evidence B, konsistent mit Gitter-SU(3)]
-
-### 3.3 Allgemeines Kandidat-Theorem [Evidence D]
-
-Das **Kandidat-Theorem** (nicht bewiesen, Stratum III):
-
-```
-γ(N_c) = [dim(adj) − Rang + 1]² / N_c
-        = (N_c² − N_c + 1)² / N_c
-```
-
-Werte:
-
-| N_c | N_c²−N_c+1 | γ(N_c) |
-|-----|------------|--------|
-| 2   | 3          | 9/2 = 4.5 |
-| 3   | 7          | **49/3 ≈ 16.333** |
-| 4   | 13         | 169/4 = 42.25 |
-| 5   | 21         | 441/5 = 88.2 |
+| Quantity | Formula | SU(3) value | Evidence |
+|---|---:|---:|---|
+| `dim(adj)` | `N_c^2 - 1` | `8` | [A] arithmetic / standard algebra |
+| rank | `N_c - 1` | `2` | [A] arithmetic / standard algebra |
+| `C_A` | `N_c` | `3` | [A] arithmetic / standard algebra |
+| `C_F` | `(N_c^2 - 1)/(2*N_c)` | `4/3` | [A] arithmetic / standard algebra |
+| pure-YM `b_0` | `11*N_c/3` | `11` | Stratum II standard context |
+| `kappa` | `1/2` | `1/2` | [A] UIDT ledger |
+| `lambda_S` | `5/12` | `5/12` | [A] UIDT ledger |
 
 ---
 
-## 4. Kritische Prüfung (Fehlerband-Analyse)
+## 3. Algebraic Observations
 
-```
-γ_struct = 49/3  = 16.33333...  [Evidence D]
-γ_ledger = 16.339               [A-]
-δγ_ledger = 0.0047              (absoluter Ledger-Fehler)
+### 3.1 SU(3)-specific identity
 
-|Δγ|_abs  = |49/3 − 16.339| = 0.005667
-Fehlerband: [16.3343, 16.3437]
+For `N_c = 3`:
 
-49/3 liegt AUSSERHALB des δγ-Fehlerbandes.
-Abstand zum Band: 0.000967 (abs)
+```text
+2*N_c + 1 = N_c^2 - N_c + 1 = 7
 ```
 
-**Konsequenz:** γ = 49/3 ist eine numerisch nahe, aber nicht exakt übereinstimmende
-Kandidat-Größe. Drei mögliche Erklärungen:
+because:
 
-- **(a)** Der tatsächliche Fehler von γ_ledger ist größer als δγ = 0.0047
-- **(b)** Korrekturen O(1/N_c²) oder Renormierungs-Korrekturen verschieben 49/3 → 16.339
-- **(c)** γ_ledger = 16.339 und γ_struct = 49/3 sind getrennte, nicht identische Größen
+```text
+(2*N_c + 1) - (N_c^2 - N_c + 1) = N_c*(3 - N_c)
+```
 
----
+This equality is exact only at `N_c = 3`.
 
-## 5. Lücken-Status (aktualisiert)
+Evidence: [A] arithmetic.
 
-| Gap ID | Beschreibung | Status |
-|--------|-------------|--------|
-| G1 | Tensorkontraktion in Path A erreicht 49/3 nicht | ❌ OPEN |
-| G2 | Path B (Casimir×Banach) → 13.73, nicht 49/3 | ❌ OPEN |
-| G3 | (2N_c+1)²/N_c ohne gruppentheoretische Herleitung | ⚠️ TEILWEISE: N_c=3-Identität gefunden [B], dynamisch unbewiesen [D] |
-| G4 | β_κ nicht durch externe FRG-Rechnung bestätigt | ❌ OPEN |
-| G5 | Verification-Script setzt 49/3 axiomatisch | ❌ OPEN (in verify_frg_gamma_path_b.py dokumentiert) |
-| **G6 NEU** | **Fehlerband-Lücke: 49/3 ∉ [γ−δγ, γ+δγ]** | ❌ OPEN |
+### 3.2 Historical alternative structure
 
----
+The older path considered:
 
-## 6. Evidence-Klassifikation
+```text
+[N_c^2 - N_c + 1]^2 / N_c
+```
 
-| Aussage | Evidence | Begründung |
-|---------|----------|------------|
-| N_c(3−N_c)=0 nur für N_c=3 | **A** | Algebraisch bewiesen |
-| N_c²−N_c+1 = dim(adj)−Rang+1 | **A** | Algebraisch bewiesen |
-| Liealgebraische Interpretation | **B** | Konsistent, nicht formal bewiesen |
-| γ(N_c)=(N_c²−N_c+1)²/N_c | **D** | Intern konsistent, G4/G6 offen |
-| γ=49/3 exakt aus Fixpunkt | **E** | Nicht abgeleitet, außerhalb Fehlerband |
+At `N_c = 3`, this gives:
 
----
+```text
+7^2 / 3 = 49/3
+```
 
-## 7. Nächste Schritte (Priorisiert)
+However, for `N_c = 4` it gives:
 
-1. **FRG BMW/LPA'-Berechnung** (G4): Externe Berechnung von γ(N_c) für N_c=2,3,4
-   um G6 zu schließen oder zu revidieren. Zielgruppe: Pawlowski/Wetterich-Gruppe Heidelberg.
+```text
+13^2 / 4 = 169/4 = 42.25
+```
 
-2. **N_c-Skalierungstest** (G3 Fortsetzung): Gibt es Gitter-Daten für SU(2)- und SU(4)-
-   Massenspektren, die γ(2)=4.5 oder γ(4)=42.25 testen?
+This conflicts with the current Phase-8 scaling candidate:
 
-3. **Fehlerband-Revision** (G6): Ursprüngliche Kalibrierung von δγ=0.0047 überprüfen.
-   Falls δγ_real ≥ 0.0057, würde 49/3 knapp im Band liegen.
+```text
+(2*N_c + 1)^2 / N_c
+```
 
-4. **arXiv-Einreichung**: Erst nach Schließung von G4 und G6.
+which gives:
+
+```text
+9^2 / 4 = 81/4 = 20.25
+```
+
+Therefore the older `N_c^2 - N_c + 1` extrapolation is retained only as a historical SU(3)-coincident path, not as the active SU(N) conjecture.
 
 ---
 
-## 8. Reproduzierbarkeit
+## 4. Current Phase-8 Bare-Gamma Candidate
 
-```bash
-# Phase-1-Verification (Path B numerisch):
-python3 verification/scripts/verify_frg_gamma_path_b.py
-# Erwartete Ausgabe: 7/7 PASS
+The current active candidate is:
+
+```text
+gamma_bare(N_c) = (2*N_c + 1)^2 / N_c
+```
+
+For SU(3):
+
+```text
+gamma_bare(3) = 49/3 = 16.333333...
+```
+
+The required correction to the calibrated kinetic value is:
+
+```text
+Delta_gamma_required = 16.339 - 49/3 = 17/3000 = 0.005666666...
+```
+
+Evidence: [D], Stratum III. This is a UIDT research mapping, not a derivation of `gamma = 16.339` [A-].
+
+---
+
+## 5. Gap Register
+
+| Gap ID | Description | Status |
+|---|---|---|
+| G1 | Tensor-contraction path does not derive `gamma = 16.339`. | OPEN |
+| G2 | Older Casimir/Banach path does not close the correction. | OPEN |
+| G3 | `49/3` has SU(3)-specific arithmetic motivation, but no first-principles physical derivation. | PARTIAL / [D] |
+| G4 | `beta_kappa` / FRG calculation lacks regulator-independent closure. | OPEN |
+| G5 | Verification scripts must not insert `49/3` as a proof target. | OPEN / monitored |
+| G6 | `49/3` differs from `gamma = 16.339` by `17/3000`. | OPEN |
+| G7 | SU(4) extrapolation distinguishes historical `169/4` from active `81/4`. | OPEN / TENSION SURFACE |
+
+---
+
+## 6. Evidence Classification
+
+| Statement | Evidence | Reason |
+|---|---|---|
+| `N_c*(3-N_c)=0` only at `N_c=3` for the identity above | [A] | arithmetic |
+| `dim(adj)-rank+1 = N_c^2-N_c+1` | [A] | algebraic identity |
+| physical interpretation of `dim(adj)-rank+1` as mass-carrying channels | [D] | UIDT interpretation, not externally validated |
+| historical candidate `(N_c^2-N_c+1)^2/N_c` | [E]/historical | superseded as SU(N) scaling by Phase-8 candidate |
+| active candidate `(2*N_c+1)^2/N_c` | [D] | UIDT research mapping |
+| `gamma = 16.339` from this path | not derived | remains [A-] calibrated input |
+
+---
+
+## 7. Required Next Step
+
+The necessary calculation is not another algebraic scan. The necessary calculation is the correction term:
+
+```text
+Pi_S(p^2) at p = Delta*
+```
+
+or an equivalent regulator-independent FRG correction producing:
+
+```text
+Delta_gamma_required = 17/3000
+```
+
+Fail-fast criteria:
+
+| Result | Consequence |
+|---|---|
+| `Delta_gamma < 0` | reject active L1 bare-gamma ansatz |
+| `Delta_gamma > 0.012` | reject active L1 bare-gamma ansatz |
+| `0 < Delta_gamma <= 0.012` | retain at [D]/[D*], no promotion |
+| proof-level derivation with residual `< 1e-14` | only then discuss [A]-level claim |
+
+---
+
+## 8. Reproduction Snippet
+
+```python
+from mpmath import mp
+mp.dps = 80
+N_c = mp.mpf(3)
+gamma_bare = (2*N_c + 1)**2 / N_c
+delta_gamma_required = mp.mpf("16.339") - gamma_bare
+print(mp.nstr(gamma_bare, 80))
+print(mp.nstr(delta_gamma_required, 80))
+```
+
+Expected classification:
+
+```text
+gamma_bare(3) = 49/3 [arithmetic]
+Delta_gamma_required = 17/3000 [D]
+No evidence promotion.
 ```
 
 ---
 
-*UIDT Framework v3.9 — Alle numerischen Resultate bei mp.dps=80.*  
-*Zero hallucinations: Alle Werte rechnerisch verifiziert.*  
-*Kein Evidence-Upgrade ohne externe Bestätigung.*
+## 9. Acceptance Status
+
+`HISTORICAL PATH RETAINED / PHASE-8 ERRATUM APPLIED`
+
+The file remains useful as a history of the algebraic search, but it is not a proof and must not be cited as a current [A] or [B] evidence source for `gamma = 16.339`.
